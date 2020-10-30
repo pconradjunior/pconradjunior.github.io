@@ -1,0 +1,138 @@
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.content {
+    margin-top: -20px;
+}
+
+.large-div {
+    width: 100%;
+    margin-top: -30px;
+    margin-bottom: -10px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background: linear-gradient(to bottom right, #999, #dede);
+    clear: both;
+}
+
+.fundos {
+    height: 100vh;
+    /* Flexbox */
+    display: flex;
+    align-items: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.fundo-inicio {
+    background-image: url('../img/fundo-inicio.jpg');
+}
+
+.fundo-quem {
+    background-image: url('../img/fundo-formatura.jpg');
+}
+
+.fundo-atuacao {
+    background-image: url('../img/fundo-servicos.jpg');
+}
+
+.fundo-contato {
+    background-image: url('../img/fundo-mensagem.jpg');
+}
+
+.fundo-midia {
+    background-image: url('../img/fundo-confirmar.jpg');
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1em;
+}
+
+.clear {
+    clear: both;
+}
+
+.asterisco {
+    font-size: 0.8em;
+}
+
+.cartao-servico {
+    text-align: left;
+    border: 1px solid;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.cartao-servico a {
+    border-radius: .50rem;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    color: #fff;
+    background-color: green;
+    text-decoration: none;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 5px;
+}
+
+.cartao-servico a:hover {
+    border-radius: .50rem;
+}
+
+.progresso-div {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom right, #999, #dede);
+    clear: both;
+}
+
+.footer-site {
+    height: 120px;
+    width: 100%;
+    background-color: #999;
+    clear: both;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#lista-servicos {
+    text-align: left;
+}
+
+.p-contador {
+    font-size: 1em;
+}
+
+.contador {
+    background-color: black;
+    padding: 5px;
+    color: white;
+}
