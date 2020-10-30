@@ -1,36 +1,23 @@
-.map-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
+html {
+    scroll-behavior: smooth;
 }
 
-.map-responsive iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+body {
+    overflow-x: hidden;
+}
+
+a {
+    color: #000;
 }
 
 .content {
-    margin-top: -20px;
-}
-
-.large-div {
+    padding-top: 1px;
+    margin-top: 10px;
     width: 100%;
-    margin-top: -30px;
-    margin-bottom: -10px;
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    background: linear-gradient(to bottom right, #999, #dede);
-    clear: both;
 }
 
 .fundos {
-    height: 100vh;
+    height: 50vh;
     /* Flexbox */
     display: flex;
     align-items: center;
@@ -42,75 +29,55 @@
 }
 
 .fundo-inicio {
-    background-image: url('../img/fundo-inicio.jpg');
+    background-image: url('../images/fundo-inicio.jpg');
 }
 
 .fundo-quem {
-    background-image: url('../img/fundo-formatura.jpg');
+    background-image: url('../images/fundo-quem.jpg');
 }
 
 .fundo-atuacao {
-    background-image: url('../img/fundo-servicos.jpg');
+    background-image: url('../images/fundo-atuacao.jpg');
 }
 
 .fundo-contato {
-    background-image: url('../img/fundo-mensagem.jpg');
+    background-image: url('../images/fundo-contato.jpg');
 }
 
-.fundo-midia {
-    background-image: url('../img/fundo-confirmar.jpg');
+.fundo-portfolio {
+    background-image: url('../images/fundo-portfolio.jpg');
 }
 
 h1 {
     font-size: 3.5em;
     font-weight: bold;
-    text-align: center;
+    margin-left: 25px;
+    margin-right: 10px;
 }
 
 h2 {
     font-size: 2.5em;
     font-weight: bold;
+    margin-left: 25px;
+    margin-right: 10px;
+    text-align: center;
 }
 
 p {
     font-size: 1em;
+    margin-left: 25px;
+    margin-right: 10px;
+}
+
+.p-atuacao {
+    text-align: center;
+}
+
+.icon {
+    text-align: center;
 }
 
 .clear {
-    clear: both;
-}
-
-.asterisco {
-    font-size: 0.8em;
-}
-
-.cartao-servico {
-    text-align: left;
-    border: 1px solid;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
-
-.cartao-servico a {
-    border-radius: .50rem;
-    border: 1px solid transparent;
-    padding: .5rem 1rem;
-    color: #fff;
-    background-color: green;
-    text-decoration: none;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-top: 5px;
-}
-
-.cartao-servico a:hover {
-    border-radius: .50rem;
-}
-
-.progresso-div {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to bottom right, #999, #dede);
     clear: both;
 }
 
@@ -123,16 +90,31 @@ p {
     padding-top: 50px;
 }
 
-#lista-servicos {
-    text-align: left;
+#home {
+    margin-bottom: 30px;
 }
 
-.p-contador {
-    font-size: 1em;
+#quem {
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
-.contador {
-    background-color: black;
-    padding: 5px;
-    color: white;
+#atuacao {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#portfolio {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#contato {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    background-attachment: #dedede;
 }
