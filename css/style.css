@@ -8,6 +8,7 @@ body {
 
 a {
     color: #000;
+    font-weight: bold;
 }
 
 .content {
@@ -117,4 +118,10 @@ p {
 footer {
     text-align: center;
     background-attachment: #dedede;
+}
+
+.subtitulo {
+    font-size: 12;
+    font-weight: bold;
+    text-align: left;
 }
