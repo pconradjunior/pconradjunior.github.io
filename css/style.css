@@ -76,7 +76,9 @@ p {
 
 .icon {
     text-align: center;
+    height: 100px;
 }
+
 
 .clear {
     clear: both;
