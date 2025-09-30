@@ -21,6 +21,8 @@ code,
   font-family: 'Fira Code', monospace !important;
 }
 
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,6 +30,7 @@ html {
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -254,4 +257,7 @@ nav {
 
 .code-window pre code {
   color: inherit;
+  font-family: 'Fira Code', monospace;
+  font-size: inherit;
+  line-height: inherit;
 }
