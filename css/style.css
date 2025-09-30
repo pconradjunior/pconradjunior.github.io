@@ -60,7 +60,7 @@ nav {
   background-color: rgb(0, 0, 0);
 }
 
-.menu-left{
+.menu-left {
   width: auto;
   float: left;
 }
@@ -69,10 +69,10 @@ nav {
   height: 20px;
 }
 
-.menu-item{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color:rgba(222, 222, 222, 1)
+.menu-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgba(222, 222, 222, 1)
 }
 
 .conteudo {
@@ -81,12 +81,12 @@ nav {
   padding-bottom: 10px;
 }
 
-.lista-atuacao{
+.lista-atuacao {
   display: flex;
   flex-direction: row;
 }
 
-.lista-atuacao-item{
+.lista-atuacao-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,20 +117,20 @@ nav {
   content: "\A";
 }
 
-.atuacao-item-subtitulo{
+.atuacao-item-subtitulo {
   font-size: 18px;
   text-align: center;
 }
 
 
-.lista-contato{
+.lista-contato {
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
 }
 
-.lista-contato-item{
+.lista-contato-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,7 +159,7 @@ nav {
   content: "\A";
 }
 
-.contato-item-subtitulo{
+.contato-item-subtitulo {
   font-size: 12px;
   text-align: center;
 }
@@ -172,4 +172,72 @@ nav {
   color: white;
   padding: 10px;
   height: 20px;
+}
+
+/* Wrapper to simulate the code window */
+.code-window {
+  background: #000;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.flowchart {
+  clear: both;
+  margin: 20px 0;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+
+}
+
+/* Header bar with buttons */
+.code-window-header {
+  background: #2d2d2d;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.code-window-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.code-window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.code-window-button.red {
+  background: #ff5f56;
+}
+
+.code-window-button.yellow {
+  background: #ffbd2e;
+}
+
+.code-window-button.green {
+  background: #27c93f;
+}
+
+/* Code area */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+.code-window pre {
+  margin: 0;
+  padding: 16px;
+  background: #000;
+  color: #f8f8f2;
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.code-window pre code {
+  color: inherit;
 }

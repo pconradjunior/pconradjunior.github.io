@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Artigo introdutório sobre algoritmos: conceitos, pseudocódigo, exemplos práticos e fluxograma.">
+    <title>Artigo - Algoritmo: Bicho de Sete Cabeças?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="menu-item" href="index.html"><i class="fa fa-home">&nbsp;</i>Meu Site</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="fundos fundo-inicio"></div>
+            <div class="conteudo">
+                <h1>Algoritmo: Bicho de Sete Cabeças?</h1>
+                <p>
+                    Muita gente acredita que programação é complicada. Mas aprender algoritmos pode ser comparado a
+                    aprender uma receita de bolo: no começo erramos, mas com prática e paciência tudo fica claro.
+                </p>
+                <p>
+                    Este artigo traz uma introdução prática a algoritmos: desde os conceitos básicos até exemplos em
+                    pseudocódigo e Python, além de um fluxograma simples de soma de dois números.
+                </p>
+
+                <h2>O que é um algoritmo?</h2>
+                <p>
+                    Um algoritmo é uma sequência finita de passos para resolver um problema. A palavra vem de
+                    <strong>al-Khwarizmi</strong>, matemático do século IX, e ficou famosa com o trabalho de
+                    <strong>Ada Lovelace</strong>, considerada a primeira programadora da história.
+                </p>
+
+                <h2>Pensar antes de programar</h2>
+                <p>
+                    O erro mais comum não é programar errado, mas não pensar no problema. Use papel, lápis e borracha
+                    para rascunhar a lógica antes de abrir o computador.
+                </p>
+
+                <h2>Exemplo prático</h2>
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>
+INÍCIO
+  Etapa 1: Escolher um bombom
+  Etapa 2: Pegar o bombom
+  Etapa 3: Desembrulhar
+  Etapa 4: Comer
+  Etapa 5: Jogar embalagem no lixo
+FIM
+                </pre>
+                    </code></pre>
+                </div>
+
+                <h2>Variáveis e operadores</h2>
+                <p>
+                    Variáveis são “caixinhas” que armazenam dados. Exemplos:
+                </p>
+                <ul>
+                    <li>Inteiros: idade → <code>25</code></li>
+                    <li>Decimais: preço → <code>19.90</code></li>
+                    <li>Strings: nome → <code>"Maria"</code></li>
+                    <li>Booleanos: login → <code>true</code> ou <code>false</code></li>
+                </ul>
+
+                <h2>Estruturas de decisão e repetição</h2>
+                <p>
+                    Com elas, podemos tomar caminhos diferentes (SE / SENÃO) ou repetir instruções (PARA, ENQUANTO,
+                    FAÇA…ENQUANTO).
+                </p>
+
+                <h2>Pseudocódigo vs Linguagens de Programação</h2>
+                <p>Pseudocódigo facilita o raciocínio para quem ainda não conhece uma linguagem de programação. Veja um
+                    laço em pseudocódigo e em Python, por exemplo:</p>
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>
+PARA numero = 0 ATÉ 10
+  ESCREVA numero
+PRÓXIMO
+
+Python:
+for numero in range(0, 11):
+    print(numero)
+                </code></pre>
+                </div>
+
+                <h2>Fluxograma: Soma de dois números</h2>
+                <div class="flowchart">
+                    <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="4" orient="auto"
+                                markerUnits="strokeWidth">
+                                <path d="M0,0 L0,8 L8,4 z" fill="#071028" />
+                            </marker>
+                        </defs>
+
+                        <!-- Start -->
+                        <ellipse cx="300" cy="40" rx="100" ry="25" fill="#fff" stroke="#000" stroke-width="2" />
+                        <text x="300" y="45" text-anchor="middle">INÍCIO</text>
+
+                        <!-- A -->
+                        <line x1="300" y1="65" x2="300" y2="100" stroke="#000" stroke-width="2"
+                            marker-end="url(#arrow)" />
+                        <rect x="200" y="100" width="200" height="50" fill="#fff" stroke="#000" stroke-width="2"
+                            rx="8" />
+                        <text x="300" y="130" text-anchor="middle">LER A</text>
+
+                        <!-- B -->
+                        <line x1="300" y1="150" x2="300" y2="185" stroke="#000" stroke-width="2"
+                            marker-end="url(#arrow)" />
+                        <rect x="200" y="185" width="200" height="50" fill="#fff" stroke="#000" stroke-width="2"
+                            rx="8" />
+                        <text x="300" y="215" text-anchor="middle">LER B</text>
+
+                        <!-- Soma -->
+                        <line x1="300" y1="235" x2="300" y2="270" stroke="#000" stroke-width="2"
+                            marker-end="url(#arrow)" />
+                        <polygon points="220,270 380,270 400,320 240,320" fill="#fff" stroke="#000" stroke-width="2" />
+                        <text x="310" y="300" text-anchor="middle">SOMA ← A + B</text>
+
+                        <!-- End -->
+                        <line x1="300" y1="320" x2="300" y2="350" stroke="#000" stroke-width="2"
+                            marker-end="url(#arrow)" />
+                        <ellipse cx="300" cy="365" rx="70" ry="20" fill="#fff" stroke="#000" stroke-width="2" />
+                        <text x="300" y="370" text-anchor="middle">FIM</text>
+                    </svg>
+                </div>
+
+                <h2>Conclusão</h2>
+                <p>
+                    Programar é como aprender um idioma: no início estranho, depois natural. Um passo de cada vez e
+                    você alcança fluência.
+                </p>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="fundos fundo-contato"></div>
+            <div class="conteudo">
+                <h1>Contato</h1>
+                <p class="contato-item">
+                    Entre em contato através das redes sociais ou pelo e-mail.
+                    Informações mais completas estão no meu <a target="_blank"
+                        href="https://linkedin.com/in/pconradjunior">perfil no LinkedIn</a>.
+                </p>
+
+                <div class="lista-contato">
+                    <div class="lista-contato-item">
+                        <a target="_blank" href="mailto:pconradjunior@gmail.com" title="Enviar e-mail">
+                            <i class="fa fa-envelope contato-item-icone"></i>
+                            <p class="lista-contato-item-subtitulo">pconradjunior@gmail.com</p>
+                        </a>
+                    </div>
+                    <div class="lista-contato-item">
+                        <a target="_blank" href="https://instagram.com/pedrojunior.dev" title="Perfil do Instagram">
+                            <i class="fa-brands fa-instagram contato-item-icone "></i>
+                            <p class="lista-contato-item-subtitulo">@pedrojunior.dev</p>
+                        </a>
+                    </div>
+                    <div class="lista-contato-item">
+                        <a target="_blank" title="Perfil do LinkedIn" href="https://www.linkedin.com/in/pconradjunior/">
+                            <i class="fa-brands fa-linkedin contato-item-icone "></i>
+                            <p class="lista-contato-item-subtitulo">/in/pconradjunior</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="rodape">
+            <strong>Criado por Pedro Conrad Jr., com imagens do Pixabay.com</strong>
+        </footer>
+    </main>
+</body>
+
+</html>
