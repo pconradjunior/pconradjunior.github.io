@@ -1,28 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-li {
-  font-family: 'Roboto', sans-serif;
-}
-
-pre,
-code,
-.code-window pre,
-.code-window code {
-  font-family: 'Fira Code', monospace !important;
-}
-
-
-
 html {
   scroll-behavior: smooth;
 }
