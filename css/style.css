@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
 * {
   font-family: 'Roboto', sans-serif;
@@ -225,8 +226,6 @@ nav {
 }
 
 /* Code area */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
-
 .code-window pre {
   margin: 0;
   padding: 16px;
