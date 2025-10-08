@@ -17,6 +17,24 @@ a {
   text-decoration: none;
 }
 
+table{
+  width: 100%;
+}
+
+thead{
+  background-color: #3b3737;
+  color: #fff;
+  text-align: left;
+}
+
+tbody{
+  text-align: left;
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
 .fundos {
   height: 50vh;
   /* Flexbox */
