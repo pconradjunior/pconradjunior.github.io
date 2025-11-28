@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Artigo Técnico: Implementando Reconhecimento Facial Multiusuário em Flutter">
+    <title>Artigo - Reconhecimento Facial em Flutter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="menu-item" href="index.html"><i class="fa fa-home">&nbsp;</i>Meu Site</a>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio">
+            <div class="fundos fundo-inicio"></div>
+            <div class="conteudo">
+                <h1>Implementação de um Sistema de Reconhecimento Facial Multiusuário em Flutter</h1>
+                <p><strong>Autor:</strong> Pedro Conrad Junior<br><strong>Data:</strong> Nov. 2025</p>
+
+                <p>Este artigo detalha a arquitetura e implementação de um sistema de reconhecimento facial multiusuário
+                    desenvolvido em Flutter. O projeto oferece a implementação de uma solução para autenticação
+                    biométrica local, operando offline e preservando a privacidade dos dados. Neste caso, é possível
+                    utilizar o mesmo dispositivo para autenticação de múltiplos usuários, com as biometrias armazenadas
+                    localmente.</p>
+
+                <p>Também é possível enviar as biometrias para um backend, facilitando a integração corporativa, nos
+                    casos em que se aplicar. Esta implementação consiste em enviar as embeddings para um backend, que
+                    pode ser um servidor local ou remoto.</p>
+
+                <h2>Interface do Usuário</h2>
+                <p>A interface foi projetada para ser simples e direta, permitindo o controle total da câmera e das
+                    ações de gerenciamento de usuários.</p>
+
+                <img src="./article_imgs/face_detection_ui_wireframe.png" alt="Wireframe da Interface"
+                    style="max-width: 100%; height: auto; margin: 20px 0;">
+
+                <h2>1. Visão Geral e Arquitetura</h2>
+                <p>A aplicação segue o padrão <strong>MVC (Model-View-Controller)</strong> simplificado:</p>
+                <ul>
+                    <li><strong>View (<code>FaceDetect</code>)</strong>: Exibe o preview da câmera e feedback visual.
+                    </li>
+                    <li><strong>Controller (<code>FaceDetectController</code>)</strong>: Centraliza a regra de negócios
+                        e interação com APIs.</li>
+                    <li><strong>Model</strong>: Bibliotecas de reconhecimento facial e armazenamento (uso indireto).
+                    </li>
+                </ul>
+
+                <h2>2. Gerenciamento de Estado e Câmera</h2>
+                <p>O controle reside na classe <code>FaceDetectController</code>. A inicialização prepara o motor de
+                    reconhecimento e a câmera. Neste exemplo, o gerenciamento de estado da aplicação é feito utilizando
+                    ChangeNotifier.</p>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>// lib/app/face_detect_controller.dart
+
+Future&lt;void&gt; initialize() async {
+  // Inicializa o motor de reconhecimento facial
+  await FaceVerification.instance.init();
+
+  // Busca câmeras disponíveis
+  cameras = await availableCameras();
+
+  if (cameras.isEmpty) {
+    setStatus(FaceStatus.error, message: "No cameras found");
+    return;
+  }
+
+  // Configura o controlador da câmera
+  _cameraController = CameraController(
+    cameras[currentCamera],
+    ResolutionPreset.medium,
+    enableAudio: false,
+  );
+
+  await _cameraController!.initialize();
+  notifyListeners();
+}</code></pre>
+                </div>
+
+                <p>Posteriormente é possível trocar de câmera ou pausar o mecanismo da câmera quando julgar necessário.
+                    Veja:</p>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>// lib/app/face_detect_controller.dart
+
+Future&lt;void&gt; switchCamera() async {
+  currentCamera = (currentCamera + 1) % cameras.length;
+  await _cameraController!.dispose();
+  await initialize();
+}
+
+Future&lt;void&gt; pauseCamera() async {
+  await _cameraController!.dispose();
+}</code></pre>
+                </div>
+
+                <h2>3. O Fluxo de Reconhecimento Facial</h2>
+                <p>A seguir está descrito o fluxo de reconhecimento facial, que é composto por três etapas principais:
+                </p>
+
+                <h3>Registro de Usuário</h3>
+                <p>O registro de um usuário envolve a captura de uma imagem da face do usuário, a extração de um
+                    embedding e o salvamento de forma segura. Este processo é feito pelo método
+                    <code>registerFace</code>.
+                </p>
+                <p>Para capturar as imagens, o app utiliza a classe <code>CameraController</code> do pacote
+                    <code>camera</code>, que fornece uma interface para controlar a câmera do dispositivo.
+                    Posteriormente, o app utiliza a classe <code>FaceVerification</code> do pacote
+                    <code>face_verification</code>, que fornece uma interface para registrar a face do usuário passando
+                    a imagem capturada e registrando-a no motor de reconhecimento facial com o método
+                    <code>registerFromImagePath</code>.
+                </p>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>// lib/app/face_detect_controller.dart
+
+Future&lt;void&gt; registerFace(String userId) async {
+  try {
+    setStatus(FaceStatus.processing, message: "Capturing...");
+
+    final picture = await _cameraController!.takePicture();
+    final imagePath = await _saveTempImage(picture);
+
+    // Registra a face usando a biblioteca especializada
+    await FaceVerification.instance.registerFromImagePath(
+      id: userId,
+      imagePath: imagePath,
+      imageId: imageId,
+    );
+
+    // Recupera e persiste o embedding
+    final faces = await FaceVerification.instance.getFacesForUser(userId);
+    if (faces.isNotEmpty) {
+      await storage.write(
+        key: "embedding-$userId-$imageId",
+        value: jsonEncode({ ... }),
+      );
+    }
+    // ...
+  } catch (e) {
+    setStatus(FaceStatus.error, message: "Error: $e");
+  }
+}</code></pre>
+                </div>
+
+                <h3>Autenticação</h3>
+                <p>A autenticação consiste na comparação de uma foto tirada no momento atual com os embeddings
+                    salvos.<br>
+                    O processo é feito pelo método <code>authenticateScan</code>, que compara os dados biométricos
+                    usando um limiar de similaridade previamente definido e customizável.</p>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>// lib/app/face_detect_controller.dart
+
+Future&lt;String?&gt; authenticateScan() async {
+  try {
+    // ... captura imagem ...
+
+    // Verifica a imagem contra os perfis registrados
+    final matchId = await FaceVerification.instance.verifyFromImagePath(
+      imagePath: imagePath,
+      threshold: 0.65, // Limiar de aceitação &lt;-- pode ser ajustado
+    );
+
+    return matchId; // Retorna o ID do usuário ou null, caso não encontre
+  } catch (e) {
+    return null;
+  }
+}</code></pre>
+                </div>
+
+                <h3>Revalidação Biométrica</h3>
+                <p>O app também permite que um usuário adicione novas fotos. Para manter a segurança, o processo exige
+                    que o usuário se autentique primeiro, garantindo que seja o mesmo usuário que está adicionando a
+                    nova foto. Este processo é feito pelo método <code>authenticateThenRegister</code>.</p>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>// lib/app/face_detect_controller.dart
+
+Future&lt;void&gt; authenticateThenRegister(String userId) async {
+  // Primeiro, verifica se é realmente o usuário
+  final match = await authenticateScan();
+
+  if (match == userId) {
+    setStatus(FaceStatus.done, message: "Authenticated! Adding new photo...");
+    // Se confirmado, permite o novo registro
+    await registerFace(userId);
+  } else {
+    setStatus(FaceStatus.error, message: "Authentication failed.");
+  }
+}</code></pre>
+                </div>
+
+                <h2>4. Segurança de Dados</h2>
+                <p>Utilizamos o <code>flutter_secure_storage</code> para garantir que os dados biométricos (embeddings)
+                    sejam armazenados em áreas criptografadas do sistema operacional (Keystore/Keychain). Veja um
+                    exemplo, usando o <code>flutter_secure_storage</code>, carregado na variável <code>storage</code>:
+                </p>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>// lib/app/face_detect_controller.dart
+
+Future&lt;void&gt; saveEmbedding(String userId, String imageId, String embedding) async {
+  final storage = const FlutterSecureStorage();
+  await storage.write(
+    key: "embedding-$userId-$imageId",
+    value: embedding,
+  );
+}</code></pre>
+                </div>
+
+                <h2>5. Sincronização (Opcional)</h2>
+                <p>O sistema permite enviar os embeddings para um backend, facilitando a integração corporativa. Neste
+                    exemplo, o backend é um servidor HTTP fictício que envia todas as embeddings de uma vez.</p>
+
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-buttons">
+                            <span class="code-window-button red"></span>
+                            <span class="code-window-button yellow"></span>
+                            <span class="code-window-button green"></span>
+                        </div>
+                    </div>
+                    <pre><code>Future&lt;void&gt; uploadEmbeddings() async {
+  final all = await storage.readAll();
+  // ... filtra e prepara dados ...
+
+  final response = await http.post(
+    url,
+    body: jsonEncode({"embeddings": embeddings}),
+  );
+}</code></pre>
+                </div>
+
+                <h2>Conclusão</h2>
+                <p>Esta implementação demonstra como criar um sistema de biometria seguro e eficiente em Flutter,
+                    combinando processamento local com uma arquitetura limpa e escalável. Ainda que o processo seja
+                    simples, ele pode ser facilmente adaptado e aperfeiçoado para atender às necessidades de uma
+                    aplicação corporativa.</p>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="fundos fundo-contato"></div>
+            <div class="conteudo">
+                <h1>Contato</h1>
+                <p class="contato-item">
+                    Entre em contato através das redes sociais ou pelo e-mail.
+                    Informações mais completas estão no meu <a target="_blank"
+                        href="https://linkedin.com/in/pconradjunior">perfil no LinkedIn</a>.
+                </p>
+
+                <div class="lista-contato">
+                    <div class="lista-contato-item">
+                        <a target="_blank" href="mailto:pconradjunior@gmail.com" title="Enviar e-mail">
+                            <i class="fa fa-envelope contato-item-icone"></i>
+                            <p class="lista-contato-item-subtitulo">pconradjunior@gmail.com</p>
+                        </a>
+                    </div>
+                    <div class="lista-contato-item">
+                        <a target="_blank" href="https://instagram.com/pedrojunior.dev" title="Perfil do Instagram">
+                            <i class="fa-brands fa-instagram contato-item-icone "></i>
+                            <p class="lista-contato-item-subtitulo">@pedrojunior.dev</p>
+                        </a>
+                    </div>
+                    <div class="lista-contato-item">
+                        <a target="_blank" title="Perfil do LinkedIn" href="https://www.linkedin.com/in/pconradjunior/">
+                            <i class="fa-brands fa-linkedin contato-item-icone "></i>
+                            <p class="lista-contato-item-subtitulo">/in/pconradjunior</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="rodape">
+            <strong>Criado por Pedro Conrad Jr., com imagens do Pixabay.com</strong>
+        </footer>
+    </main>
+</body>
+
+</html>
