@@ -2,354 +2,317 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Seja bem-vindo! Criei este site para divulgar minha trajetória e meu portfolio com alguns projetos em que trabalhei." />
-  <title>Pedro Conrad Jr - Portfolio Profissional</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Profissional de Pedro Conrad Jr - Desenvolvedor Full Stack e Mobile">
+  <title>Pedro Conrad Jr | Developer Portfolio</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style_v26.css">
 </head>
 
 <body>
+  <!-- Theme Switcher Controls (Checkbox Hack) -->
+  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
+  <input type="radio" name="theme" id="theme-purple" class="theme-controller">
+  <input type="radio" name="theme" id="theme-green" class="theme-controller">
+
+  <!-- Floating Switcher UI -->
+  <div class="theme-switcher" title="Escolha seu tema">
+    <label for="theme-cyan" class="theme-label label-cyan"></label>
+    <label for="theme-purple" class="theme-label label-purple"></label>
+    <label for="theme-green" class="theme-label label-green"></label>
+  </div>
+
   <header>
-    <nav>
-      <a class="menu-item" href="#inicio"><i class="fa fa-home">&nbsp;</i>Início</a>
-      <a class="menu-item" href="#quem"><i class="fa fa-user">&nbsp;</i>Quem sou eu?</a>
-      <a class="menu-item" href="#atuacao"><i class="fa fa-globe">&nbsp;</i>Atuação</a>
-      <a class="menu-item" href="#portfolio"><i class="fa fa-newspaper">&nbsp;</i>Portfolio</a>
-      <a class="menu-item" href="#contato"><i class="fa fa-envelope">&nbsp;</i>Contato</a>
-      <a class="menu-item" href="index_en.html"><img class="img-bandeira"
-          src="images/flags/us.svg">&nbsp;</i>English</a>
-    </nav>
-
+    <div class="container">
+      <nav>
+        <a href="#" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad Jr</span></a>
+        <div class="nav-links">
+          <a href="#home">Início</a>
+          <a href="#about">Sobre</a>
+          <a href="#expertise">Atuação</a>
+          <a href="#portfolio">Projetos</a>
+          <a href="#contact">Contato</a>
+          <!-- Link para versão EN mantido discreto -->
+          <a href="index_en.html" title="English Version"><i class="fa fa-language"></i> EN</a>
+        </div>
+      </nav>
+    </div>
   </header>
+
   <main>
-    <section id="inicio">
-      <div class="fundos fundo-inicio"></div>
-      <div class="conteudo">
-        <h1>Home</h1>
-        <p>
-          <b>Seja bem-vindo ao meu site!</b> Aqui você encontrará um vislumbre da
-          minha jornada profissional e uma amostra do meu portfólio, abrangendo
-          uma variedade de projetos nos quais estive envolvido, desde projetos
-          individuais até colaborações em equipes.
-        </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-greeting">Olá, eu sou</span>
+          <h1>Pedro Conrad Jr <span>Desenvolvedor Full Stack & Mobile</span></h1>
+          <p>Especialista em transformar ideias em produtos digitais de alta performance. Mais de 20 anos criando
+            soluções web e mobile inovadoras.</p>
+          <a href="#portfolio" class="btn btn-primary">Ver Projetos</a>
+        </div>
       </div>
     </section>
-    <section id="quem">
-      <div class="fundos fundo-quem"></div>
-      <div class="conteudo">
-        <h1>Quem sou eu</h1>
-        <p>
-          Sou um profissional de Tecnologia da Informação com mais de 20 anos
-          de experiência, especializado no desenvolvimento de sistemas,
-          aplicativos web e móveis. Atualmente, atuo como Analista de
-          Tecnologia da Informação na Universidade Federal do Pampa (Unipampa),
-          onde sou parte integrante, tanto liderando ou participando de projetos
-          de desenvolvimento utilizando principalmente PHP, Javascript, e Flutter.
-        </p>
-        <p>Ao longo da minha carreira, acumulei habilidades sólidas em análise
-          de sistemas, definição de arquiteturas e padrões de software, bem
-          como na configuração e atualização de ambientes de aplicativos.
-        </p>
-        <p>
-          Sou reconhecido por minha capacidade de refinar requisitos funcionais
-          e colaborar na definição de modelos de dados e protótipos. Também
-          consolidei habilidades para transformar requisitos em produtos de
-          software funcionais.</p>
 
-        <p>Sou apaixonado por tecnologia e inovação, buscando constantemente aprender e
-          aplicar novas ferramentas e metodologias em meus projetos. Estou
-          em busca de oportunidades desafiadoras que me permitam continuar
-          crescendo profissionalmente e contribuir de forma significativa
-          para o avanço da área de Tecnologia da Informação.
-        </p>
-      </div>
-    </section>
-    <section id="atuacao">
-      <div class="fundos fundo-atuacao"></div>
-      <div class="conteudo">
-        <h1>Atuação</h1>
-        <p>
-          Ao longo da minha carreira, destaco minhas principais áreas de atuação:
-        </p>
-
-        <div class="lista-atuacao">
-          <div class="lista-atuacao-item">
-            <i class="fa fa-sitemap atuacao-item-icone "></i>
-            <h2 class="lista-atuacao-item-titulo">
-              Sites/Sistemas Web
-            </h2>
-            <p class="lista-atuacao-item-texto">
-              Planejo, desenvolvo e configuro hospedagem para sites e sistemas web.
-            </p>
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Sou um profissional de Tecnologia da Informação com vasta experiência no desenvolvimento de sistemas
+              críticos. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa).</p>
+            <p>Minha paixão está em unir arquitetura de software robusta com interfaces intuitivas. Tenho expertise em
+              PHP, Javascript, Flutter e metodologias ágeis como Scrum e Kanban.</p>
+            <p>Busco constantemente refinar requisitos complexos e entregues software que não apenas funciona, mas
+              encanta o usuário final.</p>
           </div>
-          <div class="lista-atuacao-item">
-            <i class="fa fa-mobile atuacao-item-icone"></i>
-            <h2 class="lista-atuacao-item-titulo">
-              Aplicativos
-            </h2>
-            <p class="lista-atuacao-item-texto">
-              Desde a concepção até a publicação na loja, crio aplicativos para
-              dispositivos móveis.
-            </p>
-          </div>
-          <div class="lista-atuacao-item">
-            <i class="fa fa-book atuacao-item-icone "></i>
-            <h2 class="lista-atuacao-item-titulo">
-              Consultoria
-            </h2>
-            <p class="lista-atuacao-item-texto">
-              Oriento empresas na busca pelas melhores soluções em Tecnologia
-              da Informação, alinhadas com seu cenário específico.
-            </p>
+          <div class="about-stats">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Anos de Experiência</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Projetos</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">20k+</span>
+                <span class="stat-label">Downloads de Apps</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="portfolio">
-      <div class="fundos fundo-portfolio"></div>
-      <div class="conteudo">
-        <h2 class="subtitulo">Sistemas Web PHP</h2>
-        <p>
-          Aqui estão alguns dos projetos em que estive envolvido:
-        </p>
-        <ul>
-          <li>
-            GURI - Gestão Unificada de Recursos Institucionais - UNIPAMPA
-          </li>
-          <li>
-            SGCE - Sistema de Gestão de Certificados Eletrônicos - UNIPAMPA
-          </li>
-          <li>
-            Manutenção da estrutura AVA/Moodle dos cursos EAD da UFPEL - UFPEL
-          </li>
-          <li>Portal Institucional da URCAMP - URCAMP - 2006 a 2009</li>
-          <li>Sistema de Eventos para o Congrega URCAMP - URCAMP - 2005</li>
-        </ul>
-        <h2 class="subtitulo">Aplicativos Mobile</h2>
-        <ul>
-          <li>
-            App Unipampa - App para Alunos, Professores, Equipe e interessados
-            nas notícias e serviços da Universidade - Disponível para
-            <a href="https://play.google.com/store/apps/details?id=br.edu.unipampa.app" target="_blank">Android</a> e <a
-              target="_blank" href="https://apps.apple.com/app/app-unipampa/id1639927711">iOS (iPhone e iPad)</a>
-          </li>
-          <li>
-            SmellCheck - Para monitoramento da evolução do sentido de olfato -
-            <a href="https://play.google.com/store/apps/details?id=pconradjunior.smellcheck" target="_blank">Disponível
-              para Android</a>
-          </li>
-          <li>
-            FingerNotes - Para armazenamento de notas pessoais no dispositivo,
-            protegidas com senha - <a href="https://play.google.com/store/apps/details?id=pconradjunior.fingernotes"
-              target="_blank">Disponível para Android</a>
-          </li>
-          <li>
-            PhisiCalc - Executa o Cálculo de Composição Corporal, auxiliando
-            em avaliações físicas - <a href="https://play.google.com/store/apps/details?id=pconradjunior.phisicalc"
-              target="_blank">
-              Disponível para Android</a>
-          </li>
-        </ul>
 
-        <p>
-          Veja mais aplicativos desenvolvidos por mim na
-          <a target="_blank" href="https://play.google.com/store/apps/developer?id=Pedro+Conrad+Junior">minha página da
-            Play Store</a>
-        </p>
-
-        <h2 class="subtitulo">Artigos e Publicações</h2>
-        <ul style="list-style-type: none">
-          <li>
-            <a target="_blank" href="article_versioncheck.html">
-              <img alt="Site" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />
-              Implementação de Verificação de Versão em Apps Flutter</a>
-          </li>
-          <li>
-            <a target="_blank" href="article_reconhecimento_facial.html">
-              <img alt="Site" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />
-              Implementação de um Sistema de Reconhecimento Facial Multiusuário em Flutter</a>
-          </li>
-          <li>
-            <a target="_blank" href="article_ios.html">
-              <img alt="Site" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />
-              O que é preciso para criar apps para dispositivos iOS — Guia objetivo de etapas e custos para
-              desenvolvedores e empresários</a>
-          </li>
-          <li>
-            <a target="_blank" href="article_algoritmos.html">
-              <img alt="Site" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />
-              Algoritmo: Bicho de Sete Cabeças? - Versão revisada de artigo publicado no <a
-                href="https://web.dio.me/articles/algoritmos-bicho-de-sete-cabecas">dio.me #communityweekchallenge
-                (2022)</a>
-            </a>
-          </li>
-          <li>
-            <a target="_blank"
-              href="https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria">
-              <img alt="Site" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />
-              App da Unipampa leva informações e inovação à comunidade universitária
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios">
-              <img alt="Site" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />
-              App Unipampa agora está disponível também para iOS
-            </a>
-          </li>
-
-          <li>
-            <a target="_blank"
-              href="https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador">
-              <img alt="Site" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />
-              Sistema GURI recebe Registro de Programa de Computador
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf">
-              <img alt="Artigo" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/document.svg" />
-
-              Utilização do Framework PHP CodeIgniter no Desenvolvimento de um
-              Sistema Integrado de Gestão
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf">
-              <img alt="Artigo" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/document.svg" />
-
-              Sistema de Gestão de Certificados Eletrônicos</a>
-          </li>
-          <li>
-            <a target="_blank" href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf">
-              <img alt="Artigo" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/document.svg" />
-              SisRel - Sistema de Extração Dinâmica de Dados com foco no
-              usuário final: Um estudo de caso</a>
-          </li>
-
-          <li>
-            <a target="_blank" href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf">
-              <img alt="Artigo" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/document.svg" />
-              Desenvolvimento de um Sistema de Protocolo Web Baseado em
-              Padrões de Projeto</a>
-          </li>
-        </ul>
-
-        <h2 class="subtitulo">Material em vídeo</h2>
-        <ul style="list-style-type: none">
-          <li>
-            <a target="_blank" href="https://www.youtube.com/watch/ky72JApuaLg">
-              <img alt="Video" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/video.svg" />
-              App Roda do Lanche - Estudo de Arquitetura Limpa e Construção por Responsabilidades
-            </a>
-          </li>
-
-          <li>
-            <a target="_blank" href="https://youtu.be/WTa4rXAw9gg">
-              <img alt="Video" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/video.svg" />
-              Portfolio Demo - Demonstração de construção responsiva com o
-              mesmo código em Flutter (Android e Web)
-            </a>
-          </li>
-
-          <li>
-            <a target="_blank" href="https://www.youtube.com/watch?v=hUdgk81DGuk">
-              <img alt="Video" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/video.svg" />
-              LembraMed - Auxiliar no controle de medicação, consultas e
-              registro de pressão arterial e frequência cardíaca
-            </a>
-          </li>
-
-          <li>
-            <a target="_blank" href="https://www.youtube.com/watch?v=mgvavs5VOgU">
-              <img alt="Video" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/video.svg" />
-              Aplicativo Unipampa para Dispositivos Móveis (versão
-              pré-release)
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.youtube.com/watch?v=t1P1dCydtUo">
-              <img alt="Video" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/video.svg" />
-              Estudos de Interface - Aplicativo SmellCheck
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.youtube.com/watch?v=hGdydq2jhJI">
-              <img alt="Video" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/video.svg" />
-              Estudo de Autenticação Biométrica - FingerNotes em Flutter
-            </a>
-          </li>
-
-          <li>
-            <a target="_blank" href="https://www.youtube.com/watch?v=IHHj8Zp5s10">
-              <img alt="Video" width="16"
-                src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/video.svg" />
-              Jogo AlienWar - Estudo de desenvolvimento de jogo para Android
-              (Unity)
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section id="contato">
-      <div class="fundos fundo-contato"></div>
-      <div class="conteudo">
-        <h1>Contato</h1>
-        <p class="contato-item">
-          Entre em contato através das redes sociais ou pelo e-mail.
-          Informações mais detalhadas estão disponíveis no meu perfil do LinkedIn.
-        </p>
-
-        <div class="lista-contato">
-          <div class="lista-contato-item">
-            <a target="_blank" href="mailto:pconradjunior@gmail.com" title="Enviar e-mail">
-              <i class="fa fa-envelope contato-item-icone"></i>
-              <p class="lista-contato-item-subtitulo">pconradjunior@gmail.com</p>
-            </a>
+    <!-- Expertise Section -->
+    <section id="expertise" class="services">
+      <div class="container">
+        <h2 class="section-title">Minha Atuação</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fa fa-code service-icon"></i>
+            <h3>Web Development</h3>
+            <p>Desenvolvimento de sistemas complexos e sites institucionais. Backend robusto e Frontend moderno e
+              responsivo.</p>
           </div>
-          <div class="lista-contato-item">
-            <a target="_blank" href="https://instagram.com/pedrojunior.dev" title="Conteúdo Profissional no Instagram">
-              <i class="fa-brands fa-instagram contato-item-icone "></i>
-              <p class="lista-contato-item-subtitulo">@pedrojunior.dev</p>
-            </a>
+          <div class="service-card">
+            <i class="fa fa-mobile-screen service-icon"></i>
+            <h3>Mobile Apps</h3>
+            <p>Criação de aplicativos nativos e híbridos (Flutter) para Android e iOS, desde a concepção até a
+              publicação nas lojas.</p>
           </div>
-          <div class="lista-contato-item">
-            <a target="_blank" title="Perfil do LinkedIn" href="https://www.linkedin.com/in/pconradjunior/">
-              <i class="fa-brands fa-linkedin contato-item-icone "></i>
-              <p class="lista-contato-item-subtitulo">/in/pconradjunior</p>
-            </a>
+          <div class="service-card">
+            <i class="fa fa-lightbulb service-icon"></i>
+            <h3>Consultoria</h3>
+            <p>Orientação estratégica para empresas na escolha das melhores tecnologias e arquiteturas de software.</p>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio Recente</h2>
+        <div class="portfolio-grid">
+
+          <!-- Mobile Apps -->
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile"></i> Aplicativo</span>
+              <h3 class="project-title">App Unipampa</h3>
+              <p class="project-desc">App oficial da Universidade, servindo alunos e professores. Integração completa
+                com sistemas acadêmicos.</p>
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=br.edu.unipampa.app" target="_blank"
+                  title="Google Play"><i class="fa-brands fa-google-play"></i></a>
+                <a href="https://apps.apple.com/app/app-unipampa/id1639927711" target="_blank" title="App Store"><i
+                    class="fa-brands fa-apple"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile"></i> Aplicativo</span>
+              <h3 class="project-title">SmellCheck</h3>
+              <p class="project-desc">Monitoramento da evolução do sentido de olfato. Ferramenta útil para
+                acompanhamento pós-viral.</p>
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=pconradjunior.smellcheck" target="_blank"><i
+                    class="fa-brands fa-google-play"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile"></i> Aplicativo</span>
+              <h3 class="project-title">FingerNotes</h3>
+              <p class="project-desc">Bloco de notas seguro com autenticação biométrica local.</p>
+              <div class="project-links">
+                <a href="https://play.google.com/store/apps/details?id=pconradjunior.fingernotes" target="_blank"><i
+                    class="fa-brands fa-google-play"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Web Systems -->
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-server"></i> Sistema Web</span>
+              <h3 class="project-title">GURI</h3>
+              <p class="project-desc">Gestão Unificada de Recursos Institucionais. O ERP acadêmico central da UNIPAMPA.
+              </p>
+            </div>
+          </article>
+
+          <!-- Articles -->
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper"></i> Artigo Técnico</span>
+              <h3 class="project-title">Reconhecimento Facial</h3>
+              <p class="project-desc">Implementação de um Sistema de Reconhecimento Facial Multiusuário em Flutter.</p>
+              <div class="project-links">
+                <a href="article_reconhecimento_facial.html" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper"></i> Artigo Técnico</span>
+              <h3 class="project-title">Algoritmos</h3>
+              <p class="project-desc">Algoritmo: Bicho de Sete Cabeças? Artigo desmistificando lógica de programação.
+              </p>
+              <div class="project-links">
+                <a href="article_algoritmos.html" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Videos -->
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video"></i> Estudo de Caso</span>
+              <h3 class="project-title">Arq. Limpa em Flutter</h3>
+              <p class="project-desc">App "Roda do Lanche" - Demonstração de Clean Architecture e separação de
+                responsabilidades.</p>
+              <div class="project-links">
+                <a href="https://www.youtube.com/watch?ky72JApuaLg" target="_blank"><i
+                    class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-gamepad"></i> Game Dev</span>
+              <h3 class="project-title">AlienWar (Unity)</h3>
+              <p class="project-desc">Estudo de desenvolvimento de jogos 2D para Android utilizando engine Unity.</p>
+              <div class="project-links">
+                <a href="https://www.youtube.com/watch?v=IHHj8Zp5s10" target="_blank"><i
+                    class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <div class="contact-container">
+
+          <!-- Info Side -->
+          <div class="contact-info">
+            <h3>Canais de Contato</h3>
+            <p>Estou disponível para novos projetos e consultorias. Sinta-se à vontade para entrar em contato.</p>
+
+            <div class="contact-details">
+              <a href="mailto:pconradjunior@gmail.com" class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <span>pconradjunior@gmail.com</span>
+              </a>
+              <a href="https://www.linkedin.com/in/pconradjunior/" target="_blank" class="contact-item">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>/in/pconradjunior</span>
+              </a>
+              <a href="https://instagram.com/pedrojunior.dev" target="_blank" class="contact-item">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@pedrojunior.dev</span>
+              </a>
+              <a href="https://github.com/pconradjunior" target="_blank" class="contact-item">
+                <i class="fa-brands fa-github"></i>
+                <span>@pconradjunior</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Form Side -->
+          <!-- Using formsubmit.co for static form handling with honeypot security -->
+          <form action="https://formsubmit.co/pconradjunior@gmail.com" method="POST" class="contact-form">
+
+            <!-- Configuration for FormSubmit -->
+            <input type="hidden" name="_subject" value="Novo contato via Portfolio v26!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://pconradjunior.github.io/portfolio/thanks.html">
+
+            <!-- Honeypot implementation -->
+            <input type="text" name="_honey" class="form-honey">
+
+            <div class="form-group">
+              <label for="name">Seu Nome</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Como devo te chamar?" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Seu E-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="exemplo@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <div class="select-wrapper">
+                <select name="assunto" id="assunto" class="form-control">
+                  <option value="Consultoria">Consultoria</option>
+                  <option value="Mobile App">Desenvolvimento Mobile</option>
+                  <option value="Web System">Sistema Web</option>
+                  <option value="Outro">Outro assunto</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" class="form-control"
+                placeholder="Conte-me mais sobre sua ideia..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Enviar Mensagem <i class="fa fa-paper-plane"></i></button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="rodape">
-    Desenvolvido por Pedro Conrad Jr. - com imagens do Pixabay
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io">
 
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Pedro Conrad Jr. Todos os direitos reservados.</p>
+      <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v26 - Designed with CSS & Glassmorphism</p>
+    </div>
   </footer>
+
 </body>
 
 </html>

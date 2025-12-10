@@ -7,140 +7,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Artigo Técnico: Implementação de Verificação de Versão em Apps Flutter">
     <title>Artigo - Verificação de Versão em Flutter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style_v26.css">
 </head>
 
 <body>
+    <!-- Theme Switcher Controls -->
+    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
+    <input type="radio" name="theme" id="theme-purple" class="theme-controller">
+    <input type="radio" name="theme" id="theme-green" class="theme-controller">
+
+    <div class="theme-switcher">
+        <label for="theme-cyan" class="theme-label label-cyan"></label>
+        <label for="theme-purple" class="theme-label label-purple"></label>
+        <label for="theme-green" class="theme-label label-green"></label>
+    </div>
+
     <header>
-        <nav>
-            <a class="menu-item" href="index.html"><i class="fa fa-home">&nbsp;</i>Meu Site</a>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">P<span>C</span>Jr.</a>
+                <div class="nav-links">
+                    <a href="index.html#home">Início</a>
+                    <a href="index.html#portfolio">Voltar ao Portfolio</a>
+                </div>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section id="inicio">
-            <div class="fundos fundo-inicio"></div>
-            <div class="conteudo">
-                <h1>Implementação de Verificação de Versão em Apps Flutter</h1>
-                <p><strong>Autor:</strong> Pedro Conrad Junior<br><strong>Data:</strong> Dez. 2025</p>
+        <div class="container glass-panel">
+            <h1>Implementação de Verificação de Versão em Apps Flutter</h1>
+            <p><strong>Autor:</strong> Pedro Conrad Junior<br><strong>Data:</strong> Dez. 2025</p>
 
-                <p>No ciclo de vida de um aplicativo móvel, garantir que os usuários estejam utilizando a versão mais
-                    recente é crucial. Atualizações podem trazer novas funcionalidades, correções de bugs críticos ou
-                    melhorias de segurança. Além disso, em alguns casos, mudanças na API backend podem tornar versões
-                    antigas do app incompatíveis, exigindo uma atualização obrigatória (Force Update).</p>
+            <p>No ciclo de vida de um aplicativo móvel, garantir que os usuários estejam utilizando a versão mais
+                recente é crucial. Atualizações podem trazer novas funcionalidades, correções de bugs críticos ou
+                melhorias de segurança. Além disso, em alguns casos, mudanças na API backend podem tornar versões
+                antigas do app incompatíveis, exigindo uma atualização obrigatória (Force Update).</p>
 
-                <p>Este artigo detalha uma implementação técnica robusta e simples para verificação de versão em apps
-                    Flutter, permitindo gerenciar atualizações opcionais e obrigatórias remotamente através de um
-                    arquivo JSON.</p>
+            <p>Este artigo detalha uma implementação técnica robusta e simples para verificação de versão em apps
+                Flutter, permitindo gerenciar atualizações opcionais e obrigatórias remotamente através de um
+                arquivo JSON.</p>
 
-                <h2>Visão Geral da Solução</h2>
+            <h2>Visão Geral da Solução</h2>
 
-                <p>A solução consiste em dois componentes principais:</p>
-                <ol>
-                    <li><strong>Backend (Fonte da Verdade)</strong>: Um arquivo JSON hospedado que contém a versão mais
-                        recente e a configuração de obrigatoriedade.</li>
-                    <li><strong>Frontend (App Flutter)</strong>: Um serviço que consulta este JSON ao iniciar, compara
-                        com a versão instalada e exibe um diálogo apropriado ao usuário.</li>
-                </ol>
+            <p>A solução consiste em dois componentes principais:</p>
+            <ol>
+                <li><strong>Backend (Fonte da Verdade)</strong>: Um arquivo JSON hospedado que contém a versão mais
+                    recente e a configuração de obrigatoriedade.</li>
+                <li><strong>Frontend (App Flutter)</strong>: Um serviço que consulta este JSON ao iniciar, compara
+                    com a versão instalada e exibe um diálogo apropriado ao usuário.</li>
+            </ol>
 
-                <h3>Dependências</h3>
+            <h3>Dependências</h3>
 
-                <p>O projeto utiliza os seguintes pacotes essenciais:</p>
-                <ul>
-                    <li><code>http</code>: Para realizar a requisição GET ao arquivo JSON remoto.</li>
-                    <li><code>package_info_plus</code>: Para obter a versão atual instalada no dispositivo do usuário.
-                    </li>
-                    <li><code>version</code>: Para facilitar a comparação semântica de versões (ex: comparar se "1.0.1"
-                        &lt; "1.0.2").</li>
-                    <li><code>url_launcher</code>: Para abrir a loja de aplicativos (Google Play ou App Store) quando o
-                        usuário decidir atualizar.</li>
-                </ul>
+            <p>O projeto utiliza os seguintes pacotes essenciais:</p>
+            <ul>
+                <li><code>http</code>: Para realizar a requisição GET ao arquivo JSON remoto.</li>
+                <li><code>package_info_plus</code>: Para obter a versão atual instalada no dispositivo do usuário.
+                </li>
+                <li><code>version</code>: Para facilitar a comparação semântica de versões (ex: comparar se "1.0.1"
+                    &lt; "1.0.2").</li>
+                <li><code>url_launcher</code>: Para abrir a loja de aplicativos (Google Play ou App Store) quando o
+                    usuário decidir atualizar.</li>
+            </ul>
 
-                <h2>Detalhes da Implementação</h2>
+            <h2>Detalhes da Implementação</h2>
 
-                <h3>1. O Contrato de Dados (JSON)</h3>
+            <h3>1. O Contrato de Dados (JSON)</h3>
 
-                <p>O backend deve fornecer um JSON com a seguinte estrutura. Isso permite controlar versões diferentes
-                    para Android e iOS, além de definir URLs de loja específicas.</p>
+            <p>O backend deve fornecer um JSON com a seguinte estrutura. Isso permite controlar versões diferentes
+                para Android e iOS, além de definir URLs de loja específicas.</p>
 
-                <div class="code-window">
-                    <div class="code-window-header">
-                        <div class="code-window-buttons">
-                            <span class="code-window-button red"></span>
-                            <span class="code-window-button yellow"></span>
-                            <span class="code-window-button green"></span>
-                        </div>
+            <div class="code-window">
+                <div class="code-window-header">
+                    <div class="code-window-buttons">
+                        <span class="code-window-button red"></span>
+                        <span class="code-window-button yellow"></span>
+                        <span class="code-window-button green"></span>
                     </div>
-                    <pre><code>{
+                </div>
+                <pre><code>{
     "android_version": "2.1.0",
     "ios_version": "2.5.0",
     "mandatory": false,
     "android_store_url": "https://play.google.com/store/apps/details?id=com.example.app",
     "ios_store_url": "https://apps.apple.com/br/app/your-app-name/id1234567890"
 }</code></pre>
-                </div>
+            </div>
 
-                <p>A flag <code>mandatory</code> define se o usuário pode ou não ignorar o aviso de atualização.</p>
+            <p>A flag <code>mandatory</code> define se o usuário pode ou não ignorar o aviso de atualização.</p>
 
-                <h3>2. Lógica de Verificação (<code>VersionChecker</code>)</h3>
+            <h3>2. Lógica de Verificação (<code>VersionChecker</code>)</h3>
 
-                <p>A classe <code>VersionChecker</code> é responsável por orquestrar a verificação.</p>
+            <p>A classe <code>VersionChecker</code> é responsável por orquestrar a verificação.</p>
 
-                <ul>
-                    <li>Ela obtém a versão instalada.</li>
-                    <li>Faz o fetch do JSON remoto.</li>
-                    <li>Detecta a plataforma (Android ou iOS) para ler a chave correta do JSON.</li>
-                    <li>Compara as versões utilizando a sobrecarga de operadores da lib <code>version</code>
-                        (<code>installed &lt; remoteVersion</code>).</li>
-                </ul>
+            <ul>
+                <li>Ela obtém a versão instalada.</li>
+                <li>Faz o fetch do JSON remoto.</li>
+                <li>Detecta a plataforma (Android ou iOS) para ler a chave correta do JSON.</li>
+                <li>Compara as versões utilizando a sobrecarga de operadores da lib <code>version</code>
+                    (<code>installed &lt; remoteVersion</code>).</li>
+            </ul>
 
-                <div class="code-window">
-                    <div class="code-window-header">
-                        <div class="code-window-buttons">
-                            <span class="code-window-button red"></span>
-                            <span class="code-window-button yellow"></span>
-                            <span class="code-window-button green"></span>
-                        </div>
+            <div class="code-window">
+                <div class="code-window-header">
+                    <div class="code-window-buttons">
+                        <span class="code-window-button red"></span>
+                        <span class="code-window-button yellow"></span>
+                        <span class="code-window-button green"></span>
                     </div>
-                    <pre><code>// Exemplo simplificado da lógica de comparação
+                </div>
+                <pre><code>// Exemplo simplificado da lógica de comparação
 final bool needsUpdate = installed &lt; remoteVersion;
 final bool mandatory = data["mandatory"] == true;</code></pre>
-                </div>
+            </div>
 
-                <p>Essa separação garante que o app iOS não peça atualização se apenas a versão Android mudou, e
-                    vice-versa.</p>
+            <p>Essa separação garante que o app iOS não peça atualização se apenas a versão Android mudou, e
+                vice-versa.</p>
 
-                <h3>3. Interface do Usuário (<code>VersionDemoApp</code>)</h3>
+            <h3>3. Interface do Usuário (<code>VersionDemoApp</code>)</h3>
 
-                <p>A camada de UI reage ao resultado da verificação. O ponto crucial aqui é o tratamento da UX para
-                    atualizações obrigatórias versus opcionais.</p>
+            <p>A camada de UI reage ao resultado da verificação. O ponto crucial aqui é o tratamento da UX para
+                atualizações obrigatórias versus opcionais.</p>
 
-                <ul>
-                    <li><strong>Atualização Opcional</strong>: O diálogo possui um botão "Ignorar" e pode ser fechado
-                        clicando fora dele. O usuário escolhe se quer atualizar agora.</li>
-                    <li><strong>Atualização Obrigatória</strong>: O diálogo remove a opção de fechar.
-                        <ul>
-                            <li><code>barrierDismissible: false</code>: Impede fechar clicando fora.</li>
-                            <li><code>PopScope</code> (antigo <code>WillPopScope</code>): Intercepta o botão "Voltar" do
-                                Android, impedindo que o usuário saia do diálogo sem atualizar.</li>
-                        </ul>
-                    </li>
-                </ul>
+            <ul>
+                <li><strong>Atualização Opcional</strong>: O diálogo possui um botão "Ignorar" e pode ser fechado
+                    clicando fora dele. O usuário escolhe se quer atualizar agora.</li>
+                <li><strong>Atualização Obrigatória</strong>: O diálogo remove a opção de fechar.
+                    <ul>
+                        <li><code>barrierDismissible: false</code>: Impede fechar clicando fora.</li>
+                        <li><code>PopScope</code> (antigo <code>WillPopScope</code>): Intercepta o botão "Voltar" do
+                            Android, impedindo que o usuário saia do diálogo sem atualizar.</li>
+                    </ul>
+                </li>
+            </ul>
 
-                <p>O código abaixo ilustra como o diálogo é configurado para impedir o fechamento em casos obrigatórios:
-                </p>
+            <p>O código abaixo ilustra como o diálogo é configurado para impedir o fechamento em casos obrigatórios:
+            </p>
 
-                <div class="code-window">
-                    <div class="code-window-header">
-                        <div class="code-window-buttons">
-                            <span class="code-window-button red"></span>
-                            <span class="code-window-button yellow"></span>
-                            <span class="code-window-button green"></span>
-                        </div>
+            <div class="code-window">
+                <div class="code-window-header">
+                    <div class="code-window-buttons">
+                        <span class="code-window-button red"></span>
+                        <span class="code-window-button yellow"></span>
+                        <span class="code-window-button green"></span>
                     </div>
-                    <pre><code>showDialog(
+                </div>
+                <pre><code>showDialog(
   context: context,
   barrierDismissible: !mandatory, // Bloqueia clique fora se obrigatório
   builder: (context) {
@@ -161,55 +179,23 @@ final bool mandatory = data["mandatory"] == true;</code></pre>
     );
   },
 );</code></pre>
-                </div>
-
-                <h2>Conclusão</h2>
-
-                <p>Esta implementação oferece um controle refinado sobre o ciclo de vida do aplicativo. Ao desacoplar a
-                    regra de obrigatoriedade do código do app (colocando-a no JSON remoto), os desenvolvedores ganham a
-                    flexibilidade de "promover" uma atualização de opcional para obrigatória a qualquer momento, sem
-                    precisar lançar uma nova versão do app apenas para isso. É uma estratégia essencial para manter a
-                    base de usuários unificada e segura.</p>
             </div>
-        </section>
 
-        <section id="contato">
-            <div class="fundos fundo-contato"></div>
-            <div class="conteudo">
-                <h1>Contato</h1>
-                <p class="contato-item">
-                    Entre em contato através das redes sociais ou pelo e-mail.
-                    Informações mais completas estão no meu <a target="_blank"
-                        href="https://linkedin.com/in/pconradjunior">perfil no LinkedIn</a>.
-                </p>
+            <h2>Conclusão</h2>
 
-                <div class="lista-contato">
-                    <div class="lista-contato-item">
-                        <a target="_blank" href="mailto:pconradjunior@gmail.com" title="Enviar e-mail">
-                            <i class="fa fa-envelope contato-item-icone"></i>
-                            <p class="lista-contato-item-subtitulo">pconradjunior@gmail.com</p>
-                        </a>
-                    </div>
-                    <div class="lista-contato-item">
-                        <a target="_blank" href="https://instagram.com/pedrojunior.dev" title="Perfil do Instagram">
-                            <i class="fa-brands fa-instagram contato-item-icone "></i>
-                            <p class="lista-contato-item-subtitulo">@pedrojunior.dev</p>
-                        </a>
-                    </div>
-                    <div class="lista-contato-item">
-                        <a target="_blank" title="Perfil do LinkedIn" href="https://www.linkedin.com/in/pconradjunior/">
-                            <i class="fa-brands fa-linkedin contato-item-icone "></i>
-                            <p class="lista-contato-item-subtitulo">/in/pconradjunior</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="rodape">
-            <strong>Criado por Pedro Conrad Jr., com imagens do Pixabay.com</strong>
-        </footer>
+            <p>Esta implementação oferece um controle refinado sobre o ciclo de vida do aplicativo. Ao desacoplar a
+                regra de obrigatoriedade do código do app (colocando-a no JSON remoto), os desenvolvedores ganham a
+                flexibilidade de "promover" uma atualização de opcional para obrigatória a qualquer momento, sem
+                precisar lançar uma nova versão do app apenas para isso. É uma estratégia essencial para manter a
+                base de usuários unificada e segura.</p>
+        </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pedro Conrad Jr.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
