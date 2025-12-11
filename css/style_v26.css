@@ -845,5 +845,144 @@ footer {
 }
 
 .close-modal:hover {
-    color: var(--primary-color);
+    /* fix: use your existing accent variable */
+    color: var(--accent-color);
+}
+
+/* HAMBURGER BUTTON (keeps your color system) */
+/* -- This block is the small addition I added; it uses your variables only -- */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 6px;
+    line-height: 1;
+}
+
+/* MOBILE NAVIGATION (non-invasive, respects your theme vars) */
+@media (max-width: 880px) {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Important: we use your existing variables here (bg-primary, glass-border, text-primary) */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--bg-primary);
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        display: none;
+        /* hidden by default */
+        border-top: 1px solid var(--glass-border);
+        z-index: 998;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        font-size: 1.2rem;
+        text-align: center;
+        color: var(--text-secondary);
+        /* keep same text color behavior */
+    }
+
+    /* small improvement: make hero centered on mobile */
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero h1 span {
+        font-size: 1.8rem;
+    }
+
+    /* Make buttons shrink to fit mobile widths but keep styles */
+    .hero .btn {
+        min-width: auto;
+        padding: 0.85rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    /* stack .hero buttons */
+    .hero .btn+.btn {
+        margin-left: 0.75rem;
+    }
+
+    /* About & contact stack */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    /* Portfolio -> 1 column */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Services -> single column for readibility */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* small text adjustments for readability */
+    .project-title {
+        font-size: 1.15rem;
+    }
+
+    .project-desc,
+    .service-card p {
+        font-size: 0.95rem;
+    }
+}
+
+/* small screens */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .btn-submit {
+        padding: 0.9rem;
+    }
 }

@@ -19,13 +19,21 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/style_v26.css">
   <link rel="icon" type="image/svg+xml" href="images/flags/us.svg">
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        document.documentElement.classList.add(theme);
+      }
+    })();
+  </script>
 </head>
 
 <body>
   <!-- Theme Switcher Controls (Checkbox Hack) -->
-  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
-  <input type="radio" name="theme" id="theme-purple" class="theme-controller">
-  <input type="radio" name="theme" id="theme-green" class="theme-controller">
+  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
+  <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
+  <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
 
   <!-- Floating Switcher UI -->
   <div class="theme-switcher" title="Choose your theme">

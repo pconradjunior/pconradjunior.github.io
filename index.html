@@ -19,13 +19,22 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/style_v26.css">
   <link rel="icon" type="image/svg+xml" href="images/flags/br.svg">
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        document.documentElement.classList.add(theme);
+      }
+    })();
+  </script>
+
 </head>
 
 <body>
   <!-- Theme Switcher Controls (Checkbox Hack) -->
-  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
-  <input type="radio" name="theme" id="theme-purple" class="theme-controller">
-  <input type="radio" name="theme" id="theme-green" class="theme-controller">
+  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
+  <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
+  <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
 
   <!-- Floating Switcher UI -->
   <div class="theme-switcher" title="Escolha seu tema">
@@ -38,7 +47,10 @@
     <div class="container">
       <nav>
         <a href="#" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad Jr</span></a>
-        <div class="nav-links">
+        <button class="hamburger" id="hamburgerBtn">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
           <a href="#home">Início</a>
           <a href="#about">Sobre</a>
           <a href="#expertise">Atuação</a>
