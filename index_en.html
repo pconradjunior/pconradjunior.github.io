@@ -4,14 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pedro Conrad Jr's Professional Portfolio - Full Stack and Mobile Developer">
+  <meta name="description" content="Pedro Conrad Jr's Professional Portfolio - Full Stack & Mobile Developer">
   <title>Pedro Conrad Jr | Developer Portfolio</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style_v26.css">
+  <link rel="icon" type="image/svg+xml" href="images/flags/us.svg">
 </head>
 
 <body>
@@ -34,12 +41,12 @@
         <div class="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#expertise">Services</a>
-          <a href="#portfolio">Projects</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
           <!-- Link to PT version -->
           <a href="index.html" title="Versão em Português"><img src="https://flagcdn.com/20x15/br.png" alt="PT"
-              style="vertical-align: middle;"> PT</a>
+              style="vertical-align: middle;"> Português</a>
         </div>
       </nav>
     </div>
@@ -50,11 +57,19 @@
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content">
-          <span class="hero-greeting">Hi, I am</span>
+          <span class="hero-greeting">Hello, I am</span>
           <h1>Pedro Conrad Jr <span>Full Stack & Mobile Developer</span></h1>
-          <p>Specialist in transforming ideas into high-performance digital products. Over 20 years of experience
-            creating innovative web and mobile solutions.</p>
-          <a href="#portfolio" class="btn btn-primary">See Projects</a>
+          <p>Specialist in transforming ideas into high-performance digital products. Over 20 years creating innovative
+            web and mobile solutions.</p>
+          <div style="display: flex; gap: 15px; margin-top: 20px;">
+            <a href="#projects" class="btn btn-primary">View Portfolio</a>
+            <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/pconradjunior" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://instagram.com/pedrojunior.dev" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
         </div>
       </div>
     </section>
@@ -65,18 +80,18 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-grid">
           <div class="about-text">
-            <p>I am an IT professional with extensive experience in critical systems development. Currently, I work as
-              an IT Analyst at the Federal University of Pampa (Unipampa).</p>
-            <p>My passion lies in combining robust software architecture with intuitive interfaces. I have expertise in
+            <p>I am an IT professional with extensive experience in systems development. Currently, I work as
+              an IT Analyst at Universidade Federal do Pampa (Unipampa).</p>
+            <p>My passion lies in unifying robust software architecture with intuitive interfaces. I have expertise in
               PHP, Javascript, Flutter, and agile methodologies like Scrum and Kanban.</p>
-            <p>I constantly seek to refine complex requirements and deliver software that not only functions but
-              delights the end user.</p>
+            <p>I constantly seek to refine complex requirements and deliver software that not only works but delights
+              the end-user.</p>
           </div>
           <div class="about-stats">
             <div class="stats-grid">
               <div class="stat-card">
                 <span class="stat-number">20+</span>
-                <span class="stat-label">Years Expertise</span>
+                <span class="stat-label">Years of Experience</span>
               </div>
               <div class="stat-card">
                 <span class="stat-number">50+</span>
@@ -97,134 +112,324 @@
       <div class="container">
         <h2 class="section-title">My Expertise</h2>
         <div class="services-grid">
+          <!-- Card 1 -->
           <div class="service-card">
-            <i class="fa fa-code service-icon"></i>
-            <h3>Web Development</h3>
-            <p>Development of complex systems and institutional sites. Robust backend and modern, responsive frontend.
-            </p>
+            <div class="service-icon"><i class="fa fa-laptop-code"></i></div>
+            <h3>Web Systems & Sites</h3>
+            <p>I plan, develop, and deploy hosting for complex web systems and sites. Expertise in PHP, Laravel,
+              Javascript, and APIs.</p>
           </div>
+          <!-- Card 2 -->
           <div class="service-card">
-            <i class="fa fa-mobile-screen service-icon"></i>
-            <h3>Mobile Apps</h3>
-            <p>Creation of native and hybrid (Flutter) apps for Android and iOS, from conception to store publication.
-            </p>
+            <div class="service-icon"><i class="fa fa-mobile-screen"></i></div>
+            <h3>Mobile Applications</h3>
+            <p>From concept to store publication. Modern agile development for Android and iOS using Flutter.</p>
           </div>
+          <!-- Card 3 -->
           <div class="service-card">
-            <i class="fa fa-lightbulb service-icon"></i>
-            <h3>Consulting</h3>
-            <p>Strategic guidance for companies in choosing the best technologies and software architectures.</p>
+            <div class="service-icon"><i class="fa fa-handshake"></i></div>
+            <h3>IT Consulting</h3>
+            <p>I guide companies in finding the best Information Technology solutions aligned with their specific
+              business scenarios.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- Projects Section (Grouped) -->
+    <section id="projects" class="portfolio">
       <div class="container">
-        <h2 class="section-title">Recent Portfolio</h2>
-        <div class="portfolio-grid">
-
-          <!-- Mobile Apps -->
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-mobile"></i> Application</span>
-              <h3 class="project-title">Unipampa App</h3>
-              <p class="project-desc">Official University app, serving students and faculty. Full integration with
-                academic systems.</p>
-              <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=br.edu.unipampa.app" target="_blank"
-                  title="Google Play"><i class="fa-brands fa-google-play"></i></a>
-                <a href="https://apps.apple.com/app/app-unipampa/id1639927711" target="_blank" title="App Store"><i
-                    class="fa-brands fa-apple"></i></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-mobile"></i> Application</span>
-              <h3 class="project-title">SmellCheck</h3>
-              <p class="project-desc">Monitoring of the sense of smell evolution. Useful tool for post-viral tracking.
-              </p>
-              <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=pconradjunior.smellcheck" target="_blank"><i
-                    class="fa-brands fa-google-play"></i></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-mobile"></i> Application</span>
-              <h3 class="project-title">FingerNotes</h3>
-              <p class="project-desc">Secure notepad with local biometric authentication.</p>
-              <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=pconradjunior.fingernotes" target="_blank"><i
-                    class="fa-brands fa-google-play"></i></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Web Systems -->
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-server"></i> Web System</span>
-              <h3 class="project-title">GURI</h3>
-              <p class="project-desc">Unified Institutional Resource Management. The central academic ERP of UNIPAMPA.
-              </p>
-            </div>
-          </article>
-
-          <!-- Articles -->
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-newspaper"></i> Technical Article</span>
-              <h3 class="project-title">Facial Recognition</h3>
-              <p class="project-desc">Implementation of a Multi-user Facial Recognition System in Flutter.</p>
-              <div class="project-links">
-                <a href="article_reconhecimento_facial.html" target="_blank"><i class="fa fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-newspaper"></i> Technical Article</span>
-              <h3 class="project-title">Algorithms</h3>
-              <p class="project-desc">Algorithm: A Seven-Headed Beast? Article demystifying programming logic.</p>
-              <div class="project-links">
-                <a href="article_algoritmos.html" target="_blank"><i class="fa fa-external-link-alt"></i></a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Videos -->
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-video"></i> Case Study</span>
-              <h3 class="project-title">Clean Arch in Flutter</h3>
-              <p class="project-desc">"Roda do Lanche" App - Demonstration of Clean Architecture and separation of
-                concerns.</p>
-              <div class="project-links">
-                <a href="https://www.youtube.com/watch?ky72JApuaLg" target="_blank"><i
-                    class="fa-brands fa-youtube"></i></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="fa fa-gamepad"></i> Game Dev</span>
-              <h3 class="project-title">AlienWar (Unity)</h3>
-              <p class="project-desc">2D Game Development Study for Android using Unity engine.</p>
-              <div class="project-links">
-                <a href="https://www.youtube.com/watch?v=IHHj8Zp5s10" target="_blank"><i
-                    class="fa-brands fa-youtube"></i></a>
-              </div>
-            </div>
-          </article>
-
+        <h2 class="section-title">My Projects</h2>
+        <div class="about-text" style="margin-bottom: 2rem; text-align: center;">
+          <p>Here you can see some of the most important projects I developed, grouped by type.
+            Some of them may also contain demo videos available on YouTube.</p>
         </div>
+
+
+        <!-- Mobile Apps Subsection -->
+        <div id="mobile" style="padding-top: 2rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Mobile Applications</h3>
+          <div class="portfolio-grid">
+
+            <!-- App Unipampa -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-mobile"></i> Flutter</span>
+                <h3 class="project-title">App Unipampa</h3>
+                <p class="project-desc">Unipampa's official app. Integrates news, cafeteria menus, and academic
+                  services.
+                </p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=br.edu.unipampa.app" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                  <a href="https://apps.apple.com/app/app-unipampa/id1639927711" target="_blank" title="iOS"><i
+                      class="fa-brands fa-apple"></i></a>
+                  <button onclick="openVideo('mgvavs5VOgU')" class="btn-link" title="Watch Demo"><i
+                      class="fa fa-play-circle"></i>Watch Demo</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- SmellCheck -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-mobile"></i> Flutter</span>
+                <h3 class="project-title">SmellCheck</h3>
+                <p class="project-desc">Allows monitoring of the evolution of the sense of smell. Helper tool for
+                  medical
+                  treatments.</p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.smellcheck" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                  <button onclick="openVideo('t1P1dCydtUo')" class="btn-link" title="Watch Demo"><i
+                      class="fa fa-play-circle"></i>Watch Demo</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- FingerNotes -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-fingerprint"></i> Flutter</span>
+                <h3 class="project-title">FingerNotes</h3>
+                <p class="project-desc">Secure notepad with local biometric authentication and encryption.</p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.fingernotes" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                  <button onclick="openVideo('hGdydq2jhJI')" class="btn-link" title="Watch Demo"><i
+                      class="fa fa-play-circle"></i>Watch Demo</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PhisiCalc -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-calculator"></i> Android</span>
+                <h3 class="project-title">PhisiCalc</h3>
+                <p class="project-desc">Body Composition Calculator. Helps gym professionals in physical assessments.
+                </p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.phisicalc" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- LembraMed (Study) -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-heart-pulse"></i> Flutter (Study)</span>
+                <h3 class="project-title">LembraMed</h3>
+                <p class="project-desc">Medical control app, including appointments, blood pressure, and heart rate
+                  logs.
+                </p>
+                <div class="project-links">
+                  <button onclick="openVideo('hUdgk81DGuk')" class="btn-link" title="Watch Demo"><i
+                      class="fa fa-play-circle"></i>Watch Demo</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Web Systems Subsection -->
+        <div id="web" style="padding-top: 4rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Web Systems</h3>
+          <div class="portfolio-grid">
+
+            <!-- GURI -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-server"></i> PHP / PostgreSQL</span>
+                <h3 class="project-title">GURI</h3>
+                <p class="project-desc">Unified Enterprise Resource Management. The central academic ERP for UNIPAMPA.
+                </p>
+                <div class="project-links">
+                  <a href="https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+                    target="_blank" class="btn-link" title="Read News"><i class="fa fa-newspaper"></i> News</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SGCE -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-certificate"></i> PHP / CodeIgniter</span>
+                <h3 class="project-title">SGCE</h3>
+                <p class="project-desc">Electronic Certificate Management System. Document issuance and validation.</p>
+                <div class="project-links">
+                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf" target="_blank"
+                    class="btn-link" title="Read Article"><i class="fa fa-file-pdf"></i> PDF</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Moodle Maintenance -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-graduation-cap"></i> LMS / Moodle</span>
+                <h3 class="project-title">LMS Maintenance</h3>
+                <p class="project-desc">Maintenance of the Moodle/LMS structure for distance learning courses at UFPEL.
+                </p>
+              </div>
+            </article>
+
+            <!-- Portal URCAMP -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-globe"></i> Legacy Web</span>
+                <h3 class="project-title">URCAMP Portal</h3>
+                <p class="project-desc">Development and management of URCAMP's Institutional Portal (2006-2009).</p>
+              </div>
+            </article>
+
+            <!-- Congrega -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-calendar-check"></i> Legacy Web</span>
+                <h3 class="project-title">Congrega Events</h3>
+                <p class="project-desc">Submission and registration management system for the Congrega URCAMP event
+                  (2005).</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Articles Subsection -->
+        <div id="articles" style="padding-top: 4rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Technical Articles</h3>
+          <div class="portfolio-grid">
+
+            <!-- Version Check -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-file-code"></i> Article (PT)</span>
+                <h3 class="project-title">Version Check</h3>
+                <p class="project-desc">Implementation of Version Check (Force Update) in Flutter Apps.</p>
+                <div class="project-links">
+                  <a href="article_versioncheck.html" target="_blank" class="btn-link"><i class="fa fa-book-open"></i>
+                    Read</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Face Auth -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-id-card"></i> Article (PT)</span>
+                <h3 class="project-title">Facial Recognition</h3>
+                <p class="project-desc">Implementation of an offline multi-user facial biometric system in Flutter.</p>
+                <div class="project-links">
+                  <a href="article_reconhecimento_facial.html" target="_blank" class="btn-link"><i
+                      class="fa fa-book-open"></i> Read</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- iOS Guide -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-apple"></i> Article (PT)</span>
+                <h3 class="project-title">iOS Guide</h3>
+                <p class="project-desc">What do you need to create iOS apps? Costs and steps for entrepreneurs.</p>
+                <div class="project-links">
+                  <a href="article_ios.html" target="_blank" class="btn-link"><i class="fa fa-book-open"></i> Read</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Algorithms -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-sitemap"></i> Article (PT)</span>
+                <h3 class="project-title">Algorithms</h3>
+                <p class="project-desc">Algorithms: A Seven-Headed Beast? Demystifying programming logic.</p>
+                <div class="project-links">
+                  <a href="article_algoritmos.html" target="_blank" class="btn-link"><i class="fa fa-book-open"></i>
+                    Read</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- External Articles List -->
+            <article class="project-card span-2">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-link"></i> External Publications</span>
+                <h3 class="project-title">Other Publications</h3>
+                <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+                  <a href="https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria"
+                    target="_blank" class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-external-link-alt"></i> Unipampa App brings innovation to community</a>
+
+                  <a href="https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios"
+                    target="_blank" class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-external-link-alt"></i> Unipampa App available for iOS</a>
+
+                  <a href="http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf" target="_blank"
+                    class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-file-pdf"></i> Using CodeIgniter in Management Systems (PDF)</a>
+
+                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf" target="_blank"
+                    class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-file-pdf"></i> SisRel - Dynamic Data Extraction System (PDF)</a>
+
+                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf" target="_blank"
+                    class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-file-pdf"></i> Web Protocol System based on Design Patterns (PDF)</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Videos Subsection -->
+        <div id="videos" style="padding-top: 4rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Video Material & Demos</h3>
+          <div class="portfolio-grid">
+
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-video"></i> Clean Arch</span>
+                <h3 class="project-title">Snack Wheel</h3>
+                <p class="project-desc">Clean Architecture and Responsibility Wheel study case.</p>
+                <div class="project-links">
+                  <button onclick="openVideo('ky72JApuaLg')" class="btn-link" title="Watch"><i
+                      class="fa fa-play-circle"></i> Watch</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-video"></i> Responsiveness</span>
+                <h3 class="project-title">Portfolio Demo</h3>
+                <p class="project-desc">Same codebase running smoothly on Mobile (Android) and Web (Browser).</p>
+                <div class="project-links">
+                  <button onclick="openVideo('WTa4rXAw9gg')" class="btn-link" title="Watch"><i
+                      class="fa fa-play-circle"></i> Watch</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-gamepad"></i> Game Dev</span>
+                <h3 class="project-title">AlienWar</h3>
+                <p class="project-desc">2D Game Development study using Unity Engine.</p>
+                <div class="project-links">
+                  <button onclick="openVideo('IHHj8Zp5s10')" class="btn-link" title="Watch"><i
+                      class="fa fa-play-circle"></i> Watch</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -237,7 +442,7 @@
           <!-- Info Side -->
           <div class="contact-info">
             <h3>Contact Channels</h3>
-            <p>I am available for new projects and consulting. Feel free to get in touch.</p>
+            <p>I am available for new projects and consulting. Feel free to reach out.</p>
 
             <div class="contact-details">
               <a href="mailto:pconradjunior@gmail.com" class="contact-item">
@@ -260,13 +465,9 @@
           </div>
 
           <!-- Form Side -->
-          <form action="https://formsubmit.co/pconradjunior@gmail.com" method="POST" class="contact-form">
-
-            <input type="hidden" name="_subject" value="New contact via Portfolio v26!">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://pconradjunior.github.io/portfolio/thanks.html">
-
-            <input type="text" name="_honey" class="form-honey">
+          <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="39b311c5-6dc8-443a-8cb3-91516f8cf9e3">
+            <input type="hidden" name="redirect" value="https://pconradjunior.github.io/thanks.html">
 
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -275,18 +476,18 @@
             </div>
 
             <div class="form-group">
-              <label for="email">Your Email</label>
+              <label for="email">Your E-mail</label>
               <input type="email" id="email" name="email" class="form-control" placeholder="example@email.com" required>
             </div>
 
             <div class="form-group">
-              <label for="assunto">Subject</label>
+              <label for="subject">Subject</label>
               <div class="select-wrapper">
-                <select name="assunto" id="assunto" class="form-control">
-                  <option value="Consulting">Consulting</option>
-                  <option value="Mobile App">Mobile Development</option>
-                  <option value="Web System">Web System</option>
-                  <option value="Other">Other subject</option>
+                <select name="subject" id="subject" class="form-control">
+                  <option value="[Contact via Portfolio] Consulting">Consulting</option>
+                  <option value="[Contact via Portfolio] Mobile Development">Mobile Development</option>
+                  <option value="[Contact via Portfolio] Web System">Web System</option>
+                  <option value="[Contact via Portfolio] Other">Other</option>
                 </select>
               </div>
             </div>
@@ -296,6 +497,7 @@
               <textarea id="message" name="message" rows="5" class="form-control"
                 placeholder="Tell me more about your idea..." required></textarea>
             </div>
+            <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="en"></div>
 
             <button type="submit" class="btn btn-submit">Send Message <i class="fa fa-paper-plane"></i></button>
           </form>
@@ -310,6 +512,22 @@
       <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v26 - Designed with CSS & Glassmorphism</p>
     </div>
   </footer>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeVideo()">&times;</span>
+      <div class="video-container">
+        <iframe id="videoFrame" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script src="js/app.js"></script>
 
 </body>
 

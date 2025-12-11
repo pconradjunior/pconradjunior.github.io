@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado pelo seu contato!</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style_v26.css">
+    <link rel="icon" type="image/svg+xml" href="images/flags/br.svg">
+    <style>
+        .thanks-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+
+        .thanks-icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Theme Switcher Controls -->
+    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
+    <input type="radio" name="theme" id="theme-purple" class="theme-controller">
+    <input type="radio" name="theme" id="theme-green" class="theme-controller">
+
+    <div class="theme-switcher">
+        <label for="theme-cyan" class="theme-label label-cyan"></label>
+        <label for="theme-purple" class="theme-label label-purple"></label>
+        <label for="theme-green" class="theme-label label-green"></label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad
+                        Jr</span></a>
+                <div class="nav-links">
+                    <a href="index.html#home">Início</a>
+                    <a href="index.html#portfolio">Voltar ao Portfolio</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container glass-panel">
+            <div class="thanks-container">
+                <i class="fa-regular fa-paper-plane thanks-icon"></i>
+                <h1 class="gradient-text">Obrigado pelo contato!</h1>
+                <p style="font-size: 1.2rem; margin: 1.5rem 0; color: var(--text-muted);">
+                    Sua mensagem foi enviada com sucesso.<br>
+                    Responderei o mais breve possível.
+                </p>
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar ao site
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pedro Conrad Jr. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v26 - Designed with CSS & Glassmorphism</p>
+        </div>
+    </footer>
+</body>
+
+</html>

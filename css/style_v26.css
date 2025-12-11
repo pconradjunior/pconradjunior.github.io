@@ -261,6 +261,17 @@ nav {
     overflow: hidden;
 }
 
+/* Hero specific button styling for uniformity */
+.hero .btn {
+    min-width: 160px;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
 .btn-primary {
     background: transparent;
     color: var(--accent-color);
@@ -661,4 +672,178 @@ footer {
     .glass-panel h1 {
         font-size: 2rem;
     }
+}
+
+/* --- Adições (Update v27) --- */
+
+/* Botão Link (Vídeos) - Invertido: Fundo Accent, Texto Preto */
+.btn-link {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-body);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--accent-glow);
+    filter: brightness(1.1);
+    color: #000;
+}
+
+/* Utilitário de Grid Span 2 */
+.span-2 {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .span-2 {
+        grid-column: span 1 !important;
+        /* Retorna a 1 coluna no mobile */
+    }
+}
+
+/* Links Externos (Lista de Artigos) */
+.external-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.external-link:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+
+/* Botão Secundário (Social) */
+.btn-secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+/* Select2 */
+.select2-container {
+    width: 100%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+}
+
+.dark-dropdown {
+    background: var(--glass-bg) !important;
+    color: var(--text-secondary) !important;
+}
+
+.dark-dropdown .select2-results__options {
+    background: var(--glass-bg) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* Make Select2 closed state match dark theme */
+.select2-container .select2-selection--single {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--glass-border) !important;
+    height: 48px;
+    /* match your .form-control padding */
+    border-radius: 8px;
+    color: var(--text-primary);
+}
+
+/* Fix the rendered text color */
+.select2-container .select2-selection--single .select2-selection__rendered {
+    color: var(--text-primary) !important;
+    line-height: 48px;
+    /* align text vertically */
+    padding-left: 12px;
+}
+
+/* Dark arrow */
+.select2-container .select2-selection--single .select2-selection__arrow {
+    height: 48px;
+}
+
+.select2-container .select2-selection--single .select2-selection__arrow b {
+    border-color: var(--text-primary) transparent transparent transparent !important;
+}
+
+/* Optional hover/focus highlight */
+.select2-container--default .select2-selection--single:focus,
+.select2-container--default .select2-selection--single:hover {
+    border-color: var(--accent-color) !important;
+}
+
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
 }
