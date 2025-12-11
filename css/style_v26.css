@@ -228,6 +228,16 @@ nav {
     display: block;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.hero-buttons .btn {
+    flex: 1;
+}
+
 .hero h1 {
     font-family: var(--font-heading);
     font-size: 4rem;
@@ -654,9 +664,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .contact-container {
-        grid-template-columns: 1fr;
-        padding: 2rem;
+    /*Hide contact form on mobile*/
+    .contact-form {
+        display: none;
     }
 
     nav {
@@ -875,6 +885,11 @@ footer {
         display: block;
     }
 
+    .logo span {
+        /* Display logo text only on desktop */
+        display: none;
+    }
+
     /* Important: we use your existing variables here (bg-primary, glass-border, text-primary) */
     .nav-links {
         position: absolute;
@@ -906,6 +921,7 @@ footer {
     /* small improvement: make hero centered on mobile */
     .hero {
         padding-top: 120px;
+        margin: auto;
     }
 
     .hero h1 {
@@ -928,14 +944,23 @@ footer {
         margin-left: 0.75rem;
     }
 
+    .hero-buttons {
+        flex-direction: column;
+    }
+
     /* About & contact stack */
     .about-grid {
         grid-template-columns: 1fr;
     }
 
+    .contact {
+        padding: 2rem;
+        width: 80%;
+        margin: auto;
+    }
+
     .contact-container {
         grid-template-columns: 1fr;
-        padding: 2rem;
     }
 
     /* Portfolio -> 1 column */

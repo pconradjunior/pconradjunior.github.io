@@ -45,6 +45,9 @@
   <header>
     <div class="container">
       <nav>
+        <button class="hamburger" id="hamburgerBtn">
+          <i class="fa fa-bars"></i>
+        </button>
         <a href="#" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad Jr</span></a>
         <div class="nav-links">
           <a href="#home">Home</a>
@@ -69,7 +72,7 @@
           <h1>Pedro Conrad Jr <span>Full Stack & Mobile Developer</span></h1>
           <p>Specialist in transforming ideas into high-performance digital products. Over 20 years creating innovative
             web and mobile solutions.</p>
-          <div style="display: flex; gap: 15px; margin-top: 20px;">
+          <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View Portfolio</a>
             <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i
                 class="fa-brands fa-github"></i> GitHub</a>
@@ -256,7 +259,8 @@
                 </p>
                 <div class="project-links">
                   <a href="https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
-                    target="_blank" class="btn-link" title="Read News"><i class="fa fa-newspaper"></i> News</a>
+                    target="_blank" class="btn-link" style="color: #000;" title="Read News"><i
+                      class="fa fa-newspaper"></i> News</a>
                 </div>
               </div>
             </article>
@@ -269,7 +273,7 @@
                 <p class="project-desc">Electronic Certificate Management System. Document issuance and validation.</p>
                 <div class="project-links">
                   <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf" target="_blank"
-                    class="btn-link" title="Read Article"><i class="fa fa-file-pdf"></i> PDF</a>
+                    class="btn-link" style="color: #000;" title="Read Article"><i class="fa fa-file-pdf"></i> PDF</a>
                 </div>
               </div>
             </article>
@@ -318,8 +322,8 @@
                 <h3 class="project-title">Version Check</h3>
                 <p class="project-desc">Implementation of Version Check (Force Update) in Flutter Apps.</p>
                 <div class="project-links">
-                  <a href="article_versioncheck.html" target="_blank" class="btn-link"><i class="fa fa-book-open"></i>
-                    Read</a>
+                  <a href="article_versioncheck.html" target="_blank" class="btn-link" style="color: #000;"><i
+                      class="fa fa-book-open"></i> Read</a>
                 </div>
               </div>
             </article>
@@ -331,7 +335,7 @@
                 <h3 class="project-title">Facial Recognition</h3>
                 <p class="project-desc">Implementation of an offline multi-user facial biometric system in Flutter.</p>
                 <div class="project-links">
-                  <a href="article_reconhecimento_facial.html" target="_blank" class="btn-link"><i
+                  <a href="article_reconhecimento_facial.html" target="_blank" class="btn-link" style="color: #000;"><i
                       class="fa fa-book-open"></i> Read</a>
                 </div>
               </div>
@@ -344,7 +348,8 @@
                 <h3 class="project-title">iOS Guide</h3>
                 <p class="project-desc">What do you need to create iOS apps? Costs and steps for entrepreneurs.</p>
                 <div class="project-links">
-                  <a href="article_ios.html" target="_blank" class="btn-link"><i class="fa fa-book-open"></i> Read</a>
+                  <a href="article_ios.html" target="_blank" class="btn-link" style="color: #000;"><i
+                      class="fa fa-book-open"></i> Read</a>
                 </div>
               </div>
             </article>
@@ -356,7 +361,8 @@
                 <h3 class="project-title">Algorithms</h3>
                 <p class="project-desc">Algorithms: A Seven-Headed Beast? Demystifying programming logic.</p>
                 <div class="project-links">
-                  <a href="article_algoritmos.html" target="_blank" class="btn-link"><i class="fa fa-book-open"></i>
+                  <a href="article_algoritmos.html" target="_blank" class="btn-link" style="color: #000;"><i
+                      class="fa fa-book-open"></i>
                     Read</a>
                 </div>
               </div>
@@ -369,23 +375,23 @@
                 <h3 class="project-title">Other Publications</h3>
                 <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
                   <a href="https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria"
-                    target="_blank" class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                    target="_blank" class="external-link" style="justify-content: flex-start; text-align: left;"><i
                       class="fa fa-external-link-alt"></i> Unipampa App brings innovation to community</a>
 
                   <a href="https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios"
-                    target="_blank" class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                    target="_blank" class="external-link" style="justify-content: flex-start; text-align: left;"><i
                       class="fa fa-external-link-alt"></i> Unipampa App available for iOS</a>
 
                   <a href="http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf" target="_blank"
-                    class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
                       class="fa fa-file-pdf"></i> Using CodeIgniter in Management Systems (PDF)</a>
 
                   <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf" target="_blank"
-                    class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
                       class="fa fa-file-pdf"></i> SisRel - Dynamic Data Extraction System (PDF)</a>
 
                   <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf" target="_blank"
-                    class="btn-link" style="justify-content: flex-start; text-align: left;"><i
+                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
                       class="fa fa-file-pdf"></i> Web Protocol System based on Design Patterns (PDF)</a>
                 </div>
               </div>
