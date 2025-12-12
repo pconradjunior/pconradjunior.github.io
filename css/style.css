@@ -674,10 +674,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
+
 
     .glass-panel {
         padding: 1.5rem;
