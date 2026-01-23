@@ -725,6 +725,19 @@ footer {
     }
 }
 
+/* Specific responsiveness for Articles Section */
+.articles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.external-links-container {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+
 /* Links Externos (Lista de Artigos) */
 .external-link {
     color: var(--text-primary);
