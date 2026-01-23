@@ -732,8 +732,8 @@ footer {
 
 .external-links-container {
     margin-top: 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
