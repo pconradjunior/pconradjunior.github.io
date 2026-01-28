@@ -1,43 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio Profissional de Pedro Conrad Jr - Desenvolvedor Full Stack e Mobile">
-  <title>Pedro Conrad Jr | Developer Portfolio</title>
-
-  <!-- jQuery -->
+  <title>Pedro Conrad Jr | Portfolio</title>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- Select2 -->
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="images/flags/br.svg">
   <script>
     (function () {
       const theme = localStorage.getItem("theme");
-      if (theme) {
-        document.documentElement.classList.add(theme);
-      }
+      if (theme) document.documentElement.classList.add(theme);
     })();
   </script>
-
 </head>
-
 <body>
-  <!-- Theme Switcher Controls (Checkbox Hack) -->
   <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
   <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
   <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
 
-  <!-- Floating Switcher UI -->
-  <div class="theme-switcher" title="Escolha seu tema">
+  <div class="theme-switcher">
     <label for="theme-cyan" class="theme-label label-cyan"></label>
     <label for="theme-purple" class="theme-label label-purple"></label>
     <label for="theme-green" class="theme-label label-green"></label>
@@ -46,520 +31,119 @@
   <header>
     <div class="container">
       <nav>
-        <button class="hamburger" id="hamburgerBtn">
-          <i class="fa fa-bars"></i>
-        </button>
+        <button class="hamburger" id="hamburgerBtn"><i class="fa fa-bars"></i></button>
         <a href="#" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad Jr</span></a>
         <div class="nav-links" id="navLinks">
-          <a href="#home">Início</a>
-          <a href="#about">Sobre</a>
-          <a href="#expertise">Atuação</a>
-          <a href="#projects">Projetos</a>
-          <a href="#contact">Contato</a>
-          <!-- Link para versão EN mantido discreto -->
-          <a href="index_en.html" title="English Version"><img src="https://flagcdn.com/20x15/us.png" alt="EN"
-              style="vertical-align: middle;"> English</a>
+          <a href="#home" data-i18n="nav_home"></a>
+          <a href="#about" data-i18n="nav_about"></a>
+          <a href="#expertise" data-i18n="nav_expertise"></a>
+          <a href="#projects" data-i18n="nav_projects"></a>
+          <a href="#contact" data-i18n="nav_contact"></a>
+          <div class="lang-selector-nav"><div id="lang-selector"></div></div>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content">
-          <span class="hero-greeting">Olá, eu sou</span>
-          <h1>Pedro Conrad Jr <span>Desenvolvedor Full Stack & Mobile</span></h1>
-          <p>Especialista em transformar ideias em produtos digitais de alta performance. Mais de 20 anos
-            criando
-            soluções web e mobile inovadoras.</p>
+          <span class="hero-greeting" data-i18n="hero_greeting"></span>
+          <h1>Pedro Conrad Jr <span data-i18n="hero_role"></span></h1>
+          <p data-i18n="hero_p"></p>
           <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-            <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i
-                class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/pconradjunior" target="_blank" class="btn btn-secondary"><i
-                class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="https://instagram.com/pedrojunior.dev" target="_blank" class="btn btn-secondary"><i
-                class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="#projects" class="btn btn-primary" data-i18n="btn_projects"></a>
+            <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/pconradjunior" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
-        <h2 class="section-title">Sobre Mim</h2>
+        <h2 class="section-title"></h2>
         <div class="about-grid">
-          <div class="about-text">
-            <p>Sou um profissional de Tecnologia da Informação com mais de 20 anos de experiência no desenvolvimento de sistemas web e mobile. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa).</p>
-            <p>Atuei como Coordenador Substituto da Equipe de Desenvolvimento de Sistemas (2016-2019), liderando projetos críticos e a capacitação de equipes. Minha paixão está em unir arquitetura de software robusta com interfaces intuitivas.</p>
-            <p>Tenho expertise em PHP (CodeIgniter), Javascript, Flutter, Docker e bancos de dados como PostgreSQL, MySQL e IBM DB2, sempre utilizando metodologias ágeis como Scrum e Kanban.</p>
-          </div>
-          <div class="about-stats">
-            <div class="stats-grid">
-              <div class="stat-card">
-                <span class="stat-number">20+</span>
-                <span class="stat-label">Anos de Experiência</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Projetos</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-number">20k+</span>
-                <span class="stat-label">Downloads de Apps</span>
-              </div>
-            </div>
-          </div>
+          <div class="about-text"></div>
+          <div class="about-stats"><div class="stats-grid"></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Expertise Section -->
     <section id="expertise" class="services">
       <div class="container">
-        <h2 class="section-title">Minha Atuação</h2>
-        <div class="services-grid">
-          <!-- Card 1 -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fa fa-laptop-code"></i></div>
-            <h3>Sistemas Web & APIs</h3>
-            <p>Desenvolvimento de ERPs e sistemas críticos com PHP (CodeIgniter) e bancos como PostgreSQL, MySQL e IBM DB2. Foco em escalabilidade e Docker.</p>
-          </div>
-          <!-- Card 2 -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fa fa-mobile-screen"></i></div>
-            <h3>Aplicativos Mobile</h3>
-            <p>Desenvolvimento moderno para Android e iOS utilizando Flutter, com integração de biometria e serviços institucionais.</p>
-          </div>
-          <!-- Card 3 -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fa fa-handshake"></i></div>
-            <h3>Liderança e Capacitação</h3>
-            <p>Gestão técnica de equipes, levantamento de requisitos complexos e treinamento de desenvolvedores em boas práticas e arquitetura.</p>
-          </div>
-        </div>
+        <h2 class="section-title"></h2>
+        <div class="services-grid"></div>
       </div>
     </section>
 
-    <!-- Projects Section (Grouped) -->
     <section id="projects" class="portfolio">
       <div class="container">
-        <h2 class="section-title">Meus Projetos</h2>
-
-        <div class="about-text" style="margin-bottom: 2rem; text-align: center;">
-          <p>Nesta seção estão alguns dos projetos mais importantes que desenvolvi durante minha trajetória
-            profissional, agrupados por tipo de projeto. Alguns deles também podem conter vídeos de demonstração
-            disponíveis no YouTube.</p>
+        <h2 class="section-title" data-i18n="nav_projects"></h2>
+        <div class="subsection-wrapper">
+          <h3 data-i18n="section_mobile" class="section-title-sub"></h3>
+          <div id="grid-mobile" class="portfolio-grid"></div>
         </div>
-
-        <!-- Mobile Apps Subsection -->
-        <div id="mobile" style="padding-top: 2rem;">
-          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Aplicativos Mobile</h3>
-          <div class="portfolio-grid">
-
-            <!-- App Unipampa -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-mobile"></i> Flutter</span>
-                <h3 class="project-title">App Unipampa</h3>
-                <p class="project-desc">App oficial da Universidade Federal do Pampa. Integra notícias, cardápio do RU e
-                  serviços acadêmicos.</p>
-                <div class="project-links">
-                  <a href="https://play.google.com/store/apps/details?id=br.edu.unipampa.app" target="_blank"
-                    title="Android"><i class="fa-brands fa-google-play"></i></a>
-                  <a href="https://apps.apple.com/app/app-unipampa/id1639927711" target="_blank" title="iOS"><i
-                      class="fa-brands fa-apple"></i></a>
-                  <button onclick="openVideo('mgvavs5VOgU')" class="btn-link" title="Ver Demo"><i
-                      class="fa fa-play-circle"></i>Ver Demo</button>
-                </div>
-              </div>
-            </article>
-
-            <!-- SmellCheck -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-mobile"></i> Flutter</span>
-                <h3 class="project-title">SmellCheck</h3>
-                <p class="project-desc">Monitoramento da evolução do sentido de olfato. Ferramenta auxiliar em
-                  tratamentos médicos.</p>
-                <div class="project-links">
-                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.smellcheck" target="_blank"
-                    title="Android"><i class="fa-brands fa-google-play"></i></a>
-                  <button onclick="openVideo('t1P1dCydtUo')" class="btn-link" title="Ver Demo"><i
-                      class="fa fa-play-circle"></i>Ver Demo</button>
-                </div>
-              </div>
-            </article>
-
-            <!-- FingerNotes -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-fingerprint"></i> Flutter</span>
-                <h3 class="project-title">FingerNotes</h3>
-                <p class="project-desc">Bloco de notas seguro com autenticação biométrica local e criptografia.</p>
-                <div class="project-links">
-                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.fingernotes" target="_blank"
-                    title="Android"><i class="fa-brands fa-google-play"></i></a>
-                  <button onclick="openVideo('hGdydq2jhJI')" class="btn-link" title="Ver Demo"><i
-                      class="fa fa-play-circle"></i>Ver Demo</button>
-                </div>
-              </div>
-            </article>
-
-            <!-- PhisiCalc -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-calculator"></i> Android</span>
-                <h3 class="project-title">PhisiCalc</h3>
-                <p class="project-desc">Cálculo de Composição Corporal. Auxilia profissionais de educação física em
-                  avaliações.</p>
-                <div class="project-links">
-                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.phisicalc" target="_blank"
-                    title="Android"><i class="fa-brands fa-google-play"></i></a>
-                </div>
-              </div>
-            </article>
-
-            <!-- LembraMed (Study) -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-heart-pulse"></i> Flutter (Estudo)</span>
-                <h3 class="project-title">LembraMed</h3>
-                <p class="project-desc">Controle de medicação, consultas e registro de pressão arterial. Projeto de
-                  estudo.</p>
-                <div class="project-links">
-                  <button onclick="openVideo('hUdgk81DGuk')" class="btn-link" title="Ver Demo"><i
-                      class="fa fa-play-circle"></i>Ver Demo</button>
-                </div>
-              </div>
-            </article>
-
-          </div>
+        <div class="subsection-wrapper">
+          <h3 data-i18n="section_web" class="section-title-sub"></h3>
+          <div id="grid-web" class="portfolio-grid"></div>
         </div>
-
-        <!-- Web Systems Subsection -->
-        <div id="web" style="padding-top: 4rem;">
-          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Sistemas Web</h3>
-          <div class="portfolio-grid">
-
-            <!-- GURI -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-server"></i> PHP / CodeIgniter</span>
-                <h3 class="project-title">GURI - ERP</h3>
-                <p class="project-desc">Gestão Unificada de Recursos Institucionais. ERP modular com 50+ módulos integrados.</p>
-                <div class="project-links">
-                  <a href="https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
-                    target="_blank" class="btn-link" style="color:#000;" title="Ler Notícia"><i
-                      class="fa fa-newspaper"></i> Notícia</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- SisPPA -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-ranking-star"></i> PHP / CodeIgniter</span>
-                <h3 class="project-title">SisPPA</h3>
-                <p class="project-desc">Sistema de Pontuação da Produção Acadêmica. Sistema para contabilização e transparência na avaliação de produção docente.</p>
-              </div>
-            </article>
-
-            <!-- Terminal RU -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-fingerprint"></i> PHP / CodeIgniter</span>
-                <h3 class="project-title">Terminal RU</h3>
-                <p class="project-desc">Controle de acesso biométrico nos Restaurantes Universitários com integração hardware/software.</p>
-              </div>
-            </article>
-
-            <!-- SGCE -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-certificate"></i> PHP / CodeIgniter</span>
-                <h3 class="project-title">SGCE</h3>
-                <p class="project-desc">Gestão de Certificados Eletrônicos. Emissão, validação e verificação pública de documentos.</p>
-                <div class="project-links">
-                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf" target="_blank"
-                    class="btn-link" style="color:#000;" title="Ler Artigo"><i class="fa fa-file-pdf"></i> PDF</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Inscrição em Exames -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-pen-to-square"></i> PHP / CodeIgniter</span>
-                <h3 class="project-title">Inscrição Exames</h3>
-                <p class="project-desc">Gerenciamento de inscrições e pagamentos para provas de proficiência em idiomas.</p>
-              </div>
-            </article>
-
-
-
-          </div>
+        <div class="subsection-wrapper">
+          <h3 data-i18n="section_articles" class="section-title-sub"></h3>
+          <div id="grid-article" class="portfolio-grid"></div>
         </div>
-
-        <!-- Articles Subsection -->
-        <div id="articles" style="padding-top: 4rem;">
-          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Artigos Técnicos</h3>
-          <div class="portfolio-grid articles-grid">
-
-            <!-- Version Check -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-file-code"></i> Artigo</span>
-                <h3 class="project-title">Version Check</h3>
-                <p class="project-desc">Implementação de Verificação de Versão (Force Update) em Apps Flutter.</p>
-                <div class="project-links">
-                  <a href="article_versioncheck.html" target="_blank" class="btn-link" style="color:#000;"><i
-                      class="fa fa-book-open"></i>
-                    Ler</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Face Auth -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-id-card"></i> Artigo</span>
-                <h3 class="project-title">Reconhecimento Facial</h3>
-                <p class="project-desc">Implementação de sistema biométrico facial multiusuário offline em Flutter.</p>
-                <div class="project-links">
-                  <a href="article_reconhecimento_facial.html" target="_blank" class="btn-link" style="color:#000;"><i
-                      class="fa fa-book-open"></i> Ler</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- iOS Guide -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-apple"></i> Artigo</span>
-                <h3 class="project-title">Guia iOS</h3>
-                <p class="project-desc">O que é preciso para criar apps iOS? Custos e etapas para empresários.</p>
-                <div class="project-links">
-                  <a href="article_ios.html" target="_blank" class="btn-link" style="color:#000;"><i
-                      class="fa fa-book-open"></i> Ler</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Algorithms -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-sitemap"></i> Artigo</span>
-                <h3 class="project-title">Algoritmos</h3>
-                <p class="project-desc">Algoritmo: Bicho de Sete Cabeças? Desmistificando a lógica de programação.</p>
-                <div class="project-links">
-                  <a href="article_algoritmos.html" target="_blank" class="btn-link" style="color:#000;"><i
-                      class="fa fa-book-open"></i>
-                    Ler</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Treinamento Técnico -->
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-chalkboard-teacher"></i> Mentoria / Treinamento Técnico</span>
-                <h3 class="project-title">Capacitação Dev</h3>
-                <p class="project-desc">Desenvolvimento de material e instrução técnica para novos desenvolvedores da instituição.</p>
-              </div>
-            </article>
-
-            <!-- External Articles List -->
-            <article class="project-card span-2">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-link"></i> Publicações Externas</span>
-                  <h3 class="project-title">Artigos Publicados em Eventos</h3>
-                  <div class="external-links-container">
-                  <a href="http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf" target="_blank"
-                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
-                      class="fa fa-file-pdf"></i> Uso do CodeIgniter em Sistemas de Gestão (PDF)</a>
-                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf" target="_blank"
-                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
-                      class="fa fa-file-pdf"></i> SisRel - Sistema Dinâmico de Extração de Dados (PDF)</a>
-                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf" target="_blank"
-                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
-                      class="fa fa-file-pdf"></i> Sistema de Protocolo Web baseado em Design Patterns (PDF)</a>
-                </div>
-                <br/>
-                <h3 class="project-title">No LinkedIn</h3>
-                <div class="external-links-container">
-                  <a href="https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/?trackingId=bRWnb6MoTEWwJHDWL7eIbg%3D%3D" target="_blank" class="external-link" style="justify-content: flex-start; text-align: left;"><i class="fa fa-external-link-alt"></i>Seu portfólio não é um currículo em HTML (e tudo bem)</a>
-                </div>
-                <br/>
-                <h3 class="project-title">Outras Publicações</h3>
-                <div class="external-links-container">
-                  <a href="https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria"
-                    target="_blank" class="external-link" style="justify-content: flex-start; text-align: left;"><i
-                      class="fa fa-external-link-alt"></i> App Unipampa leva inovação à comunidade</a>
-                  <a href="https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios"
-                    target="_blank" class="external-link" style="justify-content: flex-start; text-align: left;"><i
-                      class="fa fa-external-link-alt"></i> App Unipampa disponível para iOS</a>
-                  </div>
-                    <br/>
-                
-              </div>
-            </article>
-
-
-
-
-
-          </div>
+        <div class="subsection-wrapper">
+          <h3 data-i18n="section_articles_ext" class="section-title-sub"></h3>
+          <div id="grid-article-ext" class="portfolio-grid"></div>
         </div>
-
-        <!-- Videos Subsection -->
-        <div id="videos" style="padding-top: 4rem;">
-          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Material em Vídeo e Demos</h3>
-          <div class="portfolio-grid">
-
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-video"></i> Clean Arch</span>
-                <h3 class="project-title">Roda do Lanche</h3>
-                <p class="project-desc">Estudo de Arquitetura Limpa e Construção por Responsabilidades.</p>
-                <div class="project-links">
-                  <button onclick="openVideo('ky72JApuaLg')" class="btn-link" title="Assistir"><i
-                      class="fa fa-play-circle"></i> Assistir</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-video"></i> Responsividade</span>
-                <h3 class="project-title">Portfolio Demo</h3>
-                <p class="project-desc">Mesmo código rodando em Mobile (Android) e Web (Browser).</p>
-                <div class="project-links">
-                  <button onclick="openVideo('WTa4rXAw9gg')" class="btn-link" title="Assistir"><i
-                      class="fa fa-play-circle"></i> Assistir</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-content">
-                <span class="project-type"><i class="fa fa-gamepad"></i> Game Dev</span>
-                <h3 class="project-title">AlienWar</h3>
-                <p class="project-desc">Estudo de desenvolvimento de jogos 2D com Unity.</p>
-                <div class="project-links">
-                  <button onclick="openVideo('IHHj8Zp5s10')" class="btn-link" title="Assistir"><i
-                      class="fa fa-play-circle"></i> Assistir</button>
-                </div>
-              </div>
-            </article>
-
-          </div>
+        <div class="subsection-wrapper">
+          <h3 data-i18n="section_videos" class="section-title-sub"></h3>
+          <div id="grid-video" class="portfolio-grid"></div>
         </div>
-
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2 class="section-title">Vamos Conversar?</h2>
+        <h2 class="section-title" data-i18n="contact_title"></h2>
         <div class="contact-container">
-
-          <!-- Info Side -->
           <div class="contact-info">
-            <h3>Canais de Contato</h3>
-            <p>Estou disponível para novos projetos e consultorias. Sinta-se à vontade para entrar em
-              contato.</p>
-
+            <h3 data-i18n="contact_subtitle"></h3>
+            <p data-i18n="contact_p"></p>
             <div class="contact-details">
-              <a href="mailto:pconradjunior@gmail.com" class="contact-item">
-                <i class="fa fa-envelope"></i>
-                <span>pconradjunior@gmail.com</span>
-              </a>
-              <a href="https://www.linkedin.com/in/pconradjunior/" target="_blank" class="contact-item">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>/in/pconradjunior</span>
-              </a>
-              <a href="https://instagram.com/pedrojunior.dev" target="_blank" class="contact-item">
-                <i class="fa-brands fa-instagram"></i>
-                <span>@pedrojunior.dev</span>
-              </a>
-              <a href="https://github.com/pconradjunior" target="_blank" class="contact-item">
-                <i class="fa-brands fa-github"></i>
-                <span>@pconradjunior</span>
-              </a>
+              <a href="mailto:pconradjunior@gmail.com" class="contact-item"><i class="fa fa-envelope"></i><span>pconradjunior@gmail.com</span></a>
+              <a href="https://github.com/pconradjunior" target="_blank" class="contact-item"><i class="fa-brands fa-github"></i><span>@pconradjunior</span></a>
             </div>
           </div>
-
-          <!-- Form Side -->
           <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
             <input type="hidden" name="access_key" value="39b311c5-6dc8-443a-8cb3-91516f8cf9e3">
             <input type="hidden" name="redirect" value="https://pconradjunior.github.io/obrigado.html">
-
-            <div class="form-group">
-              <label for="name">Seu Nome</label>
-              <input type="text" id="name" name="name" class="form-control" placeholder="Como devo te chamar?" required>
+            <div class="form-group"><label for="name"></label><input type="text" id="name" name="name" class="form-control" required></div>
+            <div class="form-group"><label for="email"></label><input type="email" id="email" name="email" class="form-control" required></div>
+            <div class="form-group"><label for="subject"></label>
+              <select name="subject" id="subject" class="form-control">
+                <option value="Consultoria">Consultoria</option>
+                <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                <option value="Outro">Outro assunto</option>
+              </select>
             </div>
-
-            <div class="form-group">
-              <label for="email">Seu E-mail</label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@seusite.com"
-                required>
-            </div>
-
-            <div class="form-group">
-              <label for="subject">Assunto</label>
-              <div class="select-wrapper">
-                <select name="subject" id="subject" class="form-control">
-                  <option value="[Contato via Portfolio] Consultoria">Consultoria</option>
-                  <option value="[Contato via Portfolio] Desenvolvimento Mobile">Desenvolvimento Mobile</option>
-                  <option value="[Contato via Portfolio] Sistema Web">Sistema Web</option>
-                  <option value="[Contato via Portfolio] Outro assunto">Outro assunto</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Mensagem</label>
-              <textarea id="message" name="message" rows="5" class="form-control"
-                placeholder="Conte-me mais sobre sua ideia..." required></textarea>
-            </div>
+            <div class="form-group"><label for="message"></label><textarea id="message" name="message" rows="5" class="form-control" required></textarea></div>
             <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="pt"></div>
-
-            <button type="submit" class="btn btn-submit">Enviar Mensagem <i class="fa fa-paper-plane"></i></button>
+            <button type="submit" class="btn btn-submit"></button>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-
-      <p>&copy; 2025 Pedro Conrad Jr. Todos os direitos reservados. </p>
-      <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v26 - Designed with CSS & Glassmorphism</p>
-      <p><img src="https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io"></p>
-    </div>
-  </footer>
-
-  <!-- Video Modal -->
+  <footer><div class="container"><p>&copy; 2026 Pedro Conrad Jr. Todos os direitos reservados.</p></div></footer>
   <div class="video-modal" id="videoModal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeVideo()">&times;</span>
-      <div class="video-container">
-        <iframe id="videoFrame" src="" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
+    <div class="modal-content"><span class="close-modal" onclick="closeVideo()">&times;</span>
+      <div class="video-container"><iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe></div>
     </div>
   </div>
-
-  <!-- Scripts -->
   <script src="https://web3forms.com/client/script.js" async defer></script>
   <script src="js/app.js"></script>
 </body>
-
 </html>

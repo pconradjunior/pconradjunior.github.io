@@ -1,0 +1,363 @@
+{
+    "translations": {
+        "pt": {
+            "nav_home": "Início",
+            "nav_about": "Sobre",
+            "nav_expertise": "Atuação",
+            "nav_projects": "Projetos",
+            "nav_contact": "Contato",
+            "hero_greeting": "Olá, eu sou",
+            "hero_role": "Desenvolvedor Full Stack & Mobile",
+            "hero_p": "Especialista em transformar ideias em produtos digitais de alta performance. Mais de 20 anos criando soluções web e mobile inovadoras.",
+            "btn_projects": "Ver Projetos",
+            "section_mobile": "Aplicativos Mobile",
+            "section_web": "Sistemas Web",
+            "section_articles": "Artigos Técnicos",
+            "section_videos": "Material em Vídeo e Demos",
+            "btn_demo": "Ver Demo",
+            "btn_watch": "Assistir",
+            "btn_read": "Ler",
+            "btn_article": "Notícia",
+            "contact_title": "Vamos Conversar?",
+            "contact_subtitle": "Canais de Contato",
+            "contact_p": "Estou disponível para novos projetos e consultorias. Sinta-se à vontade para entrar em contato.",
+            "form_name": "Seu Nome",
+            "form_email": "Seu E-mail",
+            "form_subject": "Assunto",
+            "form_message": "Mensagem",
+            "form_btn": "Enviar Mensagem"
+        },
+        "en": {
+            "nav_home": "Home",
+            "nav_about": "About",
+            "nav_expertise": "Expertise",
+            "nav_projects": "Projects",
+            "nav_contact": "Contact",
+            "hero_greeting": "Hi, I am",
+            "hero_role": "Full Stack & Mobile Developer",
+            "hero_p": "Specialist in transforming ideas into high-performance digital products. Over 20 years creating innovative web and mobile solutions.",
+            "btn_projects": "View Projects",
+            "section_mobile": "Mobile Apps",
+            "section_web": "Web Systems",
+            "section_articles": "Technical Articles",
+            "section_videos": "Videos and Demos",
+            "btn_demo": "Watch Demo",
+            "btn_watch": "Watch",
+            "btn_read": "Read",
+            "btn_article": "News",
+            "contact_title": "Let's Talk",
+            "contact_subtitle": "Contact Channels",
+            "contact_p": "I am available for new projects and consulting. Feel free to reach out.",
+            "form_name": "Your Name",
+            "form_email": "Your Email",
+            "form_subject": "Subject",
+            "form_message": "Message",
+            "form_btn": "Send Message"
+        }
+    },
+    "content": {
+        "about": {
+            "title": {
+                "pt": "Sobre Mim",
+                "en": "About Me"
+            },
+            "paragraphs": [
+                {
+                    "pt": "Sou um profissional de Tecnologia da Informação com mais de 20 anos de experiência no desenvolvimento de sistemas web e mobile. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa).",
+                    "en": "I am an IT professional with over 20 years of experience in web and mobile systems development. I currently work as an IT Analyst at the Federal University of Pampa (Unipampa)."
+                },
+                {
+                    "pt": "Atuei como Coordenador Substituto da Equipe de Desenvolvimento de Sistemas (2016-2019), liderando projetos críticos e a capacitação de equipes. Minha paixão está em unir arquitetura de software robusta com interfaces intuitivas.",
+                    "en": "I served as Substitute Coordinator of the Systems Development Team (2016-2019), leading critical projects and team training. My passion lies in joining robust software architecture with intuitive interfaces."
+                }
+            ],
+            "stats": [
+                {
+                    "number": "20+",
+                    "label": {
+                        "pt": "Anos de Experiência",
+                        "en": "Years of Experience"
+                    }
+                },
+                {
+                    "number": "50+",
+                    "label": {
+                        "pt": "Projetos",
+                        "en": "Projects"
+                    }
+                },
+                {
+                    "number": "20k+",
+                    "label": {
+                        "pt": "Downloads",
+                        "en": "Downloads"
+                    }
+                }
+            ]
+        },
+        "expertise": {
+            "title": {
+                "pt": "Minha Atuação",
+                "en": "Expertise"
+            },
+            "cards": [
+                {
+                    "icon": "fa-laptop-code",
+                    "title": {
+                        "pt": "Sistemas Web & APIs",
+                        "en": "Web Systems & APIs"
+                    },
+                    "text": {
+                        "pt": "Desenvolvimento de ERPs e sistemas críticos com PHP (CodeIgniter) e bancos como PostgreSQL, MySQL e IBM DB2.",
+                        "en": "Development of ERPs and critical systems using PHP (CodeIgniter) and databases like PostgreSQL, MySQL, and IBM DB2."
+                    }
+                },
+                {
+                    "icon": "fa-mobile-screen",
+                    "title": {
+                        "pt": "Aplicativos Mobile",
+                        "en": "Mobile Apps"
+                    },
+                    "text": {
+                        "pt": "Desenvolvimento moderno para Android e iOS utilizando Flutter, com integração de biometria.",
+                        "en": "Modern development for Android and iOS using Flutter, with biometric integration."
+                    }
+                },
+                {
+                    "icon": "fa-handshake",
+                    "title": {
+                        "pt": "Liderança Técnica",
+                        "en": "Technical Leadership"
+                    },
+                    "text": {
+                        "pt": "Gestão técnica de equipes, levantamento de requisitos complexos e treinamento de desenvolvedores.",
+                        "en": "Technical team management, complex requirements gathering, and developer training."
+                    }
+                }
+            ]
+        }
+    },
+    "items": [
+        {
+            "category": "mobile",
+            "tech": "Flutter",
+            "icon": "fa-mobile",
+            "title": {
+                "pt": "App Unipampa",
+                "en": "Unipampa App"
+            },
+            "desc": {
+                "pt": "App oficial da Universidade Federal do Pampa. Integra notícias, cardápio do RU e serviços acadêmicos.",
+                "en": "Official app for the Federal University of Pampa. Integrates news, RU menu, and academic services."
+            },
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app",
+                "appstore": "https://apps.apple.com/app/app-unipampa/id1639927711",
+                "youtube": "mgvavs5VOgU"
+            }
+        },
+        {
+            "category": "mobile",
+            "tech": "Cordova Phonegap",
+            "icon": "fa-mobile",
+            "title": {
+                "pt": "PhisiCalc",
+                "en": "PhisiCalc"
+            },
+            "desc": {
+                "pt": "Calculadora para auxiliar profissionais de saúde em cálculos de fisiologia.",
+                "en": "Calculator to assist healthcare professionals in physiology calculations."
+            },
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.phisicalc"
+            }
+        },
+        {
+            "category": "mobile",
+            "tech": "Cordova Phonegap",
+            "icon": "fa-mobile",
+            "title": {
+                "pt": "FingerNotes",
+                "en": "FingerNotes"
+            },
+            "desc": {
+                "pt": "Bloco de notas seguro com autenticação por senha .",
+                "en": "Secure notepad with password authentication."
+            },
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.fingernotes"
+            }
+        },
+        {
+            "category": "mobile",
+            "tech": "Flutter",
+            "icon": "fa-mobile",
+            "title": {
+                "pt": "SmellCheck",
+                "en": "SmellCheck"
+            },
+            "desc": {
+                "pt": "Monitoramento da evolução do sentido de olfato. Ferramenta auxiliar em tratamentos médicos.",
+                "en": "Monitoring the evolution of the sense of smell. An auxiliary tool for medical treatments."
+            },
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.smellcheck",
+                "youtube": "t1P1dCydtUo"
+            }
+        },
+        {
+            "category": "web",
+            "tech": "PHP / CodeIgniter",
+            "icon": "fa-server",
+            "title": {
+                "pt": "GURI - ERP",
+                "en": "GURI - ERP"
+            },
+            "desc": {
+                "pt": "Gestão Unificada de Recursos Institucionais. ERP modular com 50+ módulos integrados.",
+                "en": "Unified Management of Institutional Resources. Modular ERP with 50+ integrated modules."
+            },
+            "links": {
+                "news": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+            }
+        },
+        {
+            "category": "article",
+            "tech": "Version Check",
+            "icon": "fa-file-code",
+            "title": {
+                "pt": "Force Update em Apps",
+                "en": "Apps Force Update"
+            },
+            "desc": {
+                "pt": "Artigo técnico sobre implementação de verificação de versão em Flutter.",
+                "en": "Technical article about version check implementation in Flutter."
+            },
+            "links": {
+                "url": "article_versioncheck.html"
+            }
+        },
+        {
+            "category": "article",
+            "tech": "Biometria",
+            "icon": "fa-id-card",
+            "title": {
+                "pt": "Reconhecimento Facial",
+                "en": "Facial Recognition"
+            },
+            "desc": {
+                "pt": "Estudo sobre biometria facial multiusuário offline utilizando Flutter.",
+                "en": "Study on offline multi-user facial biometrics using Flutter."
+            },
+            "links": {
+                "url": "article_reconhecimento_facial.html"
+            }
+        },
+        {
+            "category": "article",
+            "tech": "Publicações Acadêmicas",
+            "icon": "fa-graduation-cap",
+            "featured": true,
+            "title": {
+                "pt": "Artigos em Eventos e Periódicos",
+                "en": "Papers in Events and Journals"
+            },
+            "desc": {
+                "pt": "Publicações científicas sobre sistemas de gestão e padrões de projeto.",
+                "en": "Scientific publications on management systems and design patterns."
+            },
+            "links": {
+                "external": [
+                    {
+                        "label": "GURI: Registro de Programa de Computador",
+                        "url": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+                    },
+                    {
+                        "label": "CodeIgniter em Sistemas de Gestão (V WTICIFES 2011)",
+                        "url": "http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf"
+                    },
+                    {
+                        "label": "SisRel: Extração de Dados (V WTICIFES 2011)",
+                        "url": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf"
+                    },
+                    {
+                        "label": "SGCE: Gestão de Certificados (V WTICIFES 2011)",
+                        "url": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf"
+                    },
+                    {
+                        "label": "Protocolo Web e Design Patterns (V WTICIFES 2011)",
+                        "url": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf"
+                    },
+                    {
+                        "label": "Artigo: Seu portfólio não é um currículo",
+                        "url": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/"
+                    }
+                ]
+            }
+        },
+        {
+            "category": "video",
+            "tech": "Clean Arch",
+            "icon": "fa-video",
+            "title": {
+                "pt": "Roda do Lanche",
+                "en": "Roda do Lanche"
+            },
+            "desc": {
+                "pt": "Arquitetura Limpa e construção por responsabilidades no Flutter.",
+                "en": "Clean Architecture and responsibility-driven construction in Flutter."
+            },
+            "links": {
+                "youtube": "ky72JApuaLg"
+            }
+        },
+        {
+            "category": "video",
+            "tech": "Flutter Web",
+            "icon": "fa-display",
+            "title": {
+                "pt": "Portfolio Demo",
+                "en": "Portfolio Demo"
+            },
+            "desc": {
+                "pt": "Exemplo de responsividade: mesmo código para Mobile e Web.",
+                "en": "Responsiveness example: same code for Mobile and Web."
+            },
+            "links": {
+                "youtube": "WTa4rXAw9gg"
+            }
+        },
+        {
+            "category": "video",
+            "tech": "Unity",
+            "icon": "fa-gamepad",
+            "title": {
+                "pt": "AlienWar 2D",
+                "en": "AlienWar 2D"
+            },
+            "desc": {
+                "pt": "Desenvolvimento de jogos com Unity e C#.",
+                "en": "Game development with Unity and C#."
+            },
+            "links": {
+                "youtube": "IHHj8Zp5s10"
+            }
+        },
+        {
+            "category": "video",
+            "tech": "Flutter",
+            "icon": "fa-mobile",
+            "title": {
+                "pt": "FingerNotes - Estudo de Autenticação Biométrica",
+                "en": "FingerNotes - Flutter Biometric Authentication Study"
+            },
+            "desc": {
+                "pt": "Estudo de autenticação biométrica local e criptografia.",
+                "en": "Study of local biometric authentication and encryption."
+            },
+            "links": {
+                "youtube": "hGdydq2jhJI"
+            }
+        }
+    ]
+}
