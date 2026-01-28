@@ -25,6 +25,8 @@
                     <a href="#about" data-i18n="nav_about"></a>
                     <a href="#expertise" data-i18n="nav_expertise"></a>
                     <a href="#projects" data-i18n="nav_projects"></a>
+                    <a href="#articles" data-i18n="nav_articles"></a>
+                    <a href="#videos" data-i18n="nav_videos"></a>
                     <a href="#contact" data-i18n="nav_contact"></a>
                     <div id="lang-selector"></div>
                 </div>
@@ -54,18 +56,20 @@
         </div></section>
 
         <section id="projects" class="portfolio"><div class="container">
-            <h2 class="section-title" data-i18n="nav_projects"></h2>
-            
-            <h3 data-i18n="section_mobile" class="section-title-sub"></h3>
+            <h2 class="section-title" data-i18n="section_mobile"></h2>
             <div id="grid-mobile" class="portfolio-grid"></div>
-
-            <h3 data-i18n="section_web" class="section-title-sub"></h3>
+            
+            <h2 class="section-title" data-i18n="section_web" style="margin-top: 60px;"></h2>
             <div id="grid-web" class="portfolio-grid"></div>
+        </div></section>
 
-            <h3 data-i18n="section_articles" class="section-title-sub"></h3>
+        <section id="articles" class="portfolio" style="background: var(--bg-alt);"><div class="container">
+            <h2 class="section-title" data-i18n="section_articles"></h2>
             <div id="grid-article" class="portfolio-grid"></div>
+        </div></section>
 
-            <h3 data-i18n="section_videos" class="section-title-sub"></h3>
+        <section id="videos" class="portfolio"><div class="container">
+            <h2 class="section-title" data-i18n="section_videos"></h2>
             <div id="grid-video" class="portfolio-grid"></div>
         </div></section>
 
@@ -79,7 +83,6 @@
                     <div class="form-group"><label for="email"></label><input type="email" id="email" name="email" class="form-control" required></div>
                     <div class="form-group"><label for="subject"></label><select id="subject" name="subject" class="form-control">
                         <option value="Consultoria">Consultoria</option>
-                        <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
                     </select></div>
                     <div class="form-group"><label for="message"></label><textarea id="message" name="message" class="form-control" rows="5" required></textarea></div>
                     <button type="submit" class="btn btn-submit"></button>

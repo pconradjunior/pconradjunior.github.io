@@ -5,6 +5,8 @@
             "nav_about": "Sobre",
             "nav_expertise": "Atuação",
             "nav_projects": "Projetos",
+            "nav_articles": "Artigos",
+            "nav_videos": "Videos",
             "nav_contact": "Contato",
             "hero_greeting": "Olá, eu sou",
             "hero_role": "Desenvolvedor Full Stack & Mobile",
@@ -32,6 +34,8 @@
             "nav_about": "About",
             "nav_expertise": "Expertise",
             "nav_projects": "Projects",
+            "nav_articles": "Articles",
+            "nav_videos": "Videos",
             "nav_contact": "Contact",
             "hero_greeting": "Hi, I am",
             "hero_role": "Full Stack & Mobile Developer",
@@ -331,7 +335,7 @@
         },
         {
             "category": "article",
-            "tech": "V WTICIFES 2011",
+            "tech": "VI WTICIFES 2017",
             "icon": "fa-file-pdf",
             "title": {
                 "pt": "CodeIgniter em Sistemas de Gestão",
