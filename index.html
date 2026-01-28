@@ -1,149 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio Profissional de Pedro Conrad Jr - Desenvolvedor Full Stack e Mobile">
-  <title>Pedro Conrad Jr | Portfolio</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script>
-    (function () {
-      const theme = localStorage.getItem("theme");
-      if (theme) document.documentElement.classList.add(theme);
-    })();
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Conrad Jr | Developer Portfolio</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
-  <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
-  <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
+    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
+    <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
+    <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
 
-  <div class="theme-switcher">
-    <label for="theme-cyan" class="theme-label label-cyan"></label>
-    <label for="theme-purple" class="theme-label label-purple"></label>
-    <label for="theme-green" class="theme-label label-green"></label>
-  </div>
+    <header>
+        <div class="container">
+            <nav>
+                <button class="hamburger" id="hamburgerBtn"><i class="fa fa-bars"></i></button>
+                <a href="#" class="logo"><i class="fa fa-code"></i>&nbsp;<span>Pedro Conrad Jr</span></a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" data-i18n="nav_home"></a>
+                    <a href="#about" data-i18n="nav_about"></a>
+                    <a href="#expertise" data-i18n="nav_expertise"></a>
+                    <a href="#projects" data-i18n="nav_projects"></a>
+                    <a href="#contact" data-i18n="nav_contact"></a>
+                    <div id="lang-selector"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <header>
-    <div class="container">
-      <nav>
-        <button class="hamburger" id="hamburgerBtn"><i class="fa fa-bars"></i></button>
-        <a href="#" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad Jr</span></a>
-        <div class="nav-links" id="navLinks">
-          <a href="#home" data-i18n="nav_home"></a>
-          <a href="#about" data-i18n="nav_about"></a>
-          <a href="#expertise" data-i18n="nav_expertise"></a>
-          <a href="#projects" data-i18n="nav_projects"></a>
-          <a href="#contact" data-i18n="nav_contact"></a>
-          <div class="lang-selector-nav"><div id="lang-selector"></div></div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <span class="hero-greeting" data-i18n="hero_greeting"></span>
-          <h1>Pedro Conrad Jr <span data-i18n="hero_role"></span></h1>
-          <p data-i18n="hero_p"></p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary" data-i18n="btn_projects"></a>
-            <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/pconradjunior" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title"></h2>
-        <div class="about-grid">
-          <div class="about-text"></div>
-          <div class="about-stats"><div class="stats-grid"></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="expertise" class="services">
-      <div class="container">
-        <h2 class="section-title"></h2>
-        <div class="services-grid"></div>
-      </div>
-    </section>
-
-    <section id="projects" class="portfolio">
-      <div class="container">
-        <h2 class="section-title" data-i18n="nav_projects"></h2>
-        <div class="subsection-wrapper">
-          <h3 data-i18n="section_mobile" class="section-title-sub"></h3>
-          <div id="grid-mobile" class="portfolio-grid"></div>
-        </div>
-        <div class="subsection-wrapper">
-          <h3 data-i18n="section_web" class="section-title-sub"></h3>
-          <div id="grid-web" class="portfolio-grid"></div>
-        </div>
-        <div class="subsection-wrapper">
-          <h3 data-i18n="section_articles" class="section-title-sub"></h3>
-          <div id="grid-article" class="portfolio-grid"></div>
-        </div>
-        <div class="subsection-wrapper">
-          <h3 data-i18n="section_articles_ext" class="section-title-sub"></h3>
-          <div id="grid-article-ext" class="portfolio-grid"></div>
-        </div>
-        <div class="subsection-wrapper">
-          <h3 data-i18n="section_videos" class="section-title-sub"></h3>
-          <div id="grid-video" class="portfolio-grid"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title" data-i18n="contact_title"></h2>
-        <div class="contact-container">
-          <div class="contact-info">
-            <h3 data-i18n="contact_subtitle"></h3>
-            <p data-i18n="contact_p"></p>
-            <div class="contact-details">
-              <a href="mailto:pconradjunior@gmail.com" class="contact-item"><i class="fa fa-envelope"></i><span>pconradjunior@gmail.com</span></a>
-              <a href="https://github.com/pconradjunior" target="_blank" class="contact-item"><i class="fa-brands fa-github"></i><span>@pconradjunior</span></a>
+    <main>
+        <section id="home" class="hero"><div class="container"><div class="hero-content">
+            <span data-i18n="hero_greeting"></span>
+            <h1>Pedro Conrad Jr <span data-i18n="hero_role"></span></h1>
+            <p data-i18n="hero_p"></p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary" data-i18n="btn_projects"></a>
+                <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
-          </div>
-          <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-            <input type="hidden" name="access_key" value="39b311c5-6dc8-443a-8cb3-91516f8cf9e3">
-            <input type="hidden" name="redirect" value="https://pconradjunior.github.io/obrigado.html">
-            <div class="form-group"><label for="name"></label><input type="text" id="name" name="name" class="form-control" required></div>
-            <div class="form-group"><label for="email"></label><input type="email" id="email" name="email" class="form-control" required></div>
-            <div class="form-group"><label for="subject"></label>
-              <select name="subject" id="subject" class="form-control">
-                <option value="Consultoria">Consultoria</option>
-                <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
-                <option value="Outro">Outro assunto</option>
-              </select>
-            </div>
-            <div class="form-group"><label for="message"></label><textarea id="message" name="message" rows="5" class="form-control" required></textarea></div>
-            <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="pt"></div>
-            <button type="submit" class="btn btn-submit"></button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
+        </div></div></section>
 
-  <footer><div class="container"><p>&copy; 2026 Pedro Conrad Jr. Todos os direitos reservados.</p></div></footer>
-  <div class="video-modal" id="videoModal">
-    <div class="modal-content"><span class="close-modal" onclick="closeVideo()">&times;</span>
-      <div class="video-container"><iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe></div>
-    </div>
-  </div>
-  <script src="https://web3forms.com/client/script.js" async defer></script>
-  <script src="js/app.js"></script>
+        <section id="about" class="about"><div class="container">
+            <h2 class="section-title"></h2>
+            <div class="about-grid"><div class="about-text"></div><div class="stats-grid"></div></div>
+        </div></section>
+
+        <section id="expertise" class="services"><div class="container">
+            <h2 class="section-title"></h2>
+            <div class="services-grid"></div>
+        </div></section>
+
+        <section id="projects" class="portfolio"><div class="container">
+            <h2 class="section-title" data-i18n="nav_projects"></h2>
+            
+            <h3 data-i18n="section_mobile" class="section-title-sub"></h3>
+            <div id="grid-mobile" class="portfolio-grid"></div>
+
+            <h3 data-i18n="section_web" class="section-title-sub"></h3>
+            <div id="grid-web" class="portfolio-grid"></div>
+
+            <h3 data-i18n="section_articles" class="section-title-sub"></h3>
+            <div id="grid-article" class="portfolio-grid"></div>
+
+            <h3 data-i18n="section_videos" class="section-title-sub"></h3>
+            <div id="grid-video" class="portfolio-grid"></div>
+        </div></section>
+
+        <section id="contact" class="contact"><div class="container">
+            <h2 class="section-title" data-i18n="contact_title"></h2>
+            <div class="contact-container">
+                <div class="contact-info"><h3 data-i18n="contact_subtitle"></h3><p data-i18n="contact_p"></p></div>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="SUA_CHAVE_AQUI">
+                    <div class="form-group"><label for="name"></label><input type="text" id="name" name="name" class="form-control" required></div>
+                    <div class="form-group"><label for="email"></label><input type="email" id="email" name="email" class="form-control" required></div>
+                    <div class="form-group"><label for="subject"></label><select id="subject" name="subject" class="form-control">
+                        <option value="Consultoria">Consultoria</option>
+                        <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                    </select></div>
+                    <div class="form-group"><label for="message"></label><textarea id="message" name="message" class="form-control" rows="5" required></textarea></div>
+                    <button type="submit" class="btn btn-submit"></button>
+                </form>
+            </div>
+        </div></section>
+    </main>
+
+    <div class="video-modal" id="videoModal"><div class="modal-content">
+        <span class="close-modal" onclick="closeVideo()">&times;</span>
+        <div class="video-container"><iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe></div>
+    </div></div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

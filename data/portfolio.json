@@ -12,7 +12,7 @@
             "btn_projects": "Ver Projetos",
             "section_mobile": "Aplicativos Mobile",
             "section_web": "Sistemas Web",
-            "section_articles": "Artigos Técnicos",
+            "section_articles": "Artigos e Publicações Técnicas",
             "section_videos": "Material em Vídeo e Demos",
             "btn_demo": "Ver Demo",
             "btn_watch": "Assistir",
@@ -39,7 +39,7 @@
             "btn_projects": "View Projects",
             "section_mobile": "Mobile Apps",
             "section_web": "Web Systems",
-            "section_articles": "Technical Articles",
+            "section_articles": "Technical Articles & Publications",
             "section_videos": "Videos and Demos",
             "btn_demo": "Watch Demo",
             "btn_watch": "Watch",
@@ -119,8 +119,8 @@
                         "en": "Mobile Apps"
                     },
                     "text": {
-                        "pt": "Desenvolvimento moderno para Android e iOS utilizando Flutter, com integração de biometria.",
-                        "en": "Modern development for Android and iOS using Flutter, with biometric integration."
+                        "pt": "Desenvolvimento moderno para Android e iOS utilizando Flutter e tecnologias híbridas.",
+                        "en": "Modern development for Android and iOS using Flutter and hybrid technologies."
                     }
                 },
                 {
@@ -130,8 +130,8 @@
                         "en": "Technical Leadership"
                     },
                     "text": {
-                        "pt": "Gestão técnica de equipes, levantamento de requisitos complexos e treinamento de desenvolvedores.",
-                        "en": "Technical team management, complex requirements gathering, and developer training."
+                        "pt": "Gestão técnica de equipes, levantamento de requisitos e treinamento de desenvolvedores.",
+                        "en": "Technical team management, requirements gathering, and developer training."
                     }
                 }
             ]
@@ -147,45 +147,13 @@
                 "en": "Unipampa App"
             },
             "desc": {
-                "pt": "App oficial da Universidade Federal do Pampa. Integra notícias, cardápio do RU e serviços acadêmicos.",
-                "en": "Official app for the Federal University of Pampa. Integrates news, RU menu, and academic services."
+                "pt": "App oficial da Unipampa. Integra notícias, cardápio do RU e serviços acadêmicos.",
+                "en": "Official Unipampa app. Integrates news, RU menu, and academic services."
             },
             "links": {
                 "playstore": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app",
                 "appstore": "https://apps.apple.com/app/app-unipampa/id1639927711",
                 "youtube": "mgvavs5VOgU"
-            }
-        },
-        {
-            "category": "mobile",
-            "tech": "Cordova Phonegap",
-            "icon": "fa-mobile",
-            "title": {
-                "pt": "PhisiCalc",
-                "en": "PhisiCalc"
-            },
-            "desc": {
-                "pt": "Calculadora para auxiliar profissionais de saúde em cálculos de fisiologia.",
-                "en": "Calculator to assist healthcare professionals in physiology calculations."
-            },
-            "links": {
-                "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.phisicalc"
-            }
-        },
-        {
-            "category": "mobile",
-            "tech": "Cordova Phonegap",
-            "icon": "fa-mobile",
-            "title": {
-                "pt": "FingerNotes",
-                "en": "FingerNotes"
-            },
-            "desc": {
-                "pt": "Bloco de notas seguro com autenticação por senha .",
-                "en": "Secure notepad with password authentication."
-            },
-            "links": {
-                "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.fingernotes"
             }
         },
         {
@@ -197,12 +165,44 @@
                 "en": "SmellCheck"
             },
             "desc": {
-                "pt": "Monitoramento da evolução do sentido de olfato. Ferramenta auxiliar em tratamentos médicos.",
-                "en": "Monitoring the evolution of the sense of smell. An auxiliary tool for medical treatments."
+                "pt": "Monitoramento do sentido de olfato. Auxiliar em tratamentos médicos.",
+                "en": "Monitoring the sense of smell. Auxiliary in medical treatments."
             },
             "links": {
                 "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.smellcheck",
                 "youtube": "t1P1dCydtUo"
+            }
+        },
+        {
+            "category": "mobile",
+            "tech": "Cordova",
+            "icon": "fa-fingerprint",
+            "title": {
+                "pt": "FingerNotes",
+                "en": "FingerNotes"
+            },
+            "desc": {
+                "pt": "Bloco de notas seguro com autenticação por senha.",
+                "en": "Secure notepad with password authentication."
+            },
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.fingernotes"
+            }
+        },
+        {
+            "category": "mobile",
+            "tech": "Cordova",
+            "icon": "fa-calculator",
+            "title": {
+                "pt": "PhisiCalc",
+                "en": "PhisiCalc"
+            },
+            "desc": {
+                "pt": "Calculadora de fisiologia para profissionais de saúde.",
+                "en": "Physiology calculator for healthcare professionals."
+            },
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=pconradjunior.phisicalc"
             }
         },
         {
@@ -214,24 +214,52 @@
                 "en": "GURI - ERP"
             },
             "desc": {
-                "pt": "Gestão Unificada de Recursos Institucionais. ERP modular com 50+ módulos integrados.",
-                "en": "Unified Management of Institutional Resources. Modular ERP with 50+ integrated modules."
+                "pt": "Gestão Unificada de Recursos Institucionais. ERP modular com 50+ módulos.",
+                "en": "Unified Management of Institutional Resources. Modular ERP with 50+ modules."
             },
             "links": {
                 "news": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
             }
         },
         {
+            "category": "web",
+            "tech": "PHP / CodeIgniter",
+            "icon": "fa-ranking-star",
+            "title": {
+                "pt": "SisPPA",
+                "en": "SisPPA"
+            },
+            "desc": {
+                "pt": "Sistema de Pontuação da Produção Acadêmica.",
+                "en": "Academic Production Scoring System."
+            },
+            "links": {}
+        },
+        {
+            "category": "web",
+            "tech": "PHP / CodeIgniter",
+            "icon": "fa-fingerprint",
+            "title": {
+                "pt": "Terminal RU",
+                "en": "RU Terminal"
+            },
+            "desc": {
+                "pt": "Controle de acesso biométrico nos Restaurantes Universitários.",
+                "en": "Biometric access control in University Restaurants."
+            },
+            "links": {}
+        },
+        {
             "category": "article",
-            "tech": "Version Check",
+            "tech": "Artigo Técnico",
             "icon": "fa-file-code",
             "title": {
                 "pt": "Force Update em Apps",
                 "en": "Apps Force Update"
             },
             "desc": {
-                "pt": "Artigo técnico sobre implementação de verificação de versão em Flutter.",
-                "en": "Technical article about version check implementation in Flutter."
+                "pt": "Implementação de verificação de versão em Flutter.",
+                "en": "Version check implementation in Flutter."
             },
             "links": {
                 "url": "article_versioncheck.html"
@@ -239,15 +267,15 @@
         },
         {
             "category": "article",
-            "tech": "Biometria",
+            "tech": "Artigo Técnico",
             "icon": "fa-id-card",
             "title": {
                 "pt": "Reconhecimento Facial",
                 "en": "Facial Recognition"
             },
             "desc": {
-                "pt": "Estudo sobre biometria facial multiusuário offline utilizando Flutter.",
-                "en": "Study on offline multi-user facial biometrics using Flutter."
+                "pt": "Biometria facial multiusuário offline utilizando Flutter.",
+                "en": "Offline multi-user facial biometrics using Flutter."
             },
             "links": {
                 "url": "article_reconhecimento_facial.html"
@@ -255,44 +283,82 @@
         },
         {
             "category": "article",
-            "tech": "Publicações Acadêmicas",
-            "icon": "fa-graduation-cap",
-            "featured": true,
+            "tech": "V WTICIFES 2011",
+            "icon": "fa-file-pdf",
             "title": {
-                "pt": "Artigos em Eventos e Periódicos",
-                "en": "Papers in Events and Journals"
+                "pt": "SisRel: Extração de Dados",
+                "en": "SisRel: Data Extraction"
             },
             "desc": {
-                "pt": "Publicações científicas sobre sistemas de gestão e padrões de projeto.",
-                "en": "Scientific publications on management systems and design patterns."
+                "pt": "Sistema dinâmico de extração de dados para auxílio à decisão.",
+                "en": "Dynamic data extraction system for decision support."
             },
             "links": {
-                "external": [
-                    {
-                        "label": "GURI: Registro de Programa de Computador",
-                        "url": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
-                    },
-                    {
-                        "label": "CodeIgniter em Sistemas de Gestão (V WTICIFES 2011)",
-                        "url": "http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf"
-                    },
-                    {
-                        "label": "SisRel: Extração de Dados (V WTICIFES 2011)",
-                        "url": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf"
-                    },
-                    {
-                        "label": "SGCE: Gestão de Certificados (V WTICIFES 2011)",
-                        "url": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf"
-                    },
-                    {
-                        "label": "Protocolo Web e Design Patterns (V WTICIFES 2011)",
-                        "url": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf"
-                    },
-                    {
-                        "label": "Artigo: Seu portfólio não é um currículo",
-                        "url": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/"
-                    }
-                ]
+                "pdf": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf"
+            }
+        },
+        {
+            "category": "article",
+            "tech": "V WTICIFES 2011",
+            "icon": "fa-certificate",
+            "title": {
+                "pt": "SGCE: Gestão de Certificados",
+                "en": "SGCE: Certificate Management"
+            },
+            "desc": {
+                "pt": "Gestão e validação pública de certificados eletrônicos.",
+                "en": "Electronic certificate management and public validation."
+            },
+            "links": {
+                "pdf": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf"
+            }
+        },
+        {
+            "category": "article",
+            "tech": "V WTICIFES 2011",
+            "icon": "fa-project-diagram",
+            "title": {
+                "pt": "Protocolo Web e Design Patterns",
+                "en": "Web Protocol and Design Patterns"
+            },
+            "desc": {
+                "pt": "Uso de padrões de projeto em sistemas institucionais.",
+                "en": "Use of design patterns in institutional systems."
+            },
+            "links": {
+                "pdf": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf"
+            }
+        },
+        {
+            "category": "article",
+            "tech": "V WTICIFES 2011",
+            "icon": "fa-file-pdf",
+            "title": {
+                "pt": "CodeIgniter em Sistemas de Gestão",
+                "en": "CodeIgniter in Management Systems"
+            },
+            "desc": {
+                "pt": "Artigo sobre uso do framework em ambientes críticos.",
+                "en": "Paper on using the framework in critical environments."
+            },
+            "links": {
+                "pdf": "http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf"
+            }
+        },
+        {
+            "category": "article",
+            "tech": "LinkedIn",
+            "icon": "fa-brands fa-linkedin",
+            "title": {
+                "pt": "Seu portfólio não é um currículo",
+                "en": "Your portfolio is not a CV"
+            },
+            "desc": {
+                "pt": "Artigo sobre a importância do portfólio para desenvolvedores.",
+                "en": "Article on the importance of the portfolio for developers."
+            },
+            "links": {
+                "url": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/"
             }
         },
         {
@@ -304,27 +370,11 @@
                 "en": "Roda do Lanche"
             },
             "desc": {
-                "pt": "Arquitetura Limpa e construção por responsabilidades no Flutter.",
-                "en": "Clean Architecture and responsibility-driven construction in Flutter."
+                "pt": "Arquitetura Limpa e responsabilidades no Flutter.",
+                "en": "Clean Architecture and responsibilities in Flutter."
             },
             "links": {
                 "youtube": "ky72JApuaLg"
-            }
-        },
-        {
-            "category": "video",
-            "tech": "Flutter Web",
-            "icon": "fa-display",
-            "title": {
-                "pt": "Portfolio Demo",
-                "en": "Portfolio Demo"
-            },
-            "desc": {
-                "pt": "Exemplo de responsividade: mesmo código para Mobile e Web.",
-                "en": "Responsiveness example: same code for Mobile and Web."
-            },
-            "links": {
-                "youtube": "WTa4rXAw9gg"
             }
         },
         {
@@ -345,15 +395,31 @@
         },
         {
             "category": "video",
-            "tech": "Flutter",
-            "icon": "fa-mobile",
+            "tech": "Flutter Web",
+            "icon": "fa-display",
             "title": {
-                "pt": "FingerNotes - Estudo de Autenticação Biométrica",
-                "en": "FingerNotes - Flutter Biometric Authentication Study"
+                "pt": "Portfolio Demo",
+                "en": "Portfolio Demo"
             },
             "desc": {
-                "pt": "Estudo de autenticação biométrica local e criptografia.",
-                "en": "Study of local biometric authentication and encryption."
+                "pt": "Responsividade: mesmo código para Mobile e Web.",
+                "en": "Responsiveness: same code for Mobile and Web."
+            },
+            "links": {
+                "youtube": "WTa4rXAw9gg"
+            }
+        },
+        {
+            "category": "video",
+            "tech": "Flutter",
+            "icon": "fa-fingerprint",
+            "title": {
+                "pt": "FingerNotes - Biometria",
+                "en": "FingerNotes - Biometrics"
+            },
+            "desc": {
+                "pt": "Estudo de biometria local e criptografia no Flutter.",
+                "en": "Study of local biometrics and encryption in Flutter."
             },
             "links": {
                 "youtube": "hGdydq2jhJI"
