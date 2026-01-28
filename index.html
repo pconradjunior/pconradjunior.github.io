@@ -45,57 +45,388 @@
             </div>
         </div></div></section>
 
-        <section id="about" class="about"><div class="container">
-            <h2 class="section-title"></h2>
-            <div class="about-grid"><div class="about-text"></div><div class="stats-grid"></div></div>
-        </div></section>
+    <!-- Expertise Section -->
+    <section id="expertise" class="services">
+      <div class="container">
+        <h2 class="section-title">Minha Atuação</h2>
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fa fa-laptop-code"></i></div>
+            <h3>Sistemas Web & APIs</h3>
+            <p>Desenvolvimento de ERPs e sistemas críticos com PHP (CodeIgniter) e bancos como PostgreSQL, MySQL e IBM DB2. Foco em escalabilidade e Docker.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fa fa-mobile-screen"></i></div>
+            <h3>Aplicativos Mobile</h3>
+            <p>Desenvolvimento moderno para Android e iOS utilizando Flutter, com integração de biometria e serviços institucionais.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fa fa-handshake"></i></div>
+            <h3>Liderança e Capacitação</h3>
+            <p>Gestão técnica de equipes, levantamento de requisitos complexos e treinamento de desenvolvedores em boas práticas e arquitetura.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="expertise" class="services"><div class="container">
-            <h2 class="section-title"></h2>
-            <div class="services-grid"></div>
-        </div></section>
+    <!-- Projects Section (Grouped) -->
+    <section id="projects" class="portfolio">
+      <div class="container">
+        <h2 class="section-title">Meus Projetos</h2>
 
-        <section id="projects" class="portfolio"><div class="container">
-            <h2 class="section-title" data-i18n="section_projects"></h2>
-            <div class="projects-text"></div> 
+        <div class="about-text" style="margin-bottom: 2rem; text-align: center;">
+          <p>Nesta seção estão alguns dos projetos mais importantes que desenvolvi durante minha trajetória
+            profissional, agrupados por tipo de projeto. Alguns deles também podem conter vídeos de demonstração
+            disponíveis no YouTube.</p>
+        </div>
+
+        <!-- Mobile Apps Subsection -->
+        <div id="mobile" style="padding-top: 2rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Aplicativos Mobile</h3>
+          <div class="portfolio-grid">
+
+            <!-- App Unipampa -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-mobile"></i> Flutter</span>
+                <h3 class="project-title">App Unipampa</h3>
+                <p class="project-desc">App oficial da Universidade Federal do Pampa. Integra notícias, cardápio do RU e
+                  serviços acadêmicos.</p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=br.edu.unipampa.app" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                  <a href="https://apps.apple.com/app/app-unipampa/id1639927711" target="_blank" title="iOS"><i
+                      class="fa-brands fa-apple"></i></a>
+                  <button onclick="openVideo('mgvavs5VOgU')" class="btn-link" title="Ver Demo"><i
+                      class="fa fa-play-circle"></i>Ver Demo</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- SmellCheck -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-mobile"></i> Flutter</span>
+                <h3 class="project-title">SmellCheck</h3>
+                <p class="project-desc">Monitoramento da evolução do sentido de olfato. Ferramenta auxiliar em
+                  tratamentos médicos.</p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.smellcheck" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                  <button onclick="openVideo('t1P1dCydtUo')" class="btn-link" title="Ver Demo"><i
+                      class="fa fa-play-circle"></i>Ver Demo</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- FingerNotes -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-fingerprint"></i> Flutter</span>
+                <h3 class="project-title">FingerNotes</h3>
+                <p class="project-desc">Bloco de notas seguro com autenticação biométrica local e criptografia.</p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.fingernotes" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                  <button onclick="openVideo('hGdydq2jhJI')" class="btn-link" title="Ver Demo"><i
+                      class="fa fa-play-circle"></i>Ver Demo</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PhisiCalc -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-calculator"></i> Android</span>
+                <h3 class="project-title">PhisiCalc</h3>
+                <p class="project-desc">Cálculo de Composição Corporal. Auxilia profissionais de educação física em
+                  avaliações.</p>
+                <div class="project-links">
+                  <a href="https://play.google.com/store/apps/details?id=pconradjunior.phisicalc" target="_blank"
+                    title="Android"><i class="fa-brands fa-google-play"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- LembraMed (Study) -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-heart-pulse"></i> Flutter (Estudo)</span>
+                <h3 class="project-title">LembraMed</h3>
+                <p class="project-desc">Controle de medicação, consultas e registro de pressão arterial. Projeto de
+                  estudo.</p>
+                <div class="project-links">
+                  <button onclick="openVideo('hUdgk81DGuk')" class="btn-link" title="Ver Demo"><i
+                      class="fa fa-play-circle"></i>Ver Demo</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Web Systems Subsection -->
+        <div id="web" style="padding-top: 4rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Sistemas Web</h3>
+          <div class="portfolio-grid">
+
+            <!-- GURI -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-server"></i> PHP / CodeIgniter</span>
+                <h3 class="project-title">GURI - ERP</h3>
+                <p class="project-desc">Gestão Unificada de Recursos Institucionais. ERP modular com 50+ módulos integrados.</p>
+                <div class="project-links">
+                  <a href="https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+                    target="_blank" class="btn-link" style="color:#000;" title="Ler Notícia"><i
+                      class="fa fa-newspaper"></i> Notícia</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SisPPA -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-ranking-star"></i> PHP / CodeIgniter</span>
+                <h3 class="project-title">SisPPA</h3>
+                <p class="project-desc">Sistema de Pontuação da Produção Acadêmica. Sistema para contabilização e transparência na avaliação de produção docente.</p>
+              </div>
+            </article>
+
+            <!-- Terminal RU -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-fingerprint"></i> PHP / CodeIgniter</span>
+                <h3 class="project-title">Terminal RU</h3>
+                <p class="project-desc">Controle de acesso biométrico nos Restaurantes Universitários com integração hardware/software.</p>
+              </div>
+            </article>
+
+            <!-- SGCE -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-certificate"></i> PHP / CodeIgniter</span>
+                <h3 class="project-title">SGCE</h3>
+                <p class="project-desc">Gestão de Certificados Eletrônicos. Emissão, validação e verificação pública de documentos.</p>
+                <div class="project-links">
+                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf" target="_blank"
+                    class="btn-link" style="color:#000;" title="Ler Artigo"><i class="fa fa-file-pdf"></i> PDF</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Inscrição em Exames -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-pen-to-square"></i> PHP / CodeIgniter</span>
+                <h3 class="project-title">Inscrição Exames</h3>
+                <p class="project-desc">Gerenciamento de inscrições e pagamentos para provas de proficiência em idiomas.</p>
+              </div>
+            </article>
+
+
+
+          </div>
+        </div>
+
+        <!-- Articles Subsection -->
+        <div id="articles" style="padding-top: 4rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Artigos Técnicos</h3>
+          <div class="portfolio-grid articles-grid">
+
+            <!-- Version Check -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-file-code"></i> Artigo</span>
+                <h3 class="project-title">Version Check</h3>
+                <p class="project-desc">Implementação de Verificação de Versão (Force Update) em Apps Flutter.</p>
+                <div class="project-links">
+                  <a href="article_versioncheck.html" target="_blank" class="btn-link" style="color:#000;"><i
+                      class="fa fa-book-open"></i>
+                    Ler</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Face Auth -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-id-card"></i> Artigo</span>
+                <h3 class="project-title">Reconhecimento Facial</h3>
+                <p class="project-desc">Implementação de sistema biométrico facial multiusuário offline em Flutter.</p>
+                <div class="project-links">
+                  <a href="article_reconhecimento_facial.html" target="_blank" class="btn-link" style="color:#000;"><i
+                      class="fa fa-book-open"></i> Ler</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- iOS Guide -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-apple"></i> Artigo</span>
+                <h3 class="project-title">Guia iOS</h3>
+                <p class="project-desc">O que é preciso para criar apps iOS? Custos e etapas para empresários.</p>
+                <div class="project-links">
+                  <a href="article_ios.html" target="_blank" class="btn-link" style="color:#000;"><i
+                      class="fa fa-book-open"></i> Ler</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Algorithms -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-sitemap"></i> Artigo</span>
+                <h3 class="project-title">Algoritmos</h3>
+                <p class="project-desc">Algoritmo: Bicho de Sete Cabeças? Desmistificando a lógica de programação.</p>
+                <div class="project-links">
+                  <a href="article_algoritmos.html" target="_blank" class="btn-link" style="color:#000;"><i
+                      class="fa fa-book-open"></i>
+                    Ler</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Treinamento Técnico -->
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-chalkboard-teacher"></i> Mentoria / Treinamento Técnico</span>
+                <h3 class="project-title">Capacitação Dev</h3>
+                <p class="project-desc">Desenvolvimento de material e instrução técnica para novos desenvolvedores da instituição.</p>
+              </div>
+            </article>
+
+            <!-- External Articles List -->
+            <article class="project-card span-2">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-link"></i> Publicações Externas</span>
+                <h3 class="project-title">Outras Publicações</h3>
+                <div class="external-links-container">
+                  <a href="https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria"
+                    target="_blank" class="external-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-external-link-alt"></i> App Unipampa leva inovação à comunidade</a>
+                  <a href="https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios"
+                    target="_blank" class="external-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-external-link-alt"></i> App Unipampa disponível para iOS</a>
+                  </div>
+                  <br/>
+                  <h3 class="project-title">Artigos Publicados em Eventos</h3>
+                  <div class="external-links-container">
+                  <a href="http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf" target="_blank"
+                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-file-pdf"></i> Uso do CodeIgniter em Sistemas de Gestão (PDF)</a>
+                  </div>
+
+                  <div class="external-links-container">
+                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf" target="_blank"
+                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-file-pdf"></i> SisRel - Sistema Dinâmico de Extração de Dados (PDF)</a>
+
+                  <a href="http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf" target="_blank"
+                    class="external-link" style="justify-content: flex-start; text-align: left;"><i
+                      class="fa fa-file-pdf"></i> Sistema de Protocolo Web EAD baseado em Design Patterns (PDF)</a>
+                </div>
+              </div>
+            </article>
+
+
+
+
+
+          </div>
+        </div>
+
+        <!-- Videos Subsection -->
+        <div id="videos" style="padding-top: 4rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Material em Vídeo e Demos</h3>
+          <div class="portfolio-grid">
+
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-video"></i> Clean Arch</span>
+                <h3 class="project-title">Roda do Lanche</h3>
+                <p class="project-desc">Estudo de Arquitetura Limpa e Construção por Responsabilidades.</p>
+                <div class="project-links">
+                  <button onclick="openVideo('ky72JApuaLg')" class="btn-link" title="Assistir"><i
+                      class="fa fa-play-circle"></i> Assistir</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-video"></i> Responsividade</span>
+                <h3 class="project-title">Portfolio Demo</h3>
+                <p class="project-desc">Mesmo código rodando em Mobile (Android) e Web (Browser).</p>
+                <div class="project-links">
+                  <button onclick="openVideo('WTa4rXAw9gg')" class="btn-link" title="Assistir"><i
+                      class="fa fa-play-circle"></i> Assistir</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-gamepad"></i> Game Dev</span>
+                <h3 class="project-title">AlienWar</h3>
+                <p class="project-desc">Estudo de desenvolvimento de jogos 2D com Unity.</p>
+                <div class="project-links">
+                  <button onclick="openVideo('IHHj8Zp5s10')" class="btn-link" title="Assistir"><i
+                      class="fa fa-play-circle"></i> Assistir</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <div class="contact-container">
+
+          <!-- Info Side -->
+          <div class="contact-info">
+            <h3>Canais de Contato</h3>
+            <p>Estou disponível para novos projetos e consultorias. Sinta-se à vontade para entrar em
+              contato.</p>
+
+            <div class="contact-details">
+              <a href="mailto:pconradjunior@gmail.com" class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <span>pconradjunior@gmail.com</span>
+              </a>
+              <a href="https://www.linkedin.com/in/pconradjunior/" target="_blank" class="contact-item">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>/in/pconradjunior</span>
+              </a>
+              <a href="https://instagram.com/pedrojunior.dev" target="_blank" class="contact-item">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@pedrojunior.dev</span>
+              </a>
+              <a href="https://github.com/pconradjunior" target="_blank" class="contact-item">
+                <i class="fa-brands fa-github"></i>
+                <span>@pconradjunior</span>
+              </a>
             </div>
-            </section>  
-            
-            <section id="mobile" class="portfolio"><div class="container">
-            <h2 class="section-title" data-i18n="section_mobile"></h2>
-            <div id="grid-mobile" class="portfolio-grid"></div>
-            </div>
-            </section>
-            
-            <section id="web" class="portfolio"><div class="container">
-            <h2 class="section-title" data-i18n="section_web"></h2>
-            <div id="grid-web" class="portfolio-grid"></div>
-        </div></section>
+          </div>
 
-        <section id="articles" class="portfolio" style="background: var(--bg-alt);"><div class="container">
-            <h2 class="section-title" data-i18n="section_articles"></h2>
-            <div id="grid-article" class="portfolio-grid"></div>
-        </div></section>
+          <!-- Form Side -->
+          <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="39b311c5-6dc8-443a-8cb3-91516f8cf9e3">
+            <input type="hidden" name="redirect" value="https://pconradjunior.github.io/obrigado.html">
 
-        <section id="videos" class="portfolio"><div class="container">
-            <h2 class="section-title" data-i18n="section_videos"></h2>
-            <div id="grid-video" class="portfolio-grid"></div>
-        </div></section>
-
-        <section id="contact" class="contact"><div class="container">
-            <h2 class="section-title" data-i18n="contact_title"></h2>
-            <div class="contact-container">
-                <div class="contact-info"><h3 data-i18n="contact_subtitle"></h3><p data-i18n="contact_p"></p></div>
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    <input type="hidden" name="access_key" value="SUA_CHAVE_AQUI">
-                    <div class="form-group"><label for="name"></label><input type="text" id="name" name="name" class="form-control" required></div>
-                    <div class="form-group"><label for="email"></label><input type="email" id="email" name="email" class="form-control" required></div>
-                    <div class="form-group"><label for="subject"></label><select id="subject" name="subject" class="form-control">
-                        <option value="Consultoria">Consultoria</option>
-                    </select></div>
-                    <div class="form-group"><label for="message"></label><textarea id="message" name="message" class="form-control" rows="5" required></textarea></div>
-                    <button type="submit" class="btn btn-submit"></button>
-                </form>
+            <div class="form-group">
+              <label for="name">Seu Nome</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Como devo te chamar?" required>
             </div>
         </div></section>
     </main>
