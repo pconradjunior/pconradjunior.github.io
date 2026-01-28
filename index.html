@@ -1,49 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Conrad Jr | Developer Portfolio</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Profissional de Pedro Conrad Jr - Desenvolvedor Full Stack e Mobile">
+  <title>Pedro Conrad Jr | Developer Portfolio</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/flags/br.svg">
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        document.documentElement.classList.add(theme);
+      }
+    })();
+  </script>
+
 </head>
+
 <body>
-    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
-    <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
-    <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
+  <!-- Theme Switcher Controls (Checkbox Hack) -->
+  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
+  <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
+  <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
 
-    <header>
-        <div class="container">
-            <nav>
-                <button class="hamburger" id="hamburgerBtn"><i class="fa fa-bars"></i></button>
-                <a href="#" class="logo"><i class="fa fa-code"></i>&nbsp;<span>Pedro Conrad Jr</span></a>
-                <div class="nav-links" id="navLinks">
-                    <a href="#home" data-i18n="nav_home"></a>
-                    <a href="#about" data-i18n="nav_about"></a>
-                    <a href="#expertise" data-i18n="nav_expertise"></a>
-                    <a href="#projects" data-i18n="nav_projects"></a>
-                    <a href="#articles" data-i18n="nav_articles"></a>
-                    <a href="#videos" data-i18n="nav_videos"></a>
-                    <a href="#contact" data-i18n="nav_contact"></a>
-                    <div id="lang-selector"></div>
-                </div>
-            </nav>
+  <!-- Floating Switcher UI -->
+  <div class="theme-switcher" title="Escolha seu tema">
+    <label for="theme-cyan" class="theme-label label-cyan"></label>
+    <label for="theme-purple" class="theme-label label-purple"></label>
+    <label for="theme-green" class="theme-label label-green"></label>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <button class="hamburger" id="hamburgerBtn">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a href="#" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad Jr</span></a>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Início</a>
+          <a href="#about">Sobre</a>
+          <a href="#expertise">Atuação</a>
+          <a href="#projects">Projetos</a>
+          <a href="#contact">Contato</a>
+          <!-- Link para versão EN mantido discreto -->
+          <a href="index_en.html" title="English Version"><img src="https://flagcdn.com/20x15/us.png" alt="EN"
+              style="vertical-align: middle;"> English</a>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section id="home" class="hero"><div class="container"><div class="hero-content">
-            <span data-i18n="hero_greeting"></span>
-            <h1>Pedro Conrad Jr <span data-i18n="hero_role"></span></h1>
-            <p data-i18n="hero_p"></p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary" data-i18n="btn_projects"></a>
-                <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-greeting">Olá, eu sou</span>
+          <h1>Pedro Conrad Jr <span>Desenvolvedor Full Stack & Mobile</span></h1>
+          <p>Especialista em transformar ideias em produtos digitais de alta performance. Mais de 20 anos
+            criando
+            soluções web e mobile inovadoras.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+            <a href="https://github.com/pconradjunior" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/pconradjunior" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://instagram.com/pedrojunior.dev" target="_blank" class="btn btn-secondary"><i
+                class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Sou um profissional de Tecnologia da Informação com mais de 20 anos de experiência no desenvolvimento de sistemas web e mobile. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa).</p>
+            <p>Atuei como Coordenador Substituto da Equipe de Desenvolvimento de Sistemas (2016-2019), liderando projetos críticos e a capacitação de equipes. Minha paixão está em unir arquitetura de software robusta com interfaces intuitivas.</p>
+            <p>Tenho expertise em PHP (CodeIgniter), Javascript, Flutter, Docker e bancos de dados como PostgreSQL, MySQL e IBM DB2, sempre utilizando metodologias ágeis como Scrum e Kanban.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Anos de Experiência</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Projetos</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">20k+</span>
+                <span class="stat-label">Downloads de Apps</span>
+              </div>
             </div>
-        </div></div></section>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Expertise Section -->
     <section id="expertise" class="services">
@@ -428,14 +500,63 @@
               <label for="name">Seu Nome</label>
               <input type="text" id="name" name="name" class="form-control" placeholder="Como devo te chamar?" required>
             </div>
-        </div></section>
-    </main>
 
-    <div class="video-modal" id="videoModal"><div class="modal-content">
-        <span class="close-modal" onclick="closeVideo()">&times;</span>
-        <div class="video-container"><iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe></div>
-    </div></div>
+            <div class="form-group">
+              <label for="email">Seu E-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@seusite.com"
+                required>
+            </div>
 
-    <script src="js/app.js"></script>
+            <div class="form-group">
+              <label for="subject">Assunto</label>
+              <div class="select-wrapper">
+                <select name="subject" id="subject" class="form-control">
+                  <option value="[Contato via Portfolio] Consultoria">Consultoria</option>
+                  <option value="[Contato via Portfolio] Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                  <option value="[Contato via Portfolio] Sistema Web">Sistema Web</option>
+                  <option value="[Contato via Portfolio] Outro assunto">Outro assunto</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" class="form-control"
+                placeholder="Conte-me mais sobre sua ideia..." required></textarea>
+            </div>
+            <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="pt"></div>
+
+            <button type="submit" class="btn btn-submit">Enviar Mensagem <i class="fa fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <p>&copy; 2025 Pedro Conrad Jr. Todos os direitos reservados. </p>
+      <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v26 - Designed with CSS & Glassmorphism</p>
+      <p><img src="https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io"></p>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeVideo()">&times;</span>
+      <div class="video-container">
+        <iframe id="videoFrame" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>
