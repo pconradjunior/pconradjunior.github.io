@@ -63,6 +63,10 @@ function render() {
             <p>${card.text[currentLang]}</p>
         </div>`).join(''));
 
+    // Conteúdo Projetos
+    $('#projects .section-title').text(c.projects.title[currentLang]);
+    $(".projects-text").html(c.projects.paragraphs.map(p => `<p>${p[currentLang]}</p>`).join(''));
+
     // Renderização dos Grids
     const grids = {
         mobile: $('#grid-mobile'),

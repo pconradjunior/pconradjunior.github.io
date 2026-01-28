@@ -12,6 +12,8 @@
             "hero_role": "Desenvolvedor Full Stack & Mobile",
             "hero_p": "Especialista em transformar ideias em produtos digitais de alta performance. Mais de 20 anos criando soluções web e mobile inovadoras.",
             "btn_projects": "Ver Projetos",
+            "section_projects": "Meus Projetos",
+            "projects_greeting": "Nesta seção estão alguns dos projetos mais importantes que desenvolvi durante minha trajetória profissional, agrupados por tipo de projeto. Alguns deles também podem conter vídeos de demonstração disponíveis no YouTube.",
             "section_mobile": "Aplicativos Mobile",
             "section_web": "Sistemas Web",
             "section_articles": "Artigos e Publicações Técnicas",
@@ -41,6 +43,8 @@
             "hero_role": "Full Stack & Mobile Developer",
             "hero_p": "Specialist in transforming ideas into high-performance digital products. Over 20 years creating innovative web and mobile solutions.",
             "btn_projects": "View Projects",
+            "section_projects": "My Projects",
+            "projects_greeting": "Here are some of the most important projects I developed during my professional journey, grouped by project type. Some of them may also contain demo videos available on YouTube.",
             "section_mobile": "Mobile Apps",
             "section_web": "Web Systems",
             "section_articles": "Technical Articles & Publications",
@@ -137,6 +141,18 @@
                         "pt": "Gestão técnica de equipes, levantamento de requisitos e treinamento de desenvolvedores.",
                         "en": "Technical team management, requirements gathering, and developer training."
                     }
+                }
+            ]
+        },
+        "projects": {
+            "title": {
+                "pt": "Meus Projetos",
+                "en": "My Projects"
+            },
+            "paragraphs": [
+                {
+                    "pt": "Nesta seção estão alguns dos projetos mais importantes que desenvolvi durante minha trajetória profissional, agrupados por tipo de projeto. Alguns deles também podem conter vídeos de demonstração disponíveis no YouTube.",
+                    "en": "Here are some of the most important projects I developed during my professional journey, grouped by project type. Some of them may also contain demonstration videos available on YouTube."
                 }
             ]
         }

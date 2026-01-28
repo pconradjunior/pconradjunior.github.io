@@ -11,10 +11,10 @@
     /* --- Cyber Dark Theme (Default) --- */
     --bg-primary: #0a0a0c;
     --bg-secondary: #131316;
+    --bg-alt: #1a1a1e;
     --text-primary: #ffffff;
     --text-secondary: #a0a0a0;
     --accent-color: #00f2ff;
-    /* Cyan Neon */
     --accent-glow: rgba(0, 242, 255, 0.4);
     --glass-bg: rgba(20, 20, 25, 0.7);
     --glass-border: rgba(255, 255, 255, 0.08);
@@ -27,21 +27,17 @@
 }
 
 /* Theme Variantes via Checkbox Hack */
-/* Se a checkbox "theme-purple" estiver marcada */
 body:has(#theme-purple:checked) {
     --bg-primary: #0f0b15;
     --bg-secondary: #1a1625;
     --accent-color: #bd00ff;
-    /* Purple Neon */
     --accent-glow: rgba(189, 0, 255, 0.4);
 }
 
-/* Se a checkbox "theme-green" estiver marcada */
 body:has(#theme-green:checked) {
     --bg-primary: #051108;
     --bg-secondary: #0d1f12;
     --accent-color: #00ff88;
-    /* Green Neon */
     --accent-glow: rgba(0, 255, 136, 0.4);
 }
 
@@ -68,7 +64,8 @@ body {
 .section-title {
     font-family: var(--font-heading);
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    /* Reduzido de 3rem para evitar gaps grandes */
     text-align: center;
     position: relative;
     display: inline-block;
@@ -87,7 +84,7 @@ body {
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* --- Theme Controls (Hidden Inputs) --- */
+/* --- Theme Controls --- */
 .theme-controller {
     display: none;
 }
@@ -131,7 +128,6 @@ body {
     background: #00ff88;
 }
 
-/* Highlight Active Theme */
 #theme-cyan:checked~.theme-switcher .label-cyan,
 #theme-purple:checked~.theme-switcher .label-purple,
 #theme-green:checked~.theme-switcher .label-green {
@@ -167,10 +163,6 @@ nav {
 }
 
 .logo span {
-    color: var(--accent-color);
-}
-
-.logo-icon {
     color: var(--accent-color);
 }
 
@@ -220,24 +212,6 @@ nav {
     max-width: 600px;
 }
 
-.hero-greeting {
-    color: var(--accent-color);
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.hero-buttons .btn {
-    flex: 1;
-}
-
 .hero h1 {
     font-family: var(--font-heading);
     font-size: 4rem;
@@ -259,27 +233,20 @@ nav {
     max-width: 500px;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    letter-spacing: 0.5px;
     transition: all var(--transition-speed);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Hero specific button styling for uniformity */
-.hero .btn {
-    min-width: 160px;
     text-align: center;
-    justify-content: center;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
 }
 
 .btn-primary {
@@ -294,96 +261,28 @@ nav {
     box-shadow: 0 0 20px var(--accent-glow);
 }
 
-/* --- About Section --- */
-.about {
-    padding: 6rem 0;
-    background: var(--bg-secondary);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.about-text p {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.stat-card {
-    background: var(--glass-bg);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid var(--glass-border);
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--accent-color);
-    font-weight: 700;
-}
-
-.stat-label {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
-/* --- Services / Areas --- */
-.services {
+/* --- Sections Spacing --- */
+.about,
+.services,
+.contact {
     padding: 6rem 0;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: var(--bg-secondary);
-    padding: 2.5rem;
-    border-radius: 15px;
-    border: 1px solid var(--glass-border);
-    transition: transform var(--transition-speed);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
-}
-
-.service-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-/* --- Portfolio --- */
+/* --- Portfolio Specific Spacing (Fixed) --- */
 .portfolio {
-    padding: 6rem 0;
+    padding: 4rem 0;
+    /* Reduzido de 6rem para evitar vácuo entre projetos */
     background: var(--bg-secondary);
+}
+
+/* Seletor para remover espaço duplo entre seções idênticas */
+.portfolio+.portfolio {
+    padding-top: 0;
+}
+
+/* Garante que a seção vazia de introdução não ocupe espaço desnecessário */
+#projects {
+    padding-bottom: 1rem;
 }
 
 .portfolio-grid {
@@ -392,19 +291,19 @@ nav {
     gap: 2rem;
 }
 
+/* --- Cards --- */
 .project-card {
     background: var(--bg-primary);
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--glass-border);
     transition: all var(--transition-speed);
-    position: relative;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .project-content {
@@ -414,7 +313,6 @@ nav {
 .project-type {
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: var(--accent-color);
     margin-bottom: 0.5rem;
     display: block;
@@ -424,7 +322,6 @@ nav {
     font-family: var(--font-heading);
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
 }
 
 .project-desc {
@@ -433,27 +330,7 @@ nav {
     margin-bottom: 1.5rem;
 }
 
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-links a {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    transition: color 0.2s;
-}
-
-.project-links a:hover {
-    color: var(--accent-color);
-}
-
 /* --- Contact & Form --- */
-.contact {
-    padding: 6rem 0;
-    position: relative;
-}
-
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -467,50 +344,6 @@ nav {
     margin: 0 auto;
 }
 
-.contact-info h3 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-details {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: var(--text-secondary);
-    transition: color 0.2s;
-}
-
-.contact-item:hover {
-    color: var(--accent-color);
-}
-
-.contact-item i {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-}
-
-/* Form Styling */
-.form-group {
-    margin-bottom: 1.5rem;
-    position: relative;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
 .form-control {
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
@@ -518,30 +351,7 @@ nav {
     border-radius: 8px;
     padding: 1rem;
     color: var(--text-primary);
-    font-family: var(--font-body);
-    transition: border-color 0.3s, background 0.3s;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Honeypot - Hidden from users */
-.form-honey {
-    display: none;
-    /* Modern bots read CSS, but simple ones might fill it.
-       Usually better to use opacity: 0; position: absolute; left: -9999px;
-       to trick bots that ignore display:none.
-    */
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0;
-    width: 0;
-    z-index: -1;
+    margin-bottom: 1.5rem;
 }
 
 .btn-submit {
@@ -553,274 +363,18 @@ nav {
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px var(--accent-glow);
-}
-
-/* Footer */
+/* --- Footer --- */
 footer {
     background: var(--bg-secondary);
     padding: 2rem 0;
     text-align: center;
     border-top: 1px solid var(--glass-border);
     color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
-/* --- Subpages / Articles (Global) --- */
-.glass-panel {
-    background: var(--glass-bg);
-    padding: 3rem;
-    border-radius: 12px;
-    border: 1px solid var(--glass-border);
-    margin: 12rem auto 4rem auto;
-    backdrop-filter: blur(10px);
-    max-width: 900px;
-}
-
-.glass-panel h1 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.glass-panel h2 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 0.5rem;
-}
-
-.glass-panel p,
-.glass-panel li {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    margin-bottom: 1rem;
-    line-height: 1.7;
-}
-
-.glass-panel a {
-    color: var(--accent-color);
-    text-decoration: none;
-    border-bottom: 1px solid;
-    transition: border-color 0.2s;
-}
-
-.glass-panel a:hover {
-    border-bottom-color: var(--accent-color);
-}
-
-.glass-panel code {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-family: monospace;
-    color: #ff7b72;
-}
-
-.glass-panel pre {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1.5rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-}
-
-.glass-panel pre code {
-    background: transparent;
-    padding: 0;
-    color: #e6edf3;
-}
-
-/* --- Media Queries --- */
-@media (max-width: 768px) {
-    .hero {
-        text-align: center;
-        padding-top: 120px;
-    }
-
-    .hero-greeting {
-        margin: 0 auto 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero h1 span {
-        font-size: 2rem;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /*Hide contact form on mobile*/
-    .contact-form {
-        display: none;
-    }
-
-    /* Make contact container single column on mobile */
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-
-
-    .glass-panel {
-        padding: 1.5rem;
-        margin: 8rem auto 2rem auto;
-    }
-
-    .glass-panel h1 {
-        font-size: 2rem;
-    }
-}
-
-/* --- Adições (Update v27) --- */
-
-/* Botão Link (Vídeos) - Invertido: Fundo Accent, Texto Preto */
-.btn-link {
-    background: var(--accent-color);
-    color: #000;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: var(--font-body);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.btn-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px var(--accent-glow);
-    filter: brightness(1.1);
-    color: #000;
-}
-
-/* Utilitário de Grid Span 2 */
-.span-2 {
-    grid-column: span 2;
-}
-
-@media (max-width: 768px) {
-    .span-2 {
-        grid-column: span 1 !important;
-        /* Retorna a 1 coluna no mobile */
-    }
-}
-
-/* Specific responsiveness for Articles Section */
-.articles-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.external-links-container {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-
-/* Links Externos (Lista de Artigos) */
-.external-link {
-    color: var(--text-primary);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.2s;
-    font-weight: 500;
-}
-
-.external-link:hover {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-
-/* Botão Secundário (Social) */
-.btn-secondary {
-    background: transparent;
-    color: var(--text-secondary);
-    border: 1px solid var(--glass-border);
-    transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    box-shadow: 0 0 10px var(--accent-glow);
-    background: rgba(0, 242, 255, 0.05);
-}
-
-/* Select2 */
-.select2-container {
-    width: 100%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
-}
-
-.dark-dropdown {
-    background: var(--glass-bg) !important;
-    color: var(--text-secondary) !important;
-}
-
-.dark-dropdown .select2-results__options {
-    background: var(--glass-bg) !important;
-    color: var(--text-secondary) !important;
-}
-
-/* Make Select2 closed state match dark theme */
-.select2-container .select2-selection--single {
-    background-color: var(--bg-secondary) !important;
-    border: 1px solid var(--glass-border) !important;
-    height: 48px;
-    /* match your .form-control padding */
-    border-radius: 8px;
-    color: var(--text-primary);
-}
-
-/* Fix the rendered text color */
-.select2-container .select2-selection--single .select2-selection__rendered {
-    color: var(--text-primary) !important;
-    line-height: 48px;
-    /* align text vertically */
-    padding-left: 12px;
-}
-
-/* Dark arrow */
-.select2-container .select2-selection--single .select2-selection__arrow {
-    height: 48px;
-}
-
-.select2-container .select2-selection--single .select2-selection__arrow b {
-    border-color: var(--text-primary) transparent transparent transparent !important;
-}
-
-/* Optional hover/focus highlight */
-.select2-container--default .select2-selection--single:focus,
-.select2-container--default .select2-selection--single:hover {
-    border-color: var(--accent-color) !important;
-}
-
+/* --- Modal & Video --- */
 .video-modal {
     display: none;
     position: fixed;
@@ -829,7 +383,7 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     align-items: center;
     justify-content: center;
 }
@@ -838,15 +392,11 @@ footer {
     position: relative;
     width: 90%;
     max-width: 800px;
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    /* 16:9 */
     height: 0;
 }
 
@@ -864,155 +414,72 @@ footer {
     right: 0;
     color: #fff;
     font-size: 40px;
-    font-weight: bold;
     cursor: pointer;
-    z-index: 10000;
 }
 
-.close-modal:hover {
-    /* fix: use your existing accent variable */
-    color: var(--accent-color);
-}
-
-/* HAMBURGER BUTTON (keeps your color system) */
-/* -- This block is the small addition I added; it uses your variables only -- */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    cursor: pointer;
-    padding: 6px;
-    line-height: 1;
-}
-
-/* MOBILE NAVIGATION (non-invasive, respects your theme vars) */
+/* --- Mobile Responsiveness --- */
 @media (max-width: 880px) {
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-    }
-
     .hamburger {
         display: block;
     }
 
-    .logo span {
-        /* Display logo text only on desktop */
-        display: none;
-    }
-
-    /* Important: we use your existing variables here (bg-primary, glass-border, text-primary) */
     .nav-links {
         position: absolute;
         top: 100%;
         right: 0;
-        background: var(--bg-primary);
         width: 100%;
+        background: var(--bg-primary);
         flex-direction: column;
-        gap: 20px;
-        padding: 20px;
         display: none;
-        /* hidden by default */
+        padding: 20px;
         border-top: 1px solid var(--glass-border);
-        z-index: 998;
     }
 
     .nav-links.open {
         display: flex;
     }
 
-    .nav-links a {
-        padding: 15px 0;
-        font-size: 1.2rem;
-        text-align: center;
-        color: var(--text-secondary);
-        /* keep same text color behavior */
-    }
-
-    /* small improvement: make hero centered on mobile */
-    .hero {
-        padding-top: 120px;
-        margin: auto;
-    }
-
     .hero h1 {
         font-size: 2.6rem;
     }
 
-    .hero h1 span {
-        font-size: 1.8rem;
-    }
-
-    /* Make buttons shrink to fit mobile widths but keep styles */
-    .hero .btn {
-        min-width: auto;
-        padding: 0.85rem 1.25rem;
-        font-size: 0.95rem;
-    }
-
-    /* stack .hero buttons */
-    .hero .btn+.btn {
-        margin-left: 0.75rem;
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
     }
 
     .hero-buttons {
         flex-direction: column;
     }
-
-    /* About & contact stack */
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Portfolio -> 1 column */
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Services -> single column for readibility */
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* small text adjustments for readability */
-    .project-title {
-        font-size: 1.15rem;
-    }
-
-    .project-desc,
-    .service-card p {
-        font-size: 0.95rem;
-    }
 }
 
-/* small screens */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.1rem;
-    }
+/* --- Botão Link (Vídeos) --- */
+.btn-link {
+    background: var(--accent-color);
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
 
-    .hero p {
-        font-size: 1rem;
-    }
+.btn-secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
 
-    .nav-links a {
-        font-size: 1rem;
-        padding: 12px 0;
-    }
-
-    .stat-number {
-        font-size: 1.6rem;
-    }
-
-    .stat-card {
-        padding: 1rem;
-    }
-
-    .btn-submit {
-        padding: 0.9rem;
-    }
+.btn-secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
