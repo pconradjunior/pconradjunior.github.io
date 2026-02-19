@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Política de Privacidade - REx: Research Explorer" />
+    <title>REx: Research Explorer - Política de Privacidade</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Theme Switcher Controls -->
+    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
+    <input type="radio" name="theme" id="theme-purple" class="theme-controller">
+    <input type="radio" name="theme" id="theme-green" class="theme-controller">
+
+    <div class="theme-switcher">
+        <label for="theme-cyan" class="theme-label label-cyan"></label>
+        <label for="theme-purple" class="theme-label label-purple"></label>
+        <label for="theme-green" class="theme-label label-green"></label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad
+                        Jr</span></a>
+                <div class="nav-links">
+                    <a href="index.html#home">Início</a>
+                    <a href="index.html#portfolio">Voltar ao Portfolio</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container glass-panel">
+            <h1>Política de Privacidade – REx: Research Explorer</h1>
+
+            <p>
+                Esta Política de Privacidade descreve como a extensão <strong>REx – Research Explorer Extension</strong>
+                ("nós" ou "a extensão") trata as informações dos usuários.
+            </p>
+
+            <h2>1. Coleta de Informações</h2>
+            <p>O REx <strong>NÃO coleta, armazena ou transmite</strong> quaisquer dados pessoais identificáveis.</p>
+            <ul>
+                <li>A extensão analisa o texto das páginas que você visita localmente no seu navegador apenas para
+                    identificar padrões de ISSN (ex: 1234-5678).</li>
+                <li><strong>Remote Data Fetching</strong>: A extensão baixa a base de dados Qualis publicamente
+                    disponível no domínio <code>pconradjunior.github.io</code>. Esta conexão é usada exclusivamente para
+                    baixar o arquivo de dados e não envia nenhuma informação pessoal ou histórico de navegação para o
+                    servidor.</li>
+                <li>Nenhuma URL visitada ou conteúdo de página é enviado para qualquer servidor externo.</li>
+            </ul>
+
+            <h2>2. Uso de Dados</h2>
+            <ul>
+                <li><strong>Processamento Local</strong>: Todas as consultas e verificações de dados Qualis são
+                    realizadas via IndexedDB, um banco de dados local armazenado permanentemente no seu dispositivo.
+                </li>
+                <li><strong>Sem Rastreamento</strong>: Não utilizamos cookies de rastreamento, Google Analytics ou
+                    qualquer outra ferramenta de análise de terceiros.</li>
+            </ul>
+
+            <h2>3. Permissões Requeridas</h2>
+            <ul>
+                <li><code>activeTab</code> / <code>scripting</code>: Necessárias para identificar ISSNs nas páginas que
+                    você decide visualizar.</li>
+                <li><code>storage</code>: Utilizada apenas para gerenciar o banco de dados Qualis local.</li>
+                <li><code>host_permissions</code> (<code>&lt;all_urls&gt;</code>): Necessária para que a detecção
+                    funcione em qualquer site acadêmico ou de busca técnica.</li>
+            </ul>
+
+            <h2>4. Compartilhamento de Dados</h2>
+            <p>Como não coletamos dados, <strong>não há compartilhamento de informações</strong> com terceiros em
+                nenhuma circunstância.</p>
+
+            <h2>5. Alterações</h2>
+            <p>Esta política pode ser atualizada ocasionalmente, sendo que a versão mais recente estará sempre
+                disponível no repositório do projeto.</p>
+
+            <h2>6. Contato</h2>
+            <p>Se você tiver dúvidas sobre esta política, sinta-se à vontade para entrar em contato.</p>
+
+            <hr>
+            <p><em>Última atualização: 19 de fevereiro de 2026.</em></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pedro Conrad Jr. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v26 - Designed with CSS & Glassmorphism</p>
+        </div>
+    </footer>
+</body>
+
+</html>
