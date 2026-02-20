@@ -317,6 +317,38 @@
           </div>
         </div>
 
+
+        <!-- Other Projects Subsection -->
+        <div id="other-projects" style="padding-top: 4rem;">
+          <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Outros Projetos</h3>
+          <div class="portfolio-grid">
+
+            <!-- REx: Research Explorer -->
+            <article class="project-card project-card-double">
+              <div class="project-content">
+                <span class="project-type"><i class="fa fa-fingerprint"></i> Javascript / HTML / CSS</span>
+                <h3 class="project-title">REX - Research Explorer</h3>
+                <p class="project-desc">Extensão para navegadores que automatiza a identificação de publicações
+                  científicas.</p>
+                <div class="project-links project-links-double">
+                  <a href="https://microsoftedge.microsoft.com/addons/detail/rex-research-explorer/kbndipndbinamljgflgkcakeaknplbfb"
+                    target="_blank" class="btn-link" style="color:#000;"><i class="fa-brands fa-edge"></i>
+                    Edge</a>
+
+                  <a href="javascript:void(0)" onclick="openInfoModal()" class="btn-link" style="color:#000;"><i
+                      class="fa-brands fa-firefox"></i>
+                    Firefox (Breve)</a>
+
+                  <a href="javascript:void(0)" onclick="openInfoModal()" class="btn-link" style="color:#000;"><i
+                      class="fa-brands fa-chrome"></i>
+                    Chrome (Breve)</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
         <!-- Articles Subsection -->
         <div id="articles" style="padding-top: 4rem;">
           <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Artigos Técnicos</h3>
@@ -427,9 +459,9 @@
               <div class="project-content">
                 <span class="project-type"><i class="fa fa-chalkboard-teacher"></i> Mentoria / Treinamento
                   Técnico</span>
-                <h3 class="project-title">Capacitação Dev</h3>
-                <p class="project-desc">Desenvolvimento de material e instrução técnica para novos desenvolvedores da
-                  instituição.</p>
+                <h3 class="project-title">Capacitação Dev PHP/CodeIgniter</h3>
+                <p class="project-desc">Desenvolvimento de material de treinamento e instrução técnica para novos
+                  desenvolvedores que pode incluir exemplos de código, boas práticas e estruturas de projetos.</p>
               </div>
             </article>
 
@@ -612,6 +644,15 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
+    </div>
+  </div>
+
+  <!-- Info Modal -->
+  <div class="info-modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeInfoModal()">&times;</span>
+      <i class="fa fa-info-circle info-modal-icon"></i>
+      <p class="info-modal-text" id="infoModalText">Este conteúdo está em desenvolvimento ou aguardando aprovação.</p>
     </div>
   </div>
 

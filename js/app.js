@@ -54,9 +54,23 @@ function closeVideo() {
     videoFrame.src = ''; // Stop video
 }
 
+// Info Modal Logic
+const infoModal = document.getElementById('infoModal');
+
+function openInfoModal() {
+    if (infoModal) infoModal.style.display = 'flex';
+}
+
+function closeInfoModal() {
+    if (infoModal) infoModal.style.display = 'none';
+}
+
 // Close on outside click
 window.onclick = function (event) {
     if (event.target == modal) {
         closeVideo();
+    }
+    if (event.target == infoModal) {
+        closeInfoModal();
     }
 }
