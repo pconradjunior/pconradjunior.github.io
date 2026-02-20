@@ -1,0 +1,543 @@
+{
+    "meta": {
+        "lang": "en",
+        "description": "Pedro Conrad Jr's Professional Portfolio - Full Stack & Mobile Developer",
+        "flagIcon": "images/flags/us.svg"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "expertise": "Expertise",
+        "projects": "Projects",
+        "contact": "Contact",
+        "langToggleLabel": "Português",
+        "langToggleFlag": "https://flagcdn.com/20x15/br.png",
+        "langToggleAlt": "PT",
+        "langToggleCode": "pt"
+    },
+    "themeSwitcherTitle": "Choose your theme",
+    "hero": {
+        "greeting": "Hello, I am",
+        "title": "Pedro Conrad Jr",
+        "subtitle": "Full Stack & Mobile Developer",
+        "description": "Specialist in transforming ideas into high-performance digital products. Over 20 years creating innovative web and mobile solutions.",
+        "btnProjects": "View Portfolio",
+        "btnGitHub": "GitHub",
+        "btnLinkedIn": "LinkedIn",
+        "btnInstagram": "Instagram"
+    },
+    "about": {
+        "sectionTitle": "About Me",
+        "paragraphs": [
+            "I am an IT professional with more than 20 years of experience in web and mobile systems development. Currently, I work as an IT Analyst at Universidade Federal do Pampa (Unipampa).",
+            "I served as Substitute Coordinator of the Systems Development Team (2016-2019), leading critical projects and team training. My passion lies in unifying robust software architecture with intuitive interfaces.",
+            "I have expertise in PHP (CodeIgniter), Javascript, Flutter, Docker, and databases like PostgreSQL, MySQL, and IBM DB2, always using agile methodologies like Scrum and Kanban."
+        ],
+        "stats": [
+            {
+                "number": "20+",
+                "label": "Years of Experience"
+            },
+            {
+                "number": "50+",
+                "label": "Projects"
+            },
+            {
+                "number": "20k+",
+                "label": "App Downloads"
+            }
+        ]
+    },
+    "expertise": {
+        "sectionTitle": "My Expertise",
+        "cards": [
+            {
+                "icon": "fa fa-laptop-code",
+                "title": "Web Systems & APIs",
+                "text": "Development of ERPs and critical systems with PHP (CodeIgniter) and databases like PostgreSQL, MySQL, and IBM DB2. Focus on scalability and Docker."
+            },
+            {
+                "icon": "fa fa-mobile-screen",
+                "title": "Mobile Applications",
+                "text": "Modern development for Android and iOS using Flutter, with biometric integration and institutional services."
+            },
+            {
+                "icon": "fa fa-handshake",
+                "title": "Leadership & Training",
+                "text": "Technical team management, complex requirements gathering, and training developers in best practices and architecture."
+            }
+        ]
+    },
+    "projects": {
+        "sectionTitle": "My Projects",
+        "intro": "Here you can see some of the most important projects I developed, grouped by type. Some of them may also contain demo videos available on YouTube.",
+        "mobile": {
+            "title": "Mobile Applications",
+            "items": [
+                {
+                    "typeIcon": "fa fa-mobile",
+                    "typeLabel": "Flutter",
+                    "title": "App Unipampa",
+                    "desc": "Unipampa's official app. Integrates news, cafeteria menus, and academic services.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-google-play",
+                            "label": "",
+                            "href": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app",
+                            "title": "Android",
+                            "action": "url"
+                        },
+                        {
+                            "icon": "fa-brands fa-apple",
+                            "label": "",
+                            "href": "https://apps.apple.com/app/app-unipampa/id1639927711",
+                            "title": "iOS",
+                            "action": "url"
+                        },
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch Demo",
+                            "videoId": "mgvavs5VOgU",
+                            "title": "Watch Demo",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-mobile",
+                    "typeLabel": "Flutter",
+                    "title": "SmellCheck",
+                    "desc": "Allows monitoring of the evolution of the sense of smell. Helper tool for medical treatments.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-google-play",
+                            "label": "",
+                            "href": "https://play.google.com/store/apps/details?id=pconradjunior.smellcheck",
+                            "title": "Android",
+                            "action": "url"
+                        },
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch Demo",
+                            "videoId": "t1P1dCydtUo",
+                            "title": "Watch Demo",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-fingerprint",
+                    "typeLabel": "Flutter",
+                    "title": "FingerNotes",
+                    "desc": "Secure notepad with local biometric authentication and encryption.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-google-play",
+                            "label": "",
+                            "href": "https://play.google.com/store/apps/details?id=pconradjunior.fingernotes",
+                            "title": "Android",
+                            "action": "url"
+                        },
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch Demo",
+                            "videoId": "hGdydq2jhJI",
+                            "title": "Watch Demo",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-calculator",
+                    "typeLabel": "Android",
+                    "title": "PhisiCalc",
+                    "desc": "Body Composition Calculator. Helps gym professionals in physical assessments.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-google-play",
+                            "label": "",
+                            "href": "https://play.google.com/store/apps/details?id=pconradjunior.phisicalc",
+                            "title": "Android",
+                            "action": "url"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-heart-pulse",
+                    "typeLabel": "Flutter (Study)",
+                    "title": "LembraMed",
+                    "desc": "Medical control app, including appointments, blood pressure, and heart rate logs.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch Demo",
+                            "videoId": "hUdgk81DGuk",
+                            "title": "Watch Demo",
+                            "action": "video"
+                        }
+                    ]
+                }
+            ]
+        },
+        "web": {
+            "title": "Web Systems",
+            "items": [
+                {
+                    "typeIcon": "fa fa-server",
+                    "typeLabel": "PHP / CodeIgniter",
+                    "title": "GURI - ERP",
+                    "desc": "Unified Institutional Resource Management. Modular ERP with 50+ integrated modules.",
+                    "links": [
+                        {
+                            "icon": "fa fa-newspaper",
+                            "label": "News",
+                            "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador",
+                            "title": "Read News",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-ranking-star",
+                    "typeLabel": "PHP / CodeIgniter",
+                    "title": "SisPPA",
+                    "desc": "Academic Production Scoring System. System for counting and transparency in the evaluation of teaching production.",
+                    "links": []
+                },
+                {
+                    "typeIcon": "fa fa-fingerprint",
+                    "typeLabel": "PHP / CodeIgniter",
+                    "title": "Terminal RU",
+                    "desc": "Biometric access control in University Restaurants with hardware/software integration.",
+                    "links": []
+                },
+                {
+                    "typeIcon": "fa fa-certificate",
+                    "typeLabel": "PHP / CodeIgniter",
+                    "title": "SGCE",
+                    "desc": "Electronic Certificate Management. Issuance, validation, and public verification of documents.",
+                    "links": [
+                        {
+                            "icon": "fa fa-file-pdf",
+                            "label": "PDF",
+                            "href": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf",
+                            "title": "Read Article",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-pen-to-square",
+                    "typeLabel": "PHP / CodeIgniter",
+                    "title": "Exam Registration",
+                    "desc": "Management of registrations and payments for language proficiency exams.",
+                    "links": []
+                }
+            ]
+        },
+        "other": {
+            "title": "Other Projects",
+            "items": [
+                {
+                    "typeIcon": "fa fa-fingerprint",
+                    "typeLabel": "Javascript / HTML / CSS",
+                    "title": "REX - Research Explorer",
+                    "desc": "Browser extension that automates the identification of scientific publications.",
+                    "cardClass": "project-card project-card-double",
+                    "linksClass": "project-links project-links-double",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-edge",
+                            "label": "Edge",
+                            "href": "https://microsoftedge.microsoft.com/addons/detail/rex-research-explorer/kbndipndbinamljgflgkcakeaknplbfb",
+                            "title": "Edge",
+                            "action": "url",
+                            "style": "color:#000;"
+                        },
+                        {
+                            "icon": "fa-brands fa-firefox",
+                            "label": "Firefox (Coming Soon)",
+                            "href": "javascript:void(0)",
+                            "title": "Firefox (Coming Soon)",
+                            "action": "infoModal",
+                            "style": "color:#000;"
+                        },
+                        {
+                            "icon": "fa-brands fa-chrome",
+                            "label": "Chrome (Coming Soon)",
+                            "href": "javascript:void(0)",
+                            "title": "Chrome (Coming Soon)",
+                            "action": "infoModal",
+                            "style": "color:#000;"
+                        }
+                    ]
+                }
+            ]
+        },
+        "articles": {
+            "title": "Technical Articles",
+            "items": [
+                {
+                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeLabel": "Development Article (PT)",
+                    "title": "REx: Research Explorer - Enhancing Identification and Comparison of Scientific Indicators",
+                    "desc": "Browser extension that automates ISSN identification and provides instant visual comparison between Qualis 2017-2020 and 2021-2024 periods.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-linkedin",
+                            "label": "Read on LinkedIn",
+                            "href": "https://www.linkedin.com/pulse/rex-research-explorer-facilitador-de-identifica%25C3%25A7%25C3%25A3o-e-conrad-junior-zxjvf",
+                            "title": "Read on LinkedIn",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-file-code",
+                    "typeLabel": "Article (PT)",
+                    "title": "Version Check",
+                    "desc": "Implementation of Version Check (Force Update) in Flutter Apps.",
+                    "links": [
+                        {
+                            "icon": "fa fa-book-open",
+                            "label": "Read",
+                            "href": "article_versioncheck.html",
+                            "title": "Read",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-id-card",
+                    "typeLabel": "Article (PT)",
+                    "title": "Facial Recognition",
+                    "desc": "Implementation of an offline multi-user facial biometric system in Flutter.",
+                    "links": [
+                        {
+                            "icon": "fa fa-book-open",
+                            "label": "Read",
+                            "href": "article_reconhecimento_facial.html",
+                            "title": "Read",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-apple",
+                    "typeLabel": "Article (PT)",
+                    "title": "iOS Guide",
+                    "desc": "What do you need to create iOS apps? Costs and steps for entrepreneurs.",
+                    "links": [
+                        {
+                            "icon": "fa fa-book-open",
+                            "label": "Read",
+                            "href": "article_ios.html",
+                            "title": "Read",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-sitemap",
+                    "typeLabel": "Article (PT)",
+                    "title": "Algorithms",
+                    "desc": "Algorithms: A Seven-Headed Beast? Demystifying programming logic.",
+                    "links": [
+                        {
+                            "icon": "fa fa-book-open",
+                            "label": "Read",
+                            "href": "article_algoritmos.html",
+                            "title": "Read",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeLabel": "Portfolio Article (Portuguese)",
+                    "title": "Your portfolio is not an HTML resume (and that's okay)",
+                    "desc": "Article about how to build a good portfolio and what the differences are when compared to a resume (in Portuguese).",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-linkedin",
+                            "label": "Read on LinkedIn",
+                            "href": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/",
+                            "title": "Read on LinkedIn",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeLabel": "Article (Portuguese)",
+                    "title": "Application of an organized model to software development: how to avoid improvisation and work with intention",
+                    "desc": "Article about applying an organized model to software development (in Portuguese).",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-linkedin",
+                            "label": "Read on LinkedIn",
+                            "href": "https://www.linkedin.com/pulse/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-o-conrad-junior-gpitf/",
+                            "title": "Read on LinkedIn",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-chalkboard-teacher",
+                    "typeLabel": "Mentorship / Technical Training",
+                    "title": "Dev Training - PHP/CodeIgniter",
+                    "desc": "Development of technical documents and training materials for new developers, which may include code examples, best practices, and project structures.",
+                    "links": []
+                },
+                {
+                    "typeIcon": "fa fa-link",
+                    "typeLabel": "External Publications",
+                    "title": "Other Publications",
+                    "cardClass": "project-card span-2",
+                    "externalGroups": [
+                        {
+                            "links": [
+                                {
+                                    "icon": "fa fa-external-link-alt",
+                                    "label": "Unipampa App brings innovation to community",
+                                    "href": "https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria"
+                                },
+                                {
+                                    "icon": "fa fa-external-link-alt",
+                                    "label": "Unipampa App available for iOS",
+                                    "href": "https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios"
+                                }
+                            ]
+                        }
+                    ],
+                    "publishedArticlesTitle": "Event Published Articles",
+                    "publishedGroups": [
+                        {
+                            "links": [
+                                {
+                                    "icon": "fa fa-file-pdf",
+                                    "label": "Using CodeIgniter in Management Systems (PDF)",
+                                    "href": "http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf"
+                                }
+                            ]
+                        },
+                        {
+                            "links": [
+                                {
+                                    "icon": "fa fa-file-pdf",
+                                    "label": "SisRel - Dynamic Data Extraction System (PDF)",
+                                    "href": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf"
+                                },
+                                {
+                                    "icon": "fa fa-file-pdf",
+                                    "label": "Web Protocol System based on Design Patterns (PDF)",
+                                    "href": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "videos": {
+            "title": "Video Material & Demos",
+            "items": [
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Clean Arch",
+                    "title": "Snack Wheel",
+                    "desc": "Clean Architecture and Responsibility Wheel study case.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "ky72JApuaLg",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Responsiveness",
+                    "title": "Portfolio Demo",
+                    "desc": "Same codebase running smoothly on Mobile (Android) and Web (Browser).",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "WTa4rXAw9gg",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-gamepad",
+                    "typeLabel": "Game Dev",
+                    "title": "AlienWar",
+                    "desc": "2D Game Development study using Unity Engine.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "IHHj8Zp5s10",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "contact": {
+        "sectionTitle": "Let's Talk?",
+        "infoTitle": "Contact Channels",
+        "infoText": "I am available for new projects and consulting. Feel free to reach out.",
+        "form": {
+            "labelName": "Your Name",
+            "placeholderName": "How should I call you?",
+            "labelEmail": "Your E-mail",
+            "placeholderEmail": "example@email.com",
+            "labelSubject": "Subject",
+            "options": [
+                {
+                    "value": "[Contact via Portfolio] Consulting",
+                    "label": "Consulting"
+                },
+                {
+                    "value": "[Contact via Portfolio] Mobile Development",
+                    "label": "Mobile Development"
+                },
+                {
+                    "value": "[Contact via Portfolio] Web System",
+                    "label": "Web System"
+                },
+                {
+                    "value": "[Contact via Portfolio] Other",
+                    "label": "Other"
+                }
+            ],
+            "labelMessage": "Message",
+            "placeholderMessage": "Tell me more about your idea...",
+            "captchaLang": "en",
+            "btnSubmit": "Send Message"
+        }
+    },
+    "footer": {
+        "copyright": "&copy; 2025 Pedro Conrad Jr. All rights reserved.",
+        "version": "v26 - Designed with CSS & Glassmorphism"
+    },
+    "infoModal": {
+        "text": "This content is under development or awaiting approval."
+    }
+}
