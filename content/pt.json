@@ -258,10 +258,10 @@
                         },
                         {
                             "icon": "fa-brands fa-firefox",
-                            "label": "Firefox (Breve)",
-                            "href": "javascript:void(0)",
-                            "title": "Firefox (Breve)",
-                            "action": "infoModal",
+                            "label": "Firefox",
+                            "href": "https://addons.mozilla.org/pt-BR/firefox/addon/rex-researcher-explorer/",
+                            "title": "Firefox",
+                            "action": "url",
                             "style": "color:#000;"
                         },
                         {
