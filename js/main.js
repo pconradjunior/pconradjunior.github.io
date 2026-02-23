@@ -295,6 +295,12 @@ const Render = (() => {
             }
         }
 
+        // Redirect after form submission (language-aware)
+        const redirectInput = document.querySelector('.contact-form input[name="redirect"]');
+        if (redirectInput && f.redirect) {
+            redirectInput.value = 'https://pconradjunior.github.io/' + f.redirect;
+        }
+
         // hCaptcha language attribute
         const captchaDiv = document.querySelector('.h-captcha');
         if (captchaDiv) captchaDiv.setAttribute('data-lang', f.captchaLang);

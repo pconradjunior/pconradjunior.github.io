@@ -529,6 +529,7 @@
             ],
             "labelMessage": "Mensagem",
             "placeholderMessage": "Conte-me mais sobre sua ideia...",
+            "redirect": "obrigado.html",
             "captchaLang": "pt",
             "btnSubmit": "Enviar Mensagem"
         }
