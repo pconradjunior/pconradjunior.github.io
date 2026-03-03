@@ -243,7 +243,7 @@
                 {
                     "typeIcon": "fa fa-fingerprint",
                     "typeLabel": "Javascript / HTML / CSS",
-                    "title": "REX - Research Explorer",
+                    "title": "REx: Research Explorer",
                     "desc": "Extensão para navegadores que automatiza a identificação de publicações científicas.",
                     "cardClass": "project-card project-card-double",
                     "linksClass": "project-links project-links-double",
@@ -266,10 +266,10 @@
                         },
                         {
                             "icon": "fa-brands fa-chrome",
-                            "label": "Chrome (Breve)",
-                            "href": "javascript:void(0)",
-                            "title": "Chrome (Breve)",
-                            "action": "infoModal",
+                            "label": "Chrome",
+                            "href": "https://chromewebstore.google.com/detail/rex-research-explorer/ijacjhjbdoilgolpkaplhmmhnnkchoch",
+                            "title": "Chrome",
+                            "action": "url",
                             "style": "color:#000;"
                         }
                     ]
