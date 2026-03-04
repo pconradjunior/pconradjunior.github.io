@@ -507,6 +507,10 @@
                     "label": "Sistema Web"
                 },
                 {
+                    "value": "[Contato via Portfolio] Suporte e sugestões REx",
+                    "label": "Suporte e sugestões REx"
+                },
+                {
                     "value": "[Contato via Portfolio] Outro assunto",
                     "label": "Outro assunto"
                 }
