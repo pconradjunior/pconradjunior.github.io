@@ -126,7 +126,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-fingerprint",
+                    "typeIcon": "fa fa-mobile",
                     "typeLabel": "Flutter",
                     "title": "FingerNotes",
                     "desc": "Secure notepad with local biometric authentication and encryption.",
@@ -148,7 +148,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-calculator",
+                    "typeIcon": "fa fa-mobile",
                     "typeLabel": "Android",
                     "title": "PhisiCalc",
                     "desc": "Body Composition Calculator. Helps gym professionals in physical assessments.",
@@ -163,7 +163,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-heart-pulse",
+                    "typeIcon": "fa fa-mobile",
                     "typeLabel": "Flutter (Study)",
                     "title": "LembraMed",
                     "desc": "Medical control app, including appointments, blood pressure, and heart rate logs.",
@@ -199,21 +199,21 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-ranking-star",
+                    "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "SisPPA",
                     "desc": "Academic Production Scoring System. System for counting and transparency in the evaluation of teaching production.",
                     "links": []
                 },
                 {
-                    "typeIcon": "fa fa-fingerprint",
+                    "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "Terminal RU",
                     "desc": "Biometric access control in University Restaurants with hardware/software integration.",
                     "links": []
                 },
                 {
-                    "typeIcon": "fa fa-certificate",
+                    "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "SGCE",
                     "desc": "Electronic Certificate Management. Issuance, validation, and public verification of documents.",
@@ -229,7 +229,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-pen-to-square",
+                    "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "Exam Registration",
                     "desc": "Management of registrations and payments for language proficiency exams.",
@@ -241,7 +241,7 @@
             "title": "Other Projects",
             "items": [
                 {
-                    "typeIcon": "fa fa-fingerprint",
+                    "typeIcon": "fa-brands fa-chrome",
                     "typeLabel": "Javascript / HTML / CSS",
                     "title": "REx: Research Explorer",
                     "desc": "Browser extension that automates the identification of scientific publications.",
@@ -328,7 +328,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-apple",
+                    "typeIcon": "fa-brands fa-apple",
                     "typeLabel": "Article (PT)",
                     "title": "iOS Guide",
                     "desc": "What do you need to create iOS apps? Costs and steps for entrepreneurs.",
@@ -482,7 +482,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-gamepad",
+                    "typeIcon": "fa fa-video",
                     "typeLabel": "Game Dev",
                     "title": "AlienWar",
                     "desc": "2D Game Development study using Unity Engine.",
