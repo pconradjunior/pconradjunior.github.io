@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="REx: Research Explorer - Extensão para facilitar a identificação e comparação de indicadores científicos Qualis CAPES." />
+    <title>REx: Research Explorer — Facilitador de Indicadores Científicos</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Theme Switcher Controls -->
+    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
+    <input type="radio" name="theme" id="theme-purple" class="theme-controller">
+    <input type="radio" name="theme" id="theme-green" class="theme-controller">
+
+    <div class="theme-switcher">
+        <label for="theme-cyan" class="theme-label label-cyan"></label>
+        <label for="theme-purple" class="theme-label label-purple"></label>
+        <label for="theme-green" class="theme-label label-green"></label>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fa fa-microchip logo-icon">&nbsp;</i><span>REx Explorer</span></a>
+                <div class="nav-links">
+                    <a href="index.html#home">Início</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container glass-panel">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="article_imgs/rex/icone_rex_big.png" alt="REx Logo" style="max-width: 150px; margin-bottom: 1rem;">
+                <h1>REx: Research Explorer</h1>
+                <p style="font-size: 1.2rem; opacity: 0.8;">Facilitando a identificação e comparação de indicadores científicos</p>
+            </div>
+
+            <h3>💡 O que é o REx?</h3>
+            <p>
+                O <strong>REx: Research Explorer</strong> é uma extensão desenvolvida para agilizar o fluxo de trabalho de pesquisadores, orientadores e estudantes. 
+                Ele identifica automaticamente o <strong>ISSN</strong> de periódicos em páginas como o Google Acadêmico e outros sites acadêmicos, permitindo visualizar a classificação <strong>Qualis CAPES</strong> de diferentes quadriênios de forma rápida e comparativa.
+            </p>
+
+            <h3>🧭 Proposta e Origem</h3>
+            <p>
+                A proposta é agilizar análises relacionadas à escolha de periódicos, avaliação de produção e acompanhamento de indicadores, podendo ser usada em sites ou sistemas institucionais onde apareça o ISSN das publicações.
+            </p>
+            <p>
+                O projeto surgiu da observação do fluxo de trabalho de pesquisadores em busca de referências qualificadas. Desenvolvido durante o Carnaval, o REx nasceu da vontade de contribuir com uma ferramenta simples, porém poderosa, para a comunidade científica.
+            </p>
+
+            <h3>🔍 Como funciona?</h3>
+            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                <div class="service-card">
+                    <i class="fa fa-download service-icon"></i>
+                    <h3>Instale</h3>
+                    <p>Adicione a extensão ao seu navegador (Chrome, Edge ou Firefox).</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa fa-search service-icon"></i>
+                    <h3>Navegue</h3>
+                    <p>O REx detecta automaticamente ISSNs em qualquer página acadêmica.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa fa-chart-line service-icon"></i>
+                    <h3>Analise</h3>
+                    <p>Passe o mouse sobre o ícone do REx para ver os indicadores Qualis.</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                <img src="article_imgs/rex/print_1.png" alt="REx em ação 1" style="width: 100%; border-radius: 8px; border: 1px solid var(--glass-border);">
+                <img src="article_imgs/rex/print_2.png" alt="REx em ação 2" style="width: 100%; border-radius: 8px; border: 1px solid var(--glass-border);">
+                <img src="article_imgs/rex/print_3.png" alt="REx em ação 3" style="width: 100%; border-radius: 8px; border: 1px solid var(--glass-border);">
+            </div>
+
+            <h3>🛡️ Coleta de dados e privacidade</h3>
+            <p>
+                O REx <strong>não coleta dado algum</strong>. É perfeitamente seguro para uso tanto em páginas públicas quanto em sistemas restritos, uma vez que apenas lê os números ISSN e localiza as ocorrências na sua base interna, que é carregada para o navegador na sua primeira execução.
+            </p>
+
+            <h3>👥 Quem pode usar o REx?</h3>
+            <p>
+                A ferramenta é direcionada a <strong>pesquisadores</strong> (discentes, docentes, técnicos e público em geral) e <strong>avaliadores de produção científica</strong> que buscam otimizar suas análises de indicadores bibliométricos.
+            </p>
+
+            <h3>🚀 Onde baixar o REx</h3>
+            <div class="external-links-container">
+                <a href="https://chromewebstore.google.com/detail/rex-research-explorer/ijacjhjbdoilgolpkaplhmmhnnkchoch" class="btn-link" target="_blank">
+                    <i class="fab fa-chrome"></i> Google Chrome
+                </a>
+                <a href="https://microsoftedge.microsoft.com/addons/detail/rex-research-explorer/kbndipndbinamljgflgkcakeaknplbfb" class="btn-link" target="_blank">
+                    <i class="fab fa-edge"></i> Microsoft Edge
+                </a>
+                <a href="https://addons.mozilla.org/pt-BR/firefox/addon/rex-researcher-explorer/" class="btn-link" target="_blank">
+                    <i class="fab fa-firefox"></i> Mozilla Firefox
+                </a>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.7;">
+                * No Firefox, o nome da extensão é "REx: Researcher Explorer".
+            </p>
+
+            <div style="background: rgba(var(--accent-color-rgb), 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                <h4>📝 Nota do Desenvolvedor</h4>
+                <p>Este é um projeto pessoal, sem vínculo institucional, criado para contribuir com a comunidade científica. Se achar a ferramenta útil, sinta-se à vontade para divulgar aos seus colegas!</p>
+                <a href="https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a" class="external-link" target="_blank">
+                    <i class="fab fa-medium"></i> Leia o artigo técnico no Medium
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pedro Conrad Jr. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v27 - REx Landing Page</p>
+        </div>
+    </footer>
+</body>
+
+</html>
