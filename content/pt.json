@@ -245,30 +245,14 @@
                     "typeLabel": "Javascript / HTML / CSS",
                     "title": "REx: Research Explorer",
                     "desc": "Extensão para navegadores que automatiza a identificação de publicações científicas.",
-                    "cardClass": "project-card project-card-double",
-                    "linksClass": "project-links project-links-double",
+                    "cardClass": "project-card",
+                    "linksClass": "project-links",
                     "links": [
                         {
-                            "icon": "fa-brands fa-edge",
-                            "label": "Edge",
-                            "href": "https://microsoftedge.microsoft.com/addons/detail/rex-research-explorer/kbndipndbinamljgflgkcakeaknplbfb",
-                            "title": "Edge",
-                            "action": "url",
-                            "style": "color:#000;"
-                        },
-                        {
-                            "icon": "fa-brands fa-firefox",
-                            "label": "Firefox",
-                            "href": "https://addons.mozilla.org/pt-BR/firefox/addon/rex-researcher-explorer/",
-                            "title": "Firefox",
-                            "action": "url",
-                            "style": "color:#000;"
-                        },
-                        {
-                            "icon": "fa-brands fa-chrome",
-                            "label": "Chrome",
-                            "href": "https://chromewebstore.google.com/detail/rex-research-explorer/ijacjhjbdoilgolpkaplhmmhnnkchoch",
-                            "title": "Chrome",
+                            "icon": "fa-solid fa-info-circle",
+                            "label": "Mais informações / Downloads",
+                            "href": "rex_info.html",
+                            "title": "Informações do Projeto e Downloads",
                             "action": "url",
                             "style": "color:#000;"
                         }
