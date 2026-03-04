@@ -365,14 +365,18 @@ nav {
 }
 
 .service-icon {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-card h3 {
     margin-bottom: 1rem;
     font-family: var(--font-heading);
+    text-align: center;
 }
 
 .service-card p {
