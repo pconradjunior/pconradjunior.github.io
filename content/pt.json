@@ -250,7 +250,7 @@
                     "links": [
                         {
                             "icon": "fa-solid fa-info-circle",
-                            "label": "Mais informações / Downloads",
+                            "label": "Ver mais/Downloads",
                             "href": "rex_info.html",
                             "title": "Informações do Projeto e Downloads",
                             "action": "url",

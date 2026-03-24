@@ -250,7 +250,7 @@
                     "links": [
                         {
                             "icon": "fa-solid fa-info-circle",
-                            "label": "More info & Download (PT)",
+                            "label": "Read more / Downloads",
                             "href": "rex_info.html",
                             "title": "Project Information & Download (in Portuguese)",
                             "action": "url",
