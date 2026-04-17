@@ -20,7 +20,7 @@
         "greeting": "Olá, eu sou",
         "title": "Pedro Conrad Jr",
         "subtitle": "Desenvolvedor Full Stack & Mobile",
-        "description": "Especialista em transformar ideias em produtos digitais de alta performance. Mais de 20 anos criando soluções web e mobile inovadoras.",
+        "description": "Mais de 20 anos projetando e desenvolvendo sistemas web e mobile de alta complexidade, com foco em arquitetura de software, ERPs institucionais e soluções escaláveis.",
         "btnProjects": "Ver Projetos",
         "btnGitHub": "GitHub",
         "btnLinkedIn": "LinkedIn",
@@ -29,9 +29,9 @@
     "about": {
         "sectionTitle": "Sobre Mim",
         "paragraphs": [
-            "Sou um profissional de Tecnologia da Informação com mais de 20 anos de experiência no desenvolvimento de sistemas web e mobile. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa).",
-            "Atuei como Coordenador Substituto da Equipe de Desenvolvimento de Sistemas (2016-2019), liderando projetos críticos e a capacitação de equipes. Minha paixão está em unir arquitetura de software robusta com interfaces intuitivas.",
-            "Tenho expertise em PHP (CodeIgniter), Javascript, Flutter, Docker e bancos de dados como PostgreSQL, MySQL e IBM DB2, sempre utilizando metodologias ágeis como Scrum e Kanban."
+            "Sou profissional de Tecnologia da Informação com mais de 20 anos de experiência no desenvolvimento de sistemas web e aplicações mobile. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa), contribuindo diretamente para sistemas institucionais críticos.",
+            "Tenho forte atuação em arquitetura de software, modelagem de dados e definição de padrões de desenvolvimento. Entre 2016 e 2019 atuei na coordenação técnica de equipes, liderando projetos, organizando processos e capacitando desenvolvedores.",
+            "Minha experiência inclui o desenvolvimento de sistemas de grande porte, como ERPs com dezenas de módulos integrados, além de aplicações mobile modernas utilizando Flutter, sempre com foco em desempenho, escalabilidade e qualidade de código."
         ],
         "stats": [
             {
@@ -40,11 +40,11 @@
             },
             {
                 "number": "50+",
-                "label": "Projetos"
+                "label": "Projetos Desenvolvidos"
             },
             {
                 "number": "20k+",
-                "label": "Downloads de Apps"
+                "label": "Downloads de Aplicativos"
             }
         ]
     },
@@ -53,24 +53,24 @@
         "cards": [
             {
                 "icon": "fa fa-laptop-code",
-                "title": "Sistemas Web & APIs",
-                "text": "Desenvolvimento de ERPs e sistemas críticos com PHP (CodeIgniter) e bancos como PostgreSQL, MySQL e IBM DB2. Foco em escalabilidade e Docker."
+                "title": "Sistemas Corporativos & APIs",
+                "text": "Desenvolvimento de sistemas institucionais e ERPs de grande porte, com foco em arquitetura, escalabilidade e integração de serviços utilizando PHP (CodeIgniter) e bancos de dados relacionais."
             },
             {
                 "icon": "fa fa-mobile-screen",
-                "title": "Aplicativos Mobile",
-                "text": "Desenvolvimento moderno para Android e iOS utilizando Flutter, com integração de biometria e serviços institucionais."
+                "title": "Aplições Mobile",
+                "text": "Desenvolvimento de aplicativos modernos para Android e iOS utilizando Flutter, com integração de APIs, autenticação biométrica e serviços institucionais."
             },
             {
                 "icon": "fa fa-handshake",
-                "title": "Liderança e Capacitação",
-                "text": "Gestão técnica de equipes, levantamento de requisitos complexos e treinamento de desenvolvedores em boas práticas e arquitetura."
+                "title": "Arquitetura & Liderança Técnica",
+                "text": "Definição de padrões de desenvolvimento, modelagem de sistemas e liderança técnica de equipes, com foco em qualidade, organização e evolução contínua."
             }
         ]
     },
     "projects": {
         "sectionTitle": "Meus Projetos",
-        "intro": "Nesta seção estão alguns dos projetos mais importantes que desenvolvi durante minha trajetória profissional, agrupados por tipo de projeto. Alguns deles também podem conter vídeos de demonstração disponíveis no YouTube.",
+        "intro": "Nesta seção estão alguns dos principais projetos desenvolvidos ao longo da minha trajetória profissional, abrangendo sistemas institucionais, aplicações mobile e iniciativas técnicas com foco em arquitetura, integração e escalabilidade.",
         "mobile": {
             "title": "Aplicativos Mobile",
             "items": [
@@ -78,7 +78,7 @@
                     "typeIcon": "fa fa-mobile",
                     "typeLabel": "Flutter",
                     "title": "App Unipampa",
-                    "desc": "App oficial da Universidade Federal do Pampa. Integra notícias, cardápio do RU e serviços acadêmicos.",
+                    "desc": "Aplicativo oficial da Unipampa que centraliza serviços acadêmicos, informações institucionais e comunicação com a comunidade universitária.",
                     "links": [
                         {
                             "icon": "fa-brands fa-google-play",
@@ -107,7 +107,7 @@
                     "typeIcon": "fa fa-mobile",
                     "typeLabel": "Flutter",
                     "title": "SmellCheck",
-                    "desc": "Monitoramento da evolução do sentido de olfato. Ferramenta auxiliar em tratamentos médicos.",
+                    "desc": "Aplicação voltada ao acompanhamento da recuperação do olfato, utilizada como ferramenta auxiliar em processos clínicos.",
                     "links": [
                         {
                             "icon": "fa-brands fa-google-play",
@@ -129,7 +129,7 @@
                     "typeIcon": "fa fa-mobile",
                     "typeLabel": "Flutter",
                     "title": "FingerNotes",
-                    "desc": "Bloco de notas seguro com autenticação biométrica local e criptografia.",
+                    "desc": "Aplicativo de anotações seguras com autenticação biométrica e proteção por senha, focado em privacidade e simplicidade.",
                     "links": [
                         {
                             "icon": "fa-brands fa-google-play",
@@ -151,7 +151,7 @@
                     "typeIcon": "fa fa-mobile",
                     "typeLabel": "Android",
                     "title": "PhisiCalc",
-                    "desc": "Cálculo de Composição Corporal. Auxilia profissionais de educação física em avaliações.",
+                    "desc": "Ferramenta de cálculo de composição corporal voltada a profissionais de educação física e saúde.",
                     "links": [
                         {
                             "icon": "fa-brands fa-google-play",
@@ -166,7 +166,7 @@
                     "typeIcon": "fa fa-mobile",
                     "typeLabel": "Flutter (Estudo)",
                     "title": "LembraMed",
-                    "desc": "Controle de medicação, consultas e registro de pressão arterial. Projeto de estudo.",
+                    "desc": "Aplicativo para controle de medicação, consultas e acompanhamento de indicadores de saúde, desenvolvido como estudo prático em Flutter.",
                     "links": [
                         {
                             "icon": "fa fa-play-circle",
@@ -186,7 +186,7 @@
                     "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "GURI - ERP",
-                    "desc": "Gestão Unificada de Recursos Institucionais. ERP modular com 50+ módulos integrados.",
+                    "desc": "Sistema ERP institucional com mais de 50 módulos integrados, utilizado na gestão acadêmica e administrativa, com atuação em análise, desenvolvimento e arquitetura.",
                     "links": [
                         {
                             "icon": "fa fa-newspaper",
@@ -202,21 +202,21 @@
                     "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "SisPPA",
-                    "desc": "Sistema de Pontuação da Produção Acadêmica. Sistema para contabilização e transparência na avaliação de produção docente.",
+                    "desc": "Sistema de pontuação da produção acadêmica com foco em transparência, avaliação e apoio à gestão institucional.",
                     "links": []
                 },
                 {
                     "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "Terminal RU",
-                    "desc": "Controle de acesso biométrico nos Restaurantes Universitários com integração hardware/software.",
+                    "desc": "Sistema de controle de acesso com autenticação biométrica integrado a hardware para restaurantes universitários.",
                     "links": []
                 },
                 {
                     "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "SGCE",
-                    "desc": "Gestão de Certificados Eletrônicos. Emissão, validação e verificação pública de documentos.",
+                    "desc": "Sistema para emissão, validação e verificação pública de certificados eletrônicos.",
                     "links": [
                         {
                             "icon": "fa fa-file-pdf",
@@ -227,13 +227,6 @@
                             "style": "color:#000;"
                         }
                     ]
-                },
-                {
-                    "typeIcon": "fa fa-server",
-                    "typeLabel": "PHP / CodeIgniter",
-                    "title": "Inscrição Exames",
-                    "desc": "Gerenciamento de inscrições e pagamentos para provas de proficiência em idiomas.",
-                    "links": []
                 }
             ]
         },
@@ -244,7 +237,7 @@
                     "typeIcon": "fa-brands fa-chrome",
                     "typeLabel": "Javascript / HTML / CSS",
                     "title": "REx: Research Explorer",
-                    "desc": "Extensão para navegadores que automatiza a identificação de publicações científicas.",
+                    "desc": "Extensão para navegadores que automatiza a identificação de publicações científicas e facilita a análise de indicadores acadêmicos.",
                     "cardClass": "project-card",
                     "linksClass": "project-links",
                     "links": [
@@ -267,7 +260,7 @@
                     "typeIcon": "fa-brands fa-linkedin",
                     "typeLabel": "Artigo de Desenvolvimento",
                     "title": "REx: Research Explorer - Facilitador de identificação e comparação de Indicadores Científicos",
-                    "desc": "Extensão para navegadores que automatiza a identificação de ISSNs e fornece comparação visual instantânea entre os períodos Qualis 2017-2020 e 2021-2024.",
+                    "desc": "Extensão que automatiza a identificação de ISSNs e permite comparação visual entre diferentes classificações de periódicos.",
                     "links": [
                         {
                             "icon": "fa-brands fa-linkedin",
@@ -283,7 +276,7 @@
                     "typeIcon": "fa fa-file-code",
                     "typeLabel": "Artigo",
                     "title": "Version Check",
-                    "desc": "Implementação de Verificação de Versão (Force Update) em Apps Flutter.",
+                    "desc": "Implementação de estratégia de verificação de versão e atualização obrigatória em aplicativos Flutter.",
                     "links": [
                         {
                             "icon": "fa fa-book-open",
@@ -299,7 +292,7 @@
                     "typeIcon": "fa fa-id-card",
                     "typeLabel": "Artigo",
                     "title": "Reconhecimento Facial",
-                    "desc": "Implementação de sistema biométrico facial multiusuário offline em Flutter.",
+                    "desc": "Sistema biométrico facial multiusuário offline desenvolvido em Flutter, com foco em autenticação local.",
                     "links": [
                         {
                             "icon": "fa fa-book-open",
@@ -315,7 +308,7 @@
                     "typeIcon": "fa-brands fa-apple",
                     "typeLabel": "Artigo",
                     "title": "Guia iOS",
-                    "desc": "O que é preciso para criar apps iOS? Custos e etapas para empresários.",
+                    "desc": "Guia prático sobre custos, requisitos e etapas para desenvolvimento de aplicativos iOS.",
                     "links": [
                         {
                             "icon": "fa fa-book-open",
@@ -330,8 +323,8 @@
                 {
                     "typeIcon": "fa fa-sitemap",
                     "typeLabel": "Artigo",
-                    "title": "Algoritmos",
-                    "desc": "Algoritmo: Bicho de Sete Cabeças? Desmistificando a lógica de programação.",
+                    "title": "Algoritmo: Bicho de Sete Cabeças?",
+                    "desc": "Abordagem didática para desmistificar a lógica de programação e facilitar o aprendizado de algoritmos.",
                     "links": [
                         {
                             "icon": "fa fa-book-open",
@@ -347,7 +340,7 @@
                     "typeIcon": "fa-brands fa-linkedin",
                     "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Seu portfólio não é um currículo em HTML (e tudo bem)",
-                    "desc": "Artigo sobre como construir um bom portfólio e quais as diferenças quando comparado a um currículo.",
+                    "desc": "Reflexão sobre as diferenças entre portfólio e currículo e como estruturar melhor a apresentação profissional.",
                     "links": [
                         {
                             "icon": "fa-brands fa-linkedin",
@@ -363,7 +356,7 @@
                     "typeIcon": "fa-brands fa-linkedin",
                     "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Aplicação de um modelo organizado ao desenvolvimento de software: como evitar o improviso e trabalhar com intenção",
-                    "desc": "Artigo sobre como aplicar um modelo organizado ao desenvolvimento de software.",
+                    "desc": "Expõe a aplicação de uma metodologia estruturada para facilitar o desenvolvimento de software com foco na redução de improvisos e aumento de previsibilidade.",
                     "links": [
                         {
                             "icon": "fa-brands fa-linkedin",
@@ -379,7 +372,7 @@
                     "typeIcon": "fa fa-chalkboard-teacher",
                     "typeLabel": "Mentoria / Treinamento Técnico",
                     "title": "Capacitação Dev PHP/CodeIgniter",
-                    "desc": "Desenvolvimento de material de treinamento e instrução técnica para novos desenvolvedores que pode incluir exemplos de código, boas práticas e estruturas de projetos.",
+                    "desc": "Material de capacitação técnica voltado à formação de novos desenvolvedores em PHP e boas práticas.",
                     "links": []
                 },
                 {
@@ -439,7 +432,7 @@
                     "typeIcon": "fa fa-video",
                     "typeLabel": "Clean Arch",
                     "title": "Roda do Lanche",
-                    "desc": "Estudo de Arquitetura Limpa e Construção por Responsabilidades.",
+                    "desc": "Estudo prático de Arquitetura Limpa e organização de responsabilidades no desenvolvimento de software.",
                     "links": [
                         {
                             "icon": "fa fa-play-circle",
@@ -454,7 +447,7 @@
                     "typeIcon": "fa fa-video",
                     "typeLabel": "Responsividade",
                     "title": "Portfolio Demo",
-                    "desc": "Mesmo código rodando em Mobile (Android) e Web (Browser).",
+                    "desc": "Demonstração do mesmo projeto funcionando de forma responsiva em mobile e web.",
                     "links": [
                         {
                             "icon": "fa fa-play-circle",
@@ -469,7 +462,7 @@
                     "typeIcon": "fa fa-video",
                     "typeLabel": "Game Dev",
                     "title": "AlienWar",
-                    "desc": "Estudo de desenvolvimento de jogos 2D com Unity.",
+                    "desc": "Estudo de desenvolvimento de jogos 2D utilizando Unity.",
                     "links": [
                         {
                             "icon": "fa fa-play-circle",
@@ -486,7 +479,7 @@
     "contact": {
         "sectionTitle": "Vamos Conversar?",
         "infoTitle": "Canais de Contato",
-        "infoText": "Estou disponível para novos projetos e consultorias. Sinta-se à vontade para entrar em contato.",
+        "infoText": "Estou disponível para projetos, consultorias e parcerias técnicas em desenvolvimento de sistemas e arquitetura de software.",
         "form": {
             "labelName": "Seu Nome",
             "placeholderName": "Como devo te chamar?",
