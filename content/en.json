@@ -9,6 +9,12 @@
         "about": "About",
         "expertise": "Expertise",
         "projects": "Projects",
+        "projectsMobile": "Mobile Apps",
+        "projectsWeb": "Web Systems",
+        "projectsOther": "Other Projects",
+        "projectsArticles": "Articles",
+        "projectsVideos": "Videos",
+        "articles": "Articles",
         "contact": "Contact",
         "langToggleLabel": "Português",
         "langToggleFlag": "https://flagcdn.com/20x15/br.png",
@@ -221,19 +227,12 @@
                         {
                             "icon": "fa fa-file-pdf",
                             "label": "PDF",
-                            "href": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33221.pdf",
+                            "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14",
                             "title": "Read Article",
                             "action": "url",
                             "style": "color:#000;"
                         }
                     ]
-                },
-                {
-                    "typeIcon": "fa fa-server",
-                    "typeLabel": "PHP / CodeIgniter",
-                    "title": "Exam Registration",
-                    "desc": "Management of registrations and payments for language proficiency exams.",
-                    "links": []
                 }
             ]
         },
@@ -409,8 +408,11 @@
                             "links": [
                                 {
                                     "icon": "fa fa-file-pdf",
-                                    "label": "Using CodeIgniter in Management Systems (PDF)",
-                                    "href": "http://www.viwticifes.ufba.br/modulos/submissao/Upload/39071.pdf"
+                                    "label": "Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão (PT-BR)",
+                                    "href": "https://repositorio.wticifes.com.br/items/3467ff37-1ce3-4e4d-9fe4-23b88a2d746f",
+                                    "location": "Goiania, Brazil",
+                                    "event": "WTICIFES 2012",
+                                    "locationIcon": "fa-solid fa-location-dot"
                                 }
                             ]
                         },
@@ -418,13 +420,31 @@
                             "links": [
                                 {
                                     "icon": "fa fa-file-pdf",
-                                    "label": "SisRel - Dynamic Data Extraction System (PDF)",
-                                    "href": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33222.pdf"
+                                    "label": "SisRel - SISTEMA DE EXTRAÇÃO DINÂMICA DE DADOS COM FOCO NO USUÁRIO FINAL: UM ESTUDO DE CASO (PT-BR)",
+                                    "href": "https://repositorio.wticifes.com.br/items/956a321f-3163-4e08-a087-e48d21e3711f",
+                                    "location": "Florianópolis, Brazil",
+                                    "event": "WTICIFES 2011",
+                                    "locationIcon": "fa-solid fa-location-dot"
                                 },
                                 {
                                     "icon": "fa fa-file-pdf",
-                                    "label": "Web Protocol System based on Design Patterns (PDF)",
-                                    "href": "http://www.vwticifes.ufba.br/modulos/submissao/Upload/33212.pdf"
+                                    "label": "Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto (PT-BR)",
+                                    "href": "https://repositorio.wticifes.com.br/items/f0cf9d8b-8fb2-40f1-8cae-2f623fa235d2",
+                                    "location": "Florianópolis, Brazil",
+                                    "event": "WTICIFES 2011",
+                                    "locationIcon": "fa-solid fa-location-dot"
+                                }
+                            ]
+                        }, 
+                        {
+                            "links": [
+                                {
+                                    "icon": "fa fa-file-pdf",
+                                    "label": "SISTEMA DE GESTÃO DE CERTIFICADOS ELETRÔNICOS (PT-BR)",
+                                    "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14",
+                                    "location": "Florianópolis, Brazil",
+                                    "event": "WTICIFES 2011",
+                                    "locationIcon": "fa-solid fa-location-dot"
                                 }
                             ]
                         }

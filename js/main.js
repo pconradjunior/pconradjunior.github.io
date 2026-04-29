@@ -93,7 +93,12 @@ const Render = (() => {
         setText('#nav-home', n.home);
         setText('#nav-about', n.about);
         setText('#nav-expertise', n.expertise);
-        setText('#nav-projects', n.projects);
+        setHtml('#nav-projects', `${n.projects} <i class="fa fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>`);
+        setText('#nav-projects-mobile', n.projectsMobile);
+        setText('#nav-projects-web', n.projectsWeb);
+        setText('#nav-projects-other', n.projectsOther);
+        setText('#nav-projects-articles', n.projectsArticles);
+        setText('#nav-projects-videos', n.projectsVideos);
         setText('#nav-contact', n.contact);
 
         // theme switcher tooltip
@@ -194,7 +199,10 @@ const Render = (() => {
         if (item.externalGroups) {
             const external = item.externalGroups.map(g =>
                 `<div class="external-links-container">
-          ${g.links.map(l => `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;"><i class="${l.icon}"></i> ${l.label}</a>`).join('')}
+          ${g.links.map(l => 
+                `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;">
+                    <i class="${l.icon}"></i> ${l.label} (${l.event} - <i class="${l.locationIcon}"></i> ${l.location})
+                </a>`).join('')}
         </div>`
             ).join('');
 
