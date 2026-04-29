@@ -435,7 +435,19 @@ const Nav = (() => {
 
         hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
         navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => navLinks.classList.remove('open'));
+            a.addEventListener('click', (e) => {
+                // Language toggle doesn't close menu automatically, handled separately
+                if (a.id === 'langToggle') return;
+
+                if (a.id === 'nav-projects' && window.innerWidth <= 768) {
+                    e.preventDefault(); // Evita pular a página e fechar o menu
+                    a.parentElement.classList.toggle('active-dropdown');
+                    return; // Não fecha o menu mobile
+                }
+                
+                navLinks.classList.remove('open');
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active-dropdown'));
+            });
         });
 
         // Language toggle: intercept click, switch lang in-place

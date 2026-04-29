@@ -231,17 +231,31 @@ nav {
 }
 
 @media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
     .dropdown-content {
         position: static;
         display: none;
         background: transparent;
         box-shadow: none;
         border: none;
-        padding-left: 1rem;
+        padding-left: 0;
     }
 
-    .dropdown:hover .dropdown-content,
-    .dropdown:focus-within .dropdown-content {
+    .dropdown-content a {
+        padding: 8px 0;
+        font-size: 0.95rem;
+        opacity: 0.8;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown.active-dropdown .dropdown-content {
         display: block;
     }
 }
