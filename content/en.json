@@ -385,7 +385,7 @@
                     "typeIcon": "fa fa-link",
                     "typeLabel": "External Publications",
                     "title": "Other Publications",
-                    "cardClass": "project-card span-2",
+                    "cardClass": "project-card",
                     "externalGroups": [
                         {
                             "links": [
@@ -401,8 +401,13 @@
                                 }
                             ]
                         }
-                    ],
-                    "publishedArticlesTitle": "Event Published Articles",
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-file-pdf",
+                    "typeLabel": "Event Publications",
+                    "title": "Event Published Articles",
+                    "cardClass": "project-card",
                     "publishedGroups": [
                         {
                             "links": [

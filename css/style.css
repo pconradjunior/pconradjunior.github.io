@@ -818,6 +818,24 @@ footer {
     gap: 12px;
 }
 
+.external-link-event {
+    margin-left: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    width: fit-content;
+}
+
+.external-link-event i {
+    color: var(--accent-color);
+}
+
 
 /* Links Externos (Lista de Artigos) */
 .external-link {

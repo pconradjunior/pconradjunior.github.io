@@ -199,16 +199,10 @@ const Render = (() => {
         if (item.externalGroups) {
             const external = item.externalGroups.map(g =>
                 `<div class="external-links-container">
-          ${g.links.map(l => 
-                `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;">
-                    <i class="${l.icon}"></i> ${l.label} (${l.event} - <i class="${l.locationIcon}"></i> ${l.location})
-                </a>`).join('')}
-        </div>`
-            ).join('');
-
-            const published = item.publishedGroups.map(g =>
-                `<div class="external-links-container">
-          ${g.links.map(l => `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;"><i class="${l.icon}"></i> ${l.label}</a>`).join('')}
+          ${g.links.map(l =>
+                    `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;">
+                      <i class="${l.icon}"></i> ${l.label}
+                    </a>`).join('')}
         </div>`
             ).join('');
 
@@ -218,8 +212,28 @@ const Render = (() => {
             <span class="project-type"><i class="${item.typeIcon}"></i> ${item.typeLabel}</span>
             <h3 class="project-title">${item.title}</h3>
             ${external}
-            <br/>
-            <h3 class="project-title">${item.publishedArticlesTitle}</h3>
+          </div>
+        </article>`;
+        }
+
+        if (item.publishedGroups) {
+            const published = item.publishedGroups.map(g =>
+                `<div class="external-links-container">
+          ${g.links.map(l =>
+                    `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;">
+                        <i class="${l.icon}"></i> ${l.label} 
+                    </a>
+                    <span class="badge external-link-event">
+                        ${l.event} &nbsp; <i class="${l.locationIcon}"></i> ${l.location}
+                    </span>`).join('')}
+        </div>`
+            ).join('');
+
+            return `
+        <article class="${cardClass} span-2">
+          <div class="project-content">
+            <span class="project-type"><i class="${item.typeIcon}"></i> ${item.typeLabel}</span>
+            <h3 class="project-title">${item.title}</h3>
             ${published}
           </div>
         </article>`;
@@ -444,7 +458,7 @@ const Nav = (() => {
                     a.parentElement.classList.toggle('active-dropdown');
                     return; // Não fecha o menu mobile
                 }
-                
+
                 navLinks.classList.remove('open');
                 document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active-dropdown'));
             });
