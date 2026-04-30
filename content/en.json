@@ -56,6 +56,11 @@
     },
     "expertise": {
         "sectionTitle": "Expertise",
+        "sectionIntro": 
+            [ "My experience spans within several areas within software development, with a focus on institutional solutions, mobile applications, and technical leadership.",
+              "In addition to working with software development, I have prior experience in teaching at the university level, where I lectured on technical subjects such as software development, databases, and system architecture. This experience has provided me with a solid foundation in computing fundamentals and technical communication skills.",
+            " The areas below represent some of the main domains in which I operate:"
+            ],
         "cards": [
             {
                 "icon": "fa fa-laptop-code",

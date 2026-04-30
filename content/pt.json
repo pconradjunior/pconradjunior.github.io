@@ -56,6 +56,11 @@
     },
     "expertise": {
         "sectionTitle": "Minha Atuação",
+        "sectionIntro": 
+            [ "Minha experiência abrange várias áreas dentro do desenvolvimento de software, com foco em soluções institucionais, aplicações mobile e liderança técnica.",
+              "Além de atuar na área de desenvolvimento de software, tenho experiência anterior em docência no ensino superior, transitando em disciplinas técnicas da área de computação. Essa experiência me proporcionou uma base sólida e habilidades de comunicação técnica e pessoal.",
+            " Abaixo estão algumas das principais áreas em que atuo:"
+            ],
         "cards": [
             {
                 "icon": "fa fa-laptop-code",

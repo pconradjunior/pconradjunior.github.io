@@ -156,6 +156,12 @@ const Render = (() => {
         const e = data.expertise;
         setText('#expertise .section-title', e.sectionTitle);
 
+        //Expertise paragraphs
+        const introText = document.querySelector('#expertise .about-text');
+        if (introText) {
+            introText.innerHTML = e.sectionIntro.map(p => `<p style="text-align: center;">${p}</p>`).join('');
+        }
+        
         const grid = document.querySelector('#expertise .services-grid');
         if (grid) {
             grid.innerHTML = e.cards.map(c => `
