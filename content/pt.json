@@ -270,6 +270,22 @@
                 {
                     "typeIcon": "fa-brands fa-linkedin",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Além do Método: O que faz uma equipe funcionar melhor?",
+                    "desc": "A importância de fatores humanos, comunicação e organização para o sucesso de equipes de desenvolvimento.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "REx: Research Explorer - Facilitador de identificação e comparação de Indicadores Científicos",
                     "desc": "Extensão que automatiza a identificação de ISSNs e permite comparação visual entre diferentes classificações de periódicos.",
                     "links": [

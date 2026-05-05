@@ -270,6 +270,22 @@
                 {
                     "typeIcon": "fa-brands fa-linkedin",
                     "typeLabel": "Development Article",
+                    "title": "Beyond the Method: What Makes a Team Perform Better? (PT-BR)",
+                    "desc": "The importance of human factors, communication, and organization for the success of development teams.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeLabel": "Development Article",
                     "title": "REx: Research Explorer - Facilitator for Identification and Comparison of Scientific Indicators",
                     "desc": "Extension that automates ISSN identification and enables visual comparison across different journal ranking classifications.",
                     "links": [
