@@ -268,6 +268,22 @@
             "title": "Technical Articles",
             "items": [
                 {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Developing ChessKids: A Study on Architecture, Components, and AI (PT-BR)",
+                    "desc": "Analysis of the development of ChessKids, a chess application for children, highlighting the architecture, component organization, and integration of artificial intelligence.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/desenvolvendo-o-chesskids-um-estudo-que-mistura-arquitetura-componentes-e-ia-d7734bff9145",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
                     "typeIcon": "fa-brands fa-linkedin",
                     "typeLabel": "Development Article",
                     "title": "Beyond the Method: What Makes a Team Perform Better? (PT-BR)",
