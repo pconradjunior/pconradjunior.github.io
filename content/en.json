@@ -270,6 +270,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
+                    "title": "Human-centered Support in Technical Services: Empathy as a Work Tool",
+                    "desc": "Reflection on the importance of empathy and human-centered service in technical support, highlighting how these skills positively impact user experience and problem resolution.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
                     "title": "Developing ChessKids: A Study on Architecture, Components, and AI (PT-BR)",
                     "desc": "Analysis of the development of ChessKids, a chess application for children, highlighting the architecture, component organization, and integration of artificial intelligence.",
                     "links": [

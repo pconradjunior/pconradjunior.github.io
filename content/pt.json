@@ -270,6 +270,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Atendimento Humano no Suporte Técnico: A empatia como ferramenta de trabalho",
+                    "desc": "Reflexão sobre a importância da empatia e do atendimento humano no suporte técnico, destacando como essas habilidades impactam positivamente a experiência do usuário e a resolução de problemas.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Desenvolvendo o ChessKids: um estudo que mistura arquitetura, componentes e IA",
                     "desc": "Análise do desenvolvimento do ChessKids, um aplicativo de xadrez para crianças, destacando a arquitetura, organização de componentes e integração de inteligência artificial.",
                     "links": [
