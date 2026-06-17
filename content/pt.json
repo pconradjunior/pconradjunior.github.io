@@ -270,6 +270,38 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Inteligência Artificial: Uma Revolução Cognitiva ou a Revolução da Pressa",
+                    "desc": "Reflexão sobre o impacto real da Inteligência Artificial, questionando se estamos diante de uma verdadeira revolução cognitiva ou apenas de um atalho intelectual que pode comprometer o processo de aprendizado.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/intelig%C3%AAncia-artificial-uma-revolu%C3%A7%C3%A3o-cognitiva-ou-a-revolu%C3%A7%C3%A3o-da-pressa-21d935b7b992",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Entre Código, Pessoas e Problemas: o que aprendi trabalhando com Tecnologia da Informação (até agora)",
+                    "desc": "Mais de duas décadas de carreira em TI reunidas em uma reflexão sobre aprendizado, pessoas e o que realmente importa na profissão.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Atendimento Humano no Suporte Técnico: A empatia como ferramenta de trabalho",
                     "desc": "Reflexão sobre a importância da empatia e do atendimento humano no suporte técnico, destacando como essas habilidades impactam positivamente a experiência do usuário e a resolução de problemas.",
                     "links": [
@@ -300,7 +332,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Além do Método: O que faz uma equipe funcionar melhor?",
                     "desc": "A importância de fatores humanos, comunicação e organização para o sucesso de equipes de desenvolvimento.",
@@ -316,11 +348,19 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
                     "title": "REx: Research Explorer - Facilitador de identificação e comparação de Indicadores Científicos",
                     "desc": "Extensão que automatiza a identificação de ISSNs e permite comparação visual entre diferentes classificações de periódicos.",
                     "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        },
                         {
                             "icon": "fa-brands fa-linkedin",
                             "label": "Ler no LinkedIn",
@@ -332,48 +372,72 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-file-code",
-                    "typeLabel": "Artigo",
-                    "title": "Version Check",
-                    "desc": "Implementação de estratégia de verificação de versão e atualização obrigatória em aplicativos Flutter.",
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Aplicação de um modelo organizado ao desenvolvimento de software: como evitar o improviso e trabalhar com intenção",
+                    "desc": "Expõe a aplicação de uma metodologia estruturada para facilitar o desenvolvimento de software com foco na redução de improvisos e aumento de previsibilidade.",
                     "links": [
                         {
-                            "icon": "fa fa-book-open",
-                            "label": "Ler",
-                            "href": "article_versioncheck.html",
-                            "title": "Ler",
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        },
+                        {
+                            "icon": "fa-brands fa-linkedin",
+                            "label": "Ler no LinkedIn",
+                            "href": "https://www.linkedin.com/pulse/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-o-conrad-junior-gpitf/",
+                            "title": "Ler no LinkedIn",
                             "action": "url",
                             "style": "color:#000;"
                         }
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-id-card",
-                    "typeLabel": "Artigo",
-                    "title": "Reconhecimento Facial",
-                    "desc": "Sistema biométrico facial multiusuário offline desenvolvido em Flutter, com foco em autenticação local.",
-                    "links": [
-                        {
-                            "icon": "fa fa-book-open",
-                            "label": "Ler",
-                            "href": "article_reconhecimento_facial.html",
-                            "title": "Ler",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-apple",
-                    "typeLabel": "Artigo",
-                    "title": "Guia iOS",
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "O que é preciso para criar apps para dispositivos iOS",
                     "desc": "Guia prático sobre custos, requisitos e etapas para desenvolvimento de aplicativos iOS.",
                     "links": [
                         {
-                            "icon": "fa fa-book-open",
-                            "label": "Ler",
-                            "href": "article_ios.html",
-                            "title": "Ler",
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/o-que-%C3%A9-preciso-para-criar-apps-para-dispositivos-ios-5c1ce8ab0879",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Reconhecimento Facial em Flutter",
+                    "desc": "Sistema biométrico facial multiusuário offline desenvolvido em Flutter, com foco em autenticação local.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/reconhecimento-facial-em-flutter-9ae2bf495a56",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Verificação de Versão em Flutter",
+                    "desc": "Implementação de estratégia de verificação de versão e atualização obrigatória em aplicativos Flutter.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/verifica%C3%A7%C3%A3o-de-vers%C3%A3o-em-flutter-7127f87cf91f",
+                            "title": "Ler no Medium",
                             "action": "url",
                             "style": "color:#000;"
                         }
@@ -405,22 +469,6 @@
                             "icon": "fa-brands fa-linkedin",
                             "label": "Ler no LinkedIn",
                             "href": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/",
-                            "title": "Ler no LinkedIn",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-linkedin",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Aplicação de um modelo organizado ao desenvolvimento de software: como evitar o improviso e trabalhar com intenção",
-                    "desc": "Expõe a aplicação de uma metodologia estruturada para facilitar o desenvolvimento de software com foco na redução de improvisos e aumento de previsibilidade.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-linkedin",
-                            "label": "Ler no LinkedIn",
-                            "href": "https://www.linkedin.com/pulse/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-o-conrad-junior-gpitf/",
                             "title": "Ler no LinkedIn",
                             "action": "url",
                             "style": "color:#000;"

@@ -270,7 +270,39 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
-                    "title": "Human-centered Support in Technical Services: Empathy as a Work Tool",
+                    "title": "Artificial Intelligence: A Cognitive Revolution or the Revolution of Haste (PT-BR)",
+                    "desc": "Reflection on the real impact of Artificial Intelligence, questioning whether we face a true cognitive revolution or merely an intellectual shortcut that may compromise the learning process.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/intelig%C3%AAncia-artificial-uma-revolu%C3%A7%C3%A3o-cognitiva-ou-a-revolu%C3%A7%C3%A3o-da-pressa-21d935b7b992",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Among Code, People and Problems: What I Learned Working with Information Technology (So Far) (PT-BR)",
+                    "desc": "Over two decades of IT career gathered in a reflection about learning, people, and what truly matters.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Human-centered Support in Technical Services: Empathy as a Work Tool (PT-BR)",
                     "desc": "Reflection on the importance of empathy and human-centered service in technical support, highlighting how these skills positively impact user experience and problem resolution.",
                     "links": [
                         {
@@ -300,7 +332,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
                     "title": "Beyond the Method: What Makes a Team Perform Better? (PT-BR)",
                     "desc": "The importance of human factors, communication, and organization for the success of development teams.",
@@ -316,11 +348,19 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
-                    "title": "REx: Research Explorer - Facilitator for Identification and Comparison of Scientific Indicators",
+                    "title": "REx: Research Explorer - Automating ISSN Identification (PT-BR)",
                     "desc": "Extension that automates ISSN identification and enables visual comparison across different journal ranking classifications.",
                     "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        },
                         {
                             "icon": "fa-brands fa-linkedin",
                             "label": "Read on LinkedIn",
@@ -332,48 +372,72 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-file-code",
-                    "typeLabel": "Article",
-                    "title": "Version Check",
-                    "desc": "Implementation of version checking strategy and forced updates in Flutter applications.",
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Application of an organized model to software development: how to avoid improvisation and work with intention (PT-BR)",
+                    "desc": "Explores the application of a structured methodology to software development, reducing improvisation and increasing predictability.",
                     "links": [
                         {
-                            "icon": "fa fa-book-open",
-                            "label": "Read",
-                            "href": "article_versioncheck.html",
-                            "title": "Read",
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        },
+                        {
+                            "icon": "fa-brands fa-linkedin",
+                            "label": "Read on LinkedIn",
+                            "href": "https://www.linkedin.com/pulse/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-o-conrad-junior-gpitf/",
+                            "title": "Read on LinkedIn",
                             "action": "url",
                             "style": "color:#000;"
                         }
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-id-card",
-                    "typeLabel": "Article",
-                    "title": "Facial Recognition",
-                    "desc": "Offline multi-user facial biometric system developed in Flutter, focused on local authentication.",
-                    "links": [
-                        {
-                            "icon": "fa fa-book-open",
-                            "label": "Read",
-                            "href": "article_reconhecimento_facial.html",
-                            "title": "Read",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-apple",
-                    "typeLabel": "Article",
-                    "title": "iOS Guide",
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "What You Need to Create Apps for iOS Devices (PT-BR)",
                     "desc": "Practical guide covering costs, requirements, and steps for iOS application development.",
                     "links": [
                         {
-                            "icon": "fa fa-book-open",
-                            "label": "Read",
-                            "href": "article_ios.html",
-                            "title": "Read",
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/o-que-%C3%A9-preciso-para-criar-apps-para-dispositivos-ios-5c1ce8ab0879",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Facial Recognition in Flutter (PT-BR)",
+                    "desc": "Offline multi-user facial biometric system developed in Flutter, focused on local authentication.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/reconhecimento-facial-em-flutter-9ae2bf495a56",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Version Check in Flutter (PT-BR)",
+                    "desc": "Implementation of version checking strategy and forced updates in Flutter applications.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/verifica%C3%A7%C3%A3o-de-vers%C3%A3o-em-flutter-7127f87cf91f",
+                            "title": "Read on Medium",
                             "action": "url",
                             "style": "color:#000;"
                         }
@@ -405,22 +469,6 @@
                             "icon": "fa-brands fa-linkedin",
                             "label": "Read on LinkedIn",
                             "href": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/",
-                            "title": "Read on LinkedIn",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-linkedin",
-                    "typeLabel": "Development Article",
-                    "title": "Application of an organized model to software development: how to avoid improvisation and work with intention",
-                    "desc": "Explores the application of a structured methodology to software development, reducing improvisation and increasing predictability.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-linkedin",
-                            "label": "Read on LinkedIn",
-                            "href": "https://www.linkedin.com/pulse/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-o-conrad-junior-gpitf/",
                             "title": "Read on LinkedIn",
                             "action": "url",
                             "style": "color:#000;"
