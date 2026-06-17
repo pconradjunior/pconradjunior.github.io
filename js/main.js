@@ -203,50 +203,6 @@ const Render = (() => {
         const cardClass = item.cardClass || 'project-card';
         const linksClass = item.linksClass || 'project-links';
 
-        // Special: publication card with external link groups
-        if (item.externalGroups) {
-            const external = item.externalGroups.map(g =>
-                `<div class="external-links-container">
-          ${g.links.map(l =>
-                    `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;">
-                      <i class="${l.icon}"></i> ${l.label}
-                    </a>`).join('')}
-        </div>`
-            ).join('');
-
-            return `
-        <article class="${cardClass}">
-          <div class="project-content">
-            <span class="project-type"><i class="${item.typeIcon}"></i> ${item.typeLabel}</span>
-            <h3 class="project-title">${item.title}</h3>
-            ${external}
-          </div>
-        </article>`;
-        }
-
-        if (item.publishedGroups) {
-            const published = item.publishedGroups.map(g =>
-                `<div class="external-links-container">
-          ${g.links.map(l =>
-                    `<a href="${l.href}" target="_blank" class="external-link" style="justify-content:flex-start;text-align:left;">
-                        <i class="${l.icon}"></i> ${l.label} 
-                    </a>
-                    <span class="badge external-link-event">
-                        ${l.event} &nbsp; <i class="${l.locationIcon}"></i> ${l.location}
-                    </span>`).join('')}
-        </div>`
-            ).join('');
-
-            return `
-        <article class="${cardClass} span-2">
-          <div class="project-content">
-            <span class="project-type"><i class="${item.typeIcon}"></i> ${item.typeLabel}</span>
-            <h3 class="project-title">${item.title}</h3>
-            ${published}
-          </div>
-        </article>`;
-        }
-
         const linksHtml = item.links && item.links.length
             ? `<div class="${linksClass}">${buildLinks(item.links)}</div>`
             : '';

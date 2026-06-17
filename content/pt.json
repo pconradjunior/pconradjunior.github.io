@@ -360,14 +360,6 @@
                             "title": "Ler no Medium",
                             "action": "url",
                             "style": "color:#000;"
-                        },
-                        {
-                            "icon": "fa-brands fa-linkedin",
-                            "label": "Ler no LinkedIn",
-                            "href": "https://www.linkedin.com/pulse/rex-research-explorer-facilitador-de-identifica%25C3%25A7%25C3%25A3o-e-conrad-junior-zxjvf",
-                            "title": "Ler no LinkedIn",
-                            "action": "url",
-                            "style": "color:#000;"
                         }
                     ]
                 },
@@ -382,14 +374,6 @@
                             "label": "Ler no Medium",
                             "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c",
                             "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        },
-                        {
-                            "icon": "fa-brands fa-linkedin",
-                            "label": "Ler no LinkedIn",
-                            "href": "https://www.linkedin.com/pulse/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-o-conrad-junior-gpitf/",
-                            "title": "Ler no LinkedIn",
                             "action": "url",
                             "style": "color:#000;"
                         }
@@ -483,76 +467,98 @@
                     "links": []
                 },
                 {
-                    "typeIcon": "fa fa-link",
-                    "typeLabel": "Publicações Externas",
-                    "title": "Outras Publicações",
-                    "cardClass": "project-card",
-                    "externalGroups": [
+                    "typeIcon": "fa fa-external-link-alt",
+                    "typeLabel": "Notícia Institucional",
+                    "title": "App Unipampa leva inovação à comunidade",
+                    "desc": "Notícia institucional sobre o lançamento do aplicativo oficial da Unipampa, destacando seus serviços e benefícios para a comunidade universitária.",
+                    "links": [
                         {
-                            "links": [
-                                {
-                                    "icon": "fa fa-external-link-alt",
-                                    "label": "App Unipampa leva inovação à comunidade",
-                                    "href": "https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria"
-                                },
-                                {
-                                    "icon": "fa fa-external-link-alt",
-                                    "label": "App Unipampa disponível para iOS",
-                                    "href": "https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios"
-                                }
-                            ]
+                            "icon": "fa fa-external-link-alt",
+                            "label": "Ler notícia",
+                            "href": "https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria",
+                            "title": "Ler notícia",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-external-link-alt",
+                    "typeLabel": "Notícia Institucional",
+                    "title": "App Unipampa disponível para iOS",
+                    "desc": "Notícia institucional sobre a disponibilização do aplicativo Unipampa para dispositivos iOS, ampliando o acesso da comunidade acadêmica.",
+                    "links": [
+                        {
+                            "icon": "fa fa-external-link-alt",
+                            "label": "Ler notícia",
+                            "href": "https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios",
+                            "title": "Ler notícia",
+                            "action": "url",
+                            "style": "color:#000;"
                         }
                     ]
                 },
                 {
                     "typeIcon": "fa fa-file-pdf",
-                    "typeLabel": "Publicações em Eventos",
-                    "title": "Artigos Publicados em Eventos",
-                    "cardClass": "project-card",
-                    "publishedGroups": [
+                    "typeLabel": "WTICIFES 2012",
+                    "title": "Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão",
+                    "desc": "Publicado no WTICIFES 2012 — Goiânia, Brasil",
+                    "links": [
                         {
-                            "links": [
-                                {
-                                    "icon": "fa fa-file-pdf",
-                                    "label": "Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão",
-                                    "href": "https://repositorio.wticifes.com.br/items/3467ff37-1ce3-4e4d-9fe4-23b88a2d746f",
-                                    "location": "Goiania, Brasil",
-                                    "event": "WTICIFES 2012",
-                                    "locationIcon": "fa-solid fa-location-dot"
-                                }
-                            ]
-                        },
+                            "icon": "fa fa-file-pdf",
+                            "label": "Ler PDF",
+                            "href": "https://repositorio.wticifes.com.br/items/3467ff37-1ce3-4e4d-9fe4-23b88a2d746f",
+                            "title": "Ler PDF",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-file-pdf",
+                    "typeLabel": "WTICIFES 2011",
+                    "title": "SisRel - Sistema de Extração Dinâmica de Dados com Foco no Usuário Final",
+                    "desc": "Publicado no WTICIFES 2011 — Florianópolis, Brasil",
+                    "links": [
                         {
-                            "links": [
-                                {
-                                    "icon": "fa fa-file-pdf",
-                                    "label": "SisRel - SISTEMA DE EXTRAÇÃO DINÂMICA DE DADOS COM FOCO NO USUÁRIO FINAL: UM ESTUDO DE CASO",
-                                    "href": "https://repositorio.wticifes.com.br/items/956a321f-3163-4e08-a087-e48d21e3711f",
-                                    "location": "Florianópolis, Brasil",
-                                    "event": "WTICIFES 2011",
-                                    "locationIcon": "fa-solid fa-location-dot"
-                                },
-                                {
-                                    "icon": "fa fa-file-pdf",
-                                    "label": "Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto",
-                                    "href": "https://repositorio.wticifes.com.br/items/f0cf9d8b-8fb2-40f1-8cae-2f623fa235d2",
-                                    "location": "Florianópolis, Brasil",
-                                    "event": "WTICIFES 2011",
-                                    "locationIcon": "fa-solid fa-location-dot"
-                                }
-                            ]
-                        }, 
+                            "icon": "fa fa-file-pdf",
+                            "label": "Ler PDF",
+                            "href": "https://repositorio.wticifes.com.br/items/956a321f-3163-4e08-a087-e48d21e3711f",
+                            "title": "Ler PDF",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-file-pdf",
+                    "typeLabel": "WTICIFES 2011",
+                    "title": "Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto",
+                    "desc": "Publicado no WTICIFES 2011 — Florianópolis, Brasil",
+                    "links": [
                         {
-                            "links": [
-                                {
-                                    "icon": "fa fa-file-pdf",
-                                    "label": "SISTEMA DE GESTÃO DE CERTIFICADOS ELETRÔNICOS",
-                                    "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14",
-                                    "location": "Florianópolis, Brasil",
-                                    "event": "WTICIFES 2011",
-                                    "locationIcon": "fa-solid fa-location-dot"
-                                }
-                            ]
+                            "icon": "fa fa-file-pdf",
+                            "label": "Ler PDF",
+                            "href": "https://repositorio.wticifes.com.br/items/f0cf9d8b-8fb2-40f1-8cae-2f623fa235d2",
+                            "title": "Ler PDF",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-file-pdf",
+                    "typeLabel": "WTICIFES 2011",
+                    "title": "Sistema de Gestão de Certificados Eletrônicos",
+                    "desc": "Publicado no WTICIFES 2011 — Florianópolis, Brasil",
+                    "links": [
+                        {
+                            "icon": "fa fa-file-pdf",
+                            "label": "Ler PDF",
+                            "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14",
+                            "title": "Ler PDF",
+                            "action": "url",
+                            "style": "color:#000;"
                         }
                     ]
                 }
