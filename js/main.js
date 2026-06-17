@@ -51,7 +51,9 @@ const I18n = (() => {
     /** Toggle between pt ↔ en */
     function toggleLang() {
         const next = currentLang === 'pt' ? 'en' : 'pt';
-        loadLang(next);
+        loadLang(next).then(() => {
+            Carousel.initAll();
+        });
     }
 
     function getCurrentLang() { return currentLang; }
@@ -485,6 +487,151 @@ const Nav = (() => {
 
 
 /* ============================================================
+   6. CAROUSEL MODULE
+   ============================================================ */
+
+const Carousel = (() => {
+    const instances = new Map();
+
+    /** Define quantos cards mostrar por vez conforme largura do container */
+    function getCardsPerView(containerWidth) {
+        if (containerWidth <= 768) return 1;
+        return 3;
+    }
+
+    function init(sectionSelector) {
+        const section = document.querySelector(sectionSelector);
+        if (!section) return;
+
+        const container = section.querySelector('.carousel-container');
+        const grid = container ? container.querySelector('.portfolio-grid') : null;
+        const prevBtn = container ? container.querySelector('.carousel-btn.prev') : null;
+        const nextBtn = container ? container.querySelector('.carousel-btn.next') : null;
+        const dotsContainer = section.querySelector('.carousel-dots');
+
+        if (!container || !grid || !prevBtn || !nextBtn) return;
+
+        // Evita reinicializar
+        if (instances.has(sectionSelector)) return;
+
+        let currentIndex = 0;
+        let cardsPerView = getCardsPerView(container.offsetWidth);
+
+        /** Ajusta a largura de cada card para caber `cardsPerView` por vez */
+        function resizeCards() {
+            const gap = parseFloat(getComputedStyle(grid).gap) || 0;
+            const totalGap = gap * (cardsPerView - 1);
+            const cardWidth = (container.offsetWidth - totalGap) / cardsPerView;
+
+            Array.from(grid.children).forEach(card => {
+                card.style.width = cardWidth + 'px';
+                card.style.minWidth = cardWidth + 'px';
+                card.style.maxWidth = cardWidth + 'px';
+            });
+        }
+
+        function getTotalSlides() {
+            const totalCards = grid.children.length;
+            return Math.max(0, totalCards - cardsPerView);
+        }
+
+        function update() {
+            const totalSlides = getTotalSlides();
+            if (currentIndex > totalSlides) currentIndex = totalSlides;
+            if (currentIndex < 0) currentIndex = 0;
+
+            const gap = parseFloat(getComputedStyle(grid).gap) || 0;
+            const cardWidth = grid.children[0]?.offsetWidth || 0;
+            const offset = currentIndex * (cardWidth + gap);
+
+            grid.style.transform = `translateX(-${offset}px)`;
+
+            // Botões
+            prevBtn.style.display = currentIndex <= 0 ? 'none' : 'flex';
+            nextBtn.style.display = currentIndex >= totalSlides ? 'none' : 'flex';
+
+            // Dots
+            const dots = dotsContainer ? dotsContainer.querySelectorAll('.carousel-dot') : [];
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function buildDots() {
+            if (!dotsContainer) return;
+            const totalSlides = getTotalSlides();
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i <= totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+                dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    update();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function next() {
+            const totalSlides = getTotalSlides();
+            if (currentIndex < totalSlides) {
+                currentIndex++;
+                update();
+            }
+        }
+
+        function prev() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                update();
+            }
+        }
+
+        function refresh() {
+            const newCardsPerView = getCardsPerView(container.offsetWidth);
+            if (newCardsPerView !== cardsPerView) {
+                cardsPerView = newCardsPerView;
+                if (currentIndex > getTotalSlides()) currentIndex = 0;
+            }
+            resizeCards();
+            buildDots();
+            update();
+        }
+
+        // Eventos
+        prevBtn.addEventListener('click', prev);
+        nextBtn.addEventListener('click', next);
+
+        window.addEventListener('resize', refresh);
+        refresh();
+
+        // Armazena instância
+        instances.set(sectionSelector, {
+            destroy() {
+                prevBtn.removeEventListener('click', prev);
+                nextBtn.removeEventListener('click', next);
+                window.removeEventListener('resize', refresh);
+                instances.delete(sectionSelector);
+            }
+        });
+    }
+
+    function destroyAll() {
+        instances.forEach(inst => inst.destroy());
+    }
+
+    function initAll() {
+        destroyAll();
+        const sections = ['#mobile', '#web', '#other-projects', '#articles', '#videos'];
+        sections.forEach(init);
+    }
+
+    return { init, initAll, destroyAll };
+})();
+
+
+/* ============================================================
    BOOTSTRAP
    ============================================================ */
 
@@ -500,5 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load the correct language
     const lang = I18n.detectLang();
-    I18n.loadLang(lang);
+    I18n.loadLang(lang).then(() => {
+        Carousel.initAll();
+    });
 });
