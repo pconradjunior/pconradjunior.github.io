@@ -88,6 +88,21 @@
                 {
                     "typeIcon": "fa fa-mobile",
                     "typeLabel": "Flutter",
+                    "title": "ChessKids",
+                    "desc": "Educational chess application for children, offline and ad-free, with AI support and difficulty levels.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-google-play",
+                            "label": "",
+                            "href": "https://play.google.com/store/apps/details?id=pconradjunior.chesskids",
+                            "title": "Android",
+                            "action": "url"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-mobile",
+                    "typeLabel": "Flutter",
                     "title": "App Unipampa",
                     "desc": "Official Unipampa application that centralizes academic services, institutional information, and communication with the university community.",
                     "links": [
