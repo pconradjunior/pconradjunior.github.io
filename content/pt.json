@@ -97,6 +97,13 @@
                             "href": "https://play.google.com/store/apps/details?id=pconradjunior.chesskids",
                             "title": "Android",
                             "action": "url"
+                        },
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Ver Demo",
+                            "videoId": "yPxbRScwkvI",
+                            "title": "Ver Demo",
+                            "action": "video"
                         }
                     ]
                 },
