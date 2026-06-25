@@ -292,6 +292,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Quanto Vale Meu Trabalho na Área de TI: Sou Relevante? Como Combater a Síndrome do Impostor",
+                    "desc": "Reflexão sobre o valor do trabalho na área de TI, a sensação de relevância profissional e estratégias para lidar com a síndrome do impostor.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/quanto-vale-meu-trabalho-na-%C3%A1rea-de-ti-sou-relevante-como-combater-a-s%C3%ADndrome-do-impostor-d5c54d3f36ee",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Inteligência Artificial: Uma Revolução Cognitiva ou a Revolução da Pressa",
                     "desc": "Reflexão sobre o impacto real da Inteligência Artificial, questionando se estamos diante de uma verdadeira revolução cognitiva ou apenas de um atalho intelectual que pode comprometer o processo de aprendizado.",
                     "links": [

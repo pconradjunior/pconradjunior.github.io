@@ -291,6 +291,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
+                    "title": "How Much Is My Work Worth in IT: Am I Relevant? How to Combat Impostor Syndrome (PT-BR)",
+                    "desc": "Reflection on the value of work in the IT field, the feeling of professional relevance, and strategies to deal with impostor syndrome.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/quanto-vale-meu-trabalho-na-%C3%A1rea-de-ti-sou-relevante-como-combater-a-s%C3%ADndrome-do-impostor-d5c54d3f36ee",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
                     "title": "Artificial Intelligence: A Cognitive Revolution or the Revolution of Haste (PT-BR)",
                     "desc": "Reflection on the real impact of Artificial Intelligence, questioning whether we face a true cognitive revolution or merely an intellectual shortcut that may compromise the learning process.",
                     "links": [
