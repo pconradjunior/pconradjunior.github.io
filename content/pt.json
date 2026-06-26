@@ -607,6 +607,81 @@
             "items": [
                 {
                     "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "ChessKids",
+                    "desc": "Demonstração do aplicativo de xadrez educativo para crianças, com suporte a IA e níveis de dificuldade.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Assistir",
+                            "videoId": "yPxbRScwkvI",
+                            "title": "Assistir",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "App Unipampa",
+                    "desc": "Demonstração do aplicativo oficial da Unipampa com serviços acadêmicos e informações institucionais.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Assistir",
+                            "videoId": "mgvavs5VOgU",
+                            "title": "Assistir",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "SmellCheck",
+                    "desc": "Demonstração do aplicativo de acompanhamento da recuperação do olfato utilizado em processos clínicos.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Assistir",
+                            "videoId": "t1P1dCydtUo",
+                            "title": "Assistir",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "FingerNotes",
+                    "desc": "Demonstração do aplicativo de anotações seguras com autenticação biométrica e proteção por senha.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Assistir",
+                            "videoId": "hGdydq2jhJI",
+                            "title": "Assistir",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter (Estudo)",
+                    "title": "LembraMed",
+                    "desc": "Demonstração do aplicativo de controle de medicação e acompanhamento de indicadores de saúde.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Assistir",
+                            "videoId": "hUdgk81DGuk",
+                            "title": "Assistir",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
                     "typeLabel": "Clean Arch",
                     "title": "Roda do Lanche",
                     "desc": "Estudo prático de Arquitetura Limpa e organização de responsabilidades no desenvolvimento de software.",

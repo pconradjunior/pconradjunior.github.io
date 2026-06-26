@@ -606,6 +606,81 @@
             "items": [
                 {
                     "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "ChessKids",
+                    "desc": "Demo of the educational chess application for children, with AI support and difficulty levels.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "yPxbRScwkvI",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "App Unipampa",
+                    "desc": "Demo of the official Unipampa application with academic services and institutional information.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "mgvavs5VOgU",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "SmellCheck",
+                    "desc": "Demo of the smell recovery monitoring application used in clinical processes.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "t1P1dCydtUo",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "FingerNotes",
+                    "desc": "Demo of the secure note-taking app with biometric authentication and password protection.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "hGdydq2jhJI",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter (Study)",
+                    "title": "LembraMed",
+                    "desc": "Demo of the medication tracking and health monitoring application.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "hUdgk81DGuk",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
                     "typeLabel": "Clean Arch",
                     "title": "Snack Wheel",
                     "desc": "Practical study of Clean Architecture and responsibility-driven design in software development.",
