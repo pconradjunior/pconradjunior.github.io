@@ -291,6 +291,38 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
+                    "title": "MPCar Player: Building an Automotive Audio Player in Flutter (PT-BR)",
+                    "desc": "Development of an audio player for automotive multimedia with customized Android, addressing challenges of audio management, permissions, and file discovery in automotive environments.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/mpcar-player-construindo-um-player-de-%C3%A1udio-ff51ddfae948",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Method Organizes. Communication Transforms. (PT-BR)",
+                    "desc": "Reflection on the importance of effective communication in development teams, showing how methodologies organize processes but communication is what truly transforms team work.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
                     "title": "How Much Is My Work Worth in IT: Am I Relevant? How to Combat Impostor Syndrome (PT-BR)",
                     "desc": "Reflection on the value of work in the IT field, the feeling of professional relevance, and strategies to deal with impostor syndrome.",
                     "links": [

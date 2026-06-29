@@ -292,6 +292,38 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "MPCar Player: Construindo um Player de Áudio Automotivo em Flutter",
+                    "desc": "Desenvolvimento de um player de áudio para centrais multimídia automotivas com Android customizado, abordando desafios de gerenciamento de áudio, permissões e descoberta de arquivos em ambientes automotivos.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/mpcar-player-construindo-um-player-de-%C3%A1udio-ff51ddfae948",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Método organiza. Comunicação transforma.",
+                    "desc": "Reflexão sobre a importância da comunicação efetiva em equipes de desenvolvimento, mostrando como metodologias organizam processos mas a comunicação é o que realmente transforma o trabalho em equipe.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Quanto Vale Meu Trabalho na Área de TI: Sou Relevante? Como Combater a Síndrome do Impostor",
                     "desc": "Reflexão sobre o valor do trabalho na área de TI, a sensação de relevância profissional e estratégias para lidar com a síndrome do impostor.",
                     "links": [
