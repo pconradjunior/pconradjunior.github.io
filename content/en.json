@@ -291,6 +291,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
+                    "title": "What is innovation after all? Where does it come from? (PT-BR)",
+                    "desc": "Reflection on the nature of innovation, questioning whether it arises from new technologies or from a deeper understanding of human problems. An analysis of how true innovation comes from the ability to understand people and transform realities.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/afinal-o-que-%C3%A9-realmente-a-inova%C3%A7%C3%A3o-de-onde-ela-vem-3f8298b3191d",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
                     "title": "MPCar Player: Building an Automotive Audio Player in Flutter (PT-BR)",
                     "desc": "Development of an audio player for automotive multimedia with customized Android, addressing challenges of audio management, permissions, and file discovery in automotive environments.",
                     "links": [

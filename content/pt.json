@@ -292,6 +292,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Afinal, o que é realmente a inovação? De onde ela vem?",
+                    "desc": "Reflexão sobre a natureza da inovação, questionando se ela surge de novas tecnologias ou de uma compreensão mais profunda dos problemas humanos. Uma análise sobre como a verdadeira inovação vem da capacidade de compreender pessoas e transformar realidades.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/afinal-o-que-%C3%A9-realmente-a-inova%C3%A7%C3%A3o-de-onde-ela-vem-3f8298b3191d",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "MPCar Player: Construindo um Player de Áudio Automotivo em Flutter",
                     "desc": "Desenvolvimento de um player de áudio para centrais multimídia automotivas com Android customizado, abordando desafios de gerenciamento de áudio, permissões e descoberta de arquivos em ambientes automotivos.",
                     "links": [
