@@ -292,6 +292,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Muito Além do Código",
+                    "desc": "Reflexão profunda sobre legado, tecnologia e pessoas. Uma jornada pessoal de mais de três décadas na computação, explorando como o verdadeiro impacto do trabalho em TI não está nos sistemas desenvolvidos, mas nas pessoas que ajudamos a crescer e no conhecimento que compartilhamos.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/muito-al%C3%A9m-do-c%C3%B3digo-1730e372c01c",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Afinal, o que é realmente a inovação? De onde ela vem?",
                     "desc": "Reflexão sobre a natureza da inovação, questionando se ela surge de novas tecnologias ou de uma compreensão mais profunda dos problemas humanos. Uma análise sobre como a verdadeira inovação vem da capacidade de compreender pessoas e transformar realidades.",
                     "links": [

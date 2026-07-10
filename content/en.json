@@ -291,6 +291,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
+                    "title": "Far Beyond the Code (PT-BR)",
+                    "desc": "Deep reflection on legacy, technology, and people. A personal journey of over three decades in computing, exploring how the true impact of IT work lies not in the systems developed, but in the people we help grow and the knowledge we share.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/muito-al%C3%A9m-do-c%C3%B3digo-1730e372c01c",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
                     "title": "What is innovation after all? Where does it come from? (PT-BR)",
                     "desc": "Reflection on the nature of innovation, questioning whether it arises from new technologies or from a deeper understanding of human problems. An analysis of how true innovation comes from the ability to understand people and transform realities.",
                     "links": [
