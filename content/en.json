@@ -291,6 +291,38 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
+                    "title": "Beyond Labels: The Potential Still Waiting for Opportunities (PT-BR)",
+                    "desc": "Reflection on human potential, prejudice, and labels that limit people. Shows how opportunities and support can reveal hidden talents, with a personal story about persistence and learning.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/al%C3%A9m-dos-r%C3%B3tulos-o-potencial-que-ainda-espera-oportunidades-5210ff480e86",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
+                    "title": "Change: Fear or Opportunity? (PT-BR)",
+                    "desc": "Reflection on facing change with a positive mindset, turning challenges into growth opportunities, with practical tips for dealing with scary transitions.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/mudan%C3%A7a-medo-ou-oportunidade-1b0551f89a66",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
                     "title": "Far Beyond the Code (PT-BR)",
                     "desc": "Deep reflection on legacy, technology, and people. A personal journey of over three decades in computing, exploring how the true impact of IT work lies not in the systems developed, but in the people we help grow and the knowledge we share.",
                     "links": [
