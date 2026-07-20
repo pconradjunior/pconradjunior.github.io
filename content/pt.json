@@ -292,6 +292,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Engenharia Reversa de Aplicações Web com Playwright: Como Mapear APIs e Tecnologias de Forma Automática",
+                    "desc": "Ferramenta que automatiza a coleta de dados de websites usando navegador real controlado via linha de comando, gerando relatório HTML offline com APIs, frameworks, stack e tráfego de rede.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Além dos rótulos: o potencial que ainda espera oportunidades",
                     "desc": "Reflexão sobre potencial humano, preconceitos e rótulos que limitam pessoas. Mostra como oportunidades e apoio podem revelar talentos escondidos, com uma história pessoal sobre persistência e aprendizado.",
                     "links": [

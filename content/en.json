@@ -291,6 +291,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Development Article",
+                    "title": "Web Application Reverse Engineering with Playwright: How to Automatically Map APIs and Technologies (PT-BR)",
+                    "desc": "Tool that automates data collection from websites using real browser controlled via command line, generating offline HTML report with APIs, frameworks, stack and network traffic.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Development Article",
                     "title": "Beyond Labels: The Potential Still Waiting for Opportunities (PT-BR)",
                     "desc": "Reflection on human potential, prejudice, and labels that limit people. Shows how opportunities and support can reveal hidden talents, with a personal story about persistence and learning.",
                     "links": [
