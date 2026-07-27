@@ -292,6 +292,38 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo de Desenvolvimento",
+                    "title": "Papel, Caneta e Faca. Da implementação à especificação: a nova responsabilidade do desenvolvedor",
+                    "desc": "Reflexão sobre como a inteligência artificial está mudando a responsabilidade do desenvolvedor, que passa de autor da implementação para autor do comportamento esperado do software, usando a metáfora do papel, caneta e faca.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão Pessoal",
+                    "title": "Uma carta para quem chegou até aqui",
+                    "desc": "Carta de boas-vindas ao espaço no Medium, sobre a jornada, o propósito da escrita e a importância de compartilhar conhecimento para conectar pessoas e inspirar novas descobertas.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/uma-carta-para-quem-chegou-at%C3%A9-aqui-b25d6d410763",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo de Desenvolvimento",
                     "title": "Engenharia Reversa de Aplicações Web com Playwright: Como Mapear APIs e Tecnologias de Forma Automática",
                     "desc": "Ferramenta que automatiza a coleta de dados de websites usando navegador real controlado via linha de comando, gerando relatório HTML offline com APIs, frameworks, stack e tráfego de rede.",
                     "links": [
