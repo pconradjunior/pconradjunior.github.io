@@ -56,6 +56,10 @@ for (const page of PAGES) {
   check(!/>null<|undefined|NaN/.test(html), 'sem null/undefined/NaN no HTML');
   check(!/jquery|select2/i.test(html), 'sem jQuery/Select2');
 
+  // ── contato: apenas links diretos, sem formulário de terceiros ──
+  check(!/web3forms|access_key/i.test(html), 'sem Web3Forms nem access_key');
+  check(!/<form/i.test(html), 'sem formulário preenchível');
+
   // ── caminhos absolutos (necessário para /en/) ──
   check(!/href="(css|js|images|content)\//.test(html), 'assets com caminho absoluto');
   check(!/src="(css|js|images)\//.test(html), 'scripts e imagens com caminho absoluto');

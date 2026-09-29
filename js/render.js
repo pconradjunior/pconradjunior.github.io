@@ -333,34 +333,12 @@ export function renderMain(d) {
                 </div>
               </div>
 
-              <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <input type="hidden" name="access_key" value="39b311c5-6dc8-443a-8cb3-91516f8cf9e3">
-                <input type="hidden" name="redirect" value="${SITE.origin}/${c.form.redirect}">
-                <div class="form-group">
-                  <label for="name">${esc(c.form.labelName)}</label>
-                  <input type="text" id="name" name="name" class="form-control" placeholder="${esc(c.form.placeholderName)}" autocomplete="name" required>
-                </div>
-                <div class="form-group">
-                  <label for="email">${esc(c.form.labelEmail)}</label>
-                  <input type="email" id="email" name="email" class="form-control" placeholder="${esc(c.form.placeholderEmail)}" autocomplete="email" required>
-                </div>
-                <div class="form-group">
-                  <label for="subject">${esc(c.form.labelSubject)}</label>
-                  <select name="subject" id="subject" class="form-control" required>
-                    ${c.form.options.map(o => `<option value="${esc(o.value)}">${esc(o.label)}</option>`).join('')}
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">${esc(c.form.labelMessage)}</label>
-                  <textarea id="message" name="message" rows="5" class="form-control" placeholder="${esc(c.form.placeholderMessage)}" required></textarea>
-                </div>
-                <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="${esc(c.form.captchaLang)}"></div>
-                <input type="text" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-                <button type="submit" id="btn-submit" class="btn btn-submit">
-                  <span class="btn-label">${esc(c.form.btnSubmit)} <i class="fa fa-paper-plane" aria-hidden="true"></i></span>
-                </button>
-              </form>
+              <div class="contact-cta">
+                <a href="mailto:${SITE.email}" class="btn btn-cta">
+                  <i class="fa fa-envelope" aria-hidden="true"></i> ${esc(c.ctaButton)}
+                </a>
+                <p class="contact-cta-note">${esc(c.ctaNote)}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -622,7 +600,6 @@ export function buildDocument(d, lang) {
       </div>
     </div>
 
-    <script src="https://web3forms.com/client/script.js" async defer></script>
     <script type="module" src="/js/main.js"></script>
 </body>
 

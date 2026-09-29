@@ -1043,40 +1043,8 @@
         "sectionTitle": "Let's Talk?",
         "infoTitle": "Contact Channels",
         "infoText": "Available for consulting, system architecture, mobile development and institutional system work.",
-        "form": {
-            "labelName": "Your Name",
-            "placeholderName": "How should I address you?",
-            "labelEmail": "Your E-mail",
-            "placeholderEmail": "example@email.com",
-            "labelSubject": "Subject",
-            "options": [
-                {
-                    "value": "[Contact via Portfolio] Consulting",
-                    "label": "Consulting"
-                },
-                {
-                    "value": "[Contact via Portfolio] Mobile Development",
-                    "label": "Mobile Development"
-                },
-                {
-                    "value": "[Contact via Portfolio] Web System",
-                    "label": "Web System"
-                },
-                {
-                    "value": "[Contact via Portfolio] REx Support and Suggestions",
-                    "label": "REx Support and Suggestions"
-                },
-                {
-                    "value": "[Contact via Portfolio] Other",
-                    "label": "Other"
-                }
-            ],
-            "labelMessage": "Message",
-            "placeholderMessage": "Tell me more about your idea...",
-            "redirect": "thanks.html",
-            "captchaLang": "en",
-            "btnSubmit": "Send Message"
-        }
+        "ctaButton": "Write me an e-mail",
+        "ctaNote": "I prefer to talk here. I reply within a few days."
     },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. All rights reserved.",

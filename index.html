@@ -767,34 +767,12 @@
                 </div>
               </div>
 
-              <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <input type="hidden" name="access_key" value="39b311c5-6dc8-443a-8cb3-91516f8cf9e3">
-                <input type="hidden" name="redirect" value="https://pconradjunior.github.io/obrigado.html">
-                <div class="form-group">
-                  <label for="name">Seu Nome</label>
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Como devo te chamar?" autocomplete="name" required>
-                </div>
-                <div class="form-group">
-                  <label for="email">Seu E-mail</label>
-                  <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@seusite.com" autocomplete="email" required>
-                </div>
-                <div class="form-group">
-                  <label for="subject">Assunto</label>
-                  <select name="subject" id="subject" class="form-control" required>
-                    <option value="[Contato via Portfolio] Consultoria">Consultoria</option><option value="[Contato via Portfolio] Desenvolvimento Mobile">Desenvolvimento Mobile</option><option value="[Contato via Portfolio] Sistema Web">Sistema Web</option><option value="[Contato via Portfolio] Suporte e sugestões REx">Suporte e sugestões REx</option><option value="[Contato via Portfolio] Outro assunto">Outro assunto</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">Mensagem</label>
-                  <textarea id="message" name="message" rows="5" class="form-control" placeholder="Conte-me mais sobre sua ideia..." required></textarea>
-                </div>
-                <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="pt"></div>
-                <input type="text" name="botcheck" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-                <button type="submit" id="btn-submit" class="btn btn-submit">
-                  <span class="btn-label">Enviar Mensagem <i class="fa fa-paper-plane" aria-hidden="true"></i></span>
-                </button>
-              </form>
+              <div class="contact-cta">
+                <a href="mailto:pconradjunior@gmail.com" class="btn btn-cta">
+                  <i class="fa fa-envelope" aria-hidden="true"></i> Escrever por e-mail
+                </a>
+                <p class="contact-cta-note">Prefiro conversar por aqui. Respondo em poucos dias.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -823,7 +801,6 @@
       </div>
     </div>
 
-    <script src="https://web3forms.com/client/script.js" async defer></script>
     <script type="module" src="/js/main.js"></script>
 </body>
 

@@ -257,94 +257,6 @@ const I18n = (() => {
 })();
 
 /* ============================================================
-   CONTACT FORM
-   ============================================================ */
-
-const ContactForm = (() => {
-    const MAX_MS = 20000;
-
-    function fail(form, status, text) {
-        if (status) {
-            status.textContent = text;
-            status.classList.add('is-error');
-        }
-        form.querySelectorAll('[aria-invalid="true"]').forEach(f => {
-            f.removeAttribute('aria-invalid');
-        });
-    }
-
-    function init() {
-        const form = document.getElementById('contact-form');
-        if (!form) return;
-
-        const status = form.querySelector('#form-status');
-        const btn = form.querySelector('#btn-submit');
-        const label = btn.querySelector('.btn-label');
-        const btnText = label ? label.textContent.trim() : btn.textContent.trim();
-        const name = form.querySelector('#name');
-        const email = form.querySelector('#email');
-        const message = form.querySelector('#message');
-        let timer = null;
-
-        form.addEventListener('submit', e => {
-            // Validação aqui é só para dar feedback rápido. Quem bloqueia o
-            // envio vazio de verdade é o required do navegador; sem JS, os dois
-            // continuam valendo e o POST segue nativo.
-            const problems = [];
-            if (name.value.trim().length < 2) problems.push(name);
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) problems.push(email);
-            if (message.value.trim().length < 10) problems.push(message);
-
-            problems.forEach(f => f.setAttribute('aria-invalid', 'true'));
-
-            if (problems.length) {
-                e.preventDefault();
-                if (status) {
-                    status.textContent = 'Preencha os campos destacados antes de enviar.';
-                    status.classList.add('is-error');
-                }
-                problems[0].focus();
-                return;
-            }
-
-            if (status) {
-                status.textContent = '';
-                status.classList.remove('is-error');
-            }
-            form.querySelectorAll('[aria-invalid="true"]').forEach(f => {
-                f.removeAttribute('aria-invalid');
-            });
-
-            // Evita duplo envio: o botão fica travado até a navegação.
-            btn.disabled = true;
-            btn.classList.add('is-sending');
-            if (label) label.textContent = 'Enviando...';
-
-            // Sem CORS a resposta não pode ser lida, então não dá para
-            // confirmar a entrega. Se a página não navegar, algo falhou.
-            timer = setTimeout(() => {
-                btn.disabled = false;
-                btn.classList.remove('is-sending');
-                if (label) label.textContent = btnText;
-                fail(form, status, 'Não foi possível enviar. Verifique sua conexão e tente de novo.');
-            }, MAX_MS);
-        });
-
-        window.addEventListener('pagehide', () => clearTimeout(timer));
-
-        form.addEventListener('input', e => {
-            if (e.target.getAttribute('aria-invalid') === 'true') {
-                e.target.removeAttribute('aria-invalid');
-            }
-        });
-
-        return { init, fail };
-    }
-
-    return { init };
-})();
-
-/* ============================================================
    BOOTSTRAP
    ============================================================ */
 
@@ -353,5 +265,4 @@ document.addEventListener('DOMContentLoaded', () => {
     Nav.init();
     Modals.init();
     I18n.init();
-    ContactForm.init();
 });

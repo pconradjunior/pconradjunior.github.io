@@ -1043,40 +1043,8 @@
         "sectionTitle": "Vamos Conversar?",
         "infoTitle": "Canais de Contato",
         "infoText": "Disponível para consultorias, arquitetura de software, desenvolvimento mobile e sistemas institucionais.",
-        "form": {
-            "labelName": "Seu Nome",
-            "placeholderName": "Como devo te chamar?",
-            "labelEmail": "Seu E-mail",
-            "placeholderEmail": "seuemail@seusite.com",
-            "labelSubject": "Assunto",
-            "options": [
-                {
-                    "value": "[Contato via Portfolio] Consultoria",
-                    "label": "Consultoria"
-                },
-                {
-                    "value": "[Contato via Portfolio] Desenvolvimento Mobile",
-                    "label": "Desenvolvimento Mobile"
-                },
-                {
-                    "value": "[Contato via Portfolio] Sistema Web",
-                    "label": "Sistema Web"
-                },
-                {
-                    "value": "[Contato via Portfolio] Suporte e sugestões REx",
-                    "label": "Suporte e sugestões REx"
-                },
-                {
-                    "value": "[Contato via Portfolio] Outro assunto",
-                    "label": "Outro assunto"
-                }
-            ],
-            "labelMessage": "Mensagem",
-            "placeholderMessage": "Conte-me mais sobre sua ideia...",
-            "redirect": "obrigado.html",
-            "captchaLang": "pt",
-            "btnSubmit": "Enviar Mensagem"
-        }
+        "ctaButton": "Escrever por e-mail",
+        "ctaNote": "Prefiro conversar por aqui. Respondo em poucos dias."
     },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. Todos os direitos reservados.",
