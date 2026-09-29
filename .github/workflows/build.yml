@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'js/render.js'
+      - 'build.mjs'
+      - 'tools/check-build.mjs'
+  workflow_dispatch:
+
+# Concede escrita apenas ao job de build; o job de validação não faz commits.
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Gerar HTML estático
+        run: node build.mjs
+
+      - name: Validar
+        run: node tools/check-build.mjs
+
+      - name: Commitar resultado
+        run: |
+          if git diff --quiet -- index.html en/ sitemap.xml robots.txt; then
+            echo "HTML já sincronizado — nada a commitar."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html en/ sitemap.xml robots.txt
+          git commit -m "build: regera HTML estático a partir de content/*.json"
+          git push

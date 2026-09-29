@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pconradjunior.github.io/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/en/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/article_algoritmos.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/article_ios.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/article_reconhecimento_facial.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/article_versioncheck.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/rex_info.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/"/>
+  </url>
+</urlset>

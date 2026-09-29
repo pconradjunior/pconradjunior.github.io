@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Conrad Jr — PHP/CodeIgniter, Flutter and Institutional ERP Developer</title>
+    <meta name="description" content="PHP/CodeIgniter and Flutter developer with 20+ years of experience. Institutional ERPs, 7 published apps, 23 articles and 7 academic papers. IT Analyst at Unipampa.">
+    <meta name="keywords" content="PHP developer, CodeIgniter, Flutter developer, institutional ERP, software architecture, IT analyst, Unipampa, Android iOS apps">
+    <meta name="author" content="Pedro Conrad Jr">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://pconradjunior.github.io/en/">
+    <link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/">
+    <link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/">
+    <link rel="alternate" hreflang="x-default" href="https://pconradjunior.github.io/">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Pedro Conrad Jr">
+    <meta property="og:title" content="Pedro Conrad Jr — PHP/CodeIgniter, Flutter and Institutional ERP Developer">
+    <meta property="og:description" content="PHP/CodeIgniter and Flutter developer with 20+ years of experience. Institutional ERPs, 7 published apps, 23 articles and 7 academic papers. IT Analyst at Unipampa.">
+    <meta property="og:url" content="https://pconradjunior.github.io/en/">
+    <meta property="og:image" content="https://pconradjunior.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Pedro Conrad Jr — Developer of institutional systems and mobile applications">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="pt_BR">
+    <meta property="profile:first_name" content="Pedro">
+    <meta property="profile:last_name" content="Conrad Junior">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pedro Conrad Jr — PHP/CodeIgniter, Flutter and Institutional ERP Developer">
+    <meta name="twitter:description" content="PHP/CodeIgniter and Flutter developer with 20+ years of experience. Institutional ERPs, 7 published apps, 23 articles and 7 academic papers. IT Analyst at Unipampa.">
+    <meta name="twitter:image" content="https://pconradjunior.github.io/images/og-image.png">
+    <meta name="twitter:image:alt" content="Pedro Conrad Jr — Developer of institutional systems and mobile applications">
+
+    <link rel="icon" type="image/svg+xml" href="/images/flags/us.svg" id="favicon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preload" as="fetch" href="/content/en.json" crossorigin>
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.classList.add(t);
+      })();
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://pconradjunior.github.io/#person","@type":"Person","name":"Pedro Conrad Jr","url":"https://pconradjunior.github.io/","email":"mailto:pconradjunior@gmail.com","jobTitle":"Developer of institutional systems and mobile apps","description":"IT Analyst at Universidade Federal do Pampa. I build the systems that institutional processes depend on: ERPs with 50+ integrated modules and apps published for Android and iOS.","knowsAbout":["Software architecture","Data modeling","PHP / CodeIgniter","Flutter / Dart","Relational databases","Team technical leadership"],"worksFor":{"@type":"CollegeOrUniversity","name":"Universidade Federal do Pampa (Unipampa)"},"sameAs":["https://github.com/pconradjunior","https://www.linkedin.com/in/pconradjunior/","https://medium.com/@pconradjunior","https://instagram.com/pedrojunior.dev"]}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","url":"https://pconradjunior.github.io/en/","name":"Pedro Conrad Jr — PHP/CodeIgniter, Flutter and Institutional ERP Developer","description":"PHP/CodeIgniter and Flutter developer with 20+ years of experience. Institutional ERPs, 7 published apps, 23 articles and 7 academic papers. IT Analyst at Unipampa.","inLanguage":"en","mainEntity":{"@id":"https://pconradjunior.github.io/#person"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Published applications","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"ChessKids","description":"Educational chess application for children, offline and ad-free, with AI support and difficulty levels.","applicationCategory":"GameApplication","operatingSystem":"Android","url":"https://play.google.com/store/apps/details?id=pconradjunior.chesskids","downloadUrl":"https://play.google.com/store/apps/details?id=pconradjunior.chesskids","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/DownloadAction","userInteractionCount":8},"author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"App Unipampa","description":"Official Unipampa application that centralizes academic services, institutional information, and communication with the university community.","applicationCategory":"EducationalApplication","operatingSystem":"Android, iOS","url":"https://play.google.com/store/apps/details?id=br.edu.unipampa.app","downloadUrl":"https://play.google.com/store/apps/details?id=br.edu.unipampa.app","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/DownloadAction","userInteractionCount":1000},"author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"SmellCheck","description":"Application designed to monitor the recovery of the sense of smell, used as a supporting tool in clinical processes.","applicationCategory":"HealthApplication","operatingSystem":"Android","url":"https://play.google.com/store/apps/details?id=pconradjunior.smellcheck","downloadUrl":"https://play.google.com/store/apps/details?id=pconradjunior.smellcheck","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/DownloadAction","userInteractionCount":50},"author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"FingerNotes","description":"Secure note-taking application with biometric authentication and password protection, focused on privacy and simplicity.","applicationCategory":"ProductApplication","operatingSystem":"Android","url":"https://play.google.com/store/apps/details?id=pconradjunior.fingernotes","downloadUrl":"https://play.google.com/store/apps/details?id=pconradjunior.fingernotes","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/DownloadAction","userInteractionCount":35},"author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"PhisiCalc","description":"Body composition calculation tool designed for fitness and health professionals.","applicationCategory":"HealthApplication","operatingSystem":"Android","url":"https://play.google.com/store/apps/details?id=pconradjunior.phisicalc","downloadUrl":"https://play.google.com/store/apps/details?id=pconradjunior.phisicalc","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/DownloadAction","userInteractionCount":26623},"author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"AnimalSounds","description":"App that lets you teach your child to associate the sounds made by various animals with the animal drawing, simply by touching the figure to hear the sound.","applicationCategory":"GameApplication","operatingSystem":"Android","url":"https://play.google.com/store/apps/details?id=pconradjunior.animalsounds","downloadUrl":"https://play.google.com/store/apps/details?id=pconradjunior.animalsounds","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/DownloadAction","userInteractionCount":7135},"author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"MovieSpinner","description":"Helps you pick the movie genre for the weekend: spin the wheel across 20 preset genres, or choose your favourites to draw one at random.","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","url":"https://play.google.com/store/apps/details?id=pconradjunior.moviespinner","downloadUrl":"https://play.google.com/store/apps/details?id=pconradjunior.moviespinner","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/DownloadAction","userInteractionCount":22},"author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Web systems built","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebApplication","name":"GURI - ERP","description":"Institutional ERP system with over 50 integrated modules, used for academic and administrative management, with contributions in analysis, development, and architecture.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":2,"item":{"@type":"WebApplication","name":"SisPPA","description":"Academic output scoring system focused on transparency, evaluation and institutional management support. Published at WTICIFES 2026.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":3,"item":{"@type":"WebApplication","name":"Terminal RU","description":"Biometric access control system integrated with hardware for university restaurant operations.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":4,"item":{"@type":"WebApplication","name":"SGCE","description":"System for issuing, validating, and publicly verifying electronic certificates.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Publications and articles","numberOfItems":23,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Article","headline":"Web Application Reverse Engineering with Playwright: How to Automatically Map APIs and Technologies (PT-BR)","description":"Tool that automates data collection from websites using real browser controlled via command line, generating offline HTML report with APIs, frameworks, stack and network traffic.","url":"https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":2,"item":{"@type":"Article","headline":"MPCar Player: Building an Automotive Audio Player in Flutter (PT-BR)","description":"Development of an audio player for automotive multimedia with customized Android, addressing challenges of audio management, permissions, and file discovery in automotive environments.","url":"https://medium.com/@pconradjunior/mpcar-player-construindo-um-player-de-%C3%A1udio-ff51ddfae948","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":3,"item":{"@type":"Article","headline":"Developing ChessKids: A Study on Architecture, Components, and AI (PT-BR)","description":"Analysis of the development of ChessKids, a chess application for children, highlighting the architecture, component organization, and integration of artificial intelligence.","url":"https://medium.com/@pconradjunior/desenvolvendo-o-chesskids-um-estudo-que-mistura-arquitetura-componentes-e-ia-d7734bff9145","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":4,"item":{"@type":"Article","headline":"REx: Research Explorer - Automating ISSN Identification (PT-BR)","description":"Extension that automates ISSN identification and enables visual comparison across different journal ranking classifications.","url":"https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":5,"item":{"@type":"Article","headline":"Application of an organized model to software development: how to avoid improvisation and work with intention (PT-BR)","description":"Explores the application of a structured methodology to software development, reducing improvisation and increasing predictability.","url":"https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":6,"item":{"@type":"Article","headline":"What You Need to Create Apps for iOS Devices (PT-BR)","description":"Practical guide covering costs, requirements, and steps for iOS application development.","url":"https://pconradjunior.github.io/article_ios.html","citation":[{"@type":"CreativeWork","name":"Read on Medium","url":"https://medium.com/@pconradjunior/o-que-%C3%A9-preciso-para-criar-apps-para-dispositivos-ios-5c1ce8ab0879"}],"author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":7,"item":{"@type":"Article","headline":"Facial Recognition in Flutter (PT-BR)","description":"Offline multi-user facial biometric system developed in Flutter, focused on local authentication.","url":"https://pconradjunior.github.io/article_reconhecimento_facial.html","citation":[{"@type":"CreativeWork","name":"Read on Medium","url":"https://medium.com/@pconradjunior/reconhecimento-facial-em-flutter-9ae2bf495a56"}],"author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":8,"item":{"@type":"Article","headline":"Version Check in Flutter (PT-BR)","description":"Implementation of version checking strategy and forced updates in Flutter applications.","url":"https://pconradjunior.github.io/article_versioncheck.html","citation":[{"@type":"CreativeWork","name":"Read on Medium","url":"https://medium.com/@pconradjunior/verifica%C3%A7%C3%A3o-de-vers%C3%A3o-em-flutter-7127f87cf91f"}],"author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":9,"item":{"@type":"Article","headline":"Algorithms","description":"Didactic approach to demystify programming logic and simplify the learning of algorithms.","url":"https://pconradjunior.github.io/article_algoritmos.html","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":10,"item":{"@type":"Article","headline":"O que o WTICIFES 2026 me mostrou sobre o futuro da TI nas universidades federais","description":"Report from WTICIFES 2026 (Garibaldi, RS), based on more than 200 presented papers, analysing automation and integration cases in Brazilian federal universities — UFSCar auditable draw, the UFFS WhatsApp assistant and UNIFESP voting automation — and arguing that technology is increasingly used as a means to solve concrete problems rather than as an end in itself.","url":"https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87","citation":[{"@type":"CreativeWork","name":"WTICIFES 2026 paper","url":"https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe"}],"author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":11,"item":{"@type":"Article","headline":"Paper, Pen and Knife: From Implementation to Specification — The Developer's New Responsibility (PT-BR)","description":"Reflection on how artificial intelligence is shifting the developer's responsibility, moving from implementation author to author of expected software behavior, using the paper, pen and knife metaphor.","url":"https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":12,"item":{"@type":"Article","headline":"A Letter to Anyone Who Arrived Here (PT-BR)","description":"A welcome letter introducing his Medium space, his journey, curiosity, and the purpose of sharing knowledge to connect people and inspire new discoveries.","url":"https://medium.com/@pconradjunior/uma-carta-para-quem-chegou-at%C3%A9-aqui-b25d6d410763","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":13,"item":{"@type":"Article","headline":"Beyond Labels: The Potential Still Waiting for Opportunities (PT-BR)","description":"Reflection on human potential, prejudice, and labels that limit people. Shows how opportunities and support can reveal hidden talents, with a personal story about persistence and learning.","url":"https://medium.com/@pconradjunior/al%C3%A9m-dos-r%C3%B3tulos-o-potencial-que-ainda-espera-oportunidades-5210ff480e86","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":14,"item":{"@type":"Article","headline":"Change: Fear or Opportunity? (PT-BR)","description":"Reflection on facing change with a positive mindset, turning challenges into growth opportunities, with practical tips for dealing with scary transitions.","url":"https://medium.com/@pconradjunior/mudan%C3%A7a-medo-ou-oportunidade-1b0551f89a66","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":15,"item":{"@type":"Article","headline":"Far Beyond the Code (PT-BR)","description":"Deep reflection on legacy, technology, and people. A personal journey of over three decades in computing, exploring how the true impact of IT work lies not in the systems developed, but in the people we help grow and the knowledge we share.","url":"https://medium.com/@pconradjunior/muito-al%C3%A9m-do-c%C3%B3digo-1730e372c01c","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":16,"item":{"@type":"Article","headline":"What is innovation after all? Where does it come from? (PT-BR)","description":"Reflection on the nature of innovation, questioning whether it arises from new technologies or from a deeper understanding of human problems. An analysis of how true innovation comes from the ability to understand people and transform realities.","url":"https://medium.com/@pconradjunior/afinal-o-que-%C3%A9-realmente-a-inova%C3%A7%C3%A3o-de-onde-ela-vem-3f8298b3191d","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":17,"item":{"@type":"Article","headline":"How Much Is My Work Worth in IT: Am I Relevant? How to Combat Impostor Syndrome (PT-BR)","description":"Reflection on the value of work in the IT field, the feeling of professional relevance, and strategies to deal with impostor syndrome.","url":"https://medium.com/@pconradjunior/quanto-vale-meu-trabalho-na-%C3%A1rea-de-ti-sou-relevante-como-combater-a-s%C3%ADndrome-do-impostor-d5c54d3f36ee","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":18,"item":{"@type":"Article","headline":"Artificial Intelligence: A Cognitive Revolution or the Revolution of Haste (PT-BR)","description":"Reflection on the real impact of Artificial Intelligence, questioning whether we face a true cognitive revolution or merely an intellectual shortcut that may compromise the learning process.","url":"https://medium.com/@pconradjunior/intelig%C3%AAncia-artificial-uma-revolu%C3%A7%C3%A3o-cognitiva-ou-a-revolu%C3%A7%C3%A3o-da-pressa-21d935b7b992","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":19,"item":{"@type":"Article","headline":"Your portfolio is not an HTML resume (and that's okay)","description":"Reflection on the differences between a portfolio and a resume, and how to better structure your professional presentation.","url":"https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":20,"item":{"@type":"Article","headline":"Method Organizes. Communication Transforms. (PT-BR)","description":"Reflection on the importance of effective communication in development teams, showing how methodologies organize processes but communication is what truly transforms team work.","url":"https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":21,"item":{"@type":"Article","headline":"Among Code, People and Problems: What I Learned Working with Information Technology (So Far) (PT-BR)","description":"Over two decades of IT career gathered in a reflection about learning, people, and what truly matters.","url":"https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":22,"item":{"@type":"Article","headline":"Human-centered Support in Technical Services: Empathy as a Work Tool (PT-BR)","description":"Reflection on the importance of empathy and human-centered service in technical support, highlighting how these skills positively impact user experience and problem resolution.","url":"https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":23,"item":{"@type":"Article","headline":"Beyond the Method: What Makes a Team Perform Better? (PT-BR)","description":"The importance of human factors, communication, and organization for the success of development teams.","url":"https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9","author":{"@id":"https://pconradjunior.github.io/#person"},"publisher":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Academic papers","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"ScholarlyArticle","name":"Desenvolvimento de um Sistema de Gestão da Produção Acadêmica baseado em Engenharia Reversa e Padrões de Projeto (PT-BR)","headline":"Desenvolvimento de um Sistema de Gestão da Produção Acadêmica baseado em Engenharia Reversa e Padrões de Projeto (PT-BR)","description":"Published at WTICIFES 2026 — Information Systems. Presents SisPPA, the Unipampa web system for managing, validating and scoring academic output, built on MVC and spreadsheet reverse engineering.","url":"https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":2,"item":{"@type":"ScholarlyArticle","name":"Unipampa App brings innovation to community","headline":"Unipampa App brings innovation to community","description":"Institutional news about the launch of the official Unipampa application, highlighting its services and benefits for the university community.","url":"https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":3,"item":{"@type":"ScholarlyArticle","name":"Unipampa App available for iOS","headline":"Unipampa App available for iOS","description":"Institutional news about the release of the Unipampa app for iOS devices, expanding access for the academic community.","url":"https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":4,"item":{"@type":"ScholarlyArticle","name":"Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão (PT-BR)","headline":"Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão (PT-BR)","description":"Published at WTICIFES 2012 — Goiânia, Brazil","url":"https://repositorio.wticifes.com.br/items/3467ff37-1ce3-4e4d-9fe4-23b88a2d746f","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":5,"item":{"@type":"ScholarlyArticle","name":"SisRel - Sistema de Extração Dinâmica de Dados com Foco no Usuário Final (PT-BR)","headline":"SisRel - Sistema de Extração Dinâmica de Dados com Foco no Usuário Final (PT-BR)","description":"Published at WTICIFES 2011 — Florianópolis, Brazil","url":"https://repositorio.wticifes.com.br/items/956a321f-3163-4e08-a087-e48d21e3711f","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":6,"item":{"@type":"ScholarlyArticle","name":"Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto (PT-BR)","headline":"Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto (PT-BR)","description":"Published at WTICIFES 2011 — Florianópolis, Brazil","url":"https://repositorio.wticifes.com.br/items/f0cf9d8b-8fb2-40f1-8cae-2f623fa235d2","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}},{"@type":"ListItem","position":7,"item":{"@type":"ScholarlyArticle","name":"Sistema de Gestão de Certificados Eletrônicos (PT-BR)","headline":"Sistema de Gestão de Certificados Eletrônicos (PT-BR)","description":"Published at WTICIFES 2011 — Florianópolis, Brazil","url":"https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14","author":{"@id":"https://pconradjunior.github.io/#person"},"inLanguage":"en"}}]}</script>
+</head>
+
+<body>
+    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
+    <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
+    <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
+    <div class="theme-switcher" role="group" aria-label="Choose your theme" title="Choose your theme">
+      <label for="theme-cyan" class="theme-label label-cyan"><span class="sr-only">Choose your theme</span></label>
+      <label for="theme-purple" class="theme-label label-purple"><span class="sr-only">Choose your theme</span></label>
+      <label for="theme-green" class="theme-label label-green"><span class="sr-only">Choose your theme</span></label>
+    </div>
+
+    <header>
+        <div class="container">
+          <nav aria-label="Main navigation">
+            <button class="hamburger" id="hamburgerBtn" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <a href="#" class="logo">
+              <i class="fa fa-code logo-icon" aria-hidden="true"></i><span>Pedro Conrad Jr</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#expertise">Expertise</a>
+              <div class="dropdown">
+                <a href="#projects" id="nav-projects" aria-haspopup="true">Projects <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                <div class="dropdown-content">
+                  <a href="#mobile">Mobile Apps</a>
+                  <a href="#web">Web Systems</a>
+                  <a href="#other-projects">Other Projects</a>
+                  <a href="#technical-articles">Technical Articles</a>
+                  <a href="#reflections">Reflections</a>
+                  <a href="#career">Career &amp; Management</a>
+                  <a href="#publications">Publications</a>
+                  <a href="#videos">Videos</a>
+                </div>
+              </div>
+              <a href="#contact">Contact</a>
+              <a href="/" id="langToggle" hreflang="pt-BR" rel="alternate" title="Português">
+                <img src="https://flagcdn.com/20x15/br.png" alt="PT" width="20" height="15" loading="lazy"> Português
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    <main>
+        <section id="home" class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <span class="hero-greeting">Hi, I&#39;m</span>
+              <h1>Pedro Conrad Jr</h1>
+              <p class="hero-role">Developer of institutional systems and mobile apps</p>
+              <p class="hero-stack">PHP · CodeIgniter · MySQL · Flutter · Dart</p>
+              <p class="hero-description">IT Analyst at Universidade Federal do Pampa. I build the systems that institutional processes depend on: ERPs with 50+ integrated modules and apps published for Android and iOS.</p>
+              <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="https://github.com/pconradjunior" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span></a>
+                <a href="https://www.linkedin.com/in/pconradjunior/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+                <a href="https://instagram.com/pedrojunior.dev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-instagram" aria-hidden="true"></i> <span>Instagram</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="about">
+          <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+              <div class="about-text">
+                <ul class="skill-list" role="list"><li>Software architecture</li><li>Data modeling</li><li>PHP / CodeIgniter</li><li>Flutter / Dart</li><li>Relational databases</li><li>Team technical leadership</li></ul>
+                <p>I am an Information Technology professional with over 20 years of experience in web systems and mobile application development. Currently, I work as an IT Analyst at Universidade Federal do Pampa (Unipampa), contributing directly to critical institutional systems.</p><p>I have strong experience in software architecture, data modeling, and development standards definition. Between 2016 and 2019, I worked in a technical leadership role, coordinating teams, leading projects, organizing processes, and mentoring developers.</p><p>My background includes the development of large-scale systems, such as ERPs with dozens of integrated modules, as well as modern mobile applications using Flutter, always focused on performance, scalability, and code quality.</p>
+                <p class="teaching"><strong>Mentoring / Training:</strong> PHP / CodeIgniter Developer Training — Technical training material aimed at forming new PHP developers and good practices.</p>
+              </div>
+              <div class="about-stats">
+                <div class="stats-grid">
+                  <div class="stat-card"><span class="stat-number">20+</span><span class="stat-label">Years of Experience</span></div><div class="stat-card"><span class="stat-number">50+</span><span class="stat-label">Projects Delivered</span></div><div class="stat-card"><span class="stat-number">35k+</span><span class="stat-label">App Downloads</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="expertise" class="services">
+          <div class="container">
+            <h2 class="section-title">Expertise</h2>
+            <div class="about-text"><p class="centered">My experience spans within several areas within software development, with a focus on institutional solutions, mobile applications, and technical leadership.</p><p class="centered">In addition to working with software development, I have prior experience in teaching at the university level, where I lectured on technical subjects such as software development, databases, and system architecture. This experience has provided me with a solid foundation in computing fundamentals and technical communication skills.</p><p class="centered"> The areas below represent some of the main domains in which I operate:</p></div>
+            <div class="services-grid">
+              <div class="service-card">
+                <div class="service-icon"><i class="fa fa-laptop-code" aria-hidden="true"></i></div>
+                <h3>Enterprise Systems &amp; APIs</h3>
+                <p>Development of large-scale institutional systems and ERPs, focusing on architecture, scalability, and service integration using PHP (CodeIgniter) and relational databases.</p>
+              </div><div class="service-card">
+                <div class="service-icon"><i class="fa fa-mobile-screen" aria-hidden="true"></i></div>
+                <h3>Mobile Applications</h3>
+                <p>Modern mobile development for Android and iOS using Flutter, including API integration, biometric authentication, and institutional services.</p>
+              </div><div class="service-card">
+                <div class="service-icon"><i class="fa fa-handshake" aria-hidden="true"></i></div>
+                <h3>Architecture &amp; Technical Leadership</h3>
+                <p>Definition of development standards, system design, and technical leadership, focusing on quality, organization, and continuous evolution.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="portfolio">
+          <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-intro centered">This section highlights some of the main projects developed throughout my professional career, including institutional systems, mobile applications, and technical initiatives focused on architecture, integration, and scalability.</p>
+
+            <div class="filters" role="group" aria-label="Filter by category">
+          <input type="radio" name="pf" id="pf-all" class="pf-controller" checked>
+          <input type="radio" name="pf" id="pf-mobile" class="pf-controller">
+          <input type="radio" name="pf" id="pf-web" class="pf-controller">
+          <input type="radio" name="pf" id="pf-other" class="pf-controller">
+          <input type="radio" name="pf" id="pf-technical" class="pf-controller">
+          <input type="radio" name="pf" id="pf-reflections" class="pf-controller">
+          <input type="radio" name="pf" id="pf-career" class="pf-controller">
+          <input type="radio" name="pf" id="pf-publications" class="pf-controller">
+          <input type="radio" name="pf" id="pf-videos" class="pf-controller">
+              <div class="filter-tabs">
+            <label for="pf-all" class="filter-tab">All <span class="filter-count">51</span></label>
+            <label for="pf-mobile" class="filter-tab">Mobile Applications <span class="filter-count">8</span></label>
+            <label for="pf-web" class="filter-tab">Web Systems <span class="filter-count">4</span></label>
+            <label for="pf-other" class="filter-tab">Other Projects <span class="filter-count">1</span></label>
+            <label for="pf-technical" class="filter-tab">Technical Articles <span class="filter-count">9</span></label>
+            <label for="pf-reflections" class="filter-tab">Reflections <span class="filter-count">10</span></label>
+            <label for="pf-career" class="filter-tab">Career &amp; Management <span class="filter-count">4</span></label>
+            <label for="pf-publications" class="filter-tab">Publications <span class="filter-count">7</span></label>
+            <label for="pf-videos" class="filter-tab">Video Material &amp; Demos <span class="filter-count">8</span></label>
+              </div>
+            </div>
+
+            <div id="projectGroups"><section class="project-group" id="mobile" data-category="mobile" aria-labelledby="h-mobile">
+          <h3 class="group-title" id="h-mobile">Mobile Applications <span class="group-count">8</span></h3>
+          
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> Flutter</span>
+              <h4 class="project-title">ChessKids</h4>
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> 8+ downloads</span>
+              <p class="project-desc">Educational chess application for children, offline and ad-free, with AI support and difficulty levels.</p>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=pconradjunior.chesskids" target="_blank" rel="noopener noreferrer" class="btn-link" title="Android" aria-label="Android">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+            </a><button type="button" class="btn-link" data-video="yPxbRScwkvI" title="Watch Demo" aria-label="Watch Demo">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch Demo
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> Flutter</span>
+              <h4 class="project-title">App Unipampa</h4>
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> 1k+ downloads</span>
+              <p class="project-desc">Official Unipampa application that centralizes academic services, institutional information, and communication with the university community.</p>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=br.edu.unipampa.app" target="_blank" rel="noopener noreferrer" class="btn-link" title="Android" aria-label="Android">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+            </a><a href="https://apps.apple.com/app/app-unipampa/id1639927711" target="_blank" rel="noopener noreferrer" class="btn-link" title="iOS" aria-label="iOS">
+              <i class="fa-brands fa-apple" aria-hidden="true"></i>
+            </a><button type="button" class="btn-link" data-video="mgvavs5VOgU" title="Watch Demo" aria-label="Watch Demo">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch Demo
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> Flutter</span>
+              <h4 class="project-title">SmellCheck</h4>
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> 50+ downloads</span>
+              <p class="project-desc">Application designed to monitor the recovery of the sense of smell, used as a supporting tool in clinical processes.</p>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=pconradjunior.smellcheck" target="_blank" rel="noopener noreferrer" class="btn-link" title="Android" aria-label="Android">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+            </a><button type="button" class="btn-link" data-video="t1P1dCydtUo" title="Watch Demo" aria-label="Watch Demo">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch Demo
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> PhoneGap/Cordova</span>
+              <h4 class="project-title">FingerNotes</h4>
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> 35+ downloads</span>
+              <p class="project-desc">Secure note-taking application with biometric authentication and password protection, focused on privacy and simplicity.</p>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=pconradjunior.fingernotes" target="_blank" rel="noopener noreferrer" class="btn-link" title="Android" aria-label="Android">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+            </a><button type="button" class="btn-link" data-video="hGdydq2jhJI" title="Watch Demo" aria-label="Watch Demo">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch Demo
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> Android</span>
+              <h4 class="project-title">PhisiCalc</h4>
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> 27k+ downloads</span>
+              <p class="project-desc">Body composition calculation tool designed for fitness and health professionals.</p>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=pconradjunior.phisicalc" target="_blank" rel="noopener noreferrer" class="btn-link" title="Android" aria-label="Android">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> Flutter (Study)</span>
+              <h4 class="project-title">LembraMed</h4>
+              
+              <p class="project-desc">Application for medication tracking, appointments, and health indicators monitoring, developed as a practical Flutter study project.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="hUdgk81DGuk" title="Watch Demo" aria-label="Watch Demo">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch Demo
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> PhoneGap/Cordova</span>
+              <h4 class="project-title">AnimalSounds</h4>
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> 7k+ downloads</span>
+              <p class="project-desc">App that lets you teach your child to associate the sounds made by various animals with the animal drawing, simply by touching the figure to hear the sound.</p>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=pconradjunior.animalsounds" target="_blank" rel="noopener noreferrer" class="btn-link" title="Android" aria-label="Android">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-mobile" aria-hidden="true"></i> PhoneGap/Cordova</span>
+              <h4 class="project-title">MovieSpinner</h4>
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> 22+ downloads</span>
+              <p class="project-desc">Helps you pick the movie genre for the weekend: spin the wheel across 20 preset genres, or choose your favourites to draw one at random.</p>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=pconradjunior.moviespinner" target="_blank" rel="noopener noreferrer" class="btn-link" title="Android" aria-label="Android">
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+            </a></div>
+            </div>
+          </article></div>
+        </section><section class="project-group" id="web" data-category="web" aria-labelledby="h-web">
+          <h3 class="group-title" id="h-web">Web Systems <span class="group-count">4</span></h3>
+          
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-server" aria-hidden="true"></i> PHP / CodeIgniter</span>
+              <h4 class="project-title">GURI - ERP</h4>
+              
+              <p class="project-desc">Institutional ERP system with over 50 integrated modules, used for academic and administrative management, with contributions in analysis, development, and architecture.</p>
+              <div class="project-links"><a href="https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read News" aria-label="Read News">
+              <i class="fa fa-newspaper" aria-hidden="true"></i> News
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-server" aria-hidden="true"></i> PHP / CodeIgniter</span>
+              <h4 class="project-title">SisPPA</h4>
+              
+              <p class="project-desc">Academic output scoring system focused on transparency, evaluation and institutional management support. Published at WTICIFES 2026.</p>
+              <div class="project-links"><a href="https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="WTICIFES 2026" aria-label="WTICIFES 2026">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Paper
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-server" aria-hidden="true"></i> PHP / CodeIgniter</span>
+              <h4 class="project-title">Terminal RU</h4>
+              
+              <p class="project-desc">Biometric access control system integrated with hardware for university restaurant operations.</p>
+              
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-server" aria-hidden="true"></i> PHP / CodeIgniter</span>
+              <h4 class="project-title">SGCE</h4>
+              
+              <p class="project-desc">System for issuing, validating, and publicly verifying electronic certificates.</p>
+              <div class="project-links"><a href="https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read Article" aria-label="Read Article">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> PDF
+            </a></div>
+            </div>
+          </article></div>
+        </section><section class="project-group" id="other-projects" data-category="other" aria-labelledby="h-other-projects">
+          <h3 class="group-title" id="h-other-projects">Other Projects <span class="group-count">1</span></h3>
+          <p class="group-desc">Browser extensions and tools.</p>
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-chrome" aria-hidden="true"></i> Javascript / HTML / CSS</span>
+              <h4 class="project-title">REx: Research Explorer</h4>
+              
+              <p class="project-desc">Browser extension that automates the identification of scientific publications and facilitates the analysis of academic indicators.</p>
+              <div class="project-links"><a href="/rex_info.html" style="color:#000;" class="btn-link" title="Project Information &amp; Downloads" aria-label="Project Information &amp; Downloads">
+              <i class="fa-solid fa-info-circle" aria-hidden="true"></i> Read more / Downloads
+            </a></div>
+            </div>
+          </article></div>
+        </section><section class="project-group" id="technical-articles" data-category="technical" aria-labelledby="h-technical-articles">
+          <h3 class="group-title" id="h-technical-articles">Technical Articles <span class="group-count">9</span></h3>
+          <p class="group-desc">Practical writing on architecture, Flutter, PHP and automation — with code, technical decisions and what went wrong.</p>
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">Web Application Reverse Engineering with Playwright: How to Automatically Map APIs and Technologies (PT-BR)</h4>
+              
+              <p class="project-desc">Tool that automates data collection from websites using real browser controlled via command line, generating offline HTML report with APIs, frameworks, stack and network traffic.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">MPCar Player: Building an Automotive Audio Player in Flutter (PT-BR)</h4>
+              
+              <p class="project-desc">Development of an audio player for automotive multimedia with customized Android, addressing challenges of audio management, permissions, and file discovery in automotive environments.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/mpcar-player-construindo-um-player-de-%C3%A1udio-ff51ddfae948" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">Developing ChessKids: A Study on Architecture, Components, and AI (PT-BR)</h4>
+              
+              <p class="project-desc">Analysis of the development of ChessKids, a chess application for children, highlighting the architecture, component organization, and integration of artificial intelligence.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/desenvolvendo-o-chesskids-um-estudo-que-mistura-arquitetura-componentes-e-ia-d7734bff9145" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">REx: Research Explorer - Automating ISSN Identification (PT-BR)</h4>
+              
+              <p class="project-desc">Extension that automates ISSN identification and enables visual comparison across different journal ranking classifications.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">Application of an organized model to software development: how to avoid improvisation and work with intention (PT-BR)</h4>
+              
+              <p class="project-desc">Explores the application of a structured methodology to software development, reducing improvisation and increasing predictability.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">What You Need to Create Apps for iOS Devices (PT-BR)</h4>
+              
+              <p class="project-desc">Practical guide covering costs, requirements, and steps for iOS application development.</p>
+              <div class="project-links"><a href="/article_ios.html" class="btn-link" title="What You Need to Create Apps for iOS Devices (PT-BR)" aria-label="What You Need to Create Apps for iOS Devices (PT-BR)">
+              <i class="fa fa-book-open" aria-hidden="true"></i> Read
+            </a><a href="https://medium.com/@pconradjunior/o-que-%C3%A9-preciso-para-criar-apps-para-dispositivos-ios-5c1ce8ab0879" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">Facial Recognition in Flutter (PT-BR)</h4>
+              
+              <p class="project-desc">Offline multi-user facial biometric system developed in Flutter, focused on local authentication.</p>
+              <div class="project-links"><a href="/article_reconhecimento_facial.html" class="btn-link" title="Facial Recognition in Flutter (PT-BR)" aria-label="Facial Recognition in Flutter (PT-BR)">
+              <i class="fa fa-book-open" aria-hidden="true"></i> Read
+            </a><a href="https://medium.com/@pconradjunior/reconhecimento-facial-em-flutter-9ae2bf495a56" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">Version Check in Flutter (PT-BR)</h4>
+              
+              <p class="project-desc">Implementation of version checking strategy and forced updates in Flutter applications.</p>
+              <div class="project-links"><a href="/article_versioncheck.html" class="btn-link" title="Version Check in Flutter (PT-BR)" aria-label="Version Check in Flutter (PT-BR)">
+              <i class="fa fa-book-open" aria-hidden="true"></i> Read
+            </a><a href="https://medium.com/@pconradjunior/verifica%C3%A7%C3%A3o-de-vers%C3%A3o-em-flutter-7127f87cf91f" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Technical Article</span>
+              <h4 class="project-title">Algorithms</h4>
+              
+              <p class="project-desc">Didactic approach to demystify programming logic and simplify the learning of algorithms.</p>
+              <div class="project-links"><a href="/article_algoritmos.html" style="color:#000;" class="btn-link" title="Read" aria-label="Read">
+              <i class="fa fa-book-open" aria-hidden="true"></i> Read
+            </a></div>
+            </div>
+          </article></div>
+        </section><section class="project-group" id="reflections" data-category="reflections" aria-labelledby="h-reflections">
+          <h3 class="group-title" id="h-reflections">Reflections <span class="group-count">10</span></h3>
+          <p class="group-desc">Writing about technology, innovation, career and the role of those who build software.</p>
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflexão</span>
+              <h4 class="project-title">O que o WTICIFES 2026 me mostrou sobre o futuro da TI nas universidades federais</h4>
+              
+              <p class="project-desc">Report from WTICIFES 2026 (Garibaldi, RS), based on more than 200 presented papers, analysing automation and integration cases in Brazilian federal universities — UFSCar auditable draw, the UFFS WhatsApp assistant and UNIFESP voting automation — and arguing that technology is increasingly used as a means to solve concrete problems rather than as an end in itself.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a><a href="https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="WTICIFES 2026 paper" aria-label="WTICIFES 2026 paper">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Publication
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">Paper, Pen and Knife: From Implementation to Specification — The Developer&#39;s New Responsibility (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on how artificial intelligence is shifting the developer&#39;s responsibility, moving from implementation author to author of expected software behavior, using the paper, pen and knife metaphor.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">A Letter to Anyone Who Arrived Here (PT-BR)</h4>
+              
+              <p class="project-desc">A welcome letter introducing his Medium space, his journey, curiosity, and the purpose of sharing knowledge to connect people and inspire new discoveries.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/uma-carta-para-quem-chegou-at%C3%A9-aqui-b25d6d410763" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">Beyond Labels: The Potential Still Waiting for Opportunities (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on human potential, prejudice, and labels that limit people. Shows how opportunities and support can reveal hidden talents, with a personal story about persistence and learning.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/al%C3%A9m-dos-r%C3%B3tulos-o-potencial-que-ainda-espera-oportunidades-5210ff480e86" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">Change: Fear or Opportunity? (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on facing change with a positive mindset, turning challenges into growth opportunities, with practical tips for dealing with scary transitions.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/mudan%C3%A7a-medo-ou-oportunidade-1b0551f89a66" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">Far Beyond the Code (PT-BR)</h4>
+              
+              <p class="project-desc">Deep reflection on legacy, technology, and people. A personal journey of over three decades in computing, exploring how the true impact of IT work lies not in the systems developed, but in the people we help grow and the knowledge we share.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/muito-al%C3%A9m-do-c%C3%B3digo-1730e372c01c" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">What is innovation after all? Where does it come from? (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on the nature of innovation, questioning whether it arises from new technologies or from a deeper understanding of human problems. An analysis of how true innovation comes from the ability to understand people and transform realities.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/afinal-o-que-%C3%A9-realmente-a-inova%C3%A7%C3%A3o-de-onde-ela-vem-3f8298b3191d" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">How Much Is My Work Worth in IT: Am I Relevant? How to Combat Impostor Syndrome (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on the value of work in the IT field, the feeling of professional relevance, and strategies to deal with impostor syndrome.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/quanto-vale-meu-trabalho-na-%C3%A1rea-de-ti-sou-relevante-como-combater-a-s%C3%ADndrome-do-impostor-d5c54d3f36ee" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">Artificial Intelligence: A Cognitive Revolution or the Revolution of Haste (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on the real impact of Artificial Intelligence, questioning whether we face a true cognitive revolution or merely an intellectual shortcut that may compromise the learning process.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/intelig%C3%AAncia-artificial-uma-revolu%C3%A7%C3%A3o-cognitiva-ou-a-revolu%C3%A7%C3%A3o-da-pressa-21d935b7b992" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> Reflection</span>
+              <h4 class="project-title">Your portfolio is not an HTML resume (and that&#39;s okay)</h4>
+              
+              <p class="project-desc">Reflection on the differences between a portfolio and a resume, and how to better structure your professional presentation.</p>
+              <div class="project-links"><a href="https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on LinkedIn" aria-label="Read on LinkedIn">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i> Read on LinkedIn
+            </a></div>
+            </div>
+          </article></div>
+        </section><section class="project-group" id="career" data-category="career" aria-labelledby="h-career">
+          <h3 class="group-title" id="h-career">Career &amp; Management <span class="group-count">4</span></h3>
+          <p class="group-desc">On teams, communication, technical support and what sustains long-term work in IT.</p>
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Career &amp; Management</span>
+              <h4 class="project-title">Method Organizes. Communication Transforms. (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on the importance of effective communication in development teams, showing how methodologies organize processes but communication is what truly transforms team work.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Career &amp; Management</span>
+              <h4 class="project-title">Among Code, People and Problems: What I Learned Working with Information Technology (So Far) (PT-BR)</h4>
+              
+              <p class="project-desc">Over two decades of IT career gathered in a reflection about learning, people, and what truly matters.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Career &amp; Management</span>
+              <h4 class="project-title">Human-centered Support in Technical Services: Empathy as a Work Tool (PT-BR)</h4>
+              
+              <p class="project-desc">Reflection on the importance of empathy and human-centered service in technical support, highlighting how these skills positively impact user experience and problem resolution.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa-brands fa-medium" aria-hidden="true"></i> Career &amp; Management</span>
+              <h4 class="project-title">Beyond the Method: What Makes a Team Perform Better? (PT-BR)</h4>
+              
+              <p class="project-desc">The importance of human factors, communication, and organization for the success of development teams.</p>
+              <div class="project-links"><a href="https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read on Medium" aria-label="Read on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Read on Medium
+            </a></div>
+            </div>
+          </article></div>
+        </section><section class="project-group" id="publications" data-category="publications" aria-labelledby="h-publications">
+          <h3 class="group-title" id="h-publications">Publications <span class="group-count">7</span></h3>
+          <p class="group-desc">Academic work presented at Computing Grande Porto Alegre and Regulatory Innovation, plus institutional coverage of delivered projects.</p>
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-file-pdf" aria-hidden="true"></i> Scientific Publication</span>
+              <h4 class="project-title">Desenvolvimento de um Sistema de Gestão da Produção Acadêmica baseado em Engenharia Reversa e Padrões de Projeto (PT-BR)</h4>
+              
+              <p class="project-desc">Published at WTICIFES 2026 — Information Systems. Presents SisPPA, the Unipampa web system for managing, validating and scoring academic output, built on MVC and spreadsheet reverse engineering.</p>
+              <div class="project-links"><a href="https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read PDF" aria-label="Read PDF">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Read PDF
+            </a><a href="https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Write-up on Medium" aria-label="Write-up on Medium">
+              <i class="fa-brands fa-medium" aria-hidden="true"></i> Write-up
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper" aria-hidden="true"></i> Institutional News</span>
+              <h4 class="project-title">Unipampa App brings innovation to community</h4>
+              
+              <p class="project-desc">Institutional news about the launch of the official Unipampa application, highlighting its services and benefits for the university community.</p>
+              <div class="project-links"><a href="https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read news" aria-label="Read news">
+              <i class="fa fa-external-link-alt" aria-hidden="true"></i> Read news
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper" aria-hidden="true"></i> Institutional News</span>
+              <h4 class="project-title">Unipampa App available for iOS</h4>
+              
+              <p class="project-desc">Institutional news about the release of the Unipampa app for iOS devices, expanding access for the academic community.</p>
+              <div class="project-links"><a href="https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read news" aria-label="Read news">
+              <i class="fa fa-external-link-alt" aria-hidden="true"></i> Read news
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper" aria-hidden="true"></i> Scientific Publication</span>
+              <h4 class="project-title">Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão (PT-BR)</h4>
+              
+              <p class="project-desc">Published at WTICIFES 2012 — Goiânia, Brazil</p>
+              <div class="project-links"><a href="https://repositorio.wticifes.com.br/items/3467ff37-1ce3-4e4d-9fe4-23b88a2d746f" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read PDF" aria-label="Read PDF">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Read PDF
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper" aria-hidden="true"></i> Scientific Publication</span>
+              <h4 class="project-title">SisRel - Sistema de Extração Dinâmica de Dados com Foco no Usuário Final (PT-BR)</h4>
+              
+              <p class="project-desc">Published at WTICIFES 2011 — Florianópolis, Brazil</p>
+              <div class="project-links"><a href="https://repositorio.wticifes.com.br/items/956a321f-3163-4e08-a087-e48d21e3711f" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read PDF" aria-label="Read PDF">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Read PDF
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper" aria-hidden="true"></i> Scientific Publication</span>
+              <h4 class="project-title">Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto (PT-BR)</h4>
+              
+              <p class="project-desc">Published at WTICIFES 2011 — Florianópolis, Brazil</p>
+              <div class="project-links"><a href="https://repositorio.wticifes.com.br/items/f0cf9d8b-8fb2-40f1-8cae-2f623fa235d2" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read PDF" aria-label="Read PDF">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Read PDF
+            </a></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-newspaper" aria-hidden="true"></i> Scientific Publication</span>
+              <h4 class="project-title">Sistema de Gestão de Certificados Eletrônicos (PT-BR)</h4>
+              
+              <p class="project-desc">Published at WTICIFES 2011 — Florianópolis, Brazil</p>
+              <div class="project-links"><a href="https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14" target="_blank" rel="noopener noreferrer" style="color:#000;" class="btn-link" title="Read PDF" aria-label="Read PDF">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Read PDF
+            </a></div>
+            </div>
+          </article></div>
+        </section><section class="project-group" id="videos" data-category="videos" aria-labelledby="h-videos">
+          <h3 class="group-title" id="h-videos">Video Material &amp; Demos <span class="group-count">8</span></h3>
+          
+          <div class="portfolio-grid"><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Flutter</span>
+              <h4 class="project-title">ChessKids</h4>
+              
+              <p class="project-desc">Demo of the educational chess application for children, with AI support and difficulty levels.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="yPxbRScwkvI" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Flutter</span>
+              <h4 class="project-title">App Unipampa</h4>
+              
+              <p class="project-desc">Demo of the official Unipampa application with academic services and institutional information.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="mgvavs5VOgU" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Flutter</span>
+              <h4 class="project-title">SmellCheck</h4>
+              
+              <p class="project-desc">Demo of the smell recovery monitoring application used in clinical processes.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="t1P1dCydtUo" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Flutter</span>
+              <h4 class="project-title">FingerNotes</h4>
+              
+              <p class="project-desc">Demo of the secure note-taking app with biometric authentication and password protection.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="hGdydq2jhJI" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Flutter (Study)</span>
+              <h4 class="project-title">LembraMed</h4>
+              
+              <p class="project-desc">Demo of the medication tracking and health monitoring application.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="hUdgk81DGuk" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Clean Arch</span>
+              <h4 class="project-title">Snack Wheel</h4>
+              
+              <p class="project-desc">Practical study of Clean Architecture and responsibility-driven design in software development.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="ky72JApuaLg" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Responsiveness</span>
+              <h4 class="project-title">Portfolio Demo</h4>
+              
+              <p class="project-desc">Demonstration of the same project running responsively on both mobile and web platforms.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="WTa4rXAw9gg" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article><article class="project-card">
+            <div class="project-content">
+              <span class="project-type"><i class="fa fa-video" aria-hidden="true"></i> Game Dev</span>
+              <h4 class="project-title">AlienWar</h4>
+              
+              <p class="project-desc">2D game development study using the Unity engine.</p>
+              <div class="project-links"><button type="button" class="btn-link" data-video="IHHj8Zp5s10" title="Watch" aria-label="Watch">
+                <i class="fa fa-play-circle" aria-hidden="true"></i> Watch
+              </button></div>
+            </div>
+          </article></div>
+        </section></div>
+          </div>
+        </section>
+
+        <section id="contact" class="contact">
+          <div class="container">
+            <h2 class="section-title">Let&#39;s Talk?</h2>
+            <div class="contact-container">
+              <div class="contact-info">
+                <h3>Contact Channels</h3>
+                <p>Available for consulting, system architecture, mobile development and institutional system work.</p>
+                <div class="contact-details">
+                  <a href="https://medium.com/@pconradjunior" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-medium" aria-hidden="true"></i><span>@pconradjunior</span></a>
+                  <a href="mailto:pconradjunior@gmail.com" class="contact-item"><i class="fa fa-envelope" aria-hidden="true"></i><span>pconradjunior@gmail.com</span></a>
+                  <a href="https://www.linkedin.com/in/pconradjunior/" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>/in/pconradjunior</span></a>
+                  <a href="https://instagram.com/pedrojunior.dev" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@pedrojunior.dev</span></a>
+                  <a href="https://github.com/pconradjunior" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-github" aria-hidden="true"></i><span>@pconradjunior</span></a>
+                </div>
+              </div>
+
+              <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="39b311c5-6dc8-443a-8cb3-91516f8cf9e3">
+                <input type="hidden" name="redirect" value="https://pconradjunior.github.io/thanks.html">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="How should I address you?" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Your E-mail</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="example@email.com" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <select name="subject" id="subject" class="form-control" required>
+                    <option value="[Contact via Portfolio] Consulting">Consulting</option><option value="[Contact via Portfolio] Mobile Development">Mobile Development</option><option value="[Contact via Portfolio] Web System">Web System</option><option value="[Contact via Portfolio] REx Support and Suggestions">REx Support and Suggestions</option><option value="[Contact via Portfolio] Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tell me more about your idea..." required></textarea>
+                </div>
+                <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="en"></div>
+                <button type="submit" id="btn-submit" class="btn btn-submit">Send Message <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    <footer>
+        <div class="container">
+          <p>© 2026 Pedro Conrad Jr. All rights reserved.</p>
+          <p class="footer-version">v26 - Designed with CSS &amp; Glassmorphism</p>
+        </div>
+      </footer>
+
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+      <div class="modal-content">
+        <button type="button" class="close-modal" data-close-modal aria-label="Close">&times;</button>
+        <div class="video-container">
+          <iframe id="videoFrame" title="Demo video" src="" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-modal" id="infoModal" role="dialog" aria-modal="true" aria-label="Information" hidden>
+      <div class="modal-content">
+        <button type="button" class="close-modal" data-close-modal aria-label="Close">&times;</button>
+        <i class="fa fa-info-circle info-modal-icon" aria-hidden="true"></i>
+        <p class="info-modal-text">This content is under development or awaiting approval.</p>
+      </div>
+    </div>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

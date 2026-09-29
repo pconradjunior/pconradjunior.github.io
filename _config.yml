@@ -1,1 +1,9 @@
 include: [".well-known"]
+
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - build.mjs
+  - tools
+  - README.md

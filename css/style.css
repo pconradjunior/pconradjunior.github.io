@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;700&display=swap');
-
 /* --- Reset & Base --- */
 * {
     margin: 0;
@@ -519,14 +517,10 @@ nav {
     gap: 1rem;
 }
 
+/* Só o tamanho: cor e transição ficam a cargo do .btn-link,
+   para links de loja e botões de vídeo terem a mesma aparência. */
 .project-links a {
-    color: var(--text-primary);
     font-size: 1.2rem;
-    transition: color 0.2s;
-}
-
-.project-links a:hover {
-    color: var(--accent-color);
 }
 
 /* --- Contact & Form --- */
@@ -604,9 +598,9 @@ nav {
 }
 
 .form-control:focus {
-    outline: none;
     border-color: var(--accent-color);
     background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 /* Honeypot - Hidden from users */
@@ -921,7 +915,7 @@ footer {
 }
 
 .video-modal {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -931,6 +925,11 @@ footer {
     background-color: rgba(0, 0, 0, 0.9);
     align-items: center;
     justify-content: center;
+}
+
+/* O atributo hidden precisa vencer o display:flex dos modais */
+[hidden] {
+    display: none !important;
 }
 
 .modal-content {
@@ -974,6 +973,9 @@ footer {
     justify-content: center;
     border-radius: 50%;
     transition: all 0.2s;
+    border: 1px solid var(--glass-border);
+    font-family: var(--font-body);
+    line-height: 1;
 }
 
 .close-modal:hover {
@@ -983,7 +985,7 @@ footer {
 
 /* Info Modal Styles */
 .info-modal {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -1116,12 +1118,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Portfolio -> 1 column (exceto dentro do carrossel) */
+    /* Portfolio -> 1 coluna */
     .portfolio-grid {
         grid-template-columns: 1fr;
-    }
-    .carousel-container .portfolio-grid {
-        grid-template-columns: unset;
     }
 
     /* Services -> single column for readibility */
@@ -1130,7 +1129,20 @@ footer {
     }
 
     /* small text adjustments for readability */
-    .project-title {
+.project-metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.project-title {
         font-size: 1.15rem;
     }
 
@@ -1168,109 +1180,288 @@ footer {
     }
 }
 
-/* --- Carrossel Reutilizável --- */
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    padding: 10px 0 0 0;
-}
+/* --- Carrossel removido: substituído por grade estática com filtro --- */
 
-.carousel-container .portfolio-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    transition: transform 0.5s ease-in-out;
-    gap: 2rem;
-}
-
-/* Preserva o tamanho original de cada card (sem min-width fixo) */
-.carousel-container .portfolio-grid > * {
-    flex-shrink: 0;
-    width: auto;
-}
-
-/* Setas de navegação */
-.carousel-btn {
+/* --- Filtro por categoria (CSS puro, funciona sem JavaScript) --- */
+.pf-controller {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: var(--glass-bg);
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin: 2.5rem 0 3rem;
+}
+
+.filter-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 1rem;
     border: 1px solid var(--glass-border);
-    color: var(--text-primary);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    border-radius: 999px;
+    background: var(--glass-bg);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-family: var(--font-body);
     cursor: pointer;
+    transition: all var(--transition-speed);
+    backdrop-filter: blur(10px);
+    user-select: none;
+}
+
+.filter-tab:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+}
+
+.filter-count {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Estado selecionado — o label é estilizado pelo radio que o ativa */
+#pf-all:checked~.filter-tabs .filter-tab[for="pf-all"],
+#pf-mobile:checked~.filter-tabs .filter-tab[for="pf-mobile"],
+#pf-web:checked~.filter-tabs .filter-tab[for="pf-web"],
+#pf-other:checked~.filter-tabs .filter-tab[for="pf-other"],
+#pf-technical:checked~.filter-tabs .filter-tab[for="pf-technical"],
+#pf-reflections:checked~.filter-tabs .filter-tab[for="pf-reflections"],
+#pf-career:checked~.filter-tabs .filter-tab[for="pf-career"],
+#pf-publications:checked~.filter-tabs .filter-tab[for="pf-publications"],
+#pf-videos:checked~.filter-tabs .filter-tab[for="pf-videos"] {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-primary);
+    font-weight: 600;
+}
+
+#pf-all:checked~.filter-tabs .filter-tab[for="pf-all"] .filter-count,
+#pf-mobile:checked~.filter-tabs .filter-tab[for="pf-mobile"] .filter-count,
+#pf-web:checked~.filter-tabs .filter-tab[for="pf-web"] .filter-count,
+#pf-other:checked~.filter-tabs .filter-tab[for="pf-other"] .filter-count,
+#pf-technical:checked~.filter-tabs .filter-tab[for="pf-technical"] .filter-count,
+#pf-reflections:checked~.filter-tabs .filter-tab[for="pf-reflections"] .filter-count,
+#pf-career:checked~.filter-tabs .filter-tab[for="pf-career"] .filter-count,
+#pf-publications:checked~.filter-tabs .filter-tab[for="pf-publications"] .filter-count,
+#pf-videos:checked~.filter-tabs .filter-tab[for="pf-videos"] .filter-count {
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--bg-primary);
+}
+
+/* Foco visível no teclado ao tabular entre os filtros */
+#pf-all:focus-visible~.filter-tabs .filter-tab[for="pf-all"],
+#pf-mobile:focus-visible~.filter-tabs .filter-tab[for="pf-mobile"],
+#pf-web:focus-visible~.filter-tabs .filter-tab[for="pf-web"],
+#pf-other:focus-visible~.filter-tabs .filter-tab[for="pf-other"],
+#pf-technical:focus-visible~.filter-tabs .filter-tab[for="pf-technical"],
+#pf-reflections:focus-visible~.filter-tabs .filter-tab[for="pf-reflections"],
+#pf-career:focus-visible~.filter-tabs .filter-tab[for="pf-career"],
+#pf-publications:focus-visible~.filter-tabs .filter-tab[for="pf-publications"],
+#pf-videos:focus-visible~.filter-tabs .filter-tab[for="pf-videos"] {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* Oculta os grupos que não combinam com o filtro ativo */
+body:has(#pf-mobile:checked) .project-group:not([data-category~="mobile"]),
+body:has(#pf-web:checked) .project-group:not([data-category~="web"]),
+body:has(#pf-other:checked) .project-group:not([data-category~="other"]),
+body:has(#pf-technical:checked) .project-group:not([data-category~="technical"]),
+body:has(#pf-reflections:checked) .project-group:not([data-category~="reflections"]),
+body:has(#pf-career:checked) .project-group:not([data-category~="career"]),
+body:has(#pf-publications:checked) .project-group:not([data-category~="publications"]),
+body:has(#pf-videos:checked) .project-group:not([data-category~="videos"]) {
+    display: none;
+}
+
+.project-group {
+    margin-bottom: 4rem;
+    scroll-margin-top: 90px;
+}
+
+.project-group:last-child {
+    margin-bottom: 0;
+}
+
+.group-title {
+    font-size: 1.6rem;
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.group-count {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--accent-color);
+    background: rgba(0, 242, 255, 0.12);
+    border-radius: 999px;
+    padding: 0.15rem 0.55rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.group-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    max-width: 70ch;
+}
+
+.section-intro {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    max-width: 75ch;
+    margin-inline: auto;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* ============================================================
+   Acessibilidade
+   ============================================================ */
+
+/* Foco visível para navegação por teclado em todo o site */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Apenas para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================================
+   Blocos novos (hero, skills,Rodapé)
+   ============================================================ */
+
+.hero-role {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--accent-color);
+    margin-bottom: 0.35rem;
+}
+
+.hero-stack {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.hero-description {
+    max-width: 60ch;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin-bottom: 1.75rem;
+}
+
+.skill-list li {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 999px;
+    color: var(--accent-color);
+    background: rgba(0, 242, 255, 0.08);
+}
+
+.teaching {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--accent-color);
+    background: var(--card-hover);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+}
+
+.teaching strong {
+    color: var(--accent-color);
+}
+
+.footer-version {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+/* ============================================================
+   404
+   ============================================================ */
+
+.error-page {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    transition: all 0.3s;
-    backdrop-filter: blur(10px);
-    opacity: 0;
+    text-align: center;
+    padding: 4rem 0;
 }
 
-.carousel-container:hover .carousel-btn {
-    opacity: 1;
-}
-
-.carousel-btn:hover {
-    border-color: var(--accent-color);
+.error-code {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 18vw, 11rem);
+    font-weight: 800;
+    line-height: 1;
     color: var(--accent-color);
-    box-shadow: 0 0 12px var(--accent-glow);
-    background: var(--bg-secondary);
+    text-shadow: 0 0 40px var(--accent-glow);
 }
 
-.carousel-btn.prev {
-    left: 5px;
+.error-page h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin: 1rem 0 0.75rem;
 }
 
-.carousel-btn.next {
-    right: 5px;
+.error-text {
+    color: var(--text-secondary);
+    max-width: 48ch;
+    margin: 0 auto 2.5rem;
 }
 
-/* Indicadores (dots) */
-.carousel-dots {
-    display: flex;
+.error-page .hero-buttons {
     justify-content: center;
-    gap: 10px;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--glass-border);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    padding: 0;
-}
-
-.carousel-dot:hover {
-    background: var(--text-secondary);
-}
-
-.carousel-dot.active {
-    background: var(--accent-color);
-    box-shadow: 0 0 8px var(--accent-glow);
-}
-
-/* Mobile: ajustes nas setas */
-@media (max-width: 768px) {
-    .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-
-    .carousel-btn.prev {
-        left: 2px;
-    }
-
-    .carousel-btn.next {
-        right: 2px;
-    }
 }

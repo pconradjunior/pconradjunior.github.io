@@ -1,8 +1,22 @@
 {
     "meta": {
         "lang": "pt-BR",
-        "description": "Portfolio Profissional de Pedro Conrad Jr - Desenvolvedor Full Stack e Mobile",
-        "flagIcon": "images/flags/br.svg"
+        "description": "Desenvolvedor PHP/CodeIgniter e Flutter com 20+ anos de experiência. ERPs institucionais, {{apps}} apps publicados, {{articles}} textos e {{papers}} publicações acadêmicas. Analista de TI na Unipampa.",
+        "flagIcon": "images/flags/br.svg",
+        "title": "Pedro Conrad Jr — Desenvolvedor PHP, Flutter e ERP institucional",
+        "keywords": [
+            "desenvolvedor PHP",
+            "CodeIgniter",
+            "desenvolvedor Flutter",
+            "ERP institucional",
+            "arquitetura de software",
+            "analista de TI",
+            "Unipampa",
+            "aplicativos Android iOS"
+        ],
+        "locale": "pt_BR",
+        "ogLocale": "pt_BR",
+        "alt": "Pedro Conrad Jr — Desenvolvedor de sistemas institucionais e aplicativos mobile"
     },
     "nav": {
         "home": "Início",
@@ -12,7 +26,10 @@
         "projectsMobile": "Apps Mobile",
         "projectsWeb": "Sistemas Web",
         "projectsOther": "Outros Projetos",
-        "projectsArticles": "Artigos",
+        "projectsTechArticles": "Artigos Técnicos",
+        "projectsReflections": "Reflexões",
+        "projectsCareer": "Carreira e Gestão",
+        "projectsPublications": "Publicações",
         "projectsVideos": "Vídeos",
         "articles": "Artigos",
         "contact": "Contato",
@@ -25,12 +42,13 @@
     "hero": {
         "greeting": "Olá, eu sou",
         "title": "Pedro Conrad Jr",
-        "subtitle": "Desenvolvedor Full Stack & Mobile",
-        "description": "Mais de 20 anos projetando e desenvolvendo sistemas web e mobile de alta complexidade, com foco em arquitetura de software, ERPs institucionais e soluções escaláveis.",
+        "description": "Analista de TI na Universidade Federal do Pampa. Trabalho com os sistemas de que os processos institucionais dependem: ERPs com mais de 50 módulos integrados e aplicativos publicados para Android e iOS.",
         "btnProjects": "Ver Projetos",
         "btnGitHub": "GitHub",
         "btnLinkedIn": "LinkedIn",
-        "btnInstagram": "Instagram"
+        "btnInstagram": "Instagram",
+        "role": "Desenvolvedor de sistemas institucionais e apps mobile",
+        "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart"
     },
     "about": {
         "sectionTitle": "Sobre Mim",
@@ -49,18 +67,31 @@
                 "label": "Projetos Desenvolvidos"
             },
             {
-                "number": "30k+",
+                "number": "{{downloads}}",
                 "label": "Downloads de Aplicativos"
             }
-        ]
+        ],
+        "skills": [
+            "Arquitetura de software",
+            "Modelagem de dados",
+            "PHP / CodeIgniter",
+            "Flutter / Dart",
+            "Bancos de dados relacionais",
+            "Liderança técnica de equipes"
+        ],
+        "teaching": {
+            "label": "Mentoria / Treinamento Técnico",
+            "title": "Capacitação Dev PHP/CodeIgniter",
+            "desc": "Material de capacitação técnica voltado à formação de novos desenvolvedores em PHP e boas práticas."
+        }
     },
     "expertise": {
         "sectionTitle": "Minha Atuação",
-        "sectionIntro": 
-            [ "Minha experiência abrange várias áreas dentro do desenvolvimento de software, com foco em soluções institucionais, aplicações mobile e liderança técnica.",
-              "Além de atuar na área de desenvolvimento de software, tenho experiência anterior em docência no ensino superior, transitando em disciplinas técnicas da área de computação. Essa experiência me proporcionou uma base sólida e habilidades de comunicação técnica e pessoal.",
+        "sectionIntro": [
+            "Minha experiência abrange várias áreas dentro do desenvolvimento de software, com foco em soluções institucionais, aplicações mobile e liderança técnica.",
+            "Além de atuar na área de desenvolvimento de software, tenho experiência anterior em docência no ensino superior, transitando em disciplinas técnicas da área de computação. Essa experiência me proporcionou uma base sólida e habilidades de comunicação técnica e pessoal.",
             " Abaixo estão algumas das principais áreas em que atuo:"
-            ],
+        ],
         "cards": [
             {
                 "icon": "fa fa-laptop-code",
@@ -69,7 +100,7 @@
             },
             {
                 "icon": "fa fa-mobile-screen",
-                "title": "Aplições Mobile",
+                "title": "Aplicativos Mobile",
                 "text": "Desenvolvimento de aplicativos modernos para Android e iOS utilizando Flutter, com integração de APIs, autenticação biométrica e serviços institucionais."
             },
             {
@@ -105,7 +136,9 @@
                             "title": "Ver Demo",
                             "action": "video"
                         }
-                    ]
+                    ],
+                    "downloads": 8,
+                    "category": "GameApplication"
                 },
                 {
                     "typeIcon": "fa fa-mobile",
@@ -134,7 +167,9 @@
                             "title": "Ver Demo",
                             "action": "video"
                         }
-                    ]
+                    ],
+                    "downloads": 1000,
+                    "category": "EducationalApplication"
                 },
                 {
                     "typeIcon": "fa fa-mobile",
@@ -156,11 +191,13 @@
                             "title": "Ver Demo",
                             "action": "video"
                         }
-                    ]
+                    ],
+                    "downloads": 50,
+                    "category": "HealthApplication"
                 },
                 {
                     "typeIcon": "fa fa-mobile",
-                    "typeLabel": "Flutter",
+                    "typeLabel": "PhoneGap/Cordova",
                     "title": "FingerNotes",
                     "desc": "Aplicativo de anotações seguras com autenticação biométrica e proteção por senha, focado em privacidade e simplicidade.",
                     "links": [
@@ -178,7 +215,9 @@
                             "title": "Ver Demo",
                             "action": "video"
                         }
-                    ]
+                    ],
+                    "downloads": 35,
+                    "category": "ProductApplication"
                 },
                 {
                     "typeIcon": "fa fa-mobile",
@@ -193,7 +232,9 @@
                             "title": "Android",
                             "action": "url"
                         }
-                    ]
+                    ],
+                    "downloads": 26623,
+                    "category": "HealthApplication"
                 },
                 {
                     "typeIcon": "fa fa-mobile",
@@ -208,7 +249,42 @@
                             "title": "Ver Demo",
                             "action": "video"
                         }
-                    ]
+                    ],
+                    "downloads": null
+                },
+                {
+                    "typeIcon": "fa fa-mobile",
+                    "typeLabel": "PhoneGap/Cordova",
+                    "title": "AnimalSounds",
+                    "desc": "Aplicativo para ensinar a criança a associar os sons emitidos por vários tipos de animais ao desenho do animal, bastando tocar na figura para ouvir o som.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-google-play",
+                            "label": "",
+                            "href": "https://play.google.com/store/apps/details?id=pconradjunior.animalsounds",
+                            "title": "Android",
+                            "action": "url"
+                        }
+                    ],
+                    "downloads": 7135,
+                    "category": "GameApplication"
+                },
+                {
+                    "typeIcon": "fa fa-mobile",
+                    "typeLabel": "PhoneGap/Cordova",
+                    "title": "MovieSpinner",
+                    "desc": "Ajuda a escolher o gênero do filme do fim de semana: gire a roleta entre 20 gêneros pré-definidos ou escolha os seus favoritos para sortear.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-google-play",
+                            "label": "",
+                            "href": "https://play.google.com/store/apps/details?id=pconradjunior.moviespinner",
+                            "title": "Android",
+                            "action": "url"
+                        }
+                    ],
+                    "downloads": 22,
+                    "category": "EntertainmentApplication"
                 }
             ]
         },
@@ -235,8 +311,17 @@
                     "typeIcon": "fa fa-server",
                     "typeLabel": "PHP / CodeIgniter",
                     "title": "SisPPA",
-                    "desc": "Sistema de pontuação da produção acadêmica com foco em transparência, avaliação e apoio à gestão institucional.",
-                    "links": []
+                    "desc": "Sistema de pontuação da produção acadêmica com foco em transparência, avaliação e apoio à gestão institucional. Publicado no WTICIFES 2026.",
+                    "links": [
+                        {
+                            "icon": "fa fa-file-pdf",
+                            "label": "Artigo",
+                            "title": "WTICIFES 2026",
+                            "action": "url",
+                            "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                            "style": "color:#000;"
+                        }
+                    ]
                 },
                 {
                     "typeIcon": "fa fa-server",
@@ -284,46 +369,16 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "desc": "Extensões e ferramentas de navegador."
         },
-        "articles": {
+        "technicalArticles": {
             "title": "Artigos Técnicos",
+            "desc": "Escritos práticos sobre arquitetura, Flutter, PHP e automação — com código, decisões técnicas e o que deu errado.",
             "items": [
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Papel, Caneta e Faca. Da implementação à especificação: a nova responsabilidade do desenvolvedor",
-                    "desc": "Reflexão sobre como a inteligência artificial está mudando a responsabilidade do desenvolvedor, que passa de autor da implementação para autor do comportamento esperado do software, usando a metáfora do papel, caneta e faca.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Reflexão Pessoal",
-                    "title": "Uma carta para quem chegou até aqui",
-                    "desc": "Carta de boas-vindas ao espaço no Medium, sobre a jornada, o propósito da escrita e a importância de compartilhar conhecimento para conectar pessoas e inspirar novas descobertas.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/uma-carta-para-quem-chegou-at%C3%A9-aqui-b25d6d410763",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Engenharia Reversa de Aplicações Web com Playwright: Como Mapear APIs e Tecnologias de Forma Automática",
                     "desc": "Ferramenta que automatiza a coleta de dados de websites usando navegador real controlado via linha de comando, gerando relatório HTML offline com APIs, frameworks, stack e tráfego de rede.",
                     "links": [
@@ -339,71 +394,7 @@
                 },
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Além dos rótulos: o potencial que ainda espera oportunidades",
-                    "desc": "Reflexão sobre potencial humano, preconceitos e rótulos que limitam pessoas. Mostra como oportunidades e apoio podem revelar talentos escondidos, com uma história pessoal sobre persistência e aprendizado.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/al%C3%A9m-dos-r%C3%B3tulos-o-potencial-que-ainda-espera-oportunidades-5210ff480e86",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Mudança: medo ou oportunidade?",
-                    "desc": "Reflexão sobre como encarar a mudança com mentalidade positiva, transformando desafios em oportunidades de crescimento, com dicas práticas para lidar com transições assustadoras.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/mudan%C3%A7a-medo-ou-oportunidade-1b0551f89a66",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Muito Além do Código",
-                    "desc": "Reflexão profunda sobre legado, tecnologia e pessoas. Uma jornada pessoal de mais de três décadas na computação, explorando como o verdadeiro impacto do trabalho em TI não está nos sistemas desenvolvidos, mas nas pessoas que ajudamos a crescer e no conhecimento que compartilhamos.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/muito-al%C3%A9m-do-c%C3%B3digo-1730e372c01c",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Afinal, o que é realmente a inovação? De onde ela vem?",
-                    "desc": "Reflexão sobre a natureza da inovação, questionando se ela surge de novas tecnologias ou de uma compreensão mais profunda dos problemas humanos. Uma análise sobre como a verdadeira inovação vem da capacidade de compreender pessoas e transformar realidades.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/afinal-o-que-%C3%A9-realmente-a-inova%C3%A7%C3%A3o-de-onde-ela-vem-3f8298b3191d",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "MPCar Player: Construindo um Player de Áudio Automotivo em Flutter",
                     "desc": "Desenvolvimento de um player de áudio para centrais multimídia automotivas com Android customizado, abordando desafios de gerenciamento de áudio, permissões e descoberta de arquivos em ambientes automotivos.",
                     "links": [
@@ -419,87 +410,7 @@
                 },
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Método organiza. Comunicação transforma.",
-                    "desc": "Reflexão sobre a importância da comunicação efetiva em equipes de desenvolvimento, mostrando como metodologias organizam processos mas a comunicação é o que realmente transforma o trabalho em equipe.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Quanto Vale Meu Trabalho na Área de TI: Sou Relevante? Como Combater a Síndrome do Impostor",
-                    "desc": "Reflexão sobre o valor do trabalho na área de TI, a sensação de relevância profissional e estratégias para lidar com a síndrome do impostor.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/quanto-vale-meu-trabalho-na-%C3%A1rea-de-ti-sou-relevante-como-combater-a-s%C3%ADndrome-do-impostor-d5c54d3f36ee",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Inteligência Artificial: Uma Revolução Cognitiva ou a Revolução da Pressa",
-                    "desc": "Reflexão sobre o impacto real da Inteligência Artificial, questionando se estamos diante de uma verdadeira revolução cognitiva ou apenas de um atalho intelectual que pode comprometer o processo de aprendizado.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/intelig%C3%AAncia-artificial-uma-revolu%C3%A7%C3%A3o-cognitiva-ou-a-revolu%C3%A7%C3%A3o-da-pressa-21d935b7b992",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Entre Código, Pessoas e Problemas: o que aprendi trabalhando com Tecnologia da Informação (até agora)",
-                    "desc": "Mais de duas décadas de carreira em TI reunidas em uma reflexão sobre aprendizado, pessoas e o que realmente importa na profissão.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Atendimento Humano no Suporte Técnico: A empatia como ferramenta de trabalho",
-                    "desc": "Reflexão sobre a importância da empatia e do atendimento humano no suporte técnico, destacando como essas habilidades impactam positivamente a experiência do usuário e a resolução de problemas.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Desenvolvendo o ChessKids: um estudo que mistura arquitetura, componentes e IA",
                     "desc": "Análise do desenvolvimento do ChessKids, um aplicativo de xadrez para crianças, destacando a arquitetura, organização de componentes e integração de inteligência artificial.",
                     "links": [
@@ -515,23 +426,7 @@
                 },
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
-                    "title": "Além do Método: O que faz uma equipe funcionar melhor?",
-                    "desc": "A importância de fatores humanos, comunicação e organização para o sucesso de equipes de desenvolvimento.",
-                    "links": [
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Ler no Medium",
-                            "href": "https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9",
-                            "title": "Ler no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "REx: Research Explorer - Facilitador de identificação e comparação de Indicadores Científicos",
                     "desc": "Extensão que automatiza a identificação de ISSNs e permite comparação visual entre diferentes classificações de periódicos.",
                     "links": [
@@ -547,7 +442,7 @@
                 },
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Aplicação de um modelo organizado ao desenvolvimento de software: como evitar o improviso e trabalhar com intenção",
                     "desc": "Expõe a aplicação de uma metodologia estruturada para facilitar o desenvolvimento de software com foco na redução de improvisos e aumento de previsibilidade.",
                     "links": [
@@ -563,10 +458,17 @@
                 },
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "O que é preciso para criar apps para dispositivos iOS",
                     "desc": "Guia prático sobre custos, requisitos e etapas para desenvolvimento de aplicativos iOS.",
                     "links": [
+                        {
+                            "icon": "fa fa-book-open",
+                            "label": "Ler",
+                            "title": "O que é preciso para criar apps para dispositivos iOS",
+                            "action": "url",
+                            "href": "article_ios.html"
+                        },
                         {
                             "icon": "fa-brands fa-medium",
                             "label": "Ler no Medium",
@@ -579,10 +481,17 @@
                 },
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Reconhecimento Facial em Flutter",
                     "desc": "Sistema biométrico facial multiusuário offline desenvolvido em Flutter, com foco em autenticação local.",
                     "links": [
+                        {
+                            "icon": "fa fa-book-open",
+                            "label": "Ler",
+                            "title": "Reconhecimento Facial em Flutter",
+                            "action": "url",
+                            "href": "article_reconhecimento_facial.html"
+                        },
                         {
                             "icon": "fa-brands fa-medium",
                             "label": "Ler no Medium",
@@ -595,10 +504,17 @@
                 },
                 {
                     "typeIcon": "fa-brands fa-medium",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Verificação de Versão em Flutter",
                     "desc": "Implementação de estratégia de verificação de versão e atualização obrigatória em aplicativos Flutter.",
                     "links": [
+                        {
+                            "icon": "fa fa-book-open",
+                            "label": "Ler",
+                            "title": "Verificação de Versão em Flutter",
+                            "action": "url",
+                            "href": "article_versioncheck.html"
+                        },
                         {
                             "icon": "fa-brands fa-medium",
                             "label": "Ler no Medium",
@@ -610,8 +526,8 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-sitemap",
-                    "typeLabel": "Artigo",
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Algoritmo: Bicho de Sete Cabeças?",
                     "desc": "Abordagem didática para desmistificar a lógica de programação e facilitar o aprendizado de algoritmos.",
                     "links": [
@@ -624,10 +540,168 @@
                             "style": "color:#000;"
                         }
                     ]
+                }
+            ]
+        },
+        "reflections": {
+            "title": "Reflexões",
+            "desc": "Textos sobre tecnologia, inovação, carreira e o papel de quem desenvolve software.",
+            "items": [
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "O que o WTICIFES 2026 me mostrou sobre o futuro da TI nas universidades federais",
+                    "desc": "Relato do WTICIFES 2026 (Garibaldi/RS) a partir de mais de 200 trabalhos apresentados, analisando casos de automação e integração em universidades federais — como o sorteio auditável da UFSCar, o assistente via WhatsApp da UFFS e a automação de votação da UNIFESP — e o argumento de que a tecnologia tem sido usada cada vez mais como meio para resolver problemas concretos, e não como objetivo em si mesma.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        },
+                        {
+                            "icon": "fa fa-file-pdf",
+                            "label": "Publicação",
+                            "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                            "title": "Publicação no WTICIFES 2026",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Papel, Caneta e Faca. Da implementação à especificação: a nova responsabilidade do desenvolvedor",
+                    "desc": "Reflexão sobre como a inteligência artificial está mudando a responsabilidade do desenvolvedor, que passa de autor da implementação para autor do comportamento esperado do software, usando a metáfora do papel, caneta e faca.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Uma carta para quem chegou até aqui",
+                    "desc": "Carta de boas-vindas ao espaço no Medium, sobre a jornada, o propósito da escrita e a importância de compartilhar conhecimento para conectar pessoas e inspirar novas descobertas.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/uma-carta-para-quem-chegou-at%C3%A9-aqui-b25d6d410763",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Além dos rótulos: o potencial que ainda espera oportunidades",
+                    "desc": "Reflexão sobre potencial humano, preconceitos e rótulos que limitam pessoas. Mostra como oportunidades e apoio podem revelar talentos escondidos, com uma história pessoal sobre persistência e aprendizado.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/al%C3%A9m-dos-r%C3%B3tulos-o-potencial-que-ainda-espera-oportunidades-5210ff480e86",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Mudança: medo ou oportunidade?",
+                    "desc": "Reflexão sobre como encarar a mudança com mentalidade positiva, transformando desafios em oportunidades de crescimento, com dicas práticas para lidar com transições assustadoras.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/mudan%C3%A7a-medo-ou-oportunidade-1b0551f89a66",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Muito Além do Código",
+                    "desc": "Reflexão profunda sobre legado, tecnologia e pessoas. Uma jornada pessoal de mais de três décadas na computação, explorando como o verdadeiro impacto do trabalho em TI não está nos sistemas desenvolvidos, mas nas pessoas que ajudamos a crescer e no conhecimento que compartilhamos.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/muito-al%C3%A9m-do-c%C3%B3digo-1730e372c01c",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Afinal, o que é realmente a inovação? De onde ela vem?",
+                    "desc": "Reflexão sobre a natureza da inovação, questionando se ela surge de novas tecnologias ou de uma compreensão mais profunda dos problemas humanos. Uma análise sobre como a verdadeira inovação vem da capacidade de compreender pessoas e transformar realidades.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/afinal-o-que-%C3%A9-realmente-a-inova%C3%A7%C3%A3o-de-onde-ela-vem-3f8298b3191d",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Quanto Vale Meu Trabalho na Área de TI: Sou Relevante? Como Combater a Síndrome do Impostor",
+                    "desc": "Reflexão sobre o valor do trabalho na área de TI, a sensação de relevância profissional e estratégias para lidar com a síndrome do impostor.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/quanto-vale-meu-trabalho-na-%C3%A1rea-de-ti-sou-relevante-como-combater-a-s%C3%ADndrome-do-impostor-d5c54d3f36ee",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "Inteligência Artificial: Uma Revolução Cognitiva ou a Revolução da Pressa",
+                    "desc": "Reflexão sobre o impacto real da Inteligência Artificial, questionando se estamos diante de uma verdadeira revolução cognitiva ou apenas de um atalho intelectual que pode comprometer o processo de aprendizado.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/intelig%C3%AAncia-artificial-uma-revolu%C3%A7%C3%A3o-cognitiva-ou-a-revolu%C3%A7%C3%A3o-da-pressa-21d935b7b992",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
                 },
                 {
                     "typeIcon": "fa-brands fa-linkedin",
-                    "typeLabel": "Artigo de Desenvolvimento",
+                    "typeLabel": "Reflexão",
                     "title": "Seu portfólio não é um currículo em HTML (e tudo bem)",
                     "desc": "Reflexão sobre as diferenças entre portfólio e currículo e como estruturar melhor a apresentação profissional.",
                     "links": [
@@ -640,16 +714,109 @@
                             "style": "color:#000;"
                         }
                     ]
+                }
+            ]
+        },
+        "career": {
+            "title": "Carreira e Gestão",
+            "desc": "Sobre equipes, comunicação, suporte técnico e o que sustenta trabalho de longo prazo em TI.",
+            "items": [
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Carreira e Gestão",
+                    "title": "Método organiza. Comunicação transforma.",
+                    "desc": "Reflexão sobre a importância da comunicação efetiva em equipes de desenvolvimento, mostrando como metodologias organizam processos mas a comunicação é o que realmente transforma o trabalho em equipe.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
                 },
                 {
-                    "typeIcon": "fa fa-chalkboard-teacher",
-                    "typeLabel": "Mentoria / Treinamento Técnico",
-                    "title": "Capacitação Dev PHP/CodeIgniter",
-                    "desc": "Material de capacitação técnica voltado à formação de novos desenvolvedores em PHP e boas práticas.",
-                    "links": []
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Carreira e Gestão",
+                    "title": "Entre Código, Pessoas e Problemas: o que aprendi trabalhando com Tecnologia da Informação (até agora)",
+                    "desc": "Mais de duas décadas de carreira em TI reunidas em uma reflexão sobre aprendizado, pessoas e o que realmente importa na profissão.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
                 },
                 {
-                    "typeIcon": "fa fa-external-link-alt",
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Carreira e Gestão",
+                    "title": "Atendimento Humano no Suporte Técnico: A empatia como ferramenta de trabalho",
+                    "desc": "Reflexão sobre a importância da empatia e do atendimento humano no suporte técnico, destacando como essas habilidades impactam positivamente a experiência do usuário e a resolução de problemas.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Carreira e Gestão",
+                    "title": "Além do Método: O que faz uma equipe funcionar melhor?",
+                    "desc": "A importância de fatores humanos, comunicação e organização para o sucesso de equipes de desenvolvimento.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                }
+            ]
+        },
+        "publications": {
+            "title": "Publicações",
+            "desc": "Trabalhos acadêmicos em eventos de Computing Grande Porto Alegre e Regulatory Innovation, além de coberturas institucionais dos projetos entregues.",
+            "items": [
+                {
+                    "typeIcon": "fa fa-file-pdf",
+                    "typeLabel": "Publicação Científica",
+                    "title": "Desenvolvimento de um Sistema de Gestão da Produção Acadêmica baseado em Engenharia Reversa e Padrões de Projeto",
+                    "desc": "Publicado no WTICIFES 2026 — Sistemas de Informação. Apresenta o SisPPA, sistema web da Unipampa para gestão, validação e pontuação da produção acadêmica, construído sobre MVC e engenharia reversa de planilha.",
+                    "links": [
+                        {
+                            "icon": "fa fa-file-pdf",
+                            "label": "Ler PDF",
+                            "title": "Ler PDF",
+                            "action": "url",
+                            "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                            "style": "color:#000;"
+                        },
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Relato",
+                            "href": "https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87",
+                            "title": "Relato no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-newspaper",
                     "typeLabel": "Notícia Institucional",
                     "title": "App Unipampa leva inovação à comunidade",
                     "desc": "Notícia institucional sobre o lançamento do aplicativo oficial da Unipampa, destacando seus serviços e benefícios para a comunidade universitária.",
@@ -665,7 +832,7 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-external-link-alt",
+                    "typeIcon": "fa fa-newspaper",
                     "typeLabel": "Notícia Institucional",
                     "title": "App Unipampa disponível para iOS",
                     "desc": "Notícia institucional sobre a disponibilização do aplicativo Unipampa para dispositivos iOS, ampliando o acesso da comunidade acadêmica.",
@@ -681,8 +848,8 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-file-pdf",
-                    "typeLabel": "WTICIFES 2012",
+                    "typeIcon": "fa fa-newspaper",
+                    "typeLabel": "Publicação Científica",
                     "title": "Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão",
                     "desc": "Publicado no WTICIFES 2012 — Goiânia, Brasil",
                     "links": [
@@ -697,8 +864,8 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-file-pdf",
-                    "typeLabel": "WTICIFES 2011",
+                    "typeIcon": "fa fa-newspaper",
+                    "typeLabel": "Publicação Científica",
                     "title": "SisRel - Sistema de Extração Dinâmica de Dados com Foco no Usuário Final",
                     "desc": "Publicado no WTICIFES 2011 — Florianópolis, Brasil",
                     "links": [
@@ -713,8 +880,8 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-file-pdf",
-                    "typeLabel": "WTICIFES 2011",
+                    "typeIcon": "fa fa-newspaper",
+                    "typeLabel": "Publicação Científica",
                     "title": "Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto",
                     "desc": "Publicado no WTICIFES 2011 — Florianópolis, Brasil",
                     "links": [
@@ -729,8 +896,8 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa fa-file-pdf",
-                    "typeLabel": "WTICIFES 2011",
+                    "typeIcon": "fa fa-newspaper",
+                    "typeLabel": "Publicação Científica",
                     "title": "Sistema de Gestão de Certificados Eletrônicos",
                     "desc": "Publicado no WTICIFES 2011 — Florianópolis, Brasil",
                     "links": [
@@ -875,7 +1042,7 @@
     "contact": {
         "sectionTitle": "Vamos Conversar?",
         "infoTitle": "Canais de Contato",
-        "infoText": "Estou disponível para projetos, consultorias e parcerias técnicas em desenvolvimento de sistemas e arquitetura de software.",
+        "infoText": "Disponível para consultorias, arquitetura de software, desenvolvimento mobile e sistemas institucionais.",
         "form": {
             "labelName": "Seu Nome",
             "placeholderName": "Como devo te chamar?",
@@ -912,7 +1079,7 @@
         }
     },
     "footer": {
-        "copyright": "&copy; 2026 Pedro Conrad Jr. Todos os direitos reservados.",
+        "copyright": "© 2026 Pedro Conrad Jr. Todos os direitos reservados.",
         "version": "v26 - Designed with CSS & Glassmorphism"
     },
     "infoModal": {
