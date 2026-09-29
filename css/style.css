@@ -531,7 +531,7 @@ nav {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr;
     gap: 4rem;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -571,42 +571,6 @@ nav {
 .contact-item i {
     font-size: 1.2rem;
     color: var(--accent-color);
-}
-
-/* CTA de contato */
-.contact-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.btn-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    background: var(--accent-color);
-    color: #000;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px var(--accent-glow);
-    color: #000;
-}
-
-.contact-cta-note {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: 1.5;
 }
 
 
@@ -712,13 +676,6 @@ footer {
     .about-grid {
         grid-template-columns: 1fr;
     }
-
-    /* Make contact container single column on mobile */
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-
 
     .glass-panel {
         padding: 1.5rem;

@@ -332,13 +332,6 @@ export function renderMain(d) {
                   <a href="${SITE.sameAs[0]}" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-github" aria-hidden="true"></i><span>@pconradjunior</span></a>
                 </div>
               </div>
-
-              <div class="contact-cta">
-                <a href="mailto:${SITE.email}" class="btn btn-cta">
-                  <i class="fa fa-envelope" aria-hidden="true"></i> ${esc(c.ctaButton)}
-                </a>
-                <p class="contact-cta-note">${esc(c.ctaNote)}</p>
-              </div>
             </div>
           </div>
         </section>

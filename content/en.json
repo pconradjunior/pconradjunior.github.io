@@ -1042,9 +1042,7 @@
     "contact": {
         "sectionTitle": "Let's Talk?",
         "infoTitle": "Contact Channels",
-        "infoText": "Available for consulting, system architecture, mobile development and institutional system work.",
-        "ctaButton": "Write me an e-mail",
-        "ctaNote": "I prefer to talk here. I reply within a few days."
+        "infoText": "Available for consulting, system architecture, mobile development and institutional system work."
     },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. All rights reserved.",

@@ -1042,9 +1042,7 @@
     "contact": {
         "sectionTitle": "Vamos Conversar?",
         "infoTitle": "Canais de Contato",
-        "infoText": "Disponível para consultorias, arquitetura de software, desenvolvimento mobile e sistemas institucionais.",
-        "ctaButton": "Escrever por e-mail",
-        "ctaNote": "Prefiro conversar por aqui. Respondo em poucos dias."
+        "infoText": "Disponível para consultorias, arquitetura de software, desenvolvimento mobile e sistemas institucionais."
     },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. Todos os direitos reservados.",
