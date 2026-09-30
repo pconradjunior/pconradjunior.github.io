@@ -379,6 +379,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Technical Article",
+                    "title": "Petrux: Writing the Software Engineering Process as Code (PT-BR)",
+                    "desc": "How a software engineering process can be coded into a system of specialized agents: Petrux's thirteen phases, each with an owner, inputs, outputs and a stop criterion, the Helpdesk branch outside the main sequence, and the mandatory human validation before any code reaches production.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Technical Article",
                     "title": "Web Application Reverse Engineering with Playwright: How to Automatically Map APIs and Technologies (PT-BR)",
                     "desc": "Tool that automates data collection from websites using real browser controlled via command line, generating offline HTML report with APIs, frameworks, stack and network traffic.",
                     "links": [
