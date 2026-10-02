@@ -1157,10 +1157,6 @@ footer {
 #pf-mobile:checked~.filter-tabs .filter-tab[for="pf-mobile"],
 #pf-web:checked~.filter-tabs .filter-tab[for="pf-web"],
 #pf-other:checked~.filter-tabs .filter-tab[for="pf-other"],
-#pf-technical:checked~.filter-tabs .filter-tab[for="pf-technical"],
-#pf-reflections:checked~.filter-tabs .filter-tab[for="pf-reflections"],
-#pf-career:checked~.filter-tabs .filter-tab[for="pf-career"],
-#pf-publications:checked~.filter-tabs .filter-tab[for="pf-publications"],
 #pf-videos:checked~.filter-tabs .filter-tab[for="pf-videos"] {
     background: var(--accent-color);
     border-color: var(--accent-color);
@@ -1172,10 +1168,6 @@ footer {
 #pf-mobile:checked~.filter-tabs .filter-tab[for="pf-mobile"] .filter-count,
 #pf-web:checked~.filter-tabs .filter-tab[for="pf-web"] .filter-count,
 #pf-other:checked~.filter-tabs .filter-tab[for="pf-other"] .filter-count,
-#pf-technical:checked~.filter-tabs .filter-tab[for="pf-technical"] .filter-count,
-#pf-reflections:checked~.filter-tabs .filter-tab[for="pf-reflections"] .filter-count,
-#pf-career:checked~.filter-tabs .filter-tab[for="pf-career"] .filter-count,
-#pf-publications:checked~.filter-tabs .filter-tab[for="pf-publications"] .filter-count,
 #pf-videos:checked~.filter-tabs .filter-tab[for="pf-videos"] .filter-count {
     background: rgba(0, 0, 0, 0.25);
     color: var(--bg-primary);
@@ -1186,29 +1178,28 @@ footer {
 #pf-mobile:focus-visible~.filter-tabs .filter-tab[for="pf-mobile"],
 #pf-web:focus-visible~.filter-tabs .filter-tab[for="pf-web"],
 #pf-other:focus-visible~.filter-tabs .filter-tab[for="pf-other"],
-#pf-technical:focus-visible~.filter-tabs .filter-tab[for="pf-technical"],
-#pf-reflections:focus-visible~.filter-tabs .filter-tab[for="pf-reflections"],
-#pf-career:focus-visible~.filter-tabs .filter-tab[for="pf-career"],
-#pf-publications:focus-visible~.filter-tabs .filter-tab[for="pf-publications"],
 #pf-videos:focus-visible~.filter-tabs .filter-tab[for="pf-videos"] {
     outline: 2px solid var(--accent-color);
     outline-offset: 3px;
 }
 
-/* Oculta os grupos que não combinam com o filtro ativo */
-body:has(#pf-mobile:checked) .project-group:not([data-category~="mobile"]),
-body:has(#pf-web:checked) .project-group:not([data-category~="web"]),
-body:has(#pf-other:checked) .project-group:not([data-category~="other"]),
-body:has(#pf-technical:checked) .project-group:not([data-category~="technical"]),
-body:has(#pf-reflections:checked) .project-group:not([data-category~="reflections"]),
-body:has(#pf-career:checked) .project-group:not([data-category~="career"]),
-body:has(#pf-publications:checked) .project-group:not([data-category~="publications"]),
-body:has(#pf-videos:checked) .project-group:not([data-category~="videos"]) {
+/* Oculta os grupos de Projetos que não combinam com o filtro ativo.
+   Escopo em #projects: os grupos de Artigos não são afetados. */
+#projects:has(#pf-mobile:checked) .project-group:not([data-category~="mobile"]),
+#projects:has(#pf-web:checked) .project-group:not([data-category~="web"]),
+#projects:has(#pf-other:checked) .project-group:not([data-category~="other"]),
+#projects:has(#pf-videos:checked) .project-group:not([data-category~="videos"]) {
     display: none;
 }
 
 .project-group {
     margin-bottom: 4rem;
+    scroll-margin-top: 90px;
+}
+
+/* Compensa o header fixo ao navegar para o topo de uma section */
+#projects,
+#articles {
     scroll-margin-top: 90px;
 }
 

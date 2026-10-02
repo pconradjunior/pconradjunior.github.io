@@ -820,14 +820,6 @@
                             "action": "url",
                             "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
                             "style": "color:#000;"
-                        },
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Write-up",
-                            "href": "https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87",
-                            "title": "Write-up on Medium",
-                            "action": "url",
-                            "style": "color:#000;"
                         }
                     ]
                 },
@@ -1054,6 +1046,10 @@
                 }
             ]
         }
+    },
+    "articles": {
+        "sectionTitle": "My Articles",
+        "intro": "This section brings together the texts and publications written throughout my professional career, with code snippets, technical decisions and what went wrong — on technology, career and the work of those who build software."
     },
     "contact": {
         "sectionTitle": "Let's Talk?",

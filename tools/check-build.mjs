@@ -19,11 +19,20 @@ const check = (cond, m) => (cond ? ok(m) : bad(m));
 
 const read = p => readFileSync(join(ROOT, p), 'utf8');
 
-/** Total de cards esperado, derivado do próprio conteúdo. */
-const GROUPS = ['mobile', 'web', 'other', 'technicalArticles', 'reflections', 'career', 'publications', 'videos'];
+/** Seções e grupos esperados, derivados do próprio conteúdo. */
+const SECTIONS = {
+  projects: ['mobile', 'web', 'other', 'videos'],
+  articles: ['technicalArticles', 'reflections', 'career', 'publications']
+};
+const GROUPS = Object.values(SECTIONS).flat();
+const content = lang => JSON.parse(read(`content/${lang}.json`));
 const expectedCards = lang => {
-  const d = JSON.parse(read(`content/${lang}.json`));
+  const d = content(lang);
   return GROUPS.reduce((n, g) => n + (d.projects[g]?.items?.length ?? 0), 0);
+};
+const groupCards = (lang, section) => {
+  const d = content(lang);
+  return SECTIONS[section].reduce((n, g) => n + (d.projects[g]?.items?.length ?? 0), 0);
 };
 
 for (const page of PAGES) {
@@ -46,11 +55,40 @@ for (const page of PAGES) {
   const h1 = html.match(/<h1>([^<]*)<\/h1>/)?.[1] ?? '';
   check(h1 === 'Pedro Conrad Jr', 'h1 único e correto');
   const h2 = (html.match(/<h2/g) ?? []).length;
-  check(h2 === 4, `${h2} headings h2 — About, Expertise, Projetos, Contato`);
+  check(h2 === 5, `${h2} headings h2 — About, Expertise, Projetos, Artigos, Contato`);
   const cards = (html.match(/class="project-card"/g) ?? []).length;
   const expected = expectedCards(page.lang);
   check(cards === expected, `${cards} cards renderizados (esperado ${expected} do content/${page.lang}.json)`);
-  check((html.match(/class="project-group"/g) ?? []).length === 8, '8 grupos de projetos');
+  const groups = (html.match(/class="project-group"/g) ?? []).length;
+  check(groups === GROUPS.length, `${groups} grupos (esperado ${GROUPS.length} do content/${page.lang}.json)`);
+
+  // ── sections: ordem, isolamento e distribuição dos cards ──
+  const iProjects = html.indexOf('<section id="projects"');
+  const iArticles = html.indexOf('<section id="articles"');
+  const iContact = html.indexOf('<section id="contact"');
+  check(iProjects > -1 && iArticles > iProjects && iContact > iArticles,
+    'ordem das sections: Projetos → Artigos → Contato');
+
+  const articles = iArticles > -1 ? html.slice(iArticles, iContact > -1 ? iContact : undefined) : '';
+  const articlesGroups = (articles.match(/class="project-group"/g) ?? []).length;
+  check(articlesGroups === SECTIONS.articles.length,
+    `${articlesGroups} grupos em Artigos (esperado ${SECTIONS.articles.length})`);
+  const articlesCards = (articles.match(/class="project-card"/g) ?? []).length;
+  const expectedArticles = groupCards(page.lang, 'articles');
+  check(articlesCards === expectedArticles,
+    `${articlesCards} cards em Artigos (esperado ${expectedArticles})`);
+  const projectsCards = (html.slice(iProjects, iArticles).match(/class="project-card"/g) ?? []).length;
+  check(projectsCards === groupCards(page.lang, 'projects'),
+    `${projectsCards} cards em Projetos (esperado ${groupCards(page.lang, 'projects')})`);
+  check(!/class="filters"/.test(articles), 'Artigos sem conjunto extra de filtros');
+  const articleTitle = content(page.lang).articles?.sectionTitle ?? '';
+  check(articles.includes(`<h2 class="section-title">${articleTitle}</h2>`), `h2 de Artigos preenchido — ${JSON.stringify(articleTitle)}`);
+  check(/<p class="section-intro centered">[^<]{40,}<\/p>/.test(articles), 'intro descritivo de Artigos presente');
+  check((html.match(/aria-haspopup="true"/g) ?? []).length === 2, 'menu com 2 dropdowns');
+  check(/id="nav-projects"[^>]*aria-haspopup="true"[\s\S]*?href="#mobile"/.test(html), 'dropdown de Projetos com seus 4 grupos');
+  check(/id="nav-articles"[^>]*aria-haspopup="true"[\s\S]*?href="#technical-articles"[\s\S]*?href="#publications"/.test(html),
+    'dropdown de Artigos com seus 4 grupos');
+
   check(!/carousel/i.test(html), 'sem vestígio de carrossel');
   check(!/\{\{\w+\}\}/.test(html), 'nenhum token {{...}} não resolvido');
   check(!/>null<|undefined|NaN/.test(html), 'sem null/undefined/NaN no HTML');

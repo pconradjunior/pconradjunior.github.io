@@ -29,17 +29,43 @@ export const SITE = {
   }
 };
 
-/** Ordem das abas de filtro e o bloco do JSON que cada uma controla. */
-export const GROUPS = [
-  { key: 'mobile', id: 'mobile', filter: 'mobile' },
-  { key: 'web', id: 'web', filter: 'web' },
-  { key: 'other', id: 'other-projects', filter: 'other' },
-  { key: 'technicalArticles', id: 'technical-articles', filter: 'technical' },
-  { key: 'reflections', id: 'reflections', filter: 'reflections' },
-  { key: 'career', id: 'career', filter: 'career' },
-  { key: 'publications', id: 'publications', filter: 'publications' },
-  { key: 'videos', id: 'videos', filter: 'videos' }
+/** Seções do portfólio, na ordem em que aparecem na página. */
+export const SECTIONS = [
+  {
+    id: 'projects',
+    groups: ['mobile', 'web', 'other', 'videos'],
+    labels: ['projectsMobile', 'projectsWeb', 'projectsOther', 'projectsVideos'],
+    withFilters: true
+  },
+  {
+    id: 'articles',
+    groups: ['technicalArticles', 'reflections', 'career', 'publications'],
+    labels: ['projectsTechArticles', 'projectsReflections', 'projectsCareer', 'projectsPublications'],
+    withFilters: false
+  }
 ];
+
+/** Os dois dropdowns do menu, cada um apontando para uma section. */
+const MENUS = [
+  { id: 'nav-projects', navKey: 'projects', section: 'projects' },
+  { id: 'nav-articles', navKey: 'articles', section: 'articles' }
+];
+
+const GROUP_BY_KEY = {
+  mobile: { key: 'mobile', id: 'mobile', filter: 'mobile' },
+  web: { key: 'web', id: 'web', filter: 'web' },
+  other: { key: 'other', id: 'other-projects', filter: 'other' },
+  videos: { key: 'videos', id: 'videos', filter: 'videos' },
+  technicalArticles: { key: 'technicalArticles', id: 'technical-articles', filter: 'technical' },
+  reflections: { key: 'reflections', id: 'reflections', filter: 'reflections' },
+  career: { key: 'career', id: 'career', filter: 'career' },
+  publications: { key: 'publications', id: 'publications', filter: 'publications' }
+};
+
+/** Todos os grupos com sua section e seu id de âncora, na ordem de renderização. */
+export const GROUPS = SECTIONS.flatMap(s =>
+  s.groups.map(key => ({ ...GROUP_BY_KEY[key], section: s.id }))
+);
 
 export const FILTER_LABELS = {
   pt: { all: 'Todos', group: 'Filtrar por categoria' },
@@ -187,19 +213,21 @@ export function renderHeader(d, lang) {
               <a href="#home">${esc(n.home)}</a>
               <a href="#about">${esc(n.about)}</a>
               <a href="#expertise">${esc(n.expertise)}</a>
-              <div class="dropdown">
-                <a href="#projects" id="nav-projects" aria-haspopup="true">${esc(n.projects)} <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+              ${MENUS.map(m => {
+                const s = SECTIONS.find(x => x.id === m.section);
+                const items = s.groups
+                  .map((key, i) => {
+                    const g = GROUP_BY_KEY[key];
+                    const label = s.labels[i];
+                    return `                  <a href="#${g.id}">${esc(n[label])}</a>`;
+                  }).join('\n');
+                return `              <div class="dropdown">
+                <a href="#${m.section}" id="${m.id}" aria-haspopup="true">${esc(n[m.navKey])} <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
                 <div class="dropdown-content">
-                  <a href="#mobile">${esc(n.projectsMobile)}</a>
-                  <a href="#web">${esc(n.projectsWeb)}</a>
-                  <a href="#other-projects">${esc(n.projectsOther)}</a>
-                  <a href="#technical-articles">${esc(n.projectsTechArticles)}</a>
-                  <a href="#reflections">${esc(n.projectsReflections)}</a>
-                  <a href="#career">${esc(n.projectsCareer)}</a>
-                  <a href="#publications">${esc(n.projectsPublications)}</a>
-                  <a href="#videos">${esc(n.projectsVideos)}</a>
+${items}
                 </div>
-              </div>
+              </div>`;
+              }).join('\n')}
               <a href="#contact">${esc(n.contact)}</a>
               <a href="${other}" id="langToggle" hreflang="${other === '/en/' ? 'en' : 'pt-BR'}" rel="alternate" title="${esc(n.langToggleLabel)}">
                 <img src="${esc(n.langToggleFlag)}" alt="${esc(n.langToggleAlt)}" width="20" height="15" loading="lazy"> ${esc(n.langToggleLabel)}
@@ -223,12 +251,15 @@ export function renderFooter(d) {
    main
    ───────────────────────────────────────────────────────────── */
 
-export function renderMain(d) {
-  const a = d.about, e = d.expertise, p = d.projects, c = d.contact;
+/**
+ * Renderiza uma section de conteúdo (Projetos ou Artigos) com seus grupos.
+ * Só a section com `withFilters` recebe o conjunto de abas.
+ */
+function renderSection(d, s) {
+  const p = d.projects;
+  const lang = d.meta.lang === 'pt-BR' ? 'pt' : 'en';
 
-  const total = GROUPS.reduce((n, g) => n + (p[g.key]?.items?.length ?? 0), 0);
-
-  const groups = GROUPS.map(g => {
+  const groups = s.groups.map(key => GROUP_BY_KEY[key]).map(g => {
     const blk = p[g.key];
     if (!blk || !blk.items.length) return '';
     return `<section class="project-group" id="${g.id}" data-category="${g.filter}" aria-labelledby="h-${g.id}">
@@ -238,17 +269,43 @@ export function renderMain(d) {
         </section>`;
   }).join('');
 
-  const tabs = [
-    `<input type="radio" name="pf" id="pf-all" class="pf-controller" checked>`,
-    ...GROUPS.filter(g => p[g.key]?.items?.length).map(g =>
-      `<input type="radio" name="pf" id="pf-${g.filter}" class="pf-controller">`)
-  ].join('\n          ');
+  const content = d[s.id];
+  const blocks = s.groups.map(key => GROUP_BY_KEY[key]).filter(g => p[g.key]?.items?.length);
+  const total = blocks.reduce((n, g) => n + p[g.key].items.length, 0);
 
-  const labels = [
-    `<label for="pf-all" class="filter-tab">${esc(FILTER_LABELS[d.meta.lang === 'pt-BR' ? 'pt' : 'en'].all)} <span class="filter-count">${total}</span></label>`,
-    ...GROUPS.filter(g => p[g.key]?.items?.length).map(g =>
+  const tabs = s.withFilters ? [
+    `<input type="radio" name="pf" id="pf-all" class="pf-controller" checked>`,
+    ...blocks.map(g => `<input type="radio" name="pf" id="pf-${g.filter}" class="pf-controller">`)
+  ].join('\n            ') : '';
+
+  const labels = s.withFilters ? [
+    `<label for="pf-all" class="filter-tab">${esc(FILTER_LABELS[lang].all)} <span class="filter-count">${total}</span></label>`,
+    ...blocks.map(g =>
       `<label for="pf-${g.filter}" class="filter-tab">${esc(p[g.key].title)} <span class="filter-count">${p[g.key].items.length}</span></label>`)
-  ].join('\n            ');
+  ].join('\n              ') : '';
+
+  const filters = s.withFilters ? `
+            <div class="filters" role="group" aria-label="${esc(FILTER_LABELS[lang].group)}">
+            ${tabs}
+              <div class="filter-tabs">
+              ${labels}
+              </div>
+            </div>
+` : '';
+
+  return `
+        <section id="${s.id}" class="portfolio">
+          <div class="container">
+            <h2 class="section-title">${esc(content.sectionTitle)}</h2>
+            <p class="section-intro centered">${esc(content.intro)}</p>
+${filters}
+            <div id="${s.id === 'projects' ? 'projectGroups' : 'articleGroups'}">${groups}</div>
+          </div>
+        </section>`;
+}
+
+export function renderMain(d) {
+  const a = d.about, e = d.expertise, c = d.contact;
 
   return `<main>
         <section id="home" class="hero">
@@ -301,22 +358,7 @@ export function renderMain(d) {
           </div>
         </section>
 
-        <section id="projects" class="portfolio">
-          <div class="container">
-            <h2 class="section-title">${esc(p.sectionTitle)}</h2>
-            <p class="section-intro centered">${esc(p.intro)}</p>
-
-            <div class="filters" role="group" aria-label="${esc(FILTER_LABELS[d.meta.lang === 'pt-BR' ? 'pt' : 'en'].group)}">
-          ${tabs}
-              <div class="filter-tabs">
-            ${labels}
-              </div>
-            </div>
-
-            <div id="projectGroups">${groups}</div>
-          </div>
-        </section>
-
+        ${SECTIONS.map(s => renderSection(d, s)).join('')}
         <section id="contact" class="contact">
           <div class="container">
             <h2 class="section-title">${esc(c.sectionTitle)}</h2>

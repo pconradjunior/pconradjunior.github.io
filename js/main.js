@@ -63,8 +63,9 @@ const Nav = (() => {
 
         navLinks.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', e => {
-                // Dropdown de projetos no mobile: primeiro toque abre, segundo navega
-                if (a.id === 'nav-projects' && window.innerWidth <= 768 && !a.parentElement.classList.contains('active-dropdown')) {
+                // Dropdown no mobile: primeiro toque abre, segundo navega
+                const isDropdownTrigger = a.getAttribute('aria-haspopup') === 'true';
+                if (isDropdownTrigger && window.innerWidth <= 768 && !a.parentElement.classList.contains('active-dropdown')) {
                     e.preventDefault();
                     a.parentElement.classList.add('active-dropdown');
                     return;

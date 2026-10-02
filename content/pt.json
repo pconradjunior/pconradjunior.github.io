@@ -820,14 +820,6 @@
                             "action": "url",
                             "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
                             "style": "color:#000;"
-                        },
-                        {
-                            "icon": "fa-brands fa-medium",
-                            "label": "Relato",
-                            "href": "https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87",
-                            "title": "Relato no Medium",
-                            "action": "url",
-                            "style": "color:#000;"
                         }
                     ]
                 },
@@ -1054,6 +1046,10 @@
                 }
             ]
         }
+    },
+    "articles": {
+        "sectionTitle": "Meus Artigos",
+        "intro": "Nesta seção estão os textos e publicações escritos ao longo da minha trajetória profissional, com trechos de código, decisões técnicas e o que deu errado — sobre tecnologia, carreira e o trabalho de quem desenvolve software."
     },
     "contact": {
         "sectionTitle": "Vamos Conversar?",
