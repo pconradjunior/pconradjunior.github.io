@@ -716,16 +716,16 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Reflexão",
                     "title": "Seu portfólio não é um currículo em HTML (e tudo bem)",
                     "desc": "Reflexão sobre as diferenças entre portfólio e currículo e como estruturar melhor a apresentação profissional.",
                     "links": [
                         {
-                            "icon": "fa-brands fa-linkedin",
-                            "label": "Ler no LinkedIn",
-                            "href": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/",
-                            "title": "Ler no LinkedIn",
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-14d3af0a0ff4",
+                            "title": "Ler no Medium",
                             "action": "url",
                             "style": "color:#000;"
                         }

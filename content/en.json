@@ -716,16 +716,16 @@
                     ]
                 },
                 {
-                    "typeIcon": "fa-brands fa-linkedin",
+                    "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Reflection",
                     "title": "Your portfolio is not an HTML resume (and that's okay)",
                     "desc": "Reflection on the differences between a portfolio and a resume, and how to better structure your professional presentation.",
                     "links": [
                         {
-                            "icon": "fa-brands fa-linkedin",
-                            "label": "Read on LinkedIn",
-                            "href": "https://www.linkedin.com/pulse/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-conrad-junior-5p1cf/",
-                            "title": "Read on LinkedIn",
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-14d3af0a0ff4",
+                            "title": "Read on Medium",
                             "action": "url",
                             "style": "color:#000;"
                         }
