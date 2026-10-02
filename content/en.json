@@ -19,20 +19,21 @@
         "alt": "Pedro Conrad Jr — Developer of institutional systems and mobile applications"
     },
     "nav": {
-        "home": "Home",
+        "brand": "Pedro Conrad Jr",
+        "navLabel": "Main navigation",
+        "openMenu": "Open menu",
+        "work": "Work",
+        "engineering": "Engineering",
+        "writing": "Writing",
         "about": "About",
-        "expertise": "Expertise",
-        "projects": "Projects",
-        "projectsMobile": "Mobile Apps",
-        "projectsWeb": "Web Systems",
-        "projectsOther": "Other Projects",
-        "projectsTechArticles": "Technical Articles",
-        "projectsReflections": "Reflections",
-        "projectsCareer": "Career & Management",
-        "projectsPublications": "Publications",
-        "projectsVideos": "Videos",
-        "articles": "Articles",
         "contact": "Contact",
+        "cv": "CV",
+        "socialTitle": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "medium": "Medium",
+            "instagram": "Instagram"
+        },
         "langToggleLabel": "Português",
         "langToggleFlag": "https://flagcdn.com/20x15/br.png",
         "langToggleAlt": "PT",
@@ -49,6 +50,12 @@
         "btnInstagram": "Instagram",
         "role": "Developer of institutional systems and mobile apps",
         "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart"
+    },
+    "work": {
+        "sectionTitle": "Work",
+        "intro": "This section highlights some of the main projects developed throughout my professional career, including institutional systems, mobile applications, and technical initiatives focused on architecture, integration, and scalability.",
+        "metaTitle": "Work — Pedro Conrad Jr",
+        "metaDescription": "The full catalogue of systems, apps and tools I have built: {{systems}} systems and apps, {{apps}} published in the stores, {{downloads}} downloads."
     },
     "about": {
         "sectionTitle": "About Me",
@@ -83,7 +90,11 @@
             "label": "Mentoring / Training",
             "title": "PHP / CodeIgniter Developer Training",
             "desc": "Technical training material aimed at forming new PHP developers and good practices."
-        }
+        },
+        "readMore": "Read more about my experience",
+        "capabilitiesTitle": "Capabilities",
+        "metaTitle": "About — Pedro Conrad Jr",
+        "metaDescription": "Over 20 years of software engineering and architecture experience: institutional systems, ERPs, APIs, databases and mobile applications at Unipampa."
     },
     "expertise": {
         "sectionTitle": "Expertise",
@@ -110,9 +121,12 @@
             }
         ]
     },
+    "contact": {
+        "sectionTitle": "Let's Talk?",
+        "infoTitle": "Contact Channels",
+        "infoText": "Available for consulting, system architecture, mobile development and institutional system work."
+    },
     "projects": {
-        "sectionTitle": "Projects",
-        "intro": "This section highlights some of the main projects developed throughout my professional career, including institutional systems, mobile applications, and technical initiatives focused on architecture, integration, and scalability.",
         "mobile": {
             "title": "Mobile Applications",
             "items": [
@@ -821,7 +835,8 @@
                             "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -837,7 +852,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "news"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -853,7 +869,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "news"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -869,7 +886,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -885,7 +903,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -901,7 +920,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -917,7 +937,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 }
             ]
         },
@@ -1047,14 +1068,11 @@
             ]
         }
     },
-    "articles": {
-        "sectionTitle": "My Articles",
-        "intro": "This section brings together the texts and publications written throughout my professional career, with code snippets, technical decisions and what went wrong — on technology, career and the work of those who build software."
-    },
-    "contact": {
-        "sectionTitle": "Let's Talk?",
-        "infoTitle": "Contact Channels",
-        "infoText": "Available for consulting, system architecture, mobile development and institutional system work."
+    "writing": {
+        "sectionTitle": "Writing",
+        "intro": "This section brings together the texts and publications written throughout my professional career, with code snippets, technical decisions and what went wrong — on technology, career and the work of those who build software.",
+        "metaTitle": "Writing & publications — Pedro Conrad Jr",
+        "metaDescription": "{{articles}} pieces on architecture, software engineering, Flutter and career, plus {{papers}} academic publications at computing events."
     },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. All rights reserved.",

@@ -90,9 +90,12 @@ body {
     display: none;
 }
 
+/* Fixo no canto inferior direito. No topo direito ele cobria por completo o
+   botão de troca de idioma, que é o último item da barra — a sobreposição
+   deixava o toggle impossível de clicar. */
 .theme-switcher {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
     z-index: 1000;
     display: flex;
@@ -190,73 +193,10 @@ nav {
     color: var(--accent-color);
 }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+/* A navegação com dropdown foi removida no redesenho: a barra passou a ter
+   cinco links diretos (Work, Engineering, Writing, About, Contact). Nenhuma
+   regra .dropdown* permanece — render.js não as referencia mais. */
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: var(--bg-secondary);
-    min-width: 180px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
-    top: 100%;
-    left: 0;
-    padding: 0.5rem 0;
-}
-
-.dropdown-content a {
-    color: var(--text-secondary) !important;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.2s, color 0.2s;
-    font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--accent-color) !important;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .dropdown {
-        width: 100%;
-        text-align: center;
-    }
-
-    .dropdown-content {
-        position: static;
-        display: none;
-        background: transparent;
-        box-shadow: none;
-        border: none;
-        padding-left: 0;
-    }
-
-    .dropdown-content a {
-        padding: 8px 0;
-        font-size: 0.95rem;
-        opacity: 0.8;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: none;
-    }
-
-    .dropdown.active-dropdown .dropdown-content {
-        display: block;
-    }
-}
 
 /* --- Hero Section --- */
 .hero {
@@ -1152,7 +1092,12 @@ footer {
     font-variant-numeric: tabular-nums;
 }
 
-/* Estado selecionado — o label é estilizado pelo radio que o ativa */
+/* Estado selecionado, foco e ocultação dos grupos.
+   Os ids pf-* são enumerados aqui de propósito: não há como escrever em CSS
+   "o label cujo for é igual ao id do radio marcado". tools/check-build.mjs
+   confere que esta lista bate com os filtros do conteúdo, para que um grupo
+   novo não passe despercebido e deixe de ser filtrável. */
+
 #pf-all:checked~.filter-tabs .filter-tab[for="pf-all"],
 #pf-mobile:checked~.filter-tabs .filter-tab[for="pf-mobile"],
 #pf-web:checked~.filter-tabs .filter-tab[for="pf-web"],
@@ -1183,12 +1128,12 @@ footer {
     outline-offset: 3px;
 }
 
-/* Oculta os grupos de Projetos que não combinam com o filtro ativo.
-   Escopo em #projects: os grupos de Artigos não são afetados. */
-#projects:has(#pf-mobile:checked) .project-group:not([data-category~="mobile"]),
-#projects:has(#pf-web:checked) .project-group:not([data-category~="web"]),
-#projects:has(#pf-other:checked) .project-group:not([data-category~="other"]),
-#projects:has(#pf-videos:checked) .project-group:not([data-category~="videos"]) {
+/* Oculta os grupos que não combinam com o filtro ativo. Só a página de
+   catálogo tem radios de filtro, então o escopo em #work é o suficiente. */
+#work:has(#pf-mobile:checked) .project-group:not([data-category~="mobile"]),
+#work:has(#pf-web:checked) .project-group:not([data-category~="web"]),
+#work:has(#pf-other:checked) .project-group:not([data-category~="other"]),
+#work:has(#pf-videos:checked) .project-group:not([data-category~="videos"]) {
     display: none;
 }
 
@@ -1198,10 +1143,14 @@ footer {
 }
 
 /* Compensa o header fixo ao navegar para o topo de uma section */
-#projects,
-#articles {
+#home,
+#engineering,
+#contact,
+.page,
+.portfolio {
     scroll-margin-top: 90px;
 }
+
 
 .project-group:last-child {
     margin-bottom: 0;
@@ -1377,4 +1326,131 @@ footer {
 
 .error-page .hero-buttons {
     justify-content: center;
+}
+
+/* ============================================================
+   Páginas internas (work, writing, about) e navegação de 5 itens
+   ============================================================ */
+
+/* Casca comum das páginas que não são a home: o h1 da página substitui o
+   .section-title centrado das sections da home. */
+.page,
+.portfolio {
+    padding-top: 8rem;
+    min-height: 80vh;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.page .section-title {
+    font-size: 1.6rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.page .section-title::after {
+    width: 40px;
+    height: 3px;
+}
+
+/* Medida de leitura única (~70 caracteres), para texto corrido. */
+.prose {
+    max-width: 70ch;
+    margin-top: 1.5rem;
+}
+
+.prose p {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.skill-list-wide li {
+    font-size: 0.9rem;
+}
+
+/* Link de continuação entre seções e páginas. */
+.section-cta {
+    margin-top: 2rem;
+    font-family: var(--font-heading);
+}
+
+.section-cta a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-speed);
+}
+
+.section-cta a:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+.contact-details-inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    margin-top: 1.5rem;
+}
+
+.contact-details-inline .contact-item {
+    font-size: 0.95rem;
+}
+
+/* --- Navegação: cinco links + canal social + CV --- */
+.nav-socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding-left: 1rem;
+    margin-left: 0.25rem;
+    border-left: 1px solid var(--glass-border);
+}
+
+.nav-socials a {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    transition: color var(--transition-speed);
+}
+
+.nav-socials a:hover {
+    color: var(--accent-color);
+}
+
+.nav-links a[aria-current="page"] {
+    color: var(--text-primary);
+}
+
+@media (max-width: 880px) {
+    .nav-socials {
+        padding-left: 0;
+        margin-left: 0;
+        border-left: none;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .nav-socials a {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    .page,
+    .portfolio {
+        padding-top: 7rem;
+    }
+
+    .contact-details-inline {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
 }

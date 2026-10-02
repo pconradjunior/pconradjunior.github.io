@@ -19,20 +19,21 @@
         "alt": "Pedro Conrad Jr — Desenvolvedor de sistemas institucionais e aplicativos mobile"
     },
     "nav": {
-        "home": "Início",
+        "brand": "Pedro Conrad Jr",
+        "navLabel": "Navegação principal",
+        "openMenu": "Abrir menu",
+        "work": "Projetos",
+        "engineering": "Engenharia",
+        "writing": "Escritos",
         "about": "Sobre",
-        "expertise": "Atuação",
-        "projects": "Projetos",
-        "projectsMobile": "Apps Mobile",
-        "projectsWeb": "Sistemas Web",
-        "projectsOther": "Outros Projetos",
-        "projectsTechArticles": "Artigos Técnicos",
-        "projectsReflections": "Reflexões",
-        "projectsCareer": "Carreira e Gestão",
-        "projectsPublications": "Publicações",
-        "projectsVideos": "Vídeos",
-        "articles": "Artigos",
         "contact": "Contato",
+        "cv": "Currículo",
+        "socialTitle": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "medium": "Medium",
+            "instagram": "Instagram"
+        },
         "langToggleLabel": "English",
         "langToggleFlag": "https://flagcdn.com/20x15/us.png",
         "langToggleAlt": "EN",
@@ -49,6 +50,12 @@
         "btnInstagram": "Instagram",
         "role": "Desenvolvedor de sistemas institucionais e apps mobile",
         "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart"
+    },
+    "work": {
+        "sectionTitle": "Projetos",
+        "intro": "Nesta seção estão alguns dos principais projetos desenvolvidos ao longo da minha trajetória profissional, abrangendo sistemas institucionais, aplicações mobile e iniciativas técnicas com foco em arquitetura, integração e escalabilidade.",
+        "metaTitle": "Projetos — Pedro Conrad Jr",
+        "metaDescription": "Catálogo completo de sistemas, aplicativos e ferramentas desenvolvidos: {{systems}} sistemas e apps, {{apps}} publicados nas lojas, {{downloads}} downloads."
     },
     "about": {
         "sectionTitle": "Sobre Mim",
@@ -83,7 +90,11 @@
             "label": "Mentoria / Treinamento Técnico",
             "title": "Capacitação Dev PHP/CodeIgniter",
             "desc": "Material de capacitação técnica voltado à formação de novos desenvolvedores em PHP e boas práticas."
-        }
+        },
+        "readMore": "Leia mais sobre a minha trajetória",
+        "capabilitiesTitle": "Competências",
+        "metaTitle": "Sobre — Pedro Conrad Jr",
+        "metaDescription": "Mais de 20 anos de experiência em engenharia e arquitetura de software: sistemas institucionais, ERPs, APIs, bancos de dados e aplicações mobile na Unipampa."
     },
     "expertise": {
         "sectionTitle": "Minha Atuação",
@@ -110,9 +121,12 @@
             }
         ]
     },
+    "contact": {
+        "sectionTitle": "Vamos Conversar?",
+        "infoTitle": "Canais de Contato",
+        "infoText": "Disponível para consultorias, arquitetura de software, desenvolvimento mobile e sistemas institucionais."
+    },
     "projects": {
-        "sectionTitle": "Meus Projetos",
-        "intro": "Nesta seção estão alguns dos principais projetos desenvolvidos ao longo da minha trajetória profissional, abrangendo sistemas institucionais, aplicações mobile e iniciativas técnicas com foco em arquitetura, integração e escalabilidade.",
         "mobile": {
             "title": "Aplicativos Mobile",
             "items": [
@@ -821,7 +835,8 @@
                             "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -837,7 +852,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "news"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -853,7 +869,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "news"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -869,7 +886,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -885,7 +903,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -901,7 +920,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 },
                 {
                     "typeIcon": "fa fa-newspaper",
@@ -917,7 +937,8 @@
                             "action": "url",
                             "style": "color:#000;"
                         }
-                    ]
+                    ],
+                    "kind": "paper"
                 }
             ]
         },
@@ -1047,14 +1068,11 @@
             ]
         }
     },
-    "articles": {
+    "writing": {
         "sectionTitle": "Meus Artigos",
-        "intro": "Nesta seção estão os textos e publicações escritos ao longo da minha trajetória profissional, com trechos de código, decisões técnicas e o que deu errado — sobre tecnologia, carreira e o trabalho de quem desenvolve software."
-    },
-    "contact": {
-        "sectionTitle": "Vamos Conversar?",
-        "infoTitle": "Canais de Contato",
-        "infoText": "Disponível para consultorias, arquitetura de software, desenvolvimento mobile e sistemas institucionais."
+        "intro": "Nesta seção estão os textos e publicações escritos ao longo da minha trajetória profissional, com trechos de código, decisões técnicas e o que deu errado — sobre tecnologia, carreira e o trabalho de quem desenvolve software.",
+        "metaTitle": "Artigos e publicações — Pedro Conrad Jr",
+        "metaDescription": "{{articles}} textos sobre arquitetura, engenharia de software, Flutter e carreira, mais {{papers}} publicações acadêmicas em eventos de computação."
     },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. Todos os direitos reservados.",
