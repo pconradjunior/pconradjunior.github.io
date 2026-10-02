@@ -18,7 +18,21 @@
                     "style": "color:#000;"
                 }
             ]
+        },
+        {
+            "typeIcon": "fa-solid fa-server",
+            "typeLabel": "Ubuntu / Shell Script",
+            "title": "Terminal RU System Image",
+            "desc": "Creation and update of a preconfigured system image for disaster recovery of Terminal RU.",
+            "links": []
+        },
+        {
+            "typeIcon": "fa-solid fa-graduation-cap",
+            "typeLabel": "Training",
+            "title": "Basic PHP Training",
+            "desc": "Basic PHP training for new team members, including authoring the technical material.",
+            "links": []
         }
     ],
-    "desc": "Browser extensions and tools."
+    "desc": "Browser extensions, tools, infrastructure and training programs."
 }

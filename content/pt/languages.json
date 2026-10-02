@@ -1,0 +1,18 @@
+{
+    "sectionTitle": "Idiomas",
+    "intro": "Idiomas que uso no trabalho e no dia a dia.",
+    "items": [
+        {
+            "name": "Português",
+            "level": "Nativo"
+        },
+        {
+            "name": "Inglês",
+            "level": "Intermediário"
+        },
+        {
+            "name": "Espanhol",
+            "level": "Básico"
+        }
+    ]
+}

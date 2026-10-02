@@ -1,7 +1,7 @@
 {
     "meta": {
         "lang": "en",
-        "description": "Software engineer and architect, 20+ years of experience. ERPs with over 50 modules, {{apps}} published apps, APIs and complex system evolution. IT Analyst at Unipampa.",
+        "description": "Software engineer and architect, 30+ years of experience. ERPs with over 50 modules, {{apps}} published apps, APIs and complex system evolution. IT Analyst at Unipampa.",
         "flagIcon": "images/flags/us.svg",
         "title": "Pedro Conrad Jr — Software Engineer & Software Architect",
         "keywords": [
@@ -23,9 +23,9 @@
         "brand": "Pedro Conrad Jr",
         "navLabel": "Main navigation",
         "openMenu": "Open menu",
-        "work": "Work",
+        "work": "Projects",
         "engineering": "Engineering",
-        "writing": "Writing",
+        "writing": "Articles",
         "about": "About",
         "contact": "Contact",
         "cv": "CV",
@@ -44,12 +44,12 @@
     "hero": {
         "eyebrow": "Software Engineer & Software Architect",
         "title": "Pedro Conrad Jr",
-        "headline": "20+ years building and evolving complex software systems.",
+        "headline": "30+ years building and evolving complex software systems.",
         "stack": "Institutional ERPs · APIs · Mobile · Architecture · Software Engineering",
-        "ctaWork": "View Selected Work",
+        "ctaWork": "Projects",
         "ctaLinkedIn": "LinkedIn",
         "ctaGitHub": "GitHub",
-        "ctaCv": "Download CV",
+        "ctaCv": "Resume",
         "description": "IT Analyst at Universidade Federal do Pampa. I build the systems that institutional processes depend on: ERPs with 50+ integrated modules and apps published for Android and iOS.",
         "btnProjects": "View Projects",
         "btnGitHub": "GitHub",
@@ -62,7 +62,7 @@
         "sectionTitle": "Scale",
         "items": [
             {
-                "number": "20+",
+                "number": "30+",
                 "label": "Years in Software Engineering"
             },
             {
@@ -80,7 +80,7 @@
         ]
     },
     "selectedWork": {
-        "sectionTitle": "Selected Work",
+        "sectionTitle": "Projects",
         "intro": "Five systems and initiatives that show the kind of problem I solve: domain complexity, incremental evolution, and technical decisions with an effect on institutional processes.",
         "items": [
             {
@@ -99,7 +99,8 @@
                         "label": "News",
                         "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
                     }
-                ]
+                ],
+                "caseStudy": "guri"
             },
             {
                 "number": "02",
@@ -186,9 +187,17 @@
             {
                 "org": "UNIPAMPA",
                 "orgFull": "Universidade Federal do Pampa",
-                "role": "IT Analyst · Software Engineering & Architecture",
+                "role": "Information Technology Analyst · Software Engineering and Architecture",
                 "period": "2010 — Present",
-                "summary": "I build and evolve the systems that institutional processes depend on: ERPs with over 50 modules, academic management systems, access control, and mobile applications published for Android and iOS. I worked in the technical coordination of development teams between January 2016 and July 2019, which included defining processes, standards, and criteria for reviewing code and documentation.",
+                "location": "Alegrete, Brazil",
+                "summary": "I build and evolve the systems institutional processes depend on: ERPs with over 50 modules, academic management systems, access control and published mobile applications.",
+                "responsibilities": [
+                    "Software modeling",
+                    "Documentation review",
+                    "Web development with PHP",
+                    "Systems documentation",
+                    "Mobile application development with Cordova and Flutter"
+                ],
                 "systems": [
                     {
                         "name": "GURI",
@@ -196,7 +205,7 @@
                     },
                     {
                         "name": "SisPPA",
-                        "desc": "Academic output management and scoring"
+                        "desc": "Academic production management and scoring"
                     },
                     {
                         "name": "App Unipampa",
@@ -209,6 +218,50 @@
                     {
                         "name": "Terminal RU",
                         "desc": "Biometric access at university restaurants"
+                    }
+                ]
+            },
+            {
+                "org": "Technical coordination",
+                "orgFull": "Development teams · UNIPAMPA",
+                "role": "Development Team Coordinator",
+                "period": "2016 — 2019",
+                "location": "Alegrete, Brazil",
+                "summary": "I coordinated Unipampa's development teams between January 2016 and July 2019, which included defining processes, standards and criteria for code and documentation review.",
+                "responsibilities": [
+                    "Defining development processes",
+                    "Organizing and tracking projects",
+                    "Technical training for developers",
+                    "Code and documentation review"
+                ]
+            },
+            {
+                "org": "UFPel",
+                "orgFull": "Universidade Federal de Pelotas",
+                "role": "Information Technology Technician",
+                "period": "2009 — 2010",
+                "location": "Pelotas, Brazil",
+                "summary": "I developed web applications in PHP and administered and maintained the university's virtual learning environment.",
+                "responsibilities": [
+                    "Web development with PHP",
+                    "Moodle administration and maintenance"
+                ]
+            },
+            {
+                "org": "URCAMP",
+                "orgFull": "Universidade da Região da Campanha",
+                "role": "Professor and Web Developer",
+                "period": "2002 — 2009",
+                "location": "Bagé, Brazil",
+                "summary": "I worked in teaching and web development. Between 2006 and 2009 I was responsible for developing and maintaining the university portal, working with the Communication Department team.",
+                "responsibilities": [
+                    "Teaching programming, computer architecture, artificial intelligence and databases",
+                    "Development and maintenance of the university portal (2006 — 2009)"
+                ],
+                "systems": [
+                    {
+                        "name": "URCAMP Portal",
+                        "desc": "The university's institutional portal"
                     }
                 ]
             }
@@ -254,24 +307,24 @@
     "about": {
         "sectionTitle": "About",
         "short": [
-            "I am a software engineer and architect with over 20 years of experience building and evolving complex software systems.",
+            "I am a software engineer and architect with over 30 years of experience building and evolving complex software systems.",
             "My work spans institutional ERPs, APIs, databases, mobile applications and software engineering practices.",
             "I currently work at UNIPAMPA, contributing to institutional systems and technical initiatives."
         ],
         "readMore": "Read more about my experience",
         "paragraphs": [
-            "I am an Information Technology professional with over 20 years of experience in web systems and mobile application development. Currently, I work as an IT Analyst at Universidade Federal do Pampa (Unipampa), contributing directly to critical institutional systems.",
-            "I have strong experience in software architecture, data modeling, and development standards definition. Between 2016 and 2019, I worked in a technical leadership role, coordinating teams, leading projects, organizing processes, and mentoring developers.",
-            "My background includes the development of large-scale systems, such as ERPs with dozens of integrated modules, as well as modern mobile applications using Flutter, always focused on performance, scalability, and code quality."
+            "I started computing in 1996 and have worked with software ever since, which adds up to over 30 years. I work as an Information Technology Analyst at Universidade Federal do Pampa (Unipampa), contributing directly to critical institutional systems.",
+            "I have strong experience in software architecture, data modeling, and development standards definition. Between 2016 and 2019, I coordinated development teams, leading projects, organizing processes, and mentoring developers.",
+            "My background includes large-scale systems, such as an ERP with over 50 integrated modules, as well as modern mobile applications using Flutter. I started on the desktop with Visual Basic and Delphi, moved on to C#, and became a reference in web development with PHP and CodeIgniter."
         ],
         "stats": [
             {
-                "number": "20+",
-                "label": "Years of Experience"
+                "number": "50+",
+                "label": "ERP Modules"
             },
             {
-                "number": "50+",
-                "label": "Projects Delivered"
+                "number": "{{systems}}",
+                "label": "Systems and apps"
             },
             {
                 "number": "{{downloads}}",
@@ -279,12 +332,66 @@
             }
         ],
         "skills": [
-            "Software architecture",
-            "Data modeling",
-            "PHP / CodeIgniter",
-            "Flutter / Dart",
-            "Relational databases",
-            "Team technical leadership"
+            {
+                "group": "Systems Analysis",
+                "items": [
+                    "Requirements analysis and gathering",
+                    "Data modeling",
+                    "Technical and user documentation",
+                    "Technical tool evaluation"
+                ]
+            },
+            {
+                "group": "Software Architecture and Engineering",
+                "items": [
+                    "Software architecture",
+                    "Development processes",
+                    "Code review",
+                    "Systems documentation"
+                ]
+            },
+            {
+                "group": "Web Development",
+                "items": [
+                    "PHP / CodeIgniter",
+                    "HTML and CSS",
+                    "JavaScript / jQuery"
+                ]
+            },
+            {
+                "group": "Databases",
+                "items": [
+                    "IBM DB2",
+                    "PostgreSQL",
+                    "MySQL"
+                ]
+            },
+            {
+                "group": "Mobile Application Development",
+                "items": [
+                    "Flutter / Dart",
+                    "Apache Cordova"
+                ]
+            },
+            {
+                "group": "Infrastructure and Versioning",
+                "items": [
+                    "Ubuntu Linux",
+                    "Apache",
+                    "Shell script",
+                    "Git",
+                    "Subversion"
+                ]
+            },
+            {
+                "group": "Management and Training",
+                "items": [
+                    "Project management",
+                    "Team technical leadership",
+                    "Team training",
+                    "User support"
+                ]
+            }
         ],
         "teaching": {
             "label": "Mentoring / Training",
@@ -293,7 +400,7 @@
         },
         "capabilitiesTitle": "Capabilities",
         "metaTitle": "About — Pedro Conrad Jr",
-        "metaDescription": "Over 20 years of software engineering and architecture experience: institutional systems, ERPs, APIs, databases and mobile applications at Unipampa."
+        "metaDescription": "Over 30 years of software engineering and architecture experience: institutional systems, ERPs, APIs, databases and mobile applications at Unipampa."
     },
     "contact": {
         "sectionTitle": "Let's Talk",
@@ -547,6 +654,20 @@
                             "style": "color:#000;"
                         }
                     ]
+                },
+                {
+                    "typeIcon": "fa fa-server",
+                    "typeLabel": "PHP / MySQL",
+                    "title": "Proficiency Examination System",
+                    "desc": "System to manage registrations and fee payment for Language Proficiency Examinations.",
+                    "links": []
+                },
+                {
+                    "typeIcon": "fa fa-server",
+                    "typeLabel": "Web Development",
+                    "title": "URCAMP Portal",
+                    "desc": "The university's institutional portal, developed and maintained between 2006 and 2009 with the Communication Department team.",
+                    "links": []
                 }
             ]
         },
@@ -570,9 +691,23 @@
                             "style": "color:#000;"
                         }
                     ]
+                },
+                {
+                    "typeIcon": "fa-solid fa-server",
+                    "typeLabel": "Ubuntu / Shell Script",
+                    "title": "Terminal RU System Image",
+                    "desc": "Creation and update of a preconfigured system image for disaster recovery of Terminal RU.",
+                    "links": []
+                },
+                {
+                    "typeIcon": "fa-solid fa-graduation-cap",
+                    "typeLabel": "Training",
+                    "title": "Basic PHP Training",
+                    "desc": "Basic PHP training for new team members, including authoring the technical material.",
+                    "links": []
                 }
             ],
-            "desc": "Browser extensions and tools."
+            "desc": "Browser extensions, tools, infrastructure and training programs."
         },
         "videos": {
             "title": "Video Material & Demos",
@@ -1257,13 +1392,13 @@
         }
     },
     "writing": {
-        "sectionTitle": "Writing",
+        "sectionTitle": "Articles",
         "intro": "This section brings together the texts and publications written throughout my professional career, with code snippets, technical decisions and what went wrong — on technology, career and the work of those who build software.",
         "metaTitle": "Writing & publications — Pedro Conrad Jr",
         "metaDescription": "{{articles}} pieces on architecture, software engineering, Flutter and career, plus {{papers}} academic publications at computing events."
     },
     "writingPreview": {
-        "sectionTitle": "Writing",
+        "sectionTitle": "Articles",
         "intro": "Intellectual work on architecture, software engineering, and the work of those who build software.",
         "items": [
             {
@@ -1299,5 +1434,137 @@
         "intro": "This section highlights some of the main projects developed throughout my professional career, including institutional systems, mobile applications, and technical initiatives focused on architecture, integration, and scalability.",
         "metaTitle": "Work — Pedro Conrad Jr",
         "metaDescription": "The full catalogue of systems, apps and tools I have built: {{systems}} systems and apps, {{apps}} published in the stores, {{downloads}} downloads."
+    },
+    "education": {
+        "sectionTitle": "Education",
+        "intro": "Three steps at URCAMP, all in Computing.",
+        "entries": [
+            {
+                "degree": "Specialist in Higher Education Teaching",
+                "field": "Higher Education Teaching",
+                "org": "Universidade da Região da Campanha",
+                "period": "2004 — 2006"
+            },
+            {
+                "degree": "Bachelor's Degree in Computer Science",
+                "field": "Computer Science",
+                "org": "Universidade da Região da Campanha",
+                "period": "1998 — 2002"
+            },
+            {
+                "degree": "Technical Degree in Data Processing",
+                "field": "Data Processing",
+                "org": "Universidade da Região da Campanha",
+                "period": "1995 — 1997"
+            }
+        ]
+    },
+    "languages": {
+        "sectionTitle": "Languages",
+        "intro": "Languages I use at work and day to day.",
+        "items": [
+            {
+                "name": "Portuguese",
+                "level": "Native"
+            },
+            {
+                "name": "English",
+                "level": "Intermediate"
+            },
+            {
+                "name": "Spanish",
+                "level": "Elementary"
+            }
+        ]
+    },
+    "resume": {
+        "sectionTitle": "Resume",
+        "summary": [
+            "I focus my work on Information Systems and I am always looking for new challenges. I have been working with computers since 1996, when I was just building systems to learn something new.",
+            "Speaking of systems development, I worked on desktop projects in the early 2000s with Visual Basic and Delphi and, more recently, with C#. I built systems for web browsers with HTML, CSS, JavaScript and PHP, and I work with Flutter focused on mobile devices.",
+            "I also work managing teams, helping define development processes and software architecture, modeling databases, creating and reviewing technical and user documentation, evaluating tools and reviewing code.",
+            "Throughout my journey I can safely say that I consider myself an 'eternal apprentice', as I am always learning from organizations, their culture, technology and mainly, from people."
+        ],
+        "labels": {
+            "summaryTitle": "About me",
+            "experienceTitle": "Professional Experience",
+            "skillsTitle": "Skills",
+            "languagesTitle": "Languages",
+            "educationTitle": "Education",
+            "projectsTitle": "Project Portfolio",
+            "periodLabel": "Period",
+            "technologiesLabel": "Technologies",
+            "roleLabel": "Role",
+            "purposeLabel": "Purpose"
+        },
+        "projects": [
+            {
+                "name": "GURI — Gestão Unificada de Recursos Institucionais",
+                "period": "2012 — 2022",
+                "purpose": "Modular ERP system to manage the administrative resources of the higher education institution, operating across the most diverse areas, split into more than 50 modules.",
+                "stack": [
+                    "PHP",
+                    "IBM DB2",
+                    "CodeIgniter"
+                ],
+                "role": "Requirements Analyst, Module Manager, Developer, Documenter, Code and documentation reviewer"
+            },
+            {
+                "name": "Terminal RU — University Restaurant Service Terminal",
+                "period": "2016 — 2019",
+                "purpose": "Control terminal for the University Restaurants, including a communication library for a biometric access device and a remote update mechanism.",
+                "stack": [
+                    "PHP",
+                    "PostgreSQL",
+                    "CodeIgniter",
+                    "Bootstrap",
+                    "TCP/IP Sockets"
+                ],
+                "role": "Requirements Analyst, Developer"
+            },
+            {
+                "name": "Proficiency Examination System",
+                "period": "2012",
+                "purpose": "Manage registrations and fee payment for Language Proficiency Examinations.",
+                "stack": [
+                    "PHP",
+                    "MySQL",
+                    "CodeIgniter"
+                ],
+                "role": "Analyst, Lead Developer"
+            },
+            {
+                "name": "SGCE — Electronic Certificates Management System",
+                "period": "2010",
+                "purpose": "Issue, control and certify the validity of certificates for events held by the institution.",
+                "stack": [
+                    "PHP",
+                    "PostgreSQL",
+                    "CodeIgniter"
+                ],
+                "role": "Analyst, Lead Developer"
+            },
+            {
+                "name": "Terminal RU System Image",
+                "period": "2017 — 2019",
+                "purpose": "Creation and update of a preconfigured system image for disaster recovery.",
+                "stack": [
+                    "Ubuntu",
+                    "Shell Script",
+                    "PHP",
+                    "Bodhibuilder"
+                ],
+                "role": "Requirements Analyst, Script Developer"
+            },
+            {
+                "name": "Basic PHP Training",
+                "period": "2019",
+                "purpose": "Basic PHP training for new team members.",
+                "stack": [],
+                "role": "Instructor, Technical material author"
+            }
+        ],
+        "metaTitle": "Resume — Pedro Conrad Jr",
+        "metaDescription": "Full resume of Pedro Conrad Jr: over 30 years in software, experience at three universities, a Computing degree and a portfolio of projects."
     }
 }

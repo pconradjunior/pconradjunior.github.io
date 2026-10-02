@@ -55,6 +55,20 @@
                     "style": "color:#000;"
                 }
             ]
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / MySQL",
+            "title": "Proficiency Examination System",
+            "desc": "Sistema para gerenciar inscrições e pagamento de taxa em Provas de Proficiência em Idiomas.",
+            "links": []
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "Desenvolvimento Web",
+            "title": "Portal da URCAMP",
+            "desc": "Portal institucional da universidade, desenvolvido e mantido entre 2006 e 2009 junto com a equipe do Departamento de Comunicação.",
+            "links": []
         }
     ]
 }

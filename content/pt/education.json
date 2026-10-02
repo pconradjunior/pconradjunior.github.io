@@ -1,0 +1,24 @@
+{
+    "sectionTitle": "Formação",
+    "intro": "Três etapas na URCAMP, todas em Computação.",
+    "entries": [
+        {
+            "degree": "Especialista em Docência do Ensino Superior",
+            "field": "Docência do Ensino Superior",
+            "org": "Universidade da Região da Campanha",
+            "period": "2004 — 2006"
+        },
+        {
+            "degree": "Bacharelado em Informática",
+            "field": "Informática",
+            "org": "Universidade da Região da Campanha",
+            "period": "1998 — 2002"
+        },
+        {
+            "degree": "Curso Técnico em Processamento de Dados",
+            "field": "Processamento de Dados",
+            "org": "Universidade da Região da Campanha",
+            "period": "1995 — 1997"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 {
-    "sectionTitle": "Selected Work",
+    "sectionTitle": "Projects",
     "intro": "Five systems and initiatives that show the kind of problem I solve: domain complexity, incremental evolution, and technical decisions with an effect on institutional processes.",
     "items": [
         {
@@ -18,7 +18,8 @@
                     "label": "News",
                     "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
                 }
-            ]
+            ],
+            "caseStudy": "guri"
         },
         {
             "number": "02",

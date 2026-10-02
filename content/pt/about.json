@@ -1,37 +1,91 @@
 {
     "sectionTitle": "Sobre",
     "short": [
-        "Sou engenheiro de software e arquiteto de software com mais de 20 anos de experiência construindo e evoluindo sistemas complexos.",
+        "Sou engenheiro de software e arquiteto de software com mais de 30 anos de experiência construindo e evoluindo sistemas complexos.",
         "Meu trabalho abrange ERPs institucionais, APIs, bancos de dados, aplicativos mobile e práticas de engenharia de software.",
         "Atualmente na UNIPAMPA, atuando em sistemas institucionais e iniciativas técnicas."
     ],
     "readMore": "Leia mais sobre a minha trajetória",
     "paragraphs": [
-        "Sou profissional de Tecnologia da Informação com mais de 20 anos de experiência no desenvolvimento de sistemas web e aplicações mobile. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa), contribuindo diretamente para sistemas institucionais críticos.",
-        "Tenho forte atuação em arquitetura de software, modelagem de dados e definição de padrões de desenvolvimento. Entre 2016 e 2019 atuei na coordenação técnica de equipes, liderando projetos, organizando processos e capacitando desenvolvedores.",
-        "Minha experiência inclui o desenvolvimento de sistemas de grande porte, como ERPs com dezenas de módulos integrados, além de aplicações mobile modernas utilizando Flutter, sempre com foco em desempenho, escalabilidade e qualidade de código."
+        "Começo na computação em 1996 e trabalho com software desde então, o que soma mais de 30 anos. Atuo como Analista de Tecnologia da Informação na Universidade Federal do Pampa (Unipampa), contribuindo diretamente para sistemas institucionais críticos.",
+        "Tenho forte atuação em arquitetura de software, modelagem de dados e definição de padrões de desenvolvimento. Entre 2016 e 2019 atuei na coordenação técnica de equipes de desenvolvimento, liderando projetos, organizando processos e capacitando desenvolvedores.",
+        "Minha experiência inclui o desenvolvimento de sistemas de grande porte, como um ERP com mais de 50 módulos integrados, além de aplicações mobile modernas com Flutter. Comecei em desktop com Visual Basic e Delphi, passei por C#, e me tornei referência em desenvolvimento web com PHP e CodeIgniter."
     ],
     "stats": [
         {
-            "number": "20+",
-            "label": "Anos de Experiência"
+            "number": "50+",
+            "label": "Módulos de ERP"
         },
         {
-            "number": "50+",
-            "label": "Projetos Desenvolvidos"
+            "number": "{{systems}}",
+            "label": "Sistemas e aplicativos"
         },
         {
             "number": "{{downloads}}",
-            "label": "Downloads de Aplicativos"
+            "label": "Downloads de aplicativos"
         }
     ],
     "skills": [
-        "Arquitetura de software",
-        "Modelagem de dados",
-        "PHP / CodeIgniter",
-        "Flutter / Dart",
-        "Bancos de dados relacionais",
-        "Liderança técnica de equipes"
+        {
+            "group": "Análise de sistemas",
+            "items": [
+                "Análise e levantamento de requisitos",
+                "Modelagem de dados",
+                "Documentação técnica e de usuários",
+                "Avaliação técnica de ferramentas"
+            ]
+        },
+        {
+            "group": "Arquitetura e engenharia de software",
+            "items": [
+                "Arquitetura de software",
+                "Processos de desenvolvimento",
+                "Revisão de código",
+                "Documentação de sistemas"
+            ]
+        },
+        {
+            "group": "Desenvolvimento web",
+            "items": [
+                "PHP / CodeIgniter",
+                "HTML e CSS",
+                "JavaScript / jQuery"
+            ]
+        },
+        {
+            "group": "Bancos de dados",
+            "items": [
+                "IBM DB2",
+                "PostgreSQL",
+                "MySQL"
+            ]
+        },
+        {
+            "group": "Desenvolvimento de aplicativos móveis",
+            "items": [
+                "Flutter / Dart",
+                "Apache Cordova"
+            ]
+        },
+        {
+            "group": "Infraestrutura e versionamento",
+            "items": [
+                "Ubuntu Linux",
+                "Apache",
+                "Shell script",
+                "Git",
+                "Subversion"
+            ]
+        },
+        {
+            "group": "Gestão e treinamento",
+            "items": [
+                "Gerenciamento de projetos",
+                "Liderança técnica de equipes",
+                "Treinamento de times",
+                "Suporte a usuários"
+            ]
+        }
     ],
     "teaching": {
         "label": "Mentoria / Treinamento Técnico",
@@ -40,5 +94,5 @@
     },
     "capabilitiesTitle": "Competências",
     "metaTitle": "Sobre — Pedro Conrad Jr",
-    "metaDescription": "Mais de 20 anos de experiência em engenharia e arquitetura de software: sistemas institucionais, ERPs, APIs, bancos de dados e aplicações mobile na Unipampa."
+    "metaDescription": "Mais de 30 anos em engenharia e arquitetura de software: sistemas institucionais, ERPs, APIs, bancos de dados e aplicações mobile na Unipampa."
 }

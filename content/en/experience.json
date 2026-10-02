@@ -5,9 +5,17 @@
         {
             "org": "UNIPAMPA",
             "orgFull": "Universidade Federal do Pampa",
-            "role": "IT Analyst · Software Engineering & Architecture",
+            "role": "Information Technology Analyst · Software Engineering and Architecture",
             "period": "2010 — Present",
-            "summary": "I build and evolve the systems that institutional processes depend on: ERPs with over 50 modules, academic management systems, access control, and mobile applications published for Android and iOS. I worked in the technical coordination of development teams between January 2016 and July 2019, which included defining processes, standards, and criteria for reviewing code and documentation.",
+            "location": "Alegrete, Brazil",
+            "summary": "I build and evolve the systems institutional processes depend on: ERPs with over 50 modules, academic management systems, access control and published mobile applications.",
+            "responsibilities": [
+                "Software modeling",
+                "Documentation review",
+                "Web development with PHP",
+                "Systems documentation",
+                "Mobile application development with Cordova and Flutter"
+            ],
             "systems": [
                 {
                     "name": "GURI",
@@ -15,7 +23,7 @@
                 },
                 {
                     "name": "SisPPA",
-                    "desc": "Academic output management and scoring"
+                    "desc": "Academic production management and scoring"
                 },
                 {
                     "name": "App Unipampa",
@@ -28,6 +36,50 @@
                 {
                     "name": "Terminal RU",
                     "desc": "Biometric access at university restaurants"
+                }
+            ]
+        },
+        {
+            "org": "Technical coordination",
+            "orgFull": "Development teams · UNIPAMPA",
+            "role": "Development Team Coordinator",
+            "period": "2016 — 2019",
+            "location": "Alegrete, Brazil",
+            "summary": "I coordinated Unipampa's development teams between January 2016 and July 2019, which included defining processes, standards and criteria for code and documentation review.",
+            "responsibilities": [
+                "Defining development processes",
+                "Organizing and tracking projects",
+                "Technical training for developers",
+                "Code and documentation review"
+            ]
+        },
+        {
+            "org": "UFPel",
+            "orgFull": "Universidade Federal de Pelotas",
+            "role": "Information Technology Technician",
+            "period": "2009 — 2010",
+            "location": "Pelotas, Brazil",
+            "summary": "I developed web applications in PHP and administered and maintained the university's virtual learning environment.",
+            "responsibilities": [
+                "Web development with PHP",
+                "Moodle administration and maintenance"
+            ]
+        },
+        {
+            "org": "URCAMP",
+            "orgFull": "Universidade da Região da Campanha",
+            "role": "Professor and Web Developer",
+            "period": "2002 — 2009",
+            "location": "Bagé, Brazil",
+            "summary": "I worked in teaching and web development. Between 2006 and 2009 I was responsible for developing and maintaining the university portal, working with the Communication Department team.",
+            "responsibilities": [
+                "Teaching programming, computer architecture, artificial intelligence and databases",
+                "Development and maintenance of the university portal (2006 — 2009)"
+            ],
+            "systems": [
+                {
+                    "name": "URCAMP Portal",
+                    "desc": "The university's institutional portal"
                 }
             ]
         }

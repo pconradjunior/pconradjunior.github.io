@@ -1,5 +1,5 @@
 {
-    "sectionTitle": "Projetos selecionados",
+    "sectionTitle": "Projetos",
     "intro": "Cinco sistemas e iniciativas que mostram o tipo de problema que eu resolvo: complexidade de domínio, evolução incremental e decisões técnicas com efeito em processos institucionais.",
     "items": [
         {
@@ -18,7 +18,8 @@
                     "label": "Notícia",
                     "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
                 }
-            ]
+            ],
+            "caseStudy": "guri"
         },
         {
             "number": "02",

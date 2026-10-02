@@ -5,9 +5,17 @@
         {
             "org": "UNIPAMPA",
             "orgFull": "Universidade Federal do Pampa",
-            "role": "Analista de TI · Engenharia e Arquitetura de Software",
+            "role": "Analista de Tecnologia da Informação · Engenharia e Arquitetura de Software",
             "period": "2010 — Atual",
-            "summary": "Desenvolvo e evoluo os sistemas de que os processos institucionais dependem: ERPs com mais de 50 módulos, sistemas de gestão acadêmica, controle de acesso e aplicativos mobile publicados. Atuei na coordenação técnica de equipes de desenvolvimento entre janeiro de 2016 e julho de 2019, o que incluiu definir processos, padrões e critérios de revisão de código e documentação.",
+            "location": "Alegrete, Brasil",
+            "summary": "Desenvolvo e evoluo os sistemas de que os processos institucionais dependem: ERPs com mais de 50 módulos, sistemas de gestão acadêmica, controle de acesso e aplicativos mobile publicados.",
+            "responsibilities": [
+                "Modelagem de software",
+                "Revisão de documentação",
+                "Desenvolvimento web com PHP",
+                "Documentação de sistemas",
+                "Desenvolvimento de aplicativos móveis com Cordova e Flutter"
+            ],
             "systems": [
                 {
                     "name": "GURI",
@@ -28,6 +36,50 @@
                 {
                     "name": "Terminal RU",
                     "desc": "Acesso com biometria nos restaurantes universitários"
+                }
+            ]
+        },
+        {
+            "org": "Coordenação técnica",
+            "orgFull": "Equipes de desenvolvimento · UNIPAMPA",
+            "role": "Coordenador de equipes de desenvolvimento",
+            "period": "2016 — 2019",
+            "location": "Alegrete, Brasil",
+            "summary": "Atuei na coordenação técnica das equipes de desenvolvimento da Unipampa entre janeiro de 2016 e julho de 2019, o que incluiu definir processos, padrões e critérios de revisão de código e documentação.",
+            "responsibilities": [
+                "Definição de processos de desenvolvimento",
+                "Organização e acompanhamento de projetos",
+                "Capacitação técnica de desenvolvedores",
+                "Revisão de código e documentação"
+            ]
+        },
+        {
+            "org": "UFPel",
+            "orgFull": "Universidade Federal de Pelotas",
+            "role": "Técnico de Tecnologia da Informação",
+            "period": "2009 — 2010",
+            "location": "Pelotas, Brasil",
+            "summary": "Desenvolvi aplicações web em PHP e atuei na administração e manutenção do ambiente virtual de aprendizagem da universidade.",
+            "responsibilities": [
+                "Desenvolvimento web com PHP",
+                "Administração e manutenção do Moodle"
+            ]
+        },
+        {
+            "org": "URCAMP",
+            "orgFull": "Universidade da Região da Campanha",
+            "role": "Professor e Desenvolvedor Web",
+            "period": "2002 — 2009",
+            "location": "Bagé, Brasil",
+            "summary": "Atuei na docência e no desenvolvimento web. Entre 2006 e 2009 fui responsável por desenvolver e manter o portal da universidade, atuando com a equipe do Departamento de Comunicação.",
+            "responsibilities": [
+                "Docência em programação, arquitetura de computadores, inteligência artificial e banco de dados",
+                "Desenvolvimento e manutenção do portal da universidade (2006 — 2009)"
+            ],
+            "systems": [
+                {
+                    "name": "Portal da URCAMP",
+                    "desc": "Portal institucional da universidade"
                 }
             ]
         }

@@ -1,0 +1,24 @@
+{
+    "sectionTitle": "Education",
+    "intro": "Three steps at URCAMP, all in Computing.",
+    "entries": [
+        {
+            "degree": "Specialist in Higher Education Teaching",
+            "field": "Higher Education Teaching",
+            "org": "Universidade da Região da Campanha",
+            "period": "2004 — 2006"
+        },
+        {
+            "degree": "Bachelor's Degree in Computer Science",
+            "field": "Computer Science",
+            "org": "Universidade da Região da Campanha",
+            "period": "1998 — 2002"
+        },
+        {
+            "degree": "Technical Degree in Data Processing",
+            "field": "Data Processing",
+            "org": "Universidade da Região da Campanha",
+            "period": "1995 — 1997"
+        }
+    ]
+}

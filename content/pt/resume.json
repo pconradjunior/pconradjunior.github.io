@@ -1,0 +1,90 @@
+{
+    "sectionTitle": "Currículo",
+    "summary": [
+        "Desenvolvo meu trabalho com foco em Sistemas de Informação e estou sempre em busca de novos desafios. Trabalho com computação desde 1996, quando estava apenas desenvolvendo sistemas para aprender algo novo.",
+        "Falo de desenvolvimento de sistemas: trabalhei em projetos desktop no início dos anos 2000 com Visual Basic e Delphi e, mais recentemente, com C#. Construí sistemas para navegadores web com HTML, CSS, JavaScript e PHP, e trabalho com Flutter focado em dispositivos móveis.",
+        "Também atuo gerenciando equipes, ajudando na definição de processos de desenvolvimento e arquitetura de software, modelando bancos de dados, criando e revisando documentação técnica e de usuários, avaliando ferramentas e revisando código.",
+        "Ao longo da minha jornada posso dizer com segurança que me considero um 'eterno aprendiz', pois estou sempre aprendendo com as organizações, sua cultura, tecnologia e principalmente, com as pessoas."
+    ],
+    "labels": {
+        "summaryTitle": "Sobre mim",
+        "experienceTitle": "Experiência profissional",
+        "skillsTitle": "Habilidades",
+        "languagesTitle": "Idiomas",
+        "educationTitle": "Formação",
+        "projectsTitle": "Portfólio de projetos",
+        "periodLabel": "Período",
+        "technologiesLabel": "Tecnologias",
+        "roleLabel": "Papel",
+        "purposeLabel": "Finalidade"
+    },
+    "projects": [
+        {
+            "name": "GURI — Gestão Unificada de Recursos Institucionais",
+            "period": "2012 — 2022",
+            "purpose": "Sistema ERP modular para gerenciar recursos da administração da instituição de ensino, com atuação nas mais diversas áreas, divididas entre mais de 50 módulos.",
+            "stack": [
+                "PHP",
+                "IBM DB2",
+                "CodeIgniter"
+            ],
+            "role": "Analista de Requisitos, Gerente de Módulo, Desenvolvedor, Documentador, Revisor de código e documentação"
+        },
+        {
+            "name": "Terminal RU — Terminal de Atendimento de Restaurante Universitário",
+            "period": "2016 — 2019",
+            "purpose": "Terminal de controle para os Restaurantes Universitários, com biblioteca de comunicação com dispositivo biométrico de controle de acesso e mecanismo de atualização remota.",
+            "stack": [
+                "PHP",
+                "PostgreSQL",
+                "CodeIgniter",
+                "Bootstrap",
+                "Sockets TCP/IP"
+            ],
+            "role": "Analista de Requisitos, Desenvolvedor"
+        },
+        {
+            "name": "Proficiency Examination System",
+            "period": "2012",
+            "purpose": "Gerenciar inscrições e pagamento de taxa em Provas de Proficiência em Idiomas.",
+            "stack": [
+                "PHP",
+                "MySQL",
+                "CodeIgniter"
+            ],
+            "role": "Analista, Desenvolvedor principal"
+        },
+        {
+            "name": "SGCE — Sistema de Gestão de Certificados Eletrônicos",
+            "period": "2010",
+            "purpose": "Emitir, controlar e atestar a validade de certificados de eventos realizados pela instituição.",
+            "stack": [
+                "PHP",
+                "PostgreSQL",
+                "CodeIgniter"
+            ],
+            "role": "Analista, Desenvolvedor principal"
+        },
+        {
+            "name": "Imagem de Sistema do Terminal RU",
+            "period": "2017 — 2019",
+            "purpose": "Criação e atualização de imagem de sistema pré-configurada para recuperação de desastres.",
+            "stack": [
+                "Ubuntu",
+                "Shell Script",
+                "PHP",
+                "Bodhibuilder"
+            ],
+            "role": "Analista de Requisitos, Desenvolvedor de script"
+        },
+        {
+            "name": "Treinamento Básico PHP",
+            "period": "2019",
+            "purpose": "Treinamento básico de PHP para novos membros do time.",
+            "stack": [],
+            "role": "Instrutor, Elaboração de material técnico"
+        }
+    ],
+    "metaTitle": "Currículo — Pedro Conrad Jr",
+    "metaDescription": "Currículo completo de Pedro Conrad Jr: mais de 30 anos em software, experiência em três universidades, formação em Computação e portfólio de projetos."
+}

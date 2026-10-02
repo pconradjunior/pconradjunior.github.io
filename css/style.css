@@ -1673,6 +1673,199 @@ footer {
     color: var(--text-primary);
 }
 
+.exp-location {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* As responsabilidades vêm antes dos sistemas: o que a pessoa fez, e depois
+   no que ela trabalhou. */
+.exp-responsibilities {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.exp-responsibilities li {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+}
+
+/* --- /about/: números, competências por grupo, formação e idiomas --- */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    padding: 2.25rem 0;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.skill-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.skill-group-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent-color);
+}
+
+.entry-list {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.entry-item {
+    padding: 0.9rem 1.1rem;
+    background: var(--card-hover);
+    border-radius: 8px;
+}
+
+.entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.entry-title {
+    font-weight: 600;
+}
+
+.entry-period {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.entry-org {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.language-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.language-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+}
+
+.language-level {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* --- Currículo:projects no formato período/finalidade/tecnologias/papel --- */
+.resume-project {
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--glass-border);
+}
+
+.resume-project:first-of-type {
+    border-top: 0;
+}
+
+.resume-project-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+}
+
+.resume-project-meta {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+}
+
+.resume-project-meta > div {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+}
+
+.resume-project-meta dt {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.resume-project-meta dd {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+    .resume-project-meta > div {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+    }
+}
+
+/* Impressão: a página do currículo é o entregável em papel. Esconde o que
+   não pertence ao documento e remove o fundo escuro do tema. */
+@media print {
+    body,
+    .site-header,
+    .site-footer,
+    .lang-toggle,
+    .theme-switcher,
+    .section-cta {
+        display: none !important;
+    }
+
+    #cv-page {
+        padding: 0;
+    }
+
+    #cv-page .container {
+        max-width: none;
+        padding: 0;
+    }
+
+    #cv-page h2.section-title {
+        font-size: 1.1rem;
+        page-break-after: avoid;
+    }
+
+    .exp-entry,
+    .resume-project,
+    .entry-item,
+    .language-list li {
+        page-break-inside: avoid;
+    }
+}
+
 /* --- Engenharia: a afirmação vem antes da grade --- */
 .engineering-statement {
     font-family: var(--font-heading);

@@ -1,0 +1,119 @@
+{
+    "slug": "guri",
+    "order": 1,
+    "title": "GURI — Gestão Unificada de Recursos Institucionais",
+    "kind": "ERP institucional",
+    "summary": "ERP modular que administra os recursos administrativos da Universidade Federal do Pampa, com mais de 50 módulos cobrindo áreas distintas da instituição.",
+    "period": "2012 — 2022",
+    "status": "active",
+    "stack": [
+        "PHP",
+        "CodeIgniter",
+        "IBM DB2"
+    ],
+    "sections": [
+        {
+            "id": "context",
+            "title": "Contexto",
+            "paragraphs": [
+                "O GURI é o ERP institucional da Universidade Federal do Pampa. A documentação do projeto registra desenvolvimento entre 2012 e 2022, com a finalidade de gerenciar os recursos da administração da instituição de ensino em suas mais diversas áreas, distribuídas entre mais de 50 módulos.",
+                "O software não está disponível publicamente: tem registro de programa de computador, e é isso que a notícia da universidade documenta."
+            ]
+        },
+        {
+            "id": "problem",
+            "title": "O problema",
+            "paragraphs": [
+                "Administrar uma instituição de ensino significa atender, ao mesmo tempo, áreas muito distintas: biblioteca, patrimônio, compras, cobrança, ouvidoria, eventos institucionais, protocolo, segurança, recuperação de senhas. São processos diferentes, com dados e usuários diferentes.",
+                "Some-se a isso a escala. São mais de 50 módulos, o que é incomputável como uma entrega única — tanto no prazo quanto na ordem em que as demandas aparecem. Um desenho modular é o que permite que cada área avance no seu tempo, e o sistema precisa sustentar essa modularidade ao longo de dez anos de uso, não apenas na primeira entrega.",
+                "Este estudo registra o que a documentação do projeto comprova: a finalidade do sistema, as tecnologias e o papel exercido em cada módulo. O que existia antes, os critérios que orientaram a arquitetura e as decisões técnicas de cada módulo não estão registrados e, por isso, não são afirmados aqui."
+            ]
+        },
+        {
+            "id": "solution",
+            "title": "A solução",
+            "paragraphs": [
+                "O GURI foi construído sobre PHP com o framework CodeIgniter, com IBM DB2 como banco de dados. A modularidade é a espinha dorsal do sistema: os módulos documentados são unidades independentes, cada uma com sua finalidade e seu próprio papel de responsabilidade. Alguns tiveram gerenciamento de módulo e análise de requisitos; outros ficaram a cargo de uma funcionalidade específica.",
+                "A cobertura vai do núcleo institucional — Portal, Segurança e Auditoria Interna — a rotinas muito específicas, como Biblioteca, Patrimônio, Compras e Cobrança. Há ainda integrações para fora: importação de candidatos a vagas vindos do SISU, recuperação de senha e criação de aliases de e-mail, e comunicação com terminais que autenticam por impressão digital nos restaurantes universitários.",
+                "Dois grupos de módulos revelam decisões de projeto que valem destaque. O módulo Portal concentra o login e a auditoria de ações, e o módulo Segurança controla permissões internas e audita ações de usuários — as duas responsabilidades caminham juntas desde a base. E, ao lado de Relatórios, existe Painéis de Relatórios, cujo propósito declarado é permitir que analistas cadastrem dashboards visualizados em site cliente, sem intervenção de desenvolvimento."
+            ],
+            "bullets": [
+                "Auditoria Interna — controlar os processos de auditoria da instituição (Gerente de Módulo, Analista de Requisitos)",
+                "Biblioteca — controlar empréstimos de livros e emissão de fichas de catalogação (Desenvolvedor da funcionalidade)",
+                "Emissão de Ficha Catalográfica — emissão de fichas de catalogação a partir dos empréstimos registrados (Desenvolvedor da funcionalidade)",
+                "Cobrança — gerar guias para pagamento de taxas (Gerente de Módulo)",
+                "Compras — gerenciar requisições de compras dos setores (Desenvolvedor)",
+                "Eventos Institucionais — gerenciar inscrições de participantes, submissão de artigos, processos de avaliação e geração de proceedings (Analista de Requisitos, Desenvolvedor principal, Gerente de Módulo)",
+                "Extrator de Produção Científica — obter dados de produção científica de fonte externa, compilar e gerar relatórios de produção de pesquisadores (Analista de Requisitos, Desenvolvedor)",
+                "Newsletter — criar correspondência eletrônica para envio a listas de usuários (Analista, Desenvolvedor)",
+                "Ouvidoria — receber manifestações de usuários e da comunidade e gerenciar o atendimento (Gerente de Módulo, Analista de Requisitos)",
+                "Painéis de Relatórios — cadastrar dashboards de relatório para visualização em site cliente (Analista de Requisitos, Desenvolvedor principal)",
+                "Patrimônio — gerenciar ativos por cadastro, transferências, empréstimos e manutenção de inventário (Analista e Desenvolvedor da funcionalidade de Inventário)",
+                "Portal — módulo principal, com login e auditoria de ações (Analista de Requisitos, Desenvolvedor)",
+                "Protocolo — registrar e controlar o trâmite interno de documentação (Analista de Requisitos, Desenvolvedor)",
+                "Relatórios — criar e emitir relatórios padronizados ou customizados, produzidos pelos analistas e disponibilizados aos usuários (Analista de Requisitos, Desenvolvedor)",
+                "Restaurante Universitário — controlar informações e estado dos restaurantes universitários, com comunicação com os terminais e autenticação por impressão digital (Desenvolvedor)",
+                "Segurança — controlar permissões internas do sistema e auditar as ações dos usuários (Analista, Desenvolvedor)",
+                "SISU — permitir a importação de dados de candidatos a vagas e facilitar o processo de matrícula (Analista de Requisitos, Desenvolvedor)",
+                "Suporte a Recuperação de Senhas — gerenciar pedidos de recuperação de senha e criação de aliases de e-mail (Desenvolvedor principal, Frontend)",
+                "Usuários Externos — permitir o cadastro de contas de usuários externos, exceto alunos e funcionários com vínculo direto (Analista de Requisitos, Desenvolvedor, Documentador)"
+            ]
+        },
+        {
+            "id": "role",
+            "title": "Meu papel",
+            "paragraphs": [
+                "Atuei no GURI em cinco papéis distintos: Analista de Requisitos, Gerente de Módulo, Desenvolvedor, Documentador e Revisor de código e documentação. Nenhum módulo foi apenas entregue — a responsabilidade ia do levantamento da necessidade à revisão do que já estava em produção.",
+                "O histórico de coordenação técnica se sobrepõe ao do GURI. Entre janeiro de 2016 e julho de 2019 atuei na coordenação das equipes de desenvolvimento, período em que o ERP estava em pleno desenvolvimento. Definir processos, padrões e critérios de revisão de código e documentação não foi exercício teórico: era o que sustentava um sistema com mais de 50 módulos e mais de uma década de manutenção.",
+                "A concentração de papéis mostra o desenho da equipe, não uma sucessão de cargos: parte do trabalho consistia em entender o domínio o suficiente para especificá-lo, parte em implementá-lo, e parte em garantir que o que já existisse continuasse consistente."
+            ]
+        },
+        {
+            "id": "limits",
+            "title": "Limites deste estudo",
+            "paragraphs": [
+                "Os números abaixo são estruturais — contam módulos, anos e papéis. Não há métrica de impacto operacional no material consultado: nada registra quantos usuários usam o sistema, quanto tempo economiza um processo ou qual era o estado anterior que ele substituiu.",
+                "Não há código nem ambiente público para demonstrar. Por isso este estudo não traz captura de tela nem exemplo de implementação, e qualquer afirmação sobre desempenho, adoção ou retorno de investimento seria inventada."
+            ]
+        }
+    ],
+    "outcomes": [
+        {
+            "number": "50+",
+            "label": "módulos no ERP"
+        },
+        {
+            "number": "19",
+            "label": "módulos documentados com finalidade e papel"
+        },
+        {
+            "number": "10",
+            "label": "anos de desenvolvimento documentado (2012 — 2022)"
+        },
+        {
+            "number": "5",
+            "label": "papéis exercidos no projeto"
+        }
+    ],
+    "evidence": [
+        {
+            "icon": "fa fa-newspaper",
+            "label": "Notícia sobre o registro de programa de computador",
+            "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+        }
+    ],
+    "related": [
+        {
+            "title": "Catálogo completo de projetos",
+            "href": "/work/"
+        },
+        {
+            "title": "Currículo — GURI na experiência e nos projetos",
+            "href": "/cv/"
+        },
+        {
+            "title": "SGCE — Sistema de Gestão de Certificados Eletrônicos (WTICIFES 2011)",
+            "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14"
+        }
+    ]
+}

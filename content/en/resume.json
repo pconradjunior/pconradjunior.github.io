@@ -1,0 +1,90 @@
+{
+    "sectionTitle": "Resume",
+    "summary": [
+        "I focus my work on Information Systems and I am always looking for new challenges. I have been working with computers since 1996, when I was just building systems to learn something new.",
+        "Speaking of systems development, I worked on desktop projects in the early 2000s with Visual Basic and Delphi and, more recently, with C#. I built systems for web browsers with HTML, CSS, JavaScript and PHP, and I work with Flutter focused on mobile devices.",
+        "I also work managing teams, helping define development processes and software architecture, modeling databases, creating and reviewing technical and user documentation, evaluating tools and reviewing code.",
+        "Throughout my journey I can safely say that I consider myself an 'eternal apprentice', as I am always learning from organizations, their culture, technology and mainly, from people."
+    ],
+    "labels": {
+        "summaryTitle": "About me",
+        "experienceTitle": "Professional Experience",
+        "skillsTitle": "Skills",
+        "languagesTitle": "Languages",
+        "educationTitle": "Education",
+        "projectsTitle": "Project Portfolio",
+        "periodLabel": "Period",
+        "technologiesLabel": "Technologies",
+        "roleLabel": "Role",
+        "purposeLabel": "Purpose"
+    },
+    "projects": [
+        {
+            "name": "GURI — Gestão Unificada de Recursos Institucionais",
+            "period": "2012 — 2022",
+            "purpose": "Modular ERP system to manage the administrative resources of the higher education institution, operating across the most diverse areas, split into more than 50 modules.",
+            "stack": [
+                "PHP",
+                "IBM DB2",
+                "CodeIgniter"
+            ],
+            "role": "Requirements Analyst, Module Manager, Developer, Documenter, Code and documentation reviewer"
+        },
+        {
+            "name": "Terminal RU — University Restaurant Service Terminal",
+            "period": "2016 — 2019",
+            "purpose": "Control terminal for the University Restaurants, including a communication library for a biometric access device and a remote update mechanism.",
+            "stack": [
+                "PHP",
+                "PostgreSQL",
+                "CodeIgniter",
+                "Bootstrap",
+                "TCP/IP Sockets"
+            ],
+            "role": "Requirements Analyst, Developer"
+        },
+        {
+            "name": "Proficiency Examination System",
+            "period": "2012",
+            "purpose": "Manage registrations and fee payment for Language Proficiency Examinations.",
+            "stack": [
+                "PHP",
+                "MySQL",
+                "CodeIgniter"
+            ],
+            "role": "Analyst, Lead Developer"
+        },
+        {
+            "name": "SGCE — Electronic Certificates Management System",
+            "period": "2010",
+            "purpose": "Issue, control and certify the validity of certificates for events held by the institution.",
+            "stack": [
+                "PHP",
+                "PostgreSQL",
+                "CodeIgniter"
+            ],
+            "role": "Analyst, Lead Developer"
+        },
+        {
+            "name": "Terminal RU System Image",
+            "period": "2017 — 2019",
+            "purpose": "Creation and update of a preconfigured system image for disaster recovery.",
+            "stack": [
+                "Ubuntu",
+                "Shell Script",
+                "PHP",
+                "Bodhibuilder"
+            ],
+            "role": "Requirements Analyst, Script Developer"
+        },
+        {
+            "name": "Basic PHP Training",
+            "period": "2019",
+            "purpose": "Basic PHP training for new team members.",
+            "stack": [],
+            "role": "Instructor, Technical material author"
+        }
+    ],
+    "metaTitle": "Resume — Pedro Conrad Jr",
+    "metaDescription": "Full resume of Pedro Conrad Jr: over 30 years in software, experience at three universities, a Computing degree and a portfolio of projects."
+}

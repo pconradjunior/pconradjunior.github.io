@@ -7,6 +7,7 @@
  *     pt/
  *       meta.json  nav.json  hero.json  metrics.json  selectedWork.json
  *       experience.json  engineering.json  about.json  contact.json
+ *       education.json  languages.json  resume.json
  *       work.json  writing.json  writingPreview.json  caseStudy.json
  *       ui.json                    rótulos soltos: tema, rodapé, modal
  *       catalog/                   um arquivo por grupo do catálogo
@@ -32,6 +33,9 @@ const SECTIONS = [
   ['experience', 'experience.json'],
   ['engineering', 'engineering.json'],
   ['about', 'about.json'],
+  ['education', 'education.json'],
+  ['languages', 'languages.json'],
+  ['resume', 'resume.json'],
   ['contact', 'contact.json'],
   ['work', 'work.json'],
   ['writing', 'writing.json'],

@@ -74,6 +74,42 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pconradjunior.github.io/about/"/>
   </url>
   <url>
+    <loc>https://pconradjunior.github.io/cv/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/cv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/cv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pconradjunior.github.io/cv/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/en/cv/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/cv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/cv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pconradjunior.github.io/cv/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/work/guri/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/work/guri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/work/guri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pconradjunior.github.io/work/guri/"/>
+  </url>
+  <url>
+    <loc>https://pconradjunior.github.io/en/work/guri/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://pconradjunior.github.io/work/guri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pconradjunior.github.io/en/work/guri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pconradjunior.github.io/work/guri/"/>
+  </url>
+  <url>
     <loc>https://pconradjunior.github.io/article_algoritmos.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>

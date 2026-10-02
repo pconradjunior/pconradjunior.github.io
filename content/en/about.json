@@ -1,24 +1,24 @@
 {
     "sectionTitle": "About",
     "short": [
-        "I am a software engineer and architect with over 20 years of experience building and evolving complex software systems.",
+        "I am a software engineer and architect with over 30 years of experience building and evolving complex software systems.",
         "My work spans institutional ERPs, APIs, databases, mobile applications and software engineering practices.",
         "I currently work at UNIPAMPA, contributing to institutional systems and technical initiatives."
     ],
     "readMore": "Read more about my experience",
     "paragraphs": [
-        "I am an Information Technology professional with over 20 years of experience in web systems and mobile application development. Currently, I work as an IT Analyst at Universidade Federal do Pampa (Unipampa), contributing directly to critical institutional systems.",
-        "I have strong experience in software architecture, data modeling, and development standards definition. Between 2016 and 2019, I worked in a technical leadership role, coordinating teams, leading projects, organizing processes, and mentoring developers.",
-        "My background includes the development of large-scale systems, such as ERPs with dozens of integrated modules, as well as modern mobile applications using Flutter, always focused on performance, scalability, and code quality."
+        "I started computing in 1996 and have worked with software ever since, which adds up to over 30 years. I work as an Information Technology Analyst at Universidade Federal do Pampa (Unipampa), contributing directly to critical institutional systems.",
+        "I have strong experience in software architecture, data modeling, and development standards definition. Between 2016 and 2019, I coordinated development teams, leading projects, organizing processes, and mentoring developers.",
+        "My background includes large-scale systems, such as an ERP with over 50 integrated modules, as well as modern mobile applications using Flutter. I started on the desktop with Visual Basic and Delphi, moved on to C#, and became a reference in web development with PHP and CodeIgniter."
     ],
     "stats": [
         {
-            "number": "20+",
-            "label": "Years of Experience"
+            "number": "50+",
+            "label": "ERP Modules"
         },
         {
-            "number": "50+",
-            "label": "Projects Delivered"
+            "number": "{{systems}}",
+            "label": "Systems and apps"
         },
         {
             "number": "{{downloads}}",
@@ -26,12 +26,66 @@
         }
     ],
     "skills": [
-        "Software architecture",
-        "Data modeling",
-        "PHP / CodeIgniter",
-        "Flutter / Dart",
-        "Relational databases",
-        "Team technical leadership"
+        {
+            "group": "Systems Analysis",
+            "items": [
+                "Requirements analysis and gathering",
+                "Data modeling",
+                "Technical and user documentation",
+                "Technical tool evaluation"
+            ]
+        },
+        {
+            "group": "Software Architecture and Engineering",
+            "items": [
+                "Software architecture",
+                "Development processes",
+                "Code review",
+                "Systems documentation"
+            ]
+        },
+        {
+            "group": "Web Development",
+            "items": [
+                "PHP / CodeIgniter",
+                "HTML and CSS",
+                "JavaScript / jQuery"
+            ]
+        },
+        {
+            "group": "Databases",
+            "items": [
+                "IBM DB2",
+                "PostgreSQL",
+                "MySQL"
+            ]
+        },
+        {
+            "group": "Mobile Application Development",
+            "items": [
+                "Flutter / Dart",
+                "Apache Cordova"
+            ]
+        },
+        {
+            "group": "Infrastructure and Versioning",
+            "items": [
+                "Ubuntu Linux",
+                "Apache",
+                "Shell script",
+                "Git",
+                "Subversion"
+            ]
+        },
+        {
+            "group": "Management and Training",
+            "items": [
+                "Project management",
+                "Team technical leadership",
+                "Team training",
+                "User support"
+            ]
+        }
     ],
     "teaching": {
         "label": "Mentoring / Training",
@@ -40,5 +94,5 @@
     },
     "capabilitiesTitle": "Capabilities",
     "metaTitle": "About — Pedro Conrad Jr",
-    "metaDescription": "Over 20 years of software engineering and architecture experience: institutional systems, ERPs, APIs, databases and mobile applications at Unipampa."
+    "metaDescription": "Over 30 years of software engineering and architecture experience: institutional systems, ERPs, APIs, databases and mobile applications at Unipampa."
 }

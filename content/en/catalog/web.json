@@ -55,6 +55,20 @@
                     "style": "color:#000;"
                 }
             ]
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / MySQL",
+            "title": "Proficiency Examination System",
+            "desc": "System to manage registrations and fee payment for Language Proficiency Examinations.",
+            "links": []
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "Web Development",
+            "title": "URCAMP Portal",
+            "desc": "The university's institutional portal, developed and maintained between 2006 and 2009 with the Communication Department team.",
+            "links": []
         }
     ]
 }

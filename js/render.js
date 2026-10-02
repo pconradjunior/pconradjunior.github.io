@@ -14,8 +14,8 @@ export const SITE = {
   author: 'Pedro Conrad Jr',
   email: 'pconradjunior@gmail.com',
   cv: {
-    pt: '/files/curriculo_completo.pdf',
-    en: '/files/full_resume.pdf'
+    pt: '/cv/',
+    en: '/en/cv/'
   },
   social: {
     github: 'https://github.com/pconradjunior',
@@ -42,10 +42,20 @@ export const PAGES = [
   { key: 'home', dir: '', pt: '/', en: '/en/' },
   { key: 'work', dir: 'work', pt: '/work/', en: '/en/work/' },
   { key: 'writing', dir: 'writing', pt: '/writing/', en: '/en/writing/' },
-  { key: 'about', dir: 'about', pt: '/about/', en: '/en/about/' }
+  { key: 'about', dir: 'about', pt: '/about/', en: '/en/about/' },
+  { key: 'cv', dir: 'cv', pt: '/cv/', en: '/en/cv/' }
 ];
 
 export const PAGE_BY_KEY = Object.fromEntries(PAGES.map(p => [p.key, p]));
+
+/**
+ * Chave da página → chave da seção de conteúdo. São iguais em quase todo caso,
+ * mas o currículo mora em `resume` e a rota é /cv/ — sem este mapa, head()
+ * buscaria `d.cv`, que não existe, e cairia no título da home.
+ */
+const PAGE_CONTENT_KEY = { cv: 'resume' };
+
+export const pageKey = key => PAGE_CONTENT_KEY[key] ?? key;
 
 /* ─────────────────────────────────────────────────────────────
    case studies
@@ -374,12 +384,38 @@ ${filters}
         </section>`;
 }
 
+/**
+ * Uma entrada da linha do tempo profissional. `location`, `responsibilities`
+ * e `systems` são opcionais — nem toda entrada tem os três, e as entradas sem
+ * sistemas não devem renderizar uma lista vazia.
+ */
+function expEntry(x) {
+  return `<div class="exp-entry">
+              <div class="exp-head">
+                <div>
+                  <h3 class="exp-org">${esc(x.org)} <span class="exp-org-full">— ${esc(x.orgFull)}</span></h3>
+                  <p class="exp-role">${esc(x.role)}</p>
+                  ${x.location ? `<p class="exp-location">${esc(x.location)}</p>` : ''}
+                </div>
+                <span class="exp-period">${esc(x.period)}</span>
+              </div>
+              <p class="exp-summary">${esc(x.summary)}</p>
+              ${(x.responsibilities ?? []).length
+                ? `<ul class="exp-responsibilities" role="list">${x.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>`
+                : ''}
+              ${(x.systems ?? []).length
+                ? `<ul class="exp-systems" role="list">${x.systems.map(s => `<li><strong>${esc(s.name)}</strong> — ${esc(s.desc)}</li>`).join('')}</ul>`
+                : ''}
+            </div>`;
+}
+
 export function renderPage(d, page) {
   if (page.kind === 'case') return renderCaseStudy(d, page.cs);
   if (page.key === 'work' || page.key === 'writing') {
     return `<main>${renderCatalog(d, page.key)}</main>`;
   }
   if (page.key === 'about') return renderAbout(d);
+  if (page.key === 'cv') return renderResume(d);
   return renderHome(d);
 }
 
@@ -450,19 +486,7 @@ export function renderHome(d) {
           <div class="container">
             <h2 class="section-title">${esc(d.experience.sectionTitle)}</h2>
             <p class="section-intro centered">${esc(d.experience.intro)}</p>
-            ${d.experience.entries.map(x => `<div class="exp-entry">
-              <div class="exp-head">
-                <div>
-                  <h3 class="exp-org">${esc(x.org)} <span class="exp-org-full">— ${esc(x.orgFull)}</span></h3>
-                  <p class="exp-role">${esc(x.role)}</p>
-                </div>
-                <span class="exp-period">${esc(x.period)}</span>
-              </div>
-              <p class="exp-summary">${esc(x.summary)}</p>
-              <ul class="exp-systems" role="list">
-                ${x.systems.map(s => `<li><strong>${esc(s.name)}</strong> — ${esc(s.desc)}</li>`).join('')}
-              </ul>
-            </div>`).join('')}
+            ${d.experience.entries.map(expEntry).join('\n            ')}
           </div>
         </section>
 
@@ -620,13 +644,106 @@ export function renderAbout(d) {
               ${a.paragraphs.map(t => `<p>${esc(t)}</p>`).join('\n              ')}
               <p class="teaching"><strong>${esc(a.teaching.label)}:</strong> ${esc(a.teaching.title)} — ${esc(a.teaching.desc)}</p>
             </div>
+            <div class="about-stats">
+              ${a.stats.map(s => `<div class="metric">
+                <span class="metric-number">${fill(s.number, d)}</span>
+                <span class="metric-label">${esc(s.label)}</span>
+              </div>`).join('\n              ')}
+            </div>
             <h2 class="section-title">${esc(a.capabilitiesTitle)}</h2>
-            <ul class="skill-list skill-list-wide" role="list">${a.skills.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+            <div class="skill-groups">
+              ${a.skills.map(g => `<div class="skill-group">
+                <h3 class="skill-group-title">${esc(g.group)}</h3>
+                <ul class="skill-list skill-list-wide" role="list">${g.items.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+              </div>`).join('\n              ')}
+            </div>
+            <h2 class="section-title">${esc(d.education.sectionTitle)}</h2>
+            <p class="section-intro">${esc(d.education.intro)}</p>
+            <ul class="entry-list" role="list">
+              ${d.education.entries.map(e => `<li class="entry-item">
+                <div class="entry-head">
+                  <span class="entry-title">${esc(e.degree)}</span>
+                  <span class="entry-period">${esc(e.period)}</span>
+                </div>
+                <p class="entry-org">${esc(e.org)}</p>
+              </li>`).join('\n              ')}
+            </ul>
+            <h2 class="section-title">${esc(d.languages.sectionTitle)}</h2>
+            <p class="section-intro">${esc(d.languages.intro)}</p>
+            <ul class="language-list" role="list">
+              ${d.languages.items.map(l => `<li><span class="language-name">${esc(l.name)}</span><span class="language-level">${esc(l.level)}</span></li>`).join('\n              ')}
+            </ul>
             <h2 class="section-title">${esc(d.contact.sectionTitle)}</h2>
             <div class="contact-details contact-details-inline">
               ${contactItems(d)}
             </div>
-            <p class="section-cta"><a href="${esc(SITE.cv[d.meta.lang === 'pt-BR' ? 'pt' : 'en'])}" download>${esc(d.nav.cv)} ↓</a></p>
+            <p class="section-cta"><a href="${esc(SITE.cv[d.meta.lang === 'pt-BR' ? 'pt' : 'en'])}">${esc(d.nav.cv)} →</a></p>
+          </div>
+        </section>
+      </main>`;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   currículo
+   ───────────────────────────────────────────────────────────── */
+
+/**
+ * O currículo em HTML. Reaproveita experiência, habilidades, idiomas e formação
+ * que já existem no site — o que é exclusivo dele é o resumo em primeira pessoa
+ * e a lista de projetos no formato de período, finalidade, tecnologias e papel.
+ * Sem link de download: a página é a versão imprimível.
+ */
+export function renderResume(d) {
+  const r = d.resume;
+  const L = r.labels;
+
+  return `<main>
+        <section id="cv-page" class="page">
+          <div class="container">
+            <h1 class="page-title">${esc(r.sectionTitle)}</h1>
+            <div class="prose">
+              ${r.summary.map(t => `<p>${esc(t)}</p>`).join('\n              ')}
+            </div>
+
+            <h2 class="section-title">${esc(L.experienceTitle)}</h2>
+            ${d.experience.entries.map(expEntry).join('\n            ')}
+
+            <h2 class="section-title">${esc(L.skillsTitle)}</h2>
+            <div class="skill-groups">
+              ${d.about.skills.map(g => `<div class="skill-group">
+                <h3 class="skill-group-title">${esc(g.group)}</h3>
+                <ul class="skill-list skill-list-wide" role="list">${g.items.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+              </div>`).join('\n              ')}
+            </div>
+
+            <h2 class="section-title">${esc(L.languagesTitle)}</h2>
+            <ul class="language-list" role="list">
+              ${d.languages.items.map(l => `<li><span class="language-name">${esc(l.name)}</span><span class="language-level">${esc(l.level)}</span></li>`).join('\n              ')}
+            </ul>
+
+            <h2 class="section-title">${esc(L.educationTitle)}</h2>
+            <ul class="entry-list" role="list">
+              ${d.education.entries.map(e => `<li class="entry-item">
+                <div class="entry-head">
+                  <span class="entry-title">${esc(e.degree)}</span>
+                  <span class="entry-period">${esc(e.period)}</span>
+                </div>
+                <p class="entry-org">${esc(e.org)}</p>
+              </li>`).join('\n              ')}
+            </ul>
+
+            <h2 class="section-title">${esc(L.projectsTitle)}</h2>
+            ${r.projects.map(p => `<article class="resume-project">
+              <h3 class="resume-project-name">${esc(p.name)}</h3>
+              <dl class="resume-project-meta">
+                <div><dt>${esc(L.periodLabel)}</dt><dd>${esc(p.period)}</dd></div>
+                <div><dt>${esc(L.purposeLabel)}</dt><dd>${esc(p.purpose)}</dd></div>
+                ${p.stack?.length
+                  ? `<div><dt>${esc(L.technologiesLabel)}</dt><dd>${p.stack.map(t => esc(t)).join(', ')}</dd></div>`
+                  : ''}
+                <div><dt>${esc(L.roleLabel)}</dt><dd>${esc(p.role)}</dd></div>
+              </dl>
+            </article>`).join('\n            ')}
           </div>
         </section>
       </main>`;
@@ -696,7 +813,8 @@ export function buildJsonLd(d, lang, page) {
     // Posicionamento da Fase 1: engineer/architect, não "PHP e Flutter".
     jobTitle: d.hero.eyebrow,
     description: fill(d.hero.description, d),
-    knowsAbout: [...d.about.skills, ...d.engineering.capabilities.map(c => c.title)],
+    // skills é uma taxonomia por grupo: achata para o grafo, que quer rótulos.
+    knowsAbout: [...d.about.skills.flatMap(g => g.items), ...d.engineering.capabilities.map(c => c.title)],
     worksFor: { '@type': 'CollegeOrUniversity', name: 'Universidade Federal do Pampa (Unipampa)' },
     sameAs: sameAs()
   };
@@ -725,7 +843,23 @@ export function buildJsonLd(d, lang, page) {
     webPage
   ];
 
-  if (!isHome) return [{ '@context': 'https://schema.org', '@graph': graph }];
+  if (!isHome) {
+    // O currículo é a página que descreve a pessoa: ProfilePage liga a página
+    // à Person do grafo, que é quem a busca costuma querer para "currículo".
+    if (page.key === 'cv') {
+      graph.push({
+        '@id': `${url}#profilepage`,
+        '@type': 'ProfilePage',
+        url,
+        name: fill(d.resume.metaTitle, d),
+        description: fill(d.resume.metaDescription, d),
+        inLanguage: d.meta.lang,
+        mainEntity: { '@id': `${SITE.origin}/#person` },
+        isPartOf: { '@id': `${SITE.origin}/#website` }
+      });
+    }
+    return [{ '@context': 'https://schema.org', '@graph': graph }];
+  }
 
   // Case study é um artigo técnico sobre um sistema próprio: entra no grafo da
   // própria página para que o motivo e a autoria fiquem legíveis na busca.
@@ -809,7 +943,7 @@ export function buildHead(d, lang, page) {
     // Cada página tem título próprio: um sufixo sobre a title da home estouraria
     // o limite de caracteres, e não descreveria a página. Case studies trazem
     // metaTitle/metaDescription no próprio arquivo do estudo.
-    const src = page.cs ?? d[page.key];
+    const src = page.cs ?? d[pageKey(page.key)];
     const title = fill(src?.metaTitle ?? m.title, d);
 
     const description = fill(src?.metaDescription ?? m.description, d);

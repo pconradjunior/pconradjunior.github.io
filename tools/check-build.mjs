@@ -6,13 +6,13 @@
  * content/*.json e de js/render.js, para que o validador não possa divergir do
  * que o build realmente produz.
  */
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import {
   PAGES, PAGE_BY_KEY as PAGE_BY_KEY_WORK, pageUrl, pageFile, GROUPS, CATALOG, SITE, fill,
   casePage, caseStudyUrl,
-  CS_REQUIRED_SECTIONS, CS_STATUSES
+  CS_REQUIRED_SECTIONS, CS_STATUSES, pageKey
 } from '../js/render.js';
 import { loadContent, loadCaseStudies, contentFiles, deepEqual, firstDiff } from '../js/content.js';
 
@@ -151,7 +151,7 @@ for (const lang of LANGS) {
     } else if (kind === 'case') {
       check(h1s[0] === esc(cs.title), `h1 do estudo é "${cs.title}"`);
     } else {
-      check(h1s[0] === esc(d[page.key].sectionTitle), 'h1 é o título da página no idioma certo');
+      check(h1s[0] === esc(d[pageKey(page.key)].sectionTitle), 'h1 é o título da página no idioma certo');
     }
 
     // ── navegação ──
@@ -209,13 +209,17 @@ for (const lang of LANGS) {
 
       const exps = (html.match(/class="exp-entry"/g)?? []).length;
       check(exps === d.experience.entries.length, `${exps} experiências (esperado ${d.experience.entries.length})`);
+      // Nem toda entrada tem sistemas: só as que os declaram geram <ul>.
+      const withSystems = d.experience.entries.filter(x => x.systems?.length).length;
+      const sysLists = (html.match(/class="exp-systems"/g) ?? []).length;
+      check(sysLists === withSystems, `${sysLists} listas de sistemas (esperado ${withSystems})`);
       for (const x of d.experience.entries) {
         check(flat.includes(`>${esc(x.org)} <span class="exp-org-full">`) && html.includes(esc(x.period)),
           `experiência ${x.org} com período ${x.period}`);
-        // Um <ul> por entrada; o que precisa bater com x.systems são os itens.
-        const sysLists = (html.match(/class="exp-systems"/g) ?? []).length;
-        check(sysLists === d.experience.entries.length, `${sysLists} listas de sistemas (esperado ${d.experience.entries.length})`);
-        for (const s of x.systems) {
+        for (const r of x.responsibilities ?? []) {
+          check(flat.includes(esc(r)), `responsabilidade "${r}" em ${x.org}`);
+        }
+        for (const s of x.systems ?? []) {
           check(flat.includes(`<strong>${esc(s.name)}</strong> — ${esc(s.desc)}`),
             `sistema "${s.name}" em ${x.org}`);
         }
@@ -288,7 +292,9 @@ for (const lang of LANGS) {
     // ── higiene ──
     check(!/\{\{\w+\}\}/.test(html), 'nenhum token {{...}} não resolvido');
     check(!/>null<|undefined|NaN/.test(html), 'sem null/undefined/NaN no HTML');
-    check(!/jquery|select2/i.test(html), 'sem jQuery/Select2');
+    // Só interessa saber se a biblioteca é carregada. A palavra "jQuery" pode e
+    // deve aparecer como competência no currículo — o check é nos tags, não no texto.
+    check(!/<(?:script|link)[^>]+(?:jquery|select2)/i.test(html), 'sem jQuery/Select2');
     check(!/carousel/i.test(html), 'sem vestígio de carrossel');
     check(!/web3forms|access_key/i.test(html), 'sem Web3Forms nem access_key');
     check(!/<form/i.test(html), 'sem formulário preenchível');
@@ -390,8 +396,16 @@ check((sitemap.match(/<lastmod>/g) ?? []).length === sitemapPages.length * 2,
   'lastmod só nas páginas bilíngues, não nas avulsas');
 check(existsSync(join(ROOT, '404.html')), '404.html existe');
 check(existsSync(join(ROOT, 'images/og-image.png')), 'og-image.png existe');
+// O currículo é página gerada (/cv/), não arquivo solto: o PDF de 2022 saiu do
+// site. Precisa existir o HTML nos dois idiomas, e nada pode apontar para /files/.
 for (const lang of LANGS) {
-  check(existsSync(join(ROOT, SITE.cv[lang].slice(1))), `CV existe — ${SITE.cv[lang]}`);
+  const cvFile = lang === 'en' ? `en/${pageFile(PAGE_BY_KEY_WORK.cv)}` : pageFile(PAGE_BY_KEY_WORK.cv);
+  check(existsSync(join(ROOT, cvFile)), `currículo gerado — /${cvFile}`);
+  // Varre as mesmas páginas que o loop principal valida, subpáginas inclusas:
+  // um /files/ esquecido num case study viraria 404 igual.
+  for (const { file } of targets(lang)) {
+    check(!read(file).includes('/files/'), `${file} não referencia /files/`);
+  }
 }
 check(!existsSync(join(ROOT, 'index_bak.html')) && !existsSync(join(ROOT, 'index_en_bak.html')), 'backups removidos');
 
