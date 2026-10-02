@@ -1,22 +1,23 @@
 {
     "meta": {
         "lang": "en",
-        "description": "PHP/CodeIgniter and Flutter developer with 20+ years of experience. Institutional ERPs, {{apps}} published apps, {{articles}} articles and {{papers}} academic papers. IT Analyst at Unipampa.",
+        "description": "Software engineer and architect, 20+ years of experience. ERPs with over 50 modules, {{apps}} published apps, APIs and complex system evolution. IT Analyst at Unipampa.",
         "flagIcon": "images/flags/us.svg",
-        "title": "Pedro Conrad Jr — PHP/CodeIgniter, Flutter and Institutional ERP Developer",
+        "title": "Pedro Conrad Jr — Software Engineer & Software Architect",
         "keywords": [
-            "PHP developer",
-            "CodeIgniter",
-            "Flutter developer",
+            "software engineer",
+            "software architect",
+            "software engineering",
             "institutional ERP",
             "software architecture",
+            "PHP developer",
+            "Flutter developer",
             "IT analyst",
-            "Unipampa",
-            "Android iOS apps"
+            "Unipampa"
         ],
         "locale": "en_US",
         "ogLocale": "en_US",
-        "alt": "Pedro Conrad Jr — Developer of institutional systems and mobile applications"
+        "alt": "Pedro Conrad Jr — Software Engineer & Software Architect"
     },
     "nav": {
         "brand": "Pedro Conrad Jr",
@@ -41,24 +42,222 @@
     },
     "themeSwitcherTitle": "Choose your theme",
     "hero": {
-        "greeting": "Hi, I'm",
+        "eyebrow": "Software Engineer & Software Architect",
         "title": "Pedro Conrad Jr",
+        "headline": "20+ years building and evolving complex software systems.",
+        "stack": "Institutional ERPs · APIs · Mobile · Architecture · Software Engineering",
+        "ctaWork": "View Selected Work",
+        "ctaLinkedIn": "LinkedIn",
+        "ctaGitHub": "GitHub",
+        "ctaCv": "Download CV",
         "description": "IT Analyst at Universidade Federal do Pampa. I build the systems that institutional processes depend on: ERPs with 50+ integrated modules and apps published for Android and iOS.",
         "btnProjects": "View Projects",
         "btnGitHub": "GitHub",
         "btnLinkedIn": "LinkedIn",
         "btnInstagram": "Instagram",
         "role": "Developer of institutional systems and mobile apps",
-        "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart"
+        "greeting": "Software Engineer & Software Architect"
     },
-    "work": {
-        "sectionTitle": "Work",
-        "intro": "This section highlights some of the main projects developed throughout my professional career, including institutional systems, mobile applications, and technical initiatives focused on architecture, integration, and scalability.",
-        "metaTitle": "Work — Pedro Conrad Jr",
-        "metaDescription": "The full catalogue of systems, apps and tools I have built: {{systems}} systems and apps, {{apps}} published in the stores, {{downloads}} downloads."
+    "metrics": {
+        "sectionTitle": "Scale",
+        "items": [
+            {
+                "number": "20+",
+                "label": "Years in Software Engineering"
+            },
+            {
+                "number": "50+",
+                "label": "ERP Modules"
+            },
+            {
+                "number": "{{downloads}}",
+                "label": "App Downloads"
+            },
+            {
+                "number": "{{papers}}",
+                "label": "Academic Publications"
+            }
+        ]
+    },
+    "selectedWork": {
+        "sectionTitle": "Selected Work",
+        "intro": "Five systems and initiatives that show the kind of problem I solve: domain complexity, incremental evolution, and technical decisions with an effect on institutional processes.",
+        "items": [
+            {
+                "number": "01",
+                "title": "GURI",
+                "kind": "Institutional ERP",
+                "summary": "The ERP that administers the university administrative resources, with over 50 integrated modules. I worked as requirements analyst, module manager, developer, documenter, and code and documentation reviewer.",
+                "tags": [
+                    "PHP",
+                    "CodeIgniter",
+                    "IBM DB2"
+                ],
+                "links": [
+                    {
+                        "icon": "fa fa-newspaper",
+                        "label": "News",
+                        "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+                    }
+                ]
+            },
+            {
+                "number": "02",
+                "title": "SisPPA",
+                "kind": "Academic Production Management",
+                "summary": "Web system to manage, validate and score academic output, built on MVC and spreadsheet reverse engineering. Published at WTICIFES 2026.",
+                "tags": [
+                    "PHP",
+                    "CodeIgniter",
+                    "MVC",
+                    "Reverse Engineering"
+                ],
+                "links": [
+                    {
+                        "icon": "fa fa-file-pdf",
+                        "label": "Publication",
+                        "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe"
+                    }
+                ]
+            },
+            {
+                "number": "03",
+                "title": "App Unipampa",
+                "kind": "Institutional mobile app",
+                "summary": "The university official app, with academic services and institutional information. Published for Android and iOS.",
+                "tags": [
+                    "Flutter",
+                    "Dart",
+                    "APIs"
+                ],
+                "links": [
+                    {
+                        "icon": "fa-brands fa-google-play",
+                        "label": "Android",
+                        "href": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app"
+                    },
+                    {
+                        "icon": "fa-brands fa-apple",
+                        "label": "iOS",
+                        "href": "https://apps.apple.com/app/app-unipampa/id1639927711"
+                    }
+                ]
+            },
+            {
+                "number": "04",
+                "title": "MESPro",
+                "kind": "Software Engineering Methodology · Proof of Concept",
+                "summary": "A proposed estimation and development method, with explicit hypotheses, estimation criteria and a calibration mechanism. It is under experimentation; the matching tool is a proof of concept.",
+                "tags": [
+                    "Methodology",
+                    "Estimation",
+                    "Proof of Concept"
+                ],
+                "links": []
+            },
+            {
+                "number": "05",
+                "title": "Petrux",
+                "kind": "Local AI · Software Engineering · Automation",
+                "summary": "An experiment in writing the software engineering process as code: thirteen phases, each with an owner, inputs, outputs and a stop criterion, built on specialized agents with mandatory human validation. Experimental.",
+                "tags": [
+                    "Local AI",
+                    "Agents",
+                    "Automation"
+                ],
+                "links": [
+                    {
+                        "icon": "fa-brands fa-medium",
+                        "label": "Article",
+                        "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+                    }
+                ]
+            }
+        ],
+        "all": {
+            "label": "View all projects"
+        }
+    },
+    "experience": {
+        "sectionTitle": "Professional Experience",
+        "intro": "Where the systems above come from.",
+        "entries": [
+            {
+                "org": "UNIPAMPA",
+                "orgFull": "Universidade Federal do Pampa",
+                "role": "IT Analyst · Software Engineering & Architecture",
+                "period": "2010 — Present",
+                "summary": "I build and evolve the systems that institutional processes depend on: ERPs with over 50 modules, academic management systems, access control, and mobile applications published for Android and iOS. I worked in the technical coordination of development teams between January 2016 and July 2019, which included defining processes, standards, and criteria for reviewing code and documentation.",
+                "systems": [
+                    {
+                        "name": "GURI",
+                        "desc": "Institutional ERP, over 50 modules"
+                    },
+                    {
+                        "name": "SisPPA",
+                        "desc": "Academic output management and scoring"
+                    },
+                    {
+                        "name": "App Unipampa",
+                        "desc": "Institutional app for Android and iOS"
+                    },
+                    {
+                        "name": "SGCE",
+                        "desc": "Electronic certificate issuance and verification"
+                    },
+                    {
+                        "name": "Terminal RU",
+                        "desc": "Biometric access at university restaurants"
+                    }
+                ]
+            }
+        ]
+    },
+    "engineering": {
+        "sectionTitle": "Engineering",
+        "statement": "I don't just build software. I study how software is designed, estimated and evolved.",
+        "intro": "The areas below describe what I do as an engineering capability, not as a list of technologies.",
+        "capabilities": [
+            {
+                "icon": "fa fa-diagram-project",
+                "title": "Software Architecture",
+                "text": "Design and evolution of complex systems, APIs, data models and integration strategies."
+            },
+            {
+                "icon": "fa fa-layer-group",
+                "title": "Full-Stack Engineering",
+                "text": "Backend, frontend and database development focused on maintainability and long-term evolution."
+            },
+            {
+                "icon": "fa fa-mobile-screen",
+                "title": "Mobile Engineering",
+                "text": "Flutter applications for Android and iOS, including APIs, authentication and institutional services."
+            },
+            {
+                "icon": "fa fa-recycle",
+                "title": "Legacy Evolution",
+                "text": "Reverse engineering, modernization and incremental evolution of existing systems."
+            },
+            {
+                "icon": "fa fa-people-group",
+                "title": "Technical Leadership",
+                "text": "Architecture decisions, development standards, mentoring and technical coordination."
+            },
+            {
+                "icon": "fa fa-compass-drafting",
+                "title": "Software Engineering",
+                "text": "Estimation, process design, automation and engineering methodologies."
+            }
+        ]
     },
     "about": {
-        "sectionTitle": "About Me",
+        "sectionTitle": "About",
+        "short": [
+            "I am a software engineer and architect with over 20 years of experience building and evolving complex software systems.",
+            "My work spans institutional ERPs, APIs, databases, mobile applications and software engineering practices.",
+            "I currently work at UNIPAMPA, contributing to institutional systems and technical initiatives."
+        ],
+        "readMore": "Read more about my experience",
         "paragraphs": [
             "I am an Information Technology professional with over 20 years of experience in web systems and mobile application development. Currently, I work as an IT Analyst at Universidade Federal do Pampa (Unipampa), contributing directly to critical institutional systems.",
             "I have strong experience in software architecture, data modeling, and development standards definition. Between 2016 and 2019, I worked in a technical leadership role, coordinating teams, leading projects, organizing processes, and mentoring developers.",
@@ -91,40 +290,15 @@
             "title": "PHP / CodeIgniter Developer Training",
             "desc": "Technical training material aimed at forming new PHP developers and good practices."
         },
-        "readMore": "Read more about my experience",
         "capabilitiesTitle": "Capabilities",
         "metaTitle": "About — Pedro Conrad Jr",
         "metaDescription": "Over 20 years of software engineering and architecture experience: institutional systems, ERPs, APIs, databases and mobile applications at Unipampa."
     },
-    "expertise": {
-        "sectionTitle": "Expertise",
-        "sectionIntro": [
-            "My experience spans within several areas within software development, with a focus on institutional solutions, mobile applications, and technical leadership.",
-            "In addition to working with software development, I have prior experience in teaching at the university level, where I lectured on technical subjects such as software development, databases, and system architecture. This experience has provided me with a solid foundation in computing fundamentals and technical communication skills.",
-            " The areas below represent some of the main domains in which I operate:"
-        ],
-        "cards": [
-            {
-                "icon": "fa fa-laptop-code",
-                "title": "Enterprise Systems & APIs",
-                "text": "Development of large-scale institutional systems and ERPs, focusing on architecture, scalability, and service integration using PHP (CodeIgniter) and relational databases."
-            },
-            {
-                "icon": "fa fa-mobile-screen",
-                "title": "Mobile Applications",
-                "text": "Modern mobile development for Android and iOS using Flutter, including API integration, biometric authentication, and institutional services."
-            },
-            {
-                "icon": "fa fa-handshake",
-                "title": "Architecture & Technical Leadership",
-                "text": "Definition of development standards, system design, and technical leadership, focusing on quality, organization, and continuous evolution."
-            }
-        ]
-    },
     "contact": {
-        "sectionTitle": "Let's Talk?",
-        "infoTitle": "Contact Channels",
-        "infoText": "Available for consulting, system architecture, mobile development and institutional system work."
+        "sectionTitle": "Let's Talk",
+        "heading": "Let's Talk",
+        "infoTitle": "Channels",
+        "infoText": "Interested in software architecture, complex systems, engineering practices or technical collaboration?"
     },
     "projects": {
         "mobile": {
@@ -1074,11 +1248,42 @@
         "metaTitle": "Writing & publications — Pedro Conrad Jr",
         "metaDescription": "{{articles}} pieces on architecture, software engineering, Flutter and career, plus {{papers}} academic publications at computing events."
     },
+    "writingPreview": {
+        "sectionTitle": "Writing",
+        "intro": "Intellectual work on architecture, software engineering, and the work of those who build software.",
+        "items": [
+            {
+                "title": "Petrux: the software engineering process written as code",
+                "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+            },
+            {
+                "title": "Applying an organized model to software development",
+                "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c"
+            },
+            {
+                "title": "Web application reverse engineering with Playwright",
+                "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2"
+            },
+            {
+                "title": "Paper, pen and knife: from implementation to specification",
+                "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01"
+            }
+        ],
+        "all": {
+            "label": "Read all articles"
+        }
+    },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. All rights reserved.",
         "version": "v26 - Designed with CSS & Glassmorphism"
     },
     "infoModal": {
         "text": "This content is under development or awaiting approval."
+    },
+    "work": {
+        "sectionTitle": "Work",
+        "intro": "This section highlights some of the main projects developed throughout my professional career, including institutional systems, mobile applications, and technical initiatives focused on architecture, integration, and scalability.",
+        "metaTitle": "Work — Pedro Conrad Jr",
+        "metaDescription": "The full catalogue of systems, apps and tools I have built: {{systems}} systems and apps, {{apps}} published in the stores, {{downloads}} downloads."
     }
 }

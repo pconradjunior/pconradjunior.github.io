@@ -1,22 +1,23 @@
 {
     "meta": {
         "lang": "pt-BR",
-        "description": "Desenvolvedor PHP/CodeIgniter e Flutter com 20+ anos de experiência. ERPs institucionais, {{apps}} apps publicados, {{articles}} textos e {{papers}} publicações acadêmicas. Analista de TI na Unipampa.",
+        "description": "Engenheiro e arquiteto de software, 20+ anos de experiência. ERPs com mais de 50 módulos, {{apps}} apps publicados, APIs e evolução de sistemas complexos. Analista de TI na Unipampa.",
         "flagIcon": "images/flags/br.svg",
-        "title": "Pedro Conrad Jr — Desenvolvedor PHP, Flutter e ERP institucional",
+        "title": "Pedro Conrad Jr — Engenheiro e Arquiteto de Software",
         "keywords": [
-            "desenvolvedor PHP",
-            "CodeIgniter",
-            "desenvolvedor Flutter",
+            "engenheiro de software",
+            "arquiteto de software",
+            "engenharia de software",
             "ERP institucional",
             "arquitetura de software",
+            "desenvolvedor PHP",
+            "desenvolvedor Flutter",
             "analista de TI",
-            "Unipampa",
-            "aplicativos Android iOS"
+            "Unipampa"
         ],
         "locale": "pt_BR",
         "ogLocale": "pt_BR",
-        "alt": "Pedro Conrad Jr — Desenvolvedor de sistemas institucionais e aplicativos mobile"
+        "alt": "Pedro Conrad Jr — Engenheiro e Arquiteto de Software"
     },
     "nav": {
         "brand": "Pedro Conrad Jr",
@@ -41,24 +42,222 @@
     },
     "themeSwitcherTitle": "Escolha seu tema",
     "hero": {
-        "greeting": "Olá, eu sou",
+        "eyebrow": "Engenheiro de Software e Arquiteto de Software",
         "title": "Pedro Conrad Jr",
+        "headline": "Mais de 20 anos construindo e evoluindo sistemas de software complexos.",
+        "stack": "ERPs institucionais · APIs · Mobile · Arquitetura · Engenharia de software",
+        "ctaWork": "Ver projetos selecionados",
+        "ctaLinkedIn": "LinkedIn",
+        "ctaGitHub": "GitHub",
+        "ctaCv": "Baixar currículo",
         "description": "Analista de TI na Universidade Federal do Pampa. Trabalho com os sistemas de que os processos institucionais dependem: ERPs com mais de 50 módulos integrados e aplicativos publicados para Android e iOS.",
         "btnProjects": "Ver Projetos",
         "btnGitHub": "GitHub",
         "btnLinkedIn": "LinkedIn",
         "btnInstagram": "Instagram",
         "role": "Desenvolvedor de sistemas institucionais e apps mobile",
-        "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart"
+        "greeting": "Engenheiro de Software e Arquiteto de Software"
     },
-    "work": {
-        "sectionTitle": "Projetos",
-        "intro": "Nesta seção estão alguns dos principais projetos desenvolvidos ao longo da minha trajetória profissional, abrangendo sistemas institucionais, aplicações mobile e iniciativas técnicas com foco em arquitetura, integração e escalabilidade.",
-        "metaTitle": "Projetos — Pedro Conrad Jr",
-        "metaDescription": "Catálogo completo de sistemas, aplicativos e ferramentas desenvolvidos: {{systems}} sistemas e apps, {{apps}} publicados nas lojas, {{downloads}} downloads."
+    "metrics": {
+        "sectionTitle": "Escala",
+        "items": [
+            {
+                "number": "20+",
+                "label": "Anos em engenharia de software"
+            },
+            {
+                "number": "50+",
+                "label": "Módulos de ERP"
+            },
+            {
+                "number": "{{downloads}}",
+                "label": "Downloads de aplicativos"
+            },
+            {
+                "number": "{{papers}}",
+                "label": "Publicações acadêmicas"
+            }
+        ]
+    },
+    "selectedWork": {
+        "sectionTitle": "Projetos selecionados",
+        "intro": "Cinco sistemas e iniciativas que mostram o tipo de problema que eu resolvo: complexidade de domínio, evolução incremental e decisões técnicas com efeito em processos institucionais.",
+        "items": [
+            {
+                "number": "01",
+                "title": "GURI",
+                "kind": "ERP institucional",
+                "summary": "ERP que administra os recursos administrativos da universidade, com mais de 50 módulos integrados. Atuei como analista de requisitos, gestor de módulo, desenvolvedor, documentador e revisor de código e documentação.",
+                "tags": [
+                    "PHP",
+                    "CodeIgniter",
+                    "IBM DB2"
+                ],
+                "links": [
+                    {
+                        "icon": "fa fa-newspaper",
+                        "label": "Notícia",
+                        "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+                    }
+                ]
+            },
+            {
+                "number": "02",
+                "title": "SisPPA",
+                "kind": "Gestão da produção acadêmica",
+                "summary": "Sistema web para gerenciar, validar e pontuar a produção acadêmica, construído sobre MVC e engenharia reversa de planilhas. Publicado no WTICIFES 2026.",
+                "tags": [
+                    "PHP",
+                    "CodeIgniter",
+                    "MVC",
+                    "Engenharia reversa"
+                ],
+                "links": [
+                    {
+                        "icon": "fa fa-file-pdf",
+                        "label": "Publicação",
+                        "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe"
+                    }
+                ]
+            },
+            {
+                "number": "03",
+                "title": "App Unipampa",
+                "kind": "Mobile institucional",
+                "summary": "Aplicativo oficial da universidade, com serviços acadêmicos e informação institucional. Publicado para Android e iOS.",
+                "tags": [
+                    "Flutter",
+                    "Dart",
+                    "APIs"
+                ],
+                "links": [
+                    {
+                        "icon": "fa-brands fa-google-play",
+                        "label": "Android",
+                        "href": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app"
+                    },
+                    {
+                        "icon": "fa-brands fa-apple",
+                        "label": "iOS",
+                        "href": "https://apps.apple.com/app/app-unipampa/id1639927711"
+                    }
+                ]
+            },
+            {
+                "number": "04",
+                "title": "MESPro",
+                "kind": "Metodologia de engenharia de software · Prova de conceito",
+                "summary": "Proposta de método de estimativa e desenvolvimento, com hipóteses explícitas, critérios de estimativa e mecanismo de calibração. Está emCIO; a ferramenta correspondente é uma prova de conceito.",
+                "tags": [
+                    "Metodologia",
+                    "Estimativa",
+                    "Prova de conceito"
+                ],
+                "links": []
+            },
+            {
+                "number": "05",
+                "title": "Petrux",
+                "kind": "IA local · Engenharia de software · Automação",
+                "summary": "Experimento de escrever o processo de engenharia de software como código: treze fases, cada uma com dono, entrada, saída e critério de parada, com agentes especializados e validação humana obrigatória. Experimental.",
+                "tags": [
+                    "IA local",
+                    "Agentes",
+                    "Automação"
+                ],
+                "links": [
+                    {
+                        "icon": "fa-brands fa-medium",
+                        "label": "Artigo",
+                        "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+                    }
+                ]
+            }
+        ],
+        "all": {
+            "label": "Ver todos os projetos"
+        }
+    },
+    "experience": {
+        "sectionTitle": "Experiência profissional",
+        "intro": "De onde vêm os sistemas acima.",
+        "entries": [
+            {
+                "org": "UNIPAMPA",
+                "orgFull": "Universidade Federal do Pampa",
+                "role": "Analista de TI · Engenharia e Arquitetura de Software",
+                "period": "2010 — Atual",
+                "summary": "Desenvolvo e evoluo os sistemas de que os processos institucionais dependem: ERPs com mais de 50 módulos, sistemas de gestão acadêmica, controle de acesso e aplicativos mobile publicados. Atuei na coordenação técnica de equipes de desenvolvimento entre janeiro de 2016 e julho de 2019, o que incluiu definir processos, padrões e critérios de revisão de código e documentação.",
+                "systems": [
+                    {
+                        "name": "GURI",
+                        "desc": "ERP institucional, mais de 50 módulos"
+                    },
+                    {
+                        "name": "SisPPA",
+                        "desc": "Gestão e pontuação da produção acadêmica"
+                    },
+                    {
+                        "name": "App Unipampa",
+                        "desc": "Aplicativo institucional para Android e iOS"
+                    },
+                    {
+                        "name": "SGCE",
+                        "desc": "Emissão e verificação de certificados eletrônicos"
+                    },
+                    {
+                        "name": "Terminal RU",
+                        "desc": "Acesso com biometria nos restaurantes universitários"
+                    }
+                ]
+            }
+        ]
+    },
+    "engineering": {
+        "sectionTitle": "Engenharia",
+        "statement": "Não construo apenas software. Estudo como o software é projetado, estimado e evoluído.",
+        "intro": "As áreas abaixo descrevem o que faço como capacidade de engenharia, não como lista de tecnologias.",
+        "capabilities": [
+            {
+                "icon": "fa fa-diagram-project",
+                "title": "Arquitetura de software",
+                "text": "Design e evolução de sistemas complexos, APIs, modelos de dados e estratégias de integração."
+            },
+            {
+                "icon": "fa fa-layer-group",
+                "title": "Engenharia full-stack",
+                "text": "Backend, frontend e banco de dados com foco em manutenibilidade e evolução de longo prazo."
+            },
+            {
+                "icon": "fa fa-mobile-screen",
+                "title": "Engenharia mobile",
+                "text": "Aplicativos Flutter para Android e iOS, incluindo APIs, autenticação e serviços institucionais."
+            },
+            {
+                "icon": "fa fa-recycle",
+                "title": "Evolução de legados",
+                "text": "Engenharia reversa, modernização e evolução incremental de sistemas existentes."
+            },
+            {
+                "icon": "fa fa-people-group",
+                "title": "Liderança técnica",
+                "text": "Decisões de arquitetura, padrões de desenvolvimento, mentoria e coordenação técnica."
+            },
+            {
+                "icon": "fa fa-compass-drafting",
+                "title": "Engenharia de software",
+                "text": "Estimativa, desenho de processo, automação e metodologias de engenharia."
+            }
+        ]
     },
     "about": {
-        "sectionTitle": "Sobre Mim",
+        "sectionTitle": "Sobre",
+        "short": [
+            "Sou engenheiro de software e arquiteto de software com mais de 20 anos de experiência construindo e evoluindo sistemas complexos.",
+            "Meu trabalho abrange ERPs institucionais, APIs, bancos de dados, aplicativos mobile e práticas de engenharia de software.",
+            "Atualmente na UNIPAMPA, atuando em sistemas institucionais e iniciativas técnicas."
+        ],
+        "readMore": "Leia mais sobre a minha trajetória",
         "paragraphs": [
             "Sou profissional de Tecnologia da Informação com mais de 20 anos de experiência no desenvolvimento de sistemas web e aplicações mobile. Atualmente atuo como Analista de TI na Universidade Federal do Pampa (Unipampa), contribuindo diretamente para sistemas institucionais críticos.",
             "Tenho forte atuação em arquitetura de software, modelagem de dados e definição de padrões de desenvolvimento. Entre 2016 e 2019 atuei na coordenação técnica de equipes, liderando projetos, organizando processos e capacitando desenvolvedores.",
@@ -91,40 +290,15 @@
             "title": "Capacitação Dev PHP/CodeIgniter",
             "desc": "Material de capacitação técnica voltado à formação de novos desenvolvedores em PHP e boas práticas."
         },
-        "readMore": "Leia mais sobre a minha trajetória",
         "capabilitiesTitle": "Competências",
         "metaTitle": "Sobre — Pedro Conrad Jr",
         "metaDescription": "Mais de 20 anos de experiência em engenharia e arquitetura de software: sistemas institucionais, ERPs, APIs, bancos de dados e aplicações mobile na Unipampa."
     },
-    "expertise": {
-        "sectionTitle": "Minha Atuação",
-        "sectionIntro": [
-            "Minha experiência abrange várias áreas dentro do desenvolvimento de software, com foco em soluções institucionais, aplicações mobile e liderança técnica.",
-            "Além de atuar na área de desenvolvimento de software, tenho experiência anterior em docência no ensino superior, transitando em disciplinas técnicas da área de computação. Essa experiência me proporcionou uma base sólida e habilidades de comunicação técnica e pessoal.",
-            " Abaixo estão algumas das principais áreas em que atuo:"
-        ],
-        "cards": [
-            {
-                "icon": "fa fa-laptop-code",
-                "title": "Sistemas Corporativos & APIs",
-                "text": "Desenvolvimento de sistemas institucionais e ERPs de grande porte, com foco em arquitetura, escalabilidade e integração de serviços utilizando PHP (CodeIgniter) e bancos de dados relacionais."
-            },
-            {
-                "icon": "fa fa-mobile-screen",
-                "title": "Aplicativos Mobile",
-                "text": "Desenvolvimento de aplicativos modernos para Android e iOS utilizando Flutter, com integração de APIs, autenticação biométrica e serviços institucionais."
-            },
-            {
-                "icon": "fa fa-handshake",
-                "title": "Arquitetura & Liderança Técnica",
-                "text": "Definição de padrões de desenvolvimento, modelagem de sistemas e liderança técnica de equipes, com foco em qualidade, organização e evolução contínua."
-            }
-        ]
-    },
     "contact": {
-        "sectionTitle": "Vamos Conversar?",
-        "infoTitle": "Canais de Contato",
-        "infoText": "Disponível para consultorias, arquitetura de software, desenvolvimento mobile e sistemas institucionais."
+        "sectionTitle": "Vamos conversar",
+        "heading": "Vamos conversar",
+        "infoTitle": "Canais",
+        "infoText": "Interessado em arquitetura de software, sistemas complexos, práticas de engenharia ou colaboração técnica?"
     },
     "projects": {
         "mobile": {
@@ -1074,11 +1248,42 @@
         "metaTitle": "Artigos e publicações — Pedro Conrad Jr",
         "metaDescription": "{{articles}} textos sobre arquitetura, engenharia de software, Flutter e carreira, mais {{papers}} publicações acadêmicas em eventos de computação."
     },
+    "writingPreview": {
+        "sectionTitle": "Escritos",
+        "intro": "Produção intelectual sobre arquitetura, engenharia de software e o trabalho de quem constrói software.",
+        "items": [
+            {
+                "title": "Petrux: o processo de engenharia de software escrito como código",
+                "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+            },
+            {
+                "title": "Aplicação de um modelo organizado ao desenvolvimento de software",
+                "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c"
+            },
+            {
+                "title": "Engenharia reversa de aplicações web com Playwright",
+                "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2"
+            },
+            {
+                "title": "Papel, caneta e faca: da implementação à especificação",
+                "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01"
+            }
+        ],
+        "all": {
+            "label": "Ler todos os artigos"
+        }
+    },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. Todos os direitos reservados.",
         "version": "v26 - Designed with CSS & Glassmorphism"
     },
     "infoModal": {
         "text": "Este conteúdo está em desenvolvimento ou aguardando aprovação."
+    },
+    "work": {
+        "sectionTitle": "Projetos",
+        "intro": "Nesta seção estão alguns dos principais projetos desenvolvidos ao longo da minha trajetória profissional, abrangendo sistemas institucionais, aplicações mobile e iniciativas técnicas com foco em arquitetura, integração e escalabilidade.",
+        "metaTitle": "Projetos — Pedro Conrad Jr",
+        "metaDescription": "Catálogo completo de sistemas, aplicativos e ferramentas desenvolvidos: {{systems}} sistemas e apps, {{apps}} publicados nas lojas, {{downloads}} downloads."
     }
 }

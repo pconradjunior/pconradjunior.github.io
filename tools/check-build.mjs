@@ -9,7 +9,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { PAGES, pageUrl, pageFile, GROUPS, CATALOG, SITE } from '../js/render.js';
+import { PAGES, pageUrl, pageFile, GROUPS, CATALOG, SITE, fill } from '../js/render.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const LANGS = ['pt', 'en'];
@@ -118,9 +118,68 @@ for (const lang of LANGS) {
     if (page.key === 'home') {
       const cards = (html.match(/class="project-card"/g) ?? []).length;
       check(cards === 0, 'catálogo não está na home');
-      for (const s of ['id="home"', 'id="about"', 'id="expertise"', 'id="contact"']) {
+      // Ordem de leitura da home reposicionada: escala → projetos →
+      // experiência → engenharia → escritos → sobre → contato.
+      for (const s of ['id="home"', 'id="metrics"', 'id="work"', 'id="experience"',
+        'id="engineering"', 'id="writing"', 'id="about"', 'id="contact"']) {
         check(html.includes(s), `home tem ${s}`);
       }
+
+      // As asserções de conteúdo comparam trechos que o renderizador quebra em
+      // várias linhas; comparar sobre o HTML achatado evita falso negativo por
+      // indentação, sem precisar desregular a formatação do template.
+      const flat = html.replace(/>\s+</g, '><');
+
+      // Cada bloco da home é conferido contra content/<lang>.json: o número de
+      // métricas, de projetos, de experiências e de capacidades não pode divergir.
+      const metrics = (html.match(/class="metric"/g)?? []).length;
+      check(metrics === d.metrics.items.length, `${metrics} métricas (esperado ${d.metrics.items.length})`);
+      for (const m of d.metrics.items) {
+        const num = fill(m.number, d);
+        if (num == null || String(num).includes('{{')) {
+          check(false, `métrica "${m.label}" com token não resolvido: ${m.number}`);
+          continue;
+        }
+        check(flat.includes(`>${esc(num)}</span><span class="metric-label">${esc(m.label)}</span>`),
+          `métrica "${m.label}" = ${num}`);
+      }
+
+      const works = (html.match(/class="work-card"/g)?? []).length;
+      check(works === d.selectedWork.items.length, `${works} projetos selecionados (esperado ${d.selectedWork.items.length})`);
+      for (const w of d.selectedWork.items) {
+        check(flat.includes(`<span class="work-number">${esc(w.number)}</span><h3>${esc(w.title)}</h3>`),
+          `projeto ${w.number} é "${w.title}"`);
+        // Todo link de projeto é externo e seguro; nenhum é example.com.
+        for (const l of w.links) {
+          check(/^https?:\/\//.test(l.href) && !/example\.(com|org)/.test(l.href),
+            `link de "${w.title}" aponta para host real — ${l.href.slice(0, 48)}`);
+        }
+      }
+
+      const exps = (html.match(/class="exp-entry"/g)?? []).length;
+      check(exps === d.experience.entries.length, `${exps} experiências (esperado ${d.experience.entries.length})`);
+      for (const x of d.experience.entries) {
+        check(flat.includes(`>${esc(x.org)} <span class="exp-org-full">`) && html.includes(esc(x.period)),
+          `experiência ${x.org} com período ${x.period}`);
+        // Um <ul> por entrada; o que precisa bater com x.systems são os itens.
+        const sysLists = (html.match(/class="exp-systems"/g) ?? []).length;
+        check(sysLists === d.experience.entries.length, `${sysLists} listas de sistemas (esperado ${d.experience.entries.length})`);
+        for (const s of x.systems) {
+          check(flat.includes(`<strong>${esc(s.name)}</strong> — ${esc(s.desc)}`),
+            `sistema "${s.name}" em ${x.org}`);
+        }
+      }
+
+      const caps = (html.match(/class="service-card"/g)?? []).length;
+      check(caps === d.engineering.capabilities.length, `${caps} capacidades de engenharia (esperado ${d.engineering.capabilities.length})`);
+      check(flat.includes(esc(d.engineering.statement)), 'afirmação de engenharia presente');
+
+      const witems = (html.match(/class="writing-list"/g)?? []).length;
+      check(witems === 1, 'lista de escritos presente');
+      for (const t of d.writingPreview.items) {
+        check(flat.includes(esc(t.title)), `escrito "${t.title.slice(0, 40)}…"`);
+      }
+      check(html.includes(`>${esc(d.hero.ctaWork)}</a>`), 'CTA primário aponta para o catálogo');
     } else if (page.key === 'work' || page.key === 'writing') {
       const cards = (html.match(/class="project-card"/g) ?? []).length;
       const expected = expectedCards(lang, page.key);

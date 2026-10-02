@@ -353,51 +353,88 @@ export function renderPage(d, page) {
    ───────────────────────────────────────────────────────────── */
 
 export function renderHome(d) {
-  const a = d.about, e = d.expertise, c = d.contact;
+  const lang = d.meta.lang === 'pt-BR' ? 'pt' : 'en';
+  const href = k => esc(pageUrl(PAGE_BY_KEY[k], lang));
+  const ext = (label, url) =>
+    `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span>${esc(label)}</span></a>`;
+  const linkList = links => links.map(l =>
+    `<a href="${esc(l.href)}" target="_blank" rel="noopener noreferrer" class="work-link"><i class="${esc(l.icon)}" aria-hidden="true"></i> <span>${esc(l.label)}</span></a>`
+  ).join('');
 
   return `<main>
         <section id="home" class="hero">
           <div class="container">
             <div class="hero-content">
-              <span class="hero-greeting">${esc(d.hero.greeting)}</span>
+              <span class="hero-greeting">${esc(d.hero.eyebrow)}</span>
               <h1>${esc(d.hero.title)}</h1>
-              <p class="hero-role">${esc(d.hero.role)}</p>
+              <p class="hero-role">${esc(d.hero.headline)}</p>
               <p class="hero-stack">${esc(d.hero.stack)}</p>
-              <p class="hero-description">${esc(d.hero.description)}</p>
               <div class="hero-buttons">
-                <a href="${esc(pageUrl(PAGE_BY_KEY.work, d.meta.lang === 'pt-BR' ? 'pt' : 'en'))}" class="btn btn-primary">${esc(d.hero.btnProjects)}</a>
-                <a href="${esc(SITE.social.github)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-github" aria-hidden="true"></i> <span>${esc(d.nav.socialTitle.github)}</span></a>
-                <a href="${esc(SITE.cv[d.meta.lang === 'pt-BR' ? 'pt' : 'en'])}" class="btn btn-secondary"><i class="fa fa-file-pdf" aria-hidden="true"></i> <span>${esc(d.nav.cv)}</span></a>
+                <a href="${href('work')}" class="btn btn-primary">${esc(d.hero.ctaWork)}</a>
+                ${ext(d.hero.ctaLinkedIn, SITE.social.linkedin)}
+                ${ext(d.hero.ctaGitHub, SITE.social.github)}
+                <a href="${esc(SITE.cv[lang])}" class="btn btn-secondary"><i class="fa fa-file-pdf" aria-hidden="true"></i> <span>${esc(d.hero.ctaCv)}</span></a>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="about" class="about">
+        <section id="metrics" class="metrics">
           <div class="container">
-            <h2 class="section-title">${esc(a.sectionTitle)}</h2>
-            <div class="about-grid">
-              <div class="about-text">
-                <ul class="skill-list" role="list">${a.skills.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
-                ${a.paragraphs.map(t => `<p>${esc(t)}</p>`).join('')}
-                <p class="teaching"><strong>${esc(a.teaching.label)}:</strong> ${esc(a.teaching.title)} — ${esc(a.teaching.desc)}</p>
-              </div>
-              <div class="about-stats">
-                <div class="stats-grid">
-                  ${renderStats(a.stats, d)}
+            <div class="metrics-grid">
+              ${d.metrics.items.map(m => `<div class="metric">
+                <span class="metric-number">${esc(fill(m.number, d))}</span>
+                <span class="metric-label">${esc(m.label)}</span>
+              </div>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <section id="work" class="selected-work">
+          <div class="container">
+            <h2 class="section-title">${esc(d.selectedWork.sectionTitle)}</h2>
+            <p class="section-intro centered">${esc(d.selectedWork.intro)}</p>
+            <div class="work-grid">
+              ${d.selectedWork.items.map(w => `<article class="work-card">
+                <span class="work-number">${esc(w.number)}</span>
+                <h3>${esc(w.title)}</h3>
+                <p class="work-kind">${esc(w.kind)}</p>
+                <p class="work-summary">${esc(w.summary)}</p>
+                <ul class="tag-list" role="list">${w.tags.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+                ${w.links.length ? `<div class="work-links">${linkList(w.links)}</div>` : ''}
+              </article>`).join('')}
+            </div>
+            <p class="section-cta"><a href="${href('work')}">${esc(d.selectedWork.all.label)} →</a></p>
+          </div>
+        </section>
+
+        <section id="experience" class="experience">
+          <div class="container">
+            <h2 class="section-title">${esc(d.experience.sectionTitle)}</h2>
+            <p class="section-intro centered">${esc(d.experience.intro)}</p>
+            ${d.experience.entries.map(x => `<div class="exp-entry">
+              <div class="exp-head">
+                <div>
+                  <h3 class="exp-org">${esc(x.org)} <span class="exp-org-full">— ${esc(x.orgFull)}</span></h3>
+                  <p class="exp-role">${esc(x.role)}</p>
                 </div>
+                <span class="exp-period">${esc(x.period)}</span>
               </div>
-            </div>
-            <p class="section-cta"><a href="${esc(pageUrl(PAGE_BY_KEY.about, d.meta.lang === 'pt-BR' ? 'pt' : 'en'))}">${esc(a.readMore)} →</a></p>
+              <p class="exp-summary">${esc(x.summary)}</p>
+              <ul class="exp-systems" role="list">
+                ${x.systems.map(s => `<li><strong>${esc(s.name)}</strong> — ${esc(s.desc)}</li>`).join('')}
+              </ul>
+            </div>`).join('')}
           </div>
         </section>
 
-        <section id="expertise" class="services">
+        <section id="engineering" class="services">
           <div class="container">
-            <h2 class="section-title">${esc(e.sectionTitle)}</h2>
-            <div class="about-text">${e.sectionIntro.map(t => `<p class="centered">${esc(t)}</p>`).join('')}</div>
+            <h2 class="section-title">${esc(d.engineering.sectionTitle)}</h2>
+            <p class="engineering-statement">${esc(d.engineering.statement)}</p>
+            <p class="section-intro centered">${esc(d.engineering.intro)}</p>
             <div class="services-grid">
-              ${e.cards.map(x => `<div class="service-card">
+              ${d.engineering.capabilities.map(x => `<div class="service-card">
                 <div class="service-icon"><i class="${esc(x.icon)}" aria-hidden="true"></i></div>
                 <h3>${esc(x.title)}</h3>
                 <p>${esc(x.text)}</p>
@@ -406,16 +443,33 @@ export function renderHome(d) {
           </div>
         </section>
 
+        <section id="writing" class="writing-preview">
+          <div class="container">
+            <h2 class="section-title">${esc(d.writingPreview.sectionTitle)}</h2>
+            <p class="section-intro centered">${esc(d.writingPreview.intro)}</p>
+            <ul class="writing-list" role="list">
+              ${d.writingPreview.items.map(t => `<li><a href="${esc(t.href)}" target="_blank" rel="noopener noreferrer">${esc(t.title)}</a></li>`).join('')}
+            </ul>
+            <p class="section-cta"><a href="${href('writing')}">${esc(d.writingPreview.all.label)} →</a></p>
+          </div>
+        </section>
+
+        <section id="about" class="about">
+          <div class="container">
+            <h2 class="section-title">${esc(d.about.sectionTitle)}</h2>
+            <div class="about-text centered">${d.about.short.map(t => `<p>${esc(t)}</p>`).join('')}</div>
+            <p class="section-cta"><a href="${href('about')}">${esc(d.about.readMore)} →</a></p>
+          </div>
+        </section>
+
         <section id="contact" class="contact">
           <div class="container">
-            <h2 class="section-title">${esc(c.sectionTitle)}</h2>
+            <h2 class="section-title">${esc(d.contact.heading)}</h2>
             <div class="contact-container">
               <div class="contact-info">
-                <h3>${esc(c.infoTitle)}</h3>
-                <p>${esc(c.infoText)}</p>
-                <div class="contact-details">
-                  ${contactItems(d)}
-                </div>
+                <h3>${esc(d.contact.infoTitle)}</h3>
+                <p>${esc(d.contact.infoText)}</p>
+                <div class="contact-details">${contactItems(d)}</div>
               </div>
             </div>
           </div>
@@ -535,9 +589,10 @@ export function buildJsonLd(d, lang, page) {
     name: SITE.author,
     url: `${SITE.origin}/`,
     email: `mailto:${SITE.email}`,
-    jobTitle: d.hero.role,
+    // Posicionamento da Fase 1: engineer/architect, não "PHP e Flutter".
+    jobTitle: d.hero.eyebrow,
     description: fill(d.hero.description, d),
-    knowsAbout: d.about.skills,
+    knowsAbout: [...d.about.skills, ...d.engineering.capabilities.map(c => c.title)],
     worksFor: { '@type': 'CollegeOrUniversity', name: 'Universidade Federal do Pampa (Unipampa)' },
     sameAs: sameAs()
   };
