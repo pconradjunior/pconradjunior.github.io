@@ -1,0 +1,13 @@
+{
+    "backToWork": "Voltar para projetos",
+    "periodLabel": "Período",
+    "statusLabel": "Situação",
+    "outcomesTitle": "Resultados",
+    "evidenceTitle": "Evidências",
+    "relatedTitle": "Referências relacionadas",
+    "status": {
+        "active": "Em produção",
+        "finished": "Encerrado",
+        "experimental": "Experimental"
+    }
+}

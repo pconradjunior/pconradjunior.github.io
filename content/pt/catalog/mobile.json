@@ -1,0 +1,175 @@
+{
+    "title": "Aplicativos Mobile",
+    "items": [
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "Flutter",
+            "title": "ChessKids",
+            "desc": "Aplicativo de xadrez educativo para crianças, offline e sem anúncios, com suporte a IA com níveis de dificuldade.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.chesskids",
+                    "title": "Android",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa fa-play-circle",
+                    "label": "Ver Demo",
+                    "videoId": "yPxbRScwkvI",
+                    "title": "Ver Demo",
+                    "action": "video"
+                }
+            ],
+            "downloads": 8,
+            "category": "GameApplication"
+        },
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "Flutter",
+            "title": "App Unipampa",
+            "desc": "Aplicativo oficial da Unipampa que centraliza serviços acadêmicos, informações institucionais e comunicação com a comunidade universitária.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "",
+                    "href": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app",
+                    "title": "Android",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa-brands fa-apple",
+                    "label": "",
+                    "href": "https://apps.apple.com/app/app-unipampa/id1639927711",
+                    "title": "iOS",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa fa-play-circle",
+                    "label": "Ver Demo",
+                    "videoId": "mgvavs5VOgU",
+                    "title": "Ver Demo",
+                    "action": "video"
+                }
+            ],
+            "downloads": 1000,
+            "category": "EducationalApplication"
+        },
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "Flutter",
+            "title": "SmellCheck",
+            "desc": "Aplicação voltada ao acompanhamento da recuperação do olfato, utilizada como ferramenta auxiliar em processos clínicos.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.smellcheck",
+                    "title": "Android",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa fa-play-circle",
+                    "label": "Ver Demo",
+                    "videoId": "t1P1dCydtUo",
+                    "title": "Ver Demo",
+                    "action": "video"
+                }
+            ],
+            "downloads": 50,
+            "category": "HealthApplication"
+        },
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "PhoneGap/Cordova",
+            "title": "FingerNotes",
+            "desc": "Aplicativo de anotações seguras com autenticação biométrica e proteção por senha, focado em privacidade e simplicidade.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.fingernotes",
+                    "title": "Android",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa fa-play-circle",
+                    "label": "Ver Demo",
+                    "videoId": "hGdydq2jhJI",
+                    "title": "Ver Demo",
+                    "action": "video"
+                }
+            ],
+            "downloads": 35,
+            "category": "ProductApplication"
+        },
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "Android",
+            "title": "PhisiCalc",
+            "desc": "Ferramenta de cálculo de composição corporal voltada a profissionais de educação física e saúde.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.phisicalc",
+                    "title": "Android",
+                    "action": "url"
+                }
+            ],
+            "downloads": 26623,
+            "category": "HealthApplication"
+        },
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "Flutter (Estudo)",
+            "title": "LembraMed",
+            "desc": "Aplicativo para controle de medicação, consultas e acompanhamento de indicadores de saúde, desenvolvido como estudo prático em Flutter.",
+            "links": [
+                {
+                    "icon": "fa fa-play-circle",
+                    "label": "Ver Demo",
+                    "videoId": "hUdgk81DGuk",
+                    "title": "Ver Demo",
+                    "action": "video"
+                }
+            ],
+            "downloads": null
+        },
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "PhoneGap/Cordova",
+            "title": "AnimalSounds",
+            "desc": "Aplicativo para ensinar a criança a associar os sons emitidos por vários tipos de animais ao desenho do animal, bastando tocar na figura para ouvir o som.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.animalsounds",
+                    "title": "Android",
+                    "action": "url"
+                }
+            ],
+            "downloads": 7135,
+            "category": "GameApplication"
+        },
+        {
+            "typeIcon": "fa fa-mobile",
+            "typeLabel": "PhoneGap/Cordova",
+            "title": "MovieSpinner",
+            "desc": "Ajuda a escolher o gênero do filme do fim de semana: gire a roleta entre 20 gêneros pré-definidos ou escolha os seus favoritos para sortear.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.moviespinner",
+                    "title": "Android",
+                    "action": "url"
+                }
+            ],
+            "downloads": 22,
+            "category": "EntertainmentApplication"
+        }
+    ]
+}

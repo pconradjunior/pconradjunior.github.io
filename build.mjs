@@ -7,10 +7,11 @@
  * materializa em HTML com metadados por idioma, hreflang, Open Graph e dados
  * estruturados. Sem dependências.
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { buildDocument, PAGES, pageFile, SITE } from './js/render.js';
+import { buildDocument, PAGES, pageFile, casePage, caseStudyUrl, SITE } from './js/render.js';
+import { loadContent, loadCaseStudies } from './js/content.js';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const LANGUAGES = ['pt', 'en'];
@@ -31,18 +32,59 @@ const today = new Date().toISOString().slice(0, 10);
 
 /** Todas as páginas do site, com par PT/EN — base do sitemap e da validação. */
 function allPages() {
-  return PAGES.map(p => ({ key: p.key, pt: p.pt, en: p.en, priority: p.key === 'home' ? '1.0' : '0.7' }));
+  const fixed = PAGES.map(p => ({
+    key: p.key, pt: p.pt, en: p.en, priority: p.key === 'home' ? '1.0' : '0.7'
+  }));
+  // Case studies entram depois das páginas fixas: /work/<slug>/ é uma
+  // subpágina do catálogo e não deve ranquear acima dele.
+  const studies = Object.keys(cases).map(slug => ({
+    key: `case:${slug}`,
+    pt: caseStudyUrl(slug, 'pt'),
+    en: caseStudyUrl(slug, 'en'),
+    priority: '0.6'
+  }));
+  return [...fixed, ...studies];
 }
 
 const content = {};
 for (const lang of LANGUAGES) {
-  content[lang] = JSON.parse(readFileSync(join(ROOT, 'content', `${lang}.json`), 'utf8'));
+  content[lang] = loadContent(ROOT, lang);
 }
+
+/**
+ * Todos os case studies, indexados por slug e com o par PT/EN montado.
+ *
+ * Um diretório ausente significa "nenhum case study ainda" — não é erro, porque
+ * os estudos dependem de dados que ainda não foram fornecidos. O que é erro é
+ * um estudo existir em um idioma e não no outro: isso quebraria o par de
+ * hreflang silenciosamente, então falha aqui.
+ */
+const cases = {};
+for (const lang of LANGUAGES) {
+  for (const cs of loadCaseStudies(ROOT, lang)) (cases[cs.slug] ??= {})[lang] = cs;
+}
+
+const missingPair = Object.entries(cases)
+  .filter(([, pair]) => !pair.pt || !pair.en)
+  .map(([slug]) => slug);
+if (missingPair.length) {
+  throw new Error(`case study sem par de idiomas: ${missingPair.join(', ')}`);
+}
+
+/** Os estudos prontos para renderizar, cada um com o texto do idioma pedido. */
+const caseStudies = lang =>
+  Object.entries(cases)
+    .map(([slug, pair]) => ({ ...pair[lang], slug }))
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99) || a.slug.localeCompare(b.slug));
 
 /* ── páginas ── */
 for (const lang of LANGUAGES) {
   const d = content[lang];
-  for (const page of PAGES) {
+  const pages = [
+    ...PAGES,
+    ...caseStudies(lang).map(cs => ({ ...casePage(cs), cs }))
+  ];
+  for (const page of pages) {
     const html = buildDocument(d, lang, page);
     const out = join(ROOT, lang === 'pt' ? pageFile(page) : `en/${pageFile(page)}`);
     mkdirSync(dirname(out), { recursive: true });

@@ -1,0 +1,21 @@
+{
+    "brand": "Pedro Conrad Jr",
+    "navLabel": "Main navigation",
+    "openMenu": "Open menu",
+    "work": "Work",
+    "engineering": "Engineering",
+    "writing": "Writing",
+    "about": "About",
+    "contact": "Contact",
+    "cv": "CV",
+    "socialTitle": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "medium": "Medium",
+        "instagram": "Instagram"
+    },
+    "langToggleLabel": "Português",
+    "langToggleFlag": "https://flagcdn.com/20x15/br.png",
+    "langToggleAlt": "PT",
+    "langToggleCode": "pt"
+}

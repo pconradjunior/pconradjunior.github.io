@@ -1,0 +1,10 @@
+{
+    "themeSwitcherTitle": "Choose your theme",
+    "footer": {
+        "copyright": "© 2026 Pedro Conrad Jr. All rights reserved.",
+        "version": "v26 - Designed with CSS & Glassmorphism"
+    },
+    "infoModal": {
+        "text": "This content is under development or awaiting approval."
+    }
+}

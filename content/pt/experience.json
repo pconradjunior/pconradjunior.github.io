@@ -1,0 +1,35 @@
+{
+    "sectionTitle": "Experiência profissional",
+    "intro": "De onde vêm os sistemas acima.",
+    "entries": [
+        {
+            "org": "UNIPAMPA",
+            "orgFull": "Universidade Federal do Pampa",
+            "role": "Analista de TI · Engenharia e Arquitetura de Software",
+            "period": "2010 — Atual",
+            "summary": "Desenvolvo e evoluo os sistemas de que os processos institucionais dependem: ERPs com mais de 50 módulos, sistemas de gestão acadêmica, controle de acesso e aplicativos mobile publicados. Atuei na coordenação técnica de equipes de desenvolvimento entre janeiro de 2016 e julho de 2019, o que incluiu definir processos, padrões e critérios de revisão de código e documentação.",
+            "systems": [
+                {
+                    "name": "GURI",
+                    "desc": "ERP institucional, mais de 50 módulos"
+                },
+                {
+                    "name": "SisPPA",
+                    "desc": "Gestão e pontuação da produção acadêmica"
+                },
+                {
+                    "name": "App Unipampa",
+                    "desc": "Aplicativo institucional para Android e iOS"
+                },
+                {
+                    "name": "SGCE",
+                    "desc": "Emissão e verificação de certificados eletrônicos"
+                },
+                {
+                    "name": "Terminal RU",
+                    "desc": "Acesso com biometria nos restaurantes universitários"
+                }
+            ]
+        }
+    ]
+}

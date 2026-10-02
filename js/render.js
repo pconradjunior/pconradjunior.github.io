@@ -47,6 +47,37 @@ export const PAGES = [
 
 export const PAGE_BY_KEY = Object.fromEntries(PAGES.map(p => [p.key, p]));
 
+/* ─────────────────────────────────────────────────────────────
+   case studies
+   ───────────────────────────────────────────────────────────── */
+
+/**
+ * Seções obrigatórias de um case study. Um estudo sem todas elas vira uma
+ * página de propaganda, que é exatamente o que o reposicionamento quer evitar.
+ * `architecture`, `decisions`, `challenges` são opcionais porque só entram
+ * quando existe evidência para sustentá-las.
+ */
+export const CS_REQUIRED_SECTIONS = ['context', 'problem', 'solution', 'role'];
+
+export const CS_STATUSES = ['active', 'finished', 'experimental'];
+
+/** URL de um case study pelo slug. Espelha o diretório em disco. */
+export const caseStudyUrl = (slug, lang) => (lang === 'pt' ? `/work/${slug}/` : `/en/work/${slug}/`);
+
+/**
+ * Descritor de página para um case study. Tem o mesmo formato de PAGES, então
+ * pageUrl/pageFile/head/sitemap passam a funcionar sem tratamento especial.
+ */
+export const casePage = cs => ({
+  key: `case:${cs.slug}`,
+  kind: 'case',
+  slug: cs.slug,
+  cs,
+  dir: `work/${cs.slug}`,
+  pt: `/work/${cs.slug}/`,
+  en: `/en/work/${cs.slug}/`
+});
+
 /** URL de uma página em um idioma. */
 export const pageUrl = (p, lang) => (lang === 'pt' ? p.pt : p.en);
 
@@ -241,8 +272,11 @@ export function renderHeader(d, lang, page) {
   const other = lang === 'pt' ? 'en' : 'pt';
   const cv = SITE.cv[lang];
 
+  // Um case study é uma subpágina de /work/, então "Work" é que fica ativo —
+  // comparar com page.key nunca marcaria nada, já que a chave é "case:<slug>".
+  const section = page.kind === 'case' ? 'work' : page.key;
   const navLinks = NAV_ITEMS.map(item => {
-    const current = item.page === page.key;
+    const current = item.page === section;
     const cls = current ? ' class="active" aria-current="page"' : '';
     return `              <a href="${esc(navHref(item, page, lang))}"${cls}>${esc(n[item.key])}</a>`;
   }).join('\n');
@@ -341,6 +375,7 @@ ${filters}
 }
 
 export function renderPage(d, page) {
+  if (page.kind === 'case') return renderCaseStudy(d, page.cs);
   if (page.key === 'work' || page.key === 'writing') {
     return `<main>${renderCatalog(d, page.key)}</main>`;
   }
@@ -401,7 +436,10 @@ export function renderHome(d) {
                 <p class="work-kind">${esc(w.kind)}</p>
                 <p class="work-summary">${esc(w.summary)}</p>
                 <ul class="tag-list" role="list">${w.tags.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
-                ${w.links.length ? `<div class="work-links">${linkList(w.links)}</div>` : ''}
+                ${w.caseStudy || w.links.length ? `<div class="work-links">
+                  ${w.caseStudy ? `<a href="${esc(caseStudyUrl(w.caseStudy, lang))}" class="work-link"><i class="fa fa-file-lines" aria-hidden="true"></i> <span>${esc(d.selectedWork.caseStudyLabel)}</span></a>` : ''}
+                  ${linkList(w.links)}
+                </div>` : ''}
               </article>`).join('')}
             </div>
             <p class="section-cta"><a href="${href('work')}">${esc(d.selectedWork.all.label)} →</a></p>
@@ -474,6 +512,72 @@ export function renderHome(d) {
             </div>
           </div>
         </section>
+      </main>`;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   main — case study
+   ───────────────────────────────────────────────────────────── */
+
+export function renderCaseStudy(d, cs) {
+  const lang = d.meta.lang === 'pt-BR' ? 'pt' : 'en';
+  const L = d.caseStudy;
+  const back = pageUrl(PAGE_BY_KEY.work, lang);
+
+  const section = s => {
+    const paras = (s.paragraphs ?? []).map(t => `<p>${esc(t)}</p>`).join('');
+    const bullets = (s.bullets ?? []).length
+      ? `<ul class="cs-list" role="list">${s.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>`
+      : '';
+    return `<section class="cs-section" id="cs-${esc(s.id)}">
+          <h2>${esc(s.title)}</h2>
+          ${paras}${bullets}
+        </section>`;
+  };
+
+  return `<main class="cs">
+        <div class="container">
+          <p class="cs-back"><a href="${esc(back)}">&larr; ${esc(L.backToWork)}</a></p>
+
+          <header class="cs-head">
+            <p class="cs-kind">${esc(cs.kind)}</p>
+            <h1>${esc(cs.title)}</h1>
+            <p class="cs-summary">${esc(cs.summary)}</p>
+            <dl class="cs-facts">
+              <div><dt>${esc(L.periodLabel)}</dt><dd>${esc(cs.period)}</dd></div>
+              <div><dt>${esc(L.statusLabel)}</dt><dd><span class="cs-status cs-status-${esc(cs.status)}">${esc(L.status[cs.status])}</span></dd></div>
+            </dl>
+            ${cs.stack.length ? `<ul class="tag-list cs-stack" role="list">${cs.stack.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+          </header>
+
+          ${cs.sections.map(section).join('\n          ')}
+
+          ${cs.outcomes.length ? `<section class="cs-section cs-outcomes">
+            <h2>${esc(L.outcomesTitle)}</h2>
+            <div class="metrics-grid">
+              ${cs.outcomes.map(o => `<div class="metric">
+                <span class="metric-number">${esc(fill(o.number, d))}</span>
+                <span class="metric-label">${esc(o.label)}</span>
+              </div>`).join('')}
+            </div>
+          </section>` : ''}
+
+          ${cs.evidence.length ? `<section class="cs-section">
+            <h2>${esc(L.evidenceTitle)}</h2>
+            <ul class="cs-evidence" role="list">
+              ${cs.evidence.map(e => `<li><a href="${esc(e.href)}" target="_blank" rel="noopener noreferrer"><i class="${esc(e.icon)}" aria-hidden="true"></i> ${esc(e.label)}</a></li>`).join('')}
+            </ul>
+          </section>` : ''}
+
+          ${cs.related.length ? `<section class="cs-section">
+            <h2>${esc(L.relatedTitle)}</h2>
+            <ul class="writing-list" role="list">
+              ${cs.related.map(r => `<li><a href="${esc(r.href)}">${esc(r.title)}</a></li>`).join('')}
+            </ul>
+          </section>` : ''}
+
+          <p class="section-cta"><a href="${esc(back)}">&larr; ${esc(L.backToWork)}</a></p>
+        </div>
       </main>`;
 }
 
@@ -623,6 +727,23 @@ export function buildJsonLd(d, lang, page) {
 
   if (!isHome) return [{ '@context': 'https://schema.org', '@graph': graph }];
 
+  // Case study é um artigo técnico sobre um sistema próprio: entra no grafo da
+  // própria página para que o motivo e a autoria fiquem legíveis na busca.
+  if (page.kind === 'case') {
+    graph.push({
+      '@id': `${url}#techarticle`,
+      '@type': 'TechArticle',
+      headline: page.cs.title,
+      description: fill(page.cs.summary, d),
+      url,
+      inLanguage: d.meta.lang,
+      keywords: [...(page.cs.stack ?? []), ...(page.cs.kind ? [page.cs.kind] : [])],
+      author: { '@id': `${SITE.origin}/#person` },
+      isPartOf: { '@id': `${url}#webpage` }
+    });
+    return [{ '@context': 'https://schema.org', '@graph': graph }];
+  }
+
   const apps = (p.mobile?.items ?? []).filter(i => i.links.some(l => STORE.test(l.href || '')));
   const webApps = p.web?.items ?? [];
   const writings = [
@@ -686,10 +807,12 @@ export function buildHead(d, lang, page) {
     const flag = lang === 'pt' ? 'br' : 'us';
 
     // Cada página tem título próprio: um sufixo sobre a title da home estouraria
-    // o limite de caracteres, e não descreveria a página.
-    const title = fill(d[page.key]?.metaTitle ?? m.title, d);
+    // o limite de caracteres, e não descreveria a página. Case studies trazem
+    // metaTitle/metaDescription no próprio arquivo do estudo.
+    const src = page.cs ?? d[page.key];
+    const title = fill(src?.metaTitle ?? m.title, d);
 
-    const description = fill(d[page.key]?.metaDescription ?? m.description, d);
+    const description = fill(src?.metaDescription ?? m.description, d);
 
     const keywords = m.keywords.map(k => fill(k, d)).join(', ');
 

@@ -1,0 +1,60 @@
+{
+    "title": "Sistemas Web",
+    "items": [
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "GURI - ERP",
+            "desc": "Sistema ERP institucional com mais de 50 módulos integrados, utilizado na gestão acadêmica e administrativa, com atuação em análise, desenvolvimento e arquitetura.",
+            "links": [
+                {
+                    "icon": "fa fa-newspaper",
+                    "label": "Notícia",
+                    "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador",
+                    "title": "Ler Notícia",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "SisPPA",
+            "desc": "Sistema de pontuação da produção acadêmica com foco em transparência, avaliação e apoio à gestão institucional. Publicado no WTICIFES 2026.",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Artigo",
+                    "title": "WTICIFES 2026",
+                    "action": "url",
+                    "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "Terminal RU",
+            "desc": "Sistema de controle de acesso com autenticação biométrica integrado a hardware para restaurantes universitários.",
+            "links": []
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "SGCE",
+            "desc": "Sistema para emissão, validação e verificação pública de certificados eletrônicos.",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "PDF",
+                    "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14",
+                    "title": "Ler Artigo",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ]
+}

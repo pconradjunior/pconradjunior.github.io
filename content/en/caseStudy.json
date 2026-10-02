@@ -1,0 +1,13 @@
+{
+    "backToWork": "Back to work",
+    "periodLabel": "Period",
+    "statusLabel": "Status",
+    "outcomesTitle": "Outcomes",
+    "evidenceTitle": "Evidence",
+    "relatedTitle": "Related references",
+    "status": {
+        "active": "In production",
+        "finished": "Finished",
+        "experimental": "Experimental"
+    }
+}

@@ -1,0 +1,187 @@
+{
+    "title": "Artigos Técnicos",
+    "desc": "Escritos práticos sobre arquitetura, Flutter, PHP e automação — com código, decisões técnicas e o que deu errado.",
+    "items": [
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "Petrux: o processo de engenharia de software escrito como código",
+            "desc": "Como codificar um processo de engenharia de software em um sistema de agentes especializados: as treze fases do Petrux, cada uma com dono, entrada, saída e critério de parada, o ramo de Helpdesk fora da sequência e a validação humana obrigatória antes de qualquer código chegar à produção.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "Engenharia Reversa de Aplicações Web com Playwright: Como Mapear APIs e Tecnologias de Forma Automática",
+            "desc": "Ferramenta que automatiza a coleta de dados de websites usando navegador real controlado via linha de comando, gerando relatório HTML offline com APIs, frameworks, stack e tráfego de rede.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "MPCar Player: Construindo um Player de Áudio Automotivo em Flutter",
+            "desc": "Desenvolvimento de um player de áudio para centrais multimídia automotivas com Android customizado, abordando desafios de gerenciamento de áudio, permissões e descoberta de arquivos em ambientes automotivos.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/mpcar-player-construindo-um-player-de-%C3%A1udio-ff51ddfae948",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "Desenvolvendo o ChessKids: um estudo que mistura arquitetura, componentes e IA",
+            "desc": "Análise do desenvolvimento do ChessKids, um aplicativo de xadrez para crianças, destacando a arquitetura, organização de componentes e integração de inteligência artificial.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/desenvolvendo-o-chesskids-um-estudo-que-mistura-arquitetura-componentes-e-ia-d7734bff9145",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "REx: Research Explorer - Facilitador de identificação e comparação de Indicadores Científicos",
+            "desc": "Extensão que automatiza a identificação de ISSNs e permite comparação visual entre diferentes classificações de periódicos.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "Aplicação de um modelo organizado ao desenvolvimento de software: como evitar o improviso e trabalhar com intenção",
+            "desc": "Expõe a aplicação de uma metodologia estruturada para facilitar o desenvolvimento de software com foco na redução de improvisos e aumento de previsibilidade.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "O que é preciso para criar apps para dispositivos iOS",
+            "desc": "Guia prático sobre custos, requisitos e etapas para desenvolvimento de aplicativos iOS.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Ler",
+                    "title": "O que é preciso para criar apps para dispositivos iOS",
+                    "action": "url",
+                    "href": "article_ios.html"
+                },
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/o-que-%C3%A9-preciso-para-criar-apps-para-dispositivos-ios-5c1ce8ab0879",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "Reconhecimento Facial em Flutter",
+            "desc": "Sistema biométrico facial multiusuário offline desenvolvido em Flutter, com foco em autenticação local.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Ler",
+                    "title": "Reconhecimento Facial em Flutter",
+                    "action": "url",
+                    "href": "article_reconhecimento_facial.html"
+                },
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/reconhecimento-facial-em-flutter-9ae2bf495a56",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "Verificação de Versão em Flutter",
+            "desc": "Implementação de estratégia de verificação de versão e atualização obrigatória em aplicativos Flutter.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Ler",
+                    "title": "Verificação de Versão em Flutter",
+                    "action": "url",
+                    "href": "article_versioncheck.html"
+                },
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/verifica%C3%A7%C3%A3o-de-vers%C3%A3o-em-flutter-7127f87cf91f",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Artigo Técnico",
+            "title": "Algoritmo: Bicho de Sete Cabeças?",
+            "desc": "Abordagem didática para desmistificar a lógica de programação e facilitar o aprendizado de algoritmos.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Ler",
+                    "href": "article_algoritmos.html",
+                    "title": "Ler",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ]
+}

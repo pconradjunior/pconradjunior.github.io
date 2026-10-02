@@ -1,0 +1,35 @@
+{
+    "sectionTitle": "Professional Experience",
+    "intro": "Where the systems above come from.",
+    "entries": [
+        {
+            "org": "UNIPAMPA",
+            "orgFull": "Universidade Federal do Pampa",
+            "role": "IT Analyst · Software Engineering & Architecture",
+            "period": "2010 — Present",
+            "summary": "I build and evolve the systems that institutional processes depend on: ERPs with over 50 modules, academic management systems, access control, and mobile applications published for Android and iOS. I worked in the technical coordination of development teams between January 2016 and July 2019, which included defining processes, standards, and criteria for reviewing code and documentation.",
+            "systems": [
+                {
+                    "name": "GURI",
+                    "desc": "Institutional ERP, over 50 modules"
+                },
+                {
+                    "name": "SisPPA",
+                    "desc": "Academic output management and scoring"
+                },
+                {
+                    "name": "App Unipampa",
+                    "desc": "Institutional app for Android and iOS"
+                },
+                {
+                    "name": "SGCE",
+                    "desc": "Electronic certificate issuance and verification"
+                },
+                {
+                    "name": "Terminal RU",
+                    "desc": "Biometric access at university restaurants"
+                }
+            ]
+        }
+    ]
+}

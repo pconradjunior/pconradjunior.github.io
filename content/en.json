@@ -176,7 +176,8 @@
         ],
         "all": {
             "label": "View all projects"
-        }
+        },
+        "caseStudyLabel": "Case study"
     },
     "experience": {
         "sectionTitle": "Professional Experience",
@@ -299,6 +300,19 @@
         "heading": "Let's Talk",
         "infoTitle": "Channels",
         "infoText": "Interested in software architecture, complex systems, engineering practices or technical collaboration?"
+    },
+    "caseStudy": {
+        "backToWork": "Back to work",
+        "periodLabel": "Period",
+        "statusLabel": "Status",
+        "outcomesTitle": "Outcomes",
+        "evidenceTitle": "Evidence",
+        "relatedTitle": "Related references",
+        "status": {
+            "active": "In production",
+            "finished": "Finished",
+            "experimental": "Experimental"
+        }
     },
     "projects": {
         "mobile": {
@@ -559,6 +573,131 @@
                 }
             ],
             "desc": "Browser extensions and tools."
+        },
+        "videos": {
+            "title": "Video Material & Demos",
+            "items": [
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "ChessKids",
+                    "desc": "Demo of the educational chess application for children, with AI support and difficulty levels.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "yPxbRScwkvI",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "App Unipampa",
+                    "desc": "Demo of the official Unipampa application with academic services and institutional information.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "mgvavs5VOgU",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "SmellCheck",
+                    "desc": "Demo of the smell recovery monitoring application used in clinical processes.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "t1P1dCydtUo",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter",
+                    "title": "FingerNotes",
+                    "desc": "Demo of the secure note-taking app with biometric authentication and password protection.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "hGdydq2jhJI",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Flutter (Study)",
+                    "title": "LembraMed",
+                    "desc": "Demo of the medication tracking and health monitoring application.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "hUdgk81DGuk",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Clean Arch",
+                    "title": "Snack Wheel",
+                    "desc": "Practical study of Clean Architecture and responsibility-driven design in software development.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "ky72JApuaLg",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Responsiveness",
+                    "title": "Portfolio Demo",
+                    "desc": "Demonstration of the same project running responsively on both mobile and web platforms.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "WTa4rXAw9gg",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa fa-video",
+                    "typeLabel": "Game Dev",
+                    "title": "AlienWar",
+                    "desc": "2D game development study using the Unity engine.",
+                    "links": [
+                        {
+                            "icon": "fa fa-play-circle",
+                            "label": "Watch",
+                            "videoId": "IHHj8Zp5s10",
+                            "title": "Watch",
+                            "action": "video"
+                        }
+                    ]
+                }
+            ]
         },
         "technicalArticles": {
             "title": "Technical Articles",
@@ -1113,131 +1252,6 @@
                         }
                     ],
                     "kind": "paper"
-                }
-            ]
-        },
-        "videos": {
-            "title": "Video Material & Demos",
-            "items": [
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Flutter",
-                    "title": "ChessKids",
-                    "desc": "Demo of the educational chess application for children, with AI support and difficulty levels.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "yPxbRScwkvI",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Flutter",
-                    "title": "App Unipampa",
-                    "desc": "Demo of the official Unipampa application with academic services and institutional information.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "mgvavs5VOgU",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Flutter",
-                    "title": "SmellCheck",
-                    "desc": "Demo of the smell recovery monitoring application used in clinical processes.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "t1P1dCydtUo",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Flutter",
-                    "title": "FingerNotes",
-                    "desc": "Demo of the secure note-taking app with biometric authentication and password protection.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "hGdydq2jhJI",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Flutter (Study)",
-                    "title": "LembraMed",
-                    "desc": "Demo of the medication tracking and health monitoring application.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "hUdgk81DGuk",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Clean Arch",
-                    "title": "Snack Wheel",
-                    "desc": "Practical study of Clean Architecture and responsibility-driven design in software development.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "ky72JApuaLg",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Responsiveness",
-                    "title": "Portfolio Demo",
-                    "desc": "Demonstration of the same project running responsively on both mobile and web platforms.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "WTa4rXAw9gg",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
-                },
-                {
-                    "typeIcon": "fa fa-video",
-                    "typeLabel": "Game Dev",
-                    "title": "AlienWar",
-                    "desc": "2D game development study using the Unity engine.",
-                    "links": [
-                        {
-                            "icon": "fa fa-play-circle",
-                            "label": "Watch",
-                            "videoId": "IHHj8Zp5s10",
-                            "title": "Watch",
-                            "action": "video"
-                        }
-                    ]
                 }
             ]
         }

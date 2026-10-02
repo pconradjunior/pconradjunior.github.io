@@ -1,0 +1,25 @@
+{
+    "sectionTitle": "Writing",
+    "intro": "Intellectual work on architecture, software engineering, and the work of those who build software.",
+    "items": [
+        {
+            "title": "Petrux: the software engineering process written as code",
+            "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+        },
+        {
+            "title": "Applying an organized model to software development",
+            "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c"
+        },
+        {
+            "title": "Web application reverse engineering with Playwright",
+            "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2"
+        },
+        {
+            "title": "Paper, pen and knife: from implementation to specification",
+            "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01"
+        }
+    ],
+    "all": {
+        "label": "Read all articles"
+    }
+}

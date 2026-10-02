@@ -1,0 +1,25 @@
+{
+    "sectionTitle": "Escritos",
+    "intro": "Produção intelectual sobre arquitetura, engenharia de software e o trabalho de quem constrói software.",
+    "items": [
+        {
+            "title": "Petrux: o processo de engenharia de software escrito como código",
+            "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+        },
+        {
+            "title": "Aplicação de um modelo organizado ao desenvolvimento de software",
+            "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c"
+        },
+        {
+            "title": "Engenharia reversa de aplicações web com Playwright",
+            "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2"
+        },
+        {
+            "title": "Papel, caneta e faca: da implementação à especificação",
+            "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01"
+        }
+    ],
+    "all": {
+        "label": "Ler todos os artigos"
+    }
+}

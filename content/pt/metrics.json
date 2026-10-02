@@ -1,0 +1,21 @@
+{
+    "sectionTitle": "Escala",
+    "items": [
+        {
+            "number": "20+",
+            "label": "Anos em engenharia de software"
+        },
+        {
+            "number": "50+",
+            "label": "Módulos de ERP"
+        },
+        {
+            "number": "{{downloads}}",
+            "label": "Downloads de aplicativos"
+        },
+        {
+            "number": "{{papers}}",
+            "label": "Publicações acadêmicas"
+        }
+    ]
+}

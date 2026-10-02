@@ -1,0 +1,37 @@
+{
+    "sectionTitle": "Engenharia",
+    "statement": "Não construo apenas software. Estudo como o software é projetado, estimado e evoluído.",
+    "intro": "As áreas abaixo descrevem o que faço como capacidade de engenharia, não como lista de tecnologias.",
+    "capabilities": [
+        {
+            "icon": "fa fa-diagram-project",
+            "title": "Arquitetura de software",
+            "text": "Design e evolução de sistemas complexos, APIs, modelos de dados e estratégias de integração."
+        },
+        {
+            "icon": "fa fa-layer-group",
+            "title": "Engenharia full-stack",
+            "text": "Backend, frontend e banco de dados com foco em manutenibilidade e evolução de longo prazo."
+        },
+        {
+            "icon": "fa fa-mobile-screen",
+            "title": "Engenharia mobile",
+            "text": "Aplicativos Flutter para Android e iOS, incluindo APIs, autenticação e serviços institucionais."
+        },
+        {
+            "icon": "fa fa-recycle",
+            "title": "Evolução de legados",
+            "text": "Engenharia reversa, modernização e evolução incremental de sistemas existentes."
+        },
+        {
+            "icon": "fa fa-people-group",
+            "title": "Liderança técnica",
+            "text": "Decisões de arquitetura, padrões de desenvolvimento, mentoria e coordenação técnica."
+        },
+        {
+            "icon": "fa fa-compass-drafting",
+            "title": "Engenharia de software",
+            "text": "Estimativa, desenho de processo, automação e metodologias de engenharia."
+        }
+    ]
+}

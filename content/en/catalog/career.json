@@ -1,0 +1,70 @@
+{
+    "title": "Career & Management",
+    "desc": "On teams, communication, technical support and what sustains long-term work in IT.",
+    "items": [
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Career & Management",
+            "title": "Method Organizes. Communication Transforms. (PT-BR)",
+            "desc": "Reflection on the importance of effective communication in development teams, showing how methodologies organize processes but communication is what truly transforms team work.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Career & Management",
+            "title": "Among Code, People and Problems: What I Learned Working with Information Technology (So Far) (PT-BR)",
+            "desc": "Over two decades of IT career gathered in a reflection about learning, people, and what truly matters.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Career & Management",
+            "title": "Human-centered Support in Technical Services: Empathy as a Work Tool (PT-BR)",
+            "desc": "Reflection on the importance of empathy and human-centered service in technical support, highlighting how these skills positively impact user experience and problem resolution.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Career & Management",
+            "title": "Beyond the Method: What Makes a Team Perform Better? (PT-BR)",
+            "desc": "The importance of human factors, communication, and organization for the success of development teams.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ]
+}

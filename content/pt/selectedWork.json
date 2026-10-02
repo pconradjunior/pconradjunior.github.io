@@ -1,0 +1,100 @@
+{
+    "sectionTitle": "Projetos selecionados",
+    "intro": "Cinco sistemas e iniciativas que mostram o tipo de problema que eu resolvo: complexidade de domínio, evolução incremental e decisões técnicas com efeito em processos institucionais.",
+    "items": [
+        {
+            "number": "01",
+            "title": "GURI",
+            "kind": "ERP institucional",
+            "summary": "ERP que administra os recursos administrativos da universidade, com mais de 50 módulos integrados. Atuei como analista de requisitos, gestor de módulo, desenvolvedor, documentador e revisor de código e documentação.",
+            "tags": [
+                "PHP",
+                "CodeIgniter",
+                "IBM DB2"
+            ],
+            "links": [
+                {
+                    "icon": "fa fa-newspaper",
+                    "label": "Notícia",
+                    "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+                }
+            ]
+        },
+        {
+            "number": "02",
+            "title": "SisPPA",
+            "kind": "Gestão da produção acadêmica",
+            "summary": "Sistema web para gerenciar, validar e pontuar a produção acadêmica, construído sobre MVC e engenharia reversa de planilhas. Publicado no WTICIFES 2026.",
+            "tags": [
+                "PHP",
+                "CodeIgniter",
+                "MVC",
+                "Engenharia reversa"
+            ],
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Publicação",
+                    "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe"
+                }
+            ]
+        },
+        {
+            "number": "03",
+            "title": "App Unipampa",
+            "kind": "Mobile institucional",
+            "summary": "Aplicativo oficial da universidade, com serviços acadêmicos e informação institucional. Publicado para Android e iOS.",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "APIs"
+            ],
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "Android",
+                    "href": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app"
+                },
+                {
+                    "icon": "fa-brands fa-apple",
+                    "label": "iOS",
+                    "href": "https://apps.apple.com/app/app-unipampa/id1639927711"
+                }
+            ]
+        },
+        {
+            "number": "04",
+            "title": "MESPro",
+            "kind": "Metodologia de engenharia de software · Prova de conceito",
+            "summary": "Proposta de método de estimativa e desenvolvimento, com hipóteses explícitas, critérios de estimativa e mecanismo de calibração. Está emCIO; a ferramenta correspondente é uma prova de conceito.",
+            "tags": [
+                "Metodologia",
+                "Estimativa",
+                "Prova de conceito"
+            ],
+            "links": []
+        },
+        {
+            "number": "05",
+            "title": "Petrux",
+            "kind": "IA local · Engenharia de software · Automação",
+            "summary": "Experimento de escrever o processo de engenharia de software como código: treze fases, cada uma com dono, entrada, saída e critério de parada, com agentes especializados e validação humana obrigatória. Experimental.",
+            "tags": [
+                "IA local",
+                "Agentes",
+                "Automação"
+            ],
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Artigo",
+                    "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+                }
+            ]
+        }
+    ],
+    "all": {
+        "label": "Ver todos os projetos"
+    },
+    "caseStudyLabel": "Estudo de caso"
+}

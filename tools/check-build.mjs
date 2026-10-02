@@ -6,10 +6,15 @@
  * content/*.json e de js/render.js, para que o validador não possa divergir do
  * que o build realmente produz.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { PAGES, pageUrl, pageFile, GROUPS, CATALOG, SITE, fill } from '../js/render.js';
+import {
+  PAGES, PAGE_BY_KEY as PAGE_BY_KEY_WORK, pageUrl, pageFile, GROUPS, CATALOG, SITE, fill,
+  casePage, caseStudyUrl,
+  CS_REQUIRED_SECTIONS, CS_STATUSES
+} from '../js/render.js';
+import { loadContent, loadCaseStudies, contentFiles, deepEqual, firstDiff } from '../js/content.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const LANGS = ['pt', 'en'];
@@ -20,7 +25,7 @@ const bad = m => { failures++; console.log(`  [31m✗[0m ${m}`); };
 const check = (cond, m) => (cond ? ok(m) : bad(m));
 
 const read = p => readFileSync(join(ROOT, p), 'utf8');
-const content = lang => JSON.parse(read(`content/${lang}.json`));
+const content = lang => loadContent(ROOT, lang);
 const css = read('css/style.css');
 
 /** Escapa como render.js escapa, para comparar com o HTML gerado. */
@@ -49,13 +54,44 @@ function shape(value, path = '$', out = []) {
 
 console.log('\nparidade pt/en');
 {
-  const [pt, en] = [shape(content('pt')), shape(content('en'))];
-  const onlyPt = pt.filter(x => !en.includes(x));
-  const onlyEn = en.filter(x => !pt.includes(x));
+  // Com um arquivo por seção, a paridade de arquivos vem primeiro: uma seção que
+  // existe em pt e não em en é uma página a menos no outro idioma.
+  const ptFiles = contentFiles(ROOT, 'pt');
+  const enFiles = contentFiles(ROOT, 'en');
+  const onlyPt = ptFiles.filter(f => !enFiles.includes(f));
+  const onlyEn = enFiles.filter(f => !ptFiles.includes(f));
   check(onlyPt.length === 0 && onlyEn.length === 0,
     onlyPt.length || onlyEn.length
-      ? `estrutura diverge — só em pt: ${onlyPt.slice(0, 4).join(' | ')} · só em en: ${onlyEn.slice(0, 4).join(' | ')}`
+      ? `arquivos divergem — só em pt: ${onlyPt.join(', ') || '—'} · só em en: ${onlyEn.join(', ') || '—'}`
+      : `${ptFiles.length} arquivos de conteúdo em cada idioma`);
+  check(ptFiles.length > 0, 'content/pt tem arquivos de seção');
+
+  const [pt, en] = [shape(content('pt')), shape(content('en'))];
+  const onlyPtNodes = pt.filter(x => !en.includes(x));
+  const onlyEnNodes = en.filter(x => !pt.includes(x));
+  check(onlyPtNodes.length === 0 && onlyEnNodes.length === 0,
+    onlyPtNodes.length || onlyEnNodes.length
+      ? `estrutura diverge — só em pt: ${onlyPtNodes.slice(0, 4).join(' | ')} · só em en: ${onlyEnNodes.slice(0, 4).join(' | ')}`
       : `estrutura idêntica (${pt.length} nós)`);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   monólitos preservados
+   content/pt.json e content/en.json foram mantidos como referência de
+   migração, mas o build não os lê: a fonte é content/<idioma>/*.json.
+   Editá-los cria duas verdades, então a divergência reprova aqui.
+   ───────────────────────────────────────────────────────────── */
+console.log('\nmonólitos preservados');
+for (const lang of LANGS) {
+  const file = `content/${lang}.json`;
+  if (!existsSync(join(ROOT, file))) { ok(`${file} removido — layout por seção é a única fonte`); continue; }
+  const mono = JSON.parse(read(file));
+  const assembled = content(lang);
+  const diff = firstDiff(mono, assembled);
+  check(diff === null,
+    diff === null
+      ? `${file} bate com content/${lang}/ — não edite o monólito`
+      : `${file} diverge em ${diff} — a fonte é content/${lang}/`);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -68,10 +104,23 @@ function expectedCards(lang, pageKey) {
   return CATALOG[pageKey].groups.reduce((n, k) => n + (p[k]?.items?.length ?? 0), 0);
 }
 
+const csSlugs = lang => loadCaseStudies(ROOT, lang).map(cs => cs.slug);
+
+/**
+ * Páginas a validar: as fixas mais os case studies. O HTML de um estudo é
+ * escrito em work/<slug>/index.html, com o mesmo formato das demais.
+ */
+const targets = lang => [
+  ...PAGES.map(page => ({ kind: 'page', page, file: lang === 'pt' ? pageFile(page) : `en/${pageFile(page)}` })),
+  ...loadCaseStudies(ROOT, lang).map(cs => {
+    const page = casePage(cs);
+    return { kind: 'case', page, cs, file: lang === 'pt' ? pageFile(page) : `en/${pageFile(page)}` };
+  })
+];
+
 for (const lang of LANGS) {
-  for (const page of PAGES) {
+  for (const { kind, page, cs, file } of targets(lang)) {
     const d = content(lang);
-    const file = lang === 'pt' ? pageFile(page) : `en/${pageFile(page)}`;
     console.log(`\n${file}`);
 
     if (!existsSync(join(ROOT, file))) { bad('página não foi gerada'); continue; }
@@ -99,6 +148,8 @@ for (const lang of LANGS) {
     check(h1s.length === 1, `exatamente 1 h1 — ${JSON.stringify(h1s[0]?.replace(/<[^>]+>/g, '').slice(0, 60))}`);
     if (page.key === 'home') {
       check(h1s[0] === 'Pedro Conrad Jr', 'h1 da home é o nome');
+    } else if (kind === 'case') {
+      check(h1s[0] === esc(cs.title), `h1 do estudo é "${cs.title}"`);
     } else {
       check(h1s[0] === esc(d[page.key].sectionTitle), 'h1 é o título da página no idioma certo');
     }
@@ -180,6 +231,28 @@ for (const lang of LANGS) {
         check(flat.includes(esc(t.title)), `escrito "${t.title.slice(0, 40)}…"`);
       }
       check(html.includes(`>${esc(d.hero.ctaWork)}</a>`), 'CTA primário aponta para o catálogo');
+
+      // Toda referência a um estudo na home precisa existir de verdade: um slug
+      // declarado e sem arquivo viraria um 404 silencioso em produção.
+      for (const w of d.selectedWork.items) {
+        if (!w.caseStudy) continue;
+        check(csSlugs(lang).includes(w.caseStudy),
+          `home referencia o estudo "${w.caseStudy}" — arquivo existe`);
+        check(flat.includes(`href="${caseStudyUrl(w.caseStudy, lang)}"`),
+          `home linka ${caseStudyUrl(w.caseStudy, lang)}`);
+      }
+    } else if (kind === 'case') {
+      // Um estudo só vale se dá para chegar nele: a página precisa apontar de
+      // volta para o catálogo e ser referenciada por alguma página do site.
+      check(html.includes(`href="${pageUrl(PAGE_BY_KEY_WORK['work'], lang)}"`),
+        `estudo tem link de volta para ${pageUrl(PAGE_BY_KEY_WORK['work'], lang)}`);
+      const here = pageUrl(page, lang);
+      const reachable = targets(lang).some(t => {
+        const f = t.file;
+        if (f === file) return false;
+        return read(f).includes(`href="${here}"`);
+      });
+      check(reachable, `estudo é alcançável a partir de outra página`);
     } else if (page.key === 'work' || page.key === 'writing') {
       const cards = (html.match(/class="project-card"/g) ?? []).length;
       const expected = expectedCards(lang, page.key);
@@ -247,6 +320,58 @@ for (const lang of LANGS) {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   case studies
+   O esquema é o que impede um estudo de virar propaganda: seções
+   obrigatórias, números que precisam sair de algum lugar verificável e
+   links de evidência apontando para host real.
+   ───────────────────────────────────────────────────────────── */
+console.log('\ncase studies');
+
+const ptSlugs = csSlugs('pt');
+const enSlugs = csSlugs('en');
+// Nenhum estudo ainda é um estado válido — o pipeline existe e os dados ainda
+// não chegaram. Reprovar aqui deixaria o CI vermelho num commit limpo; o que
+// não pode passar é um estudo escrito pela metade.
+if (ptSlugs.length === 0) {
+  ok('nenhum case study escrito ainda — pipeline pronto, aguardando conteúdo (veja content/README.md)');
+} else {
+  ok(`${ptSlugs.length} estudo(s) em content/<idioma>/case-studies`);
+}
+for (const s of ptSlugs) check(enSlugs.includes(s), `estudo "${s}" tem par em EN`);
+for (const s of enSlugs) check(ptSlugs.includes(s), `estudo "${s}" tem par em PT`);
+
+for (const lang of LANGS) {
+  for (const cs of loadCaseStudies(ROOT, lang)) {
+    console.log(`\n  case study ${lang}/${cs.slug}`);
+
+    const ids = (cs.sections ?? []).map(s => s.id);
+    for (const req of CS_REQUIRED_SECTIONS) {
+      const s = (cs.sections ?? []).find(x => x.id === req);
+      check(!!s && (s.paragraphs?.length || s.bullets?.length),
+        `seção obrigatória "${req}" presente e preenchida`);
+    }
+    check(new Set(ids).size === ids.length, 'ids de seção sem repetição');
+    check(CS_STATUSES.includes(cs.status), `status "${cs.status}" é um valor conhecido`);
+    check(content(lang).caseStudy.status[cs.status] !== undefined, `status "${cs.status}" tem rótulo em ${lang}`);
+
+    // Nenhum outcome pode ser um número inventado: ou é literal, ou é um token
+    // que o conteúdo resolve ({{downloads}}, {{papers}}…).
+    for (const o of cs.outcomes ?? []) {
+      const n = fill(o.number, content(lang));
+      check(n != null && !String(n).includes('{{') && String(n).trim() !== '',
+        `outcome "${o.label}" resolve — ${o.number}`);
+    }
+
+    for (const e of cs.evidence ?? []) {
+      check(/^https?:\/\//.test(e.href) && !/example\.(com|org)/.test(e.href),
+        `evidência "${e.label}" aponta para host real`);
+    }
+    check((cs.related ?? []).every(r => r.href && r.title), 'referências relacionadas têm título e href');
+    check(Array.isArray(cs.stack) && cs.stack.length > 0, 'stack declarada');
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
    raiz
    ───────────────────────────────────────────────────────────── */
 console.log('\nraiz');
@@ -254,13 +379,14 @@ const robots = read('robots.txt');
 check(robots.includes('Sitemap: https://pconradjunior.github.io/sitemap.xml'), 'robots.txt referencia o sitemap');
 
 const sitemap = read('sitemap.xml');
-for (const page of PAGES) {
+const sitemapPages = [...PAGES, ...ptSlugs.map(s => casePage({ slug: s }))];
+for (const page of sitemapPages) {
   for (const lang of LANGS) {
     check(sitemap.includes(`<loc>${SITE.origin}${pageUrl(page, lang)}</loc>`),
       `sitemap inclui ${pageUrl(page, lang)}`);
   }
 }
-check((sitemap.match(/<lastmod>/g) ?? []).length === PAGES.length * 2,
+check((sitemap.match(/<lastmod>/g) ?? []).length === sitemapPages.length * 2,
   'lastmod só nas páginas bilíngues, não nas avulsas');
 check(existsSync(join(ROOT, '404.html')), '404.html existe');
 check(existsSync(join(ROOT, 'images/og-image.png')), 'og-image.png existe');

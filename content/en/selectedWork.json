@@ -1,0 +1,100 @@
+{
+    "sectionTitle": "Selected Work",
+    "intro": "Five systems and initiatives that show the kind of problem I solve: domain complexity, incremental evolution, and technical decisions with an effect on institutional processes.",
+    "items": [
+        {
+            "number": "01",
+            "title": "GURI",
+            "kind": "Institutional ERP",
+            "summary": "The ERP that administers the university administrative resources, with over 50 integrated modules. I worked as requirements analyst, module manager, developer, documenter, and code and documentation reviewer.",
+            "tags": [
+                "PHP",
+                "CodeIgniter",
+                "IBM DB2"
+            ],
+            "links": [
+                {
+                    "icon": "fa fa-newspaper",
+                    "label": "News",
+                    "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador"
+                }
+            ]
+        },
+        {
+            "number": "02",
+            "title": "SisPPA",
+            "kind": "Academic Production Management",
+            "summary": "Web system to manage, validate and score academic output, built on MVC and spreadsheet reverse engineering. Published at WTICIFES 2026.",
+            "tags": [
+                "PHP",
+                "CodeIgniter",
+                "MVC",
+                "Reverse Engineering"
+            ],
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Publication",
+                    "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe"
+                }
+            ]
+        },
+        {
+            "number": "03",
+            "title": "App Unipampa",
+            "kind": "Institutional mobile app",
+            "summary": "The university official app, with academic services and institutional information. Published for Android and iOS.",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "APIs"
+            ],
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "Android",
+                    "href": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app"
+                },
+                {
+                    "icon": "fa-brands fa-apple",
+                    "label": "iOS",
+                    "href": "https://apps.apple.com/app/app-unipampa/id1639927711"
+                }
+            ]
+        },
+        {
+            "number": "04",
+            "title": "MESPro",
+            "kind": "Software Engineering Methodology · Proof of Concept",
+            "summary": "A proposed estimation and development method, with explicit hypotheses, estimation criteria and a calibration mechanism. It is under experimentation; the matching tool is a proof of concept.",
+            "tags": [
+                "Methodology",
+                "Estimation",
+                "Proof of Concept"
+            ],
+            "links": []
+        },
+        {
+            "number": "05",
+            "title": "Petrux",
+            "kind": "Local AI · Software Engineering · Automation",
+            "summary": "An experiment in writing the software engineering process as code: thirteen phases, each with an owner, inputs, outputs and a stop criterion, built on specialized agents with mandatory human validation. Experimental.",
+            "tags": [
+                "Local AI",
+                "Agents",
+                "Automation"
+            ],
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Article",
+                    "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+                }
+            ]
+        }
+    ],
+    "all": {
+        "label": "View all projects"
+    },
+    "caseStudyLabel": "Case study"
+}

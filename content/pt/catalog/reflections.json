@@ -1,0 +1,174 @@
+{
+    "title": "Reflexões",
+    "desc": "Textos sobre tecnologia, inovação, carreira e o papel de quem desenvolve software.",
+    "items": [
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "O que o WTICIFES 2026 me mostrou sobre o futuro da TI nas universidades federais",
+            "desc": "Relato do WTICIFES 2026 (Garibaldi/RS) a partir de mais de 200 trabalhos apresentados, analisando casos de automação e integração em universidades federais — como o sorteio auditável da UFSCar, o assistente via WhatsApp da UFFS e a automação de votação da UNIFESP — e o argumento de que a tecnologia tem sido usada cada vez mais como meio para resolver problemas concretos, e não como objetivo em si mesma.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/o-que-o-wticifes-2026-me-mostrou-sobre-o-futuro-da-ti-nas-universidades-federais-fe62c9b4cb87",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                },
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Publicação",
+                    "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                    "title": "Publicação no WTICIFES 2026",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Papel, Caneta e Faca. Da implementação à especificação: a nova responsabilidade do desenvolvedor",
+            "desc": "Reflexão sobre como a inteligência artificial está mudando a responsabilidade do desenvolvedor, que passa de autor da implementação para autor do comportamento esperado do software, usando a metáfora do papel, caneta e faca.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/papel-caneta-e-faca-68a578fcab01",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Uma carta para quem chegou até aqui",
+            "desc": "Carta de boas-vindas ao espaço no Medium, sobre a jornada, o propósito da escrita e a importância de compartilhar conhecimento para conectar pessoas e inspirar novas descobertas.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/uma-carta-para-quem-chegou-at%C3%A9-aqui-b25d6d410763",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Além dos rótulos: o potencial que ainda espera oportunidades",
+            "desc": "Reflexão sobre potencial humano, preconceitos e rótulos que limitam pessoas. Mostra como oportunidades e apoio podem revelar talentos escondidos, com uma história pessoal sobre persistência e aprendizado.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/al%C3%A9m-dos-r%C3%B3tulos-o-potencial-que-ainda-espera-oportunidades-5210ff480e86",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Mudança: medo ou oportunidade?",
+            "desc": "Reflexão sobre como encarar a mudança com mentalidade positiva, transformando desafios em oportunidades de crescimento, com dicas práticas para lidar com transições assustadoras.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/mudan%C3%A7a-medo-ou-oportunidade-1b0551f89a66",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Muito Além do Código",
+            "desc": "Reflexão profunda sobre legado, tecnologia e pessoas. Uma jornada pessoal de mais de três décadas na computação, explorando como o verdadeiro impacto do trabalho em TI não está nos sistemas desenvolvidos, mas nas pessoas que ajudamos a crescer e no conhecimento que compartilhamos.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/muito-al%C3%A9m-do-c%C3%B3digo-1730e372c01c",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Afinal, o que é realmente a inovação? De onde ela vem?",
+            "desc": "Reflexão sobre a natureza da inovação, questionando se ela surge de novas tecnologias ou de uma compreensão mais profunda dos problemas humanos. Uma análise sobre como a verdadeira inovação vem da capacidade de compreender pessoas e transformar realidades.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/afinal-o-que-%C3%A9-realmente-a-inova%C3%A7%C3%A3o-de-onde-ela-vem-3f8298b3191d",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Quanto Vale Meu Trabalho na Área de TI: Sou Relevante? Como Combater a Síndrome do Impostor",
+            "desc": "Reflexão sobre o valor do trabalho na área de TI, a sensação de relevância profissional e estratégias para lidar com a síndrome do impostor.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/quanto-vale-meu-trabalho-na-%C3%A1rea-de-ti-sou-relevante-como-combater-a-s%C3%ADndrome-do-impostor-d5c54d3f36ee",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Inteligência Artificial: Uma Revolução Cognitiva ou a Revolução da Pressa",
+            "desc": "Reflexão sobre o impacto real da Inteligência Artificial, questionando se estamos diante de uma verdadeira revolução cognitiva ou apenas de um atalho intelectual que pode comprometer o processo de aprendizado.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/intelig%C3%AAncia-artificial-uma-revolu%C3%A7%C3%A3o-cognitiva-ou-a-revolu%C3%A7%C3%A3o-da-pressa-21d935b7b992",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Reflexão",
+            "title": "Seu portfólio não é um currículo em HTML (e tudo bem)",
+            "desc": "Reflexão sobre as diferenças entre portfólio e currículo e como estruturar melhor a apresentação profissional.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/seu-portf%C3%B3lio-n%C3%A3o-%C3%A9-um-curr%C3%ADculo-em-html-e-tudo-bem-14d3af0a0ff4",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ]
+}

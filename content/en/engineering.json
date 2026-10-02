@@ -1,0 +1,37 @@
+{
+    "sectionTitle": "Engineering",
+    "statement": "I don't just build software. I study how software is designed, estimated and evolved.",
+    "intro": "The areas below describe what I do as an engineering capability, not as a list of technologies.",
+    "capabilities": [
+        {
+            "icon": "fa fa-diagram-project",
+            "title": "Software Architecture",
+            "text": "Design and evolution of complex systems, APIs, data models and integration strategies."
+        },
+        {
+            "icon": "fa fa-layer-group",
+            "title": "Full-Stack Engineering",
+            "text": "Backend, frontend and database development focused on maintainability and long-term evolution."
+        },
+        {
+            "icon": "fa fa-mobile-screen",
+            "title": "Mobile Engineering",
+            "text": "Flutter applications for Android and iOS, including APIs, authentication and institutional services."
+        },
+        {
+            "icon": "fa fa-recycle",
+            "title": "Legacy Evolution",
+            "text": "Reverse engineering, modernization and incremental evolution of existing systems."
+        },
+        {
+            "icon": "fa fa-people-group",
+            "title": "Technical Leadership",
+            "text": "Architecture decisions, development standards, mentoring and technical coordination."
+        },
+        {
+            "icon": "fa fa-compass-drafting",
+            "title": "Software Engineering",
+            "text": "Estimation, process design, automation and engineering methodologies."
+        }
+    ]
+}

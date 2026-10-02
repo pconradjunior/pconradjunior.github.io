@@ -1,0 +1,21 @@
+{
+    "sectionTitle": "Scale",
+    "items": [
+        {
+            "number": "20+",
+            "label": "Years in Software Engineering"
+        },
+        {
+            "number": "50+",
+            "label": "ERP Modules"
+        },
+        {
+            "number": "{{downloads}}",
+            "label": "App Downloads"
+        },
+        {
+            "number": "{{papers}}",
+            "label": "Academic Publications"
+        }
+    ]
+}

@@ -1,0 +1,187 @@
+{
+    "title": "Technical Articles",
+    "desc": "Practical writing on architecture, Flutter, PHP and automation — with code, technical decisions and what went wrong.",
+    "items": [
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "Petrux: Writing the Software Engineering Process as Code (PT-BR)",
+            "desc": "How a software engineering process can be coded into a system of specialized agents: Petrux's thirteen phases, each with an owner, inputs, outputs and a stop criterion, the Helpdesk branch outside the main sequence, and the mandatory human validation before any code reaches production.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "Web Application Reverse Engineering with Playwright: How to Automatically Map APIs and Technologies (PT-BR)",
+            "desc": "Tool that automates data collection from websites using real browser controlled via command line, generating offline HTML report with APIs, frameworks, stack and network traffic.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/engenharia-reversa-de-aplica%C3%A7%C3%B5es-web-com-playwright-como-mapear-apis-e-tecnologias-de-forma-148e106789f2",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "MPCar Player: Building an Automotive Audio Player in Flutter (PT-BR)",
+            "desc": "Development of an audio player for automotive multimedia with customized Android, addressing challenges of audio management, permissions, and file discovery in automotive environments.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/mpcar-player-construindo-um-player-de-%C3%A1udio-ff51ddfae948",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "Developing ChessKids: A Study on Architecture, Components, and AI (PT-BR)",
+            "desc": "Analysis of the development of ChessKids, a chess application for children, highlighting the architecture, component organization, and integration of artificial intelligence.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/desenvolvendo-o-chesskids-um-estudo-que-mistura-arquitetura-componentes-e-ia-d7734bff9145",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "REx: Research Explorer - Automating ISSN Identification (PT-BR)",
+            "desc": "Extension that automates ISSN identification and enables visual comparison across different journal ranking classifications.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "Application of an organized model to software development: how to avoid improvisation and work with intention (PT-BR)",
+            "desc": "Explores the application of a structured methodology to software development, reducing improvisation and increasing predictability.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/aplica%C3%A7%C3%A3o-de-um-modelo-organizado-ao-desenvolvimento-de-software-como-evitar-o-improviso-e-6f316043da5c",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "What You Need to Create Apps for iOS Devices (PT-BR)",
+            "desc": "Practical guide covering costs, requirements, and steps for iOS application development.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Read",
+                    "title": "What You Need to Create Apps for iOS Devices (PT-BR)",
+                    "action": "url",
+                    "href": "article_ios.html"
+                },
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/o-que-%C3%A9-preciso-para-criar-apps-para-dispositivos-ios-5c1ce8ab0879",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "Facial Recognition in Flutter (PT-BR)",
+            "desc": "Offline multi-user facial biometric system developed in Flutter, focused on local authentication.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Read",
+                    "title": "Facial Recognition in Flutter (PT-BR)",
+                    "action": "url",
+                    "href": "article_reconhecimento_facial.html"
+                },
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/reconhecimento-facial-em-flutter-9ae2bf495a56",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "Version Check in Flutter (PT-BR)",
+            "desc": "Implementation of version checking strategy and forced updates in Flutter applications.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Read",
+                    "title": "Version Check in Flutter (PT-BR)",
+                    "action": "url",
+                    "href": "article_versioncheck.html"
+                },
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Read on Medium",
+                    "href": "https://medium.com/@pconradjunior/verifica%C3%A7%C3%A3o-de-vers%C3%A3o-em-flutter-7127f87cf91f",
+                    "title": "Read on Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Technical Article",
+            "title": "Algorithms",
+            "desc": "Didactic approach to demystify programming logic and simplify the learning of algorithms.",
+            "links": [
+                {
+                    "icon": "fa fa-book-open",
+                    "label": "Read",
+                    "href": "article_algoritmos.html",
+                    "title": "Read",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ]
+}

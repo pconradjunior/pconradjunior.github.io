@@ -1,0 +1,125 @@
+{
+    "title": "Publications",
+    "desc": "Academic work presented at Computing Grande Porto Alegre and Regulatory Innovation, plus institutional coverage of delivered projects.",
+    "items": [
+        {
+            "typeIcon": "fa fa-file-pdf",
+            "typeLabel": "Scientific Publication",
+            "title": "Desenvolvimento de um Sistema de Gestão da Produção Acadêmica baseado em Engenharia Reversa e Padrões de Projeto (PT-BR)",
+            "desc": "Published at WTICIFES 2026 — Information Systems. Presents SisPPA, the Unipampa web system for managing, validating and scoring academic output, built on MVC and spreadsheet reverse engineering.",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Read PDF",
+                    "title": "Read PDF",
+                    "action": "url",
+                    "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                    "style": "color:#000;"
+                }
+            ],
+            "kind": "paper"
+        },
+        {
+            "typeIcon": "fa fa-newspaper",
+            "typeLabel": "Institutional News",
+            "title": "Unipampa App brings innovation to community",
+            "desc": "Institutional news about the launch of the official Unipampa application, highlighting its services and benefits for the university community.",
+            "links": [
+                {
+                    "icon": "fa fa-external-link-alt",
+                    "label": "Read news",
+                    "href": "https://unipampa.edu.br/portal/app-da-unipampa-leva-informacoes-e-inovacao-comunidade-universitaria",
+                    "title": "Read news",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ],
+            "kind": "news"
+        },
+        {
+            "typeIcon": "fa fa-newspaper",
+            "typeLabel": "Institutional News",
+            "title": "Unipampa App available for iOS",
+            "desc": "Institutional news about the release of the Unipampa app for iOS devices, expanding access for the academic community.",
+            "links": [
+                {
+                    "icon": "fa fa-external-link-alt",
+                    "label": "Read news",
+                    "href": "https://unipampa.edu.br/portal/app-unipampa-agora-esta-disponivel-tambem-para-ios",
+                    "title": "Read news",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ],
+            "kind": "news"
+        },
+        {
+            "typeIcon": "fa fa-newspaper",
+            "typeLabel": "Scientific Publication",
+            "title": "Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão (PT-BR)",
+            "desc": "Published at WTICIFES 2012 — Goiânia, Brazil",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Read PDF",
+                    "href": "https://repositorio.wticifes.com.br/items/3467ff37-1ce3-4e4d-9fe4-23b88a2d746f",
+                    "title": "Read PDF",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ],
+            "kind": "paper"
+        },
+        {
+            "typeIcon": "fa fa-newspaper",
+            "typeLabel": "Scientific Publication",
+            "title": "SisRel - Sistema de Extração Dinâmica de Dados com Foco no Usuário Final (PT-BR)",
+            "desc": "Published at WTICIFES 2011 — Florianópolis, Brazil",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Read PDF",
+                    "href": "https://repositorio.wticifes.com.br/items/956a321f-3163-4e08-a087-e48d21e3711f",
+                    "title": "Read PDF",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ],
+            "kind": "paper"
+        },
+        {
+            "typeIcon": "fa fa-newspaper",
+            "typeLabel": "Scientific Publication",
+            "title": "Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto (PT-BR)",
+            "desc": "Published at WTICIFES 2011 — Florianópolis, Brazil",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Read PDF",
+                    "href": "https://repositorio.wticifes.com.br/items/f0cf9d8b-8fb2-40f1-8cae-2f623fa235d2",
+                    "title": "Read PDF",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ],
+            "kind": "paper"
+        },
+        {
+            "typeIcon": "fa fa-newspaper",
+            "typeLabel": "Scientific Publication",
+            "title": "Sistema de Gestão de Certificados Eletrônicos (PT-BR)",
+            "desc": "Published at WTICIFES 2011 — Florianópolis, Brazil",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Read PDF",
+                    "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14",
+                    "title": "Read PDF",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ],
+            "kind": "paper"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "title": "Other Projects",
+    "items": [
+        {
+            "typeIcon": "fa-brands fa-chrome",
+            "typeLabel": "Javascript / HTML / CSS",
+            "title": "REx: Research Explorer",
+            "desc": "Browser extension that automates the identification of scientific publications and facilitates the analysis of academic indicators.",
+            "cardClass": "project-card",
+            "linksClass": "project-links",
+            "links": [
+                {
+                    "icon": "fa-solid fa-info-circle",
+                    "label": "Read more / Downloads",
+                    "href": "rex_info.html",
+                    "title": "Project Information & Downloads",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ],
+    "desc": "Browser extensions and tools."
+}

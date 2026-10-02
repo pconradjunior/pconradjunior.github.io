@@ -1,0 +1,70 @@
+{
+    "title": "Carreira e Gestão",
+    "desc": "Sobre equipes, comunicação, suporte técnico e o que sustenta trabalho de longo prazo em TI.",
+    "items": [
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Carreira e Gestão",
+            "title": "Método organiza. Comunicação transforma.",
+            "desc": "Reflexão sobre a importância da comunicação efetiva em equipes de desenvolvimento, mostrando como metodologias organizam processos mas a comunicação é o que realmente transforma o trabalho em equipe.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/m%C3%A9todo-organiza-comunica%C3%A7%C3%A3o-transforma-e878e946c915",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Carreira e Gestão",
+            "title": "Entre Código, Pessoas e Problemas: o que aprendi trabalhando com Tecnologia da Informação (até agora)",
+            "desc": "Mais de duas décadas de carreira em TI reunidas em uma reflexão sobre aprendizado, pessoas e o que realmente importa na profissão.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/entre-c%C3%B3digo-pessoas-e-problemas-o-que-aprendi-trabalhando-com-tecnologia-da-informa%C3%A7%C3%A3o-at%C3%A9-f219557be007",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Carreira e Gestão",
+            "title": "Atendimento Humano no Suporte Técnico: A empatia como ferramenta de trabalho",
+            "desc": "Reflexão sobre a importância da empatia e do atendimento humano no suporte técnico, destacando como essas habilidades impactam positivamente a experiência do usuário e a resolução de problemas.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/atendimento-humano-no-suporte-t%C3%A9cnico-999ed62db416",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa-brands fa-medium",
+            "typeLabel": "Carreira e Gestão",
+            "title": "Além do Método: O que faz uma equipe funcionar melhor?",
+            "desc": "A importância de fatores humanos, comunicação e organização para o sucesso de equipes de desenvolvimento.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Ler no Medium",
+                    "href": "https://medium.com/@pconradjunior/al%C3%A9m-do-m%C3%A9todo-o-que-faz-uma-equipe-funcionar-melhor-a70122da16f9",
+                    "title": "Ler no Medium",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ]
+}

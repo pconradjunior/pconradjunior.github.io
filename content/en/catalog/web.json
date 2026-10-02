@@ -1,0 +1,60 @@
+{
+    "title": "Web Systems",
+    "items": [
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "GURI - ERP",
+            "desc": "Institutional ERP system with over 50 integrated modules, used for academic and administrative management, with contributions in analysis, development, and architecture.",
+            "links": [
+                {
+                    "icon": "fa fa-newspaper",
+                    "label": "News",
+                    "href": "https://unipampa.edu.br/portal/sistema-guri-recebe-registro-de-programa-de-computador",
+                    "title": "Read News",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "SisPPA",
+            "desc": "Academic output scoring system focused on transparency, evaluation and institutional management support. Published at WTICIFES 2026.",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Paper",
+                    "title": "WTICIFES 2026",
+                    "action": "url",
+                    "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                    "style": "color:#000;"
+                }
+            ]
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "Terminal RU",
+            "desc": "Biometric access control system integrated with hardware for university restaurant operations.",
+            "links": []
+        },
+        {
+            "typeIcon": "fa fa-server",
+            "typeLabel": "PHP / CodeIgniter",
+            "title": "SGCE",
+            "desc": "System for issuing, validating, and publicly verifying electronic certificates.",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "PDF",
+                    "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14",
+                    "title": "Read Article",
+                    "action": "url",
+                    "style": "color:#000;"
+                }
+            ]
+        }
+    ]
+}
