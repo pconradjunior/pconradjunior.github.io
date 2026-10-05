@@ -23,6 +23,7 @@
         "brand": "Pedro Conrad Jr",
         "navLabel": "Main navigation",
         "openMenu": "Open menu",
+        "closeMenu": "Close menu",
         "work": "Projects",
         "engineering": "Engineering",
         "writing": "Articles",
@@ -37,7 +38,6 @@
         },
         "langToggleLabel": "Português",
         "langToggleFlag": "https://flagcdn.com/20x15/br.png",
-        "langToggleAlt": "PT",
         "langToggleCode": "pt"
     },
     "themeSwitcherTitle": "Choose your theme",
@@ -1566,5 +1566,24 @@
         ],
         "metaTitle": "Resume — Pedro Conrad Jr",
         "metaDescription": "Full resume of Pedro Conrad Jr: over 30 years in software, experience at three universities, a Computing degree and a portfolio of projects."
-    }
+    },
+    "themes": [
+        {
+            "id": "theme-cyan",
+            "name": "Cyan theme"
+        },
+        {
+            "id": "theme-purple",
+            "name": "Purple theme"
+        },
+        {
+            "id": "theme-green",
+            "name": "Green theme"
+        },
+        {
+            "id": "theme-light",
+            "name": "Light theme"
+        }
+    ],
+    "skipToContent": "Skip to content"
 }

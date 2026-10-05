@@ -1,5 +1,24 @@
 {
     "themeSwitcherTitle": "Choose your theme",
+    "themes": [
+        {
+            "id": "theme-cyan",
+            "name": "Cyan theme"
+        },
+        {
+            "id": "theme-purple",
+            "name": "Purple theme"
+        },
+        {
+            "id": "theme-green",
+            "name": "Green theme"
+        },
+        {
+            "id": "theme-light",
+            "name": "Light theme"
+        }
+    ],
+    "skipToContent": "Skip to content",
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. All rights reserved.",
         "version": "v26 - Designed with CSS & Glassmorphism"

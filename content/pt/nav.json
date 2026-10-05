@@ -2,6 +2,7 @@
     "brand": "Pedro Conrad Jr",
     "navLabel": "Navegação principal",
     "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
     "work": "Projetos",
     "engineering": "Engenharia",
     "writing": "Artigos",
@@ -16,6 +17,5 @@
     },
     "langToggleLabel": "English",
     "langToggleFlag": "https://flagcdn.com/20x15/us.png",
-    "langToggleAlt": "EN",
     "langToggleCode": "en"
 }

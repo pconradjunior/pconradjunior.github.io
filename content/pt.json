@@ -23,6 +23,7 @@
         "brand": "Pedro Conrad Jr",
         "navLabel": "Navegação principal",
         "openMenu": "Abrir menu",
+        "closeMenu": "Fechar menu",
         "work": "Projetos",
         "engineering": "Engenharia",
         "writing": "Artigos",
@@ -37,7 +38,6 @@
         },
         "langToggleLabel": "English",
         "langToggleFlag": "https://flagcdn.com/20x15/us.png",
-        "langToggleAlt": "EN",
         "langToggleCode": "en"
     },
     "themeSwitcherTitle": "Escolha seu tema",
@@ -1566,5 +1566,24 @@
         ],
         "metaTitle": "Currículo — Pedro Conrad Jr",
         "metaDescription": "Currículo completo de Pedro Conrad Jr: mais de 30 anos em software, experiência em três universidades, formação em Computação e portfólio de projetos."
-    }
+    },
+    "themes": [
+        {
+            "id": "theme-cyan",
+            "name": "Tema ciano"
+        },
+        {
+            "id": "theme-purple",
+            "name": "Tema roxo"
+        },
+        {
+            "id": "theme-green",
+            "name": "Tema verde"
+        },
+        {
+            "id": "theme-light",
+            "name": "Tema claro"
+        }
+    ],
+    "skipToContent": "Pular para o conteúdo"
 }

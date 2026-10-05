@@ -13,19 +13,54 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href=css/style.css>
+    <script>
+      /* Página avulsa: não passa por build.mjs, então repete o que o layout gerado
+         faz — escrever data-theme no <html> antes da primeira pintura, para o CSS
+         não ficar sem tema, e escrevê-lo de novo numa escolha do usuário. */
+      (function () {
+        var THEMES = ["theme-cyan","theme-purple","theme-green","theme-light"];
+        var t = null;
+        try {
+          t = localStorage.getItem('theme');
+        } catch (e) { /* modo privado: segue a preferência do sistema */ }
+        if (THEMES.indexOf(t) === -1) {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+            ? 'theme-light'
+            : 'theme-cyan';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+
+        // O script roda no <head>, antes dos radios existirem.
+        document.addEventListener('DOMContentLoaded', function () {
+          var radio = document.querySelector('input[name="theme"][value="' + t + '"]');
+          if (radio) radio.checked = true;
+        });
+        // change Borbulha, então um único listener cobre os quatro radios.
+        document.addEventListener('change', function (e) {
+          var el = e.target;
+          if (!el || el.name !== 'theme') return;
+          document.documentElement.setAttribute('data-theme', el.value);
+          try {
+            localStorage.setItem('theme', el.value);
+          } catch (err) { /* modo privado: o tema vale só nesta aba */ }
+        });
+      })();
+    </script>
 </head>
 
 <body>
-  <!-- Theme Switcher Controls -->
-  <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
-  <input type="radio" name="theme" id="theme-purple" class="theme-controller">
-  <input type="radio" name="theme" id="theme-green" class="theme-controller">
+      <!-- Theme Switcher Controls -->
+    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan" checked>
+    <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
+    <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
+    <input type="radio" name="theme" id="theme-light" class="theme-controller" value="theme-light">
 
-  <div class="theme-switcher">
-    <label for="theme-cyan" class="theme-label label-cyan"></label>
-    <label for="theme-purple" class="theme-label label-purple"></label>
-    <label for="theme-green" class="theme-label label-green"></label>
-  </div>
+    <div class="theme-switcher" role="group" aria-label="Escolha seu tema" title="Escolha seu tema">
+        <label for="theme-cyan" class="theme-label label-cyan"><span class="sr-only">Tema ciano</span></label>
+        <label for="theme-purple" class="theme-label label-purple"><span class="sr-only">Tema roxo</span></label>
+        <label for="theme-green" class="theme-label label-green"><span class="sr-only">Tema verde</span></label>
+        <label for="theme-light" class="theme-label label-light"><span class="sr-only">Tema claro</span></label>
+    </div>
 
   <header>
     <div class="container">

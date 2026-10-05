@@ -17,6 +17,18 @@
     --glass-bg: rgba(20, 20, 25, 0.7);
     --glass-border: rgba(255, 255, 255, 0.08);
     --card-hover: rgba(255, 255, 255, 0.03);
+    /* Texto sobre preenchimento de acento. Nos temas escuros o acento é
+       claro e o texto preto; no tema claro o acento é escuro e o texto
+       branco. Por isso o acento não pode servir aos dois papéis. */
+    --on-accent: #000000;
+    /* Superfícies e blocos de código, que hoje assumem fundo escuro. */
+    --surface-soft: rgba(255, 255, 255, 0.06);
+    /* Fundo translúcido do header. Fixo, ele deixaria a navegação com texto
+       escuro sobre vidro escuro no tema claro. */
+    --header-bg: rgba(10, 10, 12, 0.8);
+    --code-bg: rgba(0, 0, 0, 0.3);
+    --code-inline-text: #ff7b72;
+    --code-text: #e6edf3;
 
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -24,23 +36,53 @@
     --transition-speed: 0.3s;
 }
 
-/* Theme Variantes via Checkbox Hack */
-/* Se a checkbox "theme-purple" estiver marcada */
-body:has(#theme-purple:checked) {
+/* Variantes de tema.
+   O atributo data-theme no <html> é escrito pelo script anti-FOUC do <head>
+   (preferência salva no localStorage) e pelo Theme.init() do main.js.
+   Antes este CSS casava com body:has(#theme-purple:checked), o que deixava
+   o script do <head> sem efeito nenhum — nenhuma regra html.theme-* existia
+   para receber a classe que ele aplicava. Um atributo só resolve os dois
+   problemas: uma fonte de verdade, e o tema certo já aplicado no primeiro
+   paint. Os radios continuam existindo, mas só como controle da interface. */
+html[data-theme="theme-purple"] {
     --bg-primary: #0f0b15;
     --bg-secondary: #1a1625;
-    --accent-color: #bd00ff;
+    /* #c42ff5 em vez do #bd00ff original: o roxo antigo dava 4.27:1 como
+       texto sobre o fundo do tema, abaixo dos 4.5:1 que a WCAG AA exige
+       para texto normal. Claro ainda é um roxo, e passa com 4.75:1. */
+    --accent-color: #c42ff5;
     /* Purple Neon */
-    --accent-glow: rgba(189, 0, 255, 0.4);
+    --accent-glow: rgba(196, 47, 245, 0.4);
 }
 
-/* Se a checkbox "theme-green" estiver marcada */
-body:has(#theme-green:checked) {
+html[data-theme="theme-green"] {
     --bg-primary: #051108;
     --bg-secondary: #0d1f12;
     --accent-color: #00ff88;
     /* Green Neon */
     --accent-glow: rgba(0, 255, 136, 0.4);
+}
+
+/* Tema claro. O acento é o ciano do tema padrão escurecido (#0a6e78): o
+   ciano vivo reprova como texto sobre branco, e sobre ele o texto branco
+   fica em 5.98:1. O secundário vai para #4a4a52 porque o #a0a0a0 dos temas
+   escuros daria 2.6:1 no papel. */
+html[data-theme="theme-light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f4f4f7;
+    --text-primary: #111114;
+    --text-secondary: #4a4a52;
+    --accent-color: #0a6e78;
+    --accent-glow: rgba(10, 110, 120, 0.28);
+    --glass-bg: rgba(255, 255, 255, 0.82);
+    --glass-border: rgba(17, 17, 20, 0.14);
+    --card-hover: rgba(17, 17, 20, 0.04);
+    --on-accent: #ffffff;
+    --surface-soft: rgba(17, 17, 20, 0.05);
+    --header-bg: rgba(255, 255, 255, 0.85);
+    --code-bg: rgba(17, 17, 20, 0.06);
+    --code-inline-text: #b3261e;
+    --code-text: #1f2430;
 }
 
 html {
@@ -85,9 +127,17 @@ body {
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* --- Theme Controls (Hidden Inputs) --- */
+/* --- Theme Controls (Hidden Inputs) ---
+   Não podem ser display:none: um input com display:none não recebe foco, e
+   o switcher inteiro ficava inoperável pelo teclado. Mesma receita visual do
+   .pf-controller dos filtros — opacidade zero mantém o radio focável, e o
+   clique continua sendo feito pelo label. */
 .theme-controller {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Fixo no canto inferior direito. No topo direito ele cobria por completo o
@@ -125,19 +175,38 @@ body {
 }
 
 .label-purple {
-    background: #bd00ff;
+    background: #c42ff5;
 }
 
 .label-green {
     background: #00ff88;
 }
 
-/* Highlight Active Theme */
+/* O tema claro precisa de uma borda: branco sobre branco some. */
+.label-light {
+    background: #fff;
+    border: 1px solid #c9c9d1;
+}
+
+/* Highlight Active Theme.
+   O anel usa --text-primary em vez de branco fixo para continuar visível
+   quando o tema claro está ativo. */
 #theme-cyan:checked~.theme-switcher .label-cyan,
 #theme-purple:checked~.theme-switcher .label-purple,
-#theme-green:checked~.theme-switcher .label-green {
-    border-color: #fff;
+#theme-green:checked~.theme-switcher .label-green,
+#theme-light:checked~.theme-switcher .label-light {
+    border-color: var(--text-primary);
     box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Foco por teclado: o radio é invisível, então o anel de foco precisa
+   aparecer na swatch — mesmo truque dos filtros de /work. */
+#theme-cyan:focus-visible~.theme-switcher .label-cyan,
+#theme-purple:focus-visible~.theme-switcher .label-purple,
+#theme-green:focus-visible~.theme-switcher .label-green,
+#theme-light:focus-visible~.theme-switcher .label-light {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 3px;
 }
 
 /* --- Header & Nav --- */
@@ -148,7 +217,7 @@ header {
     width: 100%;
     padding: 1.5rem 0;
     z-index: 999;
-    background: rgba(10, 10, 12, 0.8);
+    background: var(--header-bg);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--glass-border);
 }
@@ -197,6 +266,30 @@ nav {
    cinco links diretos (Work, Engineering, Writing, About, Contact). Nenhuma
    regra .dropdown* permanece — render.js não as referencia mais. */
 
+
+/* Link de volta do case study. Não tinha regra nenhuma: ficava com o azul
+   padrão do navegador, que sobre o fundo escuro dá 2.1:1 e reprova a WCAG AA. */
+.cs-back a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cs-back a:hover {
+    text-decoration: underline;
+}
+
+/* Links de evidência do case study, pelo mesmo motivo: sem regra, caem no
+   azul padrão do navegador. */
+.cs-evidence a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cs-evidence a:hover {
+    text-decoration: underline;
+}
 
 /* --- Hero Section --- */
 .hero {
@@ -296,7 +389,7 @@ nav {
 
 .btn-primary:hover {
     background: var(--accent-color);
-    color: #000;
+    color: var(--on-accent);
     box-shadow: 0 0 20px var(--accent-glow);
 }
 
@@ -573,15 +666,15 @@ footer {
 }
 
 .glass-panel code {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--code-bg);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: monospace;
-    color: #ff7b72;
+    color: var(--code-inline-text);
 }
 
 .glass-panel pre {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--code-bg);
     padding: 1.5rem;
     border-radius: 8px;
     overflow-x: auto;
@@ -591,7 +684,7 @@ footer {
 .glass-panel pre code {
     background: transparent;
     padding: 0;
-    color: #e6edf3;
+    color: var(--code-text);
 }
 
 /* --- Media Queries --- */
@@ -632,7 +725,7 @@ footer {
 /* Botão Link (Vídeos) - Invertido: Fundo Accent, Texto Preto */
 .btn-link {
     background: var(--accent-color);
-    color: #000;
+    color: var(--on-accent);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 50px;
@@ -651,7 +744,7 @@ footer {
     transform: translateY(-2px);
     box-shadow: 0 0 15px var(--accent-glow);
     filter: brightness(1.1);
-    color: #000;
+    color: var(--on-accent);
 }
 
 /* Utilitário de Grid Span 2 */
@@ -684,7 +777,7 @@ footer {
     align-items: center;
     gap: 6px;
     padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface-soft);
     border: 1px solid var(--glass-border);
     border-radius: 6px;
     font-size: 0.8rem;
@@ -726,7 +819,7 @@ footer {
     border-color: var(--accent-color);
     color: var(--accent-color);
     box-shadow: 0 0 10px var(--accent-glow);
-    background: rgba(0, 242, 255, 0.05);
+    background: var(--surface-soft);
 }
 
 /* Select2 */
@@ -1087,7 +1180,7 @@ footer {
     font-size: 0.7rem;
     padding: 0.1rem 0.4rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--surface-soft);
     color: var(--text-secondary);
     font-variant-numeric: tabular-nums;
 }
@@ -1215,6 +1308,49 @@ footer {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* Link de pulo para o conteúdo. Fica fora da tela até receber foco, para não
+   custar a quem navega só por teclado a tabulação do header em toda página. */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    z-index: 2000;
+    padding: 0.6rem 1.4rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--accent-color);
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    transform: translate(-50%, 0);
+}
+
+/* Alto contraste do Windows: o desfoque de fundo some e as bordas translúcidas
+   viram invisíveis, então os contornos passam a vir das cores do sistema. */
+@media (forced-colors: active) {
+
+    .theme-switcher,
+    .glass-panel,
+    .contact-container,
+    .filter-tab,
+    .btn-primary,
+    .btn-link,
+    .skip-link {
+        border: 1px solid ButtonBorder;
+        backdrop-filter: none;
+    }
+
+    .filter-count,
+    .theme-label {
+        forced-color-adjust: none;
+        border: 1px solid ButtonBorder;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1832,37 +1968,96 @@ footer {
     }
 }
 
-/* Impressão: a página do currículo é o entregável em papel. Esconde o que
-   não pertence ao documento e remove o fundo escuro do tema. */
+/* Impressão: a página do currículo é o entregável em papel.
+   Os três temas são escuros, então o padrão do navegador — não imprimir fundo —
+   deixaria texto branco sobre papel branco. A inversão é feita aqui, com as
+   variáveis de cor em vez de cor fixa, para não depender do tema ativo. */
 @media print {
-    body,
-    .site-header,
-    .site-footer,
-    .lang-toggle,
+    @page {
+        margin: 14mm 12mm;
+    }
+
+    html,
+    body {
+        background: #fff !important;
+        color: #111 !important;
+    }
+
+    /* header e footer são elementos sem classe neste projeto. */
+    header,
+    footer,
+    .theme-controller,
     .theme-switcher,
-    .section-cta {
+    .skip-link,
+    .lang-toggle,
+    .hamburger,
+    .info-modal,
+    .section-cta,
+    .modal-overlay {
         display: none !important;
+    }
+
+    * {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    a {
+        color: #111 !important;
+        text-decoration: none;
     }
 
     #cv-page {
         padding: 0;
     }
 
-    #cv-page .container {
+    #cv-page .container,
+    .container {
         max-width: none;
         padding: 0;
     }
 
+    #cv-page h1.page-title {
+        font-size: 1.6rem;
+    }
+
     #cv-page h2.section-title {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        margin-top: 1.1rem;
         page-break-after: avoid;
+        border-bottom: 1px solid #999;
+        padding-bottom: 0.2rem;
     }
 
     .exp-entry,
     .resume-project,
     .entry-item,
-    .language-list li {
+    .language-list li,
+    .skill-group {
         page-break-inside: avoid;
+    }
+
+    .exp-summary,
+    .resume-project-meta dd,
+    .exp-role,
+    .entry-org,
+    .metric-label,
+    .metric-number,
+    .skill-group-title,
+    .resume-project-meta dt {
+        color: #333 !important;
+    }
+
+    .exp-period,
+    .entry-period,
+    .language-level,
+    .exp-org-full,
+    .exp-location {
+        color: #555 !important;
+    }
+
+    .metric-number {
+        color: #111 !important;
     }
 }
 

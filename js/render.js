@@ -302,7 +302,8 @@ export function renderHeader(d, lang, page) {
         <div class="container">
           <nav aria-label="${esc(n.navLabel)}">
             <button class="hamburger" id="hamburgerBtn" type="button"
-                aria-label="${esc(n.openMenu)}" aria-expanded="false" aria-controls="navLinks">
+                aria-label="${esc(n.openMenu)}" data-label-open="${esc(n.openMenu)}" data-label-close="${esc(n.closeMenu)}"
+                aria-expanded="false" aria-controls="navLinks">
               <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
             <a href="${esc(pageUrl(PAGE_BY_KEY.home, lang))}" class="logo">
@@ -315,7 +316,7 @@ ${navLinks}
                 <a href="${esc(cv)}" title="${esc(n.cv)}"><i class="fa fa-file-pdf" aria-hidden="true"></i><span class="sr-only">${esc(n.cv)}</span></a>
               </span>
               <a href="${esc(pageUrl(page, other))}" id="langToggle" hreflang="${other === 'en' ? 'en' : 'pt-BR'}" rel="alternate" title="${esc(n.langToggleLabel)}">
-                <img src="${esc(n.langToggleFlag)}" alt="${esc(n.langToggleAlt)}" width="20" height="15" loading="lazy"> ${esc(n.langToggleLabel)}
+                <img src="${esc(n.langToggleFlag)}" alt="" aria-hidden="true" width="20" height="15" loading="lazy"> ${esc(n.langToggleLabel)}
               </a>
             </div>
           </nav>
@@ -412,7 +413,7 @@ function expEntry(x) {
 export function renderPage(d, page) {
   if (page.kind === 'case') return renderCaseStudy(d, page.cs);
   if (page.key === 'work' || page.key === 'writing') {
-    return `<main>${renderCatalog(d, page.key)}</main>`;
+    return `<main id="conteudo" tabindex="-1">${renderCatalog(d, page.key)}</main>`;
   }
   if (page.key === 'about') return renderAbout(d);
   if (page.key === 'cv') return renderResume(d);
@@ -432,7 +433,7 @@ export function renderHome(d) {
     `<a href="${esc(l.href)}" target="_blank" rel="noopener noreferrer" class="work-link"><i class="${esc(l.icon)}" aria-hidden="true"></i> <span>${esc(l.label)}</span></a>`
   ).join('');
 
-  return `<main>
+  return `<main id="conteudo" tabindex="-1">
         <section id="home" class="hero">
           <div class="container">
             <div class="hero-content">
@@ -559,7 +560,7 @@ export function renderCaseStudy(d, cs) {
         </section>`;
   };
 
-  return `<main class="cs">
+  return `<main id="conteudo" class="cs" tabindex="-1">
         <div class="container">
           <p class="cs-back"><a href="${esc(back)}">&larr; ${esc(L.backToWork)}</a></p>
 
@@ -636,7 +637,7 @@ function contactItems(d) {
 export function renderAbout(d) {
   const a = d.about;
 
-  return `<main>
+  return `<main id="conteudo" tabindex="-1">
         <section id="about-page" class="page">
           <div class="container">
             <h1 class="page-title">${esc(a.sectionTitle)}</h1>
@@ -697,7 +698,7 @@ export function renderResume(d) {
   const r = d.resume;
   const L = r.labels;
 
-  return `<main>
+  return `<main id="conteudo" tabindex="-1">
         <section id="cv-page" class="page">
           <div class="container">
             <h1 class="page-title">${esc(r.sectionTitle)}</h1>
@@ -991,9 +992,23 @@ export function buildHead(d, lang, page) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script>
+      /* Anti-FOUC: precisa rodar antes da primeira pintura, senão a página
+         aparece no tema padrão e troca depois. Sem preferência salva, segue a
+         preferência de cor do sistema — quem tem o sistema em claro não vê
+         um flash escuro na primeira visita. O atributo é o mesmo que o CSS
+         lê, então aqui basta escrevê-lo. */
       (function () {
-        var t = localStorage.getItem('theme');
-        if (t) document.documentElement.classList.add(t);
+        var THEMES = ${JSON.stringify(d.themes.map(t => t.id))};
+        var t = null;
+        try {
+          t = localStorage.getItem('theme');
+        } catch (e) { /* modo privado: segue a preferência do sistema */ }
+        if (THEMES.indexOf(t) === -1) {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+            ? 'theme-light'
+            : 'theme-cyan';
+        }
+        document.documentElement.setAttribute('data-theme', t);
       })();
     </script>
     ${ld}`;
@@ -1008,13 +1023,11 @@ export function buildDocument(d, lang, page) {
 </head>
 
 <body>
-    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan" checked>
-    <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
-    <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
+    <a class="skip-link" href="#conteudo">${esc(d.skipToContent)}</a>
+
+    ${d.themes.map((t, i) => `<input type="radio" name="theme" id="${esc(t.id)}" class="theme-controller" value="${esc(t.id)}"${i === 0 ? ' checked' : ''}>`).join('\n    ')}
     <div class="theme-switcher" role="group" aria-label="${esc(d.themeSwitcherTitle)}" title="${esc(d.themeSwitcherTitle)}">
-      <label for="theme-cyan" class="theme-label label-cyan"><span class="sr-only">${esc(d.themeSwitcherTitle)}</span></label>
-      <label for="theme-purple" class="theme-label label-purple"><span class="sr-only">${esc(d.themeSwitcherTitle)}</span></label>
-      <label for="theme-green" class="theme-label label-green"><span class="sr-only">${esc(d.themeSwitcherTitle)}</span></label>
+      ${d.themes.map(t => `<label for="${esc(t.id)}" class="theme-label label-${esc(t.id.replace('theme-', ''))}"><span class="sr-only">${esc(t.name)}</span></label>`).join('\n      ')}
     </div>
 
     ${renderHeader(d, lang, page)}

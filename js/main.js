@@ -3,7 +3,7 @@
  * ------------------------------------
  * O conteúdo já vem pronto do HTML (gerado por build.mjs a partir de
  * content/*.json). Aqui só há comportamento:
- *   1. Theme   — troca de tema via radio + localStorage
+ *   1. Theme   — troca de tema via radio + atributo data-theme + localStorage
  *   2. Nav     — menu mobile, âncoras e filtro por categoria
  *   3. Modals  — player de vídeo e modal de informação (com foco preso e Esc)
  *   4. i18n    — troca de idioma sem reload, re-renderizando via render.js
@@ -35,21 +35,33 @@ function currentPage() {
    ============================================================ */
 
 const Theme = (() => {
-    const THEMES = ['theme-cyan', 'theme-purple', 'theme-green'];
+    /* O tema aplicado já está no atributo data-theme: quem o define é o script
+       anti-FOUC do <head>, que roda antes da pintura e já considera o
+       prefers-color-scheme quando não há preferência salva. Aqui só é preciso
+       refletir isso no switcher e escrever o atributo numa escolha do usuário.
+       A lista vem do próprio DOM, que é gerado a partir de content/*.json —
+       assim não há uma segunda cópia dos ids para manter em dia. */
+    function apply(id) {
+        document.documentElement.setAttribute('data-theme', id);
+    }
 
     function init() {
-        const saved = localStorage.getItem('theme');
-        if (saved && THEMES.includes(saved)) {
-            document.documentElement.classList.add(saved);
-            const radio = document.querySelector(`input[name="theme"][value="${saved}"]`);
-            if (radio) radio.checked = true;
-        }
+        const radios = [...document.querySelectorAll('input[name="theme"]')];
+        if (!radios.length) return;
 
-        document.querySelectorAll('input[name="theme"]').forEach(radio => {
+        // Marca o radio do tema efetivamente aplicado, seja ele salvo, do
+        // sistema ou o padrão do primeiro da lista.
+        const current = document.documentElement.getAttribute('data-theme');
+        const active = radios.find(r => r.value === current) ?? radios[0];
+        active.checked = true;
+        if (current !== active.value) apply(active.value);
+
+        radios.forEach(radio => {
             radio.addEventListener('change', function () {
-                THEMES.forEach(t => document.documentElement.classList.remove(t));
-                document.documentElement.classList.add(this.value);
-                localStorage.setItem('theme', this.value);
+                apply(this.value);
+                try {
+                    localStorage.setItem('theme', this.value);
+                } catch (e) { /* modo privado: o tema vale só nesta aba */ }
             });
         });
     }
@@ -81,15 +93,33 @@ const Nav = (() => {
         const navLinks = document.getElementById('navLinks');
         if (!hamburger || !navLinks) return;
 
+        // O aria-label precisa acompanhar o estado: quem só ouve o leitor de
+        // tela ouvia "Abrir menu" mesmo com o menu aberto. Os dois textos vêm
+        // do conteúdo, em data-label-*, para a troca de idioma continuar
+        // correta sem string hardcoded aqui.
+        const labelOpen = hamburger.dataset.labelOpen;
+        const labelClose = hamburger.dataset.labelClose;
+
         const close = () => {
             navLinks.classList.remove('open');
             hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', labelOpen);
         };
 
         hamburger.addEventListener('click', () => {
             const open = navLinks.classList.toggle('open');
             hamburger.setAttribute('aria-expanded', String(open));
+            hamburger.setAttribute('aria-label', open ? labelClose : labelOpen);
         });
+
+        // Esc fecha o menu. O listener fica nos elementos do header — que são
+        // recriados a cada re-render de idioma — em vez de no document, para
+        // não acumular um a cada troca de idioma.
+        [hamburger, navLinks].forEach(el => el.addEventListener('keydown', e => {
+            if (e.key !== 'Escape' || !navLinks.classList.contains('open')) return;
+            close();
+            hamburger.focus();
+        }));
 
         navLinks.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', () => {
@@ -252,11 +282,38 @@ const I18n = (() => {
         document.head.appendChild(frag);
     }
 
+    /**
+     * Atualiza os textos do switcher de tema e do link de pulo.
+     *
+     * Eles moram no <body>, fora de header/main/footer — que são os três
+     * blocos que paint() troca. Sem isso, trocar de idioma sem reload deixaria
+     * o switcher anunciando "Tema ciano" numa página em inglês.
+     *
+     * Só o texto muda: os radios não são recriados, para não perder o foco nem
+     * obrigar a remontar os listeners de tema.
+     */
+    function paintChrome(d) {
+      const skip = document.querySelector('.skip-link');
+      if (skip) skip.textContent = d.skipToContent;
+
+      const group = document.querySelector('.theme-switcher');
+      if (group) {
+        group.setAttribute('aria-label', d.themeSwitcherTitle);
+        group.setAttribute('title', d.themeSwitcherTitle);
+      }
+
+      for (const t of d.themes) {
+        const label = document.querySelector(`.theme-label[for="${t.id}"] .sr-only`);
+        if (label) label.textContent = t.name;
+      }
+    }
+
     /** Re-renderiza header/main/footer a partir do JSON do idioma alvo. */
     function paint(d, lang, page) {
         document.querySelector('header').outerHTML = renderHeader(d, lang, page);
         document.querySelector('main').outerHTML = renderPage(d, page);
         document.querySelector('footer').outerHTML = renderFooter(d);
+        paintChrome(d);
 
         Modals.init();
         Nav.init();

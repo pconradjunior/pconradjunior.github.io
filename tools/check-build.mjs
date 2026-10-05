@@ -6,7 +6,7 @@
  * content/*.json e de js/render.js, para que o validador não possa divergir do
  * que o build realmente produz.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import {
@@ -117,6 +117,72 @@ const targets = lang => [
     return { kind: 'case', page, cs, file: lang === 'pt' ? pageFile(page) : `en/${pageFile(page)}` };
   })
 ];
+
+/* ─────────────────────────────────────────────────────────────
+   temas
+   A lista de temas vive em content/<lang>/ui.json, mas aparece em três
+   lugares que precisam concordar: o HTML gerado, o CSS (variante de cor,
+   anel de seleção e foco de teclado) e as páginas soltas da raiz, que
+   carregam o mesmo switcher em HTML escrito à mão. Um tema novo no
+   conteúdo que não chegue aos três passa despercebido e some justamente
+   onde o usuário o procura.
+   ───────────────────────────────────────────────────────────── */
+
+console.log('\ntemas');
+{
+  const themeIds = lang => content(lang).themes.map(t => t.id);
+
+  // Os ids não são valores de shape(), então a paridade não os cobre sozinha.
+  check(JSON.stringify(themeIds('pt')) === JSON.stringify(themeIds('en')),
+    `mesmos temas em pt e en — ${themeIds('pt').join(', ')}`);
+
+  const all = themeIds('pt');
+  for (const id of all) {
+    const short = id.replace('theme-', '');
+    // O primeiro tema da lista é o que está em :root — é o padrão e não ganha
+    // variante própria, senão a mesma paleta estaria escrita duas vezes. A
+    // lista reordenada troca quem é o padrão, e este check é o que pega isso.
+    const isDefault = id === all[0];
+    check(isDefault || css.includes(`html[data-theme="${id}"]`),
+      isDefault ? `${id} é o tema padrão em :root` : `CSS define a variante ${id}`);
+    check(css.includes(`#${id}:checked~.theme-switcher .label-${short}`), `CSS marca ${id} como selecionado`);
+    check(css.includes(`#${id}:focus-visible~.theme-switcher .label-${short}`), `CSS mostra o foco de teclado em ${id}`);
+    check(css.includes(`.label-${short} {`), `CSS pinta a swatch .label-${short}`);
+  }
+
+  // Regra de tema no CSS que ninguém mais declara: sobra de renomeação.
+  const cssThemes = [...css.matchAll(/html\[data-theme="([\w-]+)"\]/g)].map(m => m[1]);
+  check(cssThemes.every(t => all.includes(t)),
+    `sem variante de tema órfã no CSS — ${[...new Set(cssThemes)].join(', ')}`);
+
+  for (const lang of LANGS) {
+    for (const { file } of targets(lang)) {
+      const html = read(file);
+      const radios = [...html.matchAll(/id="(theme-[\w-]+)" class="theme-controller"/g)].map(m => m[1]);
+      check(JSON.stringify(radios) === JSON.stringify(themeIds(lang)),
+        `${file}: switcher com os ${themeIds(lang).length} temas`);
+      for (const t of content(lang).themes) {
+        // Nome acessível próprio: um switcher cujas swatches se anunciam com o
+        // mesmo texto não diz ao leitor de tela qual tema é qual.
+        check(html.includes(`for="${t.id}" class="theme-label label-${t.id.replace('theme-', '')}"><span class="sr-only">${esc(t.name)}</span>`),
+          `${file}: nome acessível de ${t.id}`);
+      }
+    }
+  }
+
+  // Páginas soltas da raiz: não são geradas, mas carregam o mesmo switcher.
+  const generated = new Set(LANGS.flatMap(lang => targets(lang).map(t => t.file)));
+  for (const file of readdirSync(ROOT).filter(f => f.endsWith('.html'))) {
+    if (file === '404.html' || generated.has(file)) continue;
+    const html = read(file);
+    const radios = [...html.matchAll(/id="(theme-[\w-]+)" class="theme-controller"/g)].map(m => m[1]);
+    const labels = [...html.matchAll(/for="(theme-[\w-]+)" class="theme-label/g)].map(m => m[1]);
+    check(radios.length === all.length && all.every(t => radios.includes(t)),
+      `${file}: switcher com os ${all.length} temas`);
+    check(labels.length === all.length && all.every(t => labels.includes(t)),
+      `${file}: uma swatch por tema`);
+  }
+}
 
 for (const lang of LANGS) {
   for (const { kind, page, cs, file } of targets(lang)) {
