@@ -939,7 +939,6 @@ export function buildHead(d, lang, page) {
     const otherLang = lang === 'pt' ? 'en' : 'pt';
     const otherUrl = `${SITE.origin}${pageUrl(page, otherLang)}`;
     const image = `${SITE.origin}${SITE.ogImage}`;
-    const flag = lang === 'pt' ? 'br' : 'us';
 
     // Cada página tem título próprio: um sufixo sobre a title da home estouraria
     // o limite de caracteres, e não descreveria a página. Case studies trazem
@@ -985,7 +984,8 @@ export function buildHead(d, lang, page) {
     <meta name="twitter:image" content="${image}">
     <meta name="twitter:image:alt" content="${esc(m.alt)}">
 
-    <link rel="icon" type="image/svg+xml" href="/images/flags/${flag}.svg" id="favicon">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;700&display=swap">

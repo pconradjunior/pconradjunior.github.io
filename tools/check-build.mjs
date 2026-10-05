@@ -6,9 +6,11 @@
  * content/*.json e de js/render.js, para que o validador não possa divergir do
  * que o build realmente produz.
  */
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync, rmSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { buildSvg, writeIco, magickAvailable, ICO_SIZES } from './build-favicon.mjs';
 import {
   PAGES, PAGE_BY_KEY as PAGE_BY_KEY_WORK, pageUrl, pageFile, GROUPS, CATALOG, SITE, fill,
   casePage, caseStudyUrl,
@@ -182,6 +184,103 @@ console.log('\ntemas');
     check(labels.length === all.length && all.every(t => labels.includes(t)),
       `${file}: uma swatch por tema`);
   }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   favicon
+   O logo do site não é um arquivo: é o glifo `fa-code` do Font
+   Awesome, que tools/build-favicon.mjs rasteriza em images/favicon.svg
+   e empacota em /favicon.ico. São dois artefatos derivados do mesmo
+   glifo, e o .ico é binário — nada o regenera sozinho. Aqui se
+   verifica que ele existe, tem os tamanhos que se espera, e não ficou
+   desatualizado em relação ao SVG.
+   ───────────────────────────────────────────────────────────── */
+console.log('\nfavicon');
+
+{
+  const svgPath = join(ROOT, 'images/favicon.svg');
+  const icoPath = join(ROOT, 'favicon.ico');
+
+  check(existsSync(svgPath), 'images/favicon.svg existe');
+  check(existsSync(icoPath), 'favicon.ico existe na raiz (é o que o navegador pede por padrão)');
+
+  if (existsSync(svgPath)) {
+    const svg = readFileSync(svgPath, 'utf8');
+    const built = buildSvg();
+    check(svg === built,
+      'images/favicon.svg é o que tools/build-favicon.mjs produz (sem edição manual por cima)');
+    // A marca é o "< />". Os três traços com as coordenadas de MARK_PATH: se
+    // alguém trocar por um glifo de fonte, ou trocar a ordem dos caracteres,
+    // este check reprova.
+    check(svg.includes('<path d="M216 126 L140 256 L216 386 M278 126 L234 386 M296 126 L372 256 L296 386"'),
+      'a marca é o < /> (dois chevrons e a barra, nesta ordem)');
+    check(!/<text|font-family/.test(svg),
+      'a marca é traçado, não texto — assim não depende da fonte de quem abre');
+    check(/stroke="#00f2ff"/.test(svg) && /fill="#0a0a0c"/.test(svg),
+      'cores do header: fundo escuro do tema com o acento por cima');
+  }
+
+  if (existsSync(icoPath)) {
+    const ico = readFileSync(icoPath);
+    const reserved = ico.readUInt16LE(0);
+    const type = ico.readUInt16LE(2);
+    const count = ico.readUInt16LE(4);
+    check(reserved === 0 && type === 1 && count > 0,
+      `favicon.ico é um ICO válido com ${count} entradas`);
+
+    // Cada entrada: largura, altura, ... , tamanho, deslocamento (16 bytes)
+    const sizes = [];
+    let sane = count > 0;
+    for (let i = 0; i < count; i++) {
+      const o = 6 + 16 * i;
+      if (o + 16 > ico.length) { sane = false; break; }
+      const w = ico[o] || 256;
+      const h = ico[o + 1] || 256;
+      const size = ico.readUInt32LE(o + 8);
+      const offset = ico.readUInt32LE(o + 12);
+      if (w !== h) sane = false;
+      if (offset + size > ico.length) sane = false;
+      sizes.push(w);
+    }
+    check(sane, 'todas as entradas do .ico apontam para dados dentro do arquivo');
+    check(ICO_SIZES.every(s => sizes.includes(s)),
+      `favicon.ico tem os tamanhos ${ICO_SIZES.join(', ')} — ${[...new Set(sizes)].sort((a, b) => a - b).join(', ')}`);
+
+    // Desatualizado: o .ico é derivado do SVG, e o SVG é gerado. Refazer o
+    // empacotamento e comparar dá o aviso sem depender do histórico do git.
+    if (magickAvailable()) {
+      const tmp = join(tmpdir(), `favicon-check-${process.pid}.ico`);
+      try {
+        writeIco({ svgPath, icoPath: tmp });
+        check(readFileSync(tmp).equals(ico), 'favicon.ico está em dia com images/favicon.svg');
+      } catch {
+        check(false, 'favicon.ico pôde ser regerado para conferência');
+      } finally {
+        if (existsSync(tmp)) rmSync(tmp);
+      }
+    } else {
+      console.log('  [33m![0] magick ausente: não consegui conferir se o .ico está em dia com o SVG');
+    }
+  }
+
+  // Toda página gerada declara o SVG e a reserva em .ico. Sem o .ico na raiz,
+  // quem só understande .ico cairia no 404.
+  for (const lang of LANGS) {
+    for (const { file } of targets(lang)) {
+      const html = read(file);
+      check(html.includes('<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">')
+        && html.includes('<link rel="alternate icon" type="image/x-icon" href="/favicon.ico">'),
+        `${file}: declara o favicon em SVG e em .ico`);
+    }
+  }
+
+  // O favicon deixou de depender do idioma (a bandeira ficou de fora). Se
+  // alguém reintroduzir a troca, ela volta aqui.
+  const mainJs = read('js/main.js');
+  check(!/favicon\.ico|flags\/(br|us)\.svg/.test(mainJs),
+    'main.js não troca mais o favicon conforme o idioma');
+  check(!content('pt').meta.flagIcon && !content('en').meta.flagIcon,
+    'meta.json não tem mais flagIcon apontando para a bandeira');
 }
 
 for (const lang of LANGS) {

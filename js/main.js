@@ -269,7 +269,6 @@ const I18n = (() => {
         setMeta('meta[property="og:locale:alternate"]', 'content', lang === 'pt' ? 'en_US' : 'pt_BR');
         setMeta('meta[name="twitter:title"]', 'content', title);
         setMeta('meta[name="twitter:description"]', 'content', description);
-        setMeta('link#favicon', 'href', `/images/flags/${lang === 'pt' ? 'br' : 'us'}.svg`);
 
         document.querySelectorAll('script[type="application/ld+json"]').forEach(s => s.remove());
         const frag = document.createDocumentFragment();
