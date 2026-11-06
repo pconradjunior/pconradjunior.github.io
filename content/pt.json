@@ -379,6 +379,38 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo Técnico",
+                    "title": "Meu PC de 2019 consegue rodar uma IA local? E um Mac de 2020?",
+                    "desc": "Teste prático com Qwen3.5 0.8B quantizado em Q8_0 e llama.cpp em um Lenovo L340 com GTX 1050 e um MacBook Air M1: processamento do prompt, geração de tokens por segundo e qualidade das respostas — sem transformar a comparação em uma disputa Apple × NVIDIA.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/meu-pc-de-2019-consegue-rodar-uma-ia-local-e-um-mac-de-2020-8345c5cdcd41",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo Técnico",
+                    "title": "Build Flutter: quanto tempo você perde esperando? Um benchmark para escolher seu próximo Mac",
+                    "desc": "O flutter-benchmark, conjunto de scripts em Bash e Python que mede builds reais de Android e iOS (tempo, pico de memória, CPU e ambiente), e os resultados em um MacBook Air M1 de 8 GB com macOS 27 — com os limites do experimento explícitos.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/quanto-tempo-leva-um-build-flutter-um-benchmark-para-comparar-macs-e-decidir-a-pr%C3%B3xima-compra-55713f591f32",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Petrux: o processo de engenharia de software escrito como código",
                     "desc": "Como codificar um processo de engenharia de software em um sistema de agentes especializados: as treze fases do Petrux, cada uma com dono, entrada, saída e critério de parada, o ramo de Helpdesk fora da sequência e a validação humana obrigatória antes de qualquer código chegar à produção.",
                     "links": [
