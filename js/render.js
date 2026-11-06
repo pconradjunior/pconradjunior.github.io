@@ -72,6 +72,11 @@ export const FILTER_LABELS = {
   en: { all: 'All', group: 'Filter by category' }
 };
 
+const CAROUSEL_LABELS = {
+  pt: { prev: 'Anterior', next: 'Próximo', region: 'Navegação do carrossel', dot: i => `Ir para o slide ${i}` },
+  en: { prev: 'Previous', next: 'Next', region: 'Carousel navigation', dot: i => `Go to slide ${i}` }
+};
+
 /* ─────────────────────────────────────────────────────────────
    escaping
    ───────────────────────────────────────────────────────────── */
@@ -168,8 +173,8 @@ function renderCard(item) {
     return `<article class="project-card">
             <div class="project-content">
               <span class="project-type"><i class="${esc(item.typeIcon)}" aria-hidden="true"></i> ${esc(item.typeLabel)}</span>
-              <h4 class="project-title">${esc(item.title)}</h4>
-              ${dl ? `<span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> ${esc(dl)} downloads</span>` : ''}
+              <h4 class="project-title">${esc(item.title)}</h4>${dl ? `
+              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> ${esc(dl)} downloads</span>` : ''}
               <p class="project-desc">${esc(item.desc)}</p>
               ${renderLinks(item.links)}
             </div>
@@ -265,7 +270,16 @@ function renderSection(d, s) {
     return `<section class="project-group" id="${g.id}" data-category="${g.filter}" aria-labelledby="h-${g.id}">
           <h3 class="group-title" id="h-${g.id}">${esc(blk.title)} <span class="group-count">${blk.items.length}</span></h3>
           ${blk.desc ? `<p class="group-desc">${esc(blk.desc)}</p>` : ''}
-          <div class="portfolio-grid">${blk.items.map(renderCard).join('')}</div>
+          <div class="carousel-container" role="group" aria-roledescription="${lang === 'pt' ? 'carrossel' : 'carousel'}">
+            <button type="button" class="carousel-btn prev" aria-label="${esc(CAROUSEL_LABELS[lang].prev)}">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <div class="portfolio-grid">${blk.items.map(renderCard).join('')}</div>
+            <button type="button" class="carousel-btn next" aria-label="${esc(CAROUSEL_LABELS[lang].next)}">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="carousel-dots" role="group" aria-label="${esc(CAROUSEL_LABELS[lang].region)}"></div>
         </section>`;
   }).join('');
 

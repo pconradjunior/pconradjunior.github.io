@@ -456,10 +456,23 @@ nav {
     background: var(--bg-secondary);
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+/* --- Portfolio: carrossel de cards --- */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.carousel-container .portfolio-grid {
+    display: flex;
+    flex-wrap: nowrap;
     gap: 2rem;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-container .portfolio-grid > * {
+    flex-shrink: 0;
 }
 
 .project-card {
@@ -467,8 +480,8 @@ nav {
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--glass-border);
-    transition: all var(--transition-speed);
-    position: relative;
+    transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
 }
 
 .project-card:hover {
@@ -477,17 +490,11 @@ nav {
     border-color: var(--accent-color);
 }
 
-.project-card-double {
-    grid-column: span 2;
-}
-
-.project-links-double {
-    align-items: center;
-    justify-content: center;
-}
-
 .project-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-type {
@@ -515,12 +522,103 @@ nav {
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: auto;
 }
 
 /* Só o tamanho: cor e transição ficam a cargo do .btn-link,
    para links de loja e botões de vídeo terem a mesma aparência. */
 .project-links a {
     font-size: 1.2rem;
+}
+
+/* Setas de navegação */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-glow);
+    background: var(--bg-secondary);
+}
+
+.carousel-btn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.carousel-btn[hidden] {
+    display: none;
+}
+
+.carousel-btn.prev {
+    left: 5px;
+}
+
+.carousel-btn.next {
+    right: 5px;
+}
+
+/* Indicadores (dots) */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.carousel-dots[hidden] {
+    display: none;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--glass-border);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: var(--text-secondary);
+}
+
+.carousel-dot.active {
+    background: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.carousel-dot:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-container .portfolio-grid {
+        transition: none;
+    }
 }
 
 /* --- Contact & Form --- */
@@ -1044,9 +1142,19 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Portfolio -> 1 coluna */
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    /* Portfolio -> carrossel com 1 card por vez (controlado pelo JS) */
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .carousel-btn.prev {
+        left: 2px;
+    }
+
+    .carousel-btn.next {
+        right: 2px;
     }
 
     /* Services -> single column for readibility */

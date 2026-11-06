@@ -222,6 +222,7 @@ const I18n = (() => {
 
         Modals.init();
         Nav.init();
+        Carousel.initAll();
         updateHead(d, lang);
     }
 
@@ -258,6 +259,134 @@ const I18n = (() => {
 })();
 
 /* ============================================================
+   5. CAROUSEL
+   ============================================================ */
+
+const Carousel = (() => {
+    const instances = [];
+
+    /** Cards visíveis por vez conforme a largura disponível. */
+    const perView = width => (width <= 768 ? 1 : width <= 1100 ? 2 : 3);
+
+    const DOT_LABEL = {
+        pt: i => `Ir para o slide ${i}`,
+        en: i => `Go to slide ${i}`
+    };
+
+    function init(container) {
+        const grid = container.querySelector('.portfolio-grid');
+        const prevBtn = container.querySelector('.carousel-btn.prev');
+        const nextBtn = container.querySelector('.carousel-btn.next');
+        const dots = container.parentElement.querySelector('.carousel-dots');
+        if (!grid || !prevBtn || !nextBtn) return;
+
+        const lang = (document.documentElement.lang || 'pt').startsWith('en') ? 'en' : 'pt';
+        let index = 0;
+        let view = 1;
+        let cardWidth = 0;
+
+        /** Largura do carrossel; usa o container do grupo quando ele está oculto por filtro. */
+        function availableWidth() {
+            return container.clientWidth
+                || container.closest('#projectGroups, #articleGroups')?.clientWidth
+                || container.closest('.container')?.clientWidth
+                || 0;
+        }
+
+        const slideCount = () => Math.max(0, grid.children.length - view);
+
+        function layout() {
+            view = perView(availableWidth());
+            const gap = parseFloat(getComputedStyle(grid).gap) || 0;
+            cardWidth = Math.max(0, (availableWidth() - gap * (view - 1)) / view);
+            Array.from(grid.children).forEach(card => {
+                card.style.width = `${cardWidth}px`;
+            });
+        }
+
+        function update() {
+            const total = slideCount();
+            index = Math.min(Math.max(index, 0), total);
+            const gap = parseFloat(getComputedStyle(grid).gap) || 0;
+            grid.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+            prevBtn.hidden = index <= 0;
+            nextBtn.hidden = index >= total;
+            if (!dots) return;
+            dots.hidden = total === 0;
+            dots.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+                if (i === index) dot.setAttribute('aria-current', 'true');
+                else dot.removeAttribute('aria-current');
+            });
+        }
+
+        function buildDots() {
+            if (!dots) return;
+            dots.innerHTML = '';
+            for (let i = 0; i <= slideCount(); i++) {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'carousel-dot';
+                dot.setAttribute('aria-label', DOT_LABEL[lang](i + 1));
+                dot.addEventListener('click', () => { index = i; update(); });
+                dots.appendChild(dot);
+            }
+        }
+
+        function refresh() {
+            layout();
+            if (index > slideCount()) index = 0;
+            buildDots();
+            update();
+        }
+
+        const prev = () => { if (index > 0) { index--; update(); } };
+        const next = () => { if (index < slideCount()) { index++; update(); } };
+        const onResize = () => refresh();
+        const onKeydown = e => {
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+        };
+
+        prevBtn.addEventListener('click', prev);
+        nextBtn.addEventListener('click', next);
+        container.addEventListener('keydown', onKeydown);
+        window.addEventListener('resize', onResize);
+
+        refresh();
+        instances.push({
+            refresh,
+            destroy() {
+                prevBtn.removeEventListener('click', prev);
+                nextBtn.removeEventListener('click', next);
+                container.removeEventListener('keydown', onKeydown);
+                window.removeEventListener('resize', onResize);
+            }
+        });
+    }
+
+    function refreshAll() {
+        instances.forEach(inst => inst.refresh());
+    }
+
+    function destroyAll() {
+        instances.forEach(inst => inst.destroy());
+        instances.length = 0;
+    }
+
+    function initAll() {
+        destroyAll();
+        document.querySelectorAll('.carousel-container').forEach(init);
+        // Ao trocar o filtro, grupos ocultos passam a visíveis: recalcula larguras.
+        document.querySelectorAll('input[name="pf"]').forEach(radio => {
+            radio.addEventListener('change', refreshAll);
+        });
+    }
+
+    return { initAll, refreshAll };
+})();
+
+/* ============================================================
    BOOTSTRAP
    ============================================================ */
 
@@ -266,4 +395,5 @@ document.addEventListener('DOMContentLoaded', () => {
     Nav.init();
     Modals.init();
     I18n.init();
+    Carousel.initAll();
 });

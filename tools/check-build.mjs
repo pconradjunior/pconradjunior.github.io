@@ -56,13 +56,18 @@ for (const page of PAGES) {
   check(h1 === 'Pedro Conrad Jr', 'h1 único e correto');
   const h2 = (html.match(/<h2/g) ?? []).length;
   check(h2 === 5, `${h2} headings h2 — About, Expertise, Projetos, Artigos, Contato`);
-  const cards = (html.match(/class="project-card"/g) ?? []).length;
+  const items = (html.match(/class="project-card"/g) ?? []).length;
   const expected = expectedCards(page.lang);
-  check(cards === expected, `${cards} cards renderizados (esperado ${expected} do content/${page.lang}.json)`);
+  check(items === expected, `${items} itens renderizados (esperado ${expected} do content/${page.lang}.json)`);
   const groups = (html.match(/class="project-group"/g) ?? []).length;
   check(groups === GROUPS.length, `${groups} grupos (esperado ${GROUPS.length} do content/${page.lang}.json)`);
+  const carousels = (html.match(/class="carousel-container"/g) ?? []).length;
+  check(carousels === GROUPS.length, `${carousels} carrosséis (esperado ${GROUPS.length})`);
+  const carouselButtons = (html.match(/class="carousel-btn (?:prev|next)"/g) ?? []).length;
+  check(carouselButtons === GROUPS.length * 2,
+    `${carouselButtons} setas de carrossel (esperado ${GROUPS.length * 2})`);
 
-  // ── sections: ordem, isolamento e distribuição dos cards ──
+  // ── sections: ordem, isolamento e distribuição dos itens ──
   const iProjects = html.indexOf('<section id="projects"');
   const iArticles = html.indexOf('<section id="articles"');
   const iContact = html.indexOf('<section id="contact"');
@@ -73,13 +78,13 @@ for (const page of PAGES) {
   const articlesGroups = (articles.match(/class="project-group"/g) ?? []).length;
   check(articlesGroups === SECTIONS.articles.length,
     `${articlesGroups} grupos em Artigos (esperado ${SECTIONS.articles.length})`);
-  const articlesCards = (articles.match(/class="project-card"/g) ?? []).length;
+  const articlesItems = (articles.match(/class="project-card"/g) ?? []).length;
   const expectedArticles = groupCards(page.lang, 'articles');
-  check(articlesCards === expectedArticles,
-    `${articlesCards} cards em Artigos (esperado ${expectedArticles})`);
-  const projectsCards = (html.slice(iProjects, iArticles).match(/class="project-card"/g) ?? []).length;
-  check(projectsCards === groupCards(page.lang, 'projects'),
-    `${projectsCards} cards em Projetos (esperado ${groupCards(page.lang, 'projects')})`);
+  check(articlesItems === expectedArticles,
+    `${articlesItems} itens em Artigos (esperado ${expectedArticles})`);
+  const projectsItems = (html.slice(iProjects, iArticles).match(/class="project-card"/g) ?? []).length;
+  check(projectsItems === groupCards(page.lang, 'projects'),
+    `${projectsItems} itens em Projetos (esperado ${groupCards(page.lang, 'projects')})`);
   check(!/class="filters"/.test(articles), 'Artigos sem conjunto extra de filtros');
   const articleTitle = content(page.lang).articles?.sectionTitle ?? '';
   check(articles.includes(`<h2 class="section-title">${articleTitle}</h2>`), `h2 de Artigos preenchido — ${JSON.stringify(articleTitle)}`);
@@ -89,7 +94,8 @@ for (const page of PAGES) {
   check(/id="nav-articles"[^>]*aria-haspopup="true"[\s\S]*?href="#technical-articles"[\s\S]*?href="#publications"/.test(html),
     'dropdown de Artigos com seus 4 grupos');
 
-  check(!/carousel/i.test(html), 'sem vestígio de carrossel');
+  const dotGroups = (html.match(/class="carousel-dots"/g) ?? []).length;
+  check(dotGroups === GROUPS.length, `${dotGroups} indicadores de carrossel (esperado ${GROUPS.length})`);
   check(!/\{\{\w+\}\}/.test(html), 'nenhum token {{...}} não resolvido');
   check(!/>null<|undefined|NaN/.test(html), 'sem null/undefined/NaN no HTML');
   check(!/jquery|select2/i.test(html), 'sem jQuery/Select2');
