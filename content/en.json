@@ -379,6 +379,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Technical Article",
+                    "title": "Migrating to Flutter 3.50 (PT-BR)",
+                    "desc": "A first-hand account of migrating a real project to Flutter 3.50.0 (Dart 3.14.0): two independent tracks — the Android toolchain (AGP, Kotlin and Built-in Kotlin) and the deprecation of material.dart/cupertino.dart — and the points where the tooling stops helping. From the initial stash and the diff against a clean project in /tmp to pub add before dart fix and the residual KGP warning at build time.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/migrar-para-o-flutter-3-50-393d3b72e2ca",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Technical Article",
                     "title": "Can My 2019 PC Run a Local AI? And a 2020 Mac? (PT-BR)",
                     "desc": "Hands-on test with Qwen3.5 0.8B quantized to Q8_0 and llama.cpp on a Lenovo L340 with a GTX 1050 and a MacBook Air M1: prompt processing, tokens per second and answer quality — without turning the comparison into an Apple vs. NVIDIA contest.",
                     "links": [
@@ -595,6 +611,22 @@
             "title": "Reflections",
             "desc": "Writing about technology, innovation, career and the role of those who build software.",
             "items": [
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflection",
+                    "title": "What If the Problem Isn't Your Competence, but the Need to Prove Your Worth All the Time? (PT-BR)",
+                    "desc": "A reflection on impostor syndrome, professional recognition and identity in a tech career: why the drive to grow turns into a constant need to prove competence, how external recognition stops being a reliable measure of our worth, and why the journey matters more than the current job title.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/e-se-o-problema-n%C3%A3o-for-a-sua-compet%C3%AAncia-mas-a-necessidade-de-provar-seu-valor-o-tempo-todo-51f4bbbd5bed",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Reflexão",

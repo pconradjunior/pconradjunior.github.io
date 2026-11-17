@@ -379,6 +379,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo Técnico",
+                    "title": "Migrar para o Flutter 3.50",
+                    "desc": "Relato de uma migração real para o Flutter 3.50.0 (Dart 3.14.0): duas frentes independentes — a toolchain Android (AGP, Kotlin e Built-in Kotlin) e a depreciação de material.dart/cupertino.dart — e os pontos onde as ferramentas param de ajudar. Do stash inicial ao diff contra um projeto limpo em /tmp, do pub add antes do dart fix ao aviso residual de KGP no build.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/migrar-para-o-flutter-3-50-393d3b72e2ca",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Meu PC de 2019 consegue rodar uma IA local? E um Mac de 2020?",
                     "desc": "Teste prático com Qwen3.5 0.8B quantizado em Q8_0 e llama.cpp em um Lenovo L340 com GTX 1050 e um MacBook Air M1: processamento do prompt, geração de tokens por segundo e qualidade das respostas — sem transformar a comparação em uma disputa Apple × NVIDIA.",
                     "links": [
@@ -595,6 +611,22 @@
             "title": "Reflexões",
             "desc": "Textos sobre tecnologia, inovação, carreira e o papel de quem desenvolve software.",
             "items": [
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
+                    "title": "E se o problema não for a sua competência, mas a necessidade de provar seu valor o tempo todo?",
+                    "desc": "Reflexão sobre síndrome do impostor, reconhecimento profissional e identidade na carreira em tecnologia: por que a vontade de evoluir se transforma na necessidade permanente de provar competência, como o reconhecimento externo deixa de ser uma medida confiável do nosso valor e por que a trajetória construída importa mais do que o cargo atual.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/e-se-o-problema-n%C3%A3o-for-a-sua-compet%C3%AAncia-mas-a-necessidade-de-provar-seu-valor-o-tempo-todo-51f4bbbd5bed",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Reflexão",
