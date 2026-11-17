@@ -100,6 +100,10 @@ for (const page of PAGES) {
   check(!/>null<|undefined|NaN/.test(html), 'sem null/undefined/NaN no HTML');
   check(!/jquery|select2/i.test(html), 'sem jQuery/Select2');
 
+  // ── contador de visitas: precisa sobreviver ao build ──
+  const badge = content(page.lang).footer?.visitorBadge ?? '';
+  check(badge && html.includes(`src="${badge}"`), 'contador de visitas presente no footer');
+
   // ── contato: apenas links diretos, sem formulário de terceiros ──
   check(!/web3forms|access_key/i.test(html), 'sem Web3Forms nem access_key');
   check(!/<form/i.test(html), 'sem formulário preenchível');

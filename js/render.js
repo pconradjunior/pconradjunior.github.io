@@ -244,10 +244,14 @@ ${items}
 }
 
 export function renderFooter(d) {
+  const badge = d.footer.visitorBadge
+    ? `<p><img src="${esc(d.footer.visitorBadge)}" alt="${esc(d.footer.visitorBadgeAlt || '')}" loading="lazy"></p>`
+    : '';
   return `<footer>
         <div class="container">
           <p>${esc(d.footer.copyright)}</p>
           <p class="footer-version">${esc(d.footer.version)}</p>
+          ${badge}
         </div>
       </footer>`;
 }

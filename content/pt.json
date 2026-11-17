@@ -1122,7 +1122,9 @@
     },
     "footer": {
         "copyright": "© 2026 Pedro Conrad Jr. Todos os direitos reservados.",
-        "version": "v26 - Designed with CSS & Glassmorphism"
+        "version": "v26 - Designed with CSS & Glassmorphism",
+        "visitorBadge": "https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io",
+        "visitorBadgeAlt": "Contador de visitas"
     },
     "infoModal": {
         "text": "Este conteúdo está em desenvolvimento ou aguardando aprovação."
