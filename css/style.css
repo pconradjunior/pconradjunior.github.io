@@ -14,33 +14,14 @@
     --accent-color: #00f2ff;
     /* Cyan Neon */
     --accent-glow: rgba(0, 242, 255, 0.4);
-    --glass-bg: rgba(20, 20, 25, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: #131316;
+    --glass-border: #2A2B31;
     --card-hover: rgba(255, 255, 255, 0.03);
 
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Outfit', sans-serif;
 
     --transition-speed: 0.3s;
-}
-
-/* Theme Variantes via Checkbox Hack */
-/* Se a checkbox "theme-purple" estiver marcada */
-body:has(#theme-purple:checked) {
-    --bg-primary: #0f0b15;
-    --bg-secondary: #1a1625;
-    --accent-color: #bd00ff;
-    /* Purple Neon */
-    --accent-glow: rgba(189, 0, 255, 0.4);
-}
-
-/* Se a checkbox "theme-green" estiver marcada */
-body:has(#theme-green:checked) {
-    --bg-primary: #051108;
-    --bg-secondary: #0d1f12;
-    --accent-color: #00ff88;
-    /* Green Neon */
-    --accent-glow: rgba(0, 255, 136, 0.4);
 }
 
 html {
@@ -85,58 +66,6 @@ body {
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* --- Theme Controls (Hidden Inputs) --- */
-.theme-controller {
-    display: none;
-}
-
-.theme-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 50px;
-}
-
-.theme-label {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: transform 0.2s;
-}
-
-.theme-label:hover {
-    transform: scale(1.2);
-}
-
-.label-cyan {
-    background: #00f2ff;
-}
-
-.label-purple {
-    background: #bd00ff;
-}
-
-.label-green {
-    background: #00ff88;
-}
-
-/* Highlight Active Theme */
-#theme-cyan:checked~.theme-switcher .label-cyan,
-#theme-purple:checked~.theme-switcher .label-purple,
-#theme-green:checked~.theme-switcher .label-green {
-    border-color: #fff;
-    box-shadow: 0 0 10px var(--accent-glow);
-}
-
 /* --- Header & Nav --- */
 header {
     position: fixed;
@@ -145,8 +74,7 @@ header {
     width: 100%;
     padding: 1.5rem 0;
     z-index: 999;
-    background: rgba(10, 10, 12, 0.8);
-    backdrop-filter: blur(15px);
+    background: #0A0A0C;
     border-bottom: 1px solid var(--glass-border);
 }
 
@@ -550,7 +478,6 @@ nav {
     justify-content: center;
     font-size: 1.1rem;
     transition: all 0.3s;
-    backdrop-filter: blur(10px);
 }
 
 .carousel-btn:hover {
@@ -632,7 +559,6 @@ nav {
     grid-template-columns: 1fr;
     gap: 4rem;
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 3rem;
@@ -683,17 +609,16 @@ footer {
 }
 
 /* --- Subpages / Articles (Global) --- */
-.glass-panel {
+.content-panel {
     background: var(--glass-bg);
     padding: 3rem;
     border-radius: 12px;
     border: 1px solid var(--glass-border);
     margin: 12rem auto 4rem auto;
-    backdrop-filter: blur(10px);
     max-width: 900px;
 }
 
-.glass-panel h1 {
+.content-panel h1 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     color: var(--accent-color);
@@ -701,7 +626,7 @@ footer {
     text-align: center;
 }
 
-.glass-panel h2 {
+.content-panel h2 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     color: var(--text-primary);
@@ -711,26 +636,26 @@ footer {
     padding-bottom: 0.5rem;
 }
 
-.glass-panel p,
-.glass-panel li {
+.content-panel p,
+.content-panel li {
     color: var(--text-secondary);
     font-size: 1.05rem;
     margin-bottom: 1rem;
     line-height: 1.7;
 }
 
-.glass-panel a {
+.content-panel a {
     color: var(--accent-color);
     text-decoration: none;
     border-bottom: 1px solid;
     transition: border-color 0.2s;
 }
 
-.glass-panel a:hover {
+.content-panel a:hover {
     border-bottom-color: var(--accent-color);
 }
 
-.glass-panel code {
+.content-panel code {
     background: rgba(0, 0, 0, 0.3);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
@@ -738,7 +663,7 @@ footer {
     color: #ff7b72;
 }
 
-.glass-panel pre {
+.content-panel pre {
     background: rgba(0, 0, 0, 0.3);
     padding: 1.5rem;
     border-radius: 8px;
@@ -746,7 +671,7 @@ footer {
     margin: 1.5rem 0;
 }
 
-.glass-panel pre code {
+.content-panel pre code {
     background: transparent;
     padding: 0;
     color: #e6edf3;
@@ -775,12 +700,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .glass-panel {
+    .content-panel {
         padding: 1.5rem;
         margin: 8rem auto 2rem auto;
     }
 
-    .glass-panel h1 {
+    .content-panel h1 {
         font-size: 2rem;
     }
 }
@@ -1242,7 +1167,6 @@ footer {
     font-family: var(--font-body);
     cursor: pointer;
     transition: all var(--transition-speed);
-    backdrop-filter: blur(10px);
     user-select: none;
 }
 

@@ -5,7 +5,8 @@ on:
     branches: [main]
     paths:
       - 'content/**'
-      - 'js/render.js'
+      - 'css/**'
+      - 'js/**'
       - 'build.mjs'
       - 'tools/check-build.mjs'
   workflow_dispatch:

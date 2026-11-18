@@ -18,76 +18,17 @@ export const SITE = {
     'https://www.linkedin.com/in/pconradjunior/',
     'https://medium.com/@pconradjunior',
     'https://instagram.com/pedrojunior.dev'
-  ],
-  storeLinks: {
-    chesskids: 'https://play.google.com/store/apps/details?id=pconradjunior.chesskids',
-    unipampaPlay: 'https://play.google.com/store/apps/details?id=br.edu.unipampa.app',
-    unipampaIos: 'https://apps.apple.com/app/app-unipampa/id1639927711',
-    smellcheck: 'https://play.google.com/store/apps/details?id=pconradjunior.smellcheck',
-    fingernotes: 'https://play.google.com/store/apps/details?id=pconradjunior.fingernotes',
-    phisicalc: 'https://play.google.com/store/apps/details?id=pconradjunior.phisicalc'
-  }
-};
-
-/** Seções do portfólio, na ordem em que aparecem na página. */
-export const SECTIONS = [
-  {
-    id: 'projects',
-    groups: ['mobile', 'web', 'other', 'videos'],
-    labels: ['projectsMobile', 'projectsWeb', 'projectsOther', 'projectsVideos'],
-    withFilters: true
-  },
-  {
-    id: 'articles',
-    groups: ['technicalArticles', 'reflections', 'career', 'publications'],
-    labels: ['projectsTechArticles', 'projectsReflections', 'projectsCareer', 'projectsPublications'],
-    withFilters: false
-  }
-];
-
-/** Os dois dropdowns do menu, cada um apontando para uma section. */
-const MENUS = [
-  { id: 'nav-projects', navKey: 'projects', section: 'projects' },
-  { id: 'nav-articles', navKey: 'articles', section: 'articles' }
-];
-
-const GROUP_BY_KEY = {
-  mobile: { key: 'mobile', id: 'mobile', filter: 'mobile' },
-  web: { key: 'web', id: 'web', filter: 'web' },
-  other: { key: 'other', id: 'other-projects', filter: 'other' },
-  videos: { key: 'videos', id: 'videos', filter: 'videos' },
-  technicalArticles: { key: 'technicalArticles', id: 'technical-articles', filter: 'technical' },
-  reflections: { key: 'reflections', id: 'reflections', filter: 'reflections' },
-  career: { key: 'career', id: 'career', filter: 'career' },
-  publications: { key: 'publications', id: 'publications', filter: 'publications' }
-};
-
-/** Todos os grupos com sua section e seu id de âncora, na ordem de renderização. */
-export const GROUPS = SECTIONS.flatMap(s =>
-  s.groups.map(key => ({ ...GROUP_BY_KEY[key], section: s.id }))
-);
-
-export const FILTER_LABELS = {
-  pt: { all: 'Todos', group: 'Filtrar por categoria' },
-  en: { all: 'All', group: 'Filter by category' }
-};
-
-const CAROUSEL_LABELS = {
-  pt: { prev: 'Anterior', next: 'Próximo', region: 'Navegação do carrossel', dot: i => `Ir para o slide ${i}` },
-  en: { prev: 'Previous', next: 'Next', region: 'Carousel navigation', dot: i => `Go to slide ${i}` }
+  ]
 };
 
 /* ─────────────────────────────────────────────────────────────
-   escaping
+   escaping e URLs
    ───────────────────────────────────────────────────────────── */
 
 const ENT = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 
 /** Escapa texto para contexto de HTML. */
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ENT[c]);
-
-/** Escapa texto destined to a JSON-LD string literal. */
-const jsonStr = s => JSON.stringify(String(s ?? '')).slice(1, -1).replace(/</g, '\\u003c');
 
 /** Resolve a URL de um link interno para caminho absoluto a partir da raiz. */
 function href(h) {
@@ -96,10 +37,13 @@ function href(h) {
     return '/' + h.replace(/^\.?\//, '');
 }
 
+/** Atributos de link externo (mailto não abre nova aba). */
+function external(h) {
+    return /^https?:/.test(h) ? ' target="_blank" rel="noopener noreferrer"' : '';
+}
+
 /* ─────────────────────────────────────────────────────────────
-   contagens derivadas
-   Impedem que números citados em textos divirjam dos dados.
-   Use {{apps}}, {{articles}}, {{papers}}, {{projects}} nos JSONs.
+   contagens derivadas — os números vêm dos dados, nunca do copy
    ───────────────────────────────────────────────────────────── */
 
 const STORE = /play\.google\.com|apps\.apple\.com/;
@@ -111,11 +55,17 @@ function compact(n) {
     return `${n}+`;
 }
 
+/** Formata a contagem de downloads de um app, ou null se não informado. */
+export function downloadLabel(item) {
+    return item?.downloads ? compact(item.downloads) : null;
+}
+
 export function counts(d) {
     const p = d.projects;
     const mobile = p.mobile?.items ?? [];
     const published = mobile.filter(i => i.links.some(l => STORE.test(l.href || '')));
     const total = published.reduce((n, i) => n + (i.downloads || 0), 0);
+    const byTitle = title => downloadLabel(mobile.find(i => i.title === title));
 
     return {
         apps: published.length,
@@ -123,9 +73,12 @@ export function counts(d) {
             + (p.reflections?.items ?? []).length
             + (p.career?.items ?? []).length,
         papers: (p.publications?.items ?? []).length,
-        projects: GROUPS.reduce((n, g) => n + (p[g.key]?.items?.length ?? 0), 0),
+        projects: Object.values(p).reduce((n, v) => n + (Array.isArray(v?.items) ? v.items.length : 0), 0),
         downloads: compact(total),
-        downloadsExact: total
+        downloadsExact: total,
+        unipampaDownloads: byTitle('App Unipampa'),
+        phisicalcDownloads: byTitle('PhisiCalc'),
+        chesskidsDownloads: byTitle('ChessKids')
     };
 }
 
@@ -135,272 +88,180 @@ export function fill(text, d) {
     return String(text ?? '').replace(/\{\{(\w+)\}\}/g, (m, k) => (c[k] ?? m));
 }
 
-/** Formata a contagem de downloads de um app, ou null se não informado. */
-export function downloadLabel(item) {
-    return item.downloads ? compact(item.downloads) : null;
-}
-
 /* ─────────────────────────────────────────────────────────────
    blocos de conteúdo
    ───────────────────────────────────────────────────────────── */
 
 function renderLinks(links) {
-  if (!links || !links.length) return '';
-  const items = links.map(l => {
-    const label = l.label ? ` ${esc(l.label)}` : '';
-    const title = l.title ? ` title="${esc(l.title)}" aria-label="${esc(l.title)}"` : '';
-    if (l.action === 'video') {
-      return `<button type="button" class="btn-link" data-video="${esc(l.videoId)}"${title}>
-                <i class="${esc(l.icon)}" aria-hidden="true"></i>${label}
-              </button>`;
-    }
-    if (l.action === 'infoModal') {
-      return `<button type="button" class="btn-link" data-info-modal${title}>
-                <i class="${esc(l.icon)}" aria-hidden="true"></i>${label}
-              </button>`;
-    }
-    const target = /^(https?:|mailto:)/.test(l.href) ? ' target="_blank" rel="noopener noreferrer"' : '';
-    const style = l.style ? ` style="${esc(l.style)}"` : '';
-    return `<a href="${esc(href(l.href))}"${target}${style} class="btn-link"${title}>
-              <i class="${esc(l.icon)}" aria-hidden="true"></i>${label}
-            </a>`;
-  });
-  return `<div class="project-links">${items.join('')}</div>`;
+    if (!links || !links.length) return '';
+    const items = links.map(l => {
+        const label = esc(l.label || l.title || '');
+        const title = l.title ? ` title="${esc(l.title)}" aria-label="${esc(l.title)}"` : '';
+        const icon = `<i class="${esc(l.icon)}" aria-hidden="true"></i>`;
+
+        if (l.action === 'video' && l.videoId) {
+            return `<button type="button" class="lp-link lp-link-video" data-video="${esc(l.videoId)}"${title}>
+        ${icon} ${label}
+      </button>`;
+        }
+
+        return `<a href="${esc(href(l.href))}"${external(l.href)} class="lp-link"${title}>
+        ${icon} ${label}
+      </a>`;
+    });
+    return `<div class="lp-links">${items.join('')}</div>`;
 }
 
-function renderCard(item) {
-    const dl = downloadLabel(item);
-    return `<article class="project-card">
-            <div class="project-content">
-              <span class="project-type"><i class="${esc(item.typeIcon)}" aria-hidden="true"></i> ${esc(item.typeLabel)}</span>
-              <h4 class="project-title">${esc(item.title)}</h4>${dl ? `
-              <span class="project-metric"><i class="fa fa-download" aria-hidden="true"></i> ${esc(dl)} downloads</span>` : ''}
-              <p class="project-desc">${esc(item.desc)}</p>
-              ${renderLinks(item.links)}
+function renderFeatured(item, d) {
+    return `<article class="lp-card">
+        <span class="lp-card-type">${esc(item.type)}</span>
+        <h3 class="lp-card-title">${esc(item.title)}</h3>
+        <p class="lp-card-desc">${esc(item.desc)}</p>
+        <span class="lp-card-metric">${esc(fill(item.metric, d))}</span>
+        ${renderLinks(item.links)}
+      </article>`;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   header / main / footer
+   ───────────────────────────────────────────────────────────── */
+
+export function renderHeader(d, lang) {
+  const n = d.nav;
+  const other = lang === 'pt' ? '/en/' : '/';
+  const aria = lang === 'pt' ? 'Navegação principal' : 'Main navigation';
+  const open = lang === 'pt' ? 'Abrir menu' : 'Open menu';
+
+  return `<header class="lp-header">
+      <div class="lp-container">
+        <nav class="lp-nav" aria-label="${esc(aria)}">
+          <button class="lp-hamburger" id="hamburgerBtn" type="button"
+              aria-label="${esc(open)}" aria-expanded="false" aria-controls="navLinks">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <a href="#home" class="lp-logo">${esc(n.brand)}</a>
+          <div class="lp-nav-links" id="navLinks">
+            <a href="#projects">${esc(n.projects)}</a>
+            <a href="#about">${esc(n.about)}</a>
+            <a href="#contact">${esc(n.contact)}</a>
+            <a href="${other}" id="langToggle" hreflang="${other === '/en/' ? 'en' : 'pt-BR'}" rel="alternate" title="${esc(n.langToggleLabel)}">
+              <img src="${esc(n.langToggleFlag)}" alt="${esc(n.langToggleAlt)}" width="20" height="15" loading="lazy"> ${esc(n.langToggleLabel)}
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>`;
+}
+
+export function renderMain(d) {
+  const s = d.projectsSection, a = d.about, c = d.contact;
+
+  const stats = d.stats.map(x => `<div class="lp-stat">
+        <strong>${esc(fill(x.number, d))}</strong>
+        <span>${esc(fill(x.label, d))}</span>
+      </div>`).join('');
+
+  const cards = d.featured.map(item => renderFeatured(item, d)).join('');
+
+  const channels = c.channels.map(ch => `<a href="${esc(href(ch.href))}"${external(ch.href)} class="lp-channel">
+        <i class="${esc(ch.icon)}" aria-hidden="true"></i><span>${esc(ch.label)}</span>
+      </a>`).join('');
+
+  return `<main>
+      <section id="home" class="lp-hero">
+        <div class="lp-container">
+          <p class="lp-eyebrow">${esc(d.hero.role)}</p>
+          <h1>${esc(d.hero.title)}</h1>
+          <p class="lp-stack">${esc(d.hero.stack)}</p>
+          <p class="lp-description">${esc(d.hero.description)}</p>
+          <div class="lp-stats">${stats}</div>
+          <div class="lp-actions">
+            <a href="#projects" class="lp-btn lp-btn-primary">${esc(d.hero.btnProjects)}</a>
+            <a href="#contact" class="lp-btn lp-btn-secondary">${esc(d.hero.btnContact)}</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="lp-section">
+        <div class="lp-container">
+          <h2 class="lp-section-title">${esc(s.sectionTitle)}</h2>
+          <p class="lp-section-intro">${esc(s.intro)}</p>
+          <div class="lp-grid">${cards}</div>
+          <p class="lp-archive"><a href="${esc(href(s.archiveHref))}" target="_blank" rel="noopener noreferrer">${esc(s.archiveLabel)} →</a></p>
+        </div>
+      </section>
+
+      <section id="about" class="lp-section lp-section-alt">
+        <div class="lp-container lp-about-grid">
+          <div class="lp-about-text">
+            <h2 class="lp-section-title">${esc(a.sectionTitle)}</h2>
+            <div class="lp-about-head">
+              <img class="lp-avatar" src="${esc(a.avatar)}" alt="${esc(a.avatarAlt)}" width="112" height="112">
+              <div class="lp-about-bio">
+                ${a.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}
+              </div>
             </div>
-          </article>`;
+            <ul class="lp-skills">${a.skills.map(skill => `<li>${esc(skill)}</li>`).join('')}</ul>
+          </div>
+          <aside class="lp-publications">
+            <h3>${esc(a.publicationsTitle)}</h3>
+            <p>${esc(a.publicationsText)}</p>
+            <a href="https://medium.com/@pconradjunior" target="_blank" rel="noopener noreferrer">${esc(a.mediumLabel)} →</a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" class="lp-section">
+        <div class="lp-container">
+          <h2 class="lp-section-title">${esc(c.sectionTitle)}</h2>
+          <div class="lp-channels">${channels}</div>
+        </div>
+      </section>
+    </main>`;
 }
 
-/** Sistemas operacionais derivados dos links de loja, não do stack. */
+export function renderFooter(d, lang) {
+  const f = d.footer;
+  const other = lang === 'pt' ? '/en/' : '/';
+  const langLabel = lang === 'pt' ? 'English' : 'Português';
+  const cols = [
+    { title: f.articlesTitle, links: f.articleLinks },
+    { title: f.privacyTitle, links: f.privacyLinks }
+  ];
+
+  return `<footer class="lp-footer">
+      <div class="lp-container">
+        <div class="lp-footer-grid">
+          <div class="lp-footer-col lp-footer-archive">
+            <h3>${esc(f.archiveTitle)}</h3>
+            <p>${esc(f.archiveText)}</p>
+            <a href="${esc(href(f.archiveLink.href))}" target="_blank" rel="noopener noreferrer">${esc(f.archiveLink.label)} →</a>
+          </div>
+          ${cols.map(col => `<div class="lp-footer-col">
+            <h3>${esc(col.title)}</h3>
+            <ul>${col.links.map(l => `<li><a href="${esc(href(l.href))}"${external(l.href)}>${esc(l.label)}</a></li>`).join('')}</ul>
+          </div>`).join('')}
+          <div class="lp-footer-col">
+            <h3>${esc(lang === 'pt' ? 'Idioma' : 'Language')}</h3>
+            <ul><li><a href="${other}" hreflang="${other === '/en/' ? 'en' : 'pt-BR'}" rel="alternate">${esc(langLabel)}</a></li></ul>
+          </div>
+        </div>
+        <p class="lp-copyright">${esc(f.copyright)}</p>
+        ${f.visitorBadge ? `<p class="lp-badge"><img src="${esc(f.visitorBadge)}" alt="${esc(f.visitorBadgeAlt || '')}" loading="lazy"></p>` : ''}
+      </div>
+    </footer>`;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   structured data (mantém o acervo completo indexável)
+   ───────────────────────────────────────────────────────────── */
+
 function operatingSystem(item) {
     const os = [];
     if (item.links.some(l => /play\.google\.com/.test(l.href || ''))) os.push('Android');
     if (item.links.some(l => /apps\.apple\.com/.test(l.href || ''))) os.push('iOS');
     return os.join(', ') || 'Android';
 }
-
-/** Só emite um stat quando todos os seus tokens resolveram (evita "null" na página). */
-function renderStats(stats, d) {
-    return stats.map(s => {
-        const num = fill(s.number, d), label = fill(s.label, d);
-        if (num == null || String(num).includes('{{')) return '';
-        return `<div class="stat-card"><span class="stat-number">${esc(num)}</span><span class="stat-label">${esc(label)}</span></div>`;
-    }).join('');
-}
-
-/* ─────────────────────────────────────────────────────────────
-   header / footer
-   ───────────────────────────────────────────────────────────── */
-export function renderHeader(d, lang) {
-  const n = d.nav;
-  const other = lang === 'pt' ? '/en/' : '/';
-  return `<header>
-        <div class="container">
-          <nav aria-label="${esc(lang === 'pt' ? 'Navegação principal' : 'Main navigation')}">
-            <button class="hamburger" id="hamburgerBtn" type="button"
-                aria-label="${esc(lang === 'pt' ? 'Abrir menu' : 'Open menu')}" aria-expanded="false" aria-controls="navLinks">
-              <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
-            <a href="#" class="logo">
-              <i class="fa fa-code logo-icon" aria-hidden="true"></i><span>${esc(n.brand ?? 'Pedro Conrad Jr')}</span>
-            </a>
-            <div class="nav-links" id="navLinks">
-              <a href="#home">${esc(n.home)}</a>
-              <a href="#about">${esc(n.about)}</a>
-              <a href="#expertise">${esc(n.expertise)}</a>
-              ${MENUS.map(m => {
-                const s = SECTIONS.find(x => x.id === m.section);
-                const items = s.groups
-                  .map((key, i) => {
-                    const g = GROUP_BY_KEY[key];
-                    const label = s.labels[i];
-                    return `                  <a href="#${g.id}">${esc(n[label])}</a>`;
-                  }).join('\n');
-                return `              <div class="dropdown">
-                <a href="#${m.section}" id="${m.id}" aria-haspopup="true">${esc(n[m.navKey])} <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                <div class="dropdown-content">
-${items}
-                </div>
-              </div>`;
-              }).join('\n')}
-              <a href="#contact">${esc(n.contact)}</a>
-              <a href="${other}" id="langToggle" hreflang="${other === '/en/' ? 'en' : 'pt-BR'}" rel="alternate" title="${esc(n.langToggleLabel)}">
-                <img src="${esc(n.langToggleFlag)}" alt="${esc(n.langToggleAlt)}" width="20" height="15" loading="lazy"> ${esc(n.langToggleLabel)}
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>`;
-}
-
-export function renderFooter(d) {
-  const badge = d.footer.visitorBadge
-    ? `<p><img src="${esc(d.footer.visitorBadge)}" alt="${esc(d.footer.visitorBadgeAlt || '')}" loading="lazy"></p>`
-    : '';
-  return `<footer>
-        <div class="container">
-          <p>${esc(d.footer.copyright)}</p>
-          <p class="footer-version">${esc(d.footer.version)}</p>
-          ${badge}
-        </div>
-      </footer>`;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   main
-   ───────────────────────────────────────────────────────────── */
-
-/**
- * Renderiza uma section de conteúdo (Projetos ou Artigos) com seus grupos.
- * Só a section com `withFilters` recebe o conjunto de abas.
- */
-function renderSection(d, s) {
-  const p = d.projects;
-  const lang = d.meta.lang === 'pt-BR' ? 'pt' : 'en';
-
-  const groups = s.groups.map(key => GROUP_BY_KEY[key]).map(g => {
-    const blk = p[g.key];
-    if (!blk || !blk.items.length) return '';
-    return `<section class="project-group" id="${g.id}" data-category="${g.filter}" aria-labelledby="h-${g.id}">
-          <h3 class="group-title" id="h-${g.id}">${esc(blk.title)} <span class="group-count">${blk.items.length}</span></h3>
-          ${blk.desc ? `<p class="group-desc">${esc(blk.desc)}</p>` : ''}
-          <div class="carousel-container" role="group" aria-roledescription="${lang === 'pt' ? 'carrossel' : 'carousel'}">
-            <button type="button" class="carousel-btn prev" aria-label="${esc(CAROUSEL_LABELS[lang].prev)}">
-              <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            </button>
-            <div class="portfolio-grid">${blk.items.map(renderCard).join('')}</div>
-            <button type="button" class="carousel-btn next" aria-label="${esc(CAROUSEL_LABELS[lang].next)}">
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </button>
-          </div>
-          <div class="carousel-dots" role="group" aria-label="${esc(CAROUSEL_LABELS[lang].region)}"></div>
-        </section>`;
-  }).join('');
-
-  const content = d[s.id];
-  const blocks = s.groups.map(key => GROUP_BY_KEY[key]).filter(g => p[g.key]?.items?.length);
-  const total = blocks.reduce((n, g) => n + p[g.key].items.length, 0);
-
-  const tabs = s.withFilters ? [
-    `<input type="radio" name="pf" id="pf-all" class="pf-controller" checked>`,
-    ...blocks.map(g => `<input type="radio" name="pf" id="pf-${g.filter}" class="pf-controller">`)
-  ].join('\n            ') : '';
-
-  const labels = s.withFilters ? [
-    `<label for="pf-all" class="filter-tab">${esc(FILTER_LABELS[lang].all)} <span class="filter-count">${total}</span></label>`,
-    ...blocks.map(g =>
-      `<label for="pf-${g.filter}" class="filter-tab">${esc(p[g.key].title)} <span class="filter-count">${p[g.key].items.length}</span></label>`)
-  ].join('\n              ') : '';
-
-  const filters = s.withFilters ? `
-            <div class="filters" role="group" aria-label="${esc(FILTER_LABELS[lang].group)}">
-            ${tabs}
-              <div class="filter-tabs">
-              ${labels}
-              </div>
-            </div>
-` : '';
-
-  return `
-        <section id="${s.id}" class="portfolio">
-          <div class="container">
-            <h2 class="section-title">${esc(content.sectionTitle)}</h2>
-            <p class="section-intro centered">${esc(content.intro)}</p>
-${filters}
-            <div id="${s.id === 'projects' ? 'projectGroups' : 'articleGroups'}">${groups}</div>
-          </div>
-        </section>`;
-}
-
-export function renderMain(d) {
-  const a = d.about, e = d.expertise, c = d.contact;
-
-  return `<main>
-        <section id="home" class="hero">
-          <div class="container">
-            <div class="hero-content">
-              <span class="hero-greeting">${esc(d.hero.greeting)}</span>
-              <h1>${esc(d.hero.title)}</h1>
-              <p class="hero-role">${esc(d.hero.role)}</p>
-              <p class="hero-stack">${esc(d.hero.stack)}</p>
-              <p class="hero-description">${esc(d.hero.description)}</p>
-              <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">${esc(d.hero.btnProjects)}</a>
-                <a href="${SITE.sameAs[0]}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-github" aria-hidden="true"></i> <span>${esc(d.hero.btnGitHub)}</span></a>
-                <a href="${SITE.sameAs[1]}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span>${esc(d.hero.btnLinkedIn)}</span></a>
-                <a href="${SITE.sameAs[3]}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-instagram" aria-hidden="true"></i> <span>${esc(d.hero.btnInstagram)}</span></a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" class="about">
-          <div class="container">
-            <h2 class="section-title">${esc(a.sectionTitle)}</h2>
-            <div class="about-grid">
-              <div class="about-text">
-                <ul class="skill-list" role="list">${a.skills.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
-                ${a.paragraphs.map(t => `<p>${esc(t)}</p>`).join('')}
-                <p class="teaching"><strong>${esc(a.teaching.label)}:</strong> ${esc(a.teaching.title)} — ${esc(a.teaching.desc)}</p>
-              </div>
-              <div class="about-stats">
-                <div class="stats-grid">
-                  ${renderStats(a.stats, d)}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="expertise" class="services">
-          <div class="container">
-            <h2 class="section-title">${esc(e.sectionTitle)}</h2>
-            <div class="about-text">${e.sectionIntro.map(t => `<p class="centered">${esc(t)}</p>`).join('')}</div>
-            <div class="services-grid">
-              ${e.cards.map(x => `<div class="service-card">
-                <div class="service-icon"><i class="${esc(x.icon)}" aria-hidden="true"></i></div>
-                <h3>${esc(x.title)}</h3>
-                <p>${esc(x.text)}</p>
-              </div>`).join('')}
-            </div>
-          </div>
-        </section>
-
-        ${SECTIONS.map(s => renderSection(d, s)).join('')}
-        <section id="contact" class="contact">
-          <div class="container">
-            <h2 class="section-title">${esc(c.sectionTitle)}</h2>
-            <div class="contact-container">
-              <div class="contact-info">
-                <h3>${esc(c.infoTitle)}</h3>
-                <p>${esc(c.infoText)}</p>
-                <div class="contact-details">
-                  <a href="${SITE.sameAs[2]}" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-medium" aria-hidden="true"></i><span>@pconradjunior</span></a>
-                  <a href="mailto:${SITE.email}" class="contact-item"><i class="fa fa-envelope" aria-hidden="true"></i><span>${esc(SITE.email)}</span></a>
-                  <a href="${SITE.sameAs[1]}" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>/in/pconradjunior</span></a>
-                  <a href="${SITE.sameAs[3]}" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>@pedrojunior.dev</span></a>
-                  <a href="${SITE.sameAs[0]}" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fa-brands fa-github" aria-hidden="true"></i><span>@pconradjunior</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>`;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   structured data
-   ───────────────────────────────────────────────────────────── */
 
 function softwareApp(item, lang) {
   const store = item.links.find(l => /play\.google\.com|apps\.apple\.com/.test(l.href || ''));
@@ -428,7 +289,6 @@ function articleNode(item, lang) {
   const externals = item.links.filter(l => /^https?:/.test(l.href || ''));
   const link = externals[0];
   const local = item.links.find(l => /^article_/.test(l.href || ''));
-  // links adicionais viram citation: reforca a ligacao entre obra e publicacao
   const extra = (local ? externals : externals.slice(1));
   return {
     '@type': 'Article',
@@ -600,21 +460,31 @@ export function buildHead(d, lang) {
     <link rel="icon" type="image/svg+xml" href="/images/flags/${flag}.svg" id="favicon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/landing.css">
     <link rel="preload" as="fetch" href="/content/${lang}.json" crossorigin>
-    <script>
-      (function () {
-        var t = localStorage.getItem('theme');
-        if (t) document.documentElement.classList.add(t);
-      })();
-    </script>
     ${ld}`;
 }
 
+export function renderVideoModal(d, lang) {
+  const label = lang === 'pt' ? 'Player de vídeo' : 'Video player';
+  const title = lang === 'pt' ? 'Vídeo de demonstração' : 'Demo video';
+  const close = lang === 'pt' ? 'Fechar' : 'Close';
+
+  return `<div class="lp-video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="${esc(label)}" hidden>
+    <div class="lp-modal-content">
+      <button type="button" class="lp-close-modal" data-close-modal aria-label="${esc(close)}">&times;</button>
+      <div class="lp-video-container">
+        <iframe id="videoFrame" title="${esc(title)}" src="" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>`;
+}
+
 export function buildDocument(d, lang) {
-  const c = d.contact;
   return `<!DOCTYPE html>
 <html lang="${esc(d.meta.lang)}">
 
@@ -623,35 +493,10 @@ export function buildDocument(d, lang) {
 </head>
 
 <body>
-    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" value="theme-cyan">
-    <input type="radio" name="theme" id="theme-purple" class="theme-controller" value="theme-purple">
-    <input type="radio" name="theme" id="theme-green" class="theme-controller" value="theme-green">
-    <div class="theme-switcher" role="group" aria-label="${esc(d.themeSwitcherTitle)}" title="${esc(d.themeSwitcherTitle)}">
-      <label for="theme-cyan" class="theme-label label-cyan"><span class="sr-only">${esc(d.themeSwitcherTitle)}</span></label>
-      <label for="theme-purple" class="theme-label label-purple"><span class="sr-only">${esc(d.themeSwitcherTitle)}</span></label>
-      <label for="theme-green" class="theme-label label-green"><span class="sr-only">${esc(d.themeSwitcherTitle)}</span></label>
-    </div>
-
     ${renderHeader(d, lang)}
     ${renderMain(d)}
-    ${renderFooter(d)}
-
-    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="${esc(lang === 'pt' ? 'Player de vídeo' : 'Video player')}" hidden>
-      <div class="modal-content">
-        <button type="button" class="close-modal" data-close-modal aria-label="${esc(lang === 'pt' ? 'Fechar' : 'Close')}">&times;</button>
-        <div class="video-container">
-          <iframe id="videoFrame" title="${esc(lang === 'pt' ? 'Vídeo de demonstração' : 'Demo video')}" src="" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="info-modal" id="infoModal" role="dialog" aria-modal="true" aria-label="${esc(lang === 'pt' ? 'Informação' : 'Information')}" hidden>
-      <div class="modal-content">
-        <button type="button" class="close-modal" data-close-modal aria-label="${esc(lang === 'pt' ? 'Fechar' : 'Close')}">&times;</button>
-        <i class="fa fa-info-circle info-modal-icon" aria-hidden="true"></i>
-        <p class="info-modal-text">${esc(d.infoModal.text)}</p>
-      </div>
-    </div>
+    ${renderFooter(d, lang)}
+    ${renderVideoModal(d, lang)}
 
     <script type="module" src="/js/main.js"></script>
 </body>

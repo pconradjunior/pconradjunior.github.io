@@ -2,206 +2,182 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="REx: Research Explorer - Extensão para facilitar a identificação e comparação de indicadores científicos Qualis CAPES." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REx: Research Explorer — Facilitador de Indicadores Científicos</title>
-
-    <!-- Icons -->
+    <meta name="description" content="REx: Research Explorer — extensão para identificar ISSNs e comparar a classificação Qualis CAPES de diferentes quadriênios.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pconradjunior.github.io/rex_info.html">
+    <link rel="icon" type="image/svg+xml" href="/images/flags/br.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/landing.css">
 </head>
 
 <body>
-    <!-- Theme Switcher Controls -->
-    <input type="radio" name="theme" id="theme-cyan" class="theme-controller" checked>
-    <input type="radio" name="theme" id="theme-purple" class="theme-controller">
-    <input type="radio" name="theme" id="theme-green" class="theme-controller">
-
-    <div class="theme-switcher">
-        <label for="theme-cyan" class="theme-label label-cyan"></label>
-        <label for="theme-purple" class="theme-label label-purple"></label>
-        <label for="theme-green" class="theme-label label-green"></label>
-    </div>
-
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo"><i class="fa fa-microchip logo-icon">&nbsp;</i><span>REx Explorer</span></a>
-                <div class="nav-links">
-                    <a href="index.html#home">Início</a>
-                    <a href="index.html#portfolio">Voltar ao Portfolio</a>
-                </div>
-            </nav>
-        </div>
+    <header class="lp-header">
+      <div class="lp-container">
+        <nav class="lp-nav" aria-label="Navegação principal">
+          <button class="lp-hamburger" id="hamburgerBtn" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <a href="index.html#home" class="lp-logo">Pedro Conrad Jr</a>
+          <div class="lp-nav-links" id="navLinks">
+            <a href="index.html#projects">Projetos</a>
+            <a href="index.html#about">Sobre</a>
+            <a href="index.html#contact">Contato</a>
+            <a href="/en/" id="langToggle" hreflang="en" rel="alternate" title="English">
+              <img src="https://flagcdn.com/20x15/us.png" alt="EN" width="20" height="15" loading="lazy"> English
+            </a>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <div class="container glass-panel">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <img src="article_imgs/rex/icone_rex_big.png" alt="REx Logo" style="max-width: 150px; margin-bottom: 1rem;">
+        <section class="lp-legal-hero">
+            <div class="lp-container">
+                <p class="lp-eyebrow">Projeto</p>
                 <h1>REx: Research Explorer</h1>
-                <p style="font-size: 1.2rem; opacity: 0.8;">Facilitando a identificação e comparação de indicadores científicos</p>
+                <p class="lp-rex-tagline">Facilitando a identificação e comparação de indicadores científicos</p>
             </div>
+        </section>
 
-            <img src="article_imgs/rex/rex_banner.png" alt="REx Banner" style="width: 100%; border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
-
-            <h3>💡 O que é o REx?</h3>
-            <p>
-                O <strong>REx: Research Explorer</strong> é uma extensão desenvolvida para agilizar o fluxo de trabalho de pesquisadores, orientadores e estudantes. 
-                Ele identifica automaticamente o <strong>ISSN</strong> de periódicos em páginas como o Google Acadêmico e outros sites acadêmicos, permitindo visualizar a classificação <strong>Qualis CAPES</strong> de diferentes quadriênios de forma rápida e comparativa.
-            </p>
-
-            <h3>🧭 Proposta e Origem</h3>
-            <p>
-                A proposta é agilizar análises relacionadas à escolha de periódicos, avaliação de produção e acompanhamento de indicadores, podendo ser usada em sites ou sistemas institucionais onde apareça o ISSN das publicações.
-            </p>
-            <p>
-                O projeto surgiu da observação do fluxo de trabalho de pesquisadores em busca de referências qualificadas. Desenvolvido durante o Carnaval, o REx nasceu da vontade de contribuir com uma ferramenta simples, porém poderosa, para a comunidade científica.
-            </p>
-
-            <h3>🔍 Como funciona?</h3>
-            <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-                <div class="service-card">
-                    <i class="fa fa-download service-icon"></i>
-                    <h3>Instale</h3>
-                    <p>Adicione a extensão ao seu navegador (Chrome, Edge ou Firefox).</p>
+        <section class="lp-section lp-legal-body">
+            <div class="lp-container lp-legal-panel lp-rex-panel">
+                <div class="lp-rex-media">
+                    <img class="lp-rex-logo" src="/article_imgs/rex/icone_rex_big.png" alt="Logotipo do REx">
+                    <img class="lp-rex-banner" src="/article_imgs/rex/rex_banner.png" alt="Banner do REx: Research Explorer">
                 </div>
-                <div class="service-card">
-                    <i class="fa fa-search service-icon"></i>
-                    <h3>Navegue</h3>
-                    <p>O REx detecta automaticamente ISSNs em qualquer página acadêmica.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa fa-chart-line service-icon"></i>
-                    <h3>Analise</h3>
-                    <p>Passe o mouse sobre o ícone do REx para ver os indicadores Qualis.</p>
-                </div>
+
+                <section class="lp-rex-section">
+                    <h3>💡 O que é o REx?</h3>
+                    <p>O <strong>REx: Research Explorer</strong> é uma extensão desenvolvida para agilizar o fluxo de trabalho de pesquisadores, orientadores e estudantes. Ele identifica automaticamente o <strong>ISSN</strong> de periódicos em páginas como o Google Acadêmico e outros sites acadêmicos, permitindo visualizar a classificação <strong>Qualis CAPES</strong> de diferentes quadriênios de forma rápida e comparativa.</p>
+                </section>
+
+                <section class="lp-rex-section">
+                    <h3>🧭 Proposta e origem</h3>
+                    <p>A proposta é agilizar análises relacionadas à escolha de periódicos, avaliação de produção e acompanhamento de indicadores, podendo ser usada em sites ou sistemas institucionais onde apareça o ISSN das publicações.</p>
+                    <p>O projeto surgiu da observação do fluxo de trabalho de pesquisadores em busca de referências qualificadas. Desenvolvido durante o Carnaval, o REx nasceu da vontade de contribuir com uma ferramenta simples, porém poderosa, para a comunidade científica.</p>
+                </section>
+
+                <section class="lp-rex-section">
+                    <h3>🔍 Como funciona?</h3>
+                    <div class="lp-rex-steps">
+                        <div class="lp-rex-step">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            <h4>Instale</h4>
+                            <p>Adicione a extensão ao seu navegador (Chrome, Edge ou Firefox).</p>
+                        </div>
+                        <div class="lp-rex-step">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <h4>Navegue</h4>
+                            <p>O REx detecta automaticamente ISSNs em qualquer página acadêmica.</p>
+                        </div>
+                        <div class="lp-rex-step">
+                            <i class="fa fa-chart-line" aria-hidden="true"></i>
+                            <h4>Analise</h4>
+                            <p>Passe o mouse sobre o ícone do REx para ver os indicadores Qualis.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="lp-rex-section">
+                    <h3>🖼️ Veja o REx em ação</h3>
+                    <p>Confira alguns prints de como o REx funciona. Clique para ampliar.</p>
+                    <div class="lp-rex-shots">
+                        <button type="button" class="lp-rex-shot" data-image="/article_imgs/rex/print_1.png" data-caption="REx em ação 1" aria-label="Ampliar print 1">
+                            <img src="/article_imgs/rex/print_1.png" alt="REx em ação 1" loading="lazy">
+                            <i class="fa fa-expand-alt" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="lp-rex-shot" data-image="/article_imgs/rex/print_2.png" data-caption="REx em ação 2" aria-label="Ampliar print 2">
+                            <img src="/article_imgs/rex/print_2.png" alt="REx em ação 2" loading="lazy">
+                            <i class="fa fa-expand-alt" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="lp-rex-shot" data-image="/article_imgs/rex/print_3.png" data-caption="REx em ação 3" aria-label="Ampliar print 3">
+                            <img src="/article_imgs/rex/print_3.png" alt="REx em ação 3" loading="lazy">
+                            <i class="fa fa-expand-alt" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="lp-rex-section">
+                    <h3>🛡️ Coleta de dados e privacidade</h3>
+                    <p>O REx <strong>não coleta dado algum</strong>. É perfeitamente seguro para uso tanto em páginas públicas quanto em sistemas restritos, uma vez que apenas lê os números ISSN e localiza as ocorrências na sua base interna, que é carregada para o navegador na sua primeira execução.</p>
+                </section>
+
+                <section class="lp-rex-section">
+                    <h3>👥 Quem pode usar o REx?</h3>
+                    <p>A ferramenta é direcionada a <strong>pesquisadores</strong> (discentes, docentes, técnicos e público em geral) e <strong>avaliadores de produção científica</strong> que buscam otimizar suas análises de indicadores bibliométricos.</p>
+                </section>
+
+                <section class="lp-rex-section">
+                    <h3>🚀 Onde baixar o REx</h3>
+                    <p>Baixe o REx para o seu navegador favorito clicando no botão correspondente:</p>
+                    <div class="lp-rex-stores">
+                        <a href="https://chromewebstore.google.com/detail/rex-research-explorer/ijacjhjbdoilgolpkaplhmmhnnkchoch" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-chrome" aria-hidden="true"></i> Google Chrome
+                        </a>
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/rex-research-explorer/kbndipndbinamljgflgkcakeaknplbfb" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-edge" aria-hidden="true"></i> Microsoft Edge
+                        </a>
+                        <a href="https://addons.mozilla.org/pt-BR/firefox/addon/rex-researcher-explorer/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-firefox" aria-hidden="true"></i> Mozilla Firefox
+                        </a>
+                    </div>
+                    <p class="lp-rex-footnote">* No Firefox, o nome da extensão é “REx: Researcher Explorer”.</p>
+                </section>
+
+                <section class="lp-rex-section lp-rex-section-note">
+                    <div class="lp-rex-note">
+                        <h4>📝 Nota do desenvolvedor</h4>
+                        <p>Este é um projeto pessoal, sem vínculo institucional, criado para contribuir com a comunidade científica. Se achar a ferramenta útil, sinta-se à vontade para divulgar aos seus colegas!</p>
+                        <a href="https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-medium" aria-hidden="true"></i> Leia o artigo técnico no Medium
+                        </a>
+                    </div>
+                </section>
             </div>
-
-            <h3>🎥 Veja o REx em ação</h3>
-            <p>Confira alguns prints de como o REx funciona:</p>
-            <div style="position: relative; display: flex; align-items: center; margin-bottom: 2rem;">
-                <button id="btn-scroll-left" onclick="scrollGallery(-1)" style="position: absolute; left: 10px; z-index: 10; background: var(--bg-primary); color: var(--accent-color); border: 1px solid var(--accent-color); border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: none; align-items: center; justify-content: center; opacity: 0.9; box-shadow: 0 0 10px rgba(0,0,0,0.5);"><i class="fas fa-chevron-left"></i></button>
-                <div id="rex-gallery" style="display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1rem; padding-top: 1rem; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; width: 100%;">
-                    <style>#rex-gallery::-webkit-scrollbar { display: none; }</style>
-                    <img src="article_imgs/rex/print_1.png" alt="REx em ação 1" style="flex: 0 0 auto; width: 90%; max-width: 600px; margin: auto; border-radius: 8px; border: 1px solid var(--glass-border); cursor: pointer; object-fit: cover; scroll-snap-align: center;" onclick="openModal(this.src)">
-                    <img src="article_imgs/rex/print_2.png" alt="REx em ação 2" style="flex: 0 0 auto; width: 90%; max-width: 600px; margin: auto; border-radius: 8px; border: 1px solid var(--glass-border); cursor: pointer; object-fit: cover; scroll-snap-align: center;" onclick="openModal(this.src)">
-                    <img src="article_imgs/rex/print_3.png" alt="REx em ação 3" style="flex: 0 0 auto; width: 90%; max-width: 600px; margin: auto; border-radius: 8px; border: 1px solid var(--glass-border); cursor: pointer; object-fit: cover; scroll-snap-align: center;" onclick="openModal(this.src)">
-                </div>
-                <button id="btn-scroll-right" onclick="scrollGallery(1)" style="position: absolute; right: 10px; z-index: 10; background: var(--bg-primary); color: var(--accent-color); border: 1px solid var(--accent-color); border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0.9; box-shadow: 0 0 10px rgba(0,0,0,0.5);"><i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <h3>🛡️ Coleta de dados e privacidade</h3>
-            <p>
-                O REx <strong>não coleta dado algum</strong>. É perfeitamente seguro para uso tanto em páginas públicas quanto em sistemas restritos, uma vez que apenas lê os números ISSN e localiza as ocorrências na sua base interna, que é carregada para o navegador na sua primeira execução.
-            </p>
-
-            <h3>👥 Quem pode usar o REx?</h3>
-            <p>
-                A ferramenta é direcionada a <strong>pesquisadores</strong> (discentes, docentes, técnicos e público em geral) e <strong>avaliadores de produção científica</strong> que buscam otimizar suas análises de indicadores bibliométricos.
-            </p>
-
-            <h3>🚀 Onde baixar o REx</h3>
-            <p>Baixe o REx para o seu navegador favorito clicando no botão correspondente:</p>
-            <div class="external-links-container" style="flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 15px;">
-                <a href="https://chromewebstore.google.com/detail/rex-research-explorer/ijacjhjbdoilgolpkaplhmmhnnkchoch" class="btn-link" target="_blank" style="color: #000; border-bottom: none;">
-                    <i class="fab fa-chrome"></i> Google Chrome
-                </a>
-                <a href="https://microsoftedge.microsoft.com/addons/detail/rex-research-explorer/kbndipndbinamljgflgkcakeaknplbfb" class="btn-link" target="_blank" style="color: #000; border-bottom: none;">
-                    <i class="fab fa-edge"></i> Microsoft Edge
-                </a>
-                <a href="https://addons.mozilla.org/pt-BR/firefox/addon/rex-researcher-explorer/" class="btn-link" target="_blank" style="color: #000; border-bottom: none;">
-                    <i class="fab fa-firefox"></i> Mozilla Firefox
-                </a>
-            </div>
-            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.7;">
-                * No Firefox, o nome da extensão é "REx: Researcher Explorer".
-            </p>
-
-            <div style="background: rgba(var(--accent-color-rgb), 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-color);">
-                <h4>📝 Nota do Desenvolvedor</h4>
-                <p>Este é um projeto pessoal, sem vínculo institucional, criado para contribuir com a comunidade científica. Se achar a ferramenta útil, sinta-se à vontade para divulgar aos seus colegas!</p>
-                <a href="https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a" class="external-link" target="_blank">
-                    <i class="fab fa-medium"></i> Leia o artigo técnico no Medium
-                </a>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Pedro Conrad Jr. Todos os direitos reservados.</p>
-            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">v27 - REx Landing Page</p>
+    <footer class="lp-footer">
+      <div class="lp-container">
+        <div class="lp-footer-grid">
+          <div class="lp-footer-col lp-footer-archive">
+            <h3>Acervo</h3>
+            <p>Escrevo sobre arquitetura de software, modelagem de dados, PHP e CodeIgniter, Flutter, carreira e gestão de equipes.</p>
+            <a href="https://medium.com/@pconradjunior" target="_blank" rel="noopener noreferrer">medium.com/@pconradjunior →</a>
+          </div>
+          <div class="lp-footer-col">
+            <h3>Páginas de artigos</h3>
+            <ul><li><a href="/article_algoritmos.html">Algoritmos</a></li><li><a href="/article_ios.html">iOS</a></li><li><a href="/article_reconhecimento_facial.html">Reconhecimento facial</a></li><li><a href="/article_versioncheck.html">VersionCheck</a></li><li><a href="/rex_info.html">REx Explorer</a></li></ul>
+          </div><div class="lp-footer-col">
+            <h3>Privacidade dos apps</h3>
+            <ul><li><a href="/animalsounds_privacy.html">AnimalSounds</a></li><li><a href="/chesskids_privacy.html">ChessKids</a></li><li><a href="/fingernotes_privacy.html">FingerNotes</a></li><li><a href="/moviespinner_privacy.html">MovieSpinner</a></li><li><a href="/phisicalc_privacy.html">PhisiCalc</a></li><li><a href="/rex_privacy.html">REx</a></li><li><a href="/smellcheck_privacy.html">SmellCheck</a></li><li><a href="/teajuda_privacy.html">TeAjuda</a></li></ul>
+          </div>
+          <div class="lp-footer-col">
+            <h3>Idioma</h3>
+            <ul><li><a href="/en/" hreflang="en" rel="alternate">English</a></li></ul>
+          </div>
         </div>
+        <p class="lp-copyright">© 2027 Pedro Conrad Jr.</p>
+        <p class="lp-badge"><img src="https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io" alt="Contador de visitas" loading="lazy"></p>
+      </div>
     </footer>
-    <!-- Modal for Images (Inline CSS & HTML) -->
-    <div id="imageModal" style="display: none; position: fixed; z-index: 1000; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
-        <span onclick="closeModal()" style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
-        <img id="modalImg" src="" style="margin: auto; display: block; max-width: 90%; max-height: 80vh; border-radius: 8px; border: 1px solid var(--glass-border);">
+
+    <div class="lp-image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Ampliar imagem" hidden>
+        <div class="lp-modal-content lp-image-modal-content">
+            <button type="button" class="lp-close-modal" data-close-modal aria-label="Fechar">&times;</button>
+            <img id="imageFrame" src="" alt="">
+            <p class="lp-image-caption" id="imageCaption"></p>
+        </div>
     </div>
 
-    <!-- Inline JavaScript -->
-    <script>
-        function openModal(src) {
-            document.getElementById("imageModal").style.display = "block";
-            document.getElementById("modalImg").src = src;
-        }
-
-        function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
-        }
-
-        function scrollGallery(direction) {
-            const gallery = document.getElementById("rex-gallery");
-            // Scroll by one image width plus gap
-            const scrollAmount = gallery.clientWidth * 0.9 + 16; 
-            gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-            // Let the scroll event handler update the arrows once scroll is finished
-        }
-
-        function updateArrows() {
-            const gallery = document.getElementById("rex-gallery");
-            const btnLeft = document.getElementById("btn-scroll-left");
-            const btnRight = document.getElementById("btn-scroll-right");
-
-            // Check if we are at the very beginning
-            if (gallery.scrollLeft <= 5) {
-                btnLeft.style.display = "none";
-            } else {
-                btnLeft.style.display = "flex";
-            }
-
-            // Check if we reached the maximum scroll width
-            // Allowing a margin of 5px for fractional pixel differences
-            if (gallery.scrollWidth - gallery.scrollLeft - gallery.clientWidth <= 5) {
-                btnRight.style.display = "none";
-            } else {
-                btnRight.style.display = "flex";
-            }
-        }
-
-        // Attach scroll event listener and initialize
-        window.onload = function() {
-            const gallery = document.getElementById("rex-gallery");
-            if (gallery) {
-                gallery.addEventListener('scroll', updateArrows);
-                updateArrows(); // initialize correct state 
-            }
-        };
-
-        // Close when clicking outside the image
-        window.onclick = function(event) {
-            var modal = document.getElementById("imageModal");
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
+    <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>

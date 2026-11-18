@@ -1,75 +1,176 @@
 {
     "meta": {
         "lang": "en",
-        "description": "PHP/CodeIgniter and Flutter developer with 20+ years of experience. Institutional ERPs, {{apps}} published apps, {{articles}} articles and {{papers}} academic papers. IT Analyst at Unipampa.",
+        "description": "Institutional systems, ERPs with 50+ modules and Android/iOS apps. 20+ years, 50+ projects, {{downloads}} downloads. IT analyst at Unipampa.",
         "flagIcon": "images/flags/us.svg",
-        "title": "Pedro Conrad Jr — PHP/CodeIgniter, Flutter and Institutional ERP Developer",
+        "title": "Pedro Conrad Jr — Institutional systems and mobile apps",
         "keywords": [
-            "PHP developer",
+            "institutional systems",
+            "ERP",
             "CodeIgniter",
-            "Flutter developer",
-            "institutional ERP",
+            "Flutter",
             "software architecture",
-            "IT analyst",
             "Unipampa",
             "Android iOS apps"
         ],
         "locale": "en_US",
         "ogLocale": "en_US",
-        "alt": "Pedro Conrad Jr — Developer of institutional systems and mobile applications"
+        "alt": "Pedro Conrad Jr — Developer of institutional systems and mobile apps"
     },
     "nav": {
-        "home": "Home",
-        "about": "About",
-        "expertise": "Expertise",
+        "brand": "Pedro Conrad Jr",
         "projects": "Projects",
-        "projectsMobile": "Mobile Apps",
-        "projectsWeb": "Web Systems",
-        "projectsOther": "Other Projects",
-        "projectsTechArticles": "Technical Articles",
-        "projectsReflections": "Reflections",
-        "projectsCareer": "Career & Management",
-        "projectsPublications": "Publications",
-        "projectsVideos": "Videos",
-        "articles": "Articles",
+        "about": "About",
         "contact": "Contact",
         "langToggleLabel": "Português",
         "langToggleFlag": "https://flagcdn.com/20x15/br.png",
-        "langToggleAlt": "PT",
-        "langToggleCode": "pt"
+        "langToggleAlt": "PT"
     },
-    "themeSwitcherTitle": "Choose your theme",
     "hero": {
-        "greeting": "Hi, I'm",
-        "title": "Pedro Conrad Jr",
-        "description": "IT Analyst at Universidade Federal do Pampa. I build the systems that institutional processes depend on: ERPs with 50+ integrated modules and apps published for Android and iOS.",
-        "btnProjects": "View Projects",
-        "btnGitHub": "GitHub",
-        "btnLinkedIn": "LinkedIn",
-        "btnInstagram": "Instagram",
+        "title": "Institutional systems engineering",
         "role": "Developer of institutional systems and mobile apps",
-        "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart"
+        "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart",
+        "description": "Developer of institutional systems and mobile apps. PHP, CodeIgniter, MySQL, Flutter and Dart. IT analyst at Unipampa.",
+        "btnProjects": "See projects",
+        "btnContact": "Contact"
+    },
+    "stats": [
+        {
+            "number": "20+",
+            "label": "Years of experience"
+        },
+        {
+            "number": "50+",
+            "label": "Projects delivered"
+        },
+        {
+            "number": "{{downloads}}",
+            "label": "App downloads"
+        }
+    ],
+    "featured": [
+        {
+            "type": "Mobile app",
+            "title": "App Unipampa",
+            "desc": "Official Unipampa app with academic services and institutional information. Android and iOS.",
+            "metric": "{{unipampaDownloads}} downloads",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "Android",
+                    "href": "https://play.google.com/store/apps/details?id=br.edu.unipampa.app",
+                    "title": "Android",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa-brands fa-apple",
+                    "label": "iOS",
+                    "href": "https://apps.apple.com/app/app-unipampa/id1639927711",
+                    "title": "iOS",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa fa-play-circle",
+                    "label": "Watch demo",
+                    "videoId": "mgvavs5VOgU",
+                    "title": "Watch the App Unipampa demo",
+                    "action": "video"
+                }
+            ]
+        },
+        {
+            "type": "Institutional ERP",
+            "title": "GURI – ERP",
+            "desc": "Institutional ERP with over 50 integrated modules for academic and administrative management. Worked on analysis, development and architecture.",
+            "metric": "50+ integrated modules",
+            "links": []
+        },
+        {
+            "type": "Mobile app",
+            "title": "PhisiCalc",
+            "desc": "Body composition calculation tool for physical education and health professionals.",
+            "metric": "{{phisicalcDownloads}} downloads",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "Android",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.phisicalc",
+                    "title": "Android",
+                    "action": "url"
+                }
+            ]
+        },
+        {
+            "type": "Mobile app",
+            "title": "ChessKids",
+            "desc": "Educational chess for children, offline and ad-free, with AI and difficulty levels.",
+            "metric": "{{chesskidsDownloads}} downloads",
+            "links": [
+                {
+                    "icon": "fa-brands fa-google-play",
+                    "label": "Android",
+                    "href": "https://play.google.com/store/apps/details?id=pconradjunior.chesskids",
+                    "title": "Android",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa fa-play-circle",
+                    "label": "Watch demo",
+                    "videoId": "yPxbRScwkvI",
+                    "title": "Watch the ChessKids demo",
+                    "action": "video"
+                }
+            ]
+        },
+        {
+            "type": "Web system",
+            "title": "SisPPA",
+            "desc": "Academic production scoring system, published at WTICIFES 2026.",
+            "metric": "WTICIFES 2026",
+            "links": [
+                {
+                    "icon": "fa fa-file-pdf",
+                    "label": "Paper",
+                    "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe",
+                    "title": "Paper",
+                    "action": "url"
+                }
+            ]
+        },
+        {
+            "type": "Browser extension",
+            "title": "REx: Research Explorer",
+            "desc": "Extension that identifies ISSNs and lets you compare Qualis CAPES ratings across different quadriennia directly on the academic page.",
+            "metric": "Chrome · Edge · Firefox",
+            "links": [
+                {
+                    "icon": "fa fa-info-circle",
+                    "label": "View project",
+                    "href": "/rex_info.html",
+                    "title": "REx project page",
+                    "action": "url"
+                },
+                {
+                    "icon": "fa-brands fa-medium",
+                    "label": "Article",
+                    "href": "https://medium.com/@pconradjunior/rex-research-explorer-facilitador-de-identifica%C3%A7%C3%A3o-e-compara%C3%A7%C3%A3o-de-indicadores-cient%C3%ADficos-9943e614a30a",
+                    "title": "Read the technical article on Medium",
+                    "action": "url"
+                }
+            ]
+        }
+    ],
+    "projectsSection": {
+        "sectionTitle": "Featured projects",
+        "intro": "Six works representing critical institutional systems, apps published for Android and iOS, and a browser extension.",
+        "archiveLabel": "See all articles",
+        "archiveHref": "https://medium.com/@pconradjunior"
     },
     "about": {
-        "sectionTitle": "About Me",
+        "sectionTitle": "About",
         "paragraphs": [
-            "I am an Information Technology professional with over 20 years of experience in web systems and mobile application development. Currently, I work as an IT Analyst at Universidade Federal do Pampa (Unipampa), contributing directly to critical institutional systems.",
-            "I have strong experience in software architecture, data modeling, and development standards definition. Between 2016 and 2019, I worked in a technical leadership role, coordinating teams, leading projects, organizing processes, and mentoring developers.",
-            "My background includes the development of large-scale systems, such as ERPs with dozens of integrated modules, as well as modern mobile applications using Flutter, always focused on performance, scalability, and code quality."
-        ],
-        "stats": [
-            {
-                "number": "20+",
-                "label": "Years of Experience"
-            },
-            {
-                "number": "50+",
-                "label": "Projects Delivered"
-            },
-            {
-                "number": "{{downloads}}",
-                "label": "App Downloads"
-            }
+            "Between 2002 and 2009 I taught at technical and university level. Since 2010 I have been an IT analyst at Universidade Federal do Pampa (Unipampa), with over 20 years of experience building institutional systems and mobile apps.",
+            "I work on software architecture, data modeling, relational databases and technical leadership. During that period, between 2016 and 2019, I coordinated technical teams."
         ],
         "skills": [
             "Software architecture",
@@ -79,36 +180,110 @@
             "Relational databases",
             "Team technical leadership"
         ],
-        "teaching": {
-            "label": "Mentoring / Training",
-            "title": "PHP / CodeIgniter Developer Training",
-            "desc": "Technical training material aimed at forming new PHP developers and good practices."
-        }
+        "publicationsTitle": "Articles and publications",
+        "publicationsText": "Writing about development, career and software management.",
+        "mediumLabel": "@pconradjunior on Medium",
+        "avatar": "/images/profile.png",
+        "avatarAlt": "Pedro Conrad Jr"
     },
-    "expertise": {
-        "sectionTitle": "Expertise",
-        "sectionIntro": [
-            "My experience spans within several areas within software development, with a focus on institutional solutions, mobile applications, and technical leadership.",
-            "In addition to working with software development, I have prior experience in teaching at the university level, where I lectured on technical subjects such as software development, databases, and system architecture. This experience has provided me with a solid foundation in computing fundamentals and technical communication skills.",
-            " The areas below represent some of the main domains in which I operate:"
-        ],
-        "cards": [
+    "contact": {
+        "sectionTitle": "Contact",
+        "channels": [
             {
-                "icon": "fa fa-laptop-code",
-                "title": "Enterprise Systems & APIs",
-                "text": "Development of large-scale institutional systems and ERPs, focusing on architecture, scalability, and service integration using PHP (CodeIgniter) and relational databases."
+                "icon": "fa fa-envelope",
+                "label": "pconradjunior@gmail.com",
+                "href": "mailto:pconradjunior@gmail.com"
             },
             {
-                "icon": "fa fa-mobile-screen",
-                "title": "Mobile Applications",
-                "text": "Modern mobile development for Android and iOS using Flutter, including API integration, biometric authentication, and institutional services."
+                "icon": "fa-brands fa-github",
+                "label": "@pconradjunior",
+                "href": "https://github.com/pconradjunior"
             },
             {
-                "icon": "fa fa-handshake",
-                "title": "Architecture & Technical Leadership",
-                "text": "Definition of development standards, system design, and technical leadership, focusing on quality, organization, and continuous evolution."
+                "icon": "fa-brands fa-linkedin",
+                "label": "/in/pconradjunior",
+                "href": "https://www.linkedin.com/in/pconradjunior/"
+            },
+            {
+                "icon": "fa-brands fa-medium",
+                "label": "@pconradjunior",
+                "href": "https://medium.com/@pconradjunior"
+            },
+            {
+                "icon": "fa-brands fa-instagram",
+                "label": "@pedrojunior.dev",
+                "href": "https://instagram.com/pedrojunior.dev"
             }
         ]
+    },
+    "footer": {
+        "copyright": "© 2027 Pedro Conrad Jr.",
+        "archiveTitle": "Archive",
+        "articlesTitle": "Article pages",
+        "articleLinks": [
+            {
+                "label": "Algoritmos",
+                "href": "/article_algoritmos.html"
+            },
+            {
+                "label": "iOS",
+                "href": "/article_ios.html"
+            },
+            {
+                "label": "Reconhecimento facial",
+                "href": "/article_reconhecimento_facial.html"
+            },
+            {
+                "label": "VersionCheck",
+                "href": "/article_versioncheck.html"
+            },
+            {
+                "label": "REx Explorer",
+                "href": "/rex_info.html"
+            }
+        ],
+        "privacyTitle": "App privacy",
+        "privacyLinks": [
+            {
+                "label": "AnimalSounds",
+                "href": "/animalsounds_privacy.html"
+            },
+            {
+                "label": "ChessKids",
+                "href": "/chesskids_privacy.html"
+            },
+            {
+                "label": "FingerNotes",
+                "href": "/fingernotes_privacy.html"
+            },
+            {
+                "label": "MovieSpinner",
+                "href": "/moviespinner_privacy.html"
+            },
+            {
+                "label": "PhisiCalc",
+                "href": "/phisicalc_privacy.html"
+            },
+            {
+                "label": "REx",
+                "href": "/rex_privacy.html"
+            },
+            {
+                "label": "SmellCheck",
+                "href": "/smellcheck_privacy.html"
+            },
+            {
+                "label": "TeAjuda",
+                "href": "/teajuda_privacy.html"
+            }
+        ],
+        "visitorBadge": "https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io",
+        "visitorBadgeAlt": "Visitor counter",
+        "archiveText": "I write about software architecture, data modeling, PHP and CodeIgniter, Flutter, career and team management.",
+        "archiveLink": {
+            "label": "medium.com/@pconradjunior",
+            "href": "https://medium.com/@pconradjunior"
+        }
     },
     "projects": {
         "sectionTitle": "Projects",
@@ -1126,23 +1301,5 @@
                 }
             ]
         }
-    },
-    "articles": {
-        "sectionTitle": "My Articles",
-        "intro": "This section brings together the texts and publications written throughout my professional career, with code snippets, technical decisions and what went wrong — on technology, career and the work of those who build software."
-    },
-    "contact": {
-        "sectionTitle": "Let's Talk?",
-        "infoTitle": "Contact Channels",
-        "infoText": "Available for consulting, system architecture, mobile development and institutional system work."
-    },
-    "footer": {
-        "copyright": "© 2026 Pedro Conrad Jr. All rights reserved.",
-        "version": "v26 - Designed with CSS & Glassmorphism",
-        "visitorBadge": "https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io",
-        "visitorBadgeAlt": "Visitor counter"
-    },
-    "infoModal": {
-        "text": "This content is under development or awaiting approval."
     }
 }
