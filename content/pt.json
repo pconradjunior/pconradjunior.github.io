@@ -379,6 +379,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Artigo Técnico",
+                    "title": "ChessKids v1.1: migração de código e adaptabilidade de uma nova engine de xadrez",
+                    "desc": "Como a v1.1 modernizou a base do ChessKids (Flutter 3.50/Dart 3.14, toolchain Android e dependências de UI) e consolidou o crisp_chess_engine como motor padrão em todos os níveis — com calibração explícita de dificuldade, testes de promoção de peões e uma IA cujo ritmo de “pensamento” comunica melhor o que acontece no tabuleiro.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/chesskids-v1-1-migra%C3%A7%C3%A3o-de-c%C3%B3digo-e-adaptabilidade-de-uma-nova-engine-de-xadrez-e393dbe27f2b",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Artigo Técnico",
                     "title": "Migrar para o Flutter 3.50",
                     "desc": "Relato de uma migração real para o Flutter 3.50.0 (Dart 3.14.0): duas frentes independentes — a toolchain Android (AGP, Kotlin e Built-in Kotlin) e a depreciação de material.dart/cupertino.dart — e os pontos onde as ferramentas param de ajudar. Do stash inicial ao diff contra um projeto limpo em /tmp, do pub add antes do dart fix ao aviso residual de KGP no build.",
                     "links": [
