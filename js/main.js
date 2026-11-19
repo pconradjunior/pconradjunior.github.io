@@ -244,7 +244,6 @@ const I18n = (() => {
         document.documentElement.lang = LANGS[lang];
 
         setMeta('meta[name="description"]', 'content', description);
-        setMeta('meta[name="keywords"]', 'content', m.keywords.map(k => fill(k, d)).join(', '));
         setMeta('link[rel="canonical"]', 'href', url);
         setMeta('meta[property="og:title"]', 'content', title);
         setMeta('meta[property="og:description"]', 'content', description);
@@ -257,8 +256,10 @@ const I18n = (() => {
         setMeta('link#favicon', 'href', `/images/flags/${lang === 'pt' ? 'br' : 'us'}.svg`);
 
         document.querySelectorAll('script[type="application/ld+json"]').forEach(s => s.remove());
+        const modified = document.querySelector('meta[name="dateModified"]')?.content;
+        const rich = { ...d, meta: { ...m, dateModified: modified || m.dateModified } };
         const frag = document.createDocumentFragment();
-        buildJsonLd(d, lang).forEach(node => {
+        buildJsonLd(rich, lang).forEach(node => {
             const s = document.createElement('script');
             s.type = 'application/ld+json';
             s.textContent = JSON.stringify(node);

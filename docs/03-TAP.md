@@ -33,6 +33,12 @@ visual, conteúdos, URLs e funcionalidades atuais.
   nas experiências. Idiomas em itens lado a lado, no padrão das competências.
 - Estilos em `css/landing.css` para os novos blocos, o diálogo e o ajuste do
   espaçamento superior do hero.
+- Ajustes de SEO: `hreflang` restrito às páginas principais no sitemap,
+  `lastmod` derivado do git, `alumniOf` unificado, `dateModified` e
+  `numberOfItems` no JSON-LD, remoção do `meta keywords` e troca do `preload`
+  do JSON por `prefetch`.
+- Substituição dos ícones Font Awesome da landing por 16 SVGs inline próprios;
+  `fetch-depth: 0` no checkout do CI para o cálculo do `lastmod`.
 - Novos invariantes em `tools/check-build.mjs`.
 - JSON-LD enriquecido sem aumentar o número de blocos.
 - Documentos de governança: `DECISIONS.md`, `docs/00-BRIEFING.md`, este TAP.
@@ -45,6 +51,7 @@ visual, conteúdos, URLs e funcionalidades atuais.
 - Novos modais (rejeitados pelo solicitante).
 - Códigos de credencial e links "Exibir credencial".
 - `Scrum Foundation Professional Certificate - SFPC™` (expirado).
+- Mudança no `h1` do hero e enriquecimento de metadados das páginas auxiliares.
 - Publicação/commit antes da aprovação final.
 
 ## 4. Entregáveis

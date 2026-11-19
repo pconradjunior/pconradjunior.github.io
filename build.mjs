@@ -8,6 +8,7 @@
  * estruturados. Sem dependências.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { buildDocument, SITE } from './js/render.js';
@@ -17,8 +18,8 @@ const LANGUAGES = ['pt', 'en'];
 
 /** Páginas estáticas listadas no sitemap. */
 const SITEMAP_PAGES = [
-  { loc: '/', changefreq: 'weekly', priority: '1.0', lastmod: true },
-  { loc: '/en/', changefreq: 'weekly', priority: '0.9', lastmod: true },
+  { loc: '/', changefreq: 'weekly', priority: '1.0', content: 'pt.json', alternates: true },
+  { loc: '/en/', changefreq: 'weekly', priority: '0.9', content: 'en.json', alternates: true },
   { loc: '/article_algoritmos.html', changefreq: 'yearly', priority: '0.4' },
   { loc: '/article_ios.html', changefreq: 'yearly', priority: '0.4' },
   { loc: '/article_reconhecimento_facial.html', changefreq: 'yearly', priority: '0.4' },
@@ -26,10 +27,19 @@ const SITEMAP_PAGES = [
   { loc: '/rex_info.html', changefreq: 'monthly', priority: '0.5' }
 ];
 
-const today = new Date().toISOString().slice(0, 10);
+/** Data do último commit que tocou o conteúdo da página; fallback fora de git. */
+function lastmodFor(file) {
+  try {
+    return execFileSync('git', ['log', '-1', '--format=%cs', '--', `content/${file}`],
+      { cwd: ROOT, encoding: 'utf8' }).trim() || new Date().toISOString().slice(0, 10);
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
+}
 
 for (const lang of LANGUAGES) {
   const data = JSON.parse(readFileSync(join(ROOT, 'content', `${lang}.json`), 'utf8'));
+  data.meta.dateModified = lastmodFor(`${lang}.json`);
   const html = buildDocument(data, lang);
 
   const out = lang === 'pt' ? join(ROOT, 'index.html') : join(ROOT, 'en', 'index.html');
@@ -44,12 +54,13 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${SITEMAP_PAGES.map(p => `  <url>
-    <loc>${SITE.origin}${p.loc}</loc>${p.lastmod ? `
-    <lastmod>${today}</lastmod>` : ''}
+    <loc>${SITE.origin}${p.loc}</loc>${p.content ? `
+    <lastmod>${lastmodFor(p.content)}</lastmod>` : ''}
     <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
+    <priority>${p.priority}</priority>${p.alternates ? `
     <xhtml:link rel="alternate" hreflang="pt-BR" href="${SITE.origin}/"/>
     <xhtml:link rel="alternate" hreflang="en" href="${SITE.origin}/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE.origin}/"/>` : ''}
   </url>`).join('\n')}
 </urlset>
 `;

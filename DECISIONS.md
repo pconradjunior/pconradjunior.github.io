@@ -103,6 +103,31 @@ Três registros, com redação revisada pelo solicitante:
 - PT/EN com paridade de chaves; responsividade mobile; metadados, headings e
   acessibilidade preservados.
 
+## SEO e performance
+
+- **H1 mantido** como está (`Engenharia de sistemas institucionais` /
+  `Institutional systems engineering`). O nome já aparece no `<title>`, no logo
+  e no `Person` do JSON-LD (decisão do solicitante).
+- **Sitemap**: `hreflang` apenas nas duas páginas principais. As 5 páginas
+  auxiliares (4 artigos e `rex_info.html`) não declaram alternates, pois não têm
+  versão traduzida. Elas permanecem no sitemap e mantêm seus metadados atuais.
+- **`lastmod`** das páginas principais derivado do último commit que tocou
+  `content/pt.json` / `content/en.json`, não da data do build. O checkout do CI
+  passou a usar `fetch-depth: 0` para preservar o histórico.
+- **`alumniOf`** unificado em uma única entidade `URCAMP` (antes havia `URCAMP`
+  e `Urcamp` como entidades distintas).
+- **`dateModified`** adicionado ao `ProfilePage` e ao `<head>`, preservado na
+  troca de idioma via JS.
+- **`numberOfItems`** declarado nas 4 listas do JSON-LD.
+- **`meta keywords` removido** (obsoleto).
+- **`preload` do JSON trocado por `prefetch`**: o arquivo só é usado na troca de
+  idioma, então não deve competir com recursos críticos no carregamento inicial.
+- **Font Awesome removido da landing**: 16 ícones SVG próprios e inline
+  (`aria-hidden`, `focusable="false"`), sem CDN e sem fonte de ícones. As páginas
+  auxiliares permanecem com seu markup atual, por decisão de escopo.
+- Google Fonts mantido: `preconnect` e `display=swap` já presentes, e os quatro
+  pesos carregados são usados.
+
 ## Estrutura final
 
 - 6 seções, 5 `h2`.
@@ -110,7 +135,7 @@ Três registros, com redação revisada pelo solicitante:
   com `<h3>` de cargo e `<h3>` para `Formação`, `Cursos e certificações`,
   `Publicações e participação` e `Idiomas`.
 - JSON-LD mantém 6 blocos; `Person` ganha `hasCredential` (19 entradas),
-  `knowsLanguage`, `alumniOf` e `knowsAbout` ampliado.
+  `knowsLanguage`, `alumniOf` único e `knowsAbout` ampliado.
 
 ## Priorização e triagem
 

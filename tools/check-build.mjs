@@ -37,13 +37,20 @@ for (const page of PAGES) {
   check(html.includes('hreflang="pt-BR"') && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), 'hreflang pt/en/x-default presentes');
   check(html.includes('og:title') && html.includes('og:image') && html.includes('twitter:card'), 'Open Graph + Twitter Card');
   check(!html.includes(`<link rel="canonical" href="${PAGES.find(p => p.lang !== page.lang).canonical}">`), 'canonical não aponta para o idioma errado');
+  check(!/name="keywords"/.test(html), 'meta keywords removido (obsoleto)');
+  check(/<meta name="dateModified" content="\d{4}-\d{2}-\d{2}">/.test(html), 'dateModified presente no head');
+  check(!/cdnjs\.cloudflare\.com|<i class="[^"]*\bfa(?:-| )|fa-brands|Font Awesome/i.test(html),
+    'nenhum Font Awesome/CDN na landing');
+  check(count(html, /<svg class="lp-icon/g) >= 15, `${count(html, /<svg class="lp-icon/g)} ícones SVG inline`);
+  check(!/<i\b/.test(html), 'nenhum elemento <i> residual na landing');
 
   // ── identidade e hero ──
   check(count(html, /<h1>/g) === 1, 'h1 único');
   check(html.includes(`<h1>${d.hero.title}</h1>`), `h1 do hero preenchido — ${JSON.stringify(d.hero.title)}`);
   check(html.includes(d.nav.brand), 'nome de identidade presente');
-  check(html.includes(`<a href="#home" class="lp-logo">${d.nav.brand}</a>`),
-    'logo sem ícone inline (ícone via CSS)');
+  check(html.includes('<a href="#home" class="lp-logo"><svg class="lp-icon lp-logo-icon"') &&
+        html.includes(`</svg> ${esc(d.nav.brand)}</a>`),
+    'logo com ícone SVG inline e nome acessível');
   check(html.includes(fill('{{downloads}}', d)), `métrica de downloads derivada — ${fill('{{downloads}}', d)}`);
   check(count(html, /class="lp-stat"/g) === 3, '3 métricas no hero');
   check(count(html, /class="lp-btn lp-btn-/g) === 2, '2 botões no hero');
@@ -237,7 +244,13 @@ for (const page of PAGES) {
   check(person?.hasCredential?.every(c => c.name && c.recognizedBy?.name && c.dateCreated),
     'credenciais com nome, emissor e data');
   check(person?.knowsLanguage?.length === d.career.languages.length, 'Person.knowsLanguage presente');
-  check(person?.alumniOf?.length > 0, 'Person.alumniOf presente');
+  check(person?.alumniOf?.length === 1 && person.alumniOf[0].name === 'URCAMP',
+    'Person.alumniOf unificado em uma única entidade URCAMP');
+  check(json.some(b => b['@type'] === 'ProfilePage' && /^\d{4}-\d{2}-\d{2}$/.test(b.dateModified ?? '')),
+    'ProfilePage.dateModified derivado do conteúdo');
+  check(json.filter(b => b['@type'] === 'ItemList').every(b => Number.isInteger(b.numberOfItems) &&
+        b.numberOfItems === (b.itemListElement?.length ?? 0)),
+    'todas as 4 listas declaram numberOfItems correto');
   check(person?.knowsAbout?.length === d.about.skills.flatMap(g => g.items).length,
     'Person.knowsAbout com todas as competências');
   const newsTitles = (d.projects.publications?.items ?? [])
@@ -286,8 +299,8 @@ check(existsSync(join(ROOT, 'css/landing.css')), 'landing.css existe');
 const landing = read('css/landing.css');
 check(/flex:\s*0 0 120px/.test(landing) && /width:\s*120px/.test(landing), 'avatar com 120px');
 check(!/backdrop-filter|blur\(/.test(landing), 'landing.css sem glassmorphism');
-check(/\.lp-logo::before\s*\{[^}]*content:\s*"\\f121\\00a0"/.test(landing),
-  'ícone fa-code via ::before com non-breaking space');
+check(/\.lp-icon\s*\{[^}]*width:\s*1em/.test(landing) && !/Font Awesome|\\f121/.test(landing),
+  'ícones SVG dimensionados por em, sem Font Awesome no CSS');
 check(!existsSync(join(ROOT, 'css/style.css')), 'style.css removido após a conversão das páginas');
 
 // ── páginas avulsas ──
@@ -342,6 +355,13 @@ check(robots.includes('Sitemap: https://pconradjunior.github.io/sitemap.xml'), '
 const sitemap = read('sitemap.xml');
 check(sitemap.includes('<loc>https://pconradjunior.github.io/</loc>'), 'sitemap inclui a raiz');
 check(sitemap.includes('<loc>https://pconradjunior.github.io/en/</loc>'), 'sitemap inclui /en/');
+const sitemapUrls = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1]);
+check(sitemapUrls.length === 7, `${sitemapUrls.length} URLs no sitemap (esperado 7)`);
+check(sitemapUrls.filter(u => u.includes('xhtml:link')).length === 2,
+  'hreflang apenas nas duas páginas principais');
+check(sitemapUrls.filter(u => u.includes('<lastmod>')).length === 2,
+  'lastmod apenas nas duas páginas com conteúdo versionado');
+check(sitemapUrls.some(u => u.includes('hreflang="x-default"')), 'x-default declarado no sitemap');
 check(existsSync(join(ROOT, '404.html')), '404.html existe');
 check(existsSync(join(ROOT, 'images/og-image.png')), 'og-image.png existe');
 check(!existsSync(join(ROOT, 'index_bak.html')) && !existsSync(join(ROOT, 'index_en_bak.html')), 'backups removidos');
