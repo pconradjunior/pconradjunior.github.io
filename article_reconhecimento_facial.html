@@ -2,38 +2,53 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Artigo Técnico: Implementando Reconhecimento Facial Multiusuário em Flutter">
-  <title>Artigo - Reconhecimento Facial em Flutter</title>
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href=css/style.css>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigo - Reconhecimento Facial em Flutter</title>
+    <meta name="description" content="Artigo Técnico: Implementando Reconhecimento Facial Multiusuário em Flutter">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pconradjunior.github.io/article_reconhecimento_facial.html">
+    <link rel="icon" type="image/svg+xml" href="/images/flags/br.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/landing.css">
 </head>
 
 <body>
 
+    <header class="lp-header">
+      <div class="lp-container">
+        <nav class="lp-nav" aria-label="Navegação principal">
+          <button class="lp-hamburger" id="hamburgerBtn" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <a href="index.html#home" class="lp-logo">Pedro Conrad Jr</a>
+          <div class="lp-nav-links" id="navLinks">
+            <a href="index.html#projects">Projetos</a>
+            <a href="index.html#about">Sobre</a>
+            <a href="index.html#contact">Contato</a>
+            <a href="/en/" id="langToggle" hreflang="en" rel="alternate" title="English">
+              <img src="https://flagcdn.com/20x15/us.png" alt="EN" width="20" height="15" loading="lazy"> English
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-  <header>
-    <div class="container">
-      <nav>
-        <a href="index.html" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad Jr</span></a>
-        <div class="nav-links">
-          <a href="index.html#home">Início</a>
-          <a href="index.html#projects">Voltar ao Portfolio</a>
+    <main>
+      <section class="lp-legal-hero">
+        <div class="lp-container">
+          <p class="lp-eyebrow">Artigo</p>
+          <h1>Implementação de um Sistema de Reconhecimento Facial Multiusuário em Flutter</h1>
         </div>
-      </nav>
-    </div>
-  </header>
+      </section>
 
-  <main>
-    <div class="container content-panel">
-      <h1>Implementação de um Sistema de Reconhecimento Facial Multiusuário em Flutter</h1>
-      <p><strong>Autor:</strong> Pedro Conrad Junior<br><strong>Data:</strong> Nov. 2025</p>
+      <section class="lp-section lp-legal-body">
+        <div class="lp-container lp-legal-panel lp-article">
+            <p><strong>Autor:</strong> Pedro Conrad Junior<br><strong>Data:</strong> Nov. 2025</p>
 
       <p>Este artigo detalha a arquitetura e implementação de um sistema de reconhecimento facial multiusuário
         desenvolvido em Flutter. O projeto oferece a implementação de uma solução para autenticação
@@ -50,7 +65,7 @@
         ações de gerenciamento de usuários.</p>
 
       <img src="./article_imgs/face_detection_ui_wireframe.png" alt="Wireframe da Interface"
-        style="max-width: 100%; height: auto; margin: 20px 0;">
+        class="lp-article-img">
 
       <h2>1. Visão Geral e Arquitetura</h2>
       <p>A aplicação segue o padrão <strong>MVC (Model-View-Controller)</strong> simplificado:</p>
@@ -68,15 +83,7 @@
         reconhecimento e a câmera. Neste exemplo, o gerenciamento de estado da aplicação é feito utilizando
         ChangeNotifier.</p>
 
-      <div class="code-window">
-        <div class="code-window-header">
-          <div class="code-window-buttons">
-            <span class="code-window-button red"></span>
-            <span class="code-window-button yellow"></span>
-            <span class="code-window-button green"></span>
-          </div>
-        </div>
-        <pre><code>// lib/app/face_detect_controller.dart
+      <pre><code>// lib/app/face_detect_controller.dart
 
 Future&lt;void&gt; initialize() async {
   // Inicializa o motor de reconhecimento facial
@@ -100,20 +107,11 @@ Future&lt;void&gt; initialize() async {
   await _cameraController!.initialize();
   notifyListeners();
 }</code></pre>
-      </div>
 
       <p>Posteriormente é possível trocar de câmera ou pausar o mecanismo da câmera quando julgar necessário.
         Veja:</p>
 
-      <div class="code-window">
-        <div class="code-window-header">
-          <div class="code-window-buttons">
-            <span class="code-window-button red"></span>
-            <span class="code-window-button yellow"></span>
-            <span class="code-window-button green"></span>
-          </div>
-        </div>
-        <pre><code>// lib/app/face_detect_controller.dart
+      <pre><code>// lib/app/face_detect_controller.dart
 
 Future&lt;void&gt; switchCamera() async {
   currentCamera = (currentCamera + 1) % cameras.length;
@@ -124,7 +122,6 @@ Future&lt;void&gt; switchCamera() async {
 Future&lt;void&gt; pauseCamera() async {
   await _cameraController!.dispose();
 }</code></pre>
-      </div>
 
       <h2>3. O Fluxo de Reconhecimento Facial</h2>
       <p>A seguir está descrito o fluxo de reconhecimento facial, que é composto por três etapas principais:
@@ -143,15 +140,7 @@ Future&lt;void&gt; pauseCamera() async {
         <code>registerFromImagePath</code>.
       </p>
 
-      <div class="code-window">
-        <div class="code-window-header">
-          <div class="code-window-buttons">
-            <span class="code-window-button red"></span>
-            <span class="code-window-button yellow"></span>
-            <span class="code-window-button green"></span>
-          </div>
-        </div>
-        <pre><code>// lib/app/face_detect_controller.dart
+      <pre><code>// lib/app/face_detect_controller.dart
 
 Future&lt;void&gt; registerFace(String userId) async {
   try {
@@ -180,7 +169,6 @@ Future&lt;void&gt; registerFace(String userId) async {
     setStatus(FaceStatus.error, message: "Error: $e");
   }
 }</code></pre>
-      </div>
 
       <h3>Autenticação</h3>
       <p>A autenticação consiste na comparação de uma foto tirada no momento atual com os embeddings
@@ -188,15 +176,7 @@ Future&lt;void&gt; registerFace(String userId) async {
         O processo é feito pelo método <code>authenticateScan</code>, que compara os dados biométricos
         usando um limiar de similaridade previamente definido e customizável.</p>
 
-      <div class="code-window">
-        <div class="code-window-header">
-          <div class="code-window-buttons">
-            <span class="code-window-button red"></span>
-            <span class="code-window-button yellow"></span>
-            <span class="code-window-button green"></span>
-          </div>
-        </div>
-        <pre><code>// lib/app/face_detect_controller.dart
+      <pre><code>// lib/app/face_detect_controller.dart
 
 Future&lt;String?&gt; authenticateScan() async {
   try {
@@ -213,22 +193,13 @@ Future&lt;String?&gt; authenticateScan() async {
     return null;
   }
 }</code></pre>
-      </div>
 
       <h3>Revalidação Biométrica</h3>
       <p>O app também permite que um usuário adicione novas fotos. Para manter a segurança, o processo exige
         que o usuário se autentique primeiro, garantindo que seja o mesmo usuário que está adicionando a
         nova foto. Este processo é feito pelo método <code>authenticateThenRegister</code>.</p>
 
-      <div class="code-window">
-        <div class="code-window-header">
-          <div class="code-window-buttons">
-            <span class="code-window-button red"></span>
-            <span class="code-window-button yellow"></span>
-            <span class="code-window-button green"></span>
-          </div>
-        </div>
-        <pre><code>// lib/app/face_detect_controller.dart
+      <pre><code>// lib/app/face_detect_controller.dart
 
 Future&lt;void&gt; authenticateThenRegister(String userId) async {
   // Primeiro, verifica se é realmente o usuário
@@ -242,7 +213,6 @@ Future&lt;void&gt; authenticateThenRegister(String userId) async {
     setStatus(FaceStatus.error, message: "Authentication failed.");
   }
 }</code></pre>
-      </div>
 
       <h2>4. Segurança de Dados</h2>
       <p>Utilizamos o <code>flutter_secure_storage</code> para garantir que os dados biométricos (embeddings)
@@ -250,15 +220,7 @@ Future&lt;void&gt; authenticateThenRegister(String userId) async {
         exemplo, usando o <code>flutter_secure_storage</code>, carregado na variável <code>storage</code>:
       </p>
 
-      <div class="code-window">
-        <div class="code-window-header">
-          <div class="code-window-buttons">
-            <span class="code-window-button red"></span>
-            <span class="code-window-button yellow"></span>
-            <span class="code-window-button green"></span>
-          </div>
-        </div>
-        <pre><code>// lib/app/face_detect_controller.dart
+      <pre><code>// lib/app/face_detect_controller.dart
 
 Future&lt;void&gt; saveEmbedding(String userId, String imageId, String embedding) async {
   final storage = const FlutterSecureStorage();
@@ -267,21 +229,12 @@ Future&lt;void&gt; saveEmbedding(String userId, String imageId, String embedding
     value: embedding,
   );
 }</code></pre>
-      </div>
 
       <h2>5. Sincronização (Opcional)</h2>
       <p>O sistema permite enviar os embeddings para um backend, facilitando a integração corporativa. Neste
         exemplo, o backend é um servidor HTTP fictício que envia todas as embeddings de uma vez.</p>
 
-      <div class="code-window">
-        <div class="code-window-header">
-          <div class="code-window-buttons">
-            <span class="code-window-button red"></span>
-            <span class="code-window-button yellow"></span>
-            <span class="code-window-button green"></span>
-          </div>
-        </div>
-        <pre><code>Future&lt;void&gt; uploadEmbeddings() async {
+      <pre><code>Future&lt;void&gt; uploadEmbeddings() async {
   final all = await storage.readAll();
   // ... filtra e prepara dados ...
 
@@ -290,22 +243,42 @@ Future&lt;void&gt; saveEmbedding(String userId, String imageId, String embedding
     body: jsonEncode({"embeddings": embeddings}),
   );
 }</code></pre>
-      </div>
 
       <h2>Conclusão</h2>
       <p>Esta implementação demonstra como criar um sistema de biometria seguro e eficiente em Flutter,
         combinando processamento local com uma arquitetura limpa e escalável. Ainda que o processo seja
         simples, ele pode ser facilmente adaptado e aperfeiçoado para atender às necessidades de uma
         aplicação corporativa.</p>
-    </div>
-  </main>
+        </div>
+      </section>
+    </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2027 Pedro Conrad Jr. Todos os direitos reservados.</p>
-      <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">Desenvolvido com HTML e CSS.</p>
-    </div>
-  </footer>
+    <footer class="lp-footer">
+      <div class="lp-container">
+        <div class="lp-footer-grid">
+          <div class="lp-footer-col lp-footer-archive">
+            <h3>Acervo</h3>
+            <p>Escrevo sobre arquitetura de software, modelagem de dados, PHP e CodeIgniter, Flutter, carreira e gestão de equipes. Também publico reflexões sobre sistemas institucionais e trabalhos acadêmicos.</p>
+            <a href="https://medium.com/@pconradjunior" target="_blank" rel="noopener noreferrer">medium.com/@pconradjunior →</a>
+          </div>
+          <div class="lp-footer-col">
+            <h3>Páginas de artigos</h3>
+            <ul><li><a href="/article_algoritmos.html">Algoritmos</a></li><li><a href="/article_ios.html">iOS</a></li><li><a href="/article_reconhecimento_facial.html">Reconhecimento facial</a></li><li><a href="/article_versioncheck.html">VersionCheck</a></li><li><a href="/rex_info.html">REx Explorer</a></li></ul>
+          </div><div class="lp-footer-col">
+            <h3>Privacidade dos apps</h3>
+            <ul><li><a href="/animalsounds_privacy.html">AnimalSounds</a></li><li><a href="/chesskids_privacy.html">ChessKids</a></li><li><a href="/fingernotes_privacy.html">FingerNotes</a></li><li><a href="/moviespinner_privacy.html">MovieSpinner</a></li><li><a href="/phisicalc_privacy.html">PhisiCalc</a></li><li><a href="/rex_privacy.html">REx</a></li><li><a href="/smellcheck_privacy.html">SmellCheck</a></li><li><a href="/teajuda_privacy.html">TeAjuda</a></li></ul>
+          </div>
+          <div class="lp-footer-col">
+            <h3>Idioma</h3>
+            <ul><li><a href="/en/" hreflang="en" rel="alternate">English</a></li></ul>
+          </div>
+        </div>
+        <p class="lp-copyright">© 2027 Pedro Conrad Jr.</p>
+        <p class="lp-badge"><img src="https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io" alt="Contador de visitas" loading="lazy"></p>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>

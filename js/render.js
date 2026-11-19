@@ -187,7 +187,7 @@ export function renderMain(d) {
           <h2 class="lp-section-title">${esc(s.sectionTitle)}</h2>
           <p class="lp-section-intro">${esc(s.intro)}</p>
           <div class="lp-grid">${cards}</div>
-          <p class="lp-archive"><a href="${esc(href(s.archiveHref))}" target="_blank" rel="noopener noreferrer">${esc(s.archiveLabel)} →</a></p>
+          <p class="lp-archive"><a href="${esc(href(s.archiveHref))}" target="_blank" rel="noopener noreferrer">${esc(s.archiveLabel)} →</a><span class="lp-archive-sep" aria-hidden="true">·</span><a href="${esc(href(s.storeHref))}" target="_blank" rel="noopener noreferrer">${esc(s.storeLabel)} →</a></p>
         </div>
       </section>
 

@@ -2,39 +2,52 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Artigo introdutório sobre algoritmos: conceitos, pseudocódigo, exemplos práticos e fluxograma.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artigo - Algoritmo: Bicho de Sete Cabeças?</title>
-
-    <!-- Icons -->
+    <meta name="description" content="Artigo introdutório sobre algoritmos: conceitos, pseudocódigo, exemplos práticos e fluxograma.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pconradjunior.github.io/article_algoritmos.html">
+    <link rel="icon" type="image/svg+xml" href="/images/flags/br.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href=css/style.css>
+    <link rel="stylesheet" href="/css/landing.css">
 </head>
 
 <body>
 
-
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo"><i class="fa fa-code logo-icon">&nbsp;</i><span>Pedro Conrad
-                        Jr</span></a>
-                <div class="nav-links">
-                    <a href="index.html#home">Início</a>
-                    <a href="index.html#projects">Voltar ao Portfolio</a>
-                </div>
-            </nav>
-        </div>
+    <header class="lp-header">
+      <div class="lp-container">
+        <nav class="lp-nav" aria-label="Navegação principal">
+          <button class="lp-hamburger" id="hamburgerBtn" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <a href="index.html#home" class="lp-logo">Pedro Conrad Jr</a>
+          <div class="lp-nav-links" id="navLinks">
+            <a href="index.html#projects">Projetos</a>
+            <a href="index.html#about">Sobre</a>
+            <a href="index.html#contact">Contato</a>
+            <a href="/en/" id="langToggle" hreflang="en" rel="alternate" title="English">
+              <img src="https://flagcdn.com/20x15/us.png" alt="EN" width="20" height="15" loading="lazy"> English
+            </a>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <div class="container content-panel">
-            <h1>Algoritmo: Bicho de Sete Cabeças?</h1>
+      <section class="lp-legal-hero">
+        <div class="lp-container">
+          <p class="lp-eyebrow">Artigo</p>
+          <h1>Algoritmo: Bicho de Sete Cabeças?</h1>
+        </div>
+      </section>
+
+      <section class="lp-section lp-legal-body">
+        <div class="lp-container lp-legal-panel lp-article">
             <p>
                 Muita gente acredita que programação é complicada. Mas aprender algoritmos pode ser comparado a
                 aprender uma receita de bolo: no começo erramos, mas com prática e paciência tudo fica claro.
@@ -58,15 +71,7 @@
             </p>
 
             <h2>Exemplo prático</h2>
-            <div class="code-window">
-                <div class="code-window-header">
-                    <div class="code-window-buttons">
-                        <span class="code-window-button red"></span>
-                        <span class="code-window-button yellow"></span>
-                        <span class="code-window-button green"></span>
-                    </div>
-                </div>
-                <pre><code>
+            <pre><code>
 INÍCIO
   Etapa 1: Escolher um bombom
   Etapa 2: Pegar o bombom
@@ -75,7 +80,6 @@ INÍCIO
   Etapa 5: Jogar embalagem no lixo
 FIM
             </code></pre>
-            </div>
 
             <h2>Variáveis e operadores</h2>
             <p>
@@ -97,15 +101,7 @@ FIM
             <h2>Pseudocódigo vs Linguagens de Programação</h2>
             <p>Pseudocódigo facilita o raciocínio para quem ainda não conhece uma linguagem de programação. Veja um
                 laço em pseudocódigo e em Python, por exemplo:</p>
-            <div class="code-window">
-                <div class="code-window-header">
-                    <div class="code-window-buttons">
-                        <span class="code-window-button red"></span>
-                        <span class="code-window-button yellow"></span>
-                        <span class="code-window-button green"></span>
-                    </div>
-                </div>
-                <pre><code>
+            <pre><code>
 PARA numero = 0 ATÉ 10
   ESCREVA numero
 PRÓXIMO
@@ -114,12 +110,11 @@ Python:
 for numero in range(0, 11):
     print(numero)
             </code></pre>
-            </div>
 
             <h2>Fluxograma: Soma de dois números</h2>
-            <div class="flowchart" style="text-align: center; margin: 2rem 0;">
+            <div class="lp-flowchart-wrap">
                 <!-- SVG Content Preserved but styles handled by CSS -->
-                <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
+                <svg class="lp-flowchart" width="600" height="400" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="4" orient="auto"
                             markerUnits="strokeWidth">
@@ -169,14 +164,35 @@ for numero in range(0, 11):
                 você alcança fluência.
             </p>
         </div>
+      </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2027 Pedro Conrad Jr. Todos os direitos reservados.</p>
-            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">Desenvolvido com HTML e CSS.</p>
+    <footer class="lp-footer">
+      <div class="lp-container">
+        <div class="lp-footer-grid">
+          <div class="lp-footer-col lp-footer-archive">
+            <h3>Acervo</h3>
+            <p>Escrevo sobre arquitetura de software, modelagem de dados, PHP e CodeIgniter, Flutter, carreira e gestão de equipes. Também publico reflexões sobre sistemas institucionais e trabalhos acadêmicos.</p>
+            <a href="https://medium.com/@pconradjunior" target="_blank" rel="noopener noreferrer">medium.com/@pconradjunior →</a>
+          </div>
+          <div class="lp-footer-col">
+            <h3>Páginas de artigos</h3>
+            <ul><li><a href="/article_algoritmos.html">Algoritmos</a></li><li><a href="/article_ios.html">iOS</a></li><li><a href="/article_reconhecimento_facial.html">Reconhecimento facial</a></li><li><a href="/article_versioncheck.html">VersionCheck</a></li><li><a href="/rex_info.html">REx Explorer</a></li></ul>
+          </div><div class="lp-footer-col">
+            <h3>Privacidade dos apps</h3>
+            <ul><li><a href="/animalsounds_privacy.html">AnimalSounds</a></li><li><a href="/chesskids_privacy.html">ChessKids</a></li><li><a href="/fingernotes_privacy.html">FingerNotes</a></li><li><a href="/moviespinner_privacy.html">MovieSpinner</a></li><li><a href="/phisicalc_privacy.html">PhisiCalc</a></li><li><a href="/rex_privacy.html">REx</a></li><li><a href="/smellcheck_privacy.html">SmellCheck</a></li><li><a href="/teajuda_privacy.html">TeAjuda</a></li></ul>
+          </div>
+          <div class="lp-footer-col">
+            <h3>Idioma</h3>
+            <ul><li><a href="/en/" hreflang="en" rel="alternate">English</a></li></ul>
+          </div>
         </div>
+        <p class="lp-copyright">© 2027 Pedro Conrad Jr.</p>
+        <p class="lp-badge"><img src="https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io" alt="Contador de visitas" loading="lazy"></p>
+      </div>
     </footer>
+
+    <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>

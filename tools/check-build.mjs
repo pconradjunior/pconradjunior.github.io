@@ -73,6 +73,8 @@ for (const page of PAGES) {
   check(rex && html.includes(`href="${rex.links[0].href}"`), 'REx linkado à própria página');
   check(html.includes(`href="${d.projectsSection.archiveHref}"`) && html.includes(`${esc(d.projectsSection.archiveLabel)} →`),
     'link de projetos de código aberto aponta para o GitHub');
+  check(html.includes(`href="${esc(d.projectsSection.storeHref)}"`) && html.includes(`${esc(d.projectsSection.storeLabel)} →`),
+    'link da Play Store ao lado dos projetos de código aberto');
 
   // ── vídeos: apenas os apps em destaque que têm demo ──
   const videoIds = d.featured.flatMap(i => (i.links ?? []).filter(l => l.action === 'video').map(l => l.videoId));
@@ -178,9 +180,7 @@ check(/flex:\s*0 0 120px/.test(landing) && /width:\s*120px/.test(landing), 'avat
 check(!/backdrop-filter|blur\(/.test(landing), 'landing.css sem glassmorphism');
 check(/\.lp-logo::before\s*\{[^}]*content:\s*"\\f121\\00a0"/.test(landing),
   'ícone fa-code via ::before com non-breaking space');
-const shared = read('css/style.css');
-check(!/backdrop-filter|body:has\(#theme|theme-switcher/.test(shared), 'style.css sem tema nem glassmorphism');
-check(!/glass-panel/.test(shared), 'painéis das subpáginas renomeados para content-panel');
+check(!existsSync(join(ROOT, 'css/style.css')), 'style.css removido após a conversão das páginas');
 
 // ── páginas avulsas ──
 console.log('\npáginas avulsas');
@@ -196,11 +196,26 @@ for (const file of subpages) {
   if (file !== '404.html') {
     check(text.includes('index.html#projects'), `${file}: link de volta aponta para #projects`);
   }
-  if (file.endsWith('_privacy.html') || file === 'rex_info.html') {
+  if (file.endsWith('_privacy.html') || file === 'rex_info.html' || file === '404.html' || file.startsWith('article_')) {
     check(text.includes('/css/landing.css'), `${file}: usa o CSS da landing`);
     check(text.includes('<header class="lp-header">'), `${file}: header replicado`);
     check(text.includes('<footer class="lp-footer">'), `${file}: rodapé replicado`);
-    check(/class="lp-container lp-legal-panel(?: lp-rex-panel)?"/.test(text), `${file}: conteúdo em painel`);
+    check(/class="lp-container lp-legal-panel(?: lp-rex-panel| lp-article| lp-error-panel)?"/.test(text),
+      `${file}: conteúdo em painel`);
+  }
+  if (file.startsWith('article_')) {
+    check(!/css\/style\.css|content-panel|class="logo"|logo-icon|code-window|Outfit|Space\+Grotesk|style="/.test(text),
+      `${file}: sem vestígio do layout antigo`);
+    check(text.includes('<p class="lp-eyebrow">Artigo</p>') && text.includes('<div class="lp-container lp-legal-panel lp-article">'),
+      `${file}: título no hero e texto em painel de artigo`);
+    check((text.match(/<pre><code>/g) ?? []).length === (text.match(/<\/code><\/pre>/g) ?? []).length,
+      `${file}: blocos de código íntegros`);
+  }
+  if (file === '404.html') {
+    check(!/error-page|error-code|btn btn-primary|Outfit|Space\+Grotesk|style="/.test(text),
+      '404.html: sem vestígio do layout antigo');
+    check(text.includes('lp-error-actions') && text.includes('lp-btn-primary') && text.includes('lp-btn-secondary'),
+      '404.html: botões de volta no padrão da landing');
   }
   if (file === 'rex_info.html') {
     check(!/var\(--glass|scrollGallery|rex-gallery|onclick="openModal|function openModal|id="modalImg"/.test(text),

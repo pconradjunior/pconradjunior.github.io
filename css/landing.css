@@ -467,6 +467,12 @@ img {
     font-weight: 600;
 }
 
+.lp-archive-sep {
+    margin: 0 0.6rem;
+    color: var(--muted);
+    opacity: 0.5;
+}
+
 /* ───────────── Sobre ───────────── */
 
 .lp-about-grid {
@@ -655,6 +661,109 @@ img {
 
 .lp-legal-panel a {
     font-weight: 600;
+}
+
+/* ───────────── Artigos estáticos ───────────── */
+
+.lp-article h3,
+.lp-article h4 {
+    margin-top: 2rem;
+    color: var(--navy);
+    font-size: 1.1rem;
+}
+
+.lp-article h4 {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.lp-article hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+}
+
+.lp-article ol {
+    list-style: decimal;
+    padding-left: 1.35rem;
+    margin-top: 0.85rem;
+}
+
+.lp-article img,
+.lp-article svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.lp-article-img {
+    display: block;
+    margin: 1.5rem auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.lp-flowchart-wrap {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.lp-article code {
+    background: #EEF2FF;
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    color: var(--navy);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88em;
+}
+
+.lp-article pre {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background: var(--navy-deep);
+    border-radius: 8px;
+    color: #E2E8F0;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+
+.lp-article pre code {
+    padding: 0;
+    background: none;
+    color: inherit;
+    font-size: 0.85rem;
+}
+
+.lp-table-wrap {
+    margin-top: 1.25rem;
+    overflow-x: auto;
+}
+
+.lp-article table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.lp-article th,
+.lp-article td {
+    border: 1px solid var(--border);
+    padding: 0.65rem 0.8rem;
+    color: var(--muted);
+    text-align: left;
+    vertical-align: top;
+}
+
+.lp-article th {
+    background: #EEF6FF;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.lp-error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
 /* ───────────── Página do REx ───────────── */
