@@ -21,6 +21,7 @@
         "brand": "Pedro Conrad Jr",
         "projects": "Projects",
         "about": "About",
+        "career": "Career",
         "contact": "Contact",
         "langToggleLabel": "Português",
         "langToggleFlag": "https://flagcdn.com/20x15/br.png",
@@ -29,6 +30,7 @@
     "hero": {
         "title": "Institutional systems engineering",
         "role": "Developer of institutional systems and mobile apps",
+        "positioning": "Software Engineer | Full Stack Developer | Software Architect",
         "stack": "PHP · CodeIgniter · MySQL · Flutter · Dart",
         "description": "Developer of institutional systems and mobile apps. PHP, CodeIgniter, MySQL, Flutter and Dart. IT analyst at Unipampa.",
         "btnProjects": "See projects",
@@ -171,22 +173,46 @@
     "about": {
         "sectionTitle": "About",
         "paragraphs": [
-            "Between 2002 and 2009 I taught at technical and university level. Since 2010 I have been an IT analyst at Universidade Federal do Pampa (Unipampa), with over 20 years of experience building institutional systems and mobile apps.",
+            "Between 2002 and 2009 I taught in Technical Education and Higher Education. Since 2010 I have been an IT analyst at Universidade Federal do Pampa (Unipampa), with over 20 years of experience building institutional systems and mobile apps.",
             "I work on software architecture, data modeling, relational databases and technical leadership. During that period, between 2016 and 2019, I coordinated technical teams."
         ],
         "skillsTitle": "Skills",
-        "skillsIntro": "From requirements gathering to delivering institutional systems, I work across software architecture, data modeling and artificial intelligence. I also share that experience through technical leadership, team training and mentoring.",
+        "skillsIntro": "From requirements gathering to delivering institutional systems, I work across software architecture, data modeling and secure development. I share that experience through technical leadership, team training, mentoring and agile management. Study and certifications complement the work with CI, Firebase, Docker, Power BI, IT risk, artificial intelligence, LLMs and prompt engineering.",
         "skills": [
-            "Software architecture",
-            "Data modeling",
-            "PHP / CodeIgniter",
-            "Flutter / Dart",
-            "Relational databases",
-            "Team technical leadership",
-            "Requirements gathering",
-            "Artificial intelligence",
-            "Team training",
-            "Mentoring"
+            {
+                "title": "Documented professional experience",
+                "items": [
+                    "Software architecture",
+                    "Data modeling",
+                    "PHP / CodeIgniter",
+                    "Flutter / Dart",
+                    "Relational databases",
+                    "SQL",
+                    "JavaScript",
+                    "Team technical leadership",
+                    "Requirements gathering",
+                    "Team training",
+                    "Mentoring",
+                    "DB2"
+                ]
+            },
+            {
+                "title": "Studied and certified",
+                "items": [
+                    "Artificial intelligence",
+                    "LLMs and AI agents",
+                    "Prompt engineering",
+                    "Power BI",
+                    "LGPD and data privacy",
+                    "Secure development",
+                    "Continuous integration (CI)",
+                    "Firebase",
+                    "Docker",
+                    "Agile management and SCRUM",
+                    "IT risk management",
+                    "Information security"
+                ]
+            }
         ],
         "publicationsTitle": "Articles and publications",
         "publicationsText": "Writing about development, career and software management.",
@@ -197,6 +223,193 @@
         "avatar": "/images/profile.png",
         "avatarAlt": "Pedro Conrad Jr"
     },
+    "engineering": {
+        "sectionTitle": "Architecture, engineering and AI",
+        "intro": "An experimental software engineering initiative: treating the process itself as code, with explicit phases, structured knowledge and human validation before any delivery.",
+        "items": [
+            {
+                "title": "Specialized agents",
+                "text": "Each phase has a responsible agent, with a defined input, output and stopping criterion."
+            },
+            {
+                "title": "Structured knowledge",
+                "text": "Rules, routes and technical references are versioned and searchable instead of relying on informal memory."
+            },
+            {
+                "title": "Traceability",
+                "text": "Decisions and open items are recorded so a session can resume without losing context."
+            },
+            {
+                "title": "Human validation",
+                "text": "Formal gates and critical decisions require approval; automation does not replace the requester's judgment."
+            }
+        ],
+        "linkLabel": "Read the article about Petrux",
+        "linkHref": "https://medium.com/@pconradjunior/petrux-o-processo-de-engenharia-de-software-escrito-como-c%C3%B3digo-c605687774a9"
+    },
+    "career": {
+        "sectionTitle": "Professional Experience",
+        "intro": "Professional career with verifiable job titles, institutions and dates. Detailed activities are collapsed to keep reading concise.",
+        "moreLabel": "Show activities",
+        "educationTitle": "Education",
+        "certificationsTitle": "Courses and certifications",
+        "publicationsTitle": "Publications and event participation",
+        "languagesTitle": "Languages",
+        "linkLabel": "View record",
+        "dialog": {
+            "title": "Full archive",
+            "intro": "Earlier certifications and publications beyond the most recent, kept separately so the career section stays easy to read.",
+            "certificationsTitle": "Earlier certifications",
+            "publicationsTitle": "Other publications",
+            "openCertifications": "View 14 earlier certifications",
+            "openPublications": "View other publications",
+            "close": "Close"
+        },
+        "publications": [
+            {
+                "type": "Published paper",
+                "title": "Desenvolvimento de um Sistema de Gestão da Produção Acadêmica baseado em Engenharia Reversa e Padrões de Projeto (PT-BR)",
+                "authors": "Pedro Conrad Junior — single-authored",
+                "date": "2026",
+                "href": "https://repositorio.wticifes.com.br/items/57fd47b4-f039-464e-8038-8c7da44a0cbe"
+            },
+            {
+                "type": "Published paper",
+                "title": "Utilização do Framework PHP CodeIgniter no Desenvolvimento de um Sistema Integrado de Gestão (PT-BR)",
+                "authors": "Coauthored",
+                "date": "2012",
+                "href": "https://repositorio.wticifes.com.br/items/3467ff37-1ce3-4e4d-9fe4-23b88a2d746f"
+            },
+            {
+                "type": "Published paper",
+                "title": "SisRel - Sistema de Extração Dinâmica de Dados com Foco no Usuário Final (PT-BR)",
+                "authors": "Coauthored",
+                "date": "2011",
+                "href": "https://repositorio.wticifes.com.br/items/956a321f-3163-4e08-a087-e48d21e3711f"
+            },
+            {
+                "type": "Published paper",
+                "title": "Desenvolvimento de um Sistema de Protocolo Web Baseado em Padrões de Projeto (PT-BR)",
+                "authors": "Coauthored",
+                "date": "2011",
+                "href": "https://repositorio.wticifes.com.br/items/f0cf9d8b-8fb2-40f1-8cae-2f623fa235d2"
+            },
+            {
+                "type": "Published paper",
+                "title": "Sistema de Gestão de Certificados Eletrônicos (PT-BR)",
+                "authors": "Coauthored",
+                "date": "2011",
+                "href": "https://repositorio.wticifes.com.br/items/b7efb2f2-5c43-4b93-bb47-ac51410b6b14"
+            },
+            {
+                "type": "Published paper",
+                "title": "A marca de uma empresa/instituição na Web: Desenvolvendo uma interface institucional utilizando padrões de usabilidade e ferramentas livres (PT-BR)",
+                "authors": "Denise Aristimunha de Lima and Pedro Conrad Júnior — coauthored",
+                "date": "2008",
+                "href": "https://itc.scix.net/pdfs/sigradi2008_076.content.pdf"
+            },
+            {
+                "type": "Event participation",
+                "title": "WTICIFES 2026 — Workshop de Tecnologia da Informação das Instituições Federais de Ensino Superior",
+                "authors": "Pedro Conrad Junior",
+                "date": "2026",
+                "href": "https://repositorio.wticifes.com.br/search?spc.page=1&query=pedro%20conrad%20junior"
+            }
+        ],
+        "languages": [
+            { "name": "Portuguese", "level": "Native or bilingual proficiency" },
+            { "name": "English", "level": "Professional working proficiency" },
+            { "name": "Spanish", "level": "Elementary proficiency" }
+        ]
+    },
+    "experience": [
+        {
+            "role": "IT Analyst",
+            "org": "Universidade Federal do Pampa (Unipampa)",
+            "start": "2010-06",
+            "startLabel": "06/2010",
+            "end": null,
+            "endLabel": "present",
+            "summary": "Systems analysis and documentation, requirements refinement, architecture, software artifact standards, data modeling and prototypes.",
+            "details": "Activities documented in the public profile: defining tools, technologies and frameworks; configuring and updating application environments; mentoring teams; writing and reviewing code and configuration scripts; inspecting code and models; testing and validating software."
+        },
+        {
+            "role": "Substitute Coordinator of the Systems Development team",
+            "org": "Universidade Federal do Pampa (Unipampa)",
+            "start": "2016-01",
+            "startLabel": "01/2016",
+            "end": "2019-07",
+            "endLabel": "07/2019",
+            "summary": "Occasional coordination of the sector, project and team management, and IT management.",
+            "details": "Occasional substitution for the head of the systems development sector, with responsibilities for project management, team oversight and information technology management."
+        },
+        {
+            "role": "IT Technician",
+            "org": "Universidade Federal de Pelotas",
+            "start": "2009-10",
+            "startLabel": "10/2009",
+            "end": "2010-06",
+            "endLabel": "06/2010",
+            "summary": "Web development, Moodle administration and maintenance, and user support.",
+            "details": "Worked on web development, administration and maintenance of the Moodle platform, and provided support to institutional users."
+        },
+        {
+            "role": "PHP Web Developer",
+            "org": "URCAMP",
+            "start": "2006-05",
+            "startLabel": "05/2006",
+            "end": "2009-10",
+            "endLabel": "10/2009",
+            "summary": "Development and maintenance of the institutional portal in partnership with the Communication Department.",
+            "details": "Developed and maintained the university portal, working with the Communication Department on publishing and evolving institutional content."
+        },
+        {
+            "role": "Teacher — Technical Education",
+            "org": "URCAMP",
+            "start": "2003-03",
+            "startLabel": "03/2003",
+            "end": "2009-09",
+            "endLabel": "09/2009",
+            "summary": "Algorithms, Data Communication, Hardware and Programming.",
+            "details": "Taught technical education courses in Algorithms, Data Communication, Hardware and Programming."
+        },
+        {
+            "role": "Teacher — Higher Education",
+            "org": "Universidade da Região da Campanha (URCAMP), Bagé",
+            "start": "2002-08",
+            "startLabel": "08/2002",
+            "end": "2009-09",
+            "endLabel": "09/2009",
+            "summary": "Algorithms, Computer Architecture, Programming I/II/III, Databases, Computer Graphics, Artificial Intelligence, Multimedia, and Organization and Systems Theory.",
+            "details": "Taught undergraduate courses in Informatics and Information Systems, including Algorithms, Computer Architecture, Programming I/II/III, Databases, Computer Graphics, Artificial Intelligence, Multimedia, Organization and Systems Theory, and Special Topics."
+        }
+    ],
+    "education": [
+        { "title": "Bachelor's degree in Informatics", "org": "URCAMP", "start": "2002", "end": null },
+        { "title": "Lato Sensu Postgraduate degree in Higher Education Teaching", "org": "URCAMP", "start": "2004", "end": "2006" },
+        { "title": "Technical Course in Data Processing - TPD", "org": "Urcamp", "start": "1995", "end": "1997" }
+    ],
+    "certifications": [
+        { "name": "Prompt Engineering", "issuer": "Escola Superior de Redes", "date": "2026-11", "label": "Nov. 2026" },
+        { "name": "Aplicação do Power BI para Aprimoramento da Gestão", "issuer": "Enap", "date": "2024-12", "label": "Dec. 2024" },
+        { "name": "Curso Online de PHP - PHP", "issuer": "Rocketseat", "date": "2024-10", "label": "Oct. 2024" },
+        { "name": "Fundamentos da Lei Geral de Proteção de Dados", "issuer": "Enap", "date": "2024-07", "label": "Jul. 2024" },
+        { "name": "Formação Desenvolvimento Seguro", "issuer": "Alura", "date": "2024-03", "label": "Mar. 2024" },
+        { "name": "Formação Flutter: desvendando arquiteturas", "issuer": "Alura", "date": "2023-12", "label": "Dec. 2023" },
+        { "name": "Flutter: aplicando integração contínua (CI)", "issuer": "Alura", "date": "2023-12", "label": "Dec. 2023" },
+        { "name": "Formação Utilize os serviços do Firebase com Flutter", "issuer": "Alura", "date": "2023-12", "label": "Dec. 2023" },
+        { "name": "Formação Gestão Ágil de Projetos", "issuer": "Alura", "date": "2023-12", "label": "Dec. 2023" },
+        { "name": "Formação Digital & Agile Thinking", "issuer": "Alura", "date": "2023-12", "label": "Dec. 2023" },
+        { "name": "Scrum: agilidade em seu projeto", "issuer": "Alura", "date": "2023-11", "label": "Nov. 2023" },
+        { "name": "A Empresa Ágil: implemente o Business Agility nas organizações", "issuer": "Alura", "date": "2023-11", "label": "Nov. 2023" },
+        { "name": "Gestão Ágil: explorando conceitos da agilidade", "issuer": "Alura", "date": "2023-11", "label": "Nov. 2023" },
+        { "name": "English Proficiency Score", "issuer": "EF", "date": "2022-06", "label": "Jun. 2022" },
+        { "name": "SQL (Intermediate) Certificate", "issuer": "HackerRank", "date": "2022-02", "label": "Feb. 2022" },
+        { "name": "Aprenda DOCKER e contêineres de maneira simples e rápida", "issuer": "Udemy", "date": "2021-08", "label": "Aug. 2021" },
+        { "name": "Desenvolvimento Android e IOS com Flutter", "issuer": "Udemy", "date": "2020-08", "label": "Aug. 2020" },
+        { "name": "Gestão de Riscos de TI - NBR 31000 e NBR 27005", "issuer": "Escola Superior de Redes", "date": "2017-07", "label": "Jul. 2017" },
+        { "name": "Gestão da Segurança da Informação - NBR 27001 e NBR 27002", "issuer": "Escola Superior de Redes", "date": "2012-11", "label": "Nov. 2012" }
+    ],
     "contact": {
         "sectionTitle": "Contact",
         "intro": "Have a project, a question or an idea in mind? Pick one of the channels below and let's talk about software architecture, data modeling or institutional systems.",

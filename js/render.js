@@ -122,6 +122,51 @@ function renderFeatured(item, d) {
       </article>`;
 }
 
+/** Detalhe expansível nativo: mantém o texto no HTML sem depender de JS. */
+function renderDetails(label, body) {
+    return `<details class="lp-details">
+        <summary>${esc(label)}</summary>
+        <div class="lp-details-body">${body}</div>
+      </details>`;
+}
+
+/** Item de certificação compartilhado entre a lista curta e o acervo. */
+function renderCertItem(c) {
+    return `<li class="lp-cert">
+      <span class="lp-cert-name">${esc(c.name)}</span>
+      <span class="lp-cert-meta">${esc(c.issuer)} · <time datetime="${esc(c.date)}">${esc(c.label)}</time></span>
+    </li>`;
+}
+
+/** Item de publicação compartilhado entre a lista curta e o acervo. */
+function renderPubItem(pub, linkLabel) {
+    return `<li class="lp-typed-item">
+      <span class="lp-typed-type">${esc(pub.type)}</span>
+      <span class="lp-typed-title">${esc(pub.title)}</span>
+      <span class="lp-typed-meta">${esc(pub.authors)} · <time datetime="${esc(pub.date)}">${esc(pub.date)}</time>${pub.href ? ` · <a href="${esc(pub.href)}" target="_blank" rel="noopener noreferrer">${esc(linkLabel)}</a>` : ''}</span>
+    </li>`;
+}
+
+/** Acervo completo em <dialog> nativo (Escape, foco e backdrop sem JS extra). */
+function renderCareerDialog(k, olderCerts) {
+    const x = k.dialog;
+    return `<dialog id="careerDialog" class="lp-dialog" aria-labelledby="careerDialogTitle">
+      <div class="lp-dialog-inner">
+        <div class="lp-dialog-head">
+          <div>
+            <h2 id="careerDialogTitle" class="lp-dialog-title">${esc(x.title)}</h2>
+            <p class="lp-dialog-intro">${esc(x.intro)}</p>
+          </div>
+          <button type="button" class="lp-dialog-close" data-career-dialog-close aria-label="${esc(x.close)}">&times;</button>
+        </div>
+        <h3 id="careerDialog-certifications" class="lp-dialog-subtitle">${esc(x.certificationsTitle)}</h3>
+        <ul class="lp-certs lp-dialog-list">${olderCerts.map(renderCertItem).join('')}</ul>
+        <h3 id="careerDialog-publications" class="lp-dialog-subtitle">${esc(x.publicationsTitle)}</h3>
+        <ul class="lp-typed lp-dialog-list">${k.publications.slice(3).map(p => renderPubItem(p, k.linkLabel)).join('')}</ul>
+      </div>
+    </dialog>`;
+}
+
 /* ─────────────────────────────────────────────────────────────
    header / main / footer
    ───────────────────────────────────────────────────────────── */
@@ -143,6 +188,7 @@ export function renderHeader(d, lang) {
           <div class="lp-nav-links" id="navLinks">
             <a href="#projects">${esc(n.projects)}</a>
             <a href="#about">${esc(n.about)}</a>
+            <a href="#career">${esc(n.career)}</a>
             <a href="#contact">${esc(n.contact)}</a>
             <a href="${other}" id="langToggle" hreflang="${other === '/en/' ? 'en' : 'pt-BR'}" rel="alternate" title="${esc(n.langToggleLabel)}">
               <img src="${esc(n.langToggleFlag)}" alt="${esc(n.langToggleAlt)}" width="20" height="15" loading="lazy"> ${esc(n.langToggleLabel)}
@@ -154,7 +200,9 @@ export function renderHeader(d, lang) {
 }
 
 export function renderMain(d) {
-  const s = d.projectsSection, a = d.about, c = d.contact;
+  const s = d.projectsSection, a = d.about, e = d.engineering, k = d.career, c = d.contact;
+  const recentCerts = d.certifications.filter(x => x.date >= '2024');
+  const olderCerts = d.certifications.filter(x => x.date < '2024');
 
   const stats = d.stats.map(x => `<div class="lp-stat">
         <strong>${esc(fill(x.number, d))}</strong>
@@ -172,6 +220,7 @@ export function renderMain(d) {
         <div class="lp-container">
           <p class="lp-eyebrow">${esc(d.hero.role)}</p>
           <h1>${esc(d.hero.title)}</h1>
+          <p class="lp-positioning">${esc(d.hero.positioning)}</p>
           <p class="lp-stack">${esc(d.hero.stack)}</p>
           <p class="lp-description">${esc(d.hero.description)}</p>
           <div class="lp-stats">${stats}</div>
@@ -203,7 +252,9 @@ export function renderMain(d) {
             </div>
             <h3 class="lp-skills-title">${esc(a.skillsTitle)}</h3>
             <p class="lp-skills-intro">${esc(a.skillsIntro)}</p>
-            <ul class="lp-skills">${a.skills.map(skill => `<li>${esc(skill)}</li>`).join('')}</ul>
+            ${a.skills.map(group => `
+            <h4 class="lp-skill-group-title">${esc(group.title)}</h4>
+            <ul class="lp-skills">${group.items.map(skill => `<li>${esc(skill)}</li>`).join('')}</ul>`).join('')}
           </div>
           <aside class="lp-publications">
             <h3>${esc(a.publicationsTitle)}</h3>
@@ -215,6 +266,65 @@ export function renderMain(d) {
         </div>
       </section>
 
+      <section id="engineering" class="lp-section lp-section-alt">
+        <div class="lp-container">
+          <h2 class="lp-section-title">${esc(e.sectionTitle)}</h2>
+          <p class="lp-section-intro">${esc(e.intro)}</p>
+          <div class="lp-engineering-grid">
+            ${e.items.map(item => `<article class="lp-engineering-item">
+              <h3>${esc(item.title)}</h3>
+              <p>${esc(item.text)}</p>
+            </article>`).join('')}
+          </div>
+          <p class="lp-engineering-link"><a href="${esc(e.linkHref)}" target="_blank" rel="noopener noreferrer">${esc(e.linkLabel)} →</a></p>
+        </div>
+      </section>
+
+      <section id="career" class="lp-section">
+        <div class="lp-container">
+          <h2 class="lp-section-title">${esc(k.sectionTitle)}</h2>
+          <p class="lp-section-intro">${esc(k.intro)}</p>
+
+          <div class="lp-entries">
+            ${d.experience.map(job => `<article class="lp-entry">
+              <h3 class="lp-entry-title">${esc(job.role)}</h3>
+              <p class="lp-entry-meta">${esc(job.org)} · <time datetime="${esc(job.start)}">${esc(job.startLabel)}</time> – ${job.end ? `<time datetime="${esc(job.end)}">${esc(job.endLabel)}</time>` : esc(job.endLabel)}</p>
+              <p class="lp-entry-summary">${esc(job.summary)}</p>
+              ${renderDetails(k.moreLabel, `<p>${esc(job.details)}</p>`)}
+            </article>`).join('')}
+          </div>
+
+          <h3 class="lp-subsection-title">${esc(k.educationTitle)}</h3>
+          <div class="lp-entries lp-entries-compact">
+            ${d.education.map(ed => `<article class="lp-entry">
+              <h4 class="lp-entry-title">${esc(ed.title)}</h4>
+              <p class="lp-entry-meta">${esc(ed.org)} · <time datetime="${esc(ed.start)}">${esc(ed.start)}</time>${ed.end ? ` – <time datetime="${esc(ed.end)}">${esc(ed.end)}</time>` : ''}</p>
+            </article>`).join('')}
+          </div>
+
+          <h3 class="lp-subsection-title">${esc(k.certificationsTitle)}</h3>
+          <ul class="lp-certs">
+            ${recentCerts.map(renderCertItem).join('')}
+          </ul>
+          <p class="lp-dialog-action">
+            <button type="button" class="lp-dialog-open" data-career-dialog="certifications">${esc(k.dialog.openCertifications)} →</button>
+          </p>
+
+          <h3 class="lp-subsection-title">${esc(k.publicationsTitle)}</h3>
+          <ul class="lp-typed">
+            ${k.publications.slice(0, 3).map(p => renderPubItem(p, k.linkLabel)).join('')}
+          </ul>
+          <p class="lp-dialog-action">
+            <button type="button" class="lp-dialog-open" data-career-dialog="publications">${esc(k.dialog.openPublications)} →</button>
+          </p>
+
+          <h3 class="lp-subsection-title">${esc(k.languagesTitle)}</h3>
+          <ul class="lp-skills lp-languages">
+            ${k.languages.map(l => `<li><strong>${esc(l.name)}</strong> — ${esc(l.level)}</li>`).join('')}
+          </ul>
+        </div>
+      </section>
+
       <section id="contact" class="lp-section">
         <div class="lp-container">
           <h2 class="lp-section-title">${esc(c.sectionTitle)}</h2>
@@ -222,6 +332,7 @@ export function renderMain(d) {
           <div class="lp-channels">${channels}</div>
         </div>
       </section>
+      ${renderCareerDialog(k, olderCerts)}
     </main>`;
 }
 
@@ -323,6 +434,8 @@ export function buildJsonLd(d, lang) {
     ...(p.career?.items ?? [])
   ];
   const papers = p.publications?.items ?? [];
+  const skills = d.about.skills.flatMap(g => g.items);
+  const alumni = [...new Set(d.education.map(ed => ed.org))];
 
   const person = {
     '@id': `${SITE.origin}/#person`,
@@ -332,7 +445,15 @@ export function buildJsonLd(d, lang) {
     email: `mailto:${SITE.email}`,
     jobTitle: d.hero.role,
     description: fill(d.hero.description, d),
-    knowsAbout: d.about.skills,
+    knowsAbout: skills,
+    knowsLanguage: d.career.languages.map(l => ({ '@type': 'Language', name: l.name })),
+    alumniOf: alumni.map(name => ({ '@type': 'CollegeOrUniversity', name })),
+    hasCredential: d.certifications.map(c => ({
+      '@type': 'EducationalOccupationalCredential',
+      name: c.name,
+      recognizedBy: { '@type': 'Organization', name: c.issuer },
+      dateCreated: c.date
+    })),
     worksFor: { '@type': 'CollegeOrUniversity', name: 'Universidade Federal do Pampa (Unipampa)' },
     sameAs: SITE.sameAs
   };
@@ -394,11 +515,12 @@ export function buildJsonLd(d, lang) {
       numberOfItems: papers.length,
       itemListElement: papers.map((a, i) => {
         const link = a.links.find(l => /^https?:/.test(l.href || ''));
+        const isNews = /notícia|institutional news/i.test(a.typeLabel || '');
         return {
           '@type': 'ListItem',
           position: i + 1,
           item: {
-            '@type': 'ScholarlyArticle',
+            '@type': isNews ? 'NewsArticle' : 'ScholarlyArticle',
             name: a.title,
             headline: a.title,
             description: a.desc,

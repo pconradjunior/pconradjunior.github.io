@@ -79,7 +79,7 @@ img {
     margin-inline: auto;
 }
 
-#home, #projects, #about, #contact {
+#home, #projects, #about, #engineering, #career, #contact {
     scroll-margin-top: 5.5rem;
 }
 
@@ -161,7 +161,7 @@ img {
 
 .lp-hero {
     background: linear-gradient(180deg, var(--bg) 0%, #EFF6FF 100%);
-    padding: 6.5rem 0 5.5rem;
+    padding: 4.5rem 0 4rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -562,6 +562,324 @@ img {
 
 .lp-publications a + p {
     margin-top: 1.25rem;
+}
+
+/* ───────────── Posicionamento e competências ───────────── */
+
+.lp-positioning {
+    margin-top: 0.5rem;
+    color: var(--navy);
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.lp-skill-group-title {
+    margin: 1.5rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+/* ───────────── Arquitetura, engenharia e IA ───────────── */
+
+.lp-engineering-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.lp-engineering-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.lp-engineering-item h3 {
+    margin: 0 0 0.5rem;
+    color: var(--navy);
+    font-size: 1.05rem;
+}
+
+.lp-engineering-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.lp-engineering-link {
+    margin-top: 1.75rem;
+}
+
+.lp-engineering-link a {
+    font-weight: 700;
+}
+
+/* ───────────── Trajetória profissional ───────────── */
+
+.lp-entries {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.lp-entry {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blue);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+}
+
+.lp-entry-title {
+    margin: 0;
+    color: var(--navy);
+    font-size: 1.1rem;
+}
+
+.lp-entry-meta {
+    margin: 0.25rem 0 0;
+    color: var(--cyan);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.lp-entry-summary {
+    margin: 0.85rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.lp-subsection-title {
+    margin: 3rem 0 0;
+    color: var(--navy);
+    font-size: 1.35rem;
+}
+
+.lp-entries-compact {
+    margin-top: 1.5rem;
+}
+
+.lp-entries-compact .lp-entry {
+    border-left-color: var(--cyan);
+    padding: 1rem 1.25rem;
+}
+
+.lp-entries-compact .lp-entry-title {
+    font-size: 1rem;
+}
+
+.lp-certs,
+.lp-typed,
+.lp-cert-map,
+.lp-coauthors {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+}
+
+.lp-cert {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.lp-cert-name {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.lp-cert-meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.lp-typed-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.lp-typed-type {
+    align-self: flex-start;
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.lp-typed-title {
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.lp-typed-meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* ───────────── Detalhes expansíveis (nativo) ───────────── */
+
+.lp-details {
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+}
+
+.lp-details summary {
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    padding: 0.35rem 0.85rem;
+    color: var(--blue);
+    font-size: 0.88rem;
+    font-weight: 700;
+    list-style: none;
+}
+
+.lp-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.lp-details summary::after {
+    content: ' +';
+    font-weight: 700;
+}
+
+.lp-details[open] summary::after {
+    content: ' −';
+}
+
+.lp-details summary:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: -2px;
+    border-radius: 8px;
+}
+
+.lp-details-body {
+    padding: 0 1rem 1rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.lp-details-body p {
+    margin: 0;
+}
+
+.lp-details-body ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.lp-details-body li {
+    padding: 0.2rem 0;
+}
+
+/* ───────────── Acervo em <dialog> ───────────── */
+
+.lp-dialog-action {
+    margin-top: 1.25rem;
+}
+
+.lp-dialog-open {
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--blue);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lp-dialog-open:hover {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+.lp-dialog-open:focus-visible,
+.lp-dialog-close:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+}
+
+.lp-dialog {
+    width: min(760px, 100% - 2rem);
+    max-height: min(85vh, 900px);
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 24px 60px rgba(7, 24, 46, 0.28);
+}
+
+.lp-dialog::backdrop {
+    background: rgba(7, 24, 46, 0.65);
+}
+
+.lp-dialog-inner {
+    padding: 1.75rem 2rem 2.25rem;
+}
+
+.lp-dialog-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.lp-dialog-title {
+    color: var(--navy);
+    font-size: 1.4rem;
+}
+
+.lp-dialog-intro {
+    margin-top: 0.5rem;
+    max-width: 60ch;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.lp-dialog-close {
+    flex: 0 0 auto;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--navy);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lp-dialog-close:hover {
+    border-color: var(--cyan);
+}
+
+.lp-dialog-subtitle {
+    margin: 1.75rem 0 0;
+    color: var(--navy);
+    font-size: 1.05rem;
+}
+
+.lp-dialog .lp-dialog-list {
+    margin-top: 0.75rem;
 }
 
 /* ───────────── Contato ───────────── */
@@ -1044,6 +1362,11 @@ img {
         gap: 2rem;
     }
 
+    .lp-engineering-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
     .lp-footer-grid {
         grid-template-columns: 1.3fr 1fr 1fr;
     }
@@ -1098,7 +1421,7 @@ img {
     }
 
     .lp-hero {
-        padding: 4.5rem 0 4rem;
+        padding: 3.5rem 0 3rem;
     }
 
     .lp-stats {
@@ -1132,6 +1455,15 @@ img {
     .lp-channel {
         padding: 0.85rem 0.9rem;
         font-size: 0.9rem;
+    }
+
+    .lp-entry {
+        padding: 1.15rem 1rem;
+    }
+
+    .lp-cert {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 

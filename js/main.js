@@ -185,6 +185,38 @@ const ImageModal = (() => {
 })();
 
 /* ============================================================
+   2c. CAREER DIALOG — acervo completo de certificações/publicações
+   Usa <dialog>.showModal(): Escape, focus trap, backdrop e bloqueio
+   de rolagem são nativos; este módulo só abre, fecha e posiciona.
+   ============================================================ */
+
+const CareerDialog = (() => {
+    let dialog, bound = false;
+
+    function open(section) {
+        dialog.showModal();
+        const target = dialog.querySelector(`#careerDialog-${section}`);
+        dialog.querySelector('[data-career-dialog-close]').focus({ preventScroll: true });
+        target?.scrollIntoView({ block: 'start' });
+    }
+
+    function init() {
+        dialog = document.getElementById('careerDialog');
+        if (!dialog || bound) return;
+
+        document.addEventListener('click', e => {
+            const trigger = e.target.closest('[data-career-dialog]');
+            if (trigger) { open(trigger.dataset.careerDialog); return; }
+            if (e.target.closest('[data-career-dialog-close]')) { dialog.close(); return; }
+            if (e.target === dialog) dialog.close();
+        });
+        bound = true;
+    }
+
+    return { init };
+})();
+
+/* ============================================================
    3. I18N
    ============================================================ */
 
@@ -245,6 +277,7 @@ const I18n = (() => {
 
         Nav.init();
         Modals.init();
+        CareerDialog.init();
         updateHead(d, lang);
     }
 
@@ -290,5 +323,6 @@ document.addEventListener('DOMContentLoaded', () => {
     Nav.init();
     Modals.init();
     ImageModal.init();
+    CareerDialog.init();
     I18n.init();
 });

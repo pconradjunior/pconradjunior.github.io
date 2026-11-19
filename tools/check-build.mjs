@@ -49,15 +49,17 @@ for (const page of PAGES) {
   check(count(html, /class="lp-btn lp-btn-/g) === 2, '2 botões no hero');
   check(html.includes('href="#projects"') && html.includes('href="#contact"'), 'botões apontam para Projetos e Contato');
 
-  // ── 4 blocos + rodapé ──
-  const ids = ['home', 'projects', 'about', 'contact'];
+  // ── 6 blocos + rodapé ──
+  const ids = ['home', 'projects', 'about', 'engineering', 'career', 'contact'];
   const positions = ids.map(id => html.indexOf(`<section id="${id}"`));
-  check(positions.every((p, i) => p > -1 && (i === 0 || p > positions[i - 1])), 'ordem: Hero → Projetos → Sobre → Contato');
-  check(html.indexOf('<footer') > positions[3], 'rodapé depois do Contato');
+  check(positions.every((p, i) => p > -1 && (i === 0 || p > positions[i - 1])),
+    'ordem: Hero → Projetos → Sobre → Engenharia → Trajetória → Contato');
+  check(html.indexOf('<footer') > positions[5], 'rodapé depois do Contato');
 
   const h2 = count(html, /<h2 class="lp-section-title">/g);
-  check(h2 === 3, `${h2} headings h2 — Projetos, Sobre, Contato`);
-  for (const title of [d.projectsSection.sectionTitle, d.about.sectionTitle, d.contact.sectionTitle]) {
+  check(h2 === 5, `${h2} headings h2 — Projetos, Sobre, Engenharia, Trajetória, Contato`);
+  for (const title of [d.projectsSection.sectionTitle, d.about.sectionTitle, d.engineering.sectionTitle,
+                       d.career.sectionTitle, d.contact.sectionTitle]) {
     check(html.includes(`<h2 class="lp-section-title">${title}</h2>`), `h2 preenchido — ${JSON.stringify(title)}`);
   }
 
@@ -91,7 +93,8 @@ for (const page of PAGES) {
   const bio = d.about.paragraphs.join(' ');
   check(bio.toLowerCase().includes(page.lang === 'pt' ? 'desde 2010' : 'since 2010'), 'Unipampa desde 2010');
   check(bio.includes('2002') && bio.includes('2009'), 'docência entre 2002 e 2009');
-  check(bio.includes(page.lang === 'pt' ? 'ensino técnico e superior' : 'technical and university level'), 'docência técnica e superior');
+  check(bio.includes(page.lang === 'pt' ? 'Ensino Técnico e Ensino Superior' : 'Technical Education and Higher Education'),
+    'docência técnica e superior com termos capitalizados');
   check(html.includes(d.about.publicationsTitle), 'bloco Artigos e publicações presente');
   check(html.includes(`<p>${esc(d.about.wticifesText)}</p>`) &&
         html.includes(`href="${esc(d.about.wticifesHref)}"`) &&
@@ -102,10 +105,75 @@ for (const page of PAGES) {
     'subtítulo e descrição das competências no Sobre');
   check(html.includes('<ul class="lp-skills">') && html.indexOf('lp-skills-title') < html.indexOf('lp-publications'),
     'competências na coluna esquerda, antes de publicações');
-  check(html.includes('<ul class="lp-skills">') && d.about.skills.every(skill => html.includes(`<li>${skill}</li>`)),
-    `${d.about.skills.length} competências renderizadas no Sobre`);
+  const allSkills = d.about.skills.flatMap(g => g.items);
+  check(html.includes('<ul class="lp-skills">') && allSkills.every(skill => html.includes(`<li>${skill}</li>`)),
+    `${allSkills.length} competências renderizadas no Sobre`);
+  check(d.about.skills.every(g => html.includes(`<h4 class="lp-skill-group-title">${esc(g.title)}</h4>`)),
+    `${d.about.skills.length} grupos de competências com título renderizado`);
   check(html.includes('https://medium.com/@pconradjunior'), 'link para o Medium presente');
   check(!/<section id="articles"/.test(html), 'lista completa de artigos não renderizada');
+
+  // ── posicionamento e engenharia ──
+  check(html.includes(`<p class="lp-positioning">${esc(d.hero.positioning)}</p>`), 'posicionamento no hero');
+  check(html.includes(`<h2 class="lp-section-title">${esc(d.engineering.sectionTitle)}</h2>`), 'seção de engenharia presente');
+  check(count(html, /class="lp-engineering-item"/g) === d.engineering.items.length,
+    `${d.engineering.items.length} itens de engenharia renderizados`);
+  check(html.includes(`href="${esc(d.engineering.linkHref)}"`) && html.includes(`${esc(d.engineering.linkLabel)} →`),
+    'link do artigo sobre Petrux presente');
+
+  // ── trajetória: registros, datas e campos essenciais no HTML estático ──
+  check(html.includes(`<h2 class="lp-section-title">${esc(d.career.sectionTitle)}</h2>`), 'seção de trajetória presente');
+  check(count(html, /class="lp-entry"/g) === d.experience.length + d.education.length,
+    `${d.experience.length + d.education.length} registros (experiência + formação)`);
+  for (const job of d.experience) {
+    check(html.includes(`<h3 class="lp-entry-title">${esc(job.role)}</h3>`), `experiência presente — ${job.role}`);
+    check(html.includes(esc(job.org)) && html.includes(`datetime="${esc(job.start)}"`),
+      `instituição e início presentes — ${job.org}`);
+    check(html.includes(esc(job.summary)), `resumo da experiência presente — ${job.role}`);
+  }
+  for (const ed of d.education) {
+    check(html.includes(`<h4 class="lp-entry-title">${esc(ed.title)}</h4>`), `formação presente — ${ed.title}`);
+    check(html.includes(esc(ed.org)), `instituição de formação presente — ${ed.org}`);
+  }
+  const recentCerts = d.certifications.filter(x => x.date >= '2024');
+  const olderCerts = d.certifications.filter(x => x.date < '2024');
+  const careerHtml = html.slice(positions[4], positions[5]);
+  const dialogHtml = html.slice(html.indexOf('<dialog id="careerDialog"'));
+  check(recentCerts.length === 5, `${recentCerts.length} certificações de 2024–2026 na lista principal`);
+  check(count(careerHtml, /class="lp-cert"/g) === recentCerts.length,
+    `${recentCerts.length} certificações visíveis na seção`);
+  check(count(dialogHtml, /class="lp-cert"/g) === olderCerts.length,
+    `${olderCerts.length} certificações anteriores no diálogo`);
+  check(count(html, /class="lp-cert"/g) === d.certifications.length,
+    `${d.certifications.length} certificações no total (lista + diálogo)`);
+  for (const cert of d.certifications) {
+    check(html.includes(`<span class="lp-cert-name">${esc(cert.name)}</span>`) &&
+          html.includes(`<time datetime="${esc(cert.date)}">`), `certificação presente — ${cert.name}`);
+  }
+  check(recentCerts.some(c => /Engenharia de Prompts|Prompt Engineering/i.test(c.name)),
+    'certificação de Engenharia de Prompts (nov. 2026) presente entre as recentes');
+  check(!/\bJava\b|\bNestJS\b/.test(d.about.skills.flatMap(g => g.items).join(' ')), 'Java e NestJS removidos das competências');
+  check(count(html, /<time datetime="/g) >= d.experience.length * 2 + d.education.length + d.certifications.length,
+    'datas com <time datetime> em experiência, formação e certificações');
+  check(d.career.languages.every(l => html.includes(`<strong>${esc(l.name)}</strong> — ${esc(l.level)}`)),
+    'idiomas com nível renderizados');
+  check(count(careerHtml, /class="lp-typed-item"/g) === 3, '3 publicações em destaque na seção');
+  check(/<h3 class="lp-subsection-title">[^<]*<\/h3>\s*<ul class="lp-skills lp-languages">/.test(html),
+    'idiomas renderizados como itens lado a lado, no padrão de competências');
+  check(d.career.publications.every(pub => html.includes(esc(pub.title))), 'publicações tipadas renderizadas');
+  check(!d.career.publications.some(pub => /<[^>]+>/.test(pub.title)), 'títulos de publicações sem HTML');
+
+  // ── disclosures nativos: 6 blocos, sem heading dentro de summary ──
+  const summaries = [...html.matchAll(/<summary>([\s\S]*?)<\/summary>/g)].map(m => m[1]);
+  check(summaries.length === 6, `${summaries.length} blocos <details> (esperado 6)`);
+  check(summaries.every(s => s.trim().length > 0), 'todos os <summary> têm texto');
+  check(!summaries.some(s => /<h[1-6]/i.test(s)), 'nenhum heading dentro de <summary>');
+  check(!/lp-cert-map|skillsMap|lp-coauthors|coauthorLabel/i.test(html), 'mapa e nota de coautoria removidos');
+  check(/<dialog id="careerDialog"/.test(html) && /data-career-dialog-close/.test(html), 'acervo em <dialog> nativo');
+  check(count(html, /data-career-dialog="certifications"/g) === 1 &&
+        count(html, /data-career-dialog="publications"/g) === 1, 'dois gatilhos de abertura do diálogo');
+  check(count(dialogHtml, /class="lp-typed-item"/g) === d.career.publications.length - 3,
+    'publicações restantes presentes no diálogo');
 
   // ── contato: apenas canais reais ──
   check(html.includes(`<p class="lp-section-intro">${esc(d.contact.intro)}</p>`), 'texto de chamada para contato');
@@ -160,6 +228,28 @@ for (const page of PAGES) {
     try { JSON.parse(raw.replace(/\\u003c/g, '<')); } catch (e) { bad(`JSON-LD inválido: ${e.message}`); }
   }
   ok('todos os JSON-LD parseiam');
+
+  const json = blocks.map(([, raw]) => JSON.parse(raw.replace(/\\u003c/g, '<')));
+  const person = json.flatMap(b => b['@graph'] ?? [b]).find(b => b['@type'] === 'Person');
+  check(!!person, 'bloco Person presente');
+  check(person?.hasCredential?.length === d.certifications.length,
+    `Person.hasCredential com ${d.certifications.length} entradas`);
+  check(person?.hasCredential?.every(c => c.name && c.recognizedBy?.name && c.dateCreated),
+    'credenciais com nome, emissor e data');
+  check(person?.knowsLanguage?.length === d.career.languages.length, 'Person.knowsLanguage presente');
+  check(person?.alumniOf?.length > 0, 'Person.alumniOf presente');
+  check(person?.knowsAbout?.length === d.about.skills.flatMap(g => g.items).length,
+    'Person.knowsAbout com todas as competências');
+  const newsTitles = (d.projects.publications?.items ?? [])
+    .filter(a => /notícia|institutional news/i.test(a.typeLabel || ''))
+    .map(a => a.title);
+  check(newsTitles.length === 2, `${newsTitles.length} notícias institucionais identificadas nos dados`);
+  const newsNodes = json.filter(b => b['@type'] === 'ItemList')
+    .flatMap(b => b.itemListElement ?? [])
+    .map(i => i.item)
+    .filter(item => newsTitles.includes(item?.headline));
+  check(newsNodes.length === 2 && newsNodes.every(n => n['@type'] === 'NewsArticle'),
+    'notícias institucionais classificadas como NewsArticle, não ScholarlyArticle');
   check(counts(d).downloadsExact > 0, 'contagens derivadas dos dados intactas');
 
   // ── links internos resolvem ──
@@ -170,6 +260,24 @@ for (const page of PAGES) {
     if (!existsSync(join(ROOT, target))) broken.add(target);
   }
   check(broken.size === 0, broken.size ? `links internos quebrados: ${[...broken].join(', ')}` : 'todos os links internos resolvem');
+}
+
+// ── paridade de chaves PT/EN ──
+console.log('\nparidade PT/EN');
+function shape(o) {
+  if (Array.isArray(o)) return `[${o.map(shape).join(',')}]`;
+  if (o && typeof o === 'object') {
+    return `{${Object.keys(o).sort().map(k => `${k}:${shape(o[k])}`).join('|')}}`;
+  }
+  return typeof o;
+}
+const pt = content('pt'), en = content('en');
+check(shape(pt) === shape(en), 'mesmas chaves e formatos em content/pt.json e content/en.json');
+for (const key of ['hero', 'about', 'engineering', 'career']) {
+  check(shape(pt[key]) === shape(en[key]), `paridade de ${key}`);
+}
+for (const key of ['experience', 'education', 'certifications']) {
+  check(shape(pt[key]) === shape(en[key]), `paridade de ${key}`);
 }
 
 // ── CSS ──
