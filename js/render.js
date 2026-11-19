@@ -201,12 +201,16 @@ export function renderMain(d) {
                 ${a.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}
               </div>
             </div>
+            <h3 class="lp-skills-title">${esc(a.skillsTitle)}</h3>
+            <p class="lp-skills-intro">${esc(a.skillsIntro)}</p>
             <ul class="lp-skills">${a.skills.map(skill => `<li>${esc(skill)}</li>`).join('')}</ul>
           </div>
           <aside class="lp-publications">
             <h3>${esc(a.publicationsTitle)}</h3>
             <p>${esc(a.publicationsText)}</p>
             <a href="https://medium.com/@pconradjunior" target="_blank" rel="noopener noreferrer">${esc(a.mediumLabel)} →</a>
+            <p>${esc(a.wticifesText)}</p>
+            <a href="${esc(a.wticifesHref)}" target="_blank" rel="noopener noreferrer">${esc(a.wticifesLabel)} →</a>
           </aside>
         </div>
       </section>
@@ -214,6 +218,7 @@ export function renderMain(d) {
       <section id="contact" class="lp-section">
         <div class="lp-container">
           <h2 class="lp-section-title">${esc(c.sectionTitle)}</h2>
+          <p class="lp-section-intro">${esc(c.intro)}</p>
           <div class="lp-channels">${channels}</div>
         </div>
       </section>

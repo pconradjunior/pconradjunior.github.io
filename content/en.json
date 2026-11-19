@@ -163,8 +163,8 @@
     "projectsSection": {
         "sectionTitle": "Featured projects",
         "intro": "Six works representing critical institutional systems, apps published for Android and iOS, and a browser extension.",
-        "archiveLabel": "See all articles",
-        "archiveHref": "https://medium.com/@pconradjunior"
+        "archiveLabel": "Open Source Projects",
+        "archiveHref": "https://github.com/pconradjunior"
     },
     "about": {
         "sectionTitle": "About",
@@ -172,22 +172,32 @@
             "Between 2002 and 2009 I taught at technical and university level. Since 2010 I have been an IT analyst at Universidade Federal do Pampa (Unipampa), with over 20 years of experience building institutional systems and mobile apps.",
             "I work on software architecture, data modeling, relational databases and technical leadership. During that period, between 2016 and 2019, I coordinated technical teams."
         ],
+        "skillsTitle": "Skills",
+        "skillsIntro": "From requirements gathering to delivering institutional systems, I work across software architecture, data modeling and artificial intelligence. I also share that experience through technical leadership, team training and mentoring.",
         "skills": [
             "Software architecture",
             "Data modeling",
             "PHP / CodeIgniter",
             "Flutter / Dart",
             "Relational databases",
-            "Team technical leadership"
+            "Team technical leadership",
+            "Requirements gathering",
+            "Artificial intelligence",
+            "Team training",
+            "Mentoring"
         ],
         "publicationsTitle": "Articles and publications",
         "publicationsText": "Writing about development, career and software management.",
         "mediumLabel": "@pconradjunior on Medium",
+        "wticifesText": "Papers available in the WTICIFES repository.",
+        "wticifesLabel": "WTICIFES papers",
+        "wticifesHref": "https://repositorio.wticifes.com.br/search?spc.page=1&query=pedro%20conrad%20junior",
         "avatar": "/images/profile.png",
         "avatarAlt": "Pedro Conrad Jr"
     },
     "contact": {
         "sectionTitle": "Contact",
+        "intro": "Have a project, a question or an idea in mind? Pick one of the channels below and let's talk about software architecture, data modeling or institutional systems.",
         "channels": [
             {
                 "icon": "fa fa-envelope",

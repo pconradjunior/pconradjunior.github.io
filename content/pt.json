@@ -163,8 +163,8 @@
     "projectsSection": {
         "sectionTitle": "Projetos em destaque",
         "intro": "Seis trabalhos que representam sistemas institucionais críticos, aplicativos publicados para Android e iOS e uma extensão de navegador.",
-        "archiveLabel": "Ver todos os artigos",
-        "archiveHref": "https://medium.com/@pconradjunior"
+        "archiveLabel": "Projetos de Código Aberto",
+        "archiveHref": "https://github.com/pconradjunior"
     },
     "about": {
         "sectionTitle": "Sobre",
@@ -172,22 +172,32 @@
             "Entre 2002 e 2009 atuei na docência no ensino técnico e superior. Desde 2010 sou analista de TI da Universidade Federal do Pampa (Unipampa), com mais de 20 anos de experiência no desenvolvimento de sistemas institucionais e aplicações mobile.",
             "Atuo em arquitetura de software, modelagem de dados, bancos relacionais e liderança técnica de equipes. Nesse período, entre 2016 e 2019, coordenei equipes tecnicamente."
         ],
+        "skillsTitle": "Competências",
+        "skillsIntro": "Do levantamento de requisitos à entrega de sistemas institucionais, atuo em arquitetura de software, modelagem de dados e inteligência artificial. Compartilho esse repertório em liderança técnica, treinamento e mentoria de equipes.",
         "skills": [
             "Arquitetura de software",
             "Modelagem de dados",
             "PHP / CodeIgniter",
             "Flutter / Dart",
             "Bancos de dados relacionais",
-            "Liderança técnica de equipes"
+            "Liderança técnica de equipes",
+            "Levantamento de requisitos",
+            "Inteligência artificial",
+            "Treinamento de equipes",
+            "Mentoria"
         ],
         "publicationsTitle": "Artigos e publicações",
         "publicationsText": "Textos sobre desenvolvimento, carreira e gestão de software.",
         "mediumLabel": "@pconradjunior no Medium",
+        "wticifesText": "Artigos disponíveis no repositório do WTICIFES.",
+        "wticifesLabel": "Artigos do WTICIFES",
+        "wticifesHref": "https://repositorio.wticifes.com.br/search?spc.page=1&query=pedro%20conrad%20junior",
         "avatar": "/images/profile.png",
         "avatarAlt": "Pedro Conrad Jr"
     },
     "contact": {
         "sectionTitle": "Contato",
+        "intro": "Tem um projeto, uma dúvida ou uma ideia em mente? Escolha um dos canais abaixo e vamos conversar sobre arquitetura de software, modelagem de dados ou sistemas institucionais.",
         "channels": [
             {
                 "icon": "fa fa-envelope",

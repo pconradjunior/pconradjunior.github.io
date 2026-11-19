@@ -115,6 +115,15 @@ img {
     text-decoration: none;
 }
 
+/* ícone de código à esquerda do nome (troque o código em content para trocar o ícone) */
+.lp-logo::before {
+    content: "\f121\00a0";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--cyan);
+    font-size: 0.95em;
+}
+
 .lp-nav-links {
     display: flex;
     align-items: center;
@@ -493,11 +502,23 @@ img {
     margin-top: 0;
 }
 
+.lp-skills-title {
+    margin: 2rem 0 0.5rem;
+    color: var(--navy);
+    font-size: 1.15rem;
+}
+
+.lp-skills-intro {
+    max-width: 62ch;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
 .lp-skills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 1.75rem;
+    margin-top: 1rem;
 }
 
 .lp-skills li {
@@ -531,6 +552,10 @@ img {
 .lp-publications a {
     font-weight: 700;
     font-size: 0.9rem;
+}
+
+.lp-publications a + p {
+    margin-top: 1.25rem;
 }
 
 /* ───────────── Contato ───────────── */

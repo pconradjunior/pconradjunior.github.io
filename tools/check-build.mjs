@@ -5,7 +5,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { counts, fill } from '../js/render.js';
+import { counts, fill, esc } from '../js/render.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const PAGES = [
@@ -42,6 +42,8 @@ for (const page of PAGES) {
   check(count(html, /<h1>/g) === 1, 'h1 único');
   check(html.includes(`<h1>${d.hero.title}</h1>`), `h1 do hero preenchido — ${JSON.stringify(d.hero.title)}`);
   check(html.includes(d.nav.brand), 'nome de identidade presente');
+  check(html.includes(`<a href="#home" class="lp-logo">${d.nav.brand}</a>`),
+    'logo sem ícone inline (ícone via CSS)');
   check(html.includes(fill('{{downloads}}', d)), `métrica de downloads derivada — ${fill('{{downloads}}', d)}`);
   check(count(html, /class="lp-stat"/g) === 3, '3 métricas no hero');
   check(count(html, /class="lp-btn lp-btn-/g) === 2, '2 botões no hero');
@@ -59,7 +61,7 @@ for (const page of PAGES) {
     check(html.includes(`<h2 class="lp-section-title">${title}</h2>`), `h2 preenchido — ${JSON.stringify(title)}`);
   }
 
-  // ── projetos em destaque: exatamente 5 ──
+  // ── projetos em destaque: exatamente 6 ──
   check(count(html, /class="lp-card"/g) === 6, '6 cards em destaque');
   for (const item of d.featured) {
     check(html.includes(`<h3 class="lp-card-title">${item.title}</h3>`), `card presente — ${item.title}`);
@@ -69,6 +71,8 @@ for (const page of PAGES) {
   const rex = d.featured.find(i => i.title.startsWith('REx'));
   check(rex && html.includes(`<h3 class="lp-card-title">${rex.title}</h3>`), 'REx incluído entre os projetos em destaque');
   check(rex && html.includes(`href="${rex.links[0].href}"`), 'REx linkado à própria página');
+  check(html.includes(`href="${d.projectsSection.archiveHref}"`) && html.includes(`${esc(d.projectsSection.archiveLabel)} →`),
+    'link de projetos de código aberto aponta para o GitHub');
 
   // ── vídeos: apenas os apps em destaque que têm demo ──
   const videoIds = d.featured.flatMap(i => (i.links ?? []).filter(l => l.action === 'video').map(l => l.videoId));
@@ -87,10 +91,22 @@ for (const page of PAGES) {
   check(bio.includes('2002') && bio.includes('2009'), 'docência entre 2002 e 2009');
   check(bio.includes(page.lang === 'pt' ? 'ensino técnico e superior' : 'technical and university level'), 'docência técnica e superior');
   check(html.includes(d.about.publicationsTitle), 'bloco Artigos e publicações presente');
+  check(html.includes(`<p>${esc(d.about.wticifesText)}</p>`) &&
+        html.includes(`href="${esc(d.about.wticifesHref)}"`) &&
+        html.includes(`${esc(d.about.wticifesLabel)} →`),
+    'artigos do WTICIFES com link oficial no card de publicações');
+  check(html.includes(`<h3 class="lp-skills-title">${esc(d.about.skillsTitle)}</h3>`) &&
+        html.includes(`<p class="lp-skills-intro">${esc(d.about.skillsIntro)}</p>`),
+    'subtítulo e descrição das competências no Sobre');
+  check(html.includes('<ul class="lp-skills">') && html.indexOf('lp-skills-title') < html.indexOf('lp-publications'),
+    'competências na coluna esquerda, antes de publicações');
+  check(html.includes('<ul class="lp-skills">') && d.about.skills.every(skill => html.includes(`<li>${skill}</li>`)),
+    `${d.about.skills.length} competências renderizadas no Sobre`);
   check(html.includes('https://medium.com/@pconradjunior'), 'link para o Medium presente');
   check(!/<section id="articles"/.test(html), 'lista completa de artigos não renderizada');
 
   // ── contato: apenas canais reais ──
+  check(html.includes(`<p class="lp-section-intro">${esc(d.contact.intro)}</p>`), 'texto de chamada para contato');
   check(count(html, /class="lp-channel"/g) === 5, '5 canais de contato');
   for (const ch of d.contact.channels) {
     check(html.includes(`href="${ch.href}"`), `canal presente — ${ch.label}`);
@@ -160,6 +176,8 @@ check(existsSync(join(ROOT, 'css/landing.css')), 'landing.css existe');
 const landing = read('css/landing.css');
 check(/flex:\s*0 0 120px/.test(landing) && /width:\s*120px/.test(landing), 'avatar com 120px');
 check(!/backdrop-filter|blur\(/.test(landing), 'landing.css sem glassmorphism');
+check(/\.lp-logo::before\s*\{[^}]*content:\s*"\\f121\\00a0"/.test(landing),
+  'ícone fa-code via ::before com non-breaking space');
 const shared = read('css/style.css');
 check(!/backdrop-filter|body:has\(#theme|theme-switcher/.test(shared), 'style.css sem tema nem glassmorphism');
 check(!/glass-panel/.test(shared), 'painéis das subpáginas renomeados para content-panel');
@@ -171,6 +189,9 @@ check(subpages.length === 14, `${subpages.length} páginas HTML na raiz além do
 for (const file of subpages) {
   const text = read(file);
   check(!/name="theme"|glass-panel|Glassmorphism|backdrop-filter/i.test(text), `${file}: sem tema nem glass`);
+  if (text.includes('class="lp-logo"')) {
+    check(text.includes('class="lp-logo">Pedro Conrad Jr</a>'), `${file}: logo sem ícone inline`);
+  }
   // A 404 volta para "/" e "/en/", não para uma âncora de projeto.
   if (file !== '404.html') {
     check(text.includes('index.html#projects'), `${file}: link de volta aponta para #projects`);
