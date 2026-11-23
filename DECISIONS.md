@@ -105,9 +105,11 @@ Três registros, com redação revisada pelo solicitante:
 
 ## SEO e performance
 
-- **H1 mantido** como está (`Engenharia de sistemas institucionais` /
-  `Institutional systems engineering`). O nome já aparece no `<title>`, no logo
-  e no `Person` do JSON-LD (decisão do solicitante).
+- **H1 alterado** a pedido do solicitante: de `Engenharia de sistemas
+  institucionais` / `Institutional systems engineering` para `Sistemas
+  desenvolvidos por pessoas, para pessoas` / `Systems built by people, for
+  people`. O nome continua presente no `<title>`, no logo e no `Person` do
+  JSON-LD; os demais metadados de SEO permanecem inalterados.
 - **Sitemap**: `hreflang` apenas nas duas páginas principais. As 5 páginas
   auxiliares (4 artigos e `rex_info.html`) não declaram alternates, pois não têm
   versão traduzida. Elas permanecem no sitemap e mantêm seus metadados atuais.
