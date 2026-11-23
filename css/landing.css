@@ -516,6 +516,28 @@ img {
     background: var(--border);
 }
 
+.lp-avatar-button {
+    flex: 0 0 120px;
+    display: block;
+    width: 120px;
+    height: 120px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+}
+
+.lp-avatar-button .lp-avatar {
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lp-avatar-button:hover .lp-avatar {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(7, 24, 46, 0.18);
+}
+
 .lp-about-bio p:first-child {
     margin-top: 0;
 }
@@ -892,6 +914,78 @@ img {
 
 .lp-dialog .lp-dialog-list {
     margin-top: 0.75rem;
+}
+
+/* ───────────── Cartão de contato (foto de perfil) ───────────── */
+
+.lp-profile-dialog {
+    width: min(560px, 100% - 2rem);
+    overflow: auto;
+}
+
+.lp-profile-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.lp-profile-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+}
+
+.lp-profile-photo {
+    width: 160px;
+    height: 160px;
+    border: 3px solid var(--cyan);
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--border);
+}
+
+.lp-profile-name {
+    padding-right: 2rem;
+    color: var(--navy);
+    font-size: 1.35rem;
+}
+
+.lp-profile-address {
+    margin-top: 1rem;
+    font-style: normal;
+}
+
+.lp-profile-links {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.lp-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    color: var(--navy);
+    font-size: 0.92rem;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.lp-profile-link:hover {
+    background: var(--bg);
+    text-decoration: none;
+}
+
+.lp-profile-link .lp-icon {
+    flex: 0 0 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--blue);
 }
 
 /* ───────────── Contato ───────────── */
@@ -1466,6 +1560,27 @@ img {
     .lp-channel {
         padding: 0.85rem 0.9rem;
         font-size: 0.9rem;
+    }
+
+    .lp-profile-card {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1.25rem;
+        padding: 2.25rem 1.25rem 1.5rem;
+        text-align: center;
+    }
+
+    .lp-profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .lp-profile-name {
+        padding-right: 0;
+    }
+
+    .lp-profile-link {
+        justify-content: center;
     }
 
     .lp-entry {

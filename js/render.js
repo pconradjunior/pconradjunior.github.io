@@ -74,12 +74,17 @@ const ICON_VIEWBOX = {
     code: '2 3 20 18'
 };
 
-/** Converte as antigas classes Font Awesome dos dados em SVG inline. */
-function renderIcon(className) {
-    const key = String(className ?? '')
+/** Extrai o nome do ícone das antigas classes Font Awesome dos dados. */
+function iconKey(className) {
+    return String(className ?? '')
         .replace(/^fa(?:-brands|-solid)?\s+fa-/, '')
         .replace(/^fa-/, '')
         .trim();
+}
+
+/** Converte as antigas classes Font Awesome dos dados em SVG inline. */
+function renderIcon(className) {
+    const key = iconKey(className);
     const body = ICONS[key] ?? ICONS['info-circle'];
     const viewBox = ICON_VIEWBOX[key] ?? '0 0 24 24';
     return `<svg class="lp-icon" viewBox="${viewBox}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`;
@@ -215,6 +220,37 @@ function renderCareerDialog(k, olderCerts) {
     </dialog>`;
 }
 
+/** Ordem dos canais no cartão; a seção Contato mantém a ordem dos dados. */
+const CARD_LINK_ORDER = ['github', 'linkedin', 'instagram', 'medium', 'envelope'];
+
+/** Cartão de contato exibido ao clicar na foto de perfil. */
+function renderProfileCard(a, c) {
+    const card = c.card;
+    const rank = ch => {
+        const i = CARD_LINK_ORDER.indexOf(iconKey(ch.icon));
+        return i < 0 ? CARD_LINK_ORDER.length : i;
+    };
+    const links = [...c.channels]
+        .sort((x, y) => rank(x) - rank(y))
+        .map(ch => `<li><a href="${esc(href(ch.href))}"${external(ch.href)} class="lp-profile-link">
+          ${renderIcon(ch.icon)}<span>${esc(ch.label)}</span>
+        </a></li>`)
+        .join('');
+
+    return `<dialog id="profileDialog" class="lp-dialog lp-profile-dialog" aria-labelledby="profileDialogName">
+      <div class="lp-profile-card">
+        <button type="button" class="lp-dialog-close lp-profile-close" data-profile-dialog-close aria-label="${esc(card.close)}">&times;</button>
+        <img class="lp-profile-photo" src="${esc(a.avatar)}" alt="${esc(a.avatarAlt)}" width="160" height="160">
+        <div class="lp-profile-info">
+          <h2 id="profileDialogName" class="lp-profile-name">${esc(card.name)}</h2>
+          <address class="lp-profile-address">
+            <ul class="lp-profile-links">${links}</ul>
+          </address>
+        </div>
+      </div>
+    </dialog>`;
+}
+
 /* ─────────────────────────────────────────────────────────────
    header / main / footer
    ───────────────────────────────────────────────────────────── */
@@ -293,7 +329,9 @@ export function renderMain(d) {
           <div class="lp-about-text">
             <h2 class="lp-section-title">${esc(a.sectionTitle)}</h2>
             <div class="lp-about-head">
-              <img class="lp-avatar" src="${esc(a.avatar)}" alt="${esc(a.avatarAlt)}" width="112" height="112">
+              <button type="button" class="lp-avatar-button" data-profile-dialog-open aria-label="${esc(c.card.open)}">
+                <img class="lp-avatar" src="${esc(a.avatar)}" alt="${esc(a.avatarAlt)}" width="112" height="112">
+              </button>
               <div class="lp-about-bio">
                 ${a.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}
               </div>
@@ -381,6 +419,7 @@ export function renderMain(d) {
         </div>
       </section>
       ${renderCareerDialog(k, olderCerts)}
+      ${renderProfileCard(a, c)}
     </main>`;
 }
 

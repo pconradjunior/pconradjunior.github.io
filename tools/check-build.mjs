@@ -196,6 +196,21 @@ for (const page of PAGES) {
   check(html.includes(`alt="${d.about.avatarAlt}"`), 'alt do avatar presente');
   check(existsSync(join(ROOT, d.about.avatar)), `arquivo do avatar existe — ${d.about.avatar}`);
 
+  // ── cartão de contato aberto pela foto de perfil ──
+  check(html.includes('<button type="button" class="lp-avatar-button" data-profile-dialog-open') &&
+        html.includes(`aria-label="${esc(d.contact.card.open)}"`), 'foto de perfil abre o cartão');
+  check(/<dialog id="profileDialog"/.test(html) && html.includes('data-profile-dialog-close'),
+    'cartão de contato em <dialog> nativo');
+  check(html.includes(`<h2 id="profileDialogName" class="lp-profile-name">${esc(d.contact.card.name)}</h2>`),
+    'nome completo no cartão');
+  const cardHtml = html.slice(html.indexOf('<dialog id="profileDialog"'));
+  check(count(cardHtml, /class="lp-profile-link"/g) === d.contact.channels.length,
+    `${d.contact.channels.length} links no cartão`);
+  const cardPositions = ['github', 'linkedin', 'instagram', 'medium', 'envelope']
+    .map(key => cardHtml.indexOf(d.contact.channels.find(ch => ch.icon.includes(key)).href));
+  check(cardPositions.every((p, i) => p > -1 && (i === 0 || p > cardPositions[i - 1])),
+    'ordem: GitHub, LinkedIn, Instagram, Medium e e-mail');
+
   // ── rodapé / arquivo ──
   const footerHtml = html.slice(html.indexOf('<footer'));
   check(html.includes(d.footer.copyright), 'copyright no rodapé');

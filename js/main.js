@@ -6,6 +6,8 @@
  *   1. Nav        — menu mobile
  *   2. Modals     — player de vídeo (foco preso, Esc, backdrop)
  *   2b.ImageModal — ampliar imagens (mesma interação do player de vídeo)
+ *   2c. Career    — acervo completo de certificações/publicações
+ *   2d. Profile   — cartão de contato aberto pela foto de perfil
  *   3. I18n       — troca de idioma sem reload, re-renderizando via render.js
  *
  * A rolagem suave das âncoras é nativa (CSS scroll-behavior).
@@ -217,6 +219,35 @@ const CareerDialog = (() => {
 })();
 
 /* ============================================================
+   2d. PROFILE DIALOG — cartão de contato aberto pela foto de perfil
+   Usa <dialog>.showModal() como o acervo; o init reconsulta o elemento
+   porque o i18n substitui o <main> ao trocar de idioma.
+   ============================================================ */
+
+const ProfileDialog = (() => {
+    let dialog, bound = false;
+
+    function open() {
+        dialog.showModal();
+        dialog.querySelector('[data-profile-dialog-close]').focus({ preventScroll: true });
+    }
+
+    function init() {
+        dialog = document.getElementById('profileDialog');
+        if (!dialog || bound) return;
+
+        document.addEventListener('click', e => {
+            if (e.target.closest('[data-profile-dialog-open]')) { open(); return; }
+            if (e.target.closest('[data-profile-dialog-close]')) { dialog.close(); return; }
+            if (e.target === dialog) dialog.close();
+        });
+        bound = true;
+    }
+
+    return { init };
+})();
+
+/* ============================================================
    3. I18N
    ============================================================ */
 
@@ -279,6 +310,7 @@ const I18n = (() => {
         Nav.init();
         Modals.init();
         CareerDialog.init();
+        ProfileDialog.init();
         updateHead(d, lang);
     }
 
@@ -325,5 +357,6 @@ document.addEventListener('DOMContentLoaded', () => {
     Modals.init();
     ImageModal.init();
     CareerDialog.init();
+    ProfileDialog.init();
     I18n.init();
 });

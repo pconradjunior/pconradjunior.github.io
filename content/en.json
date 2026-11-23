@@ -413,6 +413,12 @@
     "contact": {
         "sectionTitle": "Contact",
         "intro": "Have a project, a question or an idea in mind? Pick one of the channels below and let's talk about software architecture, data modeling or institutional systems.",
+        "card": {
+            "name": "Pedro Conrad Junior",
+            "title": "Contact card",
+            "open": "View contact details for Pedro Conrad Junior",
+            "close": "Close"
+        },
         "channels": [
             {
                 "icon": "fa fa-envelope",
