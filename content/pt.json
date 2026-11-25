@@ -317,9 +317,18 @@
             }
         ],
         "languages": [
-            { "name": "Português", "level": "Nativo ou bilíngue" },
-            { "name": "Inglês", "level": "Proficiência profissional" },
-            { "name": "Espanhol", "level": "Elementar" }
+            {
+                "name": "Português",
+                "level": "Nativo ou bilíngue"
+            },
+            {
+                "name": "Inglês",
+                "level": "Proficiência profissional"
+            },
+            {
+                "name": "Espanhol",
+                "level": "Elementar"
+            }
         ]
     },
     "experience": [
@@ -385,30 +394,140 @@
         }
     ],
     "education": [
-        { "title": "Bacharelado em Informática", "org": "URCAMP", "start": "2002", "end": null },
-        { "title": "Pós-graduação Lato Sensu em Docência do Ensino Superior", "org": "URCAMP", "start": "2004", "end": "2006" },
-        { "title": "Curso Técnico em Processamento de Dados - TPD", "org": "Urcamp", "start": "1995", "end": "1997" }
+        {
+            "title": "Bacharelado em Informática",
+            "org": "URCAMP",
+            "start": "2002",
+            "end": null
+        },
+        {
+            "title": "Pós-graduação Lato Sensu em Docência do Ensino Superior",
+            "org": "URCAMP",
+            "start": "2004",
+            "end": "2006"
+        },
+        {
+            "title": "Curso Técnico em Processamento de Dados - TPD",
+            "org": "Urcamp",
+            "start": "1995",
+            "end": "1997"
+        }
     ],
     "certifications": [
-        { "name": "Engenharia de Prompts", "issuer": "Escola Superior de Redes", "date": "2026-11", "label": "nov. 2026" },
-        { "name": "Aplicação do Power BI para Aprimoramento da Gestão", "issuer": "Enap", "date": "2024-12", "label": "dez. 2024" },
-        { "name": "Curso Online de PHP - PHP", "issuer": "Rocketseat", "date": "2024-10", "label": "out. 2024" },
-        { "name": "Fundamentos da Lei Geral de Proteção de Dados", "issuer": "Enap", "date": "2024-07", "label": "jul. 2024" },
-        { "name": "Formação Desenvolvimento Seguro", "issuer": "Alura", "date": "2024-03", "label": "mar. 2024" },
-        { "name": "Formação Flutter: desvendando arquiteturas", "issuer": "Alura", "date": "2023-12", "label": "dez. 2023" },
-        { "name": "Flutter: aplicando integração contínua (CI)", "issuer": "Alura", "date": "2023-12", "label": "dez. 2023" },
-        { "name": "Formação Utilize os serviços do Firebase com Flutter", "issuer": "Alura", "date": "2023-12", "label": "dez. 2023" },
-        { "name": "Formação Gestão Ágil de Projetos", "issuer": "Alura", "date": "2023-12", "label": "dez. 2023" },
-        { "name": "Formação Digital & Agile Thinking", "issuer": "Alura", "date": "2023-12", "label": "dez. 2023" },
-        { "name": "Scrum: agilidade em seu projeto", "issuer": "Alura", "date": "2023-11", "label": "nov. 2023" },
-        { "name": "A Empresa Ágil: implemente o Business Agility nas organizações", "issuer": "Alura", "date": "2023-11", "label": "nov. 2023" },
-        { "name": "Gestão Ágil: explorando conceitos da agilidade", "issuer": "Alura", "date": "2023-11", "label": "nov. 2023" },
-        { "name": "English Proficiency Score", "issuer": "EF", "date": "2022-06", "label": "jun. 2022" },
-        { "name": "SQL (Intermediate) Certificate", "issuer": "HackerRank", "date": "2022-02", "label": "fev. 2022" },
-        { "name": "Aprenda DOCKER e contêineres de maneira simples e rápida", "issuer": "Udemy", "date": "2021-08", "label": "ago. 2021" },
-        { "name": "Desenvolvimento Android e IOS com Flutter", "issuer": "Udemy", "date": "2020-08", "label": "ago. 2020" },
-        { "name": "Gestão de Riscos de TI - NBR 31000 e NBR 27005", "issuer": "Escola Superior de Redes", "date": "2017-07", "label": "jul. 2017" },
-        { "name": "Gestão da Segurança da Informação - NBR 27001 e NBR 27002", "issuer": "Escola Superior de Redes", "date": "2012-11", "label": "nov. 2012" }
+        {
+            "name": "Engenharia de Prompts",
+            "issuer": "Escola Superior de Redes",
+            "date": "2026-11",
+            "label": "nov. 2026"
+        },
+        {
+            "name": "Aplicação do Power BI para Aprimoramento da Gestão",
+            "issuer": "Enap",
+            "date": "2024-12",
+            "label": "dez. 2024"
+        },
+        {
+            "name": "Curso Online de PHP - PHP",
+            "issuer": "Rocketseat",
+            "date": "2024-10",
+            "label": "out. 2024"
+        },
+        {
+            "name": "Fundamentos da Lei Geral de Proteção de Dados",
+            "issuer": "Enap",
+            "date": "2024-07",
+            "label": "jul. 2024"
+        },
+        {
+            "name": "Formação Desenvolvimento Seguro",
+            "issuer": "Alura",
+            "date": "2024-03",
+            "label": "mar. 2024"
+        },
+        {
+            "name": "Formação Flutter: desvendando arquiteturas",
+            "issuer": "Alura",
+            "date": "2023-12",
+            "label": "dez. 2023"
+        },
+        {
+            "name": "Flutter: aplicando integração contínua (CI)",
+            "issuer": "Alura",
+            "date": "2023-12",
+            "label": "dez. 2023"
+        },
+        {
+            "name": "Formação Utilize os serviços do Firebase com Flutter",
+            "issuer": "Alura",
+            "date": "2023-12",
+            "label": "dez. 2023"
+        },
+        {
+            "name": "Formação Gestão Ágil de Projetos",
+            "issuer": "Alura",
+            "date": "2023-12",
+            "label": "dez. 2023"
+        },
+        {
+            "name": "Formação Digital & Agile Thinking",
+            "issuer": "Alura",
+            "date": "2023-12",
+            "label": "dez. 2023"
+        },
+        {
+            "name": "Scrum: agilidade em seu projeto",
+            "issuer": "Alura",
+            "date": "2023-11",
+            "label": "nov. 2023"
+        },
+        {
+            "name": "A Empresa Ágil: implemente o Business Agility nas organizações",
+            "issuer": "Alura",
+            "date": "2023-11",
+            "label": "nov. 2023"
+        },
+        {
+            "name": "Gestão Ágil: explorando conceitos da agilidade",
+            "issuer": "Alura",
+            "date": "2023-11",
+            "label": "nov. 2023"
+        },
+        {
+            "name": "English Proficiency Score",
+            "issuer": "EF",
+            "date": "2022-06",
+            "label": "jun. 2022"
+        },
+        {
+            "name": "SQL (Intermediate) Certificate",
+            "issuer": "HackerRank",
+            "date": "2022-02",
+            "label": "fev. 2022"
+        },
+        {
+            "name": "Aprenda DOCKER e contêineres de maneira simples e rápida",
+            "issuer": "Udemy",
+            "date": "2021-08",
+            "label": "ago. 2021"
+        },
+        {
+            "name": "Desenvolvimento Android e IOS com Flutter",
+            "issuer": "Udemy",
+            "date": "2020-08",
+            "label": "ago. 2020"
+        },
+        {
+            "name": "Gestão de Riscos de TI - NBR 31000 e NBR 27005",
+            "issuer": "Escola Superior de Redes",
+            "date": "2017-07",
+            "label": "jul. 2017"
+        },
+        {
+            "name": "Gestão da Segurança da Informação - NBR 27001 e NBR 27002",
+            "issuer": "Escola Superior de Redes",
+            "date": "2012-11",
+            "label": "nov. 2012"
+        }
     ],
     "contact": {
         "sectionTitle": "Contato",
@@ -508,8 +627,6 @@
                 "href": "/teajuda_privacy.html"
             }
         ],
-        "visitorBadge": "https://visitor-badge.laobi.icu/badge?page_id=pconradjunior.pconradjunior.github.io",
-        "visitorBadgeAlt": "Contador de visitas",
         "archiveText": "Escrevo sobre arquitetura de software, modelagem de dados, PHP e CodeIgniter, Flutter, carreira e gestão de equipes.",
         "archiveLink": {
             "label": "medium.com/@pconradjunior",

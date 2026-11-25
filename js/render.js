@@ -450,7 +450,6 @@ export function renderFooter(d, lang) {
           </div>
         </div>
         <p class="lp-copyright">${esc(f.copyright)}</p>
-        ${f.visitorBadge ? `<p class="lp-badge"><img src="${esc(f.visitorBadge)}" alt="${esc(f.visitorBadgeAlt || '')}" loading="lazy"></p>` : ''}
       </div>
     </footer>`;
 }
@@ -689,6 +688,7 @@ export function buildHead(d, lang) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="/css/landing.css">
     <link rel="prefetch" href="/content/${lang}.json" as="fetch" crossorigin>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="9ff9bb2f-4221-4890-b7de-a31d44ded9d3"></script>
     ${ld}`;
 }
 

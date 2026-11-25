@@ -227,9 +227,10 @@ for (const page of PAGES) {
     check(html.includes(`href="${link.href}"`), `link de arquivo resolvido — ${link.label}`);
   }
 
-  // ── contador de visitas preservado por decisão explícita ──
-  const badge = d.footer.visitorBadge ?? '';
-  check(badge && html.includes(`src="${badge}"`), 'contador de visitas presente no footer');
+  // ── analytics Umami ──
+  check(html.includes('https://cloud.umami.is/script.js'), 'script do Umami presente');
+  check(html.includes('data-website-id="9ff9bb2f-4221-4890-b7de-a31d44ded9d3"'), 'website-id do Umami presente');
+  check(!html.includes('visitor-badge.laobi.icu') && !html.includes('lp-badge'), 'contador antigo removido');
 
   // ── sem artefatos do layout antigo ──
   check(!/theme-controller|theme-switcher|localStorage\(['"]theme/.test(html), 'sem seletor de tema');
@@ -325,6 +326,9 @@ check(subpages.length === 14, `${subpages.length} páginas HTML na raiz além do
 for (const file of subpages) {
   const text = read(file);
   check(!/name="theme"|glass-panel|Glassmorphism|backdrop-filter/i.test(text), `${file}: sem tema nem glass`);
+  check(text.includes('https://cloud.umami.is/script.js'), `${file}: script do Umami presente`);
+  check(text.includes('data-website-id="9ff9bb2f-4221-4890-b7de-a31d44ded9d3"'), `${file}: website-id do Umami presente`);
+  check(!text.includes('visitor-badge.laobi.icu') && !text.includes('lp-badge'), `${file}: contador antigo removido`);
   if (text.includes('class="lp-logo"')) {
     check(text.includes('class="lp-logo">Pedro Conrad Jr</a>'), `${file}: logo sem ícone inline`);
   }
