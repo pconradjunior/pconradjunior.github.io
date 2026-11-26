@@ -151,7 +151,9 @@ Ordem: **P1 → P3 (concluídos em 26/11) → P2 (pendente) → decisão sobre P
 
 ---
 
-### [ ] P5 — Revalidação ao final
+### [x] P5 — Revalidação ao final — CONCLUÍDO
+
+**Status 26/11:** commit `97d4b14` enviado para `origin/main`, GitHub Pages propagado (200 em `/images/profile.webp`), 4 auditorias finais no site público — tabela completa na seção 6. Acessibilidade 100 em todas; nenhuma regressão de LCP/CLS/TBT. `desktop` variou 98/99 como esperado; `mobile PT` marcou 97 numa execução com FCP/LCP 1,9 s (ruído de medição, TBT 0 e CLS 0).
 
 1. `npm run build && npm run check` (equivalente a `npm run check`).
 2. Repetir os 4 comandos da seção 1 **no site publicado** (após deploy) — não medir apenas local, para não comparar cache/headers diferentes.
@@ -165,7 +167,7 @@ Ordem: **P1 → P3 (concluídos em 26/11) → P2 (pendente) → decisão sobre P
 
 | Item | Situação |
 |---|---|
-| Publicar/commitar | **Bloqueado até aprovação final do solicitante** (TAP item 7 e regra global Petrux). P1 e P3 foram aplicados **localmente em 26/11**; nada foi commitado, publicado ou deployado. |
+| Publicar/commitar | Usuário autorizou em 26/11. Commit `97d4b14` (`Otimiza imagem de perfil e corrige acessibilidade da landing`) enviado para `origin/main` e publicado no GitHub Pages. Sem coautoria de IA. |
 | Fonte única de conteúdo | `content/pt.json`, `content/en.json` + `js/render.js`. HTML gerado não deve ser editado à mão. |
 | Invariantes | `tools/check-build.mjs` valida estrutura (inclusive botão `lp-avatar-button`, seções, headings). Rodar `npm run check` após qualquer mudança de markup. |
 | Escopo do TAP | Mudanças pontuais e preservação de arquitetura/URLs/PT-EN. Self-host de fontes (P2) e service worker (P4) precisam de decisão de escopo antes de executar. |
@@ -180,7 +182,7 @@ Ordem: **P1 → P3 (concluídos em 26/11) → P2 (pendente) → decisão sobre P
 - **Concluído (P3):** acessibilidade 91 → **100** nas duas rotas.
 - **Pendente (P2):** self-host das fontes (remove bloqueio de ~870 ms no mobile, mas exige decisão de escopo).
 - **Não fazer sem decisão (P4):** mexer em cache do GitHub Pages.
-- **Bloqueio atual:** aguardando aprovação final para commit/deploy e revalidação no site público (P5).
+- **Publicado em 26/11:** commit `97d4b14` no ar. P5 concluído: acessibilidade 100 nas 4 execuções públicas; performance 97–99 (variação de medição).
 
 ---
 
@@ -211,3 +213,21 @@ Ordem: **P1 → P3 (concluídos em 26/11) → P2 (pendente) → decisão sobre P
 3. Relatórios: `$OUT/local-pt.report.html`, `$OUT/local-pt.report.json`, `$OUT/local-en.json` (mesmo `$OUT` da seção 1).
 4. **Ressalva:** o servidor Python local não comprime texto. Por isso o "total byte weight" local (302 KiB PT / 296 KiB EN) não é comparável aos 478 KiB medidos no GitHub Pages (com gzip). A comparação válida é a da imagem: **356,7 KiB → 9,6 KiB**. A medição definitiva de payload e cache deve ser feita após o deploy (P5).
 5. Auditorias ainda em score < 1 no local (`unminified-css/js`, `unused-css/js`, `cache-insight`, `render-blocking-insight`) são as mesmas do diagnóstico original; `render-blocking` é o item P2, adiado por decisão de escopo.
+
+### Publicação e revalidação final (P5)
+
+- Usuário autorizou a publicação em 26/11. Commit `97d4b14` — `Otimiza imagem de perfil e corrige acessibilidade da landing` — enviado para `origin/main`, **sem coautoria de IA**.
+- CI `.github/workflows/build.yml` disparou pelos paths `content/**`, `css/**`, `js/**`; HTML já estava sincronizado, então o job de build não precisou gerar novo commit.
+- GitHub Pages confirmado: `GET /images/profile.webp` → **200, 9.640 bytes**; HTML e CSS públicos contêm `profile.webp` e `--cyan-text`.
+- Lighthouse 13.6.0 no **site público**, após propagação:
+
+| Rota / perfil | Perf | A11y | Boas práticas | SEO | FCP | LCP | TBT | CLS |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `/` mobile | 97 | **100** | 100 | 100 | 1,9 s | 1,9 s | 0 ms | 0 |
+| `/en/` mobile | 99 | **100** | 100 | 100 | 1,7 s | 1,7 s | 0 ms | 0 |
+| `/` desktop (exec. 1) | 98 | **100** | 100 | 100 | 0,8 s | 0,8 s | 0 ms | 0,062 |
+| `/` desktop (exec. 2) | 99 | **100** | 100 | 100 | 0,6 s | 0,6 s | 0 ms | 0,062 |
+
+- `profile.webp` aparece com **9,6 KiB transferidos** nas 4 auditorias públicas (antes: 356,7 KiB).
+- A execução mobile PT a 97 teve FCP/LCP 1,9 s contra 1,7 s da baseline; TBT 0 e CLS 0 permaneceram. Variação dentro do ruído do Lighthouse, sem regressão estrutural.
+- Relatórios finais: `$OUT/pub-pt.report.html`, `$OUT/pub-pt.report.json`, `$OUT/pub-en.json`, `$OUT/pub-desktop.json`, `$OUT/pub-desktop2.json`.
