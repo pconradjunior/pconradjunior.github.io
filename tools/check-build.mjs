@@ -325,11 +325,12 @@ check(!/backdrop-filter|blur\(/.test(landing), 'landing.css sem glassmorphism');
 check(/\.lp-icon\s*\{[^}]*width:\s*1em/.test(landing) && !/Font Awesome|\\f121/.test(landing),
   'ícones SVG dimensionados por em, sem Font Awesome no CSS');
 check(!existsSync(join(ROOT, 'resources/css/style.css')), 'style.css removido após a conversão das páginas');
-check(existsSync(join(ROOT, 'resources/fontawesome/css/all.min.css')), 'Font Awesome CSS local existe');
-check(existsSync(join(ROOT, 'resources/fontawesome/LICENSE.txt')), 'licença do Font Awesome presente');
-for (const f of ['fa-solid-900.woff2', 'fa-brands-400.woff2']) {
-  check(existsSync(join(ROOT, 'resources/fontawesome/webfonts', f)), `webfont ${f} existe`);
+check(!landing.includes('fontawesome') && !landing.includes('.fa-'), 'CSS sem dependência de Font Awesome');
+for (const f of ['icone_rex_big.webp', 'rex_banner.webp', 'print_1.webp', 'print_2.webp', 'print_3.webp']) {
+  check(existsSync(join(ROOT, 'article_imgs/rex', f)), `imagem WebP do REx existe — ${f}`);
 }
+check(existsSync(join(ROOT, 'article_imgs/face_detection_ui_wireframe.webp')),
+  'wireframe WebP existe');
 
 // ── páginas avulsas ──
 console.log('\npáginas avulsas');
@@ -338,7 +339,10 @@ check(subpages.length === 14, `${subpages.length} páginas HTML na raiz além do
 for (const file of subpages) {
   const text = read(file);
   check(!text.includes('cdnjs.cloudflare.com'), `${file}: sem CDN externo`);
-  check(text.includes('/resources/fontawesome/css/all.min.css'), `${file}: Font Awesome local`);
+  check(!text.includes('fontawesome') && !/class="[^"]*\bfa[b-s]?\b/.test(text),
+    `${file}: sem Font Awesome, ícones em SVG inline`);
+  check(!/\/article_imgs\/rex\/[^"']+\.png|face_detection_ui_wireframe\.png/.test(text),
+    `${file}: sem PNGs convertidos`);
   check(!/name="theme"|glass-panel|Glassmorphism|backdrop-filter/i.test(text), `${file}: sem tema nem glass`);
   if (text.includes('class="lp-logo"')) {
     check(text.includes('class="lp-logo">Pedro Conrad Jr</a>'), `${file}: logo sem ícone inline`);

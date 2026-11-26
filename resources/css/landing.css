@@ -1126,6 +1126,12 @@ img {
     font-size: 1rem;
 }
 
+.lp-article .lp-article-date {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
 .lp-article hr {
     border: 0;
     border-top: 1px solid var(--border);
@@ -1248,7 +1254,7 @@ img {
     border-top: 1px solid var(--border);
 }
 
-.lp-rex-section > h3 {
+.lp-rex-section > h2 {
     margin: 0 0 1rem;
 }
 
@@ -1281,12 +1287,13 @@ img {
     padding: 1.15rem;
 }
 
-.lp-rex-step i {
+.lp-rex-step .lp-icon {
+    width: 1.2rem;
+    height: 1.2rem;
     color: var(--blue);
-    font-size: 1.2rem;
 }
 
-.lp-rex-step h4 {
+.lp-rex-step h3 {
     margin: 0.6rem 0 0.4rem;
     color: var(--navy);
     font-size: 1rem;
@@ -1319,7 +1326,7 @@ img {
     width: 100%;
 }
 
-.lp-rex-shot i {
+.lp-rex-shot-icon {
     position: absolute;
     right: 0.6rem;
     bottom: 0.6rem;
@@ -1331,7 +1338,11 @@ img {
     border-radius: 6px;
     background: rgba(11, 31, 58, 0.88);
     color: #FFFFFF;
-    font-size: 0.9rem;
+}
+
+.lp-rex-shot-icon .lp-icon {
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 .lp-rex-shot:hover {
@@ -1376,7 +1387,7 @@ img {
     padding: 1.5rem;
 }
 
-.lp-rex-note h4 {
+.lp-rex-note h3 {
     color: var(--navy);
 }
 
@@ -1439,6 +1450,7 @@ img {
     font-weight: 600;
 }
 
+.lp-footer-col h2,
 .lp-footer-col h3 {
     color: #FFFFFF;
     font-size: 0.85rem;
