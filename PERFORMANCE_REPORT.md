@@ -78,7 +78,7 @@ npx --yes lighthouse https://pconradjunior.github.io/ \
 
 ## 3. Backlog — o que precisamos fazer
 
-Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5 → rodada 2 (reorganização em `resources/`, Font Awesome local e og-images PT/EN) → rodada 3 (WebP, SVG inline e acessibilidade; ver §8)**. Até a rodada 2, tudo concluído, publicado e revalidado no site público (TAP, item 7 atendido). A rodada 3 está pronta localmente e **aguarda aprovação para commit/publicação**.
+Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5 → rodada 2 (reorganização em `resources/`, Font Awesome local e og-images PT/EN) → rodada 3 (WebP, SVG inline e acessibilidade; ver §8)**. Tudo concluído, publicado e revalidado no site público (TAP, item 7 atendido), inclusive a rodada 3 (§8).
 
 ### [x] P1 — Otimizar `resources/images/profile.png` (maior retorno) — CONCLUÍDO
 
@@ -177,7 +177,7 @@ Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5 �
 
 | Item | Situação |
 |---|---|
-| Publicar/commitar | Usuário autorizou as rodadas 1 e 2. Commits no ar: `97d4b14`, `5b2caba` (P1/P3) e `84fd249` (P2 + `resources/` + Font Awesome + og-images). Nenhum com coautoria de IA. **Rodada 3 (§8): pronta, sem commit e sem publicação — aguardando autorização explícita.** |
+| Publicar/commitar | Usuário autorizou as três rodadas. Commits no ar: `97d4b14`, `5b2caba` (P1/P3), `84fd249` (P2 + `resources/` + Font Awesome + og-images) e `4ee40c7`, `e6896be`, `5df15c8`, `d887ea4` (rodada 3). Nenhum com coautoria de IA. GitHub Pages confirmado por HTTP 200 nos WebPs e zero referências a Font Awesome no HTML público. |
 | Fonte única de conteúdo | `resources/content/pt.json`, `resources/content/en.json` + `resources/js/render.js`. HTML gerado não deve ser editado à mão. |
 | Invariantes | `tools/check-build.mjs` valida estrutura, fontes self-hosted, presença dos WebP, og-image por idioma, ausência de CDN e — desde a rodada 3 — **ausência de Font Awesome** nos HTMLs/CSS. Rodar `npm run check` após qualquer mudança de markup. |
 | Escopo do TAP | P2 executado em todo o site por decisão explícita do usuário. P4 encerrado como limitação do GitHub Pages. Novas mudanças preservam contratos e URLs públicas das páginas. |
@@ -308,7 +308,7 @@ Rodada 2 concluída e publicada. Backlog ativo vazio; P4 registrado como limita�
 
 ---
 
-## 8. Rodada 3 — WebP, SVG inline e acessibilidade das páginas estáticas (26/11, local)
+## 8. Rodada 3 — WebP, SVG inline e acessibilidade das páginas estáticas (26/11)
 
 ### Escolha do usuário e baseline
 
@@ -369,9 +369,30 @@ Seis imagens convertidas com `cwebp -quiet -q 82`, mantendo os PNGs originais co
 6. Agregado nas 16 auditorias: **imagens 2.042 → 392 KiB (−81%)**; **Font Awesome 2.476 → 0 KiB**.
 7. Relatórios e scripts: `$OUT/audit-static.sh` (baseline público), `$OUT/{local-audit,gzip-audit}/`, `$OUT/verify-local.mjs`, `$OUT/compare-round3.mjs`.
 
-### 8.5 Estado e pendências
+### 8.5 Publicação e revalidação final (aprovada pelo usuário)
 
-- **Nenhum commit e nenhuma publicação** nesta rodada — aguardando aprovação explícita do usuário.
+- Usuário aprovou a publicação. Commits enviados para `origin/main`, **sem coautoria de IA**:
+  - `4ee40c7` — WebP, SVG inline e acessibilidade das páginas estáticas;
+  - `e6896be` — registro da auditoria da rodada 3;
+  - `5df15c8` — `width`/`height` nas imagens WebP (correção de CLS encontrada no público);
+  - `d887ea4` — `height: auto` no CSS (correção de proporção revelada pela correção anterior).
+- GitHub Pages propagado: **HTTP 200 nos 6 WebPs** e **zero referências a Font Awesome nas 16 páginas públicas**.
+- A primeira auditoria pública pós-deploy mostrou **CLS 0,102** em `rex_info.html` ("Unsized image element": banner WebP sem dimensões). A correção com `width`/`height` eliminou o CLS, mas expôs `image-aspect-ratio` e `image-size-responsive` (BP caiu para 92) porque o atributo `height` era interpretado como dica de estilo — o CSS definia só a largura. `height: auto` nos quatro seletores de imagem restaurou a proporção e o BP 100.
+- Lighthouse 13.6.0 no **site público**, após a correção final:
+
+| Rota | Perf | A11y | Boas práticas | SEO | FCP | LCP | CLS |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `/` (mobile) | **100** | 100 | 100 | 100 | 0,9 s | 0,9 s | 0 |
+| `/en/` (mobile) | **100** | 100 | 100 | 100 | 1,1 s | 1,1 s | 0 |
+| `/rex_info.html` | **99** | **100** | 100 | 100 | 0,9 s | 2,0 s | 0 |
+| `/article_reconhecimento_facial.html` | **100** | **100** | 100 | 100 | 0,9 s | 1,2 s | 0 |
+
+- Nenhuma falha binária nas quatro rotas. No `rex_info.html` o LCP oscila entre o parágrafo e as imagens do topo (2,0–2,6 s na simulação do Lighthouse), sem TBT relevante e com CLS 0.
+- As demais páginas públicas já haviam marcado 100/100/100/100 na primeira rodada pós-deploy; `404.html` mantém SEO 69 pelo `noindex` intencional (única falha `is-crawlable`).
+- Relatórios: `$OUT/public-round3/` (`root-final2.json`, `en-final2.json`, `rex_info-final2.json`, `article_reconhecimento_facial-final2.json` e os intermediários).
+
+### Pendências
+
 - `resources/fontawesome/` segue no repositório sem nenhuma referência; a remoção é opcional e depende de autorização.
 - Lighthouse ainda estima ~99 KiB de economia em `rex_info.html` (logo de 73 KiB exibido a 120 px). Não foi aplicado para manter o escopo das três melhorias escolhidas; fica como candidato a follow-up.
 - P4 permanece encerrado como limitação do GitHub Pages (`cache-control: max-age=600`).
