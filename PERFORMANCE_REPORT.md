@@ -78,7 +78,7 @@ npx --yes lighthouse https://pconradjunior.github.io/ \
 
 ## 3. Backlog — o que precisamos fazer
 
-Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5**. P1, P3, P2, P5 e a revalidação final estão concluídos; novas mudanças (reorganização em `resources/`, Font Awesome local e og-images PT/EN) estão prontas localmente e **aguardam aprovação para commit/publicação** (TAP, item 7).
+Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5 → rodada 2 (reorganização em `resources/`, Font Awesome local e og-images PT/EN)**. Tudo concluído, publicado e revalidado no site público (TAP, item 7 atendido).
 
 ### [x] P1 — Otimizar `resources/images/profile.png` (maior retorno) — CONCLUÍDO
 
@@ -177,7 +177,7 @@ Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5**
 
 | Item | Situação |
 |---|---|
-| Publicar/commitar | Rodada anterior autorizada: commits `97d4b14` e `5b2caba` no ar, sem coautoria de IA. **Rodada atual (P2 + `resources/` + Font Awesome + og-images) está pronta localmente, sem commit e sem deploy** — aguarda aprovação final. |
+| Publicar/commitar | Usuário autorizou as duas rodadas. Commits no ar: `97d4b14`, `5b2caba` (P1/P3) e `84fd249` (P2 + `resources/` + Font Awesome + og-images). Nenhum com coautoria de IA. GitHub Pages confirmado via HTTP 200 nos novos assets. |
 | Fonte única de conteúdo | `resources/content/pt.json`, `resources/content/en.json` + `resources/js/render.js`. HTML gerado não deve ser editado à mão. |
 | Invariantes | `tools/check-build.mjs` valida estrutura, fontes self-hosted, Font Awesome local, og-image por idioma e ausência de CDN. Rodar `npm run check` após qualquer mudança de markup. |
 | Escopo do TAP | P2 executado em todo o site por decisão explícita do usuário. P4 encerrado como limitação do GitHub Pages. Novas mudanças preservam contratos e URLs públicas das páginas. |
@@ -194,8 +194,8 @@ Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5**
 - **Concluído (P3):** acessibilidade 91 → **100** nas duas rotas.
 - **Concluído (P2):** fontes self-hosted em todo o site. Render-blocking 840 ms → 40 ms (PT), FCP 1,8 s → 1,1 s, performance local 100.
 - **Encerrado (P4):** cache do GitHub Pages é fixo em `max-age=600`; impacto residual caiu de 343 KiB para 26 KiB. Sem ação possível pelo repositório.
-- **Prontos para publicação:** todos os recursos em `resources/`, Font Awesome local e og-images PT/EN.
-- **Publicado em 26/11:** commits `97d4b14` e `5b2caba` no ar; P5 concluído com acessibilidade 100 nas 4 execuções públicas.
+- **Rodada 2 publicada:** commit `84fd249` — todos os recursos em `resources/`, Font Awesome local e og-images PT/EN.
+- **P5 final no público:** `100/100/100/100` em PT mobile e desktop, `99/100/100/100` no EN mobile. FCP 0,9 s (PT) e 0,4 s (desktop), CLS 0, sem erros de console.
 
 ---
 
@@ -282,9 +282,26 @@ Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5**
 | `/rex_info.html` | 47 | 98 | 100 | 100 | 1,7 s |
 | `/article_ios.html` | 71 | 90 | 100 | 100 | 1,8 s |
 
-4. **Ressalva de medição:** o servidor Python não comprime texto, então `all.min.css` (100 KiB) e `fa-solid-900.woff2` (147 KiB) trafegam sem gzip. Nas páginas avulsas o Lighthouse registrou long task *Unattributable* de ~2,6 s com `scriptEvaluation` de ~20 ms — ruído do headless, não falha do código. A medição definitiva (com compressão do GitHub Pages) fica para depois do deploy. Não há baseline Lighthouse anterior para as páginas avulsas, então seus scores são registro, não comparativo de regressão.
-5. Relatórios: `$OUT/final-pt.json`, `$OUT/final-en.json`, `$OUT/final-rex.json`, `$OUT/final-article.json`.
+4. **Ressalva da medição local:** o servidor Python não comprime texto, então `all.min.css` (100 KiB) e `fa-solid-900.woff2` (147 KiB) trafegam sem gzip. Nas páginas avulsas o Lighthouse registrou long task *Unattributable* de ~2,6 s com `scriptEvaluation` de ~20 ms — ruído do headless, não falha do código. A medição definitiva foi feita no público (item 6 abaixo), com compressão do GitHub Pages.
+5. Relatórios locais: `$OUT/final-pt.json`, `$OUT/final-en.json`, `$OUT/final-rex.json`, `$OUT/final-article.json`.
+
+### Publicação e P5 final no site público (26/11)
+
+- Commit `84fd249` enviado para `origin/main`. GitHub Pages conferido: HTTP 200 em `og-image.png`, `og-image-en.png`, `profile.webp`, fontes Inter/Sora, CSS e webfont do Font Awesome e `content/pt.json`; HTML público aponta para `/resources/...`.
+- Lighthouse 13.6.0 (Chrome 158, `errors-in-console` vazio, nenhum request ≥ 400):
+
+| Rota | Perf | A11y | Boas práticas | SEO | FCP | LCP | TBT | CLS |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `/` (mobile) | **100** | 100 | 100 | 100 | 0,9 s | 0,9 s | 20 ms | 0 |
+| `/en/` (mobile) | **99** | 100 | 100 | 100 | 1,1 s | 1,1 s | 110 ms | 0 |
+| `/` (desktop) | **100** | 100 | 100 | 100 | 0,4 s | 0,4 s | 0 ms | 0 |
+| `/rex_info.html` (mobile) | 71 | 98 | 100 | 100 | 1,1 s | 6,3 s | 310 ms | 0 |
+
+- Comparação: PT mobile subiu de 97 (P5 da rodada 1) para **100**; render-blocking de 840 ms → **30 ms**; FCP de 1,8 s → **0,9 s**.
+- `rex_info.html` segue com 71 por imagens grandes (até 369 KiB) e LCP 6,3 s — **sem baseline anterior**, é registro, não regressão. Fora do escopo desta rodada (TAP).
+- `cache-insight` público passou a estimar 92 KiB (antes 26 KiB) por incluir o CSS/webfont do Font Awesome agora self-hosted; segue como limitação residual do GitHub Pages (P4).
+- Relatórios: `$OUT/round2-pt.report.{json,html}`, `$OUT/round2-en.json`, `$OUT/round2-rex.json`, `$OUT/round2-desktop.json`.
 
 ### Estado
 
-Nada desta rodada foi commitado ou publicado. Aprovação final pendente para commit/deploy e nova revalidação P5 no site público.
+Rodada 2 concluída e publicada. Backlog ativo vazio; P4 registrado como limitação da plataforma, sem ação prevista.
