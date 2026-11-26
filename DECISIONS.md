@@ -70,9 +70,11 @@ Três registros, com redação revisada pelo solicitante:
 - Apenas os **3 artigos mais recentes** ficam em destaque na seção; as outras
   **4 publicações** vão para o acervo em `<dialog>` (decisão do solicitante).
 - `technicalArticles`, `reflections` e `career` permanecem em `content/*.json`
-  mesmo sem seção visível na landing: são a fonte do `ItemList` de artigos no
+  como acervo de metadados, sem seção visível na landing e sem `ItemList` no
   JSON-LD (decisão do solicitante em 26/11/2026). O artigo **Interlocutor, não
-  substituto** entra nesse acervo, com link direto para o Medium.
+  substituto** entra nesse acervo, com link direto para o Medium. O `ItemList`
+  de artigos foi removido do HTML gerado: `Article` não dá direito a carrossel
+  no Google, os links são externos e o conteúdo não aparece na página.
 
 ## Certificações
 
@@ -124,7 +126,7 @@ Três registros, com redação revisada pelo solicitante:
   e `Urcamp` como entidades distintas).
 - **`dateModified`** adicionado ao `ProfilePage` e ao `<head>`, preservado na
   troca de idioma via JS.
-- **`numberOfItems`** declarado nas 4 listas do JSON-LD.
+- **`numberOfItems`** declarado nas 3 listas do JSON-LD.
 - **`meta keywords` removido** (obsoleto).
 - **`preload` do JSON trocado por `prefetch`**: o arquivo só é usado na troca de
   idioma, então não deve competir com recursos críticos no carregamento inicial.
@@ -140,7 +142,7 @@ Três registros, com redação revisada pelo solicitante:
 - `section#career` com `h2 Experiência Profissional`, 6 registros em `<article>`
   com `<h3>` de cargo e `<h3>` para `Formação`, `Cursos e certificações`,
   `Publicações e participação` e `Idiomas`.
-- JSON-LD mantém 6 blocos; `Person` ganha `hasCredential` (19 entradas),
+- JSON-LD mantém 5 blocos; `Person` ganha `hasCredential` (19 entradas),
   `knowsLanguage`, `alumniOf` único e `knowsAbout` ampliado.
 
 ## Priorização e triagem

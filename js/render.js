@@ -488,38 +488,10 @@ function softwareApp(item, lang) {
   };
 }
 
-function articleNode(item, lang) {
-  const externals = item.links.filter(l => /^https?:/.test(l.href || ''));
-  const link = externals[0];
-  const local = item.links.find(l => /^article_/.test(l.href || ''));
-  const extra = (local ? externals : externals.slice(1));
-  return {
-    '@type': 'Article',
-    headline: item.title,
-    description: item.desc,
-    url: local ? `${SITE.origin}/${local.href}` : link?.href,
-    ...(extra.length ? {
-      citation: extra.map(l => ({
-        '@type': 'CreativeWork',
-        name: l.title || l.label || item.title,
-        url: l.href
-      }))
-    } : {}),
-    author: { '@id': `${SITE.origin}/#person` },
-    publisher: { '@id': `${SITE.origin}/#person` },
-    inLanguage: lang
-  };
-}
-
 export function buildJsonLd(d, lang) {
   const p = d.projects;
   const apps = [...(p.mobile?.items ?? [])].filter(i => i.links.some(l => /play\.google|apps\.apple/.test(l.href || '')));
   const webApps = p.web?.items ?? [];
-  const writings = [
-    ...(p.technicalArticles?.items ?? []),
-    ...(p.reflections?.items ?? []),
-    ...(p.career?.items ?? [])
-  ];
   const papers = p.publications?.items ?? [];
   const skills = d.about.skills.flatMap(g => g.items);
   // Unifica grafias da mesma instituição (URCAMP / Urcamp) em uma única entidade.
@@ -595,17 +567,6 @@ export function buildJsonLd(d, lang) {
           author: { '@id': `${SITE.origin}/#person` },
           inLanguage: lang
         }
-      }))
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: lang === 'pt' ? 'Publicações e artigos' : 'Publications and articles',
-      numberOfItems: writings.length,
-      itemListElement: writings.map((a, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        item: articleNode(a, lang)
       }))
     },
     {

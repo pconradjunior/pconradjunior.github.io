@@ -245,7 +245,7 @@ for (const page of PAGES) {
 
   // ── JSON-LD ──
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
-  check(blocks.length === 6, `${blocks.length} blocos JSON-LD (esperado 6)`);
+  check(blocks.length === 5, `${blocks.length} blocos JSON-LD (esperado 5)`);
   for (const [, raw] of blocks) {
     try { JSON.parse(raw.replace(/\\u003c/g, '<')); } catch (e) { bad(`JSON-LD inválido: ${e.message}`); }
   }
@@ -265,7 +265,7 @@ for (const page of PAGES) {
     'ProfilePage.dateModified derivado do conteúdo');
   check(json.filter(b => b['@type'] === 'ItemList').every(b => Number.isInteger(b.numberOfItems) &&
         b.numberOfItems === (b.itemListElement?.length ?? 0)),
-    'todas as 4 listas declaram numberOfItems correto');
+    'todas as 3 listas declaram numberOfItems correto');
   check(person?.knowsAbout?.length === d.about.skills.flatMap(g => g.items).length,
     'Person.knowsAbout com todas as competências');
   const newsTitles = (d.projects.publications?.items ?? [])
