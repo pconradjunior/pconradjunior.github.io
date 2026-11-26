@@ -1036,6 +1036,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Reflection",
+                    "title": "Interlocutor, Not a Substitute: What Remains of Learning When AI Writes for Us? (PT-BR)",
+                    "desc": "A follow-up to the earlier reflection on the 'rush revolution': when generated output is indistinguishable from thought-through work, how can we tell that learning happened? The article proposes explaining and defending the text without the artifact as a test, argues for AI as an interlocutor rather than a substitute, and discusses authorship, provenance and criteria for not outsourcing judgment.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Read on Medium",
+                            "href": "https://medium.com/@pconradjunior/interlocutor-n%C3%A3o-substituto-741a3b0b78d8",
+                            "title": "Read on Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflection",
                     "title": "What If the Problem Isn't Your Competence, but the Need to Prove Your Worth All the Time? (PT-BR)",
                     "desc": "A reflection on impostor syndrome, professional recognition and identity in a tech career: why the drive to grow turns into a constant need to prove competence, how external recognition stops being a reliable measure of our worth, and why the journey matters more than the current job title.",
                     "links": [

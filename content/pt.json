@@ -1036,6 +1036,22 @@
                 {
                     "typeIcon": "fa-brands fa-medium",
                     "typeLabel": "Reflexão",
+                    "title": "Interlocutor, não substituto",
+                    "desc": "Desdobramento da reflexão sobre a 'revolução da pressa': quando o produto gerado é indistinguível do produto pensado, como saber que houve aprendizado? O artigo propõe explicar e defender o texto sem o artefato como teste, defende a IA como interlocutora e não substituta e discute autoria, procedência da resposta e critérios para não terceirizar o juízo.",
+                    "links": [
+                        {
+                            "icon": "fa-brands fa-medium",
+                            "label": "Ler no Medium",
+                            "href": "https://medium.com/@pconradjunior/interlocutor-n%C3%A3o-substituto-741a3b0b78d8",
+                            "title": "Ler no Medium",
+                            "action": "url",
+                            "style": "color:#000;"
+                        }
+                    ]
+                },
+                {
+                    "typeIcon": "fa-brands fa-medium",
+                    "typeLabel": "Reflexão",
                     "title": "E se o problema não for a sua competência, mas a necessidade de provar seu valor o tempo todo?",
                     "desc": "Reflexão sobre síndrome do impostor, reconhecimento profissional e identidade na carreira em tecnologia: por que a vontade de evoluir se transforma na necessidade permanente de provar competência, como o reconhecimento externo deixa de ser uma medida confiável do nosso valor e por que a trajetória construída importa mais do que o cargo atual.",
                     "links": [

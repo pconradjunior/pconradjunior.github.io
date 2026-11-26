@@ -69,6 +69,10 @@ Três registros, com redação revisada pelo solicitante:
   `NewsArticle` no JSON-LD).
 - Apenas os **3 artigos mais recentes** ficam em destaque na seção; as outras
   **4 publicações** vão para o acervo em `<dialog>` (decisão do solicitante).
+- `technicalArticles`, `reflections` e `career` permanecem em `content/*.json`
+  mesmo sem seção visível na landing: são a fonte do `ItemList` de artigos no
+  JSON-LD (decisão do solicitante em 26/11/2026). O artigo **Interlocutor, não
+  substituto** entra nesse acervo, com link direto para o Medium.
 
 ## Certificações
 
