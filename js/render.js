@@ -149,7 +149,7 @@ function renderLinks(links) {
     if (!links || !links.length) return '';
     const items = links.map(l => {
         const label = esc(l.label || l.title || '');
-        const title = l.title ? ` title="${esc(l.title)}" aria-label="${esc(l.title)}"` : '';
+        const title = l.title ? ` title="${esc(l.title)}"` : '';
         const icon = renderIcon(l.icon);
 
         if (l.action === 'video' && l.videoId) {
@@ -450,7 +450,7 @@ export function renderFooter(d, lang) {
           </div>
         </div>
         <p class="lp-copyright">${esc(f.copyright)}</p>
-        ${f.visitorBadge ? `<p class="lp-badge"><img src="${esc(f.visitorBadge)}" alt="${esc(f.visitorBadgeAlt || '')}" loading="lazy"></p>` : ''}
+        ${f.visitorBadge ? `<p class="lp-badge"><img src="${esc(f.visitorBadge)}" alt="${esc(f.visitorBadgeAlt || '')}" width="88" height="20" loading="lazy"></p>` : ''}
       </div>
     </footer>`;
 }

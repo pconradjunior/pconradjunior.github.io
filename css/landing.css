@@ -15,6 +15,7 @@
     --text: #0F172A;
     --muted: #475569;
     --cyan: #06B6D4;
+    --cyan-text: #0E7490; /* contraste 5,36:1 sobre --surface; --cyan permanece para acentos */
     --border: #E2E8F0;
     --font-heading: 'Sora', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -677,7 +678,7 @@ img {
 
 .lp-entry-meta {
     margin: 0.25rem 0 0;
-    color: var(--cyan);
+    color: var(--cyan-text);
     font-size: 0.88rem;
     font-weight: 600;
 }
@@ -761,6 +762,11 @@ img {
 .lp-typed-meta {
     color: var(--muted);
     font-size: 0.85rem;
+}
+
+.lp-typed-meta a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 /* ───────────── Detalhes expansíveis (nativo) ───────────── */
