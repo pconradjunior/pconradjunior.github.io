@@ -5,7 +5,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { counts, fill, esc } from '../js/render.js';
+import { counts, fill, esc } from '../resources/js/render.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const PAGES = [
@@ -19,7 +19,7 @@ const bad = m => { failures++; console.log(`  \u001b[31m✗\u001b[0m ${m}`); };
 const check = (cond, m) => (cond ? ok(m) : bad(m));
 
 const read = p => readFileSync(join(ROOT, p), 'utf8');
-const content = lang => JSON.parse(read(`content/${lang}.json`));
+const content = lang => JSON.parse(read(`resources/content/${lang}.json`));
 const count = (html, re) => (html.match(re) ?? []).length;
 
 for (const page of PAGES) {
@@ -36,6 +36,9 @@ for (const page of PAGES) {
   check(html.includes(`<link rel="canonical" href="${page.canonical}">`), 'canonical correto');
   check(html.includes('hreflang="pt-BR"') && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), 'hreflang pt/en/x-default presentes');
   check(html.includes('og:title') && html.includes('og:image') && html.includes('twitter:card'), 'Open Graph + Twitter Card');
+  const ogImage = page.lang === 'en' ? '/resources/images/og-image-en.png' : '/resources/images/og-image.png';
+  check(html.includes(`content="https://pconradjunior.github.io${ogImage}"`),
+    `og-image correto para ${page.lang} — ${ogImage}`);
   check(!html.includes(`<link rel="canonical" href="${PAGES.find(p => p.lang !== page.lang).canonical}">`), 'canonical não aponta para o idioma errado');
   check(!/name="keywords"/.test(html), 'meta keywords removido (obsoleto)');
   check(/<meta name="dateModified" content="\d{4}-\d{2}-\d{2}">/.test(html), 'dateModified presente no head');
@@ -239,9 +242,9 @@ for (const page of PAGES) {
   check(!/>null<|undefined|NaN/.test(html), 'sem null/undefined/NaN no HTML');
 
   // ── caminhos absolutos (necessário para /en/) ──
-  check(!/href="(css|js|images|content)\//.test(html), 'assets com caminho absoluto');
-  check(!/src="(css|js|images)\//.test(html), 'scripts e imagens com caminho absoluto');
-  check(html.includes('href="/css/landing.css"'), 'landing.css carregado no lugar do style.css');
+  check(!/href="(resources|css|fonts|js|images|content)\//.test(html), 'assets com caminho absoluto');
+  check(!/src="(resources|css|fonts|js|images|content)\//.test(html), 'scripts e imagens com caminho absoluto');
+  check(html.includes('href="/resources/css/landing.css"'), 'landing.css carregado no lugar do style.css');
 
   // ── JSON-LD ──
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
@@ -310,13 +313,23 @@ for (const key of ['experience', 'education', 'certifications']) {
 
 // ── CSS ──
 console.log('\nCSS');
-check(existsSync(join(ROOT, 'css/landing.css')), 'landing.css existe');
-const landing = read('css/landing.css');
+check(existsSync(join(ROOT, 'resources/css/landing.css')), 'landing.css existe');
+const landing = read('resources/css/landing.css');
+check(/\/resources\/fonts\/inter-latin\.woff2/.test(landing) && /\/resources\/fonts\/sora-latin\.woff2/.test(landing),
+  'fontes self-hosted referenciadas no CSS');
+for (const f of ['inter-latin.woff2', 'sora-latin.woff2']) {
+  check(existsSync(join(ROOT, 'resources/fonts', f)), `fonte ${f} existe`);
+}
 check(/flex:\s*0 0 120px/.test(landing) && /width:\s*120px/.test(landing), 'avatar com 120px');
 check(!/backdrop-filter|blur\(/.test(landing), 'landing.css sem glassmorphism');
 check(/\.lp-icon\s*\{[^}]*width:\s*1em/.test(landing) && !/Font Awesome|\\f121/.test(landing),
   'ícones SVG dimensionados por em, sem Font Awesome no CSS');
-check(!existsSync(join(ROOT, 'css/style.css')), 'style.css removido após a conversão das páginas');
+check(!existsSync(join(ROOT, 'resources/css/style.css')), 'style.css removido após a conversão das páginas');
+check(existsSync(join(ROOT, 'resources/fontawesome/css/all.min.css')), 'Font Awesome CSS local existe');
+check(existsSync(join(ROOT, 'resources/fontawesome/LICENSE.txt')), 'licença do Font Awesome presente');
+for (const f of ['fa-solid-900.woff2', 'fa-brands-400.woff2']) {
+  check(existsSync(join(ROOT, 'resources/fontawesome/webfonts', f)), `webfont ${f} existe`);
+}
 
 // ── páginas avulsas ──
 console.log('\npáginas avulsas');
@@ -324,6 +337,8 @@ const subpages = readdirSync(ROOT).filter(f => f.endsWith('.html') && f !== 'ind
 check(subpages.length === 14, `${subpages.length} páginas HTML na raiz além do index`);
 for (const file of subpages) {
   const text = read(file);
+  check(!text.includes('cdnjs.cloudflare.com'), `${file}: sem CDN externo`);
+  check(text.includes('/resources/fontawesome/css/all.min.css'), `${file}: Font Awesome local`);
   check(!/name="theme"|glass-panel|Glassmorphism|backdrop-filter/i.test(text), `${file}: sem tema nem glass`);
   if (text.includes('class="lp-logo"')) {
     check(text.includes('class="lp-logo">Pedro Conrad Jr</a>'), `${file}: logo sem ícone inline`);
@@ -333,7 +348,7 @@ for (const file of subpages) {
     check(text.includes('index.html#projects'), `${file}: link de volta aponta para #projects`);
   }
   if (file.endsWith('_privacy.html') || file === 'rex_info.html' || file === '404.html' || file.startsWith('article_')) {
-    check(text.includes('/css/landing.css'), `${file}: usa o CSS da landing`);
+    check(text.includes('/resources/css/landing.css'), `${file}: usa o CSS da landing`);
     check(text.includes('<header class="lp-header">'), `${file}: header replicado`);
     check(text.includes('<footer class="lp-footer">'), `${file}: rodapé replicado`);
     check(/class="lp-container lp-legal-panel(?: lp-rex-panel| lp-article| lp-error-panel)?"/.test(text),
@@ -378,7 +393,8 @@ check(sitemapUrls.filter(u => u.includes('<lastmod>')).length === 2,
   'lastmod apenas nas duas páginas com conteúdo versionado');
 check(sitemapUrls.some(u => u.includes('hreflang="x-default"')), 'x-default declarado no sitemap');
 check(existsSync(join(ROOT, '404.html')), '404.html existe');
-check(existsSync(join(ROOT, 'images/og-image.png')), 'og-image.png existe');
+check(existsSync(join(ROOT, 'resources/images/og-image.png')), 'og-image.png existe');
+check(existsSync(join(ROOT, 'resources/images/og-image-en.png')), 'og-image-en.png existe');
 check(!existsSync(join(ROOT, 'index_bak.html')) && !existsSync(join(ROOT, 'index_en_bak.html')), 'backups removidos');
 
 console.log(failures ? `\n\u001b[31m${failures} falha(s)\u001b[0m\n` : '\n\u001b[32mtodos os checks passaram\u001b[0m\n');

@@ -2,7 +2,7 @@
     "meta": {
         "lang": "en",
         "description": "Institutional systems, ERPs with 50+ modules and Android/iOS apps. 20+ years, 50+ projects, {{downloads}} downloads. IT analyst at Unipampa.",
-        "flagIcon": "images/flags/us.svg",
+        "flagIcon": "resources/images/flags/us.svg",
         "title": "Pedro Conrad Jr — Systems and apps developed by people, for people",
         "keywords": [
             "institutional systems",
@@ -220,7 +220,7 @@
         "wticifesText": "Papers available in the WTICIFES repository.",
         "wticifesLabel": "WTICIFES papers",
         "wticifesHref": "https://repositorio.wticifes.com.br/search?spc.page=1&query=pedro%20conrad%20junior",
-        "avatar": "/images/profile.webp",
+        "avatar": "/resources/images/profile.webp",
         "avatarAlt": "Pedro Conrad Jr"
     },
     "engineering": {

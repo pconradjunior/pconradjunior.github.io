@@ -1,5 +1,5 @@
 /**
- * build.mjs — gera as páginas estáticas a partir de content/{pt,en}.json
+ * build.mjs — gera as páginas estáticas a partir de resources/content/{pt,en}.json
  *
  *   node build.mjs
  *
@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { buildDocument, SITE } from './js/render.js';
+import { buildDocument, SITE } from './resources/js/render.js';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const LANGUAGES = ['pt', 'en'];
@@ -30,7 +30,7 @@ const SITEMAP_PAGES = [
 /** Data do último commit que tocou o conteúdo da página; fallback fora de git. */
 function lastmodFor(file) {
   try {
-    return execFileSync('git', ['log', '-1', '--format=%cs', '--', `content/${file}`],
+    return execFileSync('git', ['log', '-1', '--format=%cs', '--', `resources/content/${file}`],
       { cwd: ROOT, encoding: 'utf8' }).trim() || new Date().toISOString().slice(0, 10);
   } catch {
     return new Date().toISOString().slice(0, 10);
@@ -38,7 +38,7 @@ function lastmodFor(file) {
 }
 
 for (const lang of LANGUAGES) {
-  const data = JSON.parse(readFileSync(join(ROOT, 'content', `${lang}.json`), 'utf8'));
+  const data = JSON.parse(readFileSync(join(ROOT, 'resources', 'content', `${lang}.json`), 'utf8'));
   data.meta.dateModified = lastmodFor(`${lang}.json`);
   const html = buildDocument(data, lang);
 

@@ -10,7 +10,7 @@
 
 export const SITE = {
   origin: 'https://pconradjunior.github.io',
-  ogImage: '/images/og-image.png',
+  ogImage: lang => `/resources/images/${lang === 'en' ? 'og-image-en.png' : 'og-image.png'}`,
   author: 'Pedro Conrad Jr',
   email: 'pconradjunior@gmail.com',
   sameAs: [
@@ -602,7 +602,7 @@ export function buildJsonLd(d, lang) {
 export function buildHead(d, lang) {
     const m = d.meta;
     const url = lang === 'pt' ? `${SITE.origin}/` : `${SITE.origin}/en/`;
-    const image = `${SITE.origin}${SITE.ogImage}`;
+    const image = `${SITE.origin}${SITE.ogImage(lang)}`;
     const flag = lang === 'pt' ? 'br' : 'us';
 
     const title = fill(m.title, d);
@@ -644,12 +644,11 @@ export function buildHead(d, lang) {
     <meta name="twitter:image" content="${image}">
     <meta name="twitter:image:alt" content="${esc(m.alt)}">
 
-    <link rel="icon" type="image/svg+xml" href="/images/flags/${flag}.svg" id="favicon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="/css/landing.css">
-    <link rel="prefetch" href="/content/${lang}.json" as="fetch" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="/resources/images/flags/${flag}.svg" id="favicon">
+    <link rel="preload" href="/resources/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/resources/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/resources/css/landing.css">
+    <link rel="prefetch" href="/resources/content/${lang}.json" as="fetch" crossorigin>
     ${ld}`;
 }
 
@@ -684,7 +683,7 @@ export function buildDocument(d, lang) {
     ${renderFooter(d, lang)}
     ${renderVideoModal(d, lang)}
 
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/resources/js/main.js"></script>
 </body>
 
 </html>

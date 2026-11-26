@@ -268,6 +268,7 @@ const I18n = (() => {
     function updateHead(d, lang) {
         const m = d.meta;
         const url = lang === 'pt' ? `${SITE.origin}/` : `${SITE.origin}/en/`;
+        const image = `${SITE.origin}${SITE.ogImage(lang)}`;
         const title = fill(m.title, d);
         const description = fill(m.description, d);
 
@@ -279,12 +280,14 @@ const I18n = (() => {
         setMeta('meta[property="og:title"]', 'content', title);
         setMeta('meta[property="og:description"]', 'content', description);
         setMeta('meta[property="og:url"]', 'content', url);
+        setMeta('meta[property="og:image"]', 'content', image);
         setMeta('meta[property="og:image:alt"]', 'content', m.alt);
         setMeta('meta[property="og:locale"]', 'content', m.ogLocale);
         setMeta('meta[property="og:locale:alternate"]', 'content', lang === 'pt' ? 'en_US' : 'pt_BR');
         setMeta('meta[name="twitter:title"]', 'content', title);
         setMeta('meta[name="twitter:description"]', 'content', description);
-        setMeta('link#favicon', 'href', `/images/flags/${lang === 'pt' ? 'br' : 'us'}.svg`);
+        setMeta('meta[name="twitter:image"]', 'content', image);
+        setMeta('link#favicon', 'href', `/resources/images/flags/${lang === 'pt' ? 'br' : 'us'}.svg`);
 
         document.querySelectorAll('script[type="application/ld+json"]').forEach(s => s.remove());
         const modified = document.querySelector('meta[name="dateModified"]')?.content;
@@ -317,7 +320,7 @@ const I18n = (() => {
     async function switchTo(lang) {
         if (!SUPPORTED.includes(lang) || lang === current()) return;
         try {
-            const res = await fetch(`/content/${lang}.json`, { cache: 'no-cache' });
+            const res = await fetch(`/resources/content/${lang}.json`, { cache: 'no-cache' });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             const d = await res.json();
             localStorage.setItem('lang', lang);
