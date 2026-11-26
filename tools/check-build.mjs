@@ -345,7 +345,9 @@ for (const file of subpages) {
     `${file}: sem PNGs convertidos`);
   check(!/name="theme"|glass-panel|Glassmorphism|backdrop-filter/i.test(text), `${file}: sem tema nem glass`);
   if (text.includes('class="lp-logo"')) {
-    check(text.includes('class="lp-logo">Pedro Conrad Jr</a>'), `${file}: logo sem ícone inline`);
+    check(text.includes('class="lp-logo"><svg class="lp-icon lp-logo-icon"'),
+      `${file}: logo com ícone SVG inline`);
+    check(text.includes('</svg> Pedro Conrad Jr</a>'), `${file}: nome da marca preservado no logo`);
   }
   // A 404 volta para "/" e "/en/", não para uma âncora de projeto.
   if (file !== '404.html') {
@@ -359,7 +361,7 @@ for (const file of subpages) {
       `${file}: conteúdo em painel`);
   }
   if (file.startsWith('article_')) {
-    check(!/css\/style\.css|content-panel|class="logo"|logo-icon|code-window|Outfit|Space\+Grotesk|style="/.test(text),
+    check(!/css\/style\.css|content-panel|class="logo"|code-window|Outfit|Space\+Grotesk|style="/.test(text),
       `${file}: sem vestígio do layout antigo`);
     check(text.includes('<p class="lp-eyebrow">Artigo</p>') && text.includes('<div class="lp-container lp-legal-panel lp-article">'),
       `${file}: título no hero e texto em painel de artigo`);

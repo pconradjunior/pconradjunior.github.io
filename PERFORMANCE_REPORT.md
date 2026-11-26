@@ -341,6 +341,7 @@ Seis imagens convertidas com `cwebp -quiet -q 82`, mantendo os PNGs originais co
 - O `<link>` de `all.min.css` foi removido das 14 páginas; `all.min.css` e as webfonts deixaram de ser transferidos.
 - CSS ajustado: `.lp-rex-step .lp-icon`, `.lp-rex-shot-icon` + `.lp-icon`, `.lp-rex-note h3`, `.lp-footer-col h2`.
 - `tools/check-build.mjs` trocou os invariantes: de "Font Awesome local existe" para "sem Font Awesome, ícones em SVG inline" e "sem PNGs convertidos".
+- A pedido do usuário, o símbolo da marca (`<svg class="lp-icon lp-logo-icon">`, o `</>`) passou a integrar o `.lp-logo` das 14 páginas avulsas, incluindo a `404.html`. Antes, só as duas `index.html` o exibiam (decisão de `ebee1ff`). O mesmo SVG e a mesma classe CSS das landing pages foram reaproveitados; o validador agora exige o ícone e o nome "Pedro Conrad Jr" em todas as páginas.
 
 ### 8.3 Correções de acessibilidade
 
