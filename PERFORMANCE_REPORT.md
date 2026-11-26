@@ -182,7 +182,7 @@ Ordem executada: **P1 → P3 → P2 → P4 (encerrado como limitação) → P5 �
 | Invariantes | `tools/check-build.mjs` valida estrutura, fontes self-hosted, presença dos WebP, og-image por idioma, ausência de CDN e — desde a rodada 3 — **ausência de Font Awesome** nos HTMLs/CSS. Rodar `npm run check` após qualquer mudança de markup. |
 | Escopo do TAP | P2 executado em todo o site por decisão explícita do usuário. P4 encerrado como limitação do GitHub Pages. Novas mudanças preservam contratos e URLs públicas das páginas. |
 | Documentação histórica | `docs/03-TAP.md` e `DECISIONS.md` mantêm os caminhos antigos (`content/`, `css/`, `js/`, `images/`) como registro do que foi aprovado; a estrutura vigente é `resources/`. |
-| Licenças | Inter/Sora: SIL OFL 1.1 em `resources/fonts/*-OFL.txt`. Font Awesome 6.4.0: licença em `resources/fontawesome/LICENSE.txt` — diretório mantido, mas **sem referência desde a rodada 3** (remoção opcional mediante aprovação). |
+| Licenças | Inter/Sora: SIL OFL 1.1 em `resources/fonts/*-OFL.txt`. Font Awesome 6.4.0 não é mais usado — diretório removido após a rodada 3; os nomes `fa-*` que restam nos JSONs são apenas chaves convertidas em SVG por `renderIcon()`. |
 | Questionário do briefing | Data-alvo de início e orçamento seguem "não informados" no TAP; não foram presumidos aqui. |
 
 ---
@@ -393,6 +393,6 @@ Seis imagens convertidas com `cwebp -quiet -q 82`, mantendo os PNGs originais co
 
 ### Pendências
 
-- `resources/fontawesome/` segue no repositório sem nenhuma referência; a remoção é opcional e depende de autorização.
+- `resources/fontawesome/` foi removido em 26/11 (10 arquivos, ~1 MiB), após confirmação de que nenhum HTML/CSS/JS carregava o CSS ou as webfonts. Os nomes `fa-*` em `resources/content/*.json` e `render.js` permanecem apenas como chaves legadas de `iconKey()`/`renderIcon()`, que geram SVG inline.
 - Lighthouse ainda estima ~99 KiB de economia em `rex_info.html` (logo de 73 KiB exibido a 120 px). Não foi aplicado para manter o escopo das três melhorias escolhidas; fica como candidato a follow-up.
 - P4 permanece encerrado como limitação do GitHub Pages (`cache-control: max-age=600`).
