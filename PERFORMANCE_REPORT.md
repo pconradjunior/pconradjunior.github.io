@@ -389,6 +389,7 @@ Seis imagens convertidas com `cwebp -quiet -q 82`, mantendo os PNGs originais co
 | `/article_reconhecimento_facial.html` | **100** | **100** | 100 | 100 | 0,9 s | 1,2 s | 0 |
 
 - Nenhuma falha binária nas quatro rotas. No `rex_info.html` o LCP oscila entre o parágrafo e as imagens do topo (2,0–2,6 s na simulação do Lighthouse), sem TBT relevante e com CLS 0.
+- Após a padronização do logo nas páginas avulsas, nova auditoria pública: `article_ios.html` **99/100/100/100**, `404.html` **100/100/69** (só `is-crawlable`, pelo `noindex`) e `rex_info.html` **99/100/100/100**, todos com CLS 0.
 - As demais páginas públicas já haviam marcado 100/100/100/100 na primeira rodada pós-deploy; `404.html` mantém SEO 69 pelo `noindex` intencional (única falha `is-crawlable`).
 - Relatórios: `$OUT/public-round3/` (`root-final2.json`, `en-final2.json`, `rex_info-final2.json`, `article_reconhecimento_facial-final2.json` e os intermediários).
 
