@@ -1152,6 +1152,7 @@ img {
 
 .lp-article-img {
     display: block;
+    height: auto;
     margin: 1.5rem auto;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -1230,6 +1231,7 @@ img {
 .lp-rex-logo {
     display: block;
     width: 120px;
+    height: auto;
     margin: 0 auto 1.5rem;
 }
 
@@ -1242,6 +1244,7 @@ img {
 .lp-rex-banner {
     display: block;
     width: 100%;
+    height: auto;
     margin: 0 auto;
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -1324,6 +1327,7 @@ img {
 .lp-rex-shot img {
     display: block;
     width: 100%;
+    height: auto;
 }
 
 .lp-rex-shot-icon {
